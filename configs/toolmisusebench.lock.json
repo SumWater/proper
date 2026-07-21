@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "status": "COMPATIBILITY_AUDIT_PASS_WITH_ADAPTER_AND_PREFIX_REPLAY",
+  "code": {
+    "url": "https://github.com/akgitrepos/toolmisusebench.git",
+    "commit": "b6ee3412f98d2058ee487e182a72b26c58046d51"
+  },
+  "dataset": {
+    "repo_id": "sigdelakshey/ToolMisuseBench",
+    "revision": "98eb28718b0393e029088ce80604c48807216de4",
+    "release": "v0.2_large",
+    "manifest_path": "artifacts/v0_2_large/manifest.json",
+    "manifest_sha256": "dbc940b8ead00071b8287d301384091077158f4296fd330c36ba022b6fa93c0d"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "manifest_path": "configs/lab_environment.lock.json",
+    "conda_explicit_lock_sha256": "ed07021e8c5584886c6a31c639811e0bfaf66143a10dc263ab27797dcfd72679",
+    "pip_freeze_lock_sha256": "2c6dee2832f484632d729f341b21a2e92d220021cb6b95f015f9cf19a7df363f"
+  },
+  "conditions": [
+    "Use the external observation sanitizer and agent-boundary action recorder.",
+    "Use deterministic failure-prefix replay; official snapshot is not restorable.",
+    "Treat persistent authorization denial as a labeled local audit extension, not released v0.2 data.",
+    "Keep Recovery Contract metrics separate from official Task Success.",
+    "Use the frozen Python 3.11 lab environment identified by both dependency-lock hashes."
+  ],
+  "note": "This lock approves the bounded model-backed utilization pilot, not a large-scale experiment."
+}

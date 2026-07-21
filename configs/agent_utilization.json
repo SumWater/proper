@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "pilot_population": "rank1_selected_inapplicable_queries_from_retrieval_feasibility",
+  "conditions": [
+    "no_memory",
+    "source_blind_rank1_memory"
+  ],
+  "maximum_post_failure_decisions": 1,
+  "minimum_paired_instance_count": 20,
+  "agent_model": "Qwen3-8B",
+  "environment_lock": "configs/lab_environment.lock.json",
+  "model_manifest": "configs/qwen3_8b_model.sha256",
+  "generation": {
+    "enable_thinking": false,
+    "do_sample": false,
+    "temperature": 0.0,
+    "max_new_tokens": 256
+  },
+  "paired_harm_rule": "hard_outcome_dominance_then_additional_repeated_invalid_call",
+  "continue_if": {
+    "followed_inapplicability_count_at_least": 5,
+    "harmful_utilization_count_at_least": 5
+  },
+  "stop_if": {
+    "followed_inapplicability_count_below": 5,
+    "harmful_utilization_count_below": 5
+  },
+  "note": "Thresholds are frozen before any model-backed utilization run. The deterministic parser and fake clients are implementation checks only, not research agents."
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "retriever": "source_blind_tfidf",
+  "top_k": 3,
+  "primary_selection_rank": 1,
+  "leave_one_source_instance_out": true,
+  "minimum_query_count": 100,
+  "continue_if": {
+    "selected_inapplicability_count_at_least": 20,
+    "selected_inapplicability_rate_at_least": 0.05
+  },
+  "stop_if": {
+    "selected_inapplicability_count_below": 20,
+    "selected_inapplicability_rate_below": 0.05
+  },
+  "note": "Candidate inapplicability is diagnostic only. Followed inapplicability and harmful utilization are not evaluated in this retrieval-only gate."
+}

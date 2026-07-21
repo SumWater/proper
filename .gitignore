@@ -1,0 +1,41 @@
+# Python environments and caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# External checkouts and datasets (keep documentation/placeholders)
+external/*
+!external/.gitkeep
+data/
+datasets/
+models/
+checkpoints/
+
+# Generated work, logs, rollouts, and outputs
+work/*
+!work/.gitkeep
+outputs/*
+!outputs/.gitkeep
+rollouts/
+*.log
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+

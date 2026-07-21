@@ -1,0 +1,3 @@
+# Runtime intentionally uses only the Python standard library in audit phase 1.
+# Install the pinned development extras with: pip install -e ".[dev]"
+
