@@ -47,9 +47,14 @@ outputs/*
 !outputs/extension_capacity/**
 !outputs/transient_authz_capacity_v1/
 !outputs/transient_authz_capacity_v1/**
+!outputs/confirmatory_transient_authz_v1/
+!outputs/confirmatory_transient_authz_v1/**
 rollouts/
 *.log
 !work/lab_confirmatory_gate_v1.log
+!work/lab_transient_authz_capacity_v1.log
+!work/lab_confirmatory_transient_authz_v1_prep.log
+!work/lab_confirmatory_transient_authz_v1.log
 
 # Editors / OS
 .vscode/

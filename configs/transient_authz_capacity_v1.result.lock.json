@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "status": "complete_cpu_capacity_result_locked",
+  "decision": "PASS_TRANSIENT_AUTHZ_PUBLIC_TEST_CAPACITY",
+  "screening": {
+    "path": "outputs/transient_authz_capacity_v1/screening.json",
+    "sha256": "a2e264dac63b2d9162c6dc9d5af7bc3a3b809f03303a4de5e047e87f8316540e"
+  },
+  "linux_log": {
+    "path": "work/lab_transient_authz_capacity_v1.log",
+    "sha256": "e4eec5a716c74742d4ef359227e3273ad2df9a2c86eb786c7cc4aaa119c2330c"
+  },
+  "screening_result": {
+    "valid_native_target_count": 175,
+    "selection_changed_count": 53,
+    "distinct_changed_target_tool_count": 7,
+    "distinct_selected_memory_count_on_changed_pairs": 12,
+    "maximum_single_selected_memory_share": 0.16981132075471697,
+    "memory_source_target_overlap_count": 0,
+    "native_authz_exact_prior_overlap_count": 0
+  },
+  "model_outputs_generated": false,
+  "gpu_run_authorized": false,
+  "screening_must_never_be_overwritten": true
+}

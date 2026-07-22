@@ -22,15 +22,15 @@ public-test outcomes to retune the frozen gate.
 
 ## Active direction
 
-The next stage investigates whether the same applicability-gating idea extends
-across tools, memories, and observable failure families. New development and
-confirmation data must remain separated from the frozen public-test result.
-The CPU-only capacity audit found that authorization has the strongest new
-candidate capacity but requires a repeated-denial observation; see
-`docs/extension_capacity_audit_result.md`.
-Because probing a persistent denial would violate the safety contract, the
-next frozen CPU audit is restricted to the released transient-authorization
-stratum; see `docs/transient_authz_capacity_v1_protocol.md`.
+The next stage tests memory selection on the released native transient-
+authorization stratum without probing persistent denials. The frozen CPU-only
+capacity audit contains 175 valid targets and a 53-pair primary population
+where the conservative selector changes TF-IDF Rank-1. These changed pairs span
+seven target tools and twelve selected memories. Persistent authorization is
+excluded because retrying a persistent denial violates the safety contract.
+The model-output protocol is frozen in
+`docs/preregistration_confirmatory_transient_authz_v1.md`; GPU execution remains
+blocked until the deterministic Linux preparation artifact is reviewed.
 
 ## Repository map
 
@@ -40,11 +40,13 @@ stratum; see `docs/transient_authz_capacity_v1_protocol.md`.
 - `experiments/confirmatory_gate_v1.py`: frozen model experiment
 - `experiments/extension_capacity_audit.py`: CPU-only cross-failure capacity audit
 - `experiments/transient_authz_capacity_v1.py`: native transient-authz capacity preparation
+- `experiments/confirmatory_transient_authz_v1.py`: frozen paired transient-authz experiment
 - `outputs/proper_gate/`: frozen gate-development artifact
 - `outputs/candidate_selection/`: frozen candidate-ranking artifact
 - `outputs/confirmatory_gate_v1/`: immutable formal results and analysis
 - `docs/preregistration_confirmatory_gate_v1.md`: frozen protocol
 - `docs/confirmatory_gate_v1_result.md`: formal result and limitations
+- `docs/preregistration_confirmatory_transient_authz_v1.md`: frozen extension protocol
 
 Formal experiment identities and post-result runnable configurations are kept
 separate. Files without `.runtime` retain the exact experiment-time bytes;

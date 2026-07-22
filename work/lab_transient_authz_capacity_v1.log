@@ -1,0 +1,171 @@
+.gitattributes: 成功
+.gitignore: 成功
+configs/applicability_intervention_gate.environment.json: 成功
+configs/applicability_intervention_gate.lock.json: 成功
+configs/applicability_intervention_gate.runtime.lock.json: 成功
+configs/applicability_intervention_gate.runtime.yaml: 成功
+configs/applicability_intervention_gate.yaml: 成功
+configs/candidate_development.yaml: 成功
+configs/candidate_rules.lock.json: 成功
+configs/candidate_rules.yaml: 成功
+configs/confirmatory_gate_v1.acquisition.json: 成功
+configs/confirmatory_gate_v1.lock.json: 成功
+configs/confirmatory_gate_v1.result.lock.json: 成功
+configs/confirmatory_gate_v1.runtime.lock.json: 成功
+configs/confirmatory_gate_v1.runtime.yaml: 成功
+configs/confirmatory_gate_v1.yaml: 成功
+configs/extension_capacity_audit.yaml: 成功
+configs/lab_environment.lock.json: 成功
+configs/memory_bank.yaml: 成功
+configs/observable_identifiability_audit.yaml: 成功
+configs/pilot_exclusions.json: 成功
+configs/qwen3_8b_model.sha256: 成功
+configs/transient_authz_capacity_v1.lock.json: 成功
+configs/transient_authz_capacity_v1.yaml: 成功
+configs/toolmisusebench.lock.json: 成功
+configs/toolmisusebench_source.runtime.sha256: 成功
+configs/toolmisusebench_source.sha256: 成功
+docs/applicability_intervention_gate_result.md: 成功
+docs/artifact_layout.md: 成功
+docs/confirmatory_gate_v1_result.md: 成功
+docs/extension_capacity_audit_result.md: 成功
+docs/observable_identifiability_result.md: 成功
+docs/preregistration_applicability_intervention_gate.md: 成功
+docs/preregistration_confirmatory_gate_v1.md: 成功
+docs/transient_authz_capacity_v1_protocol.md: 成功
+experiments/agent_runtime.py: 成功
+experiments/analyze_confirmatory_gate_v1.py: 成功
+experiments/applicability_intervention_gate.py: 成功
+experiments/benchmark_instances.py: 成功
+experiments/candidate_audit.py: 成功
+experiments/candidate_manifest.py: 成功
+experiments/confirmatory_gate_v1.py: 成功
+experiments/extension_capacity_audit.py: 成功
+experiments/gate_dataset.py: 成功
+experiments/observable_identifiability_audit.py: 成功
+experiments/transient_authz_capacity_v1.py: 成功
+external/toolmisusebench/LICENSE: 成功
+external/toolmisusebench/README.md: 成功
+external/toolmisusebench/toolmisusebench/__init__.py: 成功
+external/toolmisusebench/toolmisusebench/baselines/__init__.py: 成功
+external/toolmisusebench/toolmisusebench/baselines/common.py: 成功
+external/toolmisusebench/toolmisusebench/baselines/schema_repair_agent.py: 成功
+external/toolmisusebench/toolmisusebench/dataset.py: 成功
+external/toolmisusebench/toolmisusebench/envs/__init__.py: 成功
+external/toolmisusebench/toolmisusebench/envs/base.py: 成功
+external/toolmisusebench/toolmisusebench/envs/crud_env.py: 成功
+external/toolmisusebench/toolmisusebench/envs/files_env.py: 成功
+external/toolmisusebench/toolmisusebench/envs/retrieval_env.py: 成功
+external/toolmisusebench/toolmisusebench/envs/scheduler_env.py: 成功
+external/toolmisusebench/toolmisusebench/faults/__init__.py: 成功
+external/toolmisusebench/toolmisusebench/faults/adversarial_errors.py: 成功
+external/toolmisusebench/toolmisusebench/faults/authz.py: 成功
+external/toolmisusebench/toolmisusebench/faults/base.py: 成功
+external/toolmisusebench/toolmisusebench/faults/rate_limit.py: 成功
+external/toolmisusebench/toolmisusebench/faults/schema_drift.py: 成功
+external/toolmisusebench/toolmisusebench/faults/timeout.py: 成功
+external/toolmisusebench/toolmisusebench/harness/__init__.py: 成功
+external/toolmisusebench/toolmisusebench/harness/runner.py: 成功
+external/toolmisusebench/toolmisusebench/registry.py: 成功
+external/toolmisusebench/toolmisusebench/types.py: 成功
+external/toolmisusebench/toolmisusebench/utils/__init__.py: 成功
+external/toolmisusebench/toolmisusebench/utils/seed.py: 成功
+external/toolmisusebench/toolmisusebench/version2/__init__.py: 成功
+external/toolmisusebench/toolmisusebench/version2/baselines.py: 成功
+outputs/candidate_selection/selection_manifest.json: 成功
+outputs/confirmatory_gate_v1/analysis.json: 成功
+outputs/confirmatory_gate_v1/results.json: 成功
+outputs/confirmatory_gate_v1/screening.json: 成功
+outputs/confirmatory_gate_v1/tool_results.csv: 成功
+outputs/development_four_condition/results.json: 成功
+outputs/development_four_condition/screening.json: 成功
+outputs/extension_capacity/audit.json: 成功
+outputs/observable_identifiability/audit.json: 成功
+outputs/proper_gate/cross_validation.json: 成功
+pyproject.toml: 成功
+README.md: 成功
+requirements.txt: 成功
+requirements-gate.txt: 成功
+schemas/applicability_intervention_gate.schema.json: 成功
+schemas/candidate_selection.schema.json: 成功
+schemas/confirmatory_gate_v1.schema.json: 成功
+schemas/confirmatory_gate_v1_analysis.schema.json: 成功
+schemas/development_four_condition.schema.json: 成功
+schemas/extension_capacity_audit.schema.json: 成功
+schemas/observable_identifiability_audit.schema.json: 成功
+schemas/transient_authz_capacity_v1.schema.json: 成功
+scripts/prepare_confirmatory_gate_v1_windows.ps1: 成功
+scripts/prepare_transient_authz_capacity_v1_lab.sh: 成功
+scripts/run_confirmatory_gate_v1_lab.sh: 成功
+src/failure_memory/__init__.py: 成功
+src/failure_memory/boundary.py: 成功
+src/failure_memory/candidate_selector.py: 成功
+src/failure_memory/confirmatory.py: 成功
+src/failure_memory/contracts.py: 成功
+src/failure_memory/frozen_gate.py: 成功
+src/failure_memory/intervention_gate.py: 成功
+src/failure_memory/retrieval.py: 成功
+src/failure_memory/transient_authz_gate.py: 成功
+src/failure_memory/utilization.py: 成功
+tests/test_boundary.py: 成功
+tests/test_candidate_audit.py: 成功
+tests/test_candidate_manifest.py: 成功
+tests/test_candidate_selector.py: 成功
+tests/test_confirmatory.py: 成功
+tests/test_confirmatory_gate_v1.py: 成功
+tests/test_confirmatory_gate_v1_analysis.py: 成功
+tests/test_confirmatory_preparation.py: 成功
+tests/test_contracts.py: 成功
+tests/test_extension_capacity_audit.py: 成功
+tests/test_frozen_gate.py: 成功
+tests/test_intervention_gate.py: 成功
+tests/test_manifest_portability.py: 成功
+tests/test_observable_identifiability_audit.py: 成功
+tests/test_retrieval.py: 成功
+tests/test_transient_authz_capacity_v1.py: 成功
+tests/test_transient_authz_gate.py: 成功
+tests/test_utilization.py: 成功
+{
+  "decision": {
+    "rank1_policy": "stop",
+    "reason_code": "replace_nonretry_rank1_with_retry_memory",
+    "same_tool_memory": true,
+    "selected_experience_id": "retry-memory",
+    "selected_original_rank": 2,
+    "selection_changed": true
+  },
+  "model_loaded": false,
+  "public_test_read": false,
+  "synthetic_non_model_output": true
+}
+RESULT=PASS_TRANSIENT_AUTHZ_CAPACITY_CPU_DRY_RUN
+{
+  "capacity_checks": {
+    "changed_tool_diversity_met": true,
+    "memory_concentration_limit_met": true,
+    "selected_memory_diversity_met": true,
+    "selection_changed_capacity_met": true,
+    "valid_native_target_capacity_met": true
+  },
+  "distinct_changed_target_tool_count": 7,
+  "distinct_selected_memory_count_on_changed_pairs": 12,
+  "distinct_target_tool_count": 9,
+  "eligible_native_authz_task_count": 198,
+  "future_protocol_preparation_authorized": true,
+  "gpu_run_authorized": false,
+  "maximum_single_selected_memory_count": 9,
+  "maximum_single_selected_memory_share": 0.16981132075471697,
+  "memory_source_target_overlap_count": 0,
+  "native_authz_exact_prior_overlap_count": 0,
+  "native_authz_task_count": 198,
+  "no_retry_memory_in_top10_count": 0,
+  "preferred_selection_changed_capacity_met": true,
+  "preferred_selection_changed_count": 30,
+  "prior_source_task_exclusion_count": 189,
+  "public_test_task_count": 1200,
+  "rejected_native_authz_task_count": 23,
+  "selection_changed_count": 53,
+  "valid_native_target_count": 175
+}
+RESULT=PASS_TRANSIENT_AUTHZ_PUBLIC_TEST_CAPACITY
+NOTE=No model was loaded and no model output was read or generated.

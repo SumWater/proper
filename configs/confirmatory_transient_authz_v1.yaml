@@ -1,0 +1,110 @@
+schema_version: 1
+status: frozen_before_native_authz_model_outputs
+protocol: docs/preregistration_confirmatory_transient_authz_v1.md
+scope: released_transient_authorization_memory_selection
+
+dataset:
+  repo_id: sigdelakshey/ToolMisuseBench
+  revision: 98eb28718b0393e029088ce80604c48807216de4
+  split: test_public
+  local_directory: work/toolmisusebench_test
+  local_filename: test_public.jsonl
+  expected_task_count: 1200
+  expected_bytes: 1695141
+  sha256: 12c5e1e93926f4089dfc8d0c60cea53b556057360562375510744858fc6f1161
+  toolmisusebench_commit: b6ee3412f98d2058ee487e182a72b26c58046d51
+
+frozen_capacity:
+  config: configs/transient_authz_capacity_v1.yaml
+  config_sha256: cfccc15ceb11308bb5eb37ce9e72c7c16434cbfe24979ebca83eafda6fd85a07
+  screening: outputs/transient_authz_capacity_v1/screening.json
+  screening_sha256: a2e264dac63b2d9162c6dc9d5af7bc3a3b809f03303a4de5e047e87f8316540e
+  result_lock: configs/transient_authz_capacity_v1.result.lock.json
+  expected_all_target_count: 175
+  expected_primary_pair_count: 53
+  expected_unique_generation_count: 228
+
+memory_bank:
+  split: dev
+  source_count: 100
+  prepared_manifest: work/memory_bank_prepared.json
+  prepared_manifest_sha256: da06c6538fb8494a1ab50fee9d4a97d74f6a4e6f7ee161b014cec97d7c459011
+  prepared_payload_sha256: b2841f434e2ffd89a11de73be3fe7c3d5dc0dbd42dd9d2990b6b49a0b4ff6c42
+
+cohort:
+  included: released_native_transient_authorization_only
+  persistent_authorization_excluded: true
+  prior_argument_omission_source_count_excluded: 189
+  primary_population: selector_changed_rank1_before_model_outputs
+  descriptive_population: all_valid_native_transient_authorization_targets
+
+conditions:
+  fixed_order:
+    - tfidf_rank1_memory
+    - proper_transient_authz_memory
+  primary_comparison: proper_transient_authz_memory_vs_tfidf_rank1_memory
+  identical_prompt_reuse_permitted: true
+  full_prompt_and_model_output_saved: true
+
+model:
+  name: Qwen3-8B
+  backend: transformers
+  manifest: configs/qwen3_8b_model.sha256
+  manifest_sha256: aa3e07db476dac6f3af8ad14958cb6febee947243f4bc29d7f6c5eda5c92e4ba
+  enable_thinking: false
+  do_sample: false
+  temperature: 0.0
+  max_new_tokens: 256
+  maximum_post_failure_decisions: 1
+  cuda_visible_devices: "0"
+
+environment:
+  conda_explicit_sha256: ed07021e8c5584886c6a31c639811e0bfaf66143a10dc263ab27797dcfd72679
+  pip_freeze_sha256: 2c6dee2832f484632d729f341b21a2e92d220021cb6b95f015f9cf19a7df363f
+
+primary_endpoint:
+  name: recovery_validity
+  hypothesis_direction: paired_positive_transfer_greater_than_paired_negative_transfer
+  test: exact_two_sided_mcnemar
+  alpha: 0.05
+  support_rule: ppt_greater_than_pnt_and_p_value_below_alpha
+  paired_risk_difference_ci: paired_wald_normal_clipped
+  confidence_level: 0.95
+
+secondary_endpoints:
+  - task_completion
+  - memory_induced_action_change
+  - exact_retry
+  - safety_violation
+  - repeated_invalid_calls
+  - all_valid_target_recovery_validity
+  - tool_stratified_recovery_validity
+  - selected_memory_concentration
+
+boundary:
+  model_output_holdout_not_unseen_input_claim: true
+  selector_hidden_labels_forbidden: true
+  persistent_authorization_generalization_forbidden: true
+  capacity_result_used_before_model_outputs_only: true
+  no_refit: true
+  no_threshold_tuning: true
+
+outputs:
+  prepared_manifest: work/confirmatory_transient_authz_v1_prepared.json
+  screening_output: outputs/confirmatory_transient_authz_v1/screening.json
+  result_output: outputs/confirmatory_transient_authz_v1/results.json
+  schema: schemas/confirmatory_transient_authz_v1.schema.json
+  never_overwrite:
+    - outputs/confirmatory_gate_v1/results.json
+    - outputs/transient_authz_capacity_v1/screening.json
+
+stop_rules:
+  capacity_hash_mismatch: stop
+  public_test_hash_mismatch: stop
+  memory_bank_hash_mismatch: stop
+  project_manifest_mismatch: stop
+  source_target_overlap: stop
+  primary_pair_count_not_53: stop
+  hidden_field_in_prompt_or_selector: stop
+  persistent_authorization_in_cohort: stop
+  any_refit_after_capacity_result: forbidden

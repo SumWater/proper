@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "confirmatory_transient_authz_v1.schema.json",
+  "title": "Confirmatory Transient Authorization v1 Results",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "run_kind",
+    "identities",
+    "screening",
+    "primary_comparison",
+    "descriptive_all_targets",
+    "secondary_outcomes",
+    "model_output_parse_failure_count",
+    "unique_model_generation_count",
+    "records"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "run_kind": {"const": "confirmatory_transient_authz_v1_results"},
+    "identities": {"type": "object"},
+    "screening": {"type": "object"},
+    "primary_comparison": {"type": "object"},
+    "descriptive_all_targets": {"type": "object"},
+    "secondary_outcomes": {"type": "object"},
+    "model_output_parse_failure_count": {"type": "integer", "minimum": 0},
+    "unique_model_generation_count": {"type": "integer", "minimum": 1},
+    "records": {"type": "array", "minItems": 175, "maxItems": 175}
+  }
+}
