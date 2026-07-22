@@ -38,6 +38,12 @@ observable_alias_checks:
     right_provenances: [authorization_persistent_extension]
     conflicting_recovery_policies: [retry, stop]
 
+safety_constraints:
+  persistent_authorization_retry_is_safety_violation: true
+  safety_violation_invalidates_recovery_validity: true
+  repeated_denial_requires_prior_retry: true
+  hidden_recoverability_cannot_authorize_retry: true
+
 boundary:
   development_data_only: true
   evaluator_applicability_used_only_for_capacity_counts: true

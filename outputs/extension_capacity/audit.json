@@ -1,4 +1,119 @@
 {
+  "authorization_strata": {
+    "persistent_local_extension": {
+      "all_readiness_checks_met": false,
+      "candidate_depths": {
+        "1": {
+          "applicable_candidate_available_count": 11,
+          "rank1_inapplicable_with_replacement_count": 0
+        },
+        "10": {
+          "applicable_candidate_available_count": 28,
+          "rank1_inapplicable_with_replacement_count": 17
+        },
+        "5": {
+          "applicable_candidate_available_count": 25,
+          "rank1_inapplicable_with_replacement_count": 14
+        }
+      },
+      "distinct_target_tool_count": 7,
+      "provenance_counts": {
+        "authorization_persistent_extension": 28
+      },
+      "rank1_applicable_count": 11,
+      "rank1_inapplicable_count": 17,
+      "readiness_checks": {
+        "intervention_capacity_met": true,
+        "replacement_memory_diversity_met": true,
+        "target_capacity_met": false,
+        "tool_diversity_met": true
+      },
+      "target_count": 28,
+      "target_tools": [
+        "create_job",
+        "get_doc",
+        "read_file",
+        "search_docs",
+        "update_account",
+        "validate_cron",
+        "write_file"
+      ],
+      "top10_replacement_diversity": {
+        "distinct_experience_count": 8,
+        "distinct_policy_count": 1,
+        "distinct_source_tool_count": 6,
+        "maximum_single_experience_count": 6,
+        "maximum_single_experience_share": 0.35294117647058826,
+        "policy_counts": {
+          "stop": 17
+        },
+        "replacement_count": 17,
+        "source_tool_counts": {
+          "create_job": 7,
+          "get_doc": 2,
+          "read_file": 2,
+          "search_docs": 1,
+          "update_account": 1,
+          "validate_cron": 4
+        }
+      }
+    },
+    "transient_native": {
+      "all_readiness_checks_met": false,
+      "candidate_depths": {
+        "1": {
+          "applicable_candidate_available_count": 18,
+          "rank1_inapplicable_with_replacement_count": 0
+        },
+        "10": {
+          "applicable_candidate_available_count": 26,
+          "rank1_inapplicable_with_replacement_count": 8
+        },
+        "5": {
+          "applicable_candidate_available_count": 26,
+          "rank1_inapplicable_with_replacement_count": 8
+        }
+      },
+      "distinct_target_tool_count": 7,
+      "provenance_counts": {
+        "authorization_transient": 26
+      },
+      "rank1_applicable_count": 18,
+      "rank1_inapplicable_count": 8,
+      "readiness_checks": {
+        "intervention_capacity_met": false,
+        "replacement_memory_diversity_met": true,
+        "target_capacity_met": false,
+        "tool_diversity_met": true
+      },
+      "target_count": 26,
+      "target_tools": [
+        "create_job",
+        "get_doc",
+        "read_file",
+        "search_docs",
+        "update_account",
+        "validate_cron",
+        "write_file"
+      ],
+      "top10_replacement_diversity": {
+        "distinct_experience_count": 6,
+        "distinct_policy_count": 1,
+        "distinct_source_tool_count": 3,
+        "maximum_single_experience_count": 2,
+        "maximum_single_experience_share": 0.25,
+        "policy_counts": {
+          "retry": 8
+        },
+        "replacement_count": 8,
+        "source_tool_counts": {
+          "get_doc": 1,
+          "read_file": 3,
+          "write_file": 4
+        }
+      }
+    }
+  },
   "boundary": {
     "development_data_only": true,
     "evaluator_applicability_used_only_for_capacity_counts": true,
@@ -238,7 +353,7 @@
     }
   },
   "identities": {
-    "config_sha256": "d6193ccd664ac356012f6caad32e2af013266431c6de8b6cd904642431aac296",
+    "config_sha256": "0852e46410721a17bc3e304a7167e80098eb01c61ca2f78e77064175aa7ba965",
     "selection_manifest_sha256": "5570d6399a91a558b0957f623bb2bc70a2d6dc52e5918b2b7c30b4a0103f8cdb"
   },
   "interpretation_limits": {
@@ -271,7 +386,8 @@
   "planning_decision": {
     "direct_one_step_generalization_ready": false,
     "native_families_all_capacity_ready": false,
-    "next_action": "design_observation_aware_proper_v2_protocol_before_any_gpu_run"
+    "next_action": "audit_native_transient_authorization_public_test_capacity",
+    "unsafe_diagnostic_retry_rejected": true
   },
   "population": {
     "candidate_depths": [
@@ -283,5 +399,11 @@
     "target_count": 332
   },
   "run_kind": "exploratory_proper_v2_extension_capacity_audit",
+  "safety_feasibility": {
+    "persistent_authorization_retry_is_safety_violation": true,
+    "repeated_denial_requires_prior_retry": true,
+    "safe_stateful_authorization_probe_available": false,
+    "safety_violation_invalidates_recovery_validity": true
+  },
   "schema_version": 1
 }

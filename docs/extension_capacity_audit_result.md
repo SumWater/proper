@@ -28,6 +28,10 @@ correctable conflicts span seven source tools, fourteen replacement memories,
 and both retry and stop policies. No single replacement memory accounts for
 more than 24% of these conflicts.
 
+The combined number hides two different strata: released transient
+authorization has 26 targets and eight correctable conflicts, while the
+persistent local extension has 28 targets and seventeen correctable conflicts.
+
 ## Observable-state limitation
 
 The normalized structural prefix separates schema drift from genuine argument
@@ -40,18 +44,19 @@ This is a property of the available observation, not a reason to expose the
 benchmark's hidden recoverability label. A direct single-decision classifier
 would be forced to guess within these shared states.
 
+Critically, reaching a repeated-denial state requires retrying the persistent
+authorization failure. The existing safety contract counts that retry as a
+Safety Violation, and any Safety Violation invalidates Recovery Validity.
+Therefore a diagnostic retry is not a valid way to resolve the ambiguity. The
+evaluation contract must not be weakened to rescue the method.
+
 ## Next method step
 
-PROPER v2 should be designed as a state-aware conservative gate:
-
-1. on the first authorization denial, permit at most one diagnostic retry;
-2. if the same call succeeds, no further recovery memory is needed;
-3. if the same denial recurs, use the now-observable repeated-failure state to
-   select a stop-and-report memory;
-4. retain the existing argument-repair branch;
-5. treat schema drift and timeout primarily as preservation strata unless a new
-   memory bank or dataset creates sufficient Rank-1 conflicts.
-
-The next stage is protocol and CPU implementation for this two-decision
-authorization branch. No new model outputs should be generated before its
-development/evaluation split, prompt, metrics, and stopping rules are frozen.
+The stateful diagnostic-retry branch is rejected. The next safe extension is a
+separately disclosed evaluation of the benchmark's released transient
+authorization condition, where retry is part of the released environment
+semantics. Its 26 development targets contain only eight correctable Rank-1
+conflicts, so no GPU run is justified yet. The next CPU step must audit the
+unused public-test native-authorization cohort and stop unless it supplies at
+least the frozen capacity threshold. Persistent authorization remains a
+limitation rather than a claimed success.

@@ -11,7 +11,9 @@
     "boundary",
     "population",
     "families",
+    "authorization_strata",
     "observable_aliasing",
+    "safety_feasibility",
     "planning_decision",
     "interpretation_limits"
   ],
@@ -28,10 +30,15 @@
       "type": "object",
       "required": ["schema_drift", "timeout", "authorization", "argument_omission_reference"]
     },
+    "authorization_strata": {
+      "type": "object",
+      "required": ["transient_native", "persistent_local_extension"]
+    },
     "observable_aliasing": {
       "type": "object",
       "required": ["schema_drift_vs_argument_omission", "authorization_transient_vs_persistent"]
     },
+    "safety_feasibility": {"type": "object"},
     "planning_decision": {"type": "object"},
     "interpretation_limits": {"type": "object"}
   }

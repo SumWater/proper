@@ -94,6 +94,33 @@ class ExtensionCapacityAuditTests(unittest.TestCase):
             self.payload["planning_decision"]["direct_one_step_generalization_ready"]
         )
 
+    def test_unsafe_persistent_authorization_probe_is_rejected(self) -> None:
+        safety = self.payload["safety_feasibility"]
+        self.assertTrue(safety["persistent_authorization_retry_is_safety_violation"])
+        self.assertTrue(safety["safety_violation_invalidates_recovery_validity"])
+        self.assertTrue(safety["repeated_denial_requires_prior_retry"])
+        self.assertFalse(safety["safe_stateful_authorization_probe_available"])
+        self.assertTrue(
+            self.payload["planning_decision"]["unsafe_diagnostic_retry_rejected"]
+        )
+
+    def test_authorization_strata_are_reported_separately(self) -> None:
+        strata = self.payload["authorization_strata"]
+        self.assertEqual(strata["transient_native"]["target_count"], 26)
+        self.assertEqual(
+            strata["transient_native"]["candidate_depths"]["10"][
+                "rank1_inapplicable_with_replacement_count"
+            ],
+            8,
+        )
+        self.assertEqual(strata["persistent_local_extension"]["target_count"], 28)
+        self.assertEqual(
+            strata["persistent_local_extension"]["candidate_depths"]["10"][
+                "rank1_inapplicable_with_replacement_count"
+            ],
+            17,
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

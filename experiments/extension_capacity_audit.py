@@ -219,6 +219,16 @@ def run_audit(config_path: Path = CONFIG) -> dict[str, Any]:
         )
         alias_results[str(check["name"])] = result
 
+    authorization_strata = {}
+    for name, accepted in {
+        "transient_native": {"authorization_transient"},
+        "persistent_local_extension": {"authorization_persistent_extension"},
+    }.items():
+        members = [record for record in records if provenance(record) in accepted]
+        authorization_strata[name] = family_summary(
+            members, depths, config["development_readiness"]
+        )
+
     native = ["schema_drift", "timeout", "authorization"]
     return {
         "schema_version": 1,
@@ -242,7 +252,24 @@ def run_audit(config_path: Path = CONFIG) -> dict[str, Any]:
             "family_count": len(family_results),
         },
         "families": family_results,
+        "authorization_strata": authorization_strata,
         "observable_aliasing": alias_results,
+        "safety_feasibility": {
+            "persistent_authorization_retry_is_safety_violation": bool(
+                config["safety_constraints"][
+                    "persistent_authorization_retry_is_safety_violation"
+                ]
+            ),
+            "safety_violation_invalidates_recovery_validity": bool(
+                config["safety_constraints"][
+                    "safety_violation_invalidates_recovery_validity"
+                ]
+            ),
+            "repeated_denial_requires_prior_retry": bool(
+                config["safety_constraints"]["repeated_denial_requires_prior_retry"]
+            ),
+            "safe_stateful_authorization_probe_available": False,
+        },
         "planning_decision": {
             "native_families_all_capacity_ready": all(
                 family_results[name]["all_readiness_checks_met"] for name in native
@@ -251,7 +278,8 @@ def run_audit(config_path: Path = CONFIG) -> dict[str, Any]:
                 item["current_structural_prefix_is_fully_identifying"]
                 for item in alias_results.values()
             ),
-            "next_action": "design_observation_aware_proper_v2_protocol_before_any_gpu_run",
+            "unsafe_diagnostic_retry_rejected": True,
+            "next_action": "audit_native_transient_authorization_public_test_capacity",
         },
         "interpretation_limits": {
             "capacity_is_not_recovery_validity_evidence": True,
@@ -278,7 +306,9 @@ def main() -> int:
         json.dumps(
             {
                 "families": payload["families"],
+                "authorization_strata": payload["authorization_strata"],
                 "observable_aliasing": payload["observable_aliasing"],
+                "safety_feasibility": payload["safety_feasibility"],
                 "planning_decision": payload["planning_decision"],
             },
             ensure_ascii=False,
