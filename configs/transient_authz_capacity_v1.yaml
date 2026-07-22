@@ -1,0 +1,67 @@
+schema_version: 1
+status: frozen_cpu_capacity_protocol_before_native_authz_model_outputs
+method: proper_transient_authz_retry_memory_gate
+
+scope:
+  included: released_transient_authorization_tasks_only
+  persistent_authorization_excluded: true
+  persistent_retry_is_safety_violation: true
+  cross_recoverability_generalization_claim_forbidden: true
+
+dataset:
+  repo_id: sigdelakshey/ToolMisuseBench
+  revision: 98eb28718b0393e029088ce80604c48807216de4
+  split: test_public
+  local_directory: work/toolmisusebench_test
+  local_filename: test_public.jsonl
+  expected_task_count: 1200
+  expected_bytes: 1695141
+  sha256: 12c5e1e93926f4089dfc8d0c60cea53b556057360562375510744858fc6f1161
+  toolmisusebench_commit: b6ee3412f98d2058ee487e182a72b26c58046d51
+
+memory_bank:
+  split: dev
+  source_count: 100
+  prepared_manifest: work/memory_bank_prepared.json
+  prepared_manifest_sha256: da06c6538fb8494a1ab50fee9d4a97d74f6a4e6f7ee161b014cec97d7c459011
+  dev_sample_sha256: a5a2b49b28c66f01bdbac37966c00cca9c6a1027a6d4b5b3a8c1d1d359db27e3
+  retrieval: frozen_source_blind_tfidf
+  top_k: 10
+
+prior_result_exclusion:
+  result: outputs/confirmatory_gate_v1/results.json
+  result_sha256: 6e44ef0eba2bf7efeed7163d61a621d2a1a5385b6aa507f7ce0417222d2fceb8
+  expected_source_task_count: 189
+
+selector:
+  trigger_error_code: authz_denied
+  trigger_observation_count: 1
+  required_candidate_policy: retry
+  preserve_rank1_when_already_retry: true
+  replacement_preference: [same_tool, original_tfidf_rank]
+  forbidden_inputs:
+    - provenance
+    - fault_plan
+    - fault_type
+    - recoverability
+    - environment_applicability
+    - recovery_outcome
+
+capacity_gate:
+  minimum_valid_native_targets: 50
+  minimum_selection_changed_pairs: 20
+  preferred_selection_changed_pairs: 30
+  minimum_changed_pair_distinct_tools: 3
+  minimum_selected_memory_count: 3
+  maximum_single_selected_memory_share: 0.5
+
+boundary:
+  cohort_fault_label_used_evaluator_side_only: true
+  released_retry_applicability_validated_evaluator_side_only: true
+  selector_hidden_labels_forbidden: true
+  model_loaded: false
+  model_outputs_read: false
+  gpu_run_authorized: false
+
+outputs:
+  screening: outputs/transient_authz_capacity_v1/screening.json

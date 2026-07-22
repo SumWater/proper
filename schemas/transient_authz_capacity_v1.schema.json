@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "transient_authz_capacity_v1.schema.json",
+  "title": "Transient Authorization Public-Test Capacity Screening",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "run_kind", "identities", "boundary", "screening", "records"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "run_kind": {"const": "transient_authz_public_test_capacity_screening"},
+    "identities": {"type": "object"},
+    "boundary": {"type": "object"},
+    "screening": {"type": "object"},
+    "records": {"type": "array", "uniqueItems": true}
+  }
+}

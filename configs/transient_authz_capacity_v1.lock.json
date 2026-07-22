@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "status": "frozen_before_public_test_native_authz_screening",
+  "config": {
+    "path": "configs/transient_authz_capacity_v1.yaml",
+    "sha256": "cfccc15ceb11308bb5eb37ce9e72c7c16434cbfe24979ebca83eafda6fd85a07"
+  },
+  "runner": {
+    "path": "experiments/transient_authz_capacity_v1.py",
+    "sha256": "59256a6f3d2d9d6379f50f04778f69418ba93d464347e0647b74bd5f9514e1b9"
+  },
+  "selector": {
+    "path": "src/failure_memory/transient_authz_gate.py",
+    "sha256": "32a21b6e594bfebbb5e4bfcff1a570cf6f32470bbc49d81abb0e25970e16cd47"
+  },
+  "output_schema": {
+    "path": "schemas/transient_authz_capacity_v1.schema.json",
+    "sha256": "08702574a3cd7a7ec3c98ed00b5cd78c017a2f6a506c51d875eaf0447f4c9a77"
+  },
+  "protocol": {
+    "path": "docs/transient_authz_capacity_v1_protocol.md",
+    "sha256": "08d6dd7b94b68230a972e9fe85ef9dcb5318b5c0cdf913d5199aa2987a154bbd"
+  },
+  "public_test": {
+    "path": "work/toolmisusebench_test/test_public.jsonl",
+    "expected_bytes": 1695141,
+    "sha256": "12c5e1e93926f4089dfc8d0c60cea53b556057360562375510744858fc6f1161"
+  },
+  "prior_result": {
+    "path": "outputs/confirmatory_gate_v1/results.json",
+    "sha256": "6e44ef0eba2bf7efeed7163d61a621d2a1a5385b6aa507f7ce0417222d2fceb8"
+  },
+  "model_outputs_generated": false,
+  "gpu_run_authorized": false
+}

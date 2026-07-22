@@ -28,6 +28,9 @@ confirmation data must remain separated from the frozen public-test result.
 The CPU-only capacity audit found that authorization has the strongest new
 candidate capacity but requires a repeated-denial observation; see
 `docs/extension_capacity_audit_result.md`.
+Because probing a persistent denial would violate the safety contract, the
+next frozen CPU audit is restricted to the released transient-authorization
+stratum; see `docs/transient_authz_capacity_v1_protocol.md`.
 
 ## Repository map
 
@@ -36,6 +39,7 @@ candidate capacity but requires a repeated-denial observation; see
 - `experiments/applicability_intervention_gate.py`: development cross-validation
 - `experiments/confirmatory_gate_v1.py`: frozen model experiment
 - `experiments/extension_capacity_audit.py`: CPU-only cross-failure capacity audit
+- `experiments/transient_authz_capacity_v1.py`: native transient-authz capacity preparation
 - `outputs/proper_gate/`: frozen gate-development artifact
 - `outputs/candidate_selection/`: frozen candidate-ranking artifact
 - `outputs/confirmatory_gate_v1/`: immutable formal results and analysis
