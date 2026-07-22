@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "proper_v1_selection.schema.json",
+  "title": "PROPER v1 Frozen Offline Selection Manifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "run_kind",
+    "identities",
+    "boundary",
+    "offline_selection",
+    "rule_design_existing_output_reuse",
+    "records"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "run_kind": {"const": "proper_v1_offline_development_selection"},
+    "boundary": {
+      "type": "object",
+      "required": [
+        "new_model_output_generated",
+        "sealed_validation_outcomes_used",
+        "development_only_not_confirmatory"
+      ],
+      "properties": {
+        "new_model_output_generated": {"const": false},
+        "sealed_validation_outcomes_used": {"const": false},
+        "development_only_not_confirmatory": {"const": true}
+      }
+    },
+    "offline_selection": {
+      "type": "object",
+      "required": [
+        "target_count",
+        "rank1_applicable_count",
+        "conflict_count",
+        "selection_changed_count",
+        "rank1_applicable_exact_selection_preservation_rate",
+        "conflict_selected_applicable_rate",
+        "offline_preservation_gate_pass"
+      ]
+    },
+    "records": {
+      "type": "array",
+      "minItems": 332,
+      "maxItems": 332,
+      "items": {
+        "type": "object",
+        "required": [
+          "instance_id",
+          "development_partition",
+          "target_features",
+          "baseline_rank1_experience_id",
+          "proper_selected_experience_id",
+          "prompt",
+          "prompt_sha256",
+          "proper_top10"
+        ],
+        "properties": {
+          "proper_top10": {
+            "type": "array",
+            "minItems": 10,
+            "maxItems": 10
+          }
+        }
+      }
+    }
+  }
+}

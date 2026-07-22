@@ -1,0 +1,57 @@
+schema_version: 1
+status: completed_exploratory_observable_identifiability_audit
+purpose: quantify_observable_intervention_aliasing_not_method_validation
+
+input:
+  selection_manifest: outputs/candidate_selection/selection_manifest.json
+  selection_manifest_sha256: 5570d6399a91a558b0957f623bb2bc70a2d6dc52e5918b2b7c30b4a0103f8cdb
+  target_count: 332
+  model_outputs_forbidden: true
+
+label_used_only_for_post_signature_audit:
+  name: beneficial_applicability_intervention_available
+  definition:
+    - tfidf_rank1_is_environment_inapplicable
+    - at_least_one_top10_candidate_is_environment_applicable
+  not_equivalent_to_model_utility: true
+
+signature_levels:
+  - state_and_baseline_policy
+  - state_tool_and_baseline_policy
+  - normalized_structural_and_baseline_policy
+  - normalized_structural_with_candidate_policy_counts
+  - normalized_structural_with_candidate_profiles
+
+normalized_structural_fields:
+  - failure_state
+  - error_code
+  - tool_name
+  - missing_fields
+  - public_schema_fields
+  - public_required_fields
+  - schema_signature
+  - failed_argument_paths
+  - repeated_same_call_count
+  - baseline_policy_from_text
+
+candidate_profile_fields:
+  - original_rank
+  - policy_from_text
+  - source_failure_state
+  - source_tool_name
+  - repair_targets
+
+forbidden_signature_inputs:
+  - instance_id
+  - source_task_id
+  - provenance
+  - fault_plan
+  - fault_type
+  - recoverability
+  - environment_applicability
+  - recovery_outcomes
+
+interpretation:
+  majority_ceiling_is_descriptive_development_bound: true
+  validation_model_outcomes_remain_sealed: true
+  no_selector_or_gpu_run_authorized: true

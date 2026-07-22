@@ -1,0 +1,57 @@
+schema_version: 1
+status: frozen_before_offline_selector_evaluation
+method: deterministic_observable_evidence_top10_reranker
+training: none
+abstention: false
+
+compatibility_matrix:
+  timeout:
+    retry: compatible
+    repair: incompatible
+    stop: incompatible
+    unknown: uncertain
+  argument_omission:
+    retry: incompatible
+    repair: compatible
+    stop: incompatible
+    unknown: uncertain
+  missing_claim_present:
+    retry: compatible
+    repair: incompatible
+    stop: incompatible
+    unknown: uncertain
+  authorization_first_denial:
+    retry: uncertain
+    repair: incompatible
+    stop: uncertain
+    unknown: uncertain
+  authorization_repeated_denial:
+    retry: incompatible
+    repair: incompatible
+    stop: compatible
+    unknown: uncertain
+  unknown:
+    retry: uncertain
+    repair: uncertain
+    stop: uncertain
+    unknown: uncertain
+
+enabled_contradictions:
+  - retry_with_public_argument_omission
+  - repair_target_mismatch
+  - repair_when_claimed_missing_is_present
+  - stop_on_directly_recoverable_failure
+  - retry_after_repeated_authorization_denial
+  - repair_nonexistent_public_field
+
+lexicographic_order:
+  - fewer_contradictions
+  - policy_compatibility
+  - repair_target_agreement
+  - failure_evidence_agreement
+  - tool_compatibility
+  - tfidf_score
+  - experience_id
+
+authorization_first_denial_rule: preserve_tfidf_order_between_retry_and_stop
+cross_tool_rule: preference_not_hard_filter

@@ -1,0 +1,257 @@
+{
+  "all_valid_targets_descriptive_pair": {
+    "directional_hypothesis_supported": true,
+    "exact_mcnemar_two_sided_p": 0.001953125,
+    "hypothesis_direction": "ppt_greater_than_pnt",
+    "inapplicable_memory_harm_count": 0,
+    "memory_induced_action_change_count": 13,
+    "net_paired_effect": 0.05291005291005291,
+    "pair_count": 189,
+    "paired_negative_transfer_count": 0,
+    "paired_negative_transfer_rate": 0.0,
+    "paired_positive_transfer_count": 10,
+    "paired_positive_transfer_rate": 0.05291005291005291,
+    "paired_risk_difference": 0.05291005291005291,
+    "paired_risk_difference_ci95": [
+      0.020911239225210564,
+      0.08490886659489524
+    ],
+    "paired_risk_difference_ci_method": "paired_wald_normal_clipped",
+    "policy_followed_harm_count": 0,
+    "strict_policy_adoption_count": 0
+  },
+  "condition_metrics_all_valid_targets": {
+    "matched_applicable_memory": {
+      "count": 189,
+      "model_output_reuse_count": 162,
+      "recovery_tool_calls_total": 189,
+      "recovery_validity_count": 172,
+      "recovery_validity_rate": 0.91005291005291,
+      "repeated_invalid_calls_total": 2,
+      "safety_violation_count": 0,
+      "task_completion_count": 172
+    },
+    "no_memory": {
+      "count": 189,
+      "model_output_reuse_count": 0,
+      "recovery_tool_calls_total": 189,
+      "recovery_validity_count": 156,
+      "recovery_validity_rate": 0.8253968253968254,
+      "repeated_invalid_calls_total": 5,
+      "safety_violation_count": 0,
+      "task_completion_count": 156
+    },
+    "proper_gate_memory": {
+      "count": 189,
+      "model_output_reuse_count": 74,
+      "recovery_tool_calls_total": 189,
+      "recovery_validity_count": 172,
+      "recovery_validity_rate": 0.91005291005291,
+      "repeated_invalid_calls_total": 2,
+      "safety_violation_count": 0,
+      "task_completion_count": 172
+    },
+    "tfidf_rank1_memory": {
+      "count": 189,
+      "model_output_reuse_count": 0,
+      "recovery_tool_calls_total": 189,
+      "recovery_validity_count": 162,
+      "recovery_validity_rate": 0.8571428571428571,
+      "repeated_invalid_calls_total": 2,
+      "safety_violation_count": 0,
+      "task_completion_count": 162
+    }
+  },
+  "condition_metrics_primary_population": {
+    "matched_applicable_memory": {
+      "count": 115,
+      "model_output_reuse_count": 103,
+      "recovery_tool_calls_total": 115,
+      "recovery_validity_count": 109,
+      "recovery_validity_rate": 0.9478260869565217,
+      "repeated_invalid_calls_total": 0,
+      "safety_violation_count": 0,
+      "task_completion_count": 109
+    },
+    "no_memory": {
+      "count": 115,
+      "model_output_reuse_count": 0,
+      "recovery_tool_calls_total": 115,
+      "recovery_validity_count": 97,
+      "recovery_validity_rate": 0.8434782608695652,
+      "repeated_invalid_calls_total": 1,
+      "safety_violation_count": 0,
+      "task_completion_count": 97
+    },
+    "proper_gate_memory": {
+      "count": 115,
+      "model_output_reuse_count": 0,
+      "recovery_tool_calls_total": 115,
+      "recovery_validity_count": 109,
+      "recovery_validity_rate": 0.9478260869565217,
+      "repeated_invalid_calls_total": 0,
+      "safety_violation_count": 0,
+      "task_completion_count": 109
+    },
+    "tfidf_rank1_memory": {
+      "count": 115,
+      "model_output_reuse_count": 0,
+      "recovery_tool_calls_total": 115,
+      "recovery_validity_count": 99,
+      "recovery_validity_rate": 0.8608695652173913,
+      "repeated_invalid_calls_total": 0,
+      "safety_violation_count": 0,
+      "task_completion_count": 99
+    }
+  },
+  "effect_concentration": {
+    "action_change_tool_counts": {
+      "get_doc": 13
+    },
+    "all_improvements_single_selected_memory": true,
+    "all_improvements_single_tool": true,
+    "deterioration_count": 0,
+    "improvement_count": 10,
+    "improvement_selected_memory_counts": {
+      "experience::dev_v2_retrieval_clean_medium_relaxed_00707::argument_omission_extension": 10
+    },
+    "improvement_tool_counts": {
+      "get_doc": 10
+    }
+  },
+  "identities": {
+    "model_manifest_sha256": "aa3e07db476dac6f3af8ad14958cb6febee947243f4bc29d7f6c5eda5c92e4ba",
+    "prepared_file_sha256": "64a66efcfad906ffc1191bb4a8086a2b7255793aef877689d20143ac2dc071bb",
+    "raw_results_sha256": "6e44ef0eba2bf7efeed7163d61a621d2a1a5385b6aa507f7ce0417222d2fceb8",
+    "test_public_sha256": "12c5e1e93926f4089dfc8d0c60cea53b556057360562375510744858fc6f1161"
+  },
+  "improvement_instance_ids": [
+    "test_public_v2_retrieval_clean_easy_relaxed_00488::argument_omission_extension",
+    "test_public_v2_retrieval_clean_easy_tight_00918::argument_omission_extension",
+    "test_public_v2_retrieval_clean_easy_relaxed_00920::argument_omission_extension",
+    "test_public_v2_retrieval_clean_hard_relaxed_00494::argument_omission_extension",
+    "test_public_v2_retrieval_clean_hard_standard_00709::argument_omission_extension",
+    "test_public_v2_retrieval_clean_easy_relaxed_00056::argument_omission_extension",
+    "test_public_v2_retrieval_clean_medium_tight_00705::argument_omission_extension",
+    "test_public_v2_retrieval_clean_medium_relaxed_00707::argument_omission_extension",
+    "test_public_v2_retrieval_clean_easy_tight_00486::argument_omission_extension",
+    "test_public_v2_retrieval_clean_medium_relaxed_01139::argument_omission_extension"
+  ],
+  "interpretation": {
+    "claim_limited_to_argument_omission_extension": true,
+    "cross_tool_causal_improvement_demonstrated": false,
+    "preregistered_primary_hypothesis_supported": true,
+    "reason": "all observed RV improvements and action changes occur on get_doc"
+  },
+  "model_output_parse_failure_count": 0,
+  "population": {
+    "all_valid_target_count": 189,
+    "gate_changed_inapplicable_to_applicable_count": 115,
+    "gate_intervention_count": 119,
+    "gate_kept_applicable_rank1_count": 59,
+    "gate_kept_inapplicable_rank1_count": 15,
+    "primary_gate_changed_count": 115
+  },
+  "primary_recomputed": {
+    "directional_hypothesis_supported": true,
+    "exact_mcnemar_two_sided_p": 0.001953125,
+    "hypothesis_direction": "ppt_greater_than_pnt",
+    "inapplicable_memory_harm_count": 0,
+    "memory_induced_action_change_count": 13,
+    "net_paired_effect": 0.08695652173913043,
+    "pair_count": 115,
+    "paired_negative_transfer_count": 0,
+    "paired_negative_transfer_rate": 0.0,
+    "paired_positive_transfer_count": 10,
+    "paired_positive_transfer_rate": 0.08695652173913043,
+    "paired_risk_difference": 0.08695652173913043,
+    "paired_risk_difference_ci95": [
+      0.03523247749425959,
+      0.13868056598400127
+    ],
+    "paired_risk_difference_ci_method": "paired_wald_normal_clipped",
+    "policy_followed_harm_count": 0,
+    "strict_policy_adoption_count": 0
+  },
+  "run_kind": "confirmatory_gate_v1_independent_analysis",
+  "schema_version": 1,
+  "tool_strata_primary_population": [
+    {
+      "exact_mcnemar_two_sided_p": 1.0,
+      "gate_recovery_validity_count": 12,
+      "memory_induced_action_change_count": 0,
+      "pair_count": 12,
+      "paired_negative_transfer_count": 0,
+      "paired_positive_transfer_count": 0,
+      "rank1_recovery_validity_count": 12,
+      "risk_difference": 0.0,
+      "tool_name": "close_account"
+    },
+    {
+      "exact_mcnemar_two_sided_p": 0.001953125,
+      "gate_recovery_validity_count": 19,
+      "memory_induced_action_change_count": 13,
+      "pair_count": 25,
+      "paired_negative_transfer_count": 0,
+      "paired_positive_transfer_count": 10,
+      "rank1_recovery_validity_count": 9,
+      "risk_difference": 0.4,
+      "tool_name": "get_doc"
+    },
+    {
+      "exact_mcnemar_two_sided_p": 1.0,
+      "gate_recovery_validity_count": 16,
+      "memory_induced_action_change_count": 0,
+      "pair_count": 16,
+      "paired_negative_transfer_count": 0,
+      "paired_positive_transfer_count": 0,
+      "rank1_recovery_validity_count": 16,
+      "risk_difference": 0.0,
+      "tool_name": "read_file"
+    },
+    {
+      "exact_mcnemar_two_sided_p": 1.0,
+      "gate_recovery_validity_count": 8,
+      "memory_induced_action_change_count": 0,
+      "pair_count": 8,
+      "paired_negative_transfer_count": 0,
+      "paired_positive_transfer_count": 0,
+      "rank1_recovery_validity_count": 8,
+      "risk_difference": 0.0,
+      "tool_name": "search_docs"
+    },
+    {
+      "exact_mcnemar_two_sided_p": 1.0,
+      "gate_recovery_validity_count": 11,
+      "memory_induced_action_change_count": 0,
+      "pair_count": 11,
+      "paired_negative_transfer_count": 0,
+      "paired_positive_transfer_count": 0,
+      "rank1_recovery_validity_count": 11,
+      "risk_difference": 0.0,
+      "tool_name": "update_account"
+    },
+    {
+      "exact_mcnemar_two_sided_p": 1.0,
+      "gate_recovery_validity_count": 21,
+      "memory_induced_action_change_count": 0,
+      "pair_count": 21,
+      "paired_negative_transfer_count": 0,
+      "paired_positive_transfer_count": 0,
+      "rank1_recovery_validity_count": 21,
+      "risk_difference": 0.0,
+      "tool_name": "validate_cron"
+    },
+    {
+      "exact_mcnemar_two_sided_p": 1.0,
+      "gate_recovery_validity_count": 22,
+      "memory_induced_action_change_count": 0,
+      "pair_count": 22,
+      "paired_negative_transfer_count": 0,
+      "paired_positive_transfer_count": 0,
+      "rank1_recovery_validity_count": 22,
+      "risk_difference": 0.0,
+      "tool_name": "write_file"
+    }
+  ]
+}

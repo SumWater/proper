@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "confirmatory_gate_v1.schema.json",
+  "title": "Confirmatory Gate v1 artifact",
+  "oneOf": [
+    {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "run_kind",
+        "identities",
+        "boundary",
+        "screening",
+        "memory_sources",
+        "records"
+      ],
+      "properties": {
+        "schema_version": {"const": 1},
+        "run_kind": {"const": "confirmatory_gate_v1_prepared"},
+        "records": {"type": "array"}
+      }
+    },
+    {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "run_kind",
+        "identities",
+        "screening",
+        "primary_comparison",
+        "model_output_parse_failure_count",
+        "records"
+      ],
+      "properties": {
+        "schema_version": {"const": 1},
+        "run_kind": {"const": "confirmatory_gate_v1_results"},
+        "records": {"type": "array", "minItems": 1}
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "platform": "Windows",
+  "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+  "packages": {
+    "numpy": "1.26.4",
+    "scipy": "1.13.1",
+    "scikit-learn": "1.5.1"
+  },
+  "requirements_file": "requirements-gate.txt",
+  "cross_validation_result": "outputs/proper_gate/cross_validation.json",
+  "note": "This lock records the already completed Windows CPU development run and does not modify its result."
+}

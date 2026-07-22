@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "status": "refactored_runtime_lock_after_completed_formal_result",
+  "config": {
+    "path": "configs/confirmatory_gate_v1.runtime.yaml",
+    "sha256": "5a5b0e629a28ac5e76588fcb3dd109586d159a5a97e2fc66126b5eceb43ae521"
+  },
+  "runner": {
+    "path": "experiments/confirmatory_gate_v1.py",
+    "sha256": "1f5ab3647ee616668776c5e7a8e4bef67de12e67c10f03088bc5306432f9ec2f"
+  },
+  "frozen_gate_source": {
+    "path": "src/failure_memory/frozen_gate.py",
+    "sha256": "7fa471b6ed8435f922156c361792dee37476daaf6a49292002e310f7454886fb"
+  },
+  "feature_source": {
+    "path": "src/failure_memory/intervention_gate.py",
+    "sha256": "d8f228ec51acd5672c2704c6fd1da4eabd391c41e9d0c1e7aa0b90b7ee0e1bee"
+  },
+  "public_test": {
+    "path": "work/toolmisusebench_test/test_public.jsonl",
+    "expected_bytes": 1695141,
+    "sha256": "12c5e1e93926f4089dfc8d0c60cea53b556057360562375510744858fc6f1161",
+    "acquired": false
+  },
+  "public_test_model_outputs_generated": false,
+  "note": "Post-result refactoring lock for the runnable slim tree; the original formal identity is configs/confirmatory_gate_v1.lock.json."
+}

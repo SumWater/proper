@@ -1,0 +1,127 @@
+schema_version: 1
+status: refactored_runtime_after_completed_formal_result
+protocol: docs/preregistration_confirmatory_gate_v1.md
+scope: conservative_argument_repair_memory_selection
+
+dataset:
+  repo_id: sigdelakshey/ToolMisuseBench
+  revision: 98eb28718b0393e029088ce80604c48807216de4
+  release: v0.2_large
+  split: test_public
+  expected_task_count: 1200
+  local_directory: work/toolmisusebench_test
+  local_filename: test_public.jsonl
+  expected_bytes: 1695141
+  sha256: 12c5e1e93926f4089dfc8d0c60cea53b556057360562375510744858fc6f1161
+  toolmisusebench_commit: b6ee3412f98d2058ee487e182a72b26c58046d51
+  test_content_must_not_be_opened_before_protocol_freeze: true
+
+development_dependencies:
+  dev_sample: work/toolmisusebench_sample/dev.jsonl
+  dev_sample_sha256: a5a2b49b28c66f01bdbac37966c00cca9c6a1027a6d4b5b3a8c1d1d359db27e3
+  frozen_memory_bank_manifest: work/memory_bank_prepared.json
+  frozen_memory_bank_manifest_sha256: da06c6538fb8494a1ab50fee9d4a97d74f6a4e6f7ee161b014cec97d7c459011
+  memory_source_count: 100
+  gate_artifact: outputs/proper_gate/cross_validation.json
+  gate_artifact_sha256: 074f2ff97a917baf087a69b940a49c3a1668a8fe82ea99b5f9365db208b5736d
+  gate_model_payload_sha256: c1d068b602e4f6757f4dfb9d93eed8e03b860e433494c296de0dcb32f18954a9
+  candidate_rules: configs/candidate_rules.yaml
+  candidate_rules_sha256: 58203f9716ec6c15f919b2dace99f89fa311fc039c9aafe2faeee20dbc8871d4
+  candidate_selector_source: src/failure_memory/candidate_selector.py
+  candidate_selector_source_sha256: de686298eff50f665c8bb2748799be016e3807c1fc08f40c0ecfa4e6c87d7a7a
+
+target_cohort:
+  base_task_fault: clean
+  extension: deterministic_argument_omission
+  one_target_per_base_task: true
+  ordering: sha256_seed_colon_source_task_id
+  seed: confirmatory-gate-v1-20260721
+  use_all_valid_clean_test_tasks: true
+  no_dev_or_pilot_target_reuse: true
+  minimum_gate_changed_primary_pairs: 50
+  preferred_gate_changed_primary_pairs: 80
+  below_minimum_action: stop_without_gpu_run
+
+retrieval:
+  memory_sources: frozen_100_dev_sources_only
+  source_target_split_isolation: dev_sources_vs_test_targets
+  retriever: frozen_source_blind_tfidf
+  top_k_for_gate_and_reranker: 10
+  baseline: tfidf_rank1
+  deterministic_candidate_ranking: frozen_candidate_selector
+  applicable_control: highest_tfidf_rank_environment_applicable_among_100
+
+gate:
+  inference: frozen_nonzero_logistic_coefficients
+  probability_threshold: 0.75
+  negative_or_low_confidence: keep_tfidf_rank1
+  positive: use_frozen_candidate_selection
+  no_refit: true
+  no_threshold_change: true
+  no_test_label_input: true
+
+conditions:
+  fixed_order:
+    - no_memory
+    - tfidf_rank1_memory
+    - proper_gate_memory
+    - matched_applicable_memory
+  primary_contrast: proper_gate_memory_vs_tfidf_rank1_memory
+  primary_population: gate_selection_changed_before_model_outputs
+  identical_prompt_reuse_permitted: true
+  full_prompt_and_output_must_be_saved: true
+  controls_are_descriptive: [no_memory, matched_applicable_memory]
+
+model:
+  name: Qwen3-8B
+  backend: transformers
+  manifest: configs/qwen3_8b_model.sha256
+  manifest_sha256: aa3e07db476dac6f3af8ad14958cb6febee947243f4bc29d7f6c5eda5c92e4ba
+  enable_thinking: false
+  do_sample: false
+  temperature: 0.0
+  max_new_tokens: 256
+  maximum_post_failure_decisions: 1
+  cuda_visible_devices: "0"
+
+environment:
+  conda_explicit_sha256: ed07021e8c5584886c6a31c639811e0bfaf66143a10dc263ab27797dcfd72679
+  pip_freeze_sha256: 2c6dee2832f484632d729f341b21a2e92d220021cb6b95f015f9cf19a7df363f
+
+primary_endpoint:
+  name: recovery_validity
+  paired_positive_transfer: "I[R_gate > R_rank1]"
+  paired_negative_transfer: "I[R_gate < R_rank1]"
+  hypothesis_direction: paired_positive_transfer_greater_than_paired_negative_transfer
+  test: exact_two_sided_mcnemar
+  alpha: 0.05
+  support_rule: ppt_greater_than_pnt_and_p_value_below_alpha
+  paired_risk_difference_ci: paired_wald_normal_clipped
+  confidence_level: 0.95
+
+secondary_endpoints:
+  - memory_induced_action_change
+  - task_completion
+  - safety_violation
+  - repeated_invalid_calls
+  - recovery_steps
+  - recovery_tool_calls
+  - all_valid_target_recovery_validity
+  - gate_selection_applicability
+
+outputs:
+  prepared_manifest: work/confirmatory_gate_v1_prepared.json
+  screening_output: outputs/confirmatory_gate_v1/screening.json
+  result_output: outputs/confirmatory_gate_v1/results.json
+  schema: schemas/confirmatory_gate_v1.schema.json
+  never_overwrite:
+    - outputs/development_four_condition/results.json
+
+stop_rules:
+  test_hash_mismatch: stop
+  memory_bank_mismatch: stop
+  gate_artifact_mismatch: stop
+  insufficient_gate_changed_pairs: stop_without_gpu
+  any_source_target_overlap: stop
+  any_hidden_field_in_prompt_or_gate_features: stop
+  test_result_used_for_refit_or_threshold_change: forbidden

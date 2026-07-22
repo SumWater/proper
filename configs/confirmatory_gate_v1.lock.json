@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "status": "frozen_before_public_test_acquisition",
+  "config": {
+    "path": "configs/confirmatory_gate_v1.yaml",
+    "sha256": "781f8305162840e6ce6e3ca43890255ace0bda4e3108997e2b62d92a085423f1"
+  },
+  "runner": {
+    "path": "experiments/confirmatory_gate_v1.py",
+    "sha256": "1fa5935efc62b19020df76aab347dd349ecea652d7c94ac9b794578165f4bc6f"
+  },
+  "frozen_gate_source": {
+    "path": "src/failure_memory/frozen_gate.py",
+    "sha256": "7fa471b6ed8435f922156c361792dee37476daaf6a49292002e310f7454886fb"
+  },
+  "feature_source": {
+    "path": "src/failure_memory/intervention_gate.py",
+    "sha256": "d8f228ec51acd5672c2704c6fd1da4eabd391c41e9d0c1e7aa0b90b7ee0e1bee"
+  },
+  "public_test": {
+    "path": "work/toolmisusebench_test/test_public.jsonl",
+    "expected_bytes": 1695141,
+    "sha256": "12c5e1e93926f4089dfc8d0c60cea53b556057360562375510744858fc6f1161",
+    "acquired": false
+  },
+  "public_test_model_outputs_generated": false,
+  "note": "Any change to a locked method file invalidates Confirmatory Gate v1."
+}

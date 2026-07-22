@@ -1,0 +1,1915 @@
+{
+  "always_keep_baseline": {
+    "accuracy": 0.7108433734939759,
+    "correct_count": 236
+  },
+  "boundary": {
+    "evaluator_labels_joined_after_signature_construction": true,
+    "exploratory_development_only": true,
+    "hidden_fields_used_in_signature": false,
+    "model_loaded": false,
+    "model_outputs_read": false,
+    "validation_model_outcomes_read": false
+  },
+  "identities": {
+    "config_sha256": "3e0d5c9e2142f15bd4a160b7b58b2cba497a663595260b5879458523a8ec4b36",
+    "selection_manifest_sha256": "5570d6399a91a558b0957f623bb2bc70a2d6dc52e5918b2b7c30b4a0103f8cdb"
+  },
+  "interpretation_limits": {
+    "does_not_authorize_post_hoc_selector_tuning": true,
+    "does_not_prove_impossibility_for_all_observable_models": true,
+    "majority_accuracy_is_not_model_recovery_validity": true
+  },
+  "population": {
+    "rank1_applicable_count": 228,
+    "rank1_inapplicable_with_top10_replacement_count": 96,
+    "rank1_inapplicable_without_top10_replacement_count": 8,
+    "target_count": 332
+  },
+  "run_kind": "exploratory_observable_identifiability_audit",
+  "schema_version": 1,
+  "signature_analyses": [
+    {
+      "ambiguous_group_count": 3,
+      "ambiguous_groups": [
+        {
+          "evaluator_only_provenance_counts": {
+            "argument_omission_extension": 72,
+            "schema_backend_one_shot": 63
+          },
+          "intervention_available_count": 64,
+          "keep_or_no_replacement_count": 71,
+          "majority_correct_count": 71,
+          "majority_trigger": false,
+          "signature": {
+            "baseline_policy_from_text": "retry",
+            "failure_state": "argument_omission"
+          },
+          "target_count": 135
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "authorization_persistent_extension": 16,
+            "authorization_transient": 18
+          },
+          "intervention_available_count": 16,
+          "keep_or_no_replacement_count": 18,
+          "majority_correct_count": 18,
+          "majority_trigger": false,
+          "signature": {
+            "baseline_policy_from_text": "retry",
+            "failure_state": "authorization_first_denial"
+          },
+          "target_count": 34
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "authorization_persistent_extension": 11,
+            "authorization_transient": 8
+          },
+          "intervention_available_count": 8,
+          "keep_or_no_replacement_count": 11,
+          "majority_correct_count": 11,
+          "majority_trigger": false,
+          "signature": {
+            "baseline_policy_from_text": "stop",
+            "failure_state": "authorization_first_denial"
+          },
+          "target_count": 19
+        }
+      ],
+      "ambiguous_target_count": 188,
+      "deterministic_majority_accuracy": 0.7349397590361446,
+      "deterministic_majority_correct_count": 244,
+      "signature_group_count": 7,
+      "signature_level": "state_and_baseline_policy"
+    },
+    {
+      "ambiguous_group_count": 14,
+      "ambiguous_groups": [
+        {
+          "evaluator_only_provenance_counts": {
+            "argument_omission_extension": 18,
+            "schema_backend_one_shot": 15
+          },
+          "intervention_available_count": 10,
+          "keep_or_no_replacement_count": 23,
+          "majority_correct_count": 23,
+          "majority_trigger": false,
+          "signature": {
+            "baseline_policy_from_text": "retry",
+            "failure_state": "argument_omission",
+            "tool_name": "read_file"
+          },
+          "target_count": 33
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "argument_omission_extension": 15,
+            "schema_backend_one_shot": 15
+          },
+          "intervention_available_count": 15,
+          "keep_or_no_replacement_count": 15,
+          "majority_correct_count": 15,
+          "majority_trigger": false,
+          "signature": {
+            "baseline_policy_from_text": "retry",
+            "failure_state": "argument_omission",
+            "tool_name": "get_doc"
+          },
+          "target_count": 30
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "argument_omission_extension": 15,
+            "schema_backend_one_shot": 14
+          },
+          "intervention_available_count": 15,
+          "keep_or_no_replacement_count": 14,
+          "majority_correct_count": 15,
+          "majority_trigger": true,
+          "signature": {
+            "baseline_policy_from_text": "retry",
+            "failure_state": "argument_omission",
+            "tool_name": "validate_cron"
+          },
+          "target_count": 29
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "argument_omission_extension": 8,
+            "schema_backend_one_shot": 7
+          },
+          "intervention_available_count": 8,
+          "keep_or_no_replacement_count": 7,
+          "majority_correct_count": 8,
+          "majority_trigger": true,
+          "signature": {
+            "baseline_policy_from_text": "retry",
+            "failure_state": "argument_omission",
+            "tool_name": "write_file"
+          },
+          "target_count": 15
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "argument_omission_extension": 7,
+            "schema_backend_one_shot": 5
+          },
+          "intervention_available_count": 7,
+          "keep_or_no_replacement_count": 5,
+          "majority_correct_count": 7,
+          "majority_trigger": true,
+          "signature": {
+            "baseline_policy_from_text": "retry",
+            "failure_state": "argument_omission",
+            "tool_name": "search_docs"
+          },
+          "target_count": 12
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "authorization_persistent_extension": 4,
+            "authorization_transient": 7
+          },
+          "intervention_available_count": 4,
+          "keep_or_no_replacement_count": 7,
+          "majority_correct_count": 7,
+          "majority_trigger": false,
+          "signature": {
+            "baseline_policy_from_text": "retry",
+            "failure_state": "authorization_first_denial",
+            "tool_name": "validate_cron"
+          },
+          "target_count": 11
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "argument_omission_extension": 6,
+            "schema_backend_one_shot": 3
+          },
+          "intervention_available_count": 6,
+          "keep_or_no_replacement_count": 3,
+          "majority_correct_count": 6,
+          "majority_trigger": true,
+          "signature": {
+            "baseline_policy_from_text": "retry",
+            "failure_state": "argument_omission",
+            "tool_name": "update_account"
+          },
+          "target_count": 9
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "authorization_persistent_extension": 4,
+            "authorization_transient": 5
+          },
+          "intervention_available_count": 5,
+          "keep_or_no_replacement_count": 4,
+          "majority_correct_count": 5,
+          "majority_trigger": true,
+          "signature": {
+            "baseline_policy_from_text": "stop",
+            "failure_state": "authorization_first_denial",
+            "tool_name": "write_file"
+          },
+          "target_count": 9
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "authorization_persistent_extension": 7,
+            "authorization_transient": 1
+          },
+          "intervention_available_count": 7,
+          "keep_or_no_replacement_count": 1,
+          "majority_correct_count": 7,
+          "majority_trigger": true,
+          "signature": {
+            "baseline_policy_from_text": "retry",
+            "failure_state": "authorization_first_denial",
+            "tool_name": "create_job"
+          },
+          "target_count": 8
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "argument_omission_extension": 3,
+            "schema_backend_one_shot": 4
+          },
+          "intervention_available_count": 3,
+          "keep_or_no_replacement_count": 4,
+          "majority_correct_count": 4,
+          "majority_trigger": false,
+          "signature": {
+            "baseline_policy_from_text": "retry",
+            "failure_state": "argument_omission",
+            "tool_name": "close_account"
+          },
+          "target_count": 7
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "authorization_persistent_extension": 2,
+            "authorization_transient": 5
+          },
+          "intervention_available_count": 2,
+          "keep_or_no_replacement_count": 5,
+          "majority_correct_count": 5,
+          "majority_trigger": false,
+          "signature": {
+            "baseline_policy_from_text": "retry",
+            "failure_state": "authorization_first_denial",
+            "tool_name": "read_file"
+          },
+          "target_count": 7
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "authorization_persistent_extension": 4,
+            "authorization_transient": 2
+          },
+          "intervention_available_count": 2,
+          "keep_or_no_replacement_count": 4,
+          "majority_correct_count": 4,
+          "majority_trigger": false,
+          "signature": {
+            "baseline_policy_from_text": "stop",
+            "failure_state": "authorization_first_denial",
+            "tool_name": "read_file"
+          },
+          "target_count": 6
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "authorization_persistent_extension": 2,
+            "authorization_transient": 1
+          },
+          "intervention_available_count": 2,
+          "keep_or_no_replacement_count": 1,
+          "majority_correct_count": 2,
+          "majority_trigger": true,
+          "signature": {
+            "baseline_policy_from_text": "retry",
+            "failure_state": "authorization_first_denial",
+            "tool_name": "get_doc"
+          },
+          "target_count": 3
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "authorization_persistent_extension": 1,
+            "authorization_transient": 1
+          },
+          "intervention_available_count": 1,
+          "keep_or_no_replacement_count": 1,
+          "majority_correct_count": 1,
+          "majority_trigger": false,
+          "signature": {
+            "baseline_policy_from_text": "retry",
+            "failure_state": "authorization_first_denial",
+            "tool_name": "update_account"
+          },
+          "target_count": 2
+        }
+      ],
+      "ambiguous_target_count": 181,
+      "deterministic_majority_accuracy": 0.7831325301204819,
+      "deterministic_majority_correct_count": 260,
+      "signature_group_count": 38,
+      "signature_level": "state_tool_and_baseline_policy"
+    },
+    {
+      "ambiguous_group_count": 8,
+      "ambiguous_groups": [
+        {
+          "evaluator_only_provenance_counts": {
+            "argument_omission_extension": 18
+          },
+          "intervention_available_count": 10,
+          "keep_or_no_replacement_count": 8,
+          "majority_correct_count": 10,
+          "majority_trigger": true,
+          "signature": {
+            "baseline_policy_from_text": "retry",
+            "error_code": "missing_required_arg",
+            "failed_argument_paths": [],
+            "failure_state": "argument_omission",
+            "missing_fields": [
+              "path"
+            ],
+            "public_required_fields": [
+              "path"
+            ],
+            "public_schema_fields": [
+              "path"
+            ],
+            "repeated_same_call_count": 1,
+            "schema_signature": "{\"additionalProperties\":false,\"properties\":{\"path\":{\"type\":\"string\"}},\"required\":[\"path\"]}",
+            "tool_name": "read_file"
+          },
+          "target_count": 18
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "authorization_persistent_extension": 4,
+            "authorization_transient": 7
+          },
+          "intervention_available_count": 4,
+          "keep_or_no_replacement_count": 7,
+          "majority_correct_count": 7,
+          "majority_trigger": false,
+          "signature": {
+            "baseline_policy_from_text": "retry",
+            "error_code": "authz_denied",
+            "failed_argument_paths": [
+              "/cron"
+            ],
+            "failure_state": "authorization_first_denial",
+            "missing_fields": [],
+            "public_required_fields": [
+              "cron"
+            ],
+            "public_schema_fields": [
+              "cron"
+            ],
+            "repeated_same_call_count": 1,
+            "schema_signature": "{\"additionalProperties\":false,\"properties\":{\"cron\":{\"type\":\"string\"}},\"required\":[\"cron\"]}",
+            "tool_name": "validate_cron"
+          },
+          "target_count": 11
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "authorization_persistent_extension": 4,
+            "authorization_transient": 5
+          },
+          "intervention_available_count": 5,
+          "keep_or_no_replacement_count": 4,
+          "majority_correct_count": 5,
+          "majority_trigger": true,
+          "signature": {
+            "baseline_policy_from_text": "stop",
+            "error_code": "authz_denied",
+            "failed_argument_paths": [
+              "/content",
+              "/path"
+            ],
+            "failure_state": "authorization_first_denial",
+            "missing_fields": [],
+            "public_required_fields": [
+              "content",
+              "path"
+            ],
+            "public_schema_fields": [
+              "content",
+              "path"
+            ],
+            "repeated_same_call_count": 1,
+            "schema_signature": "{\"additionalProperties\":false,\"properties\":{\"content\":{\"type\":\"string\"},\"path\":{\"type\":\"string\"}},\"required\":[\"content\",\"path\"]}",
+            "tool_name": "write_file"
+          },
+          "target_count": 9
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "authorization_persistent_extension": 7,
+            "authorization_transient": 1
+          },
+          "intervention_available_count": 7,
+          "keep_or_no_replacement_count": 1,
+          "majority_correct_count": 7,
+          "majority_trigger": true,
+          "signature": {
+            "baseline_policy_from_text": "retry",
+            "error_code": "authz_denied",
+            "failed_argument_paths": [
+              "/command",
+              "/cron",
+              "/name"
+            ],
+            "failure_state": "authorization_first_denial",
+            "missing_fields": [],
+            "public_required_fields": [
+              "command",
+              "cron",
+              "name"
+            ],
+            "public_schema_fields": [
+              "command",
+              "cron",
+              "name"
+            ],
+            "repeated_same_call_count": 1,
+            "schema_signature": "{\"additionalProperties\":false,\"properties\":{\"command\":{\"type\":\"string\"},\"cron\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"}},\"required\":[\"command\",\"cron\",\"name\"]}",
+            "tool_name": "create_job"
+          },
+          "target_count": 8
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "authorization_persistent_extension": 2,
+            "authorization_transient": 5
+          },
+          "intervention_available_count": 2,
+          "keep_or_no_replacement_count": 5,
+          "majority_correct_count": 5,
+          "majority_trigger": false,
+          "signature": {
+            "baseline_policy_from_text": "retry",
+            "error_code": "authz_denied",
+            "failed_argument_paths": [
+              "/path"
+            ],
+            "failure_state": "authorization_first_denial",
+            "missing_fields": [],
+            "public_required_fields": [
+              "path"
+            ],
+            "public_schema_fields": [
+              "path"
+            ],
+            "repeated_same_call_count": 1,
+            "schema_signature": "{\"additionalProperties\":false,\"properties\":{\"path\":{\"type\":\"string\"}},\"required\":[\"path\"]}",
+            "tool_name": "read_file"
+          },
+          "target_count": 7
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "authorization_persistent_extension": 4,
+            "authorization_transient": 2
+          },
+          "intervention_available_count": 2,
+          "keep_or_no_replacement_count": 4,
+          "majority_correct_count": 4,
+          "majority_trigger": false,
+          "signature": {
+            "baseline_policy_from_text": "stop",
+            "error_code": "authz_denied",
+            "failed_argument_paths": [
+              "/path"
+            ],
+            "failure_state": "authorization_first_denial",
+            "missing_fields": [],
+            "public_required_fields": [
+              "path"
+            ],
+            "public_schema_fields": [
+              "path"
+            ],
+            "repeated_same_call_count": 1,
+            "schema_signature": "{\"additionalProperties\":false,\"properties\":{\"path\":{\"type\":\"string\"}},\"required\":[\"path\"]}",
+            "tool_name": "read_file"
+          },
+          "target_count": 6
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "authorization_persistent_extension": 2,
+            "authorization_transient": 1
+          },
+          "intervention_available_count": 2,
+          "keep_or_no_replacement_count": 1,
+          "majority_correct_count": 2,
+          "majority_trigger": true,
+          "signature": {
+            "baseline_policy_from_text": "retry",
+            "error_code": "authz_denied",
+            "failed_argument_paths": [
+              "/doc_id"
+            ],
+            "failure_state": "authorization_first_denial",
+            "missing_fields": [],
+            "public_required_fields": [
+              "doc_id"
+            ],
+            "public_schema_fields": [
+              "doc_id"
+            ],
+            "repeated_same_call_count": 1,
+            "schema_signature": "{\"additionalProperties\":false,\"properties\":{\"doc_id\":{\"type\":\"string\"}},\"required\":[\"doc_id\"]}",
+            "tool_name": "get_doc"
+          },
+          "target_count": 3
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "authorization_persistent_extension": 1,
+            "authorization_transient": 1
+          },
+          "intervention_available_count": 1,
+          "keep_or_no_replacement_count": 1,
+          "majority_correct_count": 1,
+          "majority_trigger": false,
+          "signature": {
+            "baseline_policy_from_text": "retry",
+            "error_code": "authz_denied",
+            "failed_argument_paths": [
+              "/id",
+              "/patch/tier"
+            ],
+            "failure_state": "authorization_first_denial",
+            "missing_fields": [],
+            "public_required_fields": [
+              "id",
+              "patch"
+            ],
+            "public_schema_fields": [
+              "id",
+              "patch"
+            ],
+            "repeated_same_call_count": 1,
+            "schema_signature": "{\"additionalProperties\":false,\"properties\":{\"id\":{\"type\":\"string\"},\"patch\":{\"type\":\"object\"}},\"required\":[\"id\",\"patch\"]}",
+            "tool_name": "update_account"
+          },
+          "target_count": 2
+        }
+      ],
+      "ambiguous_target_count": 64,
+      "deterministic_majority_accuracy": 0.9307228915662651,
+      "deterministic_majority_correct_count": 309,
+      "signature_group_count": 50,
+      "signature_level": "normalized_structural_and_baseline_policy"
+    },
+    {
+      "ambiguous_group_count": 11,
+      "ambiguous_groups": [
+        {
+          "evaluator_only_provenance_counts": {
+            "authorization_persistent_extension": 3,
+            "authorization_transient": 4
+          },
+          "intervention_available_count": 3,
+          "keep_or_no_replacement_count": 4,
+          "majority_correct_count": 4,
+          "majority_trigger": false,
+          "signature": {
+            "baseline_policy_from_text": "retry",
+            "candidate_policy_counts": {
+              "repair": 2,
+              "retry": 6,
+              "stop": 2
+            },
+            "error_code": "authz_denied",
+            "failed_argument_paths": [
+              "/cron"
+            ],
+            "failure_state": "authorization_first_denial",
+            "missing_fields": [],
+            "public_required_fields": [
+              "cron"
+            ],
+            "public_schema_fields": [
+              "cron"
+            ],
+            "repeated_same_call_count": 1,
+            "schema_signature": "{\"additionalProperties\":false,\"properties\":{\"cron\":{\"type\":\"string\"}},\"required\":[\"cron\"]}",
+            "tool_name": "validate_cron"
+          },
+          "target_count": 7
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "authorization_persistent_extension": 1,
+            "authorization_transient": 3
+          },
+          "intervention_available_count": 1,
+          "keep_or_no_replacement_count": 3,
+          "majority_correct_count": 3,
+          "majority_trigger": false,
+          "signature": {
+            "baseline_policy_from_text": "retry",
+            "candidate_policy_counts": {
+              "retry": 7,
+              "stop": 3
+            },
+            "error_code": "authz_denied",
+            "failed_argument_paths": [
+              "/path"
+            ],
+            "failure_state": "authorization_first_denial",
+            "missing_fields": [],
+            "public_required_fields": [
+              "path"
+            ],
+            "public_schema_fields": [
+              "path"
+            ],
+            "repeated_same_call_count": 1,
+            "schema_signature": "{\"additionalProperties\":false,\"properties\":{\"path\":{\"type\":\"string\"}},\"required\":[\"path\"]}",
+            "tool_name": "read_file"
+          },
+          "target_count": 4
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "authorization_persistent_extension": 1,
+            "authorization_transient": 2
+          },
+          "intervention_available_count": 1,
+          "keep_or_no_replacement_count": 2,
+          "majority_correct_count": 2,
+          "majority_trigger": false,
+          "signature": {
+            "baseline_policy_from_text": "retry",
+            "candidate_policy_counts": {
+              "retry": 6,
+              "stop": 4
+            },
+            "error_code": "authz_denied",
+            "failed_argument_paths": [
+              "/path"
+            ],
+            "failure_state": "authorization_first_denial",
+            "missing_fields": [],
+            "public_required_fields": [
+              "path"
+            ],
+            "public_schema_fields": [
+              "path"
+            ],
+            "repeated_same_call_count": 1,
+            "schema_signature": "{\"additionalProperties\":false,\"properties\":{\"path\":{\"type\":\"string\"}},\"required\":[\"path\"]}",
+            "tool_name": "read_file"
+          },
+          "target_count": 3
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "authorization_persistent_extension": 2,
+            "authorization_transient": 1
+          },
+          "intervention_available_count": 1,
+          "keep_or_no_replacement_count": 2,
+          "majority_correct_count": 2,
+          "majority_trigger": false,
+          "signature": {
+            "baseline_policy_from_text": "stop",
+            "candidate_policy_counts": {
+              "retry": 6,
+              "stop": 4
+            },
+            "error_code": "authz_denied",
+            "failed_argument_paths": [
+              "/path"
+            ],
+            "failure_state": "authorization_first_denial",
+            "missing_fields": [],
+            "public_required_fields": [
+              "path"
+            ],
+            "public_schema_fields": [
+              "path"
+            ],
+            "repeated_same_call_count": 1,
+            "schema_signature": "{\"additionalProperties\":false,\"properties\":{\"path\":{\"type\":\"string\"}},\"required\":[\"path\"]}",
+            "tool_name": "read_file"
+          },
+          "target_count": 3
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "authorization_persistent_extension": 2,
+            "authorization_transient": 1
+          },
+          "intervention_available_count": 1,
+          "keep_or_no_replacement_count": 2,
+          "majority_correct_count": 2,
+          "majority_trigger": false,
+          "signature": {
+            "baseline_policy_from_text": "stop",
+            "candidate_policy_counts": {
+              "retry": 7,
+              "stop": 3
+            },
+            "error_code": "authz_denied",
+            "failed_argument_paths": [
+              "/path"
+            ],
+            "failure_state": "authorization_first_denial",
+            "missing_fields": [],
+            "public_required_fields": [
+              "path"
+            ],
+            "public_schema_fields": [
+              "path"
+            ],
+            "repeated_same_call_count": 1,
+            "schema_signature": "{\"additionalProperties\":false,\"properties\":{\"path\":{\"type\":\"string\"}},\"required\":[\"path\"]}",
+            "tool_name": "read_file"
+          },
+          "target_count": 3
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "authorization_persistent_extension": 1,
+            "authorization_transient": 1
+          },
+          "intervention_available_count": 1,
+          "keep_or_no_replacement_count": 1,
+          "majority_correct_count": 1,
+          "majority_trigger": false,
+          "signature": {
+            "baseline_policy_from_text": "retry",
+            "candidate_policy_counts": {
+              "repair": 2,
+              "retry": 3,
+              "stop": 5
+            },
+            "error_code": "authz_denied",
+            "failed_argument_paths": [
+              "/command",
+              "/cron",
+              "/name"
+            ],
+            "failure_state": "authorization_first_denial",
+            "missing_fields": [],
+            "public_required_fields": [
+              "command",
+              "cron",
+              "name"
+            ],
+            "public_schema_fields": [
+              "command",
+              "cron",
+              "name"
+            ],
+            "repeated_same_call_count": 1,
+            "schema_signature": "{\"additionalProperties\":false,\"properties\":{\"command\":{\"type\":\"string\"},\"cron\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"}},\"required\":[\"command\",\"cron\",\"name\"]}",
+            "tool_name": "create_job"
+          },
+          "target_count": 2
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "authorization_persistent_extension": 1,
+            "authorization_transient": 1
+          },
+          "intervention_available_count": 1,
+          "keep_or_no_replacement_count": 1,
+          "majority_correct_count": 1,
+          "majority_trigger": false,
+          "signature": {
+            "baseline_policy_from_text": "retry",
+            "candidate_policy_counts": {
+              "retry": 8,
+              "stop": 2
+            },
+            "error_code": "authz_denied",
+            "failed_argument_paths": [
+              "/doc_id"
+            ],
+            "failure_state": "authorization_first_denial",
+            "missing_fields": [],
+            "public_required_fields": [
+              "doc_id"
+            ],
+            "public_schema_fields": [
+              "doc_id"
+            ],
+            "repeated_same_call_count": 1,
+            "schema_signature": "{\"additionalProperties\":false,\"properties\":{\"doc_id\":{\"type\":\"string\"}},\"required\":[\"doc_id\"]}",
+            "tool_name": "get_doc"
+          },
+          "target_count": 2
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "authorization_persistent_extension": 1,
+            "authorization_transient": 1
+          },
+          "intervention_available_count": 1,
+          "keep_or_no_replacement_count": 1,
+          "majority_correct_count": 1,
+          "majority_trigger": false,
+          "signature": {
+            "baseline_policy_from_text": "retry",
+            "candidate_policy_counts": {
+              "retry": 8,
+              "stop": 2
+            },
+            "error_code": "authz_denied",
+            "failed_argument_paths": [
+              "/id",
+              "/patch/tier"
+            ],
+            "failure_state": "authorization_first_denial",
+            "missing_fields": [],
+            "public_required_fields": [
+              "id",
+              "patch"
+            ],
+            "public_schema_fields": [
+              "id",
+              "patch"
+            ],
+            "repeated_same_call_count": 1,
+            "schema_signature": "{\"additionalProperties\":false,\"properties\":{\"id\":{\"type\":\"string\"},\"patch\":{\"type\":\"object\"}},\"required\":[\"id\",\"patch\"]}",
+            "tool_name": "update_account"
+          },
+          "target_count": 2
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "authorization_persistent_extension": 1,
+            "authorization_transient": 1
+          },
+          "intervention_available_count": 1,
+          "keep_or_no_replacement_count": 1,
+          "majority_correct_count": 1,
+          "majority_trigger": false,
+          "signature": {
+            "baseline_policy_from_text": "stop",
+            "candidate_policy_counts": {
+              "repair": 1,
+              "retry": 5,
+              "stop": 4
+            },
+            "error_code": "authz_denied",
+            "failed_argument_paths": [
+              "/content",
+              "/path"
+            ],
+            "failure_state": "authorization_first_denial",
+            "missing_fields": [],
+            "public_required_fields": [
+              "content",
+              "path"
+            ],
+            "public_schema_fields": [
+              "content",
+              "path"
+            ],
+            "repeated_same_call_count": 1,
+            "schema_signature": "{\"additionalProperties\":false,\"properties\":{\"content\":{\"type\":\"string\"},\"path\":{\"type\":\"string\"}},\"required\":[\"content\",\"path\"]}",
+            "tool_name": "write_file"
+          },
+          "target_count": 2
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "authorization_persistent_extension": 1,
+            "authorization_transient": 1
+          },
+          "intervention_available_count": 1,
+          "keep_or_no_replacement_count": 1,
+          "majority_correct_count": 1,
+          "majority_trigger": false,
+          "signature": {
+            "baseline_policy_from_text": "stop",
+            "candidate_policy_counts": {
+              "repair": 2,
+              "retry": 4,
+              "stop": 4
+            },
+            "error_code": "authz_denied",
+            "failed_argument_paths": [
+              "/content",
+              "/path"
+            ],
+            "failure_state": "authorization_first_denial",
+            "missing_fields": [],
+            "public_required_fields": [
+              "content",
+              "path"
+            ],
+            "public_schema_fields": [
+              "content",
+              "path"
+            ],
+            "repeated_same_call_count": 1,
+            "schema_signature": "{\"additionalProperties\":false,\"properties\":{\"content\":{\"type\":\"string\"},\"path\":{\"type\":\"string\"}},\"required\":[\"content\",\"path\"]}",
+            "tool_name": "write_file"
+          },
+          "target_count": 2
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "authorization_persistent_extension": 1,
+            "authorization_transient": 1
+          },
+          "intervention_available_count": 1,
+          "keep_or_no_replacement_count": 1,
+          "majority_correct_count": 1,
+          "majority_trigger": false,
+          "signature": {
+            "baseline_policy_from_text": "stop",
+            "candidate_policy_counts": {
+              "retry": 5,
+              "stop": 5
+            },
+            "error_code": "authz_denied",
+            "failed_argument_paths": [
+              "/content",
+              "/path"
+            ],
+            "failure_state": "authorization_first_denial",
+            "missing_fields": [],
+            "public_required_fields": [
+              "content",
+              "path"
+            ],
+            "public_schema_fields": [
+              "content",
+              "path"
+            ],
+            "repeated_same_call_count": 1,
+            "schema_signature": "{\"additionalProperties\":false,\"properties\":{\"content\":{\"type\":\"string\"},\"path\":{\"type\":\"string\"}},\"required\":[\"content\",\"path\"]}",
+            "tool_name": "write_file"
+          },
+          "target_count": 2
+        }
+      ],
+      "ambiguous_target_count": 32,
+      "deterministic_majority_accuracy": 0.9608433734939759,
+      "deterministic_majority_correct_count": 319,
+      "signature_group_count": 127,
+      "signature_level": "normalized_structural_with_candidate_policy_counts"
+    },
+    {
+      "ambiguous_group_count": 9,
+      "ambiguous_groups": [
+        {
+          "evaluator_only_provenance_counts": {
+            "authorization_persistent_extension": 1,
+            "authorization_transient": 2
+          },
+          "intervention_available_count": 1,
+          "keep_or_no_replacement_count": 2,
+          "majority_correct_count": 2,
+          "majority_trigger": false,
+          "signature": {
+            "baseline_policy_from_text": "retry",
+            "candidate_profiles": [
+              {
+                "original_rank": 1,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "read_file"
+              },
+              {
+                "original_rank": 2,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "read_file"
+              },
+              {
+                "original_rank": 3,
+                "policy_from_text": "stop",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "read_file"
+              },
+              {
+                "original_rank": 4,
+                "policy_from_text": "stop",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "read_file"
+              },
+              {
+                "original_rank": 5,
+                "policy_from_text": "stop",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "read_file"
+              },
+              {
+                "original_rank": 6,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "argument_omission",
+                "source_tool_name": "read_file"
+              },
+              {
+                "original_rank": 7,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "timeout",
+                "source_tool_name": "read_file"
+              },
+              {
+                "original_rank": 8,
+                "policy_from_text": "stop",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "write_file"
+              },
+              {
+                "original_rank": 9,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "argument_omission",
+                "source_tool_name": "read_file"
+              },
+              {
+                "original_rank": 10,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "argument_omission",
+                "source_tool_name": "read_file"
+              }
+            ],
+            "error_code": "authz_denied",
+            "failed_argument_paths": [
+              "/path"
+            ],
+            "failure_state": "authorization_first_denial",
+            "missing_fields": [],
+            "public_required_fields": [
+              "path"
+            ],
+            "public_schema_fields": [
+              "path"
+            ],
+            "repeated_same_call_count": 1,
+            "schema_signature": "{\"additionalProperties\":false,\"properties\":{\"path\":{\"type\":\"string\"}},\"required\":[\"path\"]}",
+            "tool_name": "read_file"
+          },
+          "target_count": 3
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "authorization_persistent_extension": 1,
+            "authorization_transient": 2
+          },
+          "intervention_available_count": 1,
+          "keep_or_no_replacement_count": 2,
+          "majority_correct_count": 2,
+          "majority_trigger": false,
+          "signature": {
+            "baseline_policy_from_text": "retry",
+            "candidate_profiles": [
+              {
+                "original_rank": 1,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "timeout",
+                "source_tool_name": "validate_cron"
+              },
+              {
+                "original_rank": 2,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "validate_cron"
+              },
+              {
+                "original_rank": 3,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "argument_omission",
+                "source_tool_name": "validate_cron"
+              },
+              {
+                "original_rank": 4,
+                "policy_from_text": "repair",
+                "repair_targets": [
+                  "cron"
+                ],
+                "source_failure_state": "argument_omission",
+                "source_tool_name": "validate_cron"
+              },
+              {
+                "original_rank": 5,
+                "policy_from_text": "stop",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "validate_cron"
+              },
+              {
+                "original_rank": 6,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "validate_cron"
+              },
+              {
+                "original_rank": 7,
+                "policy_from_text": "repair",
+                "repair_targets": [
+                  "cron"
+                ],
+                "source_failure_state": "argument_omission",
+                "source_tool_name": "validate_cron"
+              },
+              {
+                "original_rank": 8,
+                "policy_from_text": "stop",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "create_job"
+              },
+              {
+                "original_rank": 9,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "create_job"
+              },
+              {
+                "original_rank": 10,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "validate_cron"
+              }
+            ],
+            "error_code": "authz_denied",
+            "failed_argument_paths": [
+              "/cron"
+            ],
+            "failure_state": "authorization_first_denial",
+            "missing_fields": [],
+            "public_required_fields": [
+              "cron"
+            ],
+            "public_schema_fields": [
+              "cron"
+            ],
+            "repeated_same_call_count": 1,
+            "schema_signature": "{\"additionalProperties\":false,\"properties\":{\"cron\":{\"type\":\"string\"}},\"required\":[\"cron\"]}",
+            "tool_name": "validate_cron"
+          },
+          "target_count": 3
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "authorization_persistent_extension": 2,
+            "authorization_transient": 1
+          },
+          "intervention_available_count": 1,
+          "keep_or_no_replacement_count": 2,
+          "majority_correct_count": 2,
+          "majority_trigger": false,
+          "signature": {
+            "baseline_policy_from_text": "stop",
+            "candidate_profiles": [
+              {
+                "original_rank": 1,
+                "policy_from_text": "stop",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "read_file"
+              },
+              {
+                "original_rank": 2,
+                "policy_from_text": "stop",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "read_file"
+              },
+              {
+                "original_rank": 3,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "read_file"
+              },
+              {
+                "original_rank": 4,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "argument_omission",
+                "source_tool_name": "read_file"
+              },
+              {
+                "original_rank": 5,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "timeout",
+                "source_tool_name": "read_file"
+              },
+              {
+                "original_rank": 6,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "read_file"
+              },
+              {
+                "original_rank": 7,
+                "policy_from_text": "stop",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "read_file"
+              },
+              {
+                "original_rank": 8,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "timeout",
+                "source_tool_name": "read_file"
+              },
+              {
+                "original_rank": 9,
+                "policy_from_text": "stop",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "write_file"
+              },
+              {
+                "original_rank": 10,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "argument_omission",
+                "source_tool_name": "read_file"
+              }
+            ],
+            "error_code": "authz_denied",
+            "failed_argument_paths": [
+              "/path"
+            ],
+            "failure_state": "authorization_first_denial",
+            "missing_fields": [],
+            "public_required_fields": [
+              "path"
+            ],
+            "public_schema_fields": [
+              "path"
+            ],
+            "repeated_same_call_count": 1,
+            "schema_signature": "{\"additionalProperties\":false,\"properties\":{\"path\":{\"type\":\"string\"}},\"required\":[\"path\"]}",
+            "tool_name": "read_file"
+          },
+          "target_count": 3
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "authorization_persistent_extension": 1,
+            "authorization_transient": 1
+          },
+          "intervention_available_count": 1,
+          "keep_or_no_replacement_count": 1,
+          "majority_correct_count": 1,
+          "majority_trigger": false,
+          "signature": {
+            "baseline_policy_from_text": "retry",
+            "candidate_profiles": [
+              {
+                "original_rank": 1,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "argument_omission",
+                "source_tool_name": "update_account"
+              },
+              {
+                "original_rank": 2,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "timeout",
+                "source_tool_name": "update_account"
+              },
+              {
+                "original_rank": 3,
+                "policy_from_text": "stop",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "update_account"
+              },
+              {
+                "original_rank": 4,
+                "policy_from_text": "stop",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "update_account"
+              },
+              {
+                "original_rank": 5,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "validate_cron"
+              },
+              {
+                "original_rank": 6,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "validate_cron"
+              },
+              {
+                "original_rank": 7,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "validate_cron"
+              },
+              {
+                "original_rank": 8,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "search_docs"
+              },
+              {
+                "original_rank": 9,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "read_file"
+              },
+              {
+                "original_rank": 10,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "search_docs"
+              }
+            ],
+            "error_code": "authz_denied",
+            "failed_argument_paths": [
+              "/id",
+              "/patch/tier"
+            ],
+            "failure_state": "authorization_first_denial",
+            "missing_fields": [],
+            "public_required_fields": [
+              "id",
+              "patch"
+            ],
+            "public_schema_fields": [
+              "id",
+              "patch"
+            ],
+            "repeated_same_call_count": 1,
+            "schema_signature": "{\"additionalProperties\":false,\"properties\":{\"id\":{\"type\":\"string\"},\"patch\":{\"type\":\"object\"}},\"required\":[\"id\",\"patch\"]}",
+            "tool_name": "update_account"
+          },
+          "target_count": 2
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "authorization_persistent_extension": 1,
+            "authorization_transient": 1
+          },
+          "intervention_available_count": 1,
+          "keep_or_no_replacement_count": 1,
+          "majority_correct_count": 1,
+          "majority_trigger": false,
+          "signature": {
+            "baseline_policy_from_text": "retry",
+            "candidate_profiles": [
+              {
+                "original_rank": 1,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "validate_cron"
+              },
+              {
+                "original_rank": 2,
+                "policy_from_text": "stop",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "validate_cron"
+              },
+              {
+                "original_rank": 3,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "argument_omission",
+                "source_tool_name": "validate_cron"
+              },
+              {
+                "original_rank": 4,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "timeout",
+                "source_tool_name": "validate_cron"
+              },
+              {
+                "original_rank": 5,
+                "policy_from_text": "repair",
+                "repair_targets": [
+                  "cron"
+                ],
+                "source_failure_state": "argument_omission",
+                "source_tool_name": "validate_cron"
+              },
+              {
+                "original_rank": 6,
+                "policy_from_text": "repair",
+                "repair_targets": [
+                  "cron"
+                ],
+                "source_failure_state": "argument_omission",
+                "source_tool_name": "validate_cron"
+              },
+              {
+                "original_rank": 7,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "validate_cron"
+              },
+              {
+                "original_rank": 8,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "validate_cron"
+              },
+              {
+                "original_rank": 9,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "validate_cron"
+              },
+              {
+                "original_rank": 10,
+                "policy_from_text": "stop",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "create_job"
+              }
+            ],
+            "error_code": "authz_denied",
+            "failed_argument_paths": [
+              "/cron"
+            ],
+            "failure_state": "authorization_first_denial",
+            "missing_fields": [],
+            "public_required_fields": [
+              "cron"
+            ],
+            "public_schema_fields": [
+              "cron"
+            ],
+            "repeated_same_call_count": 1,
+            "schema_signature": "{\"additionalProperties\":false,\"properties\":{\"cron\":{\"type\":\"string\"}},\"required\":[\"cron\"]}",
+            "tool_name": "validate_cron"
+          },
+          "target_count": 2
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "authorization_persistent_extension": 1,
+            "authorization_transient": 1
+          },
+          "intervention_available_count": 1,
+          "keep_or_no_replacement_count": 1,
+          "majority_correct_count": 1,
+          "majority_trigger": false,
+          "signature": {
+            "baseline_policy_from_text": "stop",
+            "candidate_profiles": [
+              {
+                "original_rank": 1,
+                "policy_from_text": "stop",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "read_file"
+              },
+              {
+                "original_rank": 2,
+                "policy_from_text": "stop",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "read_file"
+              },
+              {
+                "original_rank": 3,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "read_file"
+              },
+              {
+                "original_rank": 4,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "argument_omission",
+                "source_tool_name": "read_file"
+              },
+              {
+                "original_rank": 5,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "read_file"
+              },
+              {
+                "original_rank": 6,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "timeout",
+                "source_tool_name": "read_file"
+              },
+              {
+                "original_rank": 7,
+                "policy_from_text": "stop",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "read_file"
+              },
+              {
+                "original_rank": 8,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "argument_omission",
+                "source_tool_name": "read_file"
+              },
+              {
+                "original_rank": 9,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "argument_omission",
+                "source_tool_name": "read_file"
+              },
+              {
+                "original_rank": 10,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "validate_cron"
+              }
+            ],
+            "error_code": "authz_denied",
+            "failed_argument_paths": [
+              "/path"
+            ],
+            "failure_state": "authorization_first_denial",
+            "missing_fields": [],
+            "public_required_fields": [
+              "path"
+            ],
+            "public_schema_fields": [
+              "path"
+            ],
+            "repeated_same_call_count": 1,
+            "schema_signature": "{\"additionalProperties\":false,\"properties\":{\"path\":{\"type\":\"string\"}},\"required\":[\"path\"]}",
+            "tool_name": "read_file"
+          },
+          "target_count": 2
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "authorization_persistent_extension": 1,
+            "authorization_transient": 1
+          },
+          "intervention_available_count": 1,
+          "keep_or_no_replacement_count": 1,
+          "majority_correct_count": 1,
+          "majority_trigger": false,
+          "signature": {
+            "baseline_policy_from_text": "stop",
+            "candidate_profiles": [
+              {
+                "original_rank": 1,
+                "policy_from_text": "stop",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "write_file"
+              },
+              {
+                "original_rank": 2,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "write_file"
+              },
+              {
+                "original_rank": 3,
+                "policy_from_text": "stop",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "write_file"
+              },
+              {
+                "original_rank": 4,
+                "policy_from_text": "stop",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "write_file"
+              },
+              {
+                "original_rank": 5,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "argument_omission",
+                "source_tool_name": "write_file"
+              },
+              {
+                "original_rank": 6,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "timeout",
+                "source_tool_name": "write_file"
+              },
+              {
+                "original_rank": 7,
+                "policy_from_text": "repair",
+                "repair_targets": [
+                  "path"
+                ],
+                "source_failure_state": "argument_omission",
+                "source_tool_name": "write_file"
+              },
+              {
+                "original_rank": 8,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "write_file"
+              },
+              {
+                "original_rank": 9,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "validate_cron"
+              },
+              {
+                "original_rank": 10,
+                "policy_from_text": "stop",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "write_file"
+              }
+            ],
+            "error_code": "authz_denied",
+            "failed_argument_paths": [
+              "/content",
+              "/path"
+            ],
+            "failure_state": "authorization_first_denial",
+            "missing_fields": [],
+            "public_required_fields": [
+              "content",
+              "path"
+            ],
+            "public_schema_fields": [
+              "content",
+              "path"
+            ],
+            "repeated_same_call_count": 1,
+            "schema_signature": "{\"additionalProperties\":false,\"properties\":{\"content\":{\"type\":\"string\"},\"path\":{\"type\":\"string\"}},\"required\":[\"content\",\"path\"]}",
+            "tool_name": "write_file"
+          },
+          "target_count": 2
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "authorization_persistent_extension": 1,
+            "authorization_transient": 1
+          },
+          "intervention_available_count": 1,
+          "keep_or_no_replacement_count": 1,
+          "majority_correct_count": 1,
+          "majority_trigger": false,
+          "signature": {
+            "baseline_policy_from_text": "stop",
+            "candidate_profiles": [
+              {
+                "original_rank": 1,
+                "policy_from_text": "stop",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "write_file"
+              },
+              {
+                "original_rank": 2,
+                "policy_from_text": "stop",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "write_file"
+              },
+              {
+                "original_rank": 3,
+                "policy_from_text": "repair",
+                "repair_targets": [
+                  "path"
+                ],
+                "source_failure_state": "argument_omission",
+                "source_tool_name": "write_file"
+              },
+              {
+                "original_rank": 4,
+                "policy_from_text": "repair",
+                "repair_targets": [
+                  "path"
+                ],
+                "source_failure_state": "argument_omission",
+                "source_tool_name": "write_file"
+              },
+              {
+                "original_rank": 5,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "argument_omission",
+                "source_tool_name": "write_file"
+              },
+              {
+                "original_rank": 6,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "timeout",
+                "source_tool_name": "write_file"
+              },
+              {
+                "original_rank": 7,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "write_file"
+              },
+              {
+                "original_rank": 8,
+                "policy_from_text": "stop",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "write_file"
+              },
+              {
+                "original_rank": 9,
+                "policy_from_text": "stop",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "read_file"
+              },
+              {
+                "original_rank": 10,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "read_file"
+              }
+            ],
+            "error_code": "authz_denied",
+            "failed_argument_paths": [
+              "/content",
+              "/path"
+            ],
+            "failure_state": "authorization_first_denial",
+            "missing_fields": [],
+            "public_required_fields": [
+              "content",
+              "path"
+            ],
+            "public_schema_fields": [
+              "content",
+              "path"
+            ],
+            "repeated_same_call_count": 1,
+            "schema_signature": "{\"additionalProperties\":false,\"properties\":{\"content\":{\"type\":\"string\"},\"path\":{\"type\":\"string\"}},\"required\":[\"content\",\"path\"]}",
+            "tool_name": "write_file"
+          },
+          "target_count": 2
+        },
+        {
+          "evaluator_only_provenance_counts": {
+            "authorization_persistent_extension": 1,
+            "authorization_transient": 1
+          },
+          "intervention_available_count": 1,
+          "keep_or_no_replacement_count": 1,
+          "majority_correct_count": 1,
+          "majority_trigger": false,
+          "signature": {
+            "baseline_policy_from_text": "stop",
+            "candidate_profiles": [
+              {
+                "original_rank": 1,
+                "policy_from_text": "stop",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "write_file"
+              },
+              {
+                "original_rank": 2,
+                "policy_from_text": "stop",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "write_file"
+              },
+              {
+                "original_rank": 3,
+                "policy_from_text": "stop",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "write_file"
+              },
+              {
+                "original_rank": 4,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "write_file"
+              },
+              {
+                "original_rank": 5,
+                "policy_from_text": "stop",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "read_file"
+              },
+              {
+                "original_rank": 6,
+                "policy_from_text": "stop",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "write_file"
+              },
+              {
+                "original_rank": 7,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "argument_omission",
+                "source_tool_name": "write_file"
+              },
+              {
+                "original_rank": 8,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "argument_omission",
+                "source_tool_name": "write_file"
+              },
+              {
+                "original_rank": 9,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "read_file"
+              },
+              {
+                "original_rank": 10,
+                "policy_from_text": "retry",
+                "repair_targets": [],
+                "source_failure_state": "authorization_first_denial",
+                "source_tool_name": "write_file"
+              }
+            ],
+            "error_code": "authz_denied",
+            "failed_argument_paths": [
+              "/content",
+              "/path"
+            ],
+            "failure_state": "authorization_first_denial",
+            "missing_fields": [],
+            "public_required_fields": [
+              "content",
+              "path"
+            ],
+            "public_schema_fields": [
+              "content",
+              "path"
+            ],
+            "repeated_same_call_count": 1,
+            "schema_signature": "{\"additionalProperties\":false,\"properties\":{\"content\":{\"type\":\"string\"},\"path\":{\"type\":\"string\"}},\"required\":[\"content\",\"path\"]}",
+            "tool_name": "write_file"
+          },
+          "target_count": 2
+        }
+      ],
+      "ambiguous_target_count": 21,
+      "deterministic_majority_accuracy": 0.9728915662650602,
+      "deterministic_majority_correct_count": 323,
+      "signature_group_count": 214,
+      "signature_level": "normalized_structural_with_candidate_profiles"
+    }
+  ]
+}

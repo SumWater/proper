@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "applicability_intervention_gate.schema.json",
+  "title": "Applicability Intervention Gate Cross-validation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "run_kind",
+    "identities",
+    "boundary",
+    "population",
+    "cross_validation",
+    "offline_selection",
+    "final_model",
+    "records"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "run_kind": {"const": "applicability_intervention_gate_cross_validation"},
+    "identities": {"type": "object"},
+    "boundary": {"type": "object"},
+    "population": {"type": "object"},
+    "cross_validation": {"type": "object"},
+    "offline_selection": {"type": "object"},
+    "final_model": {"type": ["object", "null"]},
+    "records": {
+      "type": "array",
+      "minItems": 332,
+      "maxItems": 332,
+      "items": {
+        "type": "object",
+        "required": [
+          "instance_id",
+          "fold",
+          "oof_probability",
+          "predicted_intervention",
+          "evaluator_only_intervention_label",
+          "baseline_experience_id",
+          "selected_experience_id",
+          "selection_changed"
+        ]
+      }
+    }
+  }
+}

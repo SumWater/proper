@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "status": "refactored_runtime_lock_after_completed_candidate_development",
+  "development_config_sha256": "914f44be9f89295b59fbdeaaac02ed3ddaff97bd411f31ff29b49d855bd316d6",
+  "rule_config": {
+    "path": "configs/candidate_rules.yaml",
+    "sha256": "58203f9716ec6c15f919b2dace99f89fa311fc039c9aafe2faeee20dbc8871d4"
+  },
+  "rule_source": {
+    "path": "src/failure_memory/candidate_selector.py",
+    "sha256": "de686298eff50f665c8bb2748799be016e3807c1fc08f40c0ecfa4e6c87d7a7a"
+  },
+  "validation_outcomes_unsealed": false,
+  "note": "Runtime lock after path-only project cleanup; completed development outputs remain immutable."
+}

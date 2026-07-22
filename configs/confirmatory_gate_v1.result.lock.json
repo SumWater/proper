@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "status": "complete_confirmatory_result_locked",
+  "decision": "SUPPORT_PRIMARY_HYPOTHESIS",
+  "raw_results": {
+    "path": "outputs/confirmatory_gate_v1/results.json",
+    "sha256": "6e44ef0eba2bf7efeed7163d61a621d2a1a5385b6aa507f7ce0417222d2fceb8"
+  },
+  "linux_prepared_manifest": {
+    "path": "work/confirmatory_gate_v1_prepared.json",
+    "sha256": "64a66efcfad906ffc1191bb4a8086a2b7255793aef877689d20143ac2dc071bb",
+    "payload_sha256": "2d6a0b98a91aea4b84038bd4751e0fa13e80b389edd4167ad65c295172b72de3"
+  },
+  "linux_screening": {
+    "path": "outputs/confirmatory_gate_v1/screening.json",
+    "sha256": "68547e65cf83f8a98267205f300a62aff01cfa29e61bcd7357c8f7f6aedc7c36"
+  },
+  "linux_log": {
+    "path": "work/lab_confirmatory_gate_v1.log",
+    "sha256": "38f5aa19803c348bc62ee31c4ee1e228714b52d7c104902dc7e0e6eaf989e5b2"
+  },
+  "independent_analysis": {
+    "path": "outputs/confirmatory_gate_v1/analysis.json",
+    "sha256": "1b3c9b02b1ea004c36fee483b4e58e32833669d5c42a76a2c51cac2e1a0976f8"
+  },
+  "tool_table": {
+    "path": "outputs/confirmatory_gate_v1/tool_results.csv",
+    "sha256": "c14c5def3fe286c27a7788abebdf969ff5ed6b84540058278b97faa6b14041b8"
+  },
+  "primary_result": {
+    "pair_count": 115,
+    "paired_positive_transfer_count": 10,
+    "paired_negative_transfer_count": 0,
+    "paired_risk_difference": 0.08695652173913043,
+    "paired_risk_difference_ci95": [
+      0.03523247749425966,
+      0.1386805659840012
+    ],
+    "exact_mcnemar_two_sided_p": 0.001953125,
+    "directional_hypothesis_supported": true
+  },
+  "claim_limit": "argument_omission_extension; all observed improvements are get_doc with one selected memory",
+  "raw_results_must_never_be_overwritten": true
+}

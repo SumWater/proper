@@ -1,0 +1,90 @@
+schema_version: 1
+status: refactored_runtime_after_completed_candidate_development
+purpose: development_go_no_go_only_not_confirmatory_evidence
+
+inputs:
+  confirmatory_config: configs/memory_bank.yaml
+  prepared_cohort: work/memory_bank_prepared.json
+  conditional_results: outputs/development_four_condition/results.json
+  fixed_memory_bank_size: 100
+  target_count: 332
+  conflict_target_count: 104
+
+retrieval_audit:
+  retriever: source_blind_tfidf
+  candidate_depths: [1, 5, 10]
+  reranker_depth: 10
+  deterministic_tie_break: experience_id_ascending
+  oracle_label: existing_environment_applicability
+  oracle_is_utility_oracle: false
+  oracle_name: applicability_oracle
+
+development_split:
+  seed: proper-v1-development-split-20260721
+  population: 104_rank1_inapplicable_conflict_targets
+  ordering: sha256_seed_colon_instance_id
+  rule_design_count: 52
+  sealed_validation_count: 52
+  validation_case_level_outcomes_must_remain_hidden_until_rules_frozen: true
+
+selector_boundary:
+  allowed_target_inputs:
+    - task_instruction
+    - public_tool_schema
+    - failed_tool_call
+    - sanitized_tool_return
+    - sanitized_call_history
+    - remaining_budget
+  allowed_candidate_inputs:
+    - candidate_natural_text
+    - candidate_source_tool_derived_from_public_trace
+    - candidate_recovery_action_derived_from_natural_text_or_public_trace
+  forbidden_inputs:
+    - fault_plan
+    - fault_type
+    - recoverability
+    - gold_summary
+    - success_criteria
+    - provenance
+    - recommended_policy
+    - environment_applicability
+    - recovery_validity_outcome
+    - matched_applicable_experience_id
+  evaluator_only_columns:
+    - source_provenance
+    - structured_recovery_policy
+    - environment_applicability
+    - condition_outcomes
+
+proper_v1:
+  training: none
+  top_k: 10
+  abstention_core_method: false
+  scoring: frozen_lexicographic_rules_then_tfidf_then_experience_id
+  feature_families:
+    - observable_failure_compatibility
+    - candidate_policy_compatibility
+    - repair_target_compatibility
+    - tool_compatibility
+    - contradiction_penalty
+    - tfidf_score
+
+development_go_no_go:
+  evaluated_after_rule_source_hash_is_frozen: true
+  full_104_conflict_population_only_after_validation_unseal: true
+  oracle_improvements_recovered_at_least: 3
+  new_recovery_validity_deteriorations_at_most: 1
+  safety_violation_total_delta_at_most: 0
+  repeated_invalid_calls_total_delta_at_most: 0
+  recovered_improvements_minimum_distinct_tools: 2
+  recovered_improvements_minimum_distinct_policies: 2
+  rank1_applicable_offline_preservation_rate_at_least: 0.95
+  note: These thresholds decide further development only and are not paper evidence.
+
+future_confirmation:
+  development_data_forbidden_as_confirmation: true
+  primary_population: all_eligible_unused_targets
+  primary_comparison: proper_v1_vs_tfidf_rank1
+  primary_endpoint: recovery_validity
+  test: exact_two_sided_mcnemar
+  public_test_remains_unseen_until_preregistration_and_code_freeze: true

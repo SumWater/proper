@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "status": "frozen_before_cross_validation",
+  "config": {
+    "path": "configs/applicability_intervention_gate.yaml",
+    "sha256": "58e81038ae445c4c99ee822d5e6ca9dbd226e9df0ccef98df34fc2cd279ee25e"
+  },
+  "feature_source": {
+    "path": "src/failure_memory/intervention_gate.py",
+    "sha256": "d8f228ec51acd5672c2704c6fd1da4eabd391c41e9d0c1e7aa0b90b7ee0e1bee"
+  },
+  "evaluation_runner": {
+    "path": "experiments/applicability_intervention_gate.py",
+    "sha256": "3c3225438b14d1795e28b0628d4b871ae50e8d8ab33cfe03cd90a45cb0d120f1"
+  },
+  "selection_manifest": {
+    "path": "outputs/proper_v1/selection_manifest.json",
+    "sha256": "5570d6399a91a558b0957f623bb2bc70a2d6dc52e5918b2b7c30b4a0103f8cdb"
+  },
+  "threshold_tuning_after_result": false,
+  "validation_model_outcomes_unsealed": false,
+  "note": "Changing a locked file invalidates the intervention-gate cross-validation."
+}

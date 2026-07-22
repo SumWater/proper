@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "confirmatory_v2.schema.json",
+  "title": "Failure Memory Confirmatory v2 Prepared and Conditional Outputs",
+  "type": "object",
+  "required": ["schema_version", "run_kind", "identities", "screening", "records"],
+  "properties": {
+    "schema_version": {"const": 2},
+    "run_kind": {
+      "enum": [
+        "confirmatory_v2_prepared",
+        "confirmatory_v2_screening",
+        "confirmatory_v2_conditional"
+      ]
+    },
+    "identities": {
+      "type": "object",
+      "required": [
+        "dataset_revision",
+        "dev_sample_sha256",
+        "config_sha256",
+        "pilot_exclusions_sha256",
+        "prepared_payload_sha256"
+      ]
+    },
+    "screening": {
+      "type": "object",
+      "required": [
+        "pilot_excluded_source_task_count",
+        "memory_source_count",
+        "target_screened_count",
+        "rank1_inapplicable_count",
+        "matched_confirmatory_pair_count",
+        "minimum_required_pair_count",
+        "gpu_run_authorized_by_capacity"
+      ]
+    },
+    "primary_comparison": {"$ref": "#/$defs/primaryComparison"},
+    "records": {
+      "type": "array",
+      "items": {"type": "object", "required": ["instance_id", "source_task_id"]}
+    },
+    "selected_pairs": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/preparedPair"}
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"run_kind": {"const": "confirmatory_v2_prepared"}}},
+      "then": {"required": ["memory_sources", "selected_pairs"]}
+    },
+    {
+      "if": {"properties": {"run_kind": {"const": "confirmatory_v2_conditional"}}},
+      "then": {"required": ["primary_comparison", "model_output_parse_failure_count"]}
+    }
+  ],
+  "$defs": {
+    "promptSet": {
+      "type": "object",
+      "required": [
+        "no_memory",
+        "neutralized_memory",
+        "inapplicable_memory",
+        "matched_applicable_memory"
+      ],
+      "properties": {
+        "no_memory": {"type": "string"},
+        "neutralized_memory": {"type": "string"},
+        "inapplicable_memory": {"type": "string"},
+        "matched_applicable_memory": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "preparedPair": {
+      "type": "object",
+      "required": [
+        "instance_id",
+        "source_task_id",
+        "prefix_sha256",
+        "inapplicable_experience_id",
+        "matched_applicable_experience_id",
+        "prompts",
+        "prompt_sha256"
+      ],
+      "properties": {"prompts": {"$ref": "#/$defs/promptSet"}}
+    },
+    "primaryComparison": {
+      "type": "object",
+      "required": [
+        "pair_count",
+        "paired_negative_transfer_count",
+        "paired_positive_transfer_count",
+        "net_paired_effect",
+        "paired_risk_difference_ci95",
+        "exact_mcnemar_two_sided_p",
+        "directional_hypothesis_supported"
+      ]
+    }
+  }
+}

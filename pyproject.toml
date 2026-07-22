@@ -9,7 +9,7 @@ description = "Provenance-conditioned recovery experience transfer pilot"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
-dependencies = []
+dependencies = ["PyYAML>=6.0,<7"]
 
 [project.optional-dependencies]
 dev = ["pytest==8.4.1", "ruff==0.12.4"]
@@ -27,4 +27,3 @@ addopts = "-q"
 [tool.ruff]
 line-length = 100
 target-version = "py310"
-

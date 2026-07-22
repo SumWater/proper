@@ -17,9 +17,10 @@ dist/
 *.pem
 *.key
 
-# External checkouts and datasets (keep documentation/placeholders)
+# Curated external runtime only; raw checkouts and datasets stay ignored
 external/*
-!external/.gitkeep
+!external/toolmisusebench/
+!external/toolmisusebench/**
 data/
 datasets/
 models/
@@ -27,15 +28,25 @@ checkpoints/
 
 # Generated work, logs, rollouts, and outputs
 work/*
-!work/.gitkeep
+!work/memory_bank_prepared.json
+!work/confirmatory_gate_v1_prepared.json
 outputs/*
-!outputs/.gitkeep
+!outputs/candidate_selection/
+!outputs/candidate_selection/**
+!outputs/development_four_condition/
+!outputs/development_four_condition/**
+!outputs/observable_identifiability/
+!outputs/observable_identifiability/**
+!outputs/proper_gate/
+!outputs/proper_gate/**
+!outputs/confirmatory_gate_v1/
+!outputs/confirmatory_gate_v1/**
 rollouts/
 *.log
+!work/lab_confirmatory_gate_v1.log
 
 # Editors / OS
 .vscode/
 .idea/
 .DS_Store
 Thumbs.db
-

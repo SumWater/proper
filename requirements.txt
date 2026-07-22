@@ -1,3 +1,4 @@
-# Runtime intentionally uses only the Python standard library in audit phase 1.
-# Install the pinned development extras with: pip install -e ".[dev]"
+# The confirmatory-v2 protocol is frozen in YAML and parsed locally.
+PyYAML>=6.0,<7
 
+# Install the pinned development extras with: pip install -e ".[dev]"

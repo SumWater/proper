@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "observable_identifiability_audit.schema.json",
+  "title": "Observable Identifiability Audit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "run_kind",
+    "identities",
+    "boundary",
+    "population",
+    "always_keep_baseline",
+    "signature_analyses",
+    "interpretation_limits"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "run_kind": {"const": "exploratory_observable_identifiability_audit"},
+    "identities": {"type": "object"},
+    "boundary": {"type": "object"},
+    "population": {"type": "object"},
+    "always_keep_baseline": {"type": "object"},
+    "signature_analyses": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": [
+          "signature_level",
+          "signature_group_count",
+          "ambiguous_group_count",
+          "ambiguous_target_count",
+          "deterministic_majority_correct_count",
+          "deterministic_majority_accuracy",
+          "ambiguous_groups"
+        ]
+      }
+    },
+    "interpretation_limits": {"type": "object"}
+  }
+}

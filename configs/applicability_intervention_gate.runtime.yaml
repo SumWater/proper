@@ -1,0 +1,94 @@
+schema_version: 1
+status: refactored_runtime_after_completed_cross_validation
+purpose: exploratory_development_feasibility_not_model_utility_evidence
+
+input:
+  selection_manifest: outputs/candidate_selection/selection_manifest.json
+  selection_manifest_sha256: 5570d6399a91a558b0957f623bb2bc70a2d6dc52e5918b2b7c30b4a0103f8cdb
+  target_count: 332
+  rank1_applicable_count: 228
+  intervention_available_count: 96
+  rank1_inapplicable_without_top10_replacement_count: 8
+
+label:
+  name: beneficial_applicability_intervention_available
+  positive_requires_all:
+    - tfidf_rank1_environment_inapplicable
+    - at_least_one_top10_candidate_environment_applicable
+  evaluator_label_used_only_after_feature_extraction: true
+  recovery_outcomes_forbidden: true
+
+features:
+  target:
+    - failure_state
+    - error_code
+    - tool_name
+    - missing_fields
+    - public_schema_fields
+    - public_required_fields
+    - failed_argument_paths
+    - repeated_same_call_count
+  each_top10_candidate_in_original_rank_order:
+    - policy_from_text
+    - source_failure_state
+    - source_tool_name
+    - same_tool
+    - repair_targets
+    - repair_target_overlap
+    - public_policy_compatibility
+    - enabled_public_contradiction_count
+  aggregate:
+    - candidate_policy_counts
+    - candidate_compatibility_counts
+    - contradiction_free_compatible_count
+  excluded:
+    - instance_id
+    - source_task_id
+    - experience_id
+    - raw_argument_values
+    - instruction_text
+    - tfidf_score
+    - provenance
+    - fault_plan
+    - fault_type
+    - recoverability
+    - environment_applicability
+    - recovery_outcomes
+
+model:
+  type: logistic_regression
+  vectorizer: sklearn_DictVectorizer_sparse
+  penalty: l1
+  solver: liblinear
+  C: 0.25
+  class_weight: balanced
+  max_iter: 2000
+  random_state: 20260721
+  decision_probability_at_least: 0.75
+
+cross_validation:
+  type: StratifiedKFold
+  folds: 5
+  shuffle: true
+  random_state: 20260721
+  threshold_tuning: forbidden
+  every_target_predicted_once: true
+
+selection_policy:
+  negative_prediction: keep_tfidf_rank1
+  positive_prediction: use_frozen_candidate_selection
+  abstention_or_low_confidence: keep_tfidf_rank1
+
+go_no_go:
+  rank1_applicable_exact_preservation_rate_at_least: 0.95
+  rank1_inapplicable_conflict_selected_applicable_rate_at_least: 0.30
+  positive_label_recall_at_least: 0.35
+  intervention_precision_at_least: 0.70
+  all_oof_predictions_required: true
+
+after_gate:
+  on_failure: stop_without_threshold_or_feature_tuning
+  on_pass: fit_one_final_model_on_all_332_development_targets
+  model_outcome_experiment_authorized: false
+  future_test_requires_new_preregistration: true
+  qwen_scorer_or_lora_authorized: false

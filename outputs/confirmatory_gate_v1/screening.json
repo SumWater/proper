@@ -1,0 +1,1456 @@
+{
+  "boundary": {
+    "local_extension": "argument_omission_extension",
+    "memory_source_split": "dev",
+    "model_loaded": false,
+    "model_outputs_read": false,
+    "target_split": "test_public",
+    "test_labels_used_by_gate": false
+  },
+  "identities": {
+    "config_sha256": "781f8305162840e6ce6e3ca43890255ace0bda4e3108997e2b62d92a085423f1",
+    "frozen_memory_bank_manifest_sha256": "da06c6538fb8494a1ab50fee9d4a97d74f6a4e6f7ee161b014cec97d7c459011",
+    "frozen_memory_bank_payload_sha256": "b2841f434e2ffd89a11de73be3fe7c3d5dc0dbd42dd9d2990b6b49a0b4ff6c42",
+    "gate_artifact_sha256": "074f2ff97a917baf087a69b940a49c3a1668a8fe82ea99b5f9365db208b5736d",
+    "prepared_payload_sha256": "2d6a0b98a91aea4b84038bd4751e0fa13e80b389edd4167ad65c295172b72de3",
+    "source_lock_sha256": "07d9d603414a2618f9a9ec21ab5eb9ca49b59548a9908ce579ce90a8fed5ccff",
+    "test_public_sha256": "12c5e1e93926f4089dfc8d0c60cea53b556057360562375510744858fc6f1161"
+  },
+  "memory_sources": [
+    {
+      "experience_id": "experience::dev_v2_retrieval_timeout_easy_standard_00496::timeout_transient",
+      "natural_text_sha256": "f68daf3dc42d29164c7856bd0d38f84352163bcb4912d24438af13f4a94bf5ef",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "timeout_transient",
+      "source_instance_id": "dev_v2_retrieval_timeout_easy_standard_00496::timeout_transient",
+      "source_task_id": "dev_v2_retrieval_timeout_easy_standard_00496"
+    },
+    {
+      "experience_id": "experience::dev_v2_retrieval_timeout_hard_relaxed_00287::timeout_transient",
+      "natural_text_sha256": "7cf2f18b4625c6da99c7086d3b34c3f4bd395ae296667c26ae90bfffa60e8996",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "timeout_transient",
+      "source_instance_id": "dev_v2_retrieval_timeout_hard_relaxed_00287::timeout_transient",
+      "source_task_id": "dev_v2_retrieval_timeout_hard_relaxed_00287"
+    },
+    {
+      "experience_id": "experience::dev_v2_files_timeout_easy_standard_00766::timeout_transient",
+      "natural_text_sha256": "9c642118cf908d4fe237a54fb2bf273711f4be5b77e1165161c73fa9ccd41fd7",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "timeout_transient",
+      "source_instance_id": "dev_v2_files_timeout_easy_standard_00766::timeout_transient",
+      "source_task_id": "dev_v2_files_timeout_easy_standard_00766"
+    },
+    {
+      "experience_id": "experience::dev_v2_files_timeout_medium_tight_00336::timeout_transient",
+      "natural_text_sha256": "309a4604d94a7329b23ea3f6c4e8c294f75bbdf39367862ff45424899ff55aa8",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "timeout_transient",
+      "source_instance_id": "dev_v2_files_timeout_medium_tight_00336::timeout_transient",
+      "source_task_id": "dev_v2_files_timeout_medium_tight_00336"
+    },
+    {
+      "experience_id": "experience::dev_v2_files_timeout_easy_standard_00550::timeout_transient",
+      "natural_text_sha256": "cf13fbced18a0f5eb9ced889638c5bf600550325968e9759262a904563af9ee8",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "timeout_transient",
+      "source_instance_id": "dev_v2_files_timeout_easy_standard_00550::timeout_transient",
+      "source_task_id": "dev_v2_files_timeout_easy_standard_00550"
+    },
+    {
+      "experience_id": "experience::dev_v2_crud_timeout_medium_relaxed_00446::timeout_transient",
+      "natural_text_sha256": "96d6f59c921844053e255a882a741c13c6bb23b08db8cb8b8cbe2ad9868ba047",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "timeout_transient",
+      "source_instance_id": "dev_v2_crud_timeout_medium_relaxed_00446::timeout_transient",
+      "source_task_id": "dev_v2_crud_timeout_medium_relaxed_00446"
+    },
+    {
+      "experience_id": "experience::dev_v2_files_timeout_medium_relaxed_00554::timeout_transient",
+      "natural_text_sha256": "0c01c41988f4445a0b63ef0822c691b77f8214c8ea65a97978f5edc00847cb06",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "timeout_transient",
+      "source_instance_id": "dev_v2_files_timeout_medium_relaxed_00554::timeout_transient",
+      "source_task_id": "dev_v2_files_timeout_medium_relaxed_00554"
+    },
+    {
+      "experience_id": "experience::dev_v2_scheduling_timeout_easy_tight_00171::timeout_transient",
+      "natural_text_sha256": "ac9c519420f97421a645831cf578d89916599336648f51c6fa22bf467f1cef11",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "timeout_transient",
+      "source_instance_id": "dev_v2_scheduling_timeout_easy_tight_00171::timeout_transient",
+      "source_task_id": "dev_v2_scheduling_timeout_easy_tight_00171"
+    },
+    {
+      "experience_id": "experience::dev_v2_retrieval_timeout_medium_relaxed_00068::timeout_transient",
+      "natural_text_sha256": "514117637718086fb7d930705f771e06524d5151f266743a4f652f9ebcd507ab",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "timeout_transient",
+      "source_instance_id": "dev_v2_retrieval_timeout_medium_relaxed_00068::timeout_transient",
+      "source_task_id": "dev_v2_retrieval_timeout_medium_relaxed_00068"
+    },
+    {
+      "experience_id": "experience::dev_v2_retrieval_timeout_easy_tight_00711::timeout_transient",
+      "natural_text_sha256": "ee5e341e4e156a71e2b1f195e5836d124619dc4150ec967483f6c9c80e2df2fe",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "timeout_transient",
+      "source_instance_id": "dev_v2_retrieval_timeout_easy_tight_00711::timeout_transient",
+      "source_task_id": "dev_v2_retrieval_timeout_easy_tight_00711"
+    },
+    {
+      "experience_id": "experience::dev_v2_retrieval_timeout_hard_tight_00501::timeout_transient",
+      "natural_text_sha256": "bd13883f75d9a5d45cf92fdd3e6de13c90bbeed6c19f7f2c2c8e6bbbec522525",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "timeout_transient",
+      "source_instance_id": "dev_v2_retrieval_timeout_hard_tight_00501::timeout_transient",
+      "source_task_id": "dev_v2_retrieval_timeout_hard_tight_00501"
+    },
+    {
+      "experience_id": "experience::dev_v2_scheduling_timeout_easy_relaxed_00173::timeout_transient",
+      "natural_text_sha256": "ac9c519420f97421a645831cf578d89916599336648f51c6fa22bf467f1cef11",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "timeout_transient",
+      "source_instance_id": "dev_v2_scheduling_timeout_easy_relaxed_00173::timeout_transient",
+      "source_task_id": "dev_v2_scheduling_timeout_easy_relaxed_00173"
+    },
+    {
+      "experience_id": "experience::dev_v2_scheduling_timeout_hard_tight_00177::timeout_transient",
+      "natural_text_sha256": "05f8d1c52749f87392e23fd20e92e2a4e19fbfe8899937d9c3bf4bbba802bbef",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "timeout_transient",
+      "source_instance_id": "dev_v2_scheduling_timeout_hard_tight_00177::timeout_transient",
+      "source_task_id": "dev_v2_scheduling_timeout_hard_tight_00177"
+    },
+    {
+      "experience_id": "experience::dev_v2_retrieval_timeout_medium_relaxed_00500::timeout_transient",
+      "natural_text_sha256": "41dbcccbd2412919d9b542bd91f109e54c838ae40c495644fec0892066b4a49a",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "timeout_transient",
+      "source_instance_id": "dev_v2_retrieval_timeout_medium_relaxed_00500::timeout_transient",
+      "source_task_id": "dev_v2_retrieval_timeout_medium_relaxed_00500"
+    },
+    {
+      "experience_id": "experience::dev_v2_scheduling_timeout_easy_relaxed_00605::timeout_transient",
+      "natural_text_sha256": "05f8d1c52749f87392e23fd20e92e2a4e19fbfe8899937d9c3bf4bbba802bbef",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "timeout_transient",
+      "source_instance_id": "dev_v2_scheduling_timeout_easy_relaxed_00605::timeout_transient",
+      "source_task_id": "dev_v2_scheduling_timeout_easy_relaxed_00605"
+    },
+    {
+      "experience_id": "experience::dev_v2_scheduling_timeout_hard_standard_00394::timeout_transient",
+      "natural_text_sha256": "3a2c7251e80473d6d942e4c36f3531e2a5080fdc6d5ce8375935f22c0cabfc53",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "timeout_transient",
+      "source_instance_id": "dev_v2_scheduling_timeout_hard_standard_00394::timeout_transient",
+      "source_task_id": "dev_v2_scheduling_timeout_hard_standard_00394"
+    },
+    {
+      "experience_id": "experience::dev_v2_files_timeout_easy_relaxed_00335::timeout_transient",
+      "natural_text_sha256": "863280836fa43f2967a8449c4835e987523d7b3e83560602757882e7f7ee52ab",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "timeout_transient",
+      "source_instance_id": "dev_v2_files_timeout_easy_relaxed_00335::timeout_transient",
+      "source_task_id": "dev_v2_files_timeout_easy_relaxed_00335"
+    },
+    {
+      "experience_id": "experience::dev_v2_files_timeout_easy_tight_00549::timeout_transient",
+      "natural_text_sha256": "1cb21c1c9de6fb06da26b5dd21d027206902c9eb5a51ec7c2175db32a0f5d3e6",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "timeout_transient",
+      "source_instance_id": "dev_v2_files_timeout_easy_tight_00549::timeout_transient",
+      "source_task_id": "dev_v2_files_timeout_easy_tight_00549"
+    },
+    {
+      "experience_id": "experience::dev_v2_scheduling_timeout_hard_standard_00610::timeout_transient",
+      "natural_text_sha256": "7a49ee9595b3bc25d1ca93497573f7cc607fea1d61aeaccdae3f7f4c4a51d683",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "timeout_transient",
+      "source_instance_id": "dev_v2_scheduling_timeout_hard_standard_00610::timeout_transient",
+      "source_task_id": "dev_v2_scheduling_timeout_hard_standard_00610"
+    },
+    {
+      "experience_id": "experience::dev_v2_crud_timeout_hard_tight_00879::timeout_transient",
+      "natural_text_sha256": "a9fb95027eab0e0e34c158e1bfe01e33a6adb62839777396d408dd75a2db81af",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "timeout_transient",
+      "source_instance_id": "dev_v2_crud_timeout_hard_tight_00879::timeout_transient",
+      "source_task_id": "dev_v2_crud_timeout_hard_tight_00879"
+    },
+    {
+      "experience_id": "experience::dev_v2_files_schema_drift_hard_relaxed_00143::schema_backend_one_shot",
+      "natural_text_sha256": "be9d505b5b7244fccd3e7d4fbfec71e4eea25ace0830810df665434359fb3e15",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "schema_backend_one_shot",
+      "source_instance_id": "dev_v2_files_schema_drift_hard_relaxed_00143::schema_backend_one_shot",
+      "source_task_id": "dev_v2_files_schema_drift_hard_relaxed_00143"
+    },
+    {
+      "experience_id": "experience::dev_v2_scheduling_schema_drift_easy_standard_00406::schema_backend_one_shot",
+      "natural_text_sha256": "34a7e4d4a6feb2cc3fae01a0e1962263c4054c6d96ada9cd1db83a899bfae53a",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "schema_backend_one_shot",
+      "source_instance_id": "dev_v2_scheduling_schema_drift_easy_standard_00406::schema_backend_one_shot",
+      "source_task_id": "dev_v2_scheduling_schema_drift_easy_standard_00406"
+    },
+    {
+      "experience_id": "experience::dev_v2_files_schema_drift_hard_relaxed_00791::schema_backend_one_shot",
+      "natural_text_sha256": "1c120f697e5e59c2aa5cfde02c0cae3cf3d858a58de8353cd76cc2386fad53b8",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "schema_backend_one_shot",
+      "source_instance_id": "dev_v2_files_schema_drift_hard_relaxed_00791::schema_backend_one_shot",
+      "source_task_id": "dev_v2_files_schema_drift_hard_relaxed_00791"
+    },
+    {
+      "experience_id": "experience::dev_v2_files_schema_drift_easy_tight_00351::schema_backend_one_shot",
+      "natural_text_sha256": "fcf85c8da14c25122a3a76d6353fba8823f3c2aa745816d2b93efb71f7a071fe",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "schema_backend_one_shot",
+      "source_instance_id": "dev_v2_files_schema_drift_easy_tight_00351::schema_backend_one_shot",
+      "source_task_id": "dev_v2_files_schema_drift_easy_tight_00351"
+    },
+    {
+      "experience_id": "experience::dev_v2_files_schema_drift_easy_standard_00568::schema_backend_one_shot",
+      "natural_text_sha256": "2f5eb12bccce20ac407154cd5f39c0358ef28eaf998b7571b00d87a434e3bac1",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "schema_backend_one_shot",
+      "source_instance_id": "dev_v2_files_schema_drift_easy_standard_00568::schema_backend_one_shot",
+      "source_task_id": "dev_v2_files_schema_drift_easy_standard_00568"
+    },
+    {
+      "experience_id": "experience::dev_v2_files_schema_drift_hard_standard_00574::schema_backend_one_shot",
+      "natural_text_sha256": "7e25a9fde6c77b09a465933d0ef88da277e0089ee56e6c16d5439b783f75d7e9",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "schema_backend_one_shot",
+      "source_instance_id": "dev_v2_files_schema_drift_hard_standard_00574::schema_backend_one_shot",
+      "source_task_id": "dev_v2_files_schema_drift_hard_standard_00574"
+    },
+    {
+      "experience_id": "experience::dev_v2_retrieval_schema_drift_easy_standard_00298::schema_backend_one_shot",
+      "natural_text_sha256": "9103cb49ba2c690b56061c455c555aa312d58cb35e4546a4b8913bf1a12b1498",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "schema_backend_one_shot",
+      "source_instance_id": "dev_v2_retrieval_schema_drift_easy_standard_00298::schema_backend_one_shot",
+      "source_task_id": "dev_v2_retrieval_schema_drift_easy_standard_00298"
+    },
+    {
+      "experience_id": "experience::dev_v2_files_schema_drift_medium_standard_00571::schema_backend_one_shot",
+      "natural_text_sha256": "be9d505b5b7244fccd3e7d4fbfec71e4eea25ace0830810df665434359fb3e15",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "schema_backend_one_shot",
+      "source_instance_id": "dev_v2_files_schema_drift_medium_standard_00571::schema_backend_one_shot",
+      "source_task_id": "dev_v2_files_schema_drift_medium_standard_00571"
+    },
+    {
+      "experience_id": "experience::dev_v2_scheduling_schema_drift_medium_relaxed_00410::schema_backend_one_shot",
+      "natural_text_sha256": "a7734cbdca660058174e2a7c9a7add6ac2bcf899f1bc18130659fb637dfd7780",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "schema_backend_one_shot",
+      "source_instance_id": "dev_v2_scheduling_schema_drift_medium_relaxed_00410::schema_backend_one_shot",
+      "source_task_id": "dev_v2_scheduling_schema_drift_medium_relaxed_00410"
+    },
+    {
+      "experience_id": "experience::dev_v2_files_schema_drift_easy_tight_00135::schema_backend_one_shot",
+      "natural_text_sha256": "aca543f59bccd1af268e69dc9fe54b0aef46c0d8181f5995bf0bbcd2efb0d360",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "schema_backend_one_shot",
+      "source_instance_id": "dev_v2_files_schema_drift_easy_tight_00135::schema_backend_one_shot",
+      "source_task_id": "dev_v2_files_schema_drift_easy_tight_00135"
+    },
+    {
+      "experience_id": "experience::dev_v2_retrieval_schema_drift_hard_tight_00303::schema_backend_one_shot",
+      "natural_text_sha256": "bc8412a75b5ce75368176ed4cd63887c2a6c4c1ada08893c8ff1a677da0e58d9",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "schema_backend_one_shot",
+      "source_instance_id": "dev_v2_retrieval_schema_drift_hard_tight_00303::schema_backend_one_shot",
+      "source_task_id": "dev_v2_retrieval_schema_drift_hard_tight_00303"
+    },
+    {
+      "experience_id": "experience::dev_v2_crud_schema_drift_hard_tight_00681::schema_backend_one_shot",
+      "natural_text_sha256": "c085c9cfc28ed6beb797ee63542e17b67e8d66939380302d2b4bd7aae8fcc7d0",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "schema_backend_one_shot",
+      "source_instance_id": "dev_v2_crud_schema_drift_hard_tight_00681::schema_backend_one_shot",
+      "source_task_id": "dev_v2_crud_schema_drift_hard_tight_00681"
+    },
+    {
+      "experience_id": "experience::dev_v2_scheduling_schema_drift_hard_relaxed_00629::schema_backend_one_shot",
+      "natural_text_sha256": "d60b7e40226835ef5f3e77a3e02dc589b9841d0b215788efd9316e9864cf78c9",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "schema_backend_one_shot",
+      "source_instance_id": "dev_v2_scheduling_schema_drift_hard_relaxed_00629::schema_backend_one_shot",
+      "source_task_id": "dev_v2_scheduling_schema_drift_hard_relaxed_00629"
+    },
+    {
+      "experience_id": "experience::dev_v2_files_schema_drift_medium_standard_00787::schema_backend_one_shot",
+      "natural_text_sha256": "4f531f88fd7d7645aa3f0172e3ba4e1a442eca9e663d2486db6a0411ae95139f",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "schema_backend_one_shot",
+      "source_instance_id": "dev_v2_files_schema_drift_medium_standard_00787::schema_backend_one_shot",
+      "source_task_id": "dev_v2_files_schema_drift_medium_standard_00787"
+    },
+    {
+      "experience_id": "experience::dev_v2_files_schema_drift_medium_relaxed_00572::schema_backend_one_shot",
+      "natural_text_sha256": "6f6d417233486d18e5e2693d7adf96045aac8bb5c790b22db277cd1ae860aeda",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "schema_backend_one_shot",
+      "source_instance_id": "dev_v2_files_schema_drift_medium_relaxed_00572::schema_backend_one_shot",
+      "source_task_id": "dev_v2_files_schema_drift_medium_relaxed_00572"
+    },
+    {
+      "experience_id": "experience::dev_v2_retrieval_schema_drift_easy_relaxed_00731::schema_backend_one_shot",
+      "natural_text_sha256": "812e16384e98b7829ca205da7bd704fa61be57d69e9dda4a3d58f2df643feaf0",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "schema_backend_one_shot",
+      "source_instance_id": "dev_v2_retrieval_schema_drift_easy_relaxed_00731::schema_backend_one_shot",
+      "source_task_id": "dev_v2_retrieval_schema_drift_easy_relaxed_00731"
+    },
+    {
+      "experience_id": "experience::dev_v2_retrieval_schema_drift_easy_tight_00729::schema_backend_one_shot",
+      "natural_text_sha256": "ea65c41d4d488e8573325cf0450a69eb8471bc692fd60d46a98353f5af431b43",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "schema_backend_one_shot",
+      "source_instance_id": "dev_v2_retrieval_schema_drift_easy_tight_00729::schema_backend_one_shot",
+      "source_task_id": "dev_v2_retrieval_schema_drift_easy_tight_00729"
+    },
+    {
+      "experience_id": "experience::dev_v2_crud_schema_drift_hard_tight_00033::schema_backend_one_shot",
+      "natural_text_sha256": "c99d3f10fff64eb8b2a6794a32d8fbd1535e8e6cb1d9703206f19c84e8e2350c",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "schema_backend_one_shot",
+      "source_instance_id": "dev_v2_crud_schema_drift_hard_tight_00033::schema_backend_one_shot",
+      "source_task_id": "dev_v2_crud_schema_drift_hard_tight_00033"
+    },
+    {
+      "experience_id": "experience::dev_v2_retrieval_schema_drift_easy_relaxed_00083::schema_backend_one_shot",
+      "natural_text_sha256": "de4f21e404053823582e847b57ea5d2a9e29f831362cdbd3e09bd3af1f5dbe26",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "schema_backend_one_shot",
+      "source_instance_id": "dev_v2_retrieval_schema_drift_easy_relaxed_00083::schema_backend_one_shot",
+      "source_task_id": "dev_v2_retrieval_schema_drift_easy_relaxed_00083"
+    },
+    {
+      "experience_id": "experience::dev_v2_retrieval_schema_drift_easy_tight_00081::schema_backend_one_shot",
+      "natural_text_sha256": "a8d5eb70e64070d46925239c3c346ca77453d6de761ead407d471ce7ceb16bc4",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "schema_backend_one_shot",
+      "source_instance_id": "dev_v2_retrieval_schema_drift_easy_tight_00081::schema_backend_one_shot",
+      "source_task_id": "dev_v2_retrieval_schema_drift_easy_tight_00081"
+    },
+    {
+      "experience_id": "experience::dev_v2_retrieval_clean_medium_tight_00489::argument_omission_extension",
+      "natural_text_sha256": "cf2a375c85d9379dc05beda4b464282f5ac3c455411834462f816d406ce0bf3d",
+      "policy": {
+        "kind": "revise_arguments",
+        "parameters": {
+          "bindings": {
+            "$error.missing": "$instruction.binding"
+          },
+          "fields": [
+            "$error.missing"
+          ],
+          "operation": "repeat_failed_operation"
+        }
+      },
+      "provenance": "argument_omission_extension",
+      "source_instance_id": "dev_v2_retrieval_clean_medium_tight_00489::argument_omission_extension",
+      "source_task_id": "dev_v2_retrieval_clean_medium_tight_00489"
+    },
+    {
+      "experience_id": "experience::dev_v2_scheduling_clean_easy_relaxed_00596::argument_omission_extension",
+      "natural_text_sha256": "2e88a195b2baff54fb789027a5eaee9b46c434774a008b0176e943e3a0785ce5",
+      "policy": {
+        "kind": "revise_arguments",
+        "parameters": {
+          "bindings": {
+            "$error.missing": "$instruction.binding"
+          },
+          "fields": [
+            "$error.missing"
+          ],
+          "operation": "repeat_failed_operation"
+        }
+      },
+      "provenance": "argument_omission_extension",
+      "source_instance_id": "dev_v2_scheduling_clean_easy_relaxed_00596::argument_omission_extension",
+      "source_task_id": "dev_v2_scheduling_clean_easy_relaxed_00596"
+    },
+    {
+      "experience_id": "experience::dev_v2_retrieval_clean_hard_standard_00493::argument_omission_extension",
+      "natural_text_sha256": "5946a6762bec084a2a504d33f65cb0859ecd29e205e2453ccd16580331fbd4d5",
+      "policy": {
+        "kind": "revise_arguments",
+        "parameters": {
+          "bindings": {
+            "$error.missing": "$instruction.binding"
+          },
+          "fields": [
+            "$error.missing"
+          ],
+          "operation": "repeat_failed_operation"
+        }
+      },
+      "provenance": "argument_omission_extension",
+      "source_instance_id": "dev_v2_retrieval_clean_hard_standard_00493::argument_omission_extension",
+      "source_task_id": "dev_v2_retrieval_clean_hard_standard_00493"
+    },
+    {
+      "experience_id": "experience::dev_v2_retrieval_clean_medium_relaxed_00707::argument_omission_extension",
+      "natural_text_sha256": "068d4875772ba0ffd4b19ed11cd99ad5a771bfb899e94bd52fa72cbefc89855a",
+      "policy": {
+        "kind": "revise_arguments",
+        "parameters": {
+          "bindings": {
+            "$error.missing": "$instruction.binding"
+          },
+          "fields": [
+            "$error.missing"
+          ],
+          "operation": "repeat_failed_operation"
+        }
+      },
+      "provenance": "argument_omission_extension",
+      "source_instance_id": "dev_v2_retrieval_clean_medium_relaxed_00707::argument_omission_extension",
+      "source_task_id": "dev_v2_retrieval_clean_medium_relaxed_00707"
+    },
+    {
+      "experience_id": "experience::dev_v2_files_clean_hard_tight_00546::argument_omission_extension",
+      "natural_text_sha256": "0313c89e5648b3bc085cbd8bfaf2052a74470142c3aa5b480699f07c8b3e4b1a",
+      "policy": {
+        "kind": "revise_arguments",
+        "parameters": {
+          "bindings": {
+            "$error.missing": "$instruction.binding"
+          },
+          "fields": [
+            "$error.missing"
+          ],
+          "operation": "repeat_failed_operation"
+        }
+      },
+      "provenance": "argument_omission_extension",
+      "source_instance_id": "dev_v2_files_clean_hard_tight_00546::argument_omission_extension",
+      "source_task_id": "dev_v2_files_clean_hard_tight_00546"
+    },
+    {
+      "experience_id": "experience::dev_v2_crud_clean_medium_tight_00435::argument_omission_extension",
+      "natural_text_sha256": "d6301df9281eecbb0cb6c8338b7f50a8bac2eba0e68977c059abb98c96391e9f",
+      "policy": {
+        "kind": "revise_arguments",
+        "parameters": {
+          "bindings": {
+            "$error.missing": "$instruction.binding"
+          },
+          "fields": [
+            "$error.missing"
+          ],
+          "operation": "repeat_failed_operation"
+        }
+      },
+      "provenance": "argument_omission_extension",
+      "source_instance_id": "dev_v2_crud_clean_medium_tight_00435::argument_omission_extension",
+      "source_task_id": "dev_v2_crud_clean_medium_tight_00435"
+    },
+    {
+      "experience_id": "experience::dev_v2_retrieval_clean_hard_tight_00276::argument_omission_extension",
+      "natural_text_sha256": "1eb5cc3f25f9480dc35a27f8ad298bf33e97c6d33088562c9b9c378b68178daa",
+      "policy": {
+        "kind": "revise_arguments",
+        "parameters": {
+          "bindings": {
+            "$error.missing": "$instruction.binding"
+          },
+          "fields": [
+            "$error.missing"
+          ],
+          "operation": "repeat_failed_operation"
+        }
+      },
+      "provenance": "argument_omission_extension",
+      "source_instance_id": "dev_v2_retrieval_clean_hard_tight_00276::argument_omission_extension",
+      "source_task_id": "dev_v2_retrieval_clean_hard_tight_00276"
+    },
+    {
+      "experience_id": "experience::dev_v2_retrieval_clean_medium_standard_00058::argument_omission_extension",
+      "natural_text_sha256": "59e16625babc50fc213a42baec336eee6a9a6c29313df520e9c504530119aefd",
+      "policy": {
+        "kind": "revise_arguments",
+        "parameters": {
+          "bindings": {
+            "$error.missing": "$instruction.binding"
+          },
+          "fields": [
+            "$error.missing"
+          ],
+          "operation": "repeat_failed_operation"
+        }
+      },
+      "provenance": "argument_omission_extension",
+      "source_instance_id": "dev_v2_retrieval_clean_medium_standard_00058::argument_omission_extension",
+      "source_task_id": "dev_v2_retrieval_clean_medium_standard_00058"
+    },
+    {
+      "experience_id": "experience::dev_v2_scheduling_clean_medium_tight_00597::argument_omission_extension",
+      "natural_text_sha256": "d1b19f0d8b771e7d18114ab915ea0e73c4d943ae995afa35ffa49b9f1f941959",
+      "policy": {
+        "kind": "revise_arguments",
+        "parameters": {
+          "bindings": {
+            "$error.missing": "$instruction.binding"
+          },
+          "fields": [
+            "$error.missing"
+          ],
+          "operation": "repeat_failed_operation"
+        }
+      },
+      "provenance": "argument_omission_extension",
+      "source_instance_id": "dev_v2_scheduling_clean_medium_tight_00597::argument_omission_extension",
+      "source_task_id": "dev_v2_scheduling_clean_medium_tight_00597"
+    },
+    {
+      "experience_id": "experience::dev_v2_scheduling_clean_easy_relaxed_00164::argument_omission_extension",
+      "natural_text_sha256": "6a04530fcd8d1da590ba03293c4c0410c3035d2a12dd8112a865a36761aa1ffb",
+      "policy": {
+        "kind": "revise_arguments",
+        "parameters": {
+          "bindings": {
+            "$error.missing": "$instruction.binding"
+          },
+          "fields": [
+            "$error.missing"
+          ],
+          "operation": "repeat_failed_operation"
+        }
+      },
+      "provenance": "argument_omission_extension",
+      "source_instance_id": "dev_v2_scheduling_clean_easy_relaxed_00164::argument_omission_extension",
+      "source_task_id": "dev_v2_scheduling_clean_easy_relaxed_00164"
+    },
+    {
+      "experience_id": "experience::dev_v2_files_clean_easy_relaxed_00110::argument_omission_extension",
+      "natural_text_sha256": "60a83702adf3f6e1e6cf79210b3cc6c7e14fd9bbb781e84f871c3940c20869f2",
+      "policy": {
+        "kind": "revise_arguments",
+        "parameters": {
+          "bindings": {
+            "$error.missing": "$instruction.binding"
+          },
+          "fields": [
+            "$error.missing"
+          ],
+          "operation": "repeat_failed_operation"
+        }
+      },
+      "provenance": "argument_omission_extension",
+      "source_instance_id": "dev_v2_files_clean_easy_relaxed_00110::argument_omission_extension",
+      "source_task_id": "dev_v2_files_clean_easy_relaxed_00110"
+    },
+    {
+      "experience_id": "experience::dev_v2_crud_clean_medium_tight_00219::argument_omission_extension",
+      "natural_text_sha256": "b0f0b25f4e0edafe20c7610b70908fd74a4166765b2877aa937cd4a943e2cf43",
+      "policy": {
+        "kind": "revise_arguments",
+        "parameters": {
+          "bindings": {
+            "$error.missing": "$instruction.binding"
+          },
+          "fields": [
+            "$error.missing"
+          ],
+          "operation": "repeat_failed_operation"
+        }
+      },
+      "provenance": "argument_omission_extension",
+      "source_instance_id": "dev_v2_crud_clean_medium_tight_00219::argument_omission_extension",
+      "source_task_id": "dev_v2_crud_clean_medium_tight_00219"
+    },
+    {
+      "experience_id": "experience::dev_v2_files_clean_easy_tight_00108::argument_omission_extension",
+      "natural_text_sha256": "6b70175299db997e5626d3b6bae8aef1768bef1d29a68c0d1579b33516ea62f7",
+      "policy": {
+        "kind": "revise_arguments",
+        "parameters": {
+          "bindings": {
+            "$error.missing": "$instruction.binding"
+          },
+          "fields": [
+            "$error.missing"
+          ],
+          "operation": "repeat_failed_operation"
+        }
+      },
+      "provenance": "argument_omission_extension",
+      "source_instance_id": "dev_v2_files_clean_easy_tight_00108::argument_omission_extension",
+      "source_task_id": "dev_v2_files_clean_easy_tight_00108"
+    },
+    {
+      "experience_id": "experience::dev_v2_scheduling_clean_medium_tight_00165::argument_omission_extension",
+      "natural_text_sha256": "f0fb53389c5649585361e52cc9c3af40b116eaf78873e63e4698df7f81b25092",
+      "policy": {
+        "kind": "revise_arguments",
+        "parameters": {
+          "bindings": {
+            "$error.missing": "$instruction.binding"
+          },
+          "fields": [
+            "$error.missing"
+          ],
+          "operation": "repeat_failed_operation"
+        }
+      },
+      "provenance": "argument_omission_extension",
+      "source_instance_id": "dev_v2_scheduling_clean_medium_tight_00165::argument_omission_extension",
+      "source_task_id": "dev_v2_scheduling_clean_medium_tight_00165"
+    },
+    {
+      "experience_id": "experience::dev_v2_retrieval_clean_medium_relaxed_00491::argument_omission_extension",
+      "natural_text_sha256": "cf2a375c85d9379dc05beda4b464282f5ac3c455411834462f816d406ce0bf3d",
+      "policy": {
+        "kind": "revise_arguments",
+        "parameters": {
+          "bindings": {
+            "$error.missing": "$instruction.binding"
+          },
+          "fields": [
+            "$error.missing"
+          ],
+          "operation": "repeat_failed_operation"
+        }
+      },
+      "provenance": "argument_omission_extension",
+      "source_instance_id": "dev_v2_retrieval_clean_medium_relaxed_00491::argument_omission_extension",
+      "source_task_id": "dev_v2_retrieval_clean_medium_relaxed_00491"
+    },
+    {
+      "experience_id": "experience::dev_v2_files_clean_medium_relaxed_00761::argument_omission_extension",
+      "natural_text_sha256": "e3b5221159b949b8c49e318e7c801bd677ca3ab9b503045f3b0add46d2138d3e",
+      "policy": {
+        "kind": "revise_arguments",
+        "parameters": {
+          "bindings": {
+            "$error.missing": "$instruction.binding"
+          },
+          "fields": [
+            "$error.missing"
+          ],
+          "operation": "repeat_failed_operation"
+        }
+      },
+      "provenance": "argument_omission_extension",
+      "source_instance_id": "dev_v2_files_clean_medium_relaxed_00761::argument_omission_extension",
+      "source_task_id": "dev_v2_files_clean_medium_relaxed_00761"
+    },
+    {
+      "experience_id": "experience::dev_v2_files_clean_hard_tight_00114::argument_omission_extension",
+      "natural_text_sha256": "37fe7af9b7013f954af14d73bacc0c6299820f1ae512e6883b54db455b7850be",
+      "policy": {
+        "kind": "revise_arguments",
+        "parameters": {
+          "bindings": {
+            "$error.missing": "$instruction.binding"
+          },
+          "fields": [
+            "$error.missing"
+          ],
+          "operation": "repeat_failed_operation"
+        }
+      },
+      "provenance": "argument_omission_extension",
+      "source_instance_id": "dev_v2_files_clean_hard_tight_00114::argument_omission_extension",
+      "source_task_id": "dev_v2_files_clean_hard_tight_00114"
+    },
+    {
+      "experience_id": "experience::dev_v2_retrieval_clean_easy_relaxed_00272::argument_omission_extension",
+      "natural_text_sha256": "8d2cc7880f674f814d70460af14ff427b4b87c68c55539253ee0ca724e58dfb9",
+      "policy": {
+        "kind": "revise_arguments",
+        "parameters": {
+          "bindings": {
+            "$error.missing": "$instruction.binding"
+          },
+          "fields": [
+            "$error.missing"
+          ],
+          "operation": "repeat_failed_operation"
+        }
+      },
+      "provenance": "argument_omission_extension",
+      "source_instance_id": "dev_v2_retrieval_clean_easy_relaxed_00272::argument_omission_extension",
+      "source_task_id": "dev_v2_retrieval_clean_easy_relaxed_00272"
+    },
+    {
+      "experience_id": "experience::dev_v2_files_clean_medium_tight_00759::argument_omission_extension",
+      "natural_text_sha256": "e6c2ec106c35eee862e6501d1aae2a4036d8d4e0376d6e9c1e22cb55ce39dfbe",
+      "policy": {
+        "kind": "revise_arguments",
+        "parameters": {
+          "bindings": {
+            "$error.missing": "$instruction.binding"
+          },
+          "fields": [
+            "$error.missing"
+          ],
+          "operation": "repeat_failed_operation"
+        }
+      },
+      "provenance": "argument_omission_extension",
+      "source_instance_id": "dev_v2_files_clean_medium_tight_00759::argument_omission_extension",
+      "source_task_id": "dev_v2_files_clean_medium_tight_00759"
+    },
+    {
+      "experience_id": "experience::dev_v2_scheduling_clean_easy_tight_00810::argument_omission_extension",
+      "natural_text_sha256": "9f87f90df854f36ebb206df176a90d6900d08de898ef5c2153fcde48e0d5241c",
+      "policy": {
+        "kind": "revise_arguments",
+        "parameters": {
+          "bindings": {
+            "$error.missing": "$instruction.binding"
+          },
+          "fields": [
+            "$error.missing"
+          ],
+          "operation": "repeat_failed_operation"
+        }
+      },
+      "provenance": "argument_omission_extension",
+      "source_instance_id": "dev_v2_scheduling_clean_easy_tight_00810::argument_omission_extension",
+      "source_task_id": "dev_v2_scheduling_clean_easy_tight_00810"
+    },
+    {
+      "experience_id": "experience::dev_v2_crud_authz_medium_relaxed_00689::authorization_transient",
+      "natural_text_sha256": "7e1ddd9da8753713664bab540d4c4e0a04cfa9fcb240060e1602cefc41e540b6",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "authorization_transient",
+      "source_instance_id": "dev_v2_crud_authz_medium_relaxed_00689::authorization_transient",
+      "source_task_id": "dev_v2_crud_authz_medium_relaxed_00689"
+    },
+    {
+      "experience_id": "experience::dev_v2_crud_authz_medium_tight_00255::authorization_transient",
+      "natural_text_sha256": "36bedf7b99fb14adb0160f6e1bd71158559fd0df14755fdbada0298154aefde8",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "authorization_transient",
+      "source_instance_id": "dev_v2_crud_authz_medium_tight_00255::authorization_transient",
+      "source_task_id": "dev_v2_crud_authz_medium_tight_00255"
+    },
+    {
+      "experience_id": "experience::dev_v2_retrieval_authz_medium_relaxed_00095::authorization_transient",
+      "natural_text_sha256": "965e8efe6b1c0653c7ddd0389196a42847c455117acfb57001b5c8e08a145485",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "authorization_transient",
+      "source_instance_id": "dev_v2_retrieval_authz_medium_relaxed_00095::authorization_transient",
+      "source_task_id": "dev_v2_retrieval_authz_medium_relaxed_00095"
+    },
+    {
+      "experience_id": "experience::dev_v2_retrieval_authz_medium_standard_00310::authorization_transient",
+      "natural_text_sha256": "f13783c2fee21eb21355ba26919464701494b5cf3db4f0b837fea80806b27d40",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "authorization_transient",
+      "source_instance_id": "dev_v2_retrieval_authz_medium_standard_00310::authorization_transient",
+      "source_task_id": "dev_v2_retrieval_authz_medium_standard_00310"
+    },
+    {
+      "experience_id": "experience::dev_v2_crud_authz_medium_tight_00471::authorization_transient",
+      "natural_text_sha256": "eec7eb3b5f5647b1d94330b8190b6cf585c4129485f8ab112d278c95a6ec8230",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "authorization_transient",
+      "source_instance_id": "dev_v2_crud_authz_medium_tight_00471::authorization_transient",
+      "source_task_id": "dev_v2_crud_authz_medium_tight_00471"
+    },
+    {
+      "experience_id": "experience::dev_v2_files_authz_easy_standard_00145::authorization_transient",
+      "natural_text_sha256": "0ec3b523c52c6c3fdb469e0c6bcfe793bd56afb6cf1434a363dd8168b12b67cc",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "authorization_transient",
+      "source_instance_id": "dev_v2_files_authz_easy_standard_00145::authorization_transient",
+      "source_task_id": "dev_v2_files_authz_easy_standard_00145"
+    },
+    {
+      "experience_id": "experience::dev_v2_scheduling_authz_hard_standard_00637::authorization_transient",
+      "natural_text_sha256": "1b0709ae20329b295f95eb2eeb66b7a74af6eb3a1843206d571de23bb3060385",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "authorization_transient",
+      "source_instance_id": "dev_v2_scheduling_authz_hard_standard_00637::authorization_transient",
+      "source_task_id": "dev_v2_scheduling_authz_hard_standard_00637"
+    },
+    {
+      "experience_id": "experience::dev_v2_files_authz_easy_relaxed_00146::authorization_transient",
+      "natural_text_sha256": "8a5e84b5d4edf69827b8c8a1c4a81018f05f706df43f297c80328620edfcd4c9",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "authorization_transient",
+      "source_instance_id": "dev_v2_files_authz_easy_relaxed_00146::authorization_transient",
+      "source_task_id": "dev_v2_files_authz_easy_relaxed_00146"
+    },
+    {
+      "experience_id": "experience::dev_v2_scheduling_authz_medium_tight_00201::authorization_transient",
+      "natural_text_sha256": "ff5662847df09a9d4c0f7921ff82b5ba71891bb9caae017c8aa344defe662df9",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "authorization_transient",
+      "source_instance_id": "dev_v2_scheduling_authz_medium_tight_00201::authorization_transient",
+      "source_task_id": "dev_v2_scheduling_authz_medium_tight_00201"
+    },
+    {
+      "experience_id": "experience::dev_v2_scheduling_authz_hard_standard_00205::authorization_transient",
+      "natural_text_sha256": "fc8e71caa2039d7350f052874611e743206fcfc36e827a6b15a06984aa737a81",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "authorization_transient",
+      "source_instance_id": "dev_v2_scheduling_authz_hard_standard_00205::authorization_transient",
+      "source_task_id": "dev_v2_scheduling_authz_hard_standard_00205"
+    },
+    {
+      "experience_id": "experience::dev_v2_scheduling_authz_easy_relaxed_00848::authorization_transient",
+      "natural_text_sha256": "ff5662847df09a9d4c0f7921ff82b5ba71891bb9caae017c8aa344defe662df9",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "authorization_transient",
+      "source_instance_id": "dev_v2_scheduling_authz_easy_relaxed_00848::authorization_transient",
+      "source_task_id": "dev_v2_scheduling_authz_easy_relaxed_00848"
+    },
+    {
+      "experience_id": "experience::dev_v2_crud_authz_medium_standard_00472::authorization_transient",
+      "natural_text_sha256": "fceee0b1be7e6a5776cd22324910c07cdbc51eea179c8f1b0fb14f06a17ff8d6",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "authorization_transient",
+      "source_instance_id": "dev_v2_crud_authz_medium_standard_00472::authorization_transient",
+      "source_task_id": "dev_v2_crud_authz_medium_standard_00472"
+    },
+    {
+      "experience_id": "experience::dev_v2_retrieval_authz_medium_tight_00525::authorization_transient",
+      "natural_text_sha256": "faa6cab7ddc27cfe4035ab5b889082e6a2a9b4daac0536914b5eefec113f13b0",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "authorization_transient",
+      "source_instance_id": "dev_v2_retrieval_authz_medium_tight_00525::authorization_transient",
+      "source_task_id": "dev_v2_retrieval_authz_medium_tight_00525"
+    },
+    {
+      "experience_id": "experience::dev_v2_files_authz_easy_relaxed_00794::authorization_transient",
+      "natural_text_sha256": "bbf2d8ec5ebbd598b3859610f816f3da01c72b4fd3d2ce8ead422991def3558c",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "authorization_transient",
+      "source_instance_id": "dev_v2_files_authz_easy_relaxed_00794::authorization_transient",
+      "source_task_id": "dev_v2_files_authz_easy_relaxed_00794"
+    },
+    {
+      "experience_id": "experience::dev_v2_files_authz_medium_standard_00148::authorization_transient",
+      "natural_text_sha256": "1c551331971a37c5927701381d76a207a585484abfebad81d7e1530542aa2bf6",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "authorization_transient",
+      "source_instance_id": "dev_v2_files_authz_medium_standard_00148::authorization_transient",
+      "source_task_id": "dev_v2_files_authz_medium_standard_00148"
+    },
+    {
+      "experience_id": "experience::dev_v2_scheduling_authz_easy_standard_00631::authorization_transient",
+      "natural_text_sha256": "091be89e27d57c6996f3d078490fa82cc8c61a09faf10171cb07917566f46b7f",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "authorization_transient",
+      "source_instance_id": "dev_v2_scheduling_authz_easy_standard_00631::authorization_transient",
+      "source_task_id": "dev_v2_scheduling_authz_easy_standard_00631"
+    },
+    {
+      "experience_id": "experience::dev_v2_crud_authz_medium_standard_00688::authorization_transient",
+      "natural_text_sha256": "21823a2fed81536f441664c559a6728679e425b5b2ad37bed7bb99e01d1d93a2",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "authorization_transient",
+      "source_instance_id": "dev_v2_crud_authz_medium_standard_00688::authorization_transient",
+      "source_task_id": "dev_v2_crud_authz_medium_standard_00688"
+    },
+    {
+      "experience_id": "experience::dev_v2_retrieval_authz_medium_relaxed_00743::authorization_transient",
+      "natural_text_sha256": "d0d954d28d59ba529bc3334ba395c64bb10d4ab06eb8879caaf075a00cb06d55",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "authorization_transient",
+      "source_instance_id": "dev_v2_retrieval_authz_medium_relaxed_00743::authorization_transient",
+      "source_task_id": "dev_v2_retrieval_authz_medium_relaxed_00743"
+    },
+    {
+      "experience_id": "experience::dev_v2_scheduling_authz_medium_relaxed_00851::authorization_transient",
+      "natural_text_sha256": "91e2b863937e99d85361cefe45c03801d857114de1930033b524e9ad00577792",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "authorization_transient",
+      "source_instance_id": "dev_v2_scheduling_authz_medium_relaxed_00851::authorization_transient",
+      "source_task_id": "dev_v2_scheduling_authz_medium_relaxed_00851"
+    },
+    {
+      "experience_id": "experience::dev_v2_crud_authz_medium_standard_00040::authorization_transient",
+      "natural_text_sha256": "1dac9f64685c6ad6b495d7bc98de56dab13e9f924db4a4ec72fba3aa03505dd0",
+      "policy": {
+        "kind": "retry",
+        "parameters": {
+          "max_attempts": 1
+        }
+      },
+      "provenance": "authorization_transient",
+      "source_instance_id": "dev_v2_crud_authz_medium_standard_00040::authorization_transient",
+      "source_task_id": "dev_v2_crud_authz_medium_standard_00040"
+    },
+    {
+      "experience_id": "experience::dev_v2_scheduling_authz_hard_relaxed_00638::authorization_persistent_extension",
+      "natural_text_sha256": "1334f1ab3ced36a664bf3e22ccdb98950eb061a3023a0fbd2a565fb272b99fea",
+      "policy": {
+        "kind": "stop_and_report",
+        "parameters": {
+          "reason_code": "persistent_authorization_denial"
+        }
+      },
+      "provenance": "authorization_persistent_extension",
+      "source_instance_id": "dev_v2_scheduling_authz_hard_relaxed_00638::authorization_persistent_extension",
+      "source_task_id": "dev_v2_scheduling_authz_hard_relaxed_00638"
+    },
+    {
+      "experience_id": "experience::dev_v2_scheduling_authz_easy_tight_00630::authorization_persistent_extension",
+      "natural_text_sha256": "251d9993bf7519d9471343231ef07333e281f0292fd8229fd8988a4381baed5a",
+      "policy": {
+        "kind": "stop_and_report",
+        "parameters": {
+          "reason_code": "persistent_authorization_denial"
+        }
+      },
+      "provenance": "authorization_persistent_extension",
+      "source_instance_id": "dev_v2_scheduling_authz_easy_tight_00630::authorization_persistent_extension",
+      "source_task_id": "dev_v2_scheduling_authz_easy_tight_00630"
+    },
+    {
+      "experience_id": "experience::dev_v2_crud_authz_easy_relaxed_00470::authorization_persistent_extension",
+      "natural_text_sha256": "34b1851f3e5fbbcf6bcdbfc3a8eafb0c80efd1275b9cb147b016250b689afc8e",
+      "policy": {
+        "kind": "stop_and_report",
+        "parameters": {
+          "reason_code": "persistent_authorization_denial"
+        }
+      },
+      "provenance": "authorization_persistent_extension",
+      "source_instance_id": "dev_v2_crud_authz_easy_relaxed_00470::authorization_persistent_extension",
+      "source_task_id": "dev_v2_crud_authz_easy_relaxed_00470"
+    },
+    {
+      "experience_id": "experience::dev_v2_scheduling_authz_hard_relaxed_00206::authorization_persistent_extension",
+      "natural_text_sha256": "e49e99fda7be49a6e9aa601fb2ae6ab8e4c09254567b5cb8fd6a0c594f4ffe8c",
+      "policy": {
+        "kind": "stop_and_report",
+        "parameters": {
+          "reason_code": "persistent_authorization_denial"
+        }
+      },
+      "provenance": "authorization_persistent_extension",
+      "source_instance_id": "dev_v2_scheduling_authz_hard_relaxed_00206::authorization_persistent_extension",
+      "source_task_id": "dev_v2_scheduling_authz_hard_relaxed_00206"
+    },
+    {
+      "experience_id": "experience::dev_v2_files_authz_easy_tight_00792::authorization_persistent_extension",
+      "natural_text_sha256": "1621f139d2e00c39c7386b197c63ab8daf35466ae0e971aebe406c892d5c3246",
+      "policy": {
+        "kind": "stop_and_report",
+        "parameters": {
+          "reason_code": "persistent_authorization_denial"
+        }
+      },
+      "provenance": "authorization_persistent_extension",
+      "source_instance_id": "dev_v2_files_authz_easy_tight_00792::authorization_persistent_extension",
+      "source_task_id": "dev_v2_files_authz_easy_tight_00792"
+    },
+    {
+      "experience_id": "experience::dev_v2_files_authz_easy_tight_00360::authorization_persistent_extension",
+      "natural_text_sha256": "7394e162d74234da2eb36123b097127e04a9b4d70ef3edaada9cfb967a0d6153",
+      "policy": {
+        "kind": "stop_and_report",
+        "parameters": {
+          "reason_code": "persistent_authorization_denial"
+        }
+      },
+      "provenance": "authorization_persistent_extension",
+      "source_instance_id": "dev_v2_files_authz_easy_tight_00360::authorization_persistent_extension",
+      "source_task_id": "dev_v2_files_authz_easy_tight_00360"
+    },
+    {
+      "experience_id": "experience::dev_v2_files_authz_hard_relaxed_00368::authorization_persistent_extension",
+      "natural_text_sha256": "b5a8de0cfadfe2b53566942b6d006859e0540c3cd173648c107ffe0ef9888919",
+      "policy": {
+        "kind": "stop_and_report",
+        "parameters": {
+          "reason_code": "persistent_authorization_denial"
+        }
+      },
+      "provenance": "authorization_persistent_extension",
+      "source_instance_id": "dev_v2_files_authz_hard_relaxed_00368::authorization_persistent_extension",
+      "source_task_id": "dev_v2_files_authz_hard_relaxed_00368"
+    },
+    {
+      "experience_id": "experience::dev_v2_retrieval_authz_medium_standard_00094::authorization_persistent_extension",
+      "natural_text_sha256": "095fa2544b2af73a34e8cef3d451b802f09cd74f1f04148518f53610843a3e98",
+      "policy": {
+        "kind": "stop_and_report",
+        "parameters": {
+          "reason_code": "persistent_authorization_denial"
+        }
+      },
+      "provenance": "authorization_persistent_extension",
+      "source_instance_id": "dev_v2_retrieval_authz_medium_standard_00094::authorization_persistent_extension",
+      "source_task_id": "dev_v2_retrieval_authz_medium_standard_00094"
+    },
+    {
+      "experience_id": "experience::dev_v2_files_authz_hard_tight_00582::authorization_persistent_extension",
+      "natural_text_sha256": "96e7d75ea3489d21d12976f77506f504decec8f8916e51ee105c859984bce65d",
+      "policy": {
+        "kind": "stop_and_report",
+        "parameters": {
+          "reason_code": "persistent_authorization_denial"
+        }
+      },
+      "provenance": "authorization_persistent_extension",
+      "source_instance_id": "dev_v2_files_authz_hard_tight_00582::authorization_persistent_extension",
+      "source_task_id": "dev_v2_files_authz_hard_tight_00582"
+    },
+    {
+      "experience_id": "experience::dev_v2_files_authz_medium_relaxed_00797::authorization_persistent_extension",
+      "natural_text_sha256": "be34a2552119522f4a5819168c2ea25993637bc91390c13d535a76c3643ff111",
+      "policy": {
+        "kind": "stop_and_report",
+        "parameters": {
+          "reason_code": "persistent_authorization_denial"
+        }
+      },
+      "provenance": "authorization_persistent_extension",
+      "source_instance_id": "dev_v2_files_authz_medium_relaxed_00797::authorization_persistent_extension",
+      "source_task_id": "dev_v2_files_authz_medium_relaxed_00797"
+    },
+    {
+      "experience_id": "experience::dev_v2_retrieval_authz_medium_relaxed_00527::authorization_persistent_extension",
+      "natural_text_sha256": "299b316582eb588d2bf186f19108b2467ff7821da805eef649aa819097ea7b48",
+      "policy": {
+        "kind": "stop_and_report",
+        "parameters": {
+          "reason_code": "persistent_authorization_denial"
+        }
+      },
+      "provenance": "authorization_persistent_extension",
+      "source_instance_id": "dev_v2_retrieval_authz_medium_relaxed_00527::authorization_persistent_extension",
+      "source_task_id": "dev_v2_retrieval_authz_medium_relaxed_00527"
+    },
+    {
+      "experience_id": "experience::dev_v2_scheduling_authz_medium_standard_00634::authorization_persistent_extension",
+      "natural_text_sha256": "3753bad88b8213dcc14d0d36c05b0c65f9e3d6e9deef841e283091c370f72171",
+      "policy": {
+        "kind": "stop_and_report",
+        "parameters": {
+          "reason_code": "persistent_authorization_denial"
+        }
+      },
+      "provenance": "authorization_persistent_extension",
+      "source_instance_id": "dev_v2_scheduling_authz_medium_standard_00634::authorization_persistent_extension",
+      "source_task_id": "dev_v2_scheduling_authz_medium_standard_00634"
+    },
+    {
+      "experience_id": "experience::dev_v2_scheduling_authz_medium_relaxed_00203::authorization_persistent_extension",
+      "natural_text_sha256": "c03b9598c6746ce2e5ce4660b1cc35c75ab027d95c533728cdd8eaf46af1bf01",
+      "policy": {
+        "kind": "stop_and_report",
+        "parameters": {
+          "reason_code": "persistent_authorization_denial"
+        }
+      },
+      "provenance": "authorization_persistent_extension",
+      "source_instance_id": "dev_v2_scheduling_authz_medium_relaxed_00203::authorization_persistent_extension",
+      "source_task_id": "dev_v2_scheduling_authz_medium_relaxed_00203"
+    },
+    {
+      "experience_id": "experience::dev_v2_scheduling_authz_hard_standard_00421::authorization_persistent_extension",
+      "natural_text_sha256": "4a927be6c5403f3cf845c47baa74bb41a9d38c937b5f67071e5d1012c04324d7",
+      "policy": {
+        "kind": "stop_and_report",
+        "parameters": {
+          "reason_code": "persistent_authorization_denial"
+        }
+      },
+      "provenance": "authorization_persistent_extension",
+      "source_instance_id": "dev_v2_scheduling_authz_hard_standard_00421::authorization_persistent_extension",
+      "source_task_id": "dev_v2_scheduling_authz_hard_standard_00421"
+    },
+    {
+      "experience_id": "experience::dev_v2_crud_authz_hard_standard_00259::authorization_persistent_extension",
+      "natural_text_sha256": "917fddb6c161b884233f523f3ccdfde6eff4e31a16079a9292a9f0dfe4ade296",
+      "policy": {
+        "kind": "stop_and_report",
+        "parameters": {
+          "reason_code": "persistent_authorization_denial"
+        }
+      },
+      "provenance": "authorization_persistent_extension",
+      "source_instance_id": "dev_v2_crud_authz_hard_standard_00259::authorization_persistent_extension",
+      "source_task_id": "dev_v2_crud_authz_hard_standard_00259"
+    },
+    {
+      "experience_id": "experience::dev_v2_files_authz_hard_tight_00150::authorization_persistent_extension",
+      "natural_text_sha256": "cdd2040713fe8f19676b835f9e359d621ef5ff7e28398924c62a1f2bba16b5b9",
+      "policy": {
+        "kind": "stop_and_report",
+        "parameters": {
+          "reason_code": "persistent_authorization_denial"
+        }
+      },
+      "provenance": "authorization_persistent_extension",
+      "source_instance_id": "dev_v2_files_authz_hard_tight_00150::authorization_persistent_extension",
+      "source_task_id": "dev_v2_files_authz_hard_tight_00150"
+    },
+    {
+      "experience_id": "experience::dev_v2_scheduling_authz_medium_standard_00202::authorization_persistent_extension",
+      "natural_text_sha256": "c1f9ce08f48af150bc3712e23b53dc14efd751803852391fbda4219d4aff6f99",
+      "policy": {
+        "kind": "stop_and_report",
+        "parameters": {
+          "reason_code": "persistent_authorization_denial"
+        }
+      },
+      "provenance": "authorization_persistent_extension",
+      "source_instance_id": "dev_v2_scheduling_authz_medium_standard_00202::authorization_persistent_extension",
+      "source_task_id": "dev_v2_scheduling_authz_medium_standard_00202"
+    },
+    {
+      "experience_id": "experience::dev_v2_files_authz_easy_standard_00793::authorization_persistent_extension",
+      "natural_text_sha256": "649e80d60eac20980d77b050e32f27d7306befbb3637db59ea7fa5cb79dd21cd",
+      "policy": {
+        "kind": "stop_and_report",
+        "parameters": {
+          "reason_code": "persistent_authorization_denial"
+        }
+      },
+      "provenance": "authorization_persistent_extension",
+      "source_instance_id": "dev_v2_files_authz_easy_standard_00793::authorization_persistent_extension",
+      "source_task_id": "dev_v2_files_authz_easy_standard_00793"
+    },
+    {
+      "experience_id": "experience::dev_v2_files_authz_easy_tight_00576::authorization_persistent_extension",
+      "natural_text_sha256": "f11c456d536f2c77911a37c7afcb64cde32db17488e87ef537b99acbef6dd334",
+      "policy": {
+        "kind": "stop_and_report",
+        "parameters": {
+          "reason_code": "persistent_authorization_denial"
+        }
+      },
+      "provenance": "authorization_persistent_extension",
+      "source_instance_id": "dev_v2_files_authz_easy_tight_00576::authorization_persistent_extension",
+      "source_task_id": "dev_v2_files_authz_easy_tight_00576"
+    },
+    {
+      "experience_id": "experience::dev_v2_scheduling_authz_medium_relaxed_00635::authorization_persistent_extension",
+      "natural_text_sha256": "e862ec33a5941f05c0fefdb8b357a5332a43b59d5ad034ba5767545df3a38e0e",
+      "policy": {
+        "kind": "stop_and_report",
+        "parameters": {
+          "reason_code": "persistent_authorization_denial"
+        }
+      },
+      "provenance": "authorization_persistent_extension",
+      "source_instance_id": "dev_v2_scheduling_authz_medium_relaxed_00635::authorization_persistent_extension",
+      "source_task_id": "dev_v2_scheduling_authz_medium_relaxed_00635"
+    }
+  ],
+  "run_kind": "confirmatory_gate_v1_screening",
+  "schema_version": 1,
+  "screening": {
+    "clean_base_task_count": 207,
+    "gate_changed_primary_pair_count": 115,
+    "gate_intervention_count": 119,
+    "gpu_run_authorized_by_capacity": true,
+    "minimum_met": true,
+    "minimum_required_primary_pair_count": 50,
+    "preferred_met": true,
+    "preferred_primary_pair_count": 80,
+    "public_test_task_count": 1200,
+    "rejected_argument_omission_target_count": 18,
+    "valid_argument_omission_target_count": 189
+  }
+}

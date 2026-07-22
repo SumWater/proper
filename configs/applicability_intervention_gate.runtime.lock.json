@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "status": "refactored_runtime_lock_after_completed_cross_validation",
+  "config": {
+    "path": "configs/applicability_intervention_gate.runtime.yaml",
+    "sha256": "54b3825b432e4e5785c2026a99807ead268d0582ae882b173986649d5a3e5dc7"
+  },
+  "feature_source": {
+    "path": "src/failure_memory/intervention_gate.py",
+    "sha256": "d8f228ec51acd5672c2704c6fd1da4eabd391c41e9d0c1e7aa0b90b7ee0e1bee"
+  },
+  "evaluation_runner": {
+    "path": "experiments/applicability_intervention_gate.py",
+    "sha256": "f98d7890713c35137ee01212af64410539ff309ff83bfe36c8fc659047e09d5e"
+  },
+  "selection_manifest": {
+    "path": "outputs/candidate_selection/selection_manifest.json",
+    "sha256": "5570d6399a91a558b0957f623bb2bc70a2d6dc52e5918b2b7c30b4a0103f8cdb"
+  },
+  "threshold_tuning_after_result": false,
+  "validation_model_outcomes_unsealed": false,
+  "note": "Post-result refactoring lock for the runnable slim tree; the original formal identity is configs/applicability_intervention_gate.lock.json."
+}

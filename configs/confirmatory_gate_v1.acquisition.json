@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "status": "public_test_acquired_and_prepared_without_model_outputs",
+  "public_test": {
+    "path": "work/toolmisusebench_test/test_public.jsonl",
+    "bytes": 1695141,
+    "sha256": "12c5e1e93926f4089dfc8d0c60cea53b556057360562375510744858fc6f1161"
+  },
+  "prepared_manifest": {
+    "path": "work/confirmatory_gate_v1_prepared.json",
+    "sha256": "b408f836be2193d79f4735b53978310f5f3d5dd826273700a4d421a071fe6aec",
+    "payload_sha256": "a9a0e13fa5a87a109df83d499b950848febcc512ecaaa1ae4dffc8f236a22266"
+  },
+  "screening": {
+    "path": "outputs/confirmatory_gate_v1/screening.json",
+    "sha256": "69aadfdb0e19eddb65c14ebace86a4843f0d1f711580b49396ae7afc79c98031",
+    "public_test_task_count": 1200,
+    "valid_argument_omission_target_count": 189,
+    "gate_changed_primary_pair_count": 115,
+    "gpu_run_authorized_by_capacity": true
+  },
+  "model_loaded": false,
+  "public_test_model_outputs_generated": false,
+  "note": "This receipt records acquisition after the method and source lock were frozen. It does not modify the locked protocol."
+}

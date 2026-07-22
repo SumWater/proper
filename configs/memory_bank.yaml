@@ -1,0 +1,139 @@
+schema_version: 2
+status: refactored_runtime_after_completed_development_run
+protocol: docs/preregistration_v2.md
+pilot_exclusions: configs/pilot_exclusions.json
+
+dataset:
+  split: dev
+  revision: 98eb28718b0393e029088ce80604c48807216de4
+  sample_sha256: a5a2b49b28c66f01bdbac37966c00cca9c6a1027a6d4b5b3a8c1d1d359db27e3
+  toolmisusebench_commit: b6ee3412f98d2058ee487e182a72b26c58046d51
+  toolmisusebench_source_manifest: configs/toolmisusebench_source.runtime.sha256
+  public_test_reserved: true
+
+selection:
+  seed: confirmatory-v2-20260721
+  ordering: sha256_seed_colon_source_task_id
+  eligible_source_faults: [timeout, schema_drift, clean, authz]
+  one_target_per_source_task: true
+  memory_source_quotas:
+    timeout_transient: 20
+    schema_backend_one_shot: 20
+    argument_omission_extension: 20
+    authorization_transient: 20
+    authorization_persistent_extension: 20
+  target_pool: all_remaining_valid_eligible_dev_tasks
+  authz_target_assignment: alternating_hash_order_transient_then_persistent
+  estimated_pilot_rank1_inapplicability_rate_for_capacity_only: 0.16666666666666666
+  minimum_rank1_inapplicable_confirmatory_pairs: 50
+  preferred_rank1_inapplicable_pairs: 80
+  selected_pair_rule: use_all_naturally_selected_rank1_inapplicable_targets
+  below_minimum_action: stop_underpowered_without_gpu_run
+  never_lower_minimum_or_reuse_pilot: true
+
+retrieval:
+  retriever: source_blind_tfidf
+  top_k: 3
+  primary_rank: 1
+  leave_same_source_out: true
+  memory_source_target_disjoint: true
+  applicable_control: highest_source_blind_rank_with_environment_applicability_true
+
+conditions:
+  fixed_order:
+    - no_memory
+    - neutralized_memory
+    - inapplicable_memory
+    - matched_applicable_memory
+  primary_contrast: inapplicable_memory_vs_no_memory
+  full_prompt_must_be_saved: true
+  neutralized_recovery_text: >-
+    A previous attempt on a similar task was observed. This record provides
+    context but no recovery recommendation.
+  neutralized_lexical_token_delta_max: 5
+  neutralized_forbidden_advice_tokens:
+    - retry
+    - retried
+    - correct
+    - corrected
+    - revise
+    - stop
+    - report
+
+agent_boundary:
+  forbidden_agent_fields:
+    - fault_plan
+    - fault_type
+    - recoverability
+    - gold_summary
+    - success_criteria
+    - provenance
+    - recommended_policy
+
+model:
+  name: Qwen3-8B
+  manifest: configs/qwen3_8b_model.sha256
+  manifest_sha256: aa3e07db476dac6f3af8ad14958cb6febee947243f4bc29d7f6c5eda5c92e4ba
+  backend: transformers
+  enable_thinking: false
+  do_sample: false
+  temperature: 0.0
+  max_new_tokens: 256
+  maximum_post_failure_decisions: 1
+  cuda_visible_devices: "0"
+
+environment:
+  lock: configs/lab_environment.lock.json
+  conda_explicit_sha256: ed07021e8c5584886c6a31c639811e0bfaf66143a10dc263ab27797dcfd72679
+  pip_freeze_sha256: 2c6dee2832f484632d729f341b21a2e92d220021cb6b95f015f9cf19a7df363f
+
+primary_endpoint:
+  name: recovery_validity
+  pnt: "I[R_inapplicable < R_no_memory]"
+  ppt: "I[R_inapplicable > R_no_memory]"
+  npe: "mean(R_inapplicable - R_no_memory)"
+  hypothesis_direction: pnt_greater_than_ppt
+  test: exact_two_sided_mcnemar
+  alpha: 0.05
+  support_rule: pnt_greater_than_ppt_and_p_value_below_alpha
+  paired_risk_difference_ci: paired_wald_normal_clipped
+  confidence_level: 0.95
+
+mechanism_endpoints:
+  miac: canonical_action_differs_from_no_memory
+  imh: miac_and_pnt
+  strict_policy_adoption: exact_v1_policy_matcher
+  policy_followed_harm: strict_policy_adoption_and_pnt
+
+secondary_outcomes:
+  - task_completion
+  - correct_stop
+  - safety_violation
+  - repeated_invalid_calls
+  - recovery_steps
+  - recovery_tool_calls
+
+behavior_atoms:
+  names:
+    - same_tool
+    - exact_retry
+    - argument_add
+    - argument_remove
+    - argument_replace
+    - argument_rename
+    - stop
+    - fallback
+    - verify_schema
+    - different_from_no_memory
+    - paired_argument_add
+    - paired_argument_remove
+    - paired_argument_replace
+    - paired_argument_rename
+  schema_verification_tools: []
+
+outputs:
+  prepared_manifest: work/memory_bank_prepared.json
+  screening_output: outputs/development_four_condition/screening.json
+  conditional_output: outputs/development_four_condition/results.json
+  overall_output: outputs/development_four_condition/overall_results.json
+  schema: schemas/development_four_condition.schema.json
