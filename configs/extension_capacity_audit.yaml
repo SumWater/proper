@@ -1,0 +1,50 @@
+schema_version: 1
+status: exploratory_development_capacity_audit
+purpose: decide_whether_proper_v2_has_cross_failure_capacity_before_method_changes
+
+input:
+  selection_manifest: outputs/candidate_selection/selection_manifest.json
+  selection_manifest_sha256: 5570d6399a91a558b0957f623bb2bc70a2d6dc52e5918b2b7c30b4a0103f8cdb
+  expected_target_count: 332
+  model_outputs_forbidden: true
+
+families:
+  schema_drift:
+    provenances: [schema_backend_one_shot]
+  timeout:
+    provenances: [timeout_transient]
+  authorization:
+    provenances:
+      - authorization_transient
+      - authorization_persistent_extension
+  argument_omission_reference:
+    provenances: [argument_omission_extension]
+
+candidate_depths: [1, 5, 10]
+
+development_readiness:
+  minimum_targets_per_family: 50
+  minimum_distinct_tools_per_family: 3
+  minimum_rank1_conflicts_with_top10_replacement: 10
+  minimum_distinct_top10_replacement_memories: 3
+
+observable_alias_checks:
+  - name: schema_drift_vs_argument_omission
+    left_provenances: [schema_backend_one_shot]
+    right_provenances: [argument_omission_extension]
+    conflicting_recovery_policies: [retry, repair]
+  - name: authorization_transient_vs_persistent
+    left_provenances: [authorization_transient]
+    right_provenances: [authorization_persistent_extension]
+    conflicting_recovery_policies: [retry, stop]
+
+boundary:
+  development_data_only: true
+  evaluator_applicability_used_only_for_capacity_counts: true
+  no_model_loaded: true
+  no_model_output_read: true
+  no_gate_refit: true
+  no_gpu_run_authorized: true
+
+output:
+  path: outputs/extension_capacity/audit.json

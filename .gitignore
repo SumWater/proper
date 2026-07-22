@@ -41,6 +41,8 @@ outputs/*
 !outputs/proper_gate/**
 !outputs/confirmatory_gate_v1/
 !outputs/confirmatory_gate_v1/**
+!outputs/extension_capacity/
+!outputs/extension_capacity/**
 rollouts/
 *.log
 !work/lab_confirmatory_gate_v1.log

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "extension_capacity_audit.schema.json",
+  "title": "PROPER v2 Extension Capacity Audit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "run_kind",
+    "identities",
+    "boundary",
+    "population",
+    "families",
+    "observable_aliasing",
+    "planning_decision",
+    "interpretation_limits"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "run_kind": {"const": "exploratory_proper_v2_extension_capacity_audit"},
+    "identities": {"type": "object"},
+    "boundary": {
+      "type": "object",
+      "required": ["development_data_only", "model_loaded", "model_outputs_read", "gpu_run_authorized"]
+    },
+    "population": {"type": "object"},
+    "families": {
+      "type": "object",
+      "required": ["schema_drift", "timeout", "authorization", "argument_omission_reference"]
+    },
+    "observable_aliasing": {
+      "type": "object",
+      "required": ["schema_drift_vs_argument_omission", "authorization_transient_vs_persistent"]
+    },
+    "planning_decision": {"type": "object"},
+    "interpretation_limits": {"type": "object"}
+  }
+}

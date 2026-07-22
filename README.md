@@ -25,6 +25,9 @@ public-test outcomes to retune the frozen gate.
 The next stage investigates whether the same applicability-gating idea extends
 across tools, memories, and observable failure families. New development and
 confirmation data must remain separated from the frozen public-test result.
+The CPU-only capacity audit found that authorization has the strongest new
+candidate capacity but requires a repeated-denial observation; see
+`docs/extension_capacity_audit_result.md`.
 
 ## Repository map
 
@@ -32,6 +35,7 @@ confirmation data must remain separated from the frozen public-test result.
 - `src/failure_memory/frozen_gate.py`: frozen dependency-free inference
 - `experiments/applicability_intervention_gate.py`: development cross-validation
 - `experiments/confirmatory_gate_v1.py`: frozen model experiment
+- `experiments/extension_capacity_audit.py`: CPU-only cross-failure capacity audit
 - `outputs/proper_gate/`: frozen gate-development artifact
 - `outputs/candidate_selection/`: frozen candidate-ranking artifact
 - `outputs/confirmatory_gate_v1/`: immutable formal results and analysis
