@@ -105,6 +105,47 @@ class ConfirmatoryTransientAuthzV1Tests(unittest.TestCase):
         self.assertFalse(lock["model_outputs_read_or_generated"])
         self.assertTrue(lock["gpu_run_authorized"])
 
+    def test_completed_result_lock_recomputes_primary_table(self) -> None:
+        lock = json.loads(
+            (
+                ROOT
+                / "configs"
+                / "confirmatory_transient_authz_v1.result.lock.json"
+            ).read_text(encoding="utf-8")
+        )
+        for key in ("raw_results", "linux_log", "independent_analysis"):
+            item = lock[key]
+            actual = hashlib.sha256((ROOT / item["path"]).read_bytes()).hexdigest()
+            self.assertEqual(actual, item["sha256"], key)
+        result = json.loads(
+            (ROOT / lock["raw_results"]["path"]).read_text(encoding="utf-8")
+        )
+        primary = [item for item in result["records"] if item["selection_changed"]]
+        self.assertEqual(len(primary), 53)
+        rank1 = [
+            bool(item["conditions"]["tfidf_rank1_memory"]["outcome"]["recovery_validity"])
+            for item in primary
+        ]
+        proper = [
+            bool(
+                item["conditions"]["proper_transient_authz_memory"]["outcome"][
+                    "recovery_validity"
+                ]
+            )
+            for item in primary
+        ]
+        self.assertEqual(sum(rank1), 34)
+        self.assertEqual(sum(proper), 49)
+        self.assertEqual(
+            sum(current and not baseline for baseline, current in zip(rank1, proper)),
+            15,
+        )
+        self.assertEqual(
+            sum(baseline and not current for baseline, current in zip(rank1, proper)),
+            0,
+        )
+        self.assertTrue(lock["primary_result"]["directional_hypothesis_supported"])
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -20,6 +20,14 @@ The supported claim is deliberately narrow. All observed improvements occurred
 for `get_doc` and used one selected memory. The repository must not use these
 public-test outcomes to retune the frozen gate.
 
+The independently recomputed transient-authorization extension contains 53
+selector-changed pairs: TF-IDF Rank-1 Recovery Validity was 34/53 and PROPER was
+49/53, with 15 improvements, no deterioration, a +28.30 percentage-point paired
+difference, and exact two-sided McNemar p = 0.000061. Improvements span five
+target tools and seven selected memories. This supports a cross-tool,
+cross-memory effect within the released transient-authorization condition, not
+a universal Agent-memory claim.
+
 ## Active direction
 
 The next stage tests memory selection on the released native transient-

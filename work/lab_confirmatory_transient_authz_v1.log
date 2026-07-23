@@ -1,0 +1,409 @@
+.gitattributes: 成功
+.gitignore: 成功
+configs/applicability_intervention_gate.environment.json: 成功
+configs/applicability_intervention_gate.lock.json: 成功
+configs/applicability_intervention_gate.runtime.lock.json: 成功
+configs/applicability_intervention_gate.runtime.yaml: 成功
+configs/applicability_intervention_gate.yaml: 成功
+configs/candidate_development.yaml: 成功
+configs/candidate_rules.lock.json: 成功
+configs/candidate_rules.yaml: 成功
+configs/confirmatory_gate_v1.acquisition.json: 成功
+configs/confirmatory_gate_v1.lock.json: 成功
+configs/confirmatory_gate_v1.result.lock.json: 成功
+configs/confirmatory_gate_v1.runtime.lock.json: 成功
+configs/confirmatory_gate_v1.runtime.yaml: 成功
+configs/confirmatory_gate_v1.yaml: 成功
+configs/confirmatory_transient_authz_v1.environment.lock.json: 成功
+configs/confirmatory_transient_authz_v1.lock.json: 成功
+configs/confirmatory_transient_authz_v1.prepared.lock.json: 成功
+configs/confirmatory_transient_authz_v1.yaml: 成功
+configs/extension_capacity_audit.yaml: 成功
+configs/lab_environment.lock.json: 成功
+configs/memory_bank.yaml: 成功
+configs/observable_identifiability_audit.yaml: 成功
+configs/pilot_exclusions.json: 成功
+configs/qwen3_8b_model.sha256: 成功
+configs/transient_authz_capacity_v1.lock.json: 成功
+configs/transient_authz_capacity_v1.result.lock.json: 成功
+configs/transient_authz_capacity_v1.yaml: 成功
+configs/toolmisusebench.lock.json: 成功
+configs/toolmisusebench_source.runtime.sha256: 成功
+configs/toolmisusebench_source.sha256: 成功
+docs/applicability_intervention_gate_result.md: 成功
+docs/artifact_layout.md: 成功
+docs/confirmatory_gate_v1_result.md: 成功
+docs/confirmatory_transient_authz_v1_preparation.md: 成功
+docs/extension_capacity_audit_result.md: 成功
+docs/observable_identifiability_result.md: 成功
+docs/preregistration_applicability_intervention_gate.md: 成功
+docs/preregistration_confirmatory_gate_v1.md: 成功
+docs/preregistration_confirmatory_transient_authz_v1.md: 成功
+docs/transient_authz_capacity_v1_protocol.md: 成功
+experiments/agent_runtime.py: 成功
+experiments/analyze_confirmatory_gate_v1.py: 成功
+experiments/applicability_intervention_gate.py: 成功
+experiments/benchmark_instances.py: 成功
+experiments/candidate_audit.py: 成功
+experiments/candidate_manifest.py: 成功
+experiments/confirmatory_gate_v1.py: 成功
+experiments/confirmatory_transient_authz_v1.py: 成功
+experiments/extension_capacity_audit.py: 成功
+experiments/gate_dataset.py: 成功
+experiments/observable_identifiability_audit.py: 成功
+experiments/transient_authz_capacity_v1.py: 成功
+external/toolmisusebench/LICENSE: 成功
+external/toolmisusebench/README.md: 成功
+external/toolmisusebench/toolmisusebench/__init__.py: 成功
+external/toolmisusebench/toolmisusebench/baselines/__init__.py: 成功
+external/toolmisusebench/toolmisusebench/baselines/common.py: 成功
+external/toolmisusebench/toolmisusebench/baselines/schema_repair_agent.py: 成功
+external/toolmisusebench/toolmisusebench/dataset.py: 成功
+external/toolmisusebench/toolmisusebench/envs/__init__.py: 成功
+external/toolmisusebench/toolmisusebench/envs/base.py: 成功
+external/toolmisusebench/toolmisusebench/envs/crud_env.py: 成功
+external/toolmisusebench/toolmisusebench/envs/files_env.py: 成功
+external/toolmisusebench/toolmisusebench/envs/retrieval_env.py: 成功
+external/toolmisusebench/toolmisusebench/envs/scheduler_env.py: 成功
+external/toolmisusebench/toolmisusebench/faults/__init__.py: 成功
+external/toolmisusebench/toolmisusebench/faults/adversarial_errors.py: 成功
+external/toolmisusebench/toolmisusebench/faults/authz.py: 成功
+external/toolmisusebench/toolmisusebench/faults/base.py: 成功
+external/toolmisusebench/toolmisusebench/faults/rate_limit.py: 成功
+external/toolmisusebench/toolmisusebench/faults/schema_drift.py: 成功
+external/toolmisusebench/toolmisusebench/faults/timeout.py: 成功
+external/toolmisusebench/toolmisusebench/harness/__init__.py: 成功
+external/toolmisusebench/toolmisusebench/harness/runner.py: 成功
+external/toolmisusebench/toolmisusebench/registry.py: 成功
+external/toolmisusebench/toolmisusebench/types.py: 成功
+external/toolmisusebench/toolmisusebench/utils/__init__.py: 成功
+external/toolmisusebench/toolmisusebench/utils/seed.py: 成功
+external/toolmisusebench/toolmisusebench/version2/__init__.py: 成功
+external/toolmisusebench/toolmisusebench/version2/baselines.py: 成功
+outputs/candidate_selection/selection_manifest.json: 成功
+outputs/confirmatory_gate_v1/analysis.json: 成功
+outputs/confirmatory_gate_v1/results.json: 成功
+outputs/confirmatory_gate_v1/screening.json: 成功
+outputs/confirmatory_gate_v1/tool_results.csv: 成功
+outputs/confirmatory_transient_authz_v1/screening.json: 成功
+outputs/development_four_condition/results.json: 成功
+outputs/development_four_condition/screening.json: 成功
+outputs/extension_capacity/audit.json: 成功
+outputs/observable_identifiability/audit.json: 成功
+outputs/proper_gate/cross_validation.json: 成功
+outputs/transient_authz_capacity_v1/screening.json: 成功
+pyproject.toml: 成功
+README.md: 成功
+requirements.txt: 成功
+requirements-gate.txt: 成功
+schemas/applicability_intervention_gate.schema.json: 成功
+schemas/candidate_selection.schema.json: 成功
+schemas/confirmatory_gate_v1.schema.json: 成功
+schemas/confirmatory_gate_v1_analysis.schema.json: 成功
+schemas/confirmatory_transient_authz_v1.schema.json: 成功
+schemas/development_four_condition.schema.json: 成功
+schemas/extension_capacity_audit.schema.json: 成功
+schemas/observable_identifiability_audit.schema.json: 成功
+schemas/transient_authz_capacity_v1.schema.json: 成功
+scripts/prepare_confirmatory_gate_v1_windows.ps1: 成功
+scripts/prepare_confirmatory_transient_authz_v1_lab.sh: 成功
+scripts/prepare_transient_authz_capacity_v1_lab.sh: 成功
+scripts/run_confirmatory_gate_v1_lab.sh: 成功
+scripts/run_confirmatory_transient_authz_v1_lab.sh: 成功
+src/failure_memory/__init__.py: 成功
+src/failure_memory/boundary.py: 成功
+src/failure_memory/candidate_selector.py: 成功
+src/failure_memory/confirmatory.py: 成功
+src/failure_memory/contracts.py: 成功
+src/failure_memory/frozen_gate.py: 成功
+src/failure_memory/intervention_gate.py: 成功
+src/failure_memory/retrieval.py: 成功
+src/failure_memory/transient_authz_gate.py: 成功
+src/failure_memory/utilization.py: 成功
+tests/test_boundary.py: 成功
+tests/test_candidate_audit.py: 成功
+tests/test_candidate_manifest.py: 成功
+tests/test_candidate_selector.py: 成功
+tests/test_confirmatory.py: 成功
+tests/test_confirmatory_gate_v1.py: 成功
+tests/test_confirmatory_gate_v1_analysis.py: 成功
+tests/test_confirmatory_preparation.py: 成功
+tests/test_confirmatory_transient_authz_v1.py: 成功
+tests/test_contracts.py: 成功
+tests/test_extension_capacity_audit.py: 成功
+tests/test_frozen_gate.py: 成功
+tests/test_intervention_gate.py: 成功
+tests/test_manifest_portability.py: 成功
+tests/test_observable_identifiability_audit.py: 成功
+tests/test_retrieval.py: 成功
+tests/test_transient_authz_capacity_v1.py: 成功
+tests/test_transient_authz_gate.py: 成功
+tests/test_utilization.py: 成功
+work/lab_conda_explicit.lock: 成功
+work/lab_pip_freeze.lock: 成功
+Loading weights:   0%|          | 0/399 [00:00<?, ?it/s]Loading weights:   0%|          | 1/399 [00:00<01:23,  4.78it/s]Loading weights:   1%|          | 2/399 [00:00<01:32,  4.31it/s]Loading weights:   3%|▎         | 12/399 [00:00<00:13, 29.10it/s]Loading weights:   5%|▌         | 21/399 [00:00<00:08, 45.24it/s]Loading weights:   7%|▋         | 28/399 [00:00<00:07, 51.85it/s]Loading weights:  10%|▉         | 39/399 [00:00<00:05, 65.47it/s]Loading weights:  13%|█▎        | 50/399 [00:01<00:04, 74.14it/s]Loading weights:  15%|█▌        | 61/399 [00:01<00:04, 77.56it/s]Loading weights:  18%|█▊        | 71/399 [00:01<00:04, 76.36it/s]Loading weights:  21%|██        | 83/399 [00:01<00:03, 80.92it/s]Loading weights:  24%|██▎       | 94/399 [00:01<00:03, 85.92it/s]Loading weights:  26%|██▋       | 105/399 [00:01<00:03, 89.00it/s]Loading weights:  29%|██▉       | 115/399 [00:01<00:03, 88.20it/s]Loading weights:  32%|███▏      | 127/399 [00:01<00:02, 93.50it/s]Loading weights:  35%|███▍      | 138/399 [00:01<00:02, 93.96it/s]Loading weights:  37%|███▋      | 149/399 [00:02<00:02, 93.89it/s]Loading weights:  40%|████      | 160/399 [00:02<00:02, 92.30it/s]Loading weights:  43%|████▎     | 171/399 [00:02<00:02, 90.81it/s]Loading weights:  46%|████▌     | 182/399 [00:02<00:02, 88.82it/s]Loading weights:  48%|████▊     | 193/399 [00:02<00:02, 87.75it/s]Loading weights:  51%|█████     | 204/399 [00:02<00:02, 87.76it/s]Loading weights:  54%|█████▍    | 215/399 [00:02<00:02, 86.22it/s]Loading weights:  57%|█████▋    | 226/399 [00:02<00:01, 87.24it/s]Loading weights:  59%|█████▉    | 237/399 [00:03<00:01, 87.59it/s]Loading weights:  62%|██████▏   | 248/399 [00:03<00:01, 87.61it/s]Loading weights:  65%|██████▍   | 259/399 [00:03<00:01, 88.56it/s]Loading weights:  68%|██████▊   | 270/399 [00:03<00:01, 88.24it/s]Loading weights:  70%|███████   | 281/399 [00:03<00:01, 89.20it/s]Loading weights:  73%|███████▎  | 292/399 [00:03<00:01, 89.42it/s]Loading weights:  76%|███████▌  | 303/399 [00:03<00:01, 89.13it/s]Loading weights:  79%|███████▊  | 314/399 [00:03<00:00, 86.79it/s]Loading weights:  81%|████████  | 324/399 [00:04<00:00, 89.09it/s]Loading weights:  84%|████████▍ | 335/399 [00:04<00:00, 89.09it/s]Loading weights:  87%|████████▋ | 346/399 [00:04<00:00, 90.36it/s]Loading weights:  89%|████████▉ | 357/399 [00:04<00:00, 77.88it/s]Loading weights:  92%|█████████▏| 369/399 [00:04<00:00, 84.14it/s]Loading weights:  95%|█████████▌| 380/399 [00:04<00:00, 88.48it/s]Loading weights:  98%|█████████▊| 391/399 [00:04<00:00, 91.57it/s]Loading weights: 100%|██████████| 399/399 [00:04<00:00, 81.95it/s]
+{
+  "schema_version": 1,
+  "run_kind": "confirmatory_transient_authz_v1_results",
+  "identities": {
+    "capacity_result_lock_sha256": "ffad78b5928c0c184e7eb08243efa715e5d065ebd141f23d285a5e79abd0b4ba",
+    "capacity_screening_sha256": "a2e264dac63b2d9162c6dc9d5af7bc3a3b809f03303a4de5e047e87f8316540e",
+    "config_sha256": "e7f382e4c2bd70f9ace5695ff8b31becabeba5023777f1286071bc3a94751e00",
+    "frozen_memory_bank_manifest_sha256": "da06c6538fb8494a1ab50fee9d4a97d74f6a4e6f7ee161b014cec97d7c459011",
+    "frozen_memory_bank_payload_sha256": "b2841f434e2ffd89a11de73be3fe7c3d5dc0dbd42dd9d2990b6b49a0b4ff6c42",
+    "prepared_payload_sha256": "4af16c2bd75bbb3164c13bd90aee68786147885ed7bb61657defe939a337a0e1",
+    "public_test_sha256": "12c5e1e93926f4089dfc8d0c60cea53b556057360562375510744858fc6f1161",
+    "prepared_file_sha256": "1a8a72b9554ceceaaa041fde04dacabe1966aa31b80f5ca47bf70570022ba806",
+    "project_source_manifest_sha256": "384218e58ecc14e49cefec5ffd7be2118f9e04418aeaea2b0ecdbafc236a66e4",
+    "model_manifest_sha256": "aa3e07db476dac6f3af8ad14958cb6febee947243f4bc29d7f6c5eda5c92e4ba",
+    "conda_explicit_lock_sha256": "ed07021e8c5584886c6a31c639811e0bfaf66143a10dc263ab27797dcfd72679",
+    "pip_freeze_lock_sha256": "e215575984b1f02914e781348564fa8426adb717154bc91a5d39d8af6ec8cc8b",
+    "toolmisusebench_lock_sha256": "8e1856c9fb15920e58558fc5dc34a6dfca00d28993755bdcaa051a42e23adc23",
+    "python": "3.11.15 (main, Jun 11 2026, 15:20:16) [GCC 14.3.0]",
+    "platform": "Linux-5.15.0-139-generic-x86_64-with-glibc2.31"
+  },
+  "screening": {
+    "all_target_count": 175,
+    "distinct_primary_selected_memory_count": 12,
+    "distinct_primary_target_tool_count": 7,
+    "global_distinct_prompt_count": 213,
+    "gpu_run_authorized_by_capacity": true,
+    "planned_model_call_count": 228,
+    "primary_selection_changed_pair_count": 53,
+    "unchanged_target_count": 122
+  },
+  "primary_comparison": {
+    "pair_count": 53,
+    "paired_negative_transfer_count": 0,
+    "paired_negative_transfer_rate": 0.0,
+    "paired_positive_transfer_count": 15,
+    "paired_positive_transfer_rate": 0.2830188679245283,
+    "net_paired_effect": 0.2830188679245283,
+    "paired_risk_difference": 0.2830188679245283,
+    "paired_risk_difference_ci95": [
+      0.1605831936147074,
+      0.4054545422343492
+    ],
+    "paired_risk_difference_ci_method": "paired_wald_normal_clipped",
+    "exact_mcnemar_two_sided_p": 6.103515625e-05,
+    "directional_hypothesis_supported": true,
+    "memory_induced_action_change_count": 19,
+    "inapplicable_memory_harm_count": 0,
+    "strict_policy_adoption_count": 49,
+    "policy_followed_harm_count": 0,
+    "hypothesis_direction": "ppt_greater_than_pnt"
+  },
+  "descriptive_all_targets": {
+    "pair_count": 175,
+    "paired_negative_transfer_count": 0,
+    "paired_negative_transfer_rate": 0.0,
+    "paired_positive_transfer_count": 15,
+    "paired_positive_transfer_rate": 0.08571428571428572,
+    "net_paired_effect": 0.08571428571428572,
+    "paired_risk_difference": 0.08571428571428572,
+    "paired_risk_difference_ci95": [
+      0.04411929429439912,
+      0.1273092771341723
+    ],
+    "paired_risk_difference_ci_method": "paired_wald_normal_clipped",
+    "exact_mcnemar_two_sided_p": 6.103515625e-05,
+    "directional_hypothesis_supported": true,
+    "memory_induced_action_change_count": 19,
+    "inapplicable_memory_harm_count": 0,
+    "strict_policy_adoption_count": 159,
+    "policy_followed_harm_count": 0,
+    "hypothesis_direction": "ppt_greater_than_pnt",
+    "confirmatory_test_performed": false
+  },
+  "secondary_outcomes": {
+    "conditions": {
+      "tfidf_rank1_memory": {
+        "recovery_validity_count": 144,
+        "task_completion_count": 144,
+        "safety_violation_count": 0,
+        "repeated_invalid_calls_total": 0,
+        "exact_retry_count": 144
+      },
+      "proper_transient_authz_memory": {
+        "recovery_validity_count": 159,
+        "task_completion_count": 159,
+        "safety_violation_count": 0,
+        "repeated_invalid_calls_total": 0,
+        "exact_retry_count": 159
+      }
+    },
+    "primary_tool_strata": {
+      "close_account": {
+        "pair_count": 7,
+        "paired_negative_transfer_count": 0,
+        "paired_negative_transfer_rate": 0.0,
+        "paired_positive_transfer_count": 0,
+        "paired_positive_transfer_rate": 0.0,
+        "net_paired_effect": 0.0,
+        "paired_risk_difference": 0.0,
+        "paired_risk_difference_ci95": [
+          0.0,
+          0.0
+        ],
+        "paired_risk_difference_ci_method": "paired_wald_normal_clipped",
+        "exact_mcnemar_two_sided_p": 1.0,
+        "directional_hypothesis_supported": false,
+        "memory_induced_action_change_count": 0,
+        "inapplicable_memory_harm_count": 0,
+        "strict_policy_adoption_count": 7,
+        "policy_followed_harm_count": 0,
+        "hypothesis_direction": "ppt_greater_than_pnt",
+        "confirmatory_test_performed": false
+      },
+      "create_account": {
+        "pair_count": 4,
+        "paired_negative_transfer_count": 0,
+        "paired_negative_transfer_rate": 0.0,
+        "paired_positive_transfer_count": 0,
+        "paired_positive_transfer_rate": 0.0,
+        "net_paired_effect": 0.0,
+        "paired_risk_difference": 0.0,
+        "paired_risk_difference_ci95": [
+          0.0,
+          0.0
+        ],
+        "paired_risk_difference_ci_method": "paired_wald_normal_clipped",
+        "exact_mcnemar_two_sided_p": 1.0,
+        "directional_hypothesis_supported": false,
+        "memory_induced_action_change_count": 0,
+        "inapplicable_memory_harm_count": 0,
+        "strict_policy_adoption_count": 4,
+        "policy_followed_harm_count": 0,
+        "hypothesis_direction": "ppt_greater_than_pnt",
+        "confirmatory_test_performed": false
+      },
+      "get_doc": {
+        "pair_count": 9,
+        "paired_negative_transfer_count": 0,
+        "paired_negative_transfer_rate": 0.0,
+        "paired_positive_transfer_count": 5,
+        "paired_positive_transfer_rate": 0.5555555555555556,
+        "net_paired_effect": 0.5555555555555556,
+        "paired_risk_difference": 0.5555555555555556,
+        "paired_risk_difference_ci95": [
+          0.21122498205302137,
+          0.8998861290580897
+        ],
+        "paired_risk_difference_ci_method": "paired_wald_normal_clipped",
+        "exact_mcnemar_two_sided_p": 0.0625,
+        "directional_hypothesis_supported": false,
+        "memory_induced_action_change_count": 9,
+        "inapplicable_memory_harm_count": 0,
+        "strict_policy_adoption_count": 5,
+        "policy_followed_harm_count": 0,
+        "hypothesis_direction": "ppt_greater_than_pnt",
+        "confirmatory_test_performed": false
+      },
+      "read_file": {
+        "pair_count": 7,
+        "paired_negative_transfer_count": 0,
+        "paired_negative_transfer_rate": 0.0,
+        "paired_positive_transfer_count": 4,
+        "paired_positive_transfer_rate": 0.5714285714285714,
+        "net_paired_effect": 0.5714285714285714,
+        "paired_risk_difference": 0.5714285714285714,
+        "paired_risk_difference_ci95": [
+          0.17545605018580634,
+          0.9674010926713364
+        ],
+        "paired_risk_difference_ci_method": "paired_wald_normal_clipped",
+        "exact_mcnemar_two_sided_p": 0.125,
+        "directional_hypothesis_supported": false,
+        "memory_induced_action_change_count": 4,
+        "inapplicable_memory_harm_count": 0,
+        "strict_policy_adoption_count": 7,
+        "policy_followed_harm_count": 0,
+        "hypothesis_direction": "ppt_greater_than_pnt",
+        "confirmatory_test_performed": false
+      },
+      "search_docs": {
+        "pair_count": 13,
+        "paired_negative_transfer_count": 0,
+        "paired_negative_transfer_rate": 0.0,
+        "paired_positive_transfer_count": 2,
+        "paired_positive_transfer_rate": 0.15384615384615385,
+        "net_paired_effect": 0.15384615384615385,
+        "paired_risk_difference": 0.15384615384615385,
+        "paired_risk_difference_ci95": [
+          -0.050292598488547696,
+          0.35798490618085543
+        ],
+        "paired_risk_difference_ci_method": "paired_wald_normal_clipped",
+        "exact_mcnemar_two_sided_p": 0.5,
+        "directional_hypothesis_supported": false,
+        "memory_induced_action_change_count": 2,
+        "inapplicable_memory_harm_count": 0,
+        "strict_policy_adoption_count": 13,
+        "policy_followed_harm_count": 0,
+        "hypothesis_direction": "ppt_greater_than_pnt",
+        "confirmatory_test_performed": false
+      },
+      "validate_cron": {
+        "pair_count": 1,
+        "paired_negative_transfer_count": 0,
+        "paired_negative_transfer_rate": 0.0,
+        "paired_positive_transfer_count": 1,
+        "paired_positive_transfer_rate": 1.0,
+        "net_paired_effect": 1.0,
+        "paired_risk_difference": 1.0,
+        "paired_risk_difference_ci95": [
+          1.0,
+          1.0
+        ],
+        "paired_risk_difference_ci_method": "paired_wald_normal_clipped",
+        "exact_mcnemar_two_sided_p": 1.0,
+        "directional_hypothesis_supported": false,
+        "memory_induced_action_change_count": 1,
+        "inapplicable_memory_harm_count": 0,
+        "strict_policy_adoption_count": 1,
+        "policy_followed_harm_count": 0,
+        "hypothesis_direction": "ppt_greater_than_pnt",
+        "confirmatory_test_performed": false
+      },
+      "write_file": {
+        "pair_count": 12,
+        "paired_negative_transfer_count": 0,
+        "paired_negative_transfer_rate": 0.0,
+        "paired_positive_transfer_count": 3,
+        "paired_positive_transfer_rate": 0.25,
+        "net_paired_effect": 0.25,
+        "paired_risk_difference": 0.25,
+        "paired_risk_difference_ci95": [
+          -0.005889452139741624,
+          0.5058894521397417
+        ],
+        "paired_risk_difference_ci_method": "paired_wald_normal_clipped",
+        "exact_mcnemar_two_sided_p": 0.25,
+        "directional_hypothesis_supported": false,
+        "memory_induced_action_change_count": 3,
+        "inapplicable_memory_harm_count": 0,
+        "strict_policy_adoption_count": 12,
+        "policy_followed_harm_count": 0,
+        "hypothesis_direction": "ppt_greater_than_pnt",
+        "confirmatory_test_performed": false
+      }
+    },
+    "primary_selected_memory_counts": {
+      "experience::dev_v2_crud_authz_medium_relaxed_00689::authorization_transient": 4,
+      "experience::dev_v2_crud_authz_medium_standard_00040::authorization_transient": 6,
+      "experience::dev_v2_crud_authz_medium_tight_00471::authorization_transient": 1,
+      "experience::dev_v2_files_authz_easy_relaxed_00794::authorization_transient": 2,
+      "experience::dev_v2_files_authz_medium_standard_00148::authorization_transient": 7,
+      "experience::dev_v2_files_schema_drift_easy_tight_00135::schema_backend_one_shot": 5,
+      "experience::dev_v2_files_schema_drift_medium_standard_00787::schema_backend_one_shot": 2,
+      "experience::dev_v2_files_timeout_easy_relaxed_00335::timeout_transient": 3,
+      "experience::dev_v2_retrieval_authz_medium_relaxed_00095::authorization_transient": 6,
+      "experience::dev_v2_retrieval_schema_drift_easy_relaxed_00083::schema_backend_one_shot": 7,
+      "experience::dev_v2_retrieval_schema_drift_easy_relaxed_00731::schema_backend_one_shot": 9,
+      "experience::dev_v2_scheduling_schema_drift_easy_standard_00406::schema_backend_one_shot": 1
+    }
+  },
+  "model_output_parse_failure_count": 0,
+  "model_call_count": 228
+}
+RESULT=COMPLETE_CONFIRMATORY_TRANSIENT_AUTHZ_V1

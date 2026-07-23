@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "status": "complete_formal_result_locked",
+  "decision": "SUPPORTED_WITHIN_RELEASED_TRANSIENT_AUTHORIZATION_SCOPE",
+  "raw_results": {
+    "path": "outputs/confirmatory_transient_authz_v1/results.json",
+    "sha256": "26fd9c062a3d462f7cefd164c3d9f7bc5460b06a2bd16cd66e5b177e1c0cd276"
+  },
+  "linux_log": {
+    "path": "work/lab_confirmatory_transient_authz_v1.log",
+    "sha256": "33cc0a4a3538baa74f54e0143b65c2628266febafda56e4da210a3f28979f8ad"
+  },
+  "independent_analysis": {
+    "path": "outputs/confirmatory_transient_authz_v1/independent_analysis.json",
+    "sha256": "a423501a3395fba788d3eeb577cd0ee42d4477b96ec28b486def62dfc5d90f02"
+  },
+  "formal_source_lock": {
+    "path": "configs/confirmatory_transient_authz_v1.lock.json",
+    "sha256": "365b2193468c88c548fa9b9688d018b80dc4429f4cf5d53b6b577f81e7d86849"
+  },
+  "prepared_lock": {
+    "path": "configs/confirmatory_transient_authz_v1.prepared.lock.json",
+    "sha256": "2a7681d1d3e12ec4d10117a0153002a5aaa8e3763ac7e2908f5f0be463376355"
+  },
+  "environment_lock": {
+    "path": "configs/confirmatory_transient_authz_v1.environment.lock.json",
+    "sha256": "b06394e92c8e84b7221d14d6fc5e4b45083102e9c73ba58b39d3bf544615c0e1"
+  },
+  "result_schema": {
+    "path": "schemas/confirmatory_transient_authz_v1.schema.json",
+    "sha256": "61022dc86cc6aad3f61cfa410d3f7a735e575b081a121c1bc0a83eafcc4dfb46"
+  },
+  "primary_result": {
+    "pair_count": 53,
+    "rank1_recovery_validity_count": 34,
+    "proper_recovery_validity_count": 49,
+    "paired_positive_transfer_count": 15,
+    "paired_negative_transfer_count": 0,
+    "paired_risk_difference": 0.2830188679245283,
+    "paired_risk_difference_ci95": [
+      0.1605831936147074,
+      0.4054545422343492
+    ],
+    "exact_mcnemar_two_sided_p": 0.00006103515625,
+    "directional_hypothesis_supported": true
+  },
+  "effect_distribution": {
+    "distinct_improving_target_tool_count": 5,
+    "distinct_improving_selected_memory_count": 7,
+    "maximum_single_memory_improvement_share": 0.3333333333333333
+  },
+  "model_output_parse_failure_count": 0,
+  "safety_violation_count": 0,
+  "repeated_invalid_calls_total": 0,
+  "model_outputs_generated": true,
+  "result_must_never_be_overwritten": true
+}

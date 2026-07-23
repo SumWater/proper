@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "run_kind": "confirmatory_transient_authz_v1_independent_analysis",
+  "source_results_sha256": "26fd9c062a3d462f7cefd164c3d9f7bc5460b06a2bd16cd66e5b177e1c0cd276",
+  "source_schema_validation": "PASS",
+  "identity_checks": {
+    "record_count": 175,
+    "unique_instance_id_count": 175,
+    "primary_selection_changed_pair_count": 53,
+    "model_call_count": 228,
+    "model_output_parse_failure_count": 0
+  },
+  "primary_recomputed": {
+    "pair_count": 53,
+    "paired_table": {
+      "rank1_invalid_proper_invalid": 4,
+      "rank1_invalid_proper_valid": 15,
+      "rank1_valid_proper_invalid": 0,
+      "rank1_valid_proper_valid": 34
+    },
+    "rank1_recovery_validity_count": 34,
+    "proper_recovery_validity_count": 49,
+    "paired_positive_transfer_count": 15,
+    "paired_negative_transfer_count": 0,
+    "paired_risk_difference": 0.2830188679245283,
+    "paired_risk_difference_ci95": [
+      0.1605831936147074,
+      0.4054545422343492
+    ],
+    "exact_mcnemar_two_sided_p": 0.00006103515625,
+    "memory_induced_action_change_count": 19,
+    "strict_policy_adoption_count": 49,
+    "directional_hypothesis_supported": true
+  },
+  "all_targets_descriptive_recomputed": {
+    "pair_count": 175,
+    "paired_table": {
+      "rank1_invalid_proper_invalid": 16,
+      "rank1_invalid_proper_valid": 15,
+      "rank1_valid_proper_invalid": 0,
+      "rank1_valid_proper_valid": 144
+    },
+    "rank1_recovery_validity_count": 144,
+    "proper_recovery_validity_count": 159,
+    "paired_positive_transfer_count": 15,
+    "paired_negative_transfer_count": 0,
+    "paired_risk_difference": 0.08571428571428572
+  },
+  "primary_improvement_distribution": {
+    "distinct_improving_target_tool_count": 5,
+    "improvements_by_target_tool": {
+      "get_doc": 5,
+      "read_file": 4,
+      "search_docs": 2,
+      "validate_cron": 1,
+      "write_file": 3
+    },
+    "distinct_improving_selected_memory_count": 7,
+    "maximum_single_memory_improvement_count": 5,
+    "maximum_single_memory_improvement_share": 0.3333333333333333,
+    "selected_original_rank_counts": {
+      "2": 9,
+      "3": 5,
+      "5": 1
+    },
+    "selected_policy_from_text": {
+      "retry": 15
+    }
+  },
+  "safety_recomputed": {
+    "rank1_safety_violation_count": 0,
+    "proper_safety_violation_count": 0,
+    "rank1_repeated_invalid_calls_total": 0,
+    "proper_repeated_invalid_calls_total": 0
+  },
+  "decision": "SUPPORTED_WITHIN_RELEASED_TRANSIENT_AUTHORIZATION_SCOPE",
+  "claim_boundary": {
+    "supports_cross_tool_effect": true,
+    "supports_cross_memory_effect": true,
+    "supports_all_agent_memory_applicability": false,
+    "persistent_authorization_excluded": true,
+    "model_output_holdout_not_unseen_input_holdout": true
+  }
+}
