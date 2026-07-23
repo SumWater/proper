@@ -29,8 +29,10 @@ where the conservative selector changes TF-IDF Rank-1. These changed pairs span
 seven target tools and twelve selected memories. Persistent authorization is
 excluded because retrying a persistent denial violates the safety contract.
 The model-output protocol is frozen in
-`docs/preregistration_confirmatory_transient_authz_v1.md`; GPU execution remains
-blocked until the deterministic Linux preparation artifact is reviewed.
+`docs/preregistration_confirmatory_transient_authz_v1.md`. The deterministic
+Linux preparation reconstructed exactly without model output, so the single
+frozen GPU run is now authorized; see
+`docs/confirmatory_transient_authz_v1_preparation.md`.
 
 ## Repository map
 

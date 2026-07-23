@@ -15,6 +15,7 @@ from confirmatory_transient_authz_v1 import (  # noqa: E402
     cpu_dry_run,
     load_capacity,
     load_config,
+    verify_prepared_lock,
 )
 from failure_memory.confirmatory import PairIndicators  # noqa: E402
 
@@ -84,12 +85,24 @@ class ConfirmatoryTransientAuthzV1Tests(unittest.TestCase):
             "result_schema",
             "preregistration",
             "capacity_result_lock",
+            "preparation_lock",
+            "preparation_report",
+            "run_script",
         ):
             item = lock[key]
             actual = hashlib.sha256((ROOT / item["path"]).read_bytes()).hexdigest()
             self.assertEqual(actual, item["sha256"], key)
         self.assertFalse(lock["model_outputs_generated"])
-        self.assertFalse(lock["gpu_run_authorized"])
+        self.assertTrue(lock["gpu_run_authorized"])
+
+    def test_prepared_artifacts_authorize_frozen_gpu_run(self) -> None:
+        lock = verify_prepared_lock(load_config())
+        self.assertEqual(lock["all_target_count"], 175)
+        self.assertEqual(lock["primary_pair_count"], 53)
+        self.assertEqual(lock["planned_model_call_count"], 228)
+        self.assertEqual(lock["global_distinct_prompt_count"], 213)
+        self.assertFalse(lock["model_outputs_read_or_generated"])
+        self.assertTrue(lock["gpu_run_authorized"])
 
 
 if __name__ == "__main__":

@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "status": "pass_deterministic_preparation_before_model_outputs",
+  "prepared_manifest": {
+    "path": "work/confirmatory_transient_authz_v1_prepared.json",
+    "sha256": "f88a34071e9f702dd246285ca3501dc40aca81089bf6abe3f2249a2e7f836b66"
+  },
+  "screening": {
+    "path": "outputs/confirmatory_transient_authz_v1/screening.json",
+    "sha256": "2e3126210e6cc9f00beef0f7e6509ba660d8691350113779ed9e6859a4c1016b"
+  },
+  "linux_log": {
+    "path": "work/lab_confirmatory_transient_authz_v1_prep.log",
+    "sha256": "94ef7e62a9a8af9de2ccd3eb01d3d760a8749e2213a82c2514ddc508b8971770"
+  },
+  "prepared_payload_sha256": "40e0289052d289347c65a5e7d334a398b349a526562bad085a516e43ff49c6cb",
+  "all_target_count": 175,
+  "primary_pair_count": 53,
+  "planned_model_call_count": 228,
+  "global_distinct_prompt_count": 213,
+  "model_loaded": false,
+  "model_outputs_read_or_generated": false,
+  "gpu_run_authorized": true
+}

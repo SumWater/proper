@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "status": "frozen_before_native_authz_model_outputs",
+  "status": "frozen_after_preparation_before_native_authz_model_outputs",
   "config": {
     "path": "configs/confirmatory_transient_authz_v1.yaml",
     "sha256": "89a852401a07b548763281d55f1bb1f37e0d00c82e64bb2f0ee02d3d938bab58"
   },
   "runner": {
     "path": "experiments/confirmatory_transient_authz_v1.py",
-    "sha256": "b5c88d355c452d4b5293e8c5a96cd555b36a6ad316b4a553fed8b386f12fffd3"
+    "sha256": "7e146b3c61bcf781627abd82c7126956952a55cdddabac0b0d9634f4ac15ae3a"
   },
   "selector": {
     "path": "src/failure_memory/transient_authz_gate.py",
@@ -29,6 +29,18 @@
     "path": "outputs/transient_authz_capacity_v1/screening.json",
     "sha256": "a2e264dac63b2d9162c6dc9d5af7bc3a3b809f03303a4de5e047e87f8316540e"
   },
+  "preparation_lock": {
+    "path": "configs/confirmatory_transient_authz_v1.prepared.lock.json",
+    "sha256": "ed47813e59ce04ded3d05d19b8afe7563ec2ece822530bb26c8589c73a9d7368"
+  },
+  "preparation_report": {
+    "path": "docs/confirmatory_transient_authz_v1_preparation.md",
+    "sha256": "d1e9a413c10b6e886ab0c19ff4452a81cc2069eeb261860a654b5db6f8d9da32"
+  },
+  "run_script": {
+    "path": "scripts/run_confirmatory_transient_authz_v1_lab.sh",
+    "sha256": "95fab88ba418e836bc8cd52f199a74ac4b7e79218975fb896fbd139c4e24e9ac"
+  },
   "frozen_primary_pair_count": 53,
   "frozen_all_target_count": 175,
   "frozen_model_call_count": 228,
@@ -40,5 +52,5 @@
   },
   "persistent_authorization_excluded": true,
   "model_outputs_generated": false,
-  "gpu_run_authorized": false
+  "gpu_run_authorized": true
 }

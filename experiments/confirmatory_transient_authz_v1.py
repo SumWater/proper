@@ -53,6 +53,9 @@ from toolmisusebench.dataset import load_tasks  # noqa: E402
 
 CONFIG = ROOT / "configs" / "confirmatory_transient_authz_v1.yaml"
 FORMAL_LOCK = ROOT / "configs" / "confirmatory_transient_authz_v1.lock.json"
+PREPARED_LOCK = (
+    ROOT / "configs" / "confirmatory_transient_authz_v1.prepared.lock.json"
+)
 CAPACITY_RESULT_LOCK = ROOT / "configs" / "transient_authz_capacity_v1.result.lock.json"
 FORMAL_RUNTIME_CONFIG = ROOT / "configs" / "confirmatory_gate_v1.runtime.yaml"
 TOOLMISUSEBENCH_LOCK = ROOT / "configs" / "toolmisusebench.lock.json"
@@ -60,7 +63,10 @@ TOOLMISUSEBENCH_LOCK = ROOT / "configs" / "toolmisusebench.lock.json"
 
 def verify_formal_lock() -> dict[str, Any]:
     lock = json.loads(FORMAL_LOCK.read_text(encoding="utf-8"))
-    if lock.get("status") != "frozen_before_native_authz_model_outputs":
+    if (
+        lock.get("status")
+        != "frozen_after_preparation_before_native_authz_model_outputs"
+    ):
         raise RuntimeError("formal transient-authz source lock has invalid status")
     for key in (
         "config",
@@ -70,12 +76,49 @@ def verify_formal_lock() -> dict[str, Any]:
         "preregistration",
         "capacity_result_lock",
         "capacity_screening",
+        "preparation_lock",
+        "preparation_report",
+        "run_script",
     ):
         item = lock[key]
         if sha256_file(ROOT / item["path"]) != str(item["sha256"]):
             raise RuntimeError(f"formal transient-authz source mismatch: {key}")
-    if lock["model_outputs_generated"] or lock["gpu_run_authorized"]:
-        raise RuntimeError("preparation lock cannot claim a completed GPU run")
+    if lock["model_outputs_generated"] or not lock["gpu_run_authorized"]:
+        raise RuntimeError("formal lock does not authorize the frozen GPU run")
+    return lock
+
+
+def verify_prepared_lock(config: Mapping[str, Any]) -> dict[str, Any]:
+    lock = json.loads(PREPARED_LOCK.read_text(encoding="utf-8"))
+    if lock.get("status") != "pass_deterministic_preparation_before_model_outputs":
+        raise RuntimeError("prepared transient-authz lock has invalid status")
+    for key in ("prepared_manifest", "screening", "linux_log"):
+        item = lock[key]
+        if sha256_file(ROOT / item["path"]) != str(item["sha256"]):
+            raise RuntimeError(f"prepared transient-authz artifact mismatch: {key}")
+    prepared = json.loads(
+        (ROOT / lock["prepared_manifest"]["path"]).read_text(encoding="utf-8")
+    )
+    if prepared["identities"]["prepared_payload_sha256"] != str(
+        lock["prepared_payload_sha256"]
+    ):
+        raise RuntimeError("prepared payload identity differs from authorization lock")
+    screening = prepared["screening"]
+    expected = {
+        "all_target_count": lock["all_target_count"],
+        "primary_selection_changed_pair_count": lock["primary_pair_count"],
+        "planned_model_call_count": lock["planned_model_call_count"],
+        "global_distinct_prompt_count": lock["global_distinct_prompt_count"],
+    }
+    for key, value in expected.items():
+        if screening[key] != value:
+            raise RuntimeError(f"prepared authorization count mismatch: {key}")
+    if not lock["gpu_run_authorized"] or lock["model_outputs_read_or_generated"]:
+        raise RuntimeError("prepared artifact does not authorize model execution")
+    if ROOT / config["outputs"]["prepared_manifest"] != ROOT / lock[
+        "prepared_manifest"
+    ]["path"]:
+        raise RuntimeError("config and prepared authorization lock disagree")
     return lock
 
 
@@ -553,6 +596,7 @@ def main() -> int:
     missing = [name for name in required if getattr(args, name) is None]
     if missing:
         raise RuntimeError(f"missing formal inputs: {missing}")
+    verify_prepared_lock(config)
     os.environ.setdefault("HF_HUB_OFFLINE", "1")
     os.environ.setdefault("TRANSFORMERS_OFFLINE", "1")
     return run_formal(args, config)
