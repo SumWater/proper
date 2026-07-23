@@ -3,11 +3,11 @@
   "status": "frozen_after_preparation_before_native_authz_model_outputs",
   "config": {
     "path": "configs/confirmatory_transient_authz_v1.yaml",
-    "sha256": "89a852401a07b548763281d55f1bb1f37e0d00c82e64bb2f0ee02d3d938bab58"
+    "sha256": "e7f382e4c2bd70f9ace5695ff8b31becabeba5023777f1286071bc3a94751e00"
   },
   "runner": {
     "path": "experiments/confirmatory_transient_authz_v1.py",
-    "sha256": "7e146b3c61bcf781627abd82c7126956952a55cdddabac0b0d9634f4ac15ae3a"
+    "sha256": "5f5893555246b65f8eeab81175787b1cc93f630cfa1cc175752456173773c67b"
   },
   "selector": {
     "path": "src/failure_memory/transient_authz_gate.py",
@@ -29,13 +29,17 @@
     "path": "outputs/transient_authz_capacity_v1/screening.json",
     "sha256": "a2e264dac63b2d9162c6dc9d5af7bc3a3b809f03303a4de5e047e87f8316540e"
   },
+  "environment_lock": {
+    "path": "configs/confirmatory_transient_authz_v1.environment.lock.json",
+    "sha256": "b06394e92c8e84b7221d14d6fc5e4b45083102e9c73ba58b39d3bf544615c0e1"
+  },
   "preparation_lock": {
     "path": "configs/confirmatory_transient_authz_v1.prepared.lock.json",
-    "sha256": "ed47813e59ce04ded3d05d19b8afe7563ec2ece822530bb26c8589c73a9d7368"
+    "sha256": "2a7681d1d3e12ec4d10117a0153002a5aaa8e3763ac7e2908f5f0be463376355"
   },
   "preparation_report": {
     "path": "docs/confirmatory_transient_authz_v1_preparation.md",
-    "sha256": "d1e9a413c10b6e886ab0c19ff4452a81cc2069eeb261860a654b5db6f8d9da32"
+    "sha256": "18d0ab0d460df1c5b17e28e9cb9f62f3274d8583d017a75524aae8b4496eafdc"
   },
   "run_script": {
     "path": "scripts/run_confirmatory_transient_authz_v1_lab.sh",

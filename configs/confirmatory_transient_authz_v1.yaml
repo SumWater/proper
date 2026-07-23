@@ -61,7 +61,7 @@ model:
 
 environment:
   conda_explicit_sha256: ed07021e8c5584886c6a31c639811e0bfaf66143a10dc263ab27797dcfd72679
-  pip_freeze_sha256: 2c6dee2832f484632d729f341b21a2e92d220021cb6b95f015f9cf19a7df363f
+  pip_freeze_sha256: e215575984b1f02914e781348564fa8426adb717154bc91a5d39d8af6ec8cc8b
 
 primary_endpoint:
   name: recovery_validity

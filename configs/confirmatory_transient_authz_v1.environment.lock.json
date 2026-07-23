@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "status": "frozen_before_native_authz_model_outputs",
+  "python": "3.11.15",
+  "platform": "linux-64",
+  "conda_explicit_lock": {
+    "path": "work/lab_conda_explicit.lock",
+    "sha256": "ed07021e8c5584886c6a31c639811e0bfaf66143a10dc263ab27797dcfd72679"
+  },
+  "pip_freeze_lock": {
+    "path": "work/lab_pip_freeze.lock",
+    "sha256": "e215575984b1f02914e781348564fa8426adb717154bc91a5d39d8af6ec8cc8b"
+  },
+  "required_distribution_versions": {
+    "accelerate": "1.13.0",
+    "jsonschema": "4.23.0",
+    "pydantic": "2.8.2",
+    "pytest": "8.4.1",
+    "scikit-learn": "1.5.1",
+    "torch": "2.12.0",
+    "transformers": "5.8.1"
+  },
+  "environment_revision": {
+    "previous_pip_freeze_sha256": "2c6dee2832f484632d729f341b21a2e92d220021cb6b95f015f9cf19a7df363f",
+    "reason": "repository test dependencies were installed before the GPU run",
+    "inference_core_versions_changed": false,
+    "model_outputs_existed": false
+  }
+}

@@ -11,10 +11,10 @@
   "identities": {
     "capacity_result_lock_sha256": "ffad78b5928c0c184e7eb08243efa715e5d065ebd141f23d285a5e79abd0b4ba",
     "capacity_screening_sha256": "a2e264dac63b2d9162c6dc9d5af7bc3a3b809f03303a4de5e047e87f8316540e",
-    "config_sha256": "89a852401a07b548763281d55f1bb1f37e0d00c82e64bb2f0ee02d3d938bab58",
+    "config_sha256": "e7f382e4c2bd70f9ace5695ff8b31becabeba5023777f1286071bc3a94751e00",
     "frozen_memory_bank_manifest_sha256": "da06c6538fb8494a1ab50fee9d4a97d74f6a4e6f7ee161b014cec97d7c459011",
     "frozen_memory_bank_payload_sha256": "b2841f434e2ffd89a11de73be3fe7c3d5dc0dbd42dd9d2990b6b49a0b4ff6c42",
-    "prepared_payload_sha256": "40e0289052d289347c65a5e7d334a398b349a526562bad085a516e43ff49c6cb",
+    "prepared_payload_sha256": "4af16c2bd75bbb3164c13bd90aee68786147885ed7bb61657defe939a337a0e1",
     "public_test_sha256": "12c5e1e93926f4089dfc8d0c60cea53b556057360562375510744858fc6f1161"
   },
   "run_kind": "confirmatory_transient_authz_v1_screening",

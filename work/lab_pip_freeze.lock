@@ -1,0 +1,57 @@
+accelerate==1.13.0
+annotated-doc==0.0.4
+annotated-types==0.7.0
+anyio==4.14.2
+attrs==26.1.0
+certifi==2026.6.17
+click==8.4.2
+filelock @ file:///home/task_178169994221234/croot/filelock_1781703316213/work
+fsspec @ file:///home/task_178160678908582/croot/fsspec_1781609877096/work
+gmpy2 @ file:///home/task_176474799776688/conda-bld/gmpy2_1764748047044/work
+h11==0.16.0
+hf-xet==1.5.2
+httpcore==1.0.9
+httpx==0.28.1
+huggingface_hub==1.24.0
+idna==3.18
+iniconfig==2.3.0
+Jinja2 @ file:///croot/jinja2_1741710844255/work
+joblib==1.5.3
+jsonschema==4.23.0
+jsonschema-specifications==2025.9.1
+markdown-it-py==4.2.0
+MarkupSafe @ file:///home/task_178239083418947/croot/markupsafe_1782390865084/work
+mdurl==0.1.2
+mpmath @ file:///croot/mpmath_1690848262763/work
+networkx @ file:///home/task_176537858778399/conda-bld/networkx_1765378626589/work
+numpy @ file:///home/task_178034586831004/croot/numpy_and_numpy_base_1780345913857/work/dist/numpy-2.4.6-cp311-cp311-linux_x86_64.whl#sha256=6430e13a2f17e5ae968cdb713c09eee503e742bd3f3b7ed7f59e53092a093bd2
+optree @ file:///home/task_176544500330461/conda-bld/optree_1765445022562/work
+packaging==26.0
+pip @ file:///home/task_178229373358736/croot/pip_1782293756958/work
+pluggy==1.6.0
+psutil==7.2.2
+pydantic==2.8.2
+pydantic_core==2.20.1
+Pygments==2.20.0
+pytest==8.4.1
+PyYAML==6.0.3
+referencing==0.37.0
+regex==2026.7.19
+rich==15.0.0
+rpds-py==2026.6.3
+safetensors==0.8.0
+scikit-learn==1.5.1
+scipy==1.17.1
+setuptools==80.10.2
+shellingham==1.5.4
+sympy @ file:///home/task_176476213407811/conda-bld/sympy_1764762918097/work
+threadpoolctl==3.6.0
+tokenizers==0.22.2
+torch @ file:///home/task_178051789904102/croot/libtorch_1780517982672/work
+tqdm==4.69.0
+transformers==5.8.1
+triton @ file:///home/task_177997707494282/croot/triton_1779977130397/work
+typer==0.27.0
+typing_extensions @ file:///home/task_CtU_auItQoiq2_0/croot/typing_extensions_1784100989412/work
+wheel==0.47.0
+

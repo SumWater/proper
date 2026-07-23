@@ -17,4 +17,5 @@
 outputs/** -text
 work/*.json -text
 work/*.log -text
+work/*.lock -text
 configs/pilot_exclusions.json -text

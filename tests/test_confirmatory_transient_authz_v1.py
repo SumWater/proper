@@ -85,6 +85,7 @@ class ConfirmatoryTransientAuthzV1Tests(unittest.TestCase):
             "result_schema",
             "preregistration",
             "capacity_result_lock",
+            "environment_lock",
             "preparation_lock",
             "preparation_report",
             "run_script",

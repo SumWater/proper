@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import copy
+import importlib.metadata
 import json
 import os
 import platform
@@ -56,6 +57,9 @@ FORMAL_LOCK = ROOT / "configs" / "confirmatory_transient_authz_v1.lock.json"
 PREPARED_LOCK = (
     ROOT / "configs" / "confirmatory_transient_authz_v1.prepared.lock.json"
 )
+ENVIRONMENT_LOCK = (
+    ROOT / "configs" / "confirmatory_transient_authz_v1.environment.lock.json"
+)
 CAPACITY_RESULT_LOCK = ROOT / "configs" / "transient_authz_capacity_v1.result.lock.json"
 FORMAL_RUNTIME_CONFIG = ROOT / "configs" / "confirmatory_gate_v1.runtime.yaml"
 TOOLMISUSEBENCH_LOCK = ROOT / "configs" / "toolmisusebench.lock.json"
@@ -76,6 +80,7 @@ def verify_formal_lock() -> dict[str, Any]:
         "preregistration",
         "capacity_result_lock",
         "capacity_screening",
+        "environment_lock",
         "preparation_lock",
         "preparation_report",
         "run_script",
@@ -88,11 +93,42 @@ def verify_formal_lock() -> dict[str, Any]:
     return lock
 
 
+def verify_environment_lock(config: Mapping[str, Any]) -> dict[str, Any]:
+    lock = json.loads(ENVIRONMENT_LOCK.read_text(encoding="utf-8"))
+    if lock.get("status") != "frozen_before_native_authz_model_outputs":
+        raise RuntimeError("transient-authz environment lock has invalid status")
+    for key in ("conda_explicit_lock", "pip_freeze_lock"):
+        item = lock[key]
+        if sha256_file(ROOT / item["path"]) != str(item["sha256"]):
+            raise RuntimeError(f"transient-authz environment artifact mismatch: {key}")
+    if lock["conda_explicit_lock"]["sha256"] != str(
+        config["environment"]["conda_explicit_sha256"]
+    ):
+        raise RuntimeError("config and conda environment lock disagree")
+    if lock["pip_freeze_lock"]["sha256"] != str(
+        config["environment"]["pip_freeze_sha256"]
+    ):
+        raise RuntimeError("config and pip environment lock disagree")
+    for distribution, expected in lock["required_distribution_versions"].items():
+        actual = importlib.metadata.version(distribution)
+        if actual != expected:
+            raise RuntimeError(
+                f"runtime distribution mismatch: {distribution} "
+                f"expected={expected}, observed={actual}"
+            )
+    return lock
+
+
 def verify_prepared_lock(config: Mapping[str, Any]) -> dict[str, Any]:
     lock = json.loads(PREPARED_LOCK.read_text(encoding="utf-8"))
     if lock.get("status") != "pass_deterministic_preparation_before_model_outputs":
         raise RuntimeError("prepared transient-authz lock has invalid status")
-    for key in ("prepared_manifest", "screening", "linux_log"):
+    for key in (
+        "prepared_manifest",
+        "screening",
+        "conda_explicit_lock",
+        "pip_freeze_lock",
+    ):
         item = lock[key]
         if sha256_file(ROOT / item["path"]) != str(item["sha256"]):
             raise RuntimeError(f"prepared transient-authz artifact mismatch: {key}")
@@ -325,12 +361,14 @@ def write_prepared(payload: Mapping[str, Any], config: Mapping[str, Any]) -> Non
     prepared.write_text(
         json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
         encoding="utf-8",
+        newline="\n",
     )
     screening_payload = {key: value for key, value in payload.items() if key != "records"}
     screening_payload["run_kind"] = "confirmatory_transient_authz_v1_screening"
     screening.write_text(
         json.dumps(screening_payload, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
         encoding="utf-8",
+        newline="\n",
     )
 
 
@@ -529,6 +567,7 @@ def run_formal(args: argparse.Namespace, config: dict[str, Any]) -> int:
     output.write_text(
         json.dumps(report, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
         encoding="utf-8",
+        newline="\n",
     )
     print(json.dumps({key: value for key, value in report.items() if key != "records"}, indent=2))
     print("RESULT=COMPLETE_CONFIRMATORY_TRANSIENT_AUTHZ_V1")
@@ -597,6 +636,7 @@ def main() -> int:
     if missing:
         raise RuntimeError(f"missing formal inputs: {missing}")
     verify_prepared_lock(config)
+    verify_environment_lock(config)
     os.environ.setdefault("HF_HUB_OFFLINE", "1")
     os.environ.setdefault("TRANSFORMERS_OFFLINE", "1")
     return run_formal(args, config)

@@ -55,6 +55,8 @@ rollouts/
 !work/lab_transient_authz_capacity_v1.log
 !work/lab_confirmatory_transient_authz_v1_prep.log
 !work/lab_confirmatory_transient_authz_v1.log
+!work/lab_conda_explicit.lock
+!work/lab_pip_freeze.lock
 
 # Editors / OS
 .vscode/
