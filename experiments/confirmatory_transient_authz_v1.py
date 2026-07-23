@@ -169,6 +169,7 @@ def prepare_payload(
 
     records = []
     all_prompt_hashes: set[str] = set()
+    planned_model_call_count = 0
     for frozen_record in capacity["records"]:
         instance = instances[frozen_record["instance_id"]]
         _, visible, prefix_sha256 = prepare_prefix(instance)
@@ -185,6 +186,7 @@ def prepare_payload(
         ensure_agent_boundary(prompts.values(), boundary_config)
         prompt_sha256 = {name: sha256_text(prompt) for name, prompt in prompts.items()}
         all_prompt_hashes.update(prompt_sha256.values())
+        planned_model_call_count += len(set(prompt_sha256.values()))
         records.append(
             {
                 "instance_id": instance.instance_id,
@@ -208,15 +210,27 @@ def prepare_payload(
             }
         )
 
-    expected_generations = int(config["frozen_capacity"]["expected_unique_generation_count"])
-    if len(all_prompt_hashes) != expected_generations:
-        raise RuntimeError("unexpected unique prompt count")
+    expected_calls = int(config["frozen_capacity"]["expected_model_call_count"])
+    if planned_model_call_count != expected_calls:
+        raise RuntimeError(
+            "unexpected planned model call count: "
+            f"expected={expected_calls}, observed={planned_model_call_count}"
+        )
+    expected_distinct = int(
+        config["frozen_capacity"]["expected_global_distinct_prompt_count"]
+    )
+    if len(all_prompt_hashes) != expected_distinct:
+        raise RuntimeError(
+            "unexpected global distinct prompt count: "
+            f"expected={expected_distinct}, observed={len(all_prompt_hashes)}"
+        )
     primary_count = sum(item["selection_changed"] for item in records)
     screening = {
         "all_target_count": len(records),
         "primary_selection_changed_pair_count": primary_count,
         "unchanged_target_count": len(records) - primary_count,
-        "unique_generation_count": len(all_prompt_hashes),
+        "planned_model_call_count": planned_model_call_count,
+        "global_distinct_prompt_count": len(all_prompt_hashes),
         "distinct_primary_target_tool_count": len(
             {item["target_tool_name"] for item in records if item["selection_changed"]}
         ),
@@ -337,7 +351,7 @@ def run_formal(args: argparse.Namespace, config: dict[str, Any]) -> int:
     primary_baseline: list[bool] = []
     primary_proper: list[bool] = []
     condition_rows: dict[str, list[dict[str, Any]]] = {name: [] for name in fixed_order}
-    unique_generation_count = 0
+    model_call_count = 0
     parse_failures = 0
     tool_rows: dict[str, list[tuple[Any, bool, bool]]] = defaultdict(list)
 
@@ -363,7 +377,7 @@ def run_formal(args: argparse.Namespace, config: dict[str, Any]) -> int:
                 )
                 result["reused_from_condition"] = None
                 completed[prompt_hash] = (decision, outcome, copy.deepcopy(result), condition)
-                unique_generation_count += 1
+                model_call_count += 1
                 parse_failures += int(not result["parse_valid"])
             if result["prompt_sha256"] != prompt_hash:
                 raise RuntimeError("formal prompt identity mismatch")
@@ -412,9 +426,9 @@ def run_formal(args: argparse.Namespace, config: dict[str, Any]) -> int:
             }
         )
 
-    expected_generations = int(config["frozen_capacity"]["expected_unique_generation_count"])
-    if unique_generation_count != expected_generations:
-        raise RuntimeError("unique model generation count differs from preregistration")
+    expected_calls = int(config["frozen_capacity"]["expected_model_call_count"])
+    if model_call_count != expected_calls:
+        raise RuntimeError("model call count differs from preregistration")
     alpha = float(config["primary_endpoint"]["alpha"])
     primary = aggregate_pairs(primary_indicators, primary_baseline, primary_proper, alpha)
     all_targets = aggregate_pairs(all_indicators, all_baseline, all_proper, alpha)
@@ -459,7 +473,7 @@ def run_formal(args: argparse.Namespace, config: dict[str, Any]) -> int:
             ),
         },
         "model_output_parse_failure_count": parse_failures,
-        "unique_model_generation_count": unique_generation_count,
+        "model_call_count": model_call_count,
         "records": output_records,
     }
     output = ROOT / config["outputs"]["result_output"]

@@ -30,7 +30,10 @@ class ConfirmatoryTransientAuthzV1Tests(unittest.TestCase):
         self.assertEqual(config["frozen_capacity"]["expected_all_target_count"], 175)
         self.assertEqual(config["frozen_capacity"]["expected_primary_pair_count"], 53)
         self.assertEqual(
-            config["frozen_capacity"]["expected_unique_generation_count"], 228
+            config["frozen_capacity"]["expected_model_call_count"], 228
+        )
+        self.assertEqual(
+            config["frozen_capacity"]["expected_global_distinct_prompt_count"], 213
         )
 
     def test_capacity_result_is_hash_locked(self) -> None:

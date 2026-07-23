@@ -43,9 +43,10 @@ one-decision budget in two conditions:
 2. PROPER transient-authorization memory.
 
 When the two memories are identical, the single generated output is reused for
-both condition records. The frozen cohort therefore requires 228 unique model
-generations rather than 350. Full prompts, model outputs, decisions, traces,
-and outcomes are saved.
+both condition records. The frozen cohort therefore makes 228 per-target model
+calls rather than 350. These calls contain 213 globally distinct prompt texts;
+identical prompts belonging to different targets are not reused across targets.
+Full prompts, model outputs, decisions, traces, and outcomes are saved.
 
 The primary endpoint is deterministic Recovery Validity. Paired Positive
 Transfer is `R_PROPER > R_Rank1`; Paired Negative Transfer is
@@ -70,3 +71,12 @@ environment, source-manifest, prompt-boundary, population-count, or
 source-target-isolation mismatch. No selector change, threshold tuning,
 subgroup selection, or prompt revision is allowed after model outputs are
 generated. Failure of the hypothesis is retained and reported.
+
+## Preparation correction before model execution
+
+On 2026-07-23, the first Linux preparation stopped before model loading because
+the runner incorrectly compared the planned per-target call count (228) with
+the number of globally distinct prompt texts (213). The implementation now
+checks and reports both quantities separately. The cohort, selector, prompts,
+conditions, primary population, endpoints, and inference rules are unchanged.
+No model output existed when this correction was made.

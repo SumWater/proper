@@ -22,7 +22,8 @@ frozen_capacity:
   result_lock: configs/transient_authz_capacity_v1.result.lock.json
   expected_all_target_count: 175
   expected_primary_pair_count: 53
-  expected_unique_generation_count: 228
+  expected_model_call_count: 228
+  expected_global_distinct_prompt_count: 213
 
 memory_bank:
   split: dev

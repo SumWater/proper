@@ -13,7 +13,7 @@
     "descriptive_all_targets",
     "secondary_outcomes",
     "model_output_parse_failure_count",
-    "unique_model_generation_count",
+    "model_call_count",
     "records"
   ],
   "properties": {
@@ -25,7 +25,7 @@
     "descriptive_all_targets": {"type": "object"},
     "secondary_outcomes": {"type": "object"},
     "model_output_parse_failure_count": {"type": "integer", "minimum": 0},
-    "unique_model_generation_count": {"type": "integer", "minimum": 1},
+    "model_call_count": {"const": 228},
     "records": {"type": "array", "minItems": 175, "maxItems": 175}
   }
 }
