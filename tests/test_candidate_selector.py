@@ -76,7 +76,7 @@ class ProperV1Tests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         payload = yaml.safe_load(
-            (ROOT / "configs" / "candidate_rules.yaml").read_text(encoding="utf-8")
+            (ROOT / "configs" / "proper_v1" / "candidate_rules.yaml").read_text(encoding="utf-8")
         )
         cls.rules = RuleSet.from_mapping(payload)
         cls.retry_text = "I retried the original tool call once and succeeded."

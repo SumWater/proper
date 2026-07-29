@@ -9,7 +9,7 @@ from pathlib import Path
 from typing import Any
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "src"))
 
 from failure_memory.confirmatory import (  # noqa: E402
@@ -19,10 +19,10 @@ from failure_memory.confirmatory import (  # noqa: E402
 from failure_memory.utilization import AgentDecision, DecisionKind  # noqa: E402
 
 
-RAW = ROOT / "outputs" / "confirmatory_gate_v1" / "results.json"
+RAW = ROOT / "outputs" / "proper_v1" / "confirmatory_gate_v1" / "results.json"
 RAW_SHA256 = "6e44ef0eba2bf7efeed7163d61a621d2a1a5385b6aa507f7ce0417222d2fceb8"
-OUTPUT = ROOT / "outputs" / "confirmatory_gate_v1" / "analysis.json"
-TOOL_TABLE = ROOT / "outputs" / "confirmatory_gate_v1" / "tool_results.csv"
+OUTPUT = ROOT / "outputs" / "proper_v1" / "confirmatory_gate_v1" / "analysis.json"
+TOOL_TABLE = ROOT / "outputs" / "proper_v1" / "confirmatory_gate_v1" / "tool_results.csv"
 
 
 def sha256_file(path: Path) -> str:

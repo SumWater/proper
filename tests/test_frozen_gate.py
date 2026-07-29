@@ -12,7 +12,7 @@ from sklearn.feature_extraction import DictVectorizer
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
-sys.path.insert(0, str(ROOT / "experiments"))
+sys.path.insert(0, str(ROOT / "experiments" / "proper_v1"))
 
 from applicability_intervention_gate import make_model  # noqa: E402
 from failure_memory.frozen_gate import score_frozen_gate  # noqa: E402
@@ -26,17 +26,17 @@ class FrozenGateTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.config = yaml.safe_load(
-            (ROOT / "configs" / "applicability_intervention_gate.yaml").read_text(
+            (ROOT / "configs" / "proper_v1" / "applicability_intervention_gate.yaml").read_text(
                 encoding="utf-8"
             )
         )
         cls.manifest = json.loads(
-            (ROOT / "outputs" / "candidate_selection" / "selection_manifest.json").read_text(
+            (ROOT / "outputs" / "proper_v1" / "candidate_selection" / "selection_manifest.json").read_text(
                 encoding="utf-8"
             )
         )
         cls.artifact = json.loads(
-            (ROOT / "outputs" / "proper_gate" / "cross_validation.json").read_text(
+            (ROOT / "outputs" / "proper_v1" / "proper_gate" / "cross_validation.json").read_text(
                 encoding="utf-8"
             )
         )

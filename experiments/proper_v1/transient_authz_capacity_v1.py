@@ -12,7 +12,7 @@ from typing import Any, Mapping
 import yaml
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "external" / "toolmisusebench"))
 
@@ -20,7 +20,7 @@ from agent_runtime import prepare_prefix  # noqa: E402
 from benchmark_instances import RETRY_POLICY, make_actual_instance  # noqa: E402
 from candidate_manifest import candidate_payload, failure_payload  # noqa: E402
 from confirmatory_gate_v1 import frozen_memory_bank, verify_test_file  # noqa: E402
-from gate_dataset import as_experience, task_fault  # noqa: E402
+from gate_dataset import as_experience, resolve_root_path, task_fault  # noqa: E402
 from failure_memory.candidate_selector import (  # noqa: E402
     extract_candidate_features,
     extract_failure_features,
@@ -34,8 +34,8 @@ from failure_memory.transient_authz_gate import (  # noqa: E402
 from toolmisusebench.dataset import load_tasks  # noqa: E402
 
 
-CONFIG = ROOT / "configs" / "transient_authz_capacity_v1.yaml"
-FORMAL_RUNTIME_CONFIG = ROOT / "configs" / "confirmatory_gate_v1.runtime.yaml"
+CONFIG = ROOT / "configs" / "proper_v1" / "transient_authz_capacity_v1.yaml"
+FORMAL_RUNTIME_CONFIG = ROOT / "configs" / "proper_v1" / "confirmatory_gate_v1.runtime.yaml"
 
 
 def sha256_file(path: Path) -> str:
@@ -51,7 +51,7 @@ def load_config(path: Path = CONFIG) -> dict[str, Any]:
 
 def prior_source_task_ids(config: Mapping[str, Any]) -> set[str]:
     value = config["prior_result_exclusion"]
-    path = ROOT / value["result"]
+    path = resolve_root_path(value["result"])
     if sha256_file(path) != str(value["result_sha256"]):
         raise RuntimeError("prior confirmatory result hash mismatch")
     result = json.loads(path.read_text(encoding="utf-8"))
@@ -232,10 +232,10 @@ def prepare(config_path: Path = CONFIG) -> dict[str, Any]:
             "config_sha256": sha256_file(config_path),
             "public_test_sha256": sha256_file(public_test),
             "prior_result_sha256": sha256_file(
-                ROOT / config["prior_result_exclusion"]["result"]
+                resolve_root_path(config["prior_result_exclusion"]["result"])
             ),
             "frozen_memory_bank_manifest_sha256": sha256_file(
-                ROOT / config["memory_bank"]["prepared_manifest"]
+                resolve_root_path(config["memory_bank"]["prepared_manifest"])
             ),
             "frozen_memory_bank_payload_sha256": frozen_memory["identities"][
                 "prepared_payload_sha256"
@@ -318,7 +318,7 @@ def main() -> int:
         return 0
     config = load_config(args.config)
     payload = prepare(args.config)
-    output = args.output or ROOT / config["outputs"]["screening"]
+    output = args.output or resolve_root_path(config["outputs"]["screening"])
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     print(json.dumps(payload["screening"], indent=2, sort_keys=True))

@@ -13,7 +13,7 @@ from typing import Any, Callable, Iterable
 import yaml
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "external" / "toolmisusebench"))
 
@@ -43,6 +43,7 @@ from failure_memory.retrieval import (  # noqa: E402
     tokenize,
 )
 from failure_memory.utilization import behavior_matches_policy  # noqa: E402
+from failure_memory.versioning import resolve_versioned_artifact  # noqa: E402
 from benchmark_instances import (  # noqa: E402
     RETRY_POLICY,
     REVISE_POLICY,
@@ -59,8 +60,8 @@ from toolmisusebench.dataset import load_tasks  # noqa: E402
 from toolmisusebench.types import Task  # noqa: E402
 
 
-CONFIG = ROOT / "configs" / "memory_bank.yaml"
-LOCK = ROOT / "configs" / "toolmisusebench.lock.json"
+CONFIG = ROOT / "configs" / "proper_v1" / "memory_bank.yaml"
+LOCK = ROOT / "configs" / "proper_v1" / "toolmisusebench.lock.json"
 
 RECOVERY_SUFFIXES = {
     "retry": "I retried the original tool call once and the task goal was satisfied.",
@@ -87,8 +88,7 @@ def load_config(path: Path = CONFIG) -> dict[str, Any]:
 
 
 def resolve_root_path(value: str | Path) -> Path:
-    path = Path(value)
-    return path if path.is_absolute() else ROOT / path
+    return resolve_versioned_artifact(ROOT, value)
 
 
 def task_fault(task: Task) -> str:

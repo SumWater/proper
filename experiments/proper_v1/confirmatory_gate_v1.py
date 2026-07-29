@@ -14,7 +14,7 @@ from typing import Any, Mapping
 import yaml
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "external" / "toolmisusebench"))
 
@@ -65,9 +65,9 @@ from benchmark_instances import make_argument_omission_instance, policy_signatur
 from toolmisusebench.dataset import load_tasks  # noqa: E402
 
 
-CONFIG = ROOT / "configs" / "confirmatory_gate_v1.runtime.yaml"
-SOURCE_LOCK = ROOT / "configs" / "confirmatory_gate_v1.runtime.lock.json"
-TOOLMISUSEBENCH_LOCK = ROOT / "configs" / "toolmisusebench.lock.json"
+CONFIG = ROOT / "configs" / "proper_v1" / "confirmatory_gate_v1.runtime.yaml"
+SOURCE_LOCK = ROOT / "configs" / "proper_v1" / "confirmatory_gate_v1.runtime.lock.json"
+TOOLMISUSEBENCH_LOCK = ROOT / "configs" / "proper_v1" / "toolmisusebench.lock.json"
 
 
 def load_config(path: Path = CONFIG) -> dict[str, Any]:
@@ -83,7 +83,7 @@ def verify_source_lock() -> dict[str, Any]:
         raise RuntimeError("confirmatory gate runtime source lock has an invalid status")
     for key in ("config", "runner", "frozen_gate_source", "feature_source"):
         item = lock[key]
-        if sha256_file(ROOT / item["path"]) != item["sha256"]:
+        if sha256_file(resolve_root_path(item["path"])) != item["sha256"]:
             raise RuntimeError(f"confirmatory gate locked file changed: {key}")
     return lock
 
@@ -111,7 +111,7 @@ def verify_test_file(config: Mapping[str, Any]) -> Path:
 
 
 def load_gate_artifact(config: Mapping[str, Any]) -> dict[str, Any]:
-    path = ROOT / config["development_dependencies"]["gate_artifact"]
+    path = resolve_root_path(config["development_dependencies"]["gate_artifact"])
     if sha256_file(path) != str(
         config["development_dependencies"]["gate_artifact_sha256"]
     ):
@@ -125,12 +125,12 @@ def load_gate_artifact(config: Mapping[str, Any]) -> dict[str, Any]:
 
 
 def load_rules(config: Mapping[str, Any]) -> RuleSet:
-    path = ROOT / config["development_dependencies"]["candidate_rules"]
+    path = resolve_root_path(config["development_dependencies"]["candidate_rules"])
     if sha256_file(path) != str(
         config["development_dependencies"]["candidate_rules_sha256"]
     ):
         raise RuntimeError("frozen PROPER v1 rules mismatch")
-    source = ROOT / config["development_dependencies"]["candidate_selector_source"]
+    source = resolve_root_path(config["development_dependencies"]["candidate_selector_source"])
     if sha256_file(source) != str(
         config["development_dependencies"]["candidate_selector_source_sha256"]
     ):
@@ -140,7 +140,7 @@ def load_rules(config: Mapping[str, Any]) -> RuleSet:
 
 def frozen_memory_bank(config: Mapping[str, Any]) -> tuple[list[Any], dict[str, Any]]:
     dependencies = config["development_dependencies"]
-    prepared_path = ROOT / dependencies["frozen_memory_bank_manifest"]
+    prepared_path = resolve_root_path(dependencies["frozen_memory_bank_manifest"])
     if sha256_file(prepared_path) != str(
         dependencies["frozen_memory_bank_manifest_sha256"]
     ):
@@ -346,11 +346,12 @@ def prepare_payload(config_path: Path = CONFIG) -> tuple[dict[str, Any], dict[st
             "source_lock_sha256": sha256_file(SOURCE_LOCK),
             "test_public_sha256": sha256_file(public_test),
             "gate_artifact_sha256": sha256_file(
-                ROOT / config["development_dependencies"]["gate_artifact"]
+                resolve_root_path(config["development_dependencies"]["gate_artifact"])
             ),
             "frozen_memory_bank_manifest_sha256": sha256_file(
-                ROOT
-                / config["development_dependencies"]["frozen_memory_bank_manifest"]
+                resolve_root_path(
+                    config["development_dependencies"]["frozen_memory_bank_manifest"]
+                )
             ),
             "frozen_memory_bank_payload_sha256": frozen_memory["identities"][
                 "prepared_payload_sha256"
@@ -373,8 +374,8 @@ def prepare_payload(config_path: Path = CONFIG) -> tuple[dict[str, Any], dict[st
 
 
 def write_prepared(payload: dict[str, Any], config: Mapping[str, Any]) -> None:
-    prepared = ROOT / config["outputs"]["prepared_manifest"]
-    screening = ROOT / config["outputs"]["screening_output"]
+    prepared = resolve_root_path(config["outputs"]["prepared_manifest"])
+    screening = resolve_root_path(config["outputs"]["screening_output"])
     prepared.parent.mkdir(parents=True, exist_ok=True)
     screening.parent.mkdir(parents=True, exist_ok=True)
     prepared.write_text(
@@ -404,7 +405,7 @@ def aggregate_primary(rows: list[dict[str, Any]], alpha: float) -> dict[str, Any
 
 
 def run_formal(args: argparse.Namespace, config: dict[str, Any]) -> int:
-    prepared_path = ROOT / config["outputs"]["prepared_manifest"]
+    prepared_path = resolve_root_path(config["outputs"]["prepared_manifest"])
     frozen = json.loads(prepared_path.read_text(encoding="utf-8"))
     rebuilt, target_by_id = prepare_payload(args.config)
     if canonical(frozen) != canonical(rebuilt):
@@ -541,9 +542,9 @@ def run_formal(args: argparse.Namespace, config: dict[str, Any]) -> int:
         "model_output_parse_failure_count": parse_failures,
         "records": output_records,
     }
-    output_path = ROOT / config["outputs"]["result_output"]
+    output_path = resolve_root_path(config["outputs"]["result_output"])
     for protected in config["outputs"]["never_overwrite"]:
-        if output_path.resolve() == (ROOT / protected).resolve():
+        if output_path.resolve() == resolve_root_path(protected).resolve():
             raise RuntimeError("confirmatory gate output would overwrite prior evidence")
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(
@@ -572,7 +573,7 @@ def run_cpu_dry_run() -> int:
     config = load_config()
     artifact = load_gate_artifact(config)
     development = json.loads(
-        (ROOT / "outputs" / "candidate_selection" / "selection_manifest.json").read_text(
+        (ROOT / "outputs" / "proper_v1" / "candidate_selection" / "selection_manifest.json").read_text(
             encoding="utf-8"
         )
     )

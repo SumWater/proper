@@ -8,7 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
-sys.path.insert(0, str(ROOT / "experiments"))
+sys.path.insert(0, str(ROOT / "experiments" / "proper_v1"))
 
 from confirmatory_gate_v1 import (  # noqa: E402
     aggregate_primary,
@@ -34,7 +34,7 @@ class ConfirmatoryGateV1Tests(unittest.TestCase):
         self.assertEqual(config["gate"]["probability_threshold"], 0.75)
 
     def test_original_formal_config_keeps_experiment_time_identity(self) -> None:
-        path = ROOT / "configs" / "confirmatory_gate_v1.yaml"
+        path = ROOT / "configs" / "proper_v1" / "confirmatory_gate_v1.yaml"
         digest = hashlib.sha256(path.read_bytes()).hexdigest()
         self.assertEqual(
             digest,

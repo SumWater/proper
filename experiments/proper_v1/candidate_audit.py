@@ -11,7 +11,7 @@ from typing import Any, Iterable, Mapping
 import yaml
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "external" / "toolmisusebench"))
 
@@ -35,8 +35,8 @@ from benchmark_instances import experience_text, policy_signature  # noqa: E402
 from toolmisusebench.dataset import load_tasks  # noqa: E402
 
 
-CONFIG = ROOT / "configs" / "candidate_development.yaml"
-DEFAULT_OUTPUT = ROOT / "outputs" / "candidate_selection" / "development_audit.json"
+CONFIG = ROOT / "configs" / "proper_v1" / "candidate_development.yaml"
+DEFAULT_OUTPUT = ROOT / "outputs" / "proper_v1" / "candidate_selection" / "development_audit.json"
 
 
 def load_development_config(path: Path = CONFIG) -> dict[str, Any]:

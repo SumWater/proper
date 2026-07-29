@@ -7,7 +7,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "experiments"))
+sys.path.insert(0, str(ROOT / "experiments" / "proper_v1"))
 
 from candidate_manifest import verify_rule_lock  # noqa: E402
 
@@ -16,7 +16,7 @@ class ProperV1DevelopmentResultTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.output = json.loads(
-            (ROOT / "outputs" / "candidate_selection" / "selection_manifest.json").read_text(
+            (ROOT / "outputs" / "proper_v1" / "candidate_selection" / "selection_manifest.json").read_text(
                 encoding="utf-8"
             )
         )

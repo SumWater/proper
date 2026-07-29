@@ -21,7 +21,7 @@ class InterventionGateTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         manifest = json.loads(
-            (ROOT / "outputs" / "candidate_selection" / "selection_manifest.json").read_text(
+            (ROOT / "outputs" / "proper_v1" / "candidate_selection" / "selection_manifest.json").read_text(
                 encoding="utf-8"
             )
         )

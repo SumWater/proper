@@ -5,6 +5,13 @@ for tool-using agents. TF-IDF first retrieves candidate experiences; the frozen
 gate replaces Rank-1 only when observable failure and candidate features indicate
 that a compatible alternative is available. Otherwise it preserves Rank-1.
 
+## Versioned layout
+
+Completed PROPER v1 artifacts are preserved under `proper_v1` namespaces in
+`configs/`, `docs/`, `experiments/`, `outputs/`, and `schemas/`. New unified
+PROPER v2 work belongs under the corresponding `proper_v2` namespaces. See
+`docs/proper_v2/artifact_migration.md` for the migration and immutability rules.
+
 ## Current evidence
 
 The frozen Qwen3-8B public-test experiment contains 115 gate-changed paired
@@ -37,31 +44,31 @@ where the conservative selector changes TF-IDF Rank-1. These changed pairs span
 seven target tools and twelve selected memories. Persistent authorization is
 excluded because retrying a persistent denial violates the safety contract.
 The model-output protocol is frozen in
-`docs/preregistration_confirmatory_transient_authz_v1.md`. The deterministic
+`docs/proper_v1/preregistration_confirmatory_transient_authz_v1.md`. The deterministic
 Linux preparation reconstructed exactly without model output, so the single
 frozen GPU run is now authorized; see
-`docs/confirmatory_transient_authz_v1_preparation.md`.
+`docs/proper_v1/confirmatory_transient_authz_v1_preparation.md`.
 
 ## Repository map
 
 - `src/failure_memory/intervention_gate.py`: observable gate features
 - `src/failure_memory/frozen_gate.py`: frozen dependency-free inference
-- `experiments/applicability_intervention_gate.py`: development cross-validation
-- `experiments/confirmatory_gate_v1.py`: frozen model experiment
-- `experiments/extension_capacity_audit.py`: CPU-only cross-failure capacity audit
-- `experiments/transient_authz_capacity_v1.py`: native transient-authz capacity preparation
-- `experiments/confirmatory_transient_authz_v1.py`: frozen paired transient-authz experiment
-- `outputs/proper_gate/`: frozen gate-development artifact
-- `outputs/candidate_selection/`: frozen candidate-ranking artifact
-- `outputs/confirmatory_gate_v1/`: immutable formal results and analysis
-- `docs/preregistration_confirmatory_gate_v1.md`: frozen protocol
-- `docs/confirmatory_gate_v1_result.md`: formal result and limitations
-- `docs/preregistration_confirmatory_transient_authz_v1.md`: frozen extension protocol
+- `experiments/proper_v1/applicability_intervention_gate.py`: development cross-validation
+- `experiments/proper_v1/confirmatory_gate_v1.py`: frozen model experiment
+- `experiments/proper_v1/extension_capacity_audit.py`: CPU-only cross-failure capacity audit
+- `experiments/proper_v1/transient_authz_capacity_v1.py`: native transient-authz capacity preparation
+- `experiments/proper_v1/confirmatory_transient_authz_v1.py`: frozen paired transient-authz experiment
+- `outputs/proper_v1/proper_gate/`: frozen gate-development artifact
+- `outputs/proper_v1/candidate_selection/`: frozen candidate-ranking artifact
+- `outputs/proper_v1/confirmatory_gate_v1/`: immutable formal results and analysis
+- `docs/proper_v1/preregistration_confirmatory_gate_v1.md`: frozen protocol
+- `docs/proper_v1/confirmatory_gate_v1_result.md`: formal result and limitations
+- `docs/proper_v1/preregistration_confirmatory_transient_authz_v1.md`: frozen extension protocol
 
 Formal experiment identities and post-result runnable configurations are kept
 separate. Files without `.runtime` retain the exact experiment-time bytes;
 `.runtime` files drive the slim-tree code after cleanup. See
-`docs/artifact_layout.md` before running or extending an experiment.
+`docs/proper_v1/artifact_layout.md` before running or extending an experiment.
 
 Reusable experiment support is organized as agent runtime, benchmark-instance,
 memory-bank, candidate-selection, and paired-evaluation modules. Historical pilot
@@ -75,4 +82,4 @@ python -m compileall -q src experiments tests
 ```
 
 The exact benchmark, environment, model, source, and result identities are stored
-under `configs/`. Temporary datasets and lab logs remain under `work/`.
+under `configs/proper_v1/`. Temporary datasets and lab logs remain under `work/`.

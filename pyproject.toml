@@ -12,7 +12,7 @@ license = {text = "MIT"}
 dependencies = ["PyYAML>=6.0,<7"]
 
 [project.optional-dependencies]
-dev = ["pytest==8.4.1", "ruff==0.12.4"]
+dev = ["jsonschema==4.23.0", "pytest==8.4.1", "ruff==0.12.4"]
 
 [tool.setuptools]
 package-dir = {"" = "src"}

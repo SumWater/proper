@@ -170,8 +170,8 @@ Memory。结果为 0 次 Recovery Validity 恶化、5 次改善，方向与原�
   再次形成确认性结论；
 - 新场景必须创建新的 protocol、config、source lock、result schema、
   output directory 和 exclusion manifest；
-- 既有 `outputs/confirmatory_gate_v1/`、
-  `outputs/confirmatory_transient_authz_v1/` 以及对应 result lock 不得覆盖；
+- 既有 `outputs/proper_v1/confirmatory_gate_v1/`、
+  `outputs/proper_v1/confirmatory_transient_authz_v1/` 以及对应 result lock 不得覆盖；
 - public-test 输入曾参与 CPU 容量筛选的实验，只能表述为 model-output
   holdout，不能表述为完全 unseen-input holdout；
 - 最终广泛适用性主张至少需要第二个 benchmark 和多个模型系列上的独立证据。

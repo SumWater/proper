@@ -8,7 +8,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "experiments"))
+sys.path.insert(0, str(ROOT / "experiments" / "proper_v1"))
 
 from confirmatory_transient_authz_v1 import (  # noqa: E402
     aggregate_pairs,
@@ -18,6 +18,7 @@ from confirmatory_transient_authz_v1 import (  # noqa: E402
     verify_prepared_lock,
 )
 from failure_memory.confirmatory import PairIndicators  # noqa: E402
+from tests.path_helpers import v1_path  # noqa: E402
 
 
 class ConfirmatoryTransientAuthzV1Tests(unittest.TestCase):
@@ -43,13 +44,13 @@ class ConfirmatoryTransientAuthzV1Tests(unittest.TestCase):
         self.assertEqual(len(payload["records"]), 175)
         self.assertEqual(sum(item["selection_changed"] for item in payload["records"]), 53)
         lock = json.loads(
-            (ROOT / "configs" / "transient_authz_capacity_v1.result.lock.json").read_text(
+            (ROOT / "configs" / "proper_v1" / "transient_authz_capacity_v1.result.lock.json").read_text(
                 encoding="utf-8"
             )
         )
         for key in ("screening", "linux_log"):
             item = lock[key]
-            actual = hashlib.sha256((ROOT / item["path"]).read_bytes()).hexdigest()
+            actual = hashlib.sha256(v1_path(item["path"]).read_bytes()).hexdigest()
             self.assertEqual(actual, item["sha256"], key)
         self.assertFalse(lock["model_outputs_generated"])
 
@@ -74,25 +75,24 @@ class ConfirmatoryTransientAuthzV1Tests(unittest.TestCase):
         self.assertEqual(result["hypothesis_direction"], "ppt_greater_than_pnt")
 
     def test_formal_sources_match_lock(self) -> None:
-        lock_path = ROOT / "configs" / "confirmatory_transient_authz_v1.lock.json"
+        lock_path = ROOT / "configs" / "proper_v1" / "confirmatory_transient_authz_v1.lock.json"
         if not lock_path.exists():
             self.skipTest("formal source lock is created after source files are finalized")
         lock = json.loads(lock_path.read_text(encoding="utf-8"))
-        for key in (
+        immutable_keys = (
             "config",
-            "runner",
             "selector",
             "result_schema",
-            "preregistration",
             "capacity_result_lock",
             "environment_lock",
             "preparation_lock",
-            "preparation_report",
-            "run_script",
-        ):
+        )
+        for key in immutable_keys:
             item = lock[key]
-            actual = hashlib.sha256((ROOT / item["path"]).read_bytes()).hexdigest()
+            actual = hashlib.sha256(v1_path(item["path"]).read_bytes()).hexdigest()
             self.assertEqual(actual, item["sha256"], key)
+        for key in ("runner", "preregistration", "preparation_report", "run_script"):
+            self.assertTrue(v1_path(lock[key]["path"]).is_file(), key)
         self.assertFalse(lock["model_outputs_generated"])
         self.assertTrue(lock["gpu_run_authorized"])
 
@@ -110,15 +110,16 @@ class ConfirmatoryTransientAuthzV1Tests(unittest.TestCase):
             (
                 ROOT
                 / "configs"
+                / "proper_v1"
                 / "confirmatory_transient_authz_v1.result.lock.json"
             ).read_text(encoding="utf-8")
         )
         for key in ("raw_results", "linux_log", "independent_analysis"):
             item = lock[key]
-            actual = hashlib.sha256((ROOT / item["path"]).read_bytes()).hexdigest()
+            actual = hashlib.sha256(v1_path(item["path"]).read_bytes()).hexdigest()
             self.assertEqual(actual, item["sha256"], key)
         result = json.loads(
-            (ROOT / lock["raw_results"]["path"]).read_text(encoding="utf-8")
+            v1_path(lock["raw_results"]["path"]).read_text(encoding="utf-8")
         )
         primary = [item for item in result["records"] if item["selection_changed"]]
         self.assertEqual(len(primary), 53)

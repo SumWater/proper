@@ -9,7 +9,7 @@ import jsonschema
 
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "experiments"))
+sys.path.insert(0, str(ROOT / "experiments" / "proper_v1"))
 
 from analyze_confirmatory_gate_v1 import run_analysis  # noqa: E402
 
@@ -31,7 +31,7 @@ class ConfirmatoryGateV1AnalysisTests(unittest.TestCase):
 
     def test_saved_analysis_matches_fixed_schema(self) -> None:
         analysis = json.loads(
-            (ROOT / "outputs" / "confirmatory_gate_v1" / "analysis.json").read_text(
+            (ROOT / "outputs" / "proper_v1" / "confirmatory_gate_v1" / "analysis.json").read_text(
                 encoding="utf-8"
             )
         )
@@ -39,6 +39,7 @@ class ConfirmatoryGateV1AnalysisTests(unittest.TestCase):
             (
                 ROOT
                 / "schemas"
+                / "proper_v1"
                 / "confirmatory_gate_v1_analysis.schema.json"
             ).read_text(encoding="utf-8")
         )

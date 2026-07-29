@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any, Mapping
@@ -10,9 +11,13 @@ from typing import Any, Mapping
 import yaml
 
 
-ROOT = Path(__file__).resolve().parents[1]
-CONFIG = ROOT / "configs" / "observable_identifiability_audit.yaml"
-DEFAULT_OUTPUT = ROOT / "outputs" / "observable_identifiability" / "audit.json"
+ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "src"))
+
+from failure_memory.versioning import resolve_versioned_artifact  # noqa: E402
+
+CONFIG = ROOT / "configs" / "proper_v1" / "observable_identifiability_audit.yaml"
+DEFAULT_OUTPUT = ROOT / "outputs" / "proper_v1" / "observable_identifiability" / "audit.json"
 
 
 def sha256_file(path: Path) -> str:
@@ -162,7 +167,7 @@ def summarize_level(records: list[Mapping[str, Any]], level: str) -> dict[str, A
 
 def run_audit() -> dict[str, Any]:
     config = yaml.safe_load(CONFIG.read_text(encoding="utf-8"))
-    manifest_path = ROOT / config["input"]["selection_manifest"]
+    manifest_path = resolve_versioned_artifact(ROOT, config["input"]["selection_manifest"])
     if sha256_file(manifest_path) != config["input"]["selection_manifest_sha256"]:
         raise RuntimeError("frozen selection manifest hash mismatch")
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))

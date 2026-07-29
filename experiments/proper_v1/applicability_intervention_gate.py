@@ -14,7 +14,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import StratifiedKFold
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "src"))
 
 from failure_memory.intervention_gate import (  # noqa: E402
@@ -23,11 +23,12 @@ from failure_memory.intervention_gate import (  # noqa: E402
     ordered_top10,
     selected_applicability,
 )
+from failure_memory.versioning import resolve_versioned_artifact  # noqa: E402
 
 
-CONFIG = ROOT / "configs" / "applicability_intervention_gate.runtime.yaml"
-LOCK = ROOT / "configs" / "applicability_intervention_gate.runtime.lock.json"
-DEFAULT_OUTPUT = ROOT / "outputs" / "proper_gate" / "cross_validation.json"
+CONFIG = ROOT / "configs" / "proper_v1" / "applicability_intervention_gate.runtime.yaml"
+LOCK = ROOT / "configs" / "proper_v1" / "applicability_intervention_gate.runtime.lock.json"
+DEFAULT_OUTPUT = ROOT / "outputs" / "proper_v1" / "proper_gate" / "cross_validation.json"
 
 
 def sha256_file(path: Path) -> str:
@@ -51,7 +52,7 @@ def verify_lock() -> dict[str, Any]:
         raise RuntimeError("intervention-gate runtime lock has an invalid status")
     for key in ("config", "feature_source", "evaluation_runner"):
         item = lock[key]
-        if sha256_file(ROOT / item["path"]) != item["sha256"]:
+        if sha256_file(resolve_versioned_artifact(ROOT, item["path"])) != item["sha256"]:
             raise RuntimeError(f"locked gate file changed: {key}")
     return lock
 
@@ -75,7 +76,7 @@ def safe_rate(numerator: int, denominator: int) -> float:
 def run_cross_validation() -> dict[str, Any]:
     lock = verify_lock()
     config = load_config()
-    manifest_path = ROOT / config["input"]["selection_manifest"]
+    manifest_path = resolve_versioned_artifact(ROOT, config["input"]["selection_manifest"])
     if sha256_file(manifest_path) != config["input"]["selection_manifest_sha256"]:
         raise RuntimeError("frozen v1 selection manifest changed")
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))

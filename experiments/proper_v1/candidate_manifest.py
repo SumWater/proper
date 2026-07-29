@@ -11,7 +11,7 @@ from typing import Any
 import yaml
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "external" / "toolmisusebench"))
 
@@ -40,9 +40,9 @@ from benchmark_instances import policy_signature  # noqa: E402
 from toolmisusebench.dataset import load_tasks  # noqa: E402
 
 
-RULES = ROOT / "configs" / "candidate_rules.yaml"
-RULE_LOCK = ROOT / "configs" / "candidate_rules.lock.json"
-DEFAULT_OUTPUT = ROOT / "outputs" / "candidate_selection" / "selection_manifest.json"
+RULES = ROOT / "configs" / "proper_v1" / "candidate_rules.yaml"
+RULE_LOCK = ROOT / "configs" / "proper_v1" / "candidate_rules.lock.json"
+DEFAULT_OUTPUT = ROOT / "outputs" / "proper_v1" / "candidate_selection" / "selection_manifest.json"
 
 
 def verify_rule_lock() -> dict[str, Any]:
@@ -51,7 +51,7 @@ def verify_rule_lock() -> dict[str, Any]:
         raise RuntimeError("candidate-development runtime lock has an invalid status")
     for name in ("rule_config", "rule_source"):
         item = lock[name]
-        path = ROOT / item["path"]
+        path = resolve_root_path(item["path"])
         if sha256_file(path) != item["sha256"]:
             raise RuntimeError(f"locked PROPER v1 {name} hash mismatch")
     return lock
@@ -316,7 +316,7 @@ def run_development() -> dict[str, Any]:
         "run_kind": "proper_v1_offline_development_selection",
         "identities": {
             "development_config_sha256": sha256_file(
-                ROOT / "configs" / "candidate_development.yaml"
+                ROOT / "configs" / "proper_v1" / "candidate_development.yaml"
             ),
             "rule_lock_sha256": sha256_file(RULE_LOCK),
             "rule_config_sha256": lock["rule_config"]["sha256"],

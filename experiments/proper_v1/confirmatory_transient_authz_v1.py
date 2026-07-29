@@ -14,7 +14,7 @@ from typing import Any, Mapping
 import yaml
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "external" / "toolmisusebench"))
 
@@ -41,6 +41,7 @@ from gate_dataset import (  # noqa: E402
     condition_result,
     ensure_agent_boundary,
     load_config as load_memory_config,
+    resolve_root_path,
     verify_model_files,
 )
 from failure_memory.confirmatory import (  # noqa: E402
@@ -52,17 +53,17 @@ from failure_memory.confirmatory import (  # noqa: E402
 from toolmisusebench.dataset import load_tasks  # noqa: E402
 
 
-CONFIG = ROOT / "configs" / "confirmatory_transient_authz_v1.yaml"
-FORMAL_LOCK = ROOT / "configs" / "confirmatory_transient_authz_v1.lock.json"
+CONFIG = ROOT / "configs" / "proper_v1" / "confirmatory_transient_authz_v1.yaml"
+FORMAL_LOCK = ROOT / "configs" / "proper_v1" / "confirmatory_transient_authz_v1.lock.json"
 PREPARED_LOCK = (
-    ROOT / "configs" / "confirmatory_transient_authz_v1.prepared.lock.json"
+    ROOT / "configs" / "proper_v1" / "confirmatory_transient_authz_v1.prepared.lock.json"
 )
 ENVIRONMENT_LOCK = (
-    ROOT / "configs" / "confirmatory_transient_authz_v1.environment.lock.json"
+    ROOT / "configs" / "proper_v1" / "confirmatory_transient_authz_v1.environment.lock.json"
 )
-CAPACITY_RESULT_LOCK = ROOT / "configs" / "transient_authz_capacity_v1.result.lock.json"
-FORMAL_RUNTIME_CONFIG = ROOT / "configs" / "confirmatory_gate_v1.runtime.yaml"
-TOOLMISUSEBENCH_LOCK = ROOT / "configs" / "toolmisusebench.lock.json"
+CAPACITY_RESULT_LOCK = ROOT / "configs" / "proper_v1" / "transient_authz_capacity_v1.result.lock.json"
+FORMAL_RUNTIME_CONFIG = ROOT / "configs" / "proper_v1" / "confirmatory_gate_v1.runtime.yaml"
+TOOLMISUSEBENCH_LOCK = ROOT / "configs" / "proper_v1" / "toolmisusebench.lock.json"
 
 
 def verify_formal_lock() -> dict[str, Any]:
@@ -86,7 +87,7 @@ def verify_formal_lock() -> dict[str, Any]:
         "run_script",
     ):
         item = lock[key]
-        if sha256_file(ROOT / item["path"]) != str(item["sha256"]):
+        if sha256_file(resolve_root_path(item["path"])) != str(item["sha256"]):
             raise RuntimeError(f"formal transient-authz source mismatch: {key}")
     if lock["model_outputs_generated"] or not lock["gpu_run_authorized"]:
         raise RuntimeError("formal lock does not authorize the frozen GPU run")
@@ -99,7 +100,7 @@ def verify_environment_lock(config: Mapping[str, Any]) -> dict[str, Any]:
         raise RuntimeError("transient-authz environment lock has invalid status")
     for key in ("conda_explicit_lock", "pip_freeze_lock"):
         item = lock[key]
-        if sha256_file(ROOT / item["path"]) != str(item["sha256"]):
+        if sha256_file(resolve_root_path(item["path"])) != str(item["sha256"]):
             raise RuntimeError(f"transient-authz environment artifact mismatch: {key}")
     if lock["conda_explicit_lock"]["sha256"] != str(
         config["environment"]["conda_explicit_sha256"]
@@ -130,10 +131,10 @@ def verify_prepared_lock(config: Mapping[str, Any]) -> dict[str, Any]:
         "pip_freeze_lock",
     ):
         item = lock[key]
-        if sha256_file(ROOT / item["path"]) != str(item["sha256"]):
+        if sha256_file(resolve_root_path(item["path"])) != str(item["sha256"]):
             raise RuntimeError(f"prepared transient-authz artifact mismatch: {key}")
     prepared = json.loads(
-        (ROOT / lock["prepared_manifest"]["path"]).read_text(encoding="utf-8")
+        resolve_root_path(lock["prepared_manifest"]["path"]).read_text(encoding="utf-8")
     )
     if prepared["identities"]["prepared_payload_sha256"] != str(
         lock["prepared_payload_sha256"]
@@ -151,9 +152,9 @@ def verify_prepared_lock(config: Mapping[str, Any]) -> dict[str, Any]:
             raise RuntimeError(f"prepared authorization count mismatch: {key}")
     if not lock["gpu_run_authorized"] or lock["model_outputs_read_or_generated"]:
         raise RuntimeError("prepared artifact does not authorize model execution")
-    if ROOT / config["outputs"]["prepared_manifest"] != ROOT / lock[
-        "prepared_manifest"
-    ]["path"]:
+    if resolve_root_path(config["outputs"]["prepared_manifest"]) != resolve_root_path(
+        lock["prepared_manifest"]["path"]
+    ):
         raise RuntimeError("config and prepared authorization lock disagree")
     return lock
 
@@ -169,8 +170,8 @@ def load_config(path: Path = CONFIG) -> dict[str, Any]:
 
 def load_capacity(config: Mapping[str, Any]) -> dict[str, Any]:
     frozen = config["frozen_capacity"]
-    capacity_config = ROOT / frozen["config"]
-    capacity_screening = ROOT / frozen["screening"]
+    capacity_config = resolve_root_path(frozen["config"])
+    capacity_screening = resolve_root_path(frozen["screening"])
     if sha256_file(capacity_config) != str(frozen["config_sha256"]):
         raise RuntimeError("frozen capacity config hash mismatch")
     if sha256_file(capacity_screening) != str(frozen["screening_sha256"]):
@@ -206,7 +207,7 @@ def load_instances_and_memories(
     sources, frozen_memory = frozen_memory_bank(formal_config)
     if len(sources) != int(config["memory_bank"]["source_count"]):
         raise RuntimeError("unexpected frozen memory source count")
-    if sha256_file(ROOT / config["memory_bank"]["prepared_manifest"]) != str(
+    if sha256_file(resolve_root_path(config["memory_bank"]["prepared_manifest"])) != str(
         config["memory_bank"]["prepared_manifest_sha256"]
     ):
         raise RuntimeError("formal memory manifest hash mismatch")
@@ -326,7 +327,7 @@ def prepare_payload(
         "identities": {
             "config_sha256": sha256_file(config_path),
             "capacity_screening_sha256": sha256_file(
-                ROOT / config["frozen_capacity"]["screening"]
+                resolve_root_path(config["frozen_capacity"]["screening"])
             ),
             "capacity_result_lock_sha256": sha256_file(CAPACITY_RESULT_LOCK),
             "public_test_sha256": config["dataset"]["sha256"],
@@ -354,8 +355,8 @@ def prepare_payload(
 
 
 def write_prepared(payload: Mapping[str, Any], config: Mapping[str, Any]) -> None:
-    prepared = ROOT / config["outputs"]["prepared_manifest"]
-    screening = ROOT / config["outputs"]["screening_output"]
+    prepared = resolve_root_path(config["outputs"]["prepared_manifest"])
+    screening = resolve_root_path(config["outputs"]["screening_output"])
     prepared.parent.mkdir(parents=True, exist_ok=True)
     screening.parent.mkdir(parents=True, exist_ok=True)
     prepared.write_text(
@@ -401,7 +402,7 @@ def secondary_summary(condition_rows: Mapping[str, list[dict[str, Any]]]) -> dic
 
 
 def run_formal(args: argparse.Namespace, config: dict[str, Any]) -> int:
-    prepared_path = ROOT / config["outputs"]["prepared_manifest"]
+    prepared_path = resolve_root_path(config["outputs"]["prepared_manifest"])
     frozen = json.loads(prepared_path.read_text(encoding="utf-8"))
     rebuilt, instances = prepare_payload(args.config)
     if canonical(frozen) != canonical(rebuilt):
@@ -557,11 +558,11 @@ def run_formal(args: argparse.Namespace, config: dict[str, Any]) -> int:
         "model_call_count": model_call_count,
         "records": output_records,
     }
-    output = ROOT / config["outputs"]["result_output"]
+    output = resolve_root_path(config["outputs"]["result_output"])
     if output.exists():
         raise RuntimeError("refusing to overwrite a formal transient-authz result")
     for protected in config["outputs"]["never_overwrite"]:
-        if output.resolve() == (ROOT / protected).resolve():
+        if output.resolve() == resolve_root_path(protected).resolve():
             raise RuntimeError("formal output would overwrite prior evidence")
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(

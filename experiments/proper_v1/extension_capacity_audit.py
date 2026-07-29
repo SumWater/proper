@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any, Iterable, Mapping
@@ -10,8 +11,12 @@ from typing import Any, Iterable, Mapping
 import yaml
 
 
-ROOT = Path(__file__).resolve().parents[1]
-CONFIG = ROOT / "configs" / "extension_capacity_audit.yaml"
+ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "src"))
+
+from failure_memory.versioning import resolve_versioned_artifact  # noqa: E402
+
+CONFIG = ROOT / "configs" / "proper_v1" / "extension_capacity_audit.yaml"
 
 
 def sha256_file(path: Path) -> str:
@@ -180,7 +185,7 @@ def alias_summary(
 
 def run_audit(config_path: Path = CONFIG) -> dict[str, Any]:
     config = yaml.safe_load(config_path.read_text(encoding="utf-8"))
-    manifest_path = ROOT / config["input"]["selection_manifest"]
+    manifest_path = resolve_versioned_artifact(ROOT, config["input"]["selection_manifest"])
     actual_manifest_sha = sha256_file(manifest_path)
     if actual_manifest_sha != str(config["input"]["selection_manifest_sha256"]):
         raise RuntimeError("frozen selection manifest hash mismatch")
@@ -295,7 +300,7 @@ def main() -> int:
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()
     config = yaml.safe_load(args.config.read_text(encoding="utf-8"))
-    output = args.output or ROOT / config["output"]["path"]
+    output = args.output or resolve_versioned_artifact(ROOT, config["output"]["path"])
     payload = run_audit(args.config)
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(

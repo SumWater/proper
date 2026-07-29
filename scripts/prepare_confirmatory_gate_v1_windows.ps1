@@ -34,7 +34,7 @@ if ($actualHash -ne $expectedHash -or $actualBytes -ne $expectedBytes) {
     throw "Existing public-test identity mismatch."
 }
 
-python experiments\confirmatory_gate_v1.py --prepare
+python experiments\proper_v1\confirmatory_gate_v1.py --prepare
 if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-python experiments\confirmatory_gate_v1.py --cpu-dry-run
+python experiments\proper_v1\confirmatory_gate_v1.py --cpu-dry-run
 exit $LASTEXITCODE

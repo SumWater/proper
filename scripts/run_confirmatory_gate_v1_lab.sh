@@ -15,22 +15,22 @@ test -f work/lab_conda_explicit.lock
 test -f work/lab_pip_freeze.lock
 test -d "$model_dir"
 
-sha256sum -c configs/project_source.sha256
+sha256sum -c configs/proper_v1/project_source.sha256
 
 conda run --no-capture-output -n failure-memory-pilot \
-  python experiments/confirmatory_gate_v1.py --prepare
+  python experiments/proper_v1/confirmatory_gate_v1.py --prepare
 
 conda run --no-capture-output -n failure-memory-pilot \
-  python experiments/confirmatory_gate_v1.py --cpu-dry-run
+  python experiments/proper_v1/confirmatory_gate_v1.py --cpu-dry-run
 
 CUDA_VISIBLE_DEVICES=0 \
 HF_HUB_OFFLINE=1 \
 TRANSFORMERS_OFFLINE=1 \
 conda run --no-capture-output -n failure-memory-pilot \
-  python experiments/confirmatory_gate_v1.py \
+  python experiments/proper_v1/confirmatory_gate_v1.py \
   --run \
   --model "$model_dir" \
   --conda-lock work/lab_conda_explicit.lock \
   --pip-lock work/lab_pip_freeze.lock \
-  --model-manifest configs/qwen3_8b_model.sha256 \
-  --project-manifest configs/project_source.sha256
+  --model-manifest configs/proper_v1/qwen3_8b_model.sha256 \
+  --project-manifest configs/proper_v1/project_source.sha256
