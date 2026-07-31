@@ -1,0 +1,124 @@
+{
+  "boundary": {
+    "audit_metadata_passed_to_method": false,
+    "bundled_historical_results_read": false,
+    "evaluator_actions_used_only_as_audit_depth_proxies": true,
+    "gpu_used": false,
+    "model_loaded": false,
+    "model_outputs_read": false,
+    "target_tasks_executed": false
+  },
+  "capacity_checks": {
+    "idempotent_state_setting_gate": true,
+    "independent_domain_gate": true,
+    "non_idempotent_gate": true,
+    "read_only_gate": true,
+    "static_continuation_gate": true
+  },
+  "checks": {
+    "assistant_action_contract_coverage": true,
+    "domain_counts_and_splits_match": true,
+    "native_recoverable_pairs_not_claimed": true,
+    "no_forbidden_source_path_selected": true,
+    "no_model_or_execution_authority": true,
+    "public_tool_contracts_resolve": true,
+    "repository_checkout_clean": true,
+    "repository_revision_matches": true,
+    "repository_tag_matches": true,
+    "repository_tag_object_matches": true,
+    "selected_input_hashes_match": true,
+    "source_capacity_gates_pass": true,
+    "static_input_only_mode": true,
+    "target_capacity_not_prematurely_claimed": true
+  },
+  "confirmatory_run_authorized": false,
+  "development_model_run_authorized": false,
+  "disposition": "continue_cpu_branch_screening",
+  "domain_summaries": {
+    "airline": {
+      "eligible_base_task_count": 50,
+      "prospective_partition_counts": {
+        "development": 30,
+        "heldout": 9,
+        "preservation": 11
+      },
+      "source_task_count": 50,
+      "static_continuation_opportunities": {
+        "idempotent_state_setting": 0,
+        "non_idempotent_side_effect": 10,
+        "read_only": 64
+      },
+      "uncovered_assistant_action_names": {},
+      "upstream_test_count": 20,
+      "upstream_train_count": 30
+    },
+    "retail": {
+      "eligible_base_task_count": 114,
+      "prospective_partition_counts": {
+        "development": 74,
+        "heldout": 21,
+        "preservation": 19
+      },
+      "source_task_count": 114,
+      "static_continuation_opportunities": {
+        "idempotent_state_setting": 15,
+        "non_idempotent_side_effect": 21,
+        "read_only": 310
+      },
+      "uncovered_assistant_action_names": {},
+      "upstream_test_count": 40,
+      "upstream_train_count": 74
+    },
+    "telecom": {
+      "eligible_base_task_count": 114,
+      "prospective_partition_counts": {
+        "development": 74,
+        "heldout": 24,
+        "preservation": 16
+      },
+      "source_task_count": 2285,
+      "static_continuation_opportunities": {
+        "idempotent_state_setting": 4,
+        "non_idempotent_side_effect": 31,
+        "read_only": 0
+      },
+      "uncovered_assistant_action_names": {},
+      "upstream_test_count": 40,
+      "upstream_train_count": 74
+    }
+  },
+  "interpretation": "The pinned source has sufficient static multi-step and action-effect diversity for a CPU scripted recoverable-branch screen. It does not yet contribute a qualified development, held-out, or confirmatory pair.",
+  "native_recoverable_pair_count": 0,
+  "new_target_capacity_available": false,
+  "next_gate": "cpu_scripted_recoverable_branch_validation",
+  "passed": true,
+  "pending_exclusion_audits": [
+    "proper_v1_memory_source_family_overlap",
+    "proper_v2_model_exposed_family_overlap",
+    "v2_3_rule_tuning_target_overlap"
+  ],
+  "prospective_partition": {
+    "development_task_count": 178,
+    "heldout_task_count": 54,
+    "labels_are_prospective_not_qualified_targets": true,
+    "manifest_sha256": "2f5e2177b6d0ed12d4965e51f35ffdc42bf3408f833ae3229c5b1e5a8ab5e244",
+    "preservation_task_count": 46
+  },
+  "repository": {
+    "name": "tau3_bench",
+    "revision": "fc0055dc4e0a316c3f83133267fbd6faaa770992",
+    "selected_input_count": 13,
+    "selected_input_manifest_sha256": "13b81fec17292f1a0ede2a0025a0a8c4e28cb2ccc5169eeee0032c0fc451ad0e",
+    "tag": "v1.0.1",
+    "url": "https://github.com/sierra-research/tau2-bench.git"
+  },
+  "run_kind": "proper_v2_3_tau3_source_qualification",
+  "schema_version": 1,
+  "source_qualified_for_cpu_branch_screening": true,
+  "static_continuation_opportunities": {
+    "idempotent_state_setting": 19,
+    "non_idempotent_side_effect": 62,
+    "read_only": 374
+  },
+  "static_continuation_opportunity_count": 455
+}

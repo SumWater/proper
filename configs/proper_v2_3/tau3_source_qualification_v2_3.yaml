@@ -1,0 +1,258 @@
+{
+  "schema_version": 1,
+  "status": "prospective_source_qualification_before_target_derivation",
+  "audit_version": "proper_v2_3_tau3_source_qualification_v1",
+  "mode": "cpu_static_inputs_only_no_model_no_trajectory_no_task_execution",
+  "repository": {
+    "name": "tau3_bench",
+    "url": "https://github.com/sierra-research/tau2-bench.git",
+    "tag": "v1.0.1",
+    "tag_object": "b711c1ead46f55111bf765cf44d5da8bacc2d28c",
+    "revision": "fc0055dc4e0a316c3f83133267fbd6faaa770992",
+    "local_directory": "external/tau2-bench",
+    "license": "MIT"
+  },
+  "selected_inputs": [
+    {
+      "path": "data/tau2/domains/airline/tasks.json",
+      "role": "public_task_definitions",
+      "sha256": "34dfcf0622792d0d0fa32aa491d21582e1b5d3ec1948e7743bae881885f878ea",
+      "bytes": 159049
+    },
+    {
+      "path": "data/tau2/domains/airline/split_tasks.json",
+      "role": "public_partition_definitions",
+      "sha256": "8249d7af4c654a48e5fa776993c3416c3b68c7213a26d00ec89e976c28363e97",
+      "bytes": 1550
+    },
+    {
+      "path": "data/tau2/domains/airline/policy.md",
+      "role": "public_policy",
+      "sha256": "7db375ddcce5061cf9f48a5aabe1fc3e52aa2936d6a65b7c5b62e3c7ca54cfe4",
+      "bytes": 7842
+    },
+    {
+      "path": "src/tau2/domains/airline/tools.py",
+      "role": "public_tool_implementation",
+      "sha256": "025fcf7a777be9cf5049c09b87775fe31edcd6899d08570f3a718627c880a7d6",
+      "bytes": 28865
+    },
+    {
+      "path": "data/tau2/domains/retail/tasks.json",
+      "role": "public_task_definitions",
+      "sha256": "f44563d8f36362e2dc58282bb02cfb85010d22f27d9439808758d3e9b2bc16d2",
+      "bytes": 355019
+    },
+    {
+      "path": "data/tau2/domains/retail/split_tasks.json",
+      "role": "public_partition_definitions",
+      "sha256": "5f9949b833e6b99584b87e84ef22f9d81789ea67a52e534c6f7aa91eff08adc7",
+      "bytes": 3498
+    },
+    {
+      "path": "data/tau2/domains/retail/policy.md",
+      "role": "public_policy",
+      "sha256": "4313d3fef8acf919f555fa17fbce929cc3ed1cef2dd8f0d35ff5c8c3364de176",
+      "bytes": 6835
+    },
+    {
+      "path": "src/tau2/domains/retail/tools.py",
+      "role": "public_tool_implementation",
+      "sha256": "b40ceefd87b428792e2fdce545b0156131273be6e3ad36e29093763f5dd370f4",
+      "bytes": 29954
+    },
+    {
+      "path": "data/tau2/domains/telecom/tasks.json",
+      "role": "public_task_definitions",
+      "sha256": "20793073500dba5761f76d038dd32a343903985af442b3eae7eeb3a4e0d5d75d",
+      "bytes": 14340799
+    },
+    {
+      "path": "data/tau2/domains/telecom/split_tasks.json",
+      "role": "public_partition_definitions",
+      "sha256": "b862e473e8e9b25a0774d811cd9264790aa4560e620ad794e3f57bd9fd7c54e0",
+      "bytes": 358693
+    },
+    {
+      "path": "data/tau2/domains/telecom/main_policy.md",
+      "role": "public_policy",
+      "sha256": "3dcd21deb605bcb4e81bc313f997e505694f6757d49e9c073d4dac7d43b20501",
+      "bytes": 5857
+    },
+    {
+      "path": "data/tau2/domains/telecom/tech_support_workflow.md",
+      "role": "public_policy",
+      "sha256": "7c0873b3378c5f7c1d96cac1e86b2fa4fe4c4f5517f2033227174008c711f59e",
+      "bytes": 16692
+    },
+    {
+      "path": "src/tau2/domains/telecom/tools.py",
+      "role": "public_tool_implementation",
+      "sha256": "ce927252e5c74a90e8524e3d060194009cf578b634921813880d58779d181f7b",
+      "bytes": 27219
+    }
+  ],
+  "forbidden_source_paths": [
+    "data/tau2/results",
+    "data/simulations",
+    "historical_trajectories"
+  ],
+  "task_field_policy": {
+    "audit_allowed": [
+      "id",
+      "description.purpose",
+      "description.relevant_policies",
+      "user_scenario.instructions",
+      "evaluation_criteria.actions"
+    ],
+    "evaluator_actions_are_audit_only_continuation_proxies": true,
+    "forbidden_method_handoff": [
+      "description",
+      "evaluation_criteria",
+      "initial_state",
+      "scenario_name",
+      "semantic_family",
+      "gold_action",
+      "gold_label",
+      "evaluator_outcome",
+      "model_output"
+    ]
+  },
+  "domains": {
+    "airline": {
+      "task_file": "data/tau2/domains/airline/tasks.json",
+      "split_file": "data/tau2/domains/airline/split_tasks.json",
+      "source_task_count": 50,
+      "eligible_pool_split": "base",
+      "eligible_pool_count": 50,
+      "upstream_train_count": 30,
+      "upstream_test_count": 20
+    },
+    "retail": {
+      "task_file": "data/tau2/domains/retail/tasks.json",
+      "split_file": "data/tau2/domains/retail/split_tasks.json",
+      "source_task_count": 114,
+      "eligible_pool_split": "base",
+      "eligible_pool_count": 114,
+      "upstream_train_count": 74,
+      "upstream_test_count": 40
+    },
+    "telecom": {
+      "task_file": "data/tau2/domains/telecom/tasks.json",
+      "split_file": "data/tau2/domains/telecom/split_tasks.json",
+      "source_task_count": 2285,
+      "eligible_pool_split": "base",
+      "eligible_pool_count": 114,
+      "upstream_train_count": 74,
+      "upstream_test_count": 40,
+      "exclude_generated_non_base_variants": true
+    }
+  },
+  "action_effect_contracts": {
+    "airline": {
+      "read_only": [
+        "calculate",
+        "get_reservation_details",
+        "get_user_details",
+        "list_all_airports",
+        "search_direct_flight",
+        "search_onestop_flight"
+      ],
+      "idempotent_state_setting": [
+        "update_reservation_passengers"
+      ],
+      "non_idempotent_side_effect": [
+        "book_reservation",
+        "cancel_reservation",
+        "send_certificate",
+        "transfer_to_human_agents",
+        "update_reservation_baggages",
+        "update_reservation_flights"
+      ]
+    },
+    "retail": {
+      "read_only": [
+        "calculate",
+        "find_user_id_by_email",
+        "find_user_id_by_name_zip",
+        "get_item_details",
+        "get_order_details",
+        "get_product_details",
+        "get_user_details",
+        "list_all_product_types"
+      ],
+      "idempotent_state_setting": [
+        "modify_pending_order_address",
+        "modify_user_address"
+      ],
+      "non_idempotent_side_effect": [
+        "cancel_pending_order",
+        "exchange_delivered_order_items",
+        "modify_pending_order_items",
+        "modify_pending_order_payment",
+        "return_delivered_order_items",
+        "transfer_to_human_agents"
+      ]
+    },
+    "telecom": {
+      "read_only": [
+        "get_bills_for_customer",
+        "get_customer_by_id",
+        "get_customer_by_name",
+        "get_customer_by_phone",
+        "get_data_usage",
+        "get_details_by_id"
+      ],
+      "idempotent_state_setting": [
+        "disable_roaming",
+        "enable_roaming",
+        "resume_line",
+        "suspend_line"
+      ],
+      "non_idempotent_side_effect": [
+        "refuel_data",
+        "send_payment_request",
+        "transfer_to_human_agents"
+      ]
+    }
+  },
+  "prospective_partition": {
+    "development_source_split": "train",
+    "future_evaluation_source_split": "test",
+    "future_evaluation_seed": "proper-v2-3-tau3-v1.0.1-evaluation-partition",
+    "future_evaluation_labels": [
+      "heldout",
+      "preservation"
+    ],
+    "task_cannot_move_from_development_to_heldout": true
+  },
+  "source_gates": {
+    "minimum_independent_domains": 2,
+    "minimum_static_continuation_opportunities": 12,
+    "minimum_non_idempotent_opportunities": 3,
+    "minimum_idempotent_state_setting_opportunities": 3,
+    "minimum_read_only_opportunities": 3
+  },
+  "next_gate": {
+    "required": "cpu_scripted_recoverable_branch_validation",
+    "required_exclusion_audits": [
+      "proper_v1_memory_source_family_overlap",
+      "proper_v2_model_exposed_family_overlap",
+      "v2_3_rule_tuning_target_overlap"
+    ],
+    "native_recoverable_pairs_claimed": 0,
+    "target_capacity_claimed": 0,
+    "development_model_run_authorized": false,
+    "confirmatory_run_authorized": false
+  },
+  "boundary": {
+    "model_loaded": false,
+    "model_outputs_read": false,
+    "bundled_historical_results_read": false,
+    "target_tasks_executed": false,
+    "gpu_used": false,
+    "method_receives_audit_metadata": false,
+    "development_model_run_authorized": false,
+    "confirmatory_claim_authorized": false
+  }
+}

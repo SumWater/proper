@@ -1,0 +1,167 @@
+{
+  "boundary": {
+    "confirmatory_run_authorized": false,
+    "development_model_run_authorized": false,
+    "gpu_used": false,
+    "model_loaded": false,
+    "model_outputs_read": false,
+    "new_target_capacity_available": false,
+    "target_tasks_executed": false
+  },
+  "first_stage_frozen": {
+    "commit": "c1d4b291ee34a2c041a7c10ff16aee56150ad2ee",
+    "commit_is_ancestor": true,
+    "first_stage_result_hash_matches": true,
+    "first_stage_result_sha256": "7d17a69032e6f4fab8293b837ba8dd61484f2726ecf317a71d158c677d227056",
+    "passed": true
+  },
+  "next_gate": "cpu_scripted_recoverable_branch_validation",
+  "passed": true,
+  "run_kind": "proper_v2_3_tau3_source_qualification_stage_validation",
+  "schema_validation": {
+    "draft_2020_12_validation_performed": true,
+    "passed": true,
+    "validator": "jsonschema_4.17.3"
+  },
+  "schema_version": 1,
+  "source_hashes": {
+    "configs/proper_v2_3/tau3_source_qualification_v2_3.yaml": "2c4f8b5baacec784570f7bb4a7305b1c779db4cd926c0aaf0389044e4966c816",
+    "docs/proper_v2_3/tau3_source_qualification_stage.md": "1b479d78c9b9aa4d7e2ca12f72e78999d67b009a764912bf92d23cdadf99079d",
+    "experiments/proper_v2_3/tau3_source_qualification_v2_3.py": "8312202ee8c0c8d98dda293417644bab6521550af53323f70f9a6095f23bf8a1",
+    "experiments/proper_v2_3/validate_tau3_source_qualification_v2_3.py": "40412cf10afbb7ec1c601b842f583ce5b7049e95a06f84f716ddf75d83edd7f2",
+    "schemas/proper_v2_3/source_qualification.schema.json": "69549af3eef446cd17a82d47ee0d01092d3a1f63d395b48cc7849a881e9a12eb",
+    "tests/test_proper_v2_3_tau3_source_qualification.py": "aa19429adec2b1c83df1f1c397f32baabbdf47b35e63af1f231f0a3fdd6ccf45"
+  },
+  "source_qualification": {
+    "boundary": {
+      "audit_metadata_passed_to_method": false,
+      "bundled_historical_results_read": false,
+      "evaluator_actions_used_only_as_audit_depth_proxies": true,
+      "gpu_used": false,
+      "model_loaded": false,
+      "model_outputs_read": false,
+      "target_tasks_executed": false
+    },
+    "capacity_checks": {
+      "idempotent_state_setting_gate": true,
+      "independent_domain_gate": true,
+      "non_idempotent_gate": true,
+      "read_only_gate": true,
+      "static_continuation_gate": true
+    },
+    "checks": {
+      "assistant_action_contract_coverage": true,
+      "domain_counts_and_splits_match": true,
+      "native_recoverable_pairs_not_claimed": true,
+      "no_forbidden_source_path_selected": true,
+      "no_model_or_execution_authority": true,
+      "public_tool_contracts_resolve": true,
+      "repository_checkout_clean": true,
+      "repository_revision_matches": true,
+      "repository_tag_matches": true,
+      "repository_tag_object_matches": true,
+      "selected_input_hashes_match": true,
+      "source_capacity_gates_pass": true,
+      "static_input_only_mode": true,
+      "target_capacity_not_prematurely_claimed": true
+    },
+    "confirmatory_run_authorized": false,
+    "development_model_run_authorized": false,
+    "disposition": "continue_cpu_branch_screening",
+    "domain_summaries": {
+      "airline": {
+        "eligible_base_task_count": 50,
+        "prospective_partition_counts": {
+          "development": 30,
+          "heldout": 9,
+          "preservation": 11
+        },
+        "source_task_count": 50,
+        "static_continuation_opportunities": {
+          "idempotent_state_setting": 0,
+          "non_idempotent_side_effect": 10,
+          "read_only": 64
+        },
+        "uncovered_assistant_action_names": {},
+        "upstream_test_count": 20,
+        "upstream_train_count": 30
+      },
+      "retail": {
+        "eligible_base_task_count": 114,
+        "prospective_partition_counts": {
+          "development": 74,
+          "heldout": 21,
+          "preservation": 19
+        },
+        "source_task_count": 114,
+        "static_continuation_opportunities": {
+          "idempotent_state_setting": 15,
+          "non_idempotent_side_effect": 21,
+          "read_only": 310
+        },
+        "uncovered_assistant_action_names": {},
+        "upstream_test_count": 40,
+        "upstream_train_count": 74
+      },
+      "telecom": {
+        "eligible_base_task_count": 114,
+        "prospective_partition_counts": {
+          "development": 74,
+          "heldout": 24,
+          "preservation": 16
+        },
+        "source_task_count": 2285,
+        "static_continuation_opportunities": {
+          "idempotent_state_setting": 4,
+          "non_idempotent_side_effect": 31,
+          "read_only": 0
+        },
+        "uncovered_assistant_action_names": {},
+        "upstream_test_count": 40,
+        "upstream_train_count": 74
+      }
+    },
+    "interpretation": "The pinned source has sufficient static multi-step and action-effect diversity for a CPU scripted recoverable-branch screen. It does not yet contribute a qualified development, held-out, or confirmatory pair.",
+    "native_recoverable_pair_count": 0,
+    "new_target_capacity_available": false,
+    "next_gate": "cpu_scripted_recoverable_branch_validation",
+    "passed": true,
+    "pending_exclusion_audits": [
+      "proper_v1_memory_source_family_overlap",
+      "proper_v2_model_exposed_family_overlap",
+      "v2_3_rule_tuning_target_overlap"
+    ],
+    "prospective_partition": {
+      "development_task_count": 178,
+      "heldout_task_count": 54,
+      "labels_are_prospective_not_qualified_targets": true,
+      "manifest_sha256": "2f5e2177b6d0ed12d4965e51f35ffdc42bf3408f833ae3229c5b1e5a8ab5e244",
+      "preservation_task_count": 46
+    },
+    "repository": {
+      "name": "tau3_bench",
+      "revision": "fc0055dc4e0a316c3f83133267fbd6faaa770992",
+      "selected_input_count": 13,
+      "selected_input_manifest_sha256": "13b81fec17292f1a0ede2a0025a0a8c4e28cb2ccc5169eeee0032c0fc451ad0e",
+      "tag": "v1.0.1",
+      "url": "https://github.com/sierra-research/tau2-bench.git"
+    },
+    "run_kind": "proper_v2_3_tau3_source_qualification",
+    "schema_version": 1,
+    "source_qualified_for_cpu_branch_screening": true,
+    "static_continuation_opportunities": {
+      "idempotent_state_setting": 19,
+      "non_idempotent_side_effect": 62,
+      "read_only": 374
+    },
+    "static_continuation_opportunity_count": 455
+  },
+  "tests": {
+    "error_count": 0,
+    "failure_count": 0,
+    "passed": true,
+    "runner_output": "test_config_selects_no_trajectory_or_result_path (test_proper_v2_3_tau3_source_qualification.Tau3SourceQualificationTests.test_config_selects_no_trajectory_or_result_path) ... ok\ntest_no_target_or_model_authority_is_created (test_proper_v2_3_tau3_source_qualification.Tau3SourceQualificationTests.test_no_target_or_model_authority_is_created) ... ok\ntest_partition_is_prospective_and_immutable (test_proper_v2_3_tau3_source_qualification.Tau3SourceQualificationTests.test_partition_is_prospective_and_immutable) ... ok\ntest_pinned_source_qualifies_only_for_cpu_branch_screening (test_proper_v2_3_tau3_source_qualification.Tau3SourceQualificationTests.test_pinned_source_qualifies_only_for_cpu_branch_screening) ... ok\ntest_result_validates_against_schema_when_jsonschema_is_available (test_proper_v2_3_tau3_source_qualification.Tau3SourceQualificationTests.test_result_validates_against_schema_when_jsonschema_is_available) ... ok\ntest_static_source_has_required_effect_diversity (test_proper_v2_3_tau3_source_qualification.Tau3SourceQualificationTests.test_static_source_has_required_effect_diversity) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.490s\n\nOK\n",
+    "skipped_count": 0,
+    "tests_run": 6
+  }
+}
