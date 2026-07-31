@@ -1,0 +1,183 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://proper.local/schemas/proper_v2/memory_continuation_v2_2_1.schema.json",
+  "title": "PROPER v2.2.1 Continuation State",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "method_version",
+    "memory_experience_id",
+    "lifecycle_status",
+    "lifecycle_transition_index",
+    "mode",
+    "completed_actions",
+    "blocked_repeat_count",
+    "invalid_decision_count",
+    "replan_count",
+    "remaining_repeat_replans",
+    "remaining_invalid_replans",
+    "transition_index",
+    "feedback_codes",
+    "stop_reason"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "method_version": {
+      "const": "proper_v2_2_1_continuation_development"
+    },
+    "memory_experience_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lifecycle_status": {
+      "enum": [
+        "active",
+        "consumed",
+        "failed",
+        "stopped"
+      ]
+    },
+    "lifecycle_transition_index": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "mode": {
+      "enum": [
+        "memory_guided",
+        "ordinary_task_planning",
+        "replan_required",
+        "stopped"
+      ]
+    },
+    "completed_actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "action",
+          "success_evidence",
+          "lifecycle_transition_index"
+        ],
+        "properties": {
+          "action": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "tool_name",
+              "argument_template"
+            ],
+            "properties": {
+              "tool_name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "argument_template": {
+                "type": "object"
+              }
+            }
+          },
+          "success_evidence": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "lifecycle_transition_index": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "blocked_repeat_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "invalid_decision_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "replan_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "remaining_repeat_replans": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "remaining_invalid_replans": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "transition_index": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "feedback_codes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "stop_reason": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "replan_required"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "feedback_codes": {
+            "minItems": 1
+          },
+          "stop_reason": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "stopped"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "stop_reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "stop_reason": {
+            "type": "null"
+          }
+        }
+      }
+    }
+  ]
+}

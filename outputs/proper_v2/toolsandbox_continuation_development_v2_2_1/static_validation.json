@@ -1,0 +1,906 @@
+{
+  "boundary": {
+    "confirmatory_claim_authorized": false,
+    "existing_model_exposed_pairs": true,
+    "external_api_called": false,
+    "gpu_run_authorized": false,
+    "model_loaded": false,
+    "new_model_outputs_read": false,
+    "scripted_decisions_only": true
+  },
+  "checks": {
+    "pair_count": true,
+    "post_failure_consumed_count": true,
+    "post_failure_repeat_execution_count": true,
+    "post_failure_repeat_replan_count": true,
+    "post_failure_replan_handoff_count": true,
+    "pre_action_safe_stop_count": true
+  },
+  "identities": {
+    "config_sha256": "6811381ac50ccd426fb0d156c7b420aec4d9c0b28f536f6977fba56f12800842",
+    "prepared_manifest_sha256": "3efcd90ee2e8b30685430326c1d1781caec15c35c6fd8ee28dfd066e13c89f21"
+  },
+  "interpretation_limits": {
+    "existing_pairs_are_development_only": true,
+    "final_task_completion_not_tested": true,
+    "model_continuation_not_tested": true,
+    "scripted_state_machine_only": true
+  },
+  "passed": true,
+  "records": [
+    {
+      "decision_phase": "post_failure",
+      "handoff_review": {
+        "decision_allowed": true,
+        "disposition": "allow",
+        "reason_code": "stop_decision_allowed",
+        "state": {
+          "blocked_repeat_count": 1,
+          "completed_actions": [
+            {
+              "action": {
+                "argument_template": {
+                  "on": true
+                },
+                "tool_name": "set_wifi_status"
+              },
+              "lifecycle_transition_index": 1,
+              "success_evidence": [
+                "action_succeeded",
+                "tool_result:success"
+              ]
+            }
+          ],
+          "feedback_codes": [],
+          "invalid_decision_count": 0,
+          "lifecycle_status": "consumed",
+          "lifecycle_transition_index": 1,
+          "memory_experience_id": "toolsandbox::turn_on_wifi_low_battery_mode::action_2",
+          "method_version": "proper_v2_2_1_continuation_development",
+          "mode": "stopped",
+          "remaining_invalid_replans": 1,
+          "remaining_repeat_replans": 1,
+          "replan_count": 1,
+          "schema_version": 1,
+          "stop_reason": "scripted_ordinary_planning_handoff",
+          "transition_index": 3
+        }
+      },
+      "initial_lifecycle_status": "consumed",
+      "pair_id": "toolsandbox-v2-1-01",
+      "repeat_executed": false,
+      "repeat_replan": true,
+      "repeat_review": {
+        "decision_allowed": false,
+        "disposition": "replan",
+        "reason_code": "consumed_action_repeat_replan_required",
+        "state": {
+          "blocked_repeat_count": 1,
+          "completed_actions": [
+            {
+              "action": {
+                "argument_template": {
+                  "on": true
+                },
+                "tool_name": "set_wifi_status"
+              },
+              "lifecycle_transition_index": 1,
+              "success_evidence": [
+                "action_succeeded",
+                "tool_result:success"
+              ]
+            }
+          ],
+          "feedback_codes": [
+            "completed_action_repeat_blocked",
+            "continue_original_task",
+            "select_uncompleted_next_step"
+          ],
+          "invalid_decision_count": 0,
+          "lifecycle_status": "consumed",
+          "lifecycle_transition_index": 1,
+          "memory_experience_id": "toolsandbox::turn_on_wifi_low_battery_mode::action_2",
+          "method_version": "proper_v2_2_1_continuation_development",
+          "mode": "replan_required",
+          "remaining_invalid_replans": 1,
+          "remaining_repeat_replans": 1,
+          "replan_count": 1,
+          "schema_version": 1,
+          "stop_reason": null,
+          "transition_index": 2
+        }
+      },
+      "replan_handoff": true,
+      "safe_stop": false
+    },
+    {
+      "decision_phase": "post_failure",
+      "handoff_review": {
+        "decision_allowed": true,
+        "disposition": "allow",
+        "reason_code": "stop_decision_allowed",
+        "state": {
+          "blocked_repeat_count": 1,
+          "completed_actions": [
+            {
+              "action": {
+                "argument_template": {
+                  "on": true
+                },
+                "tool_name": "set_wifi_status"
+              },
+              "lifecycle_transition_index": 1,
+              "success_evidence": [
+                "action_succeeded",
+                "tool_result:success"
+              ]
+            }
+          ],
+          "feedback_codes": [],
+          "invalid_decision_count": 0,
+          "lifecycle_status": "consumed",
+          "lifecycle_transition_index": 1,
+          "memory_experience_id": "toolsandbox::turn_on_wifi_low_battery_mode::action_2",
+          "method_version": "proper_v2_2_1_continuation_development",
+          "mode": "stopped",
+          "remaining_invalid_replans": 1,
+          "remaining_repeat_replans": 1,
+          "replan_count": 1,
+          "schema_version": 1,
+          "stop_reason": "scripted_ordinary_planning_handoff",
+          "transition_index": 3
+        }
+      },
+      "initial_lifecycle_status": "consumed",
+      "pair_id": "toolsandbox-v2-1-02",
+      "repeat_executed": false,
+      "repeat_replan": true,
+      "repeat_review": {
+        "decision_allowed": false,
+        "disposition": "replan",
+        "reason_code": "consumed_action_repeat_replan_required",
+        "state": {
+          "blocked_repeat_count": 1,
+          "completed_actions": [
+            {
+              "action": {
+                "argument_template": {
+                  "on": true
+                },
+                "tool_name": "set_wifi_status"
+              },
+              "lifecycle_transition_index": 1,
+              "success_evidence": [
+                "action_succeeded",
+                "tool_result:success"
+              ]
+            }
+          ],
+          "feedback_codes": [
+            "completed_action_repeat_blocked",
+            "continue_original_task",
+            "select_uncompleted_next_step"
+          ],
+          "invalid_decision_count": 0,
+          "lifecycle_status": "consumed",
+          "lifecycle_transition_index": 1,
+          "memory_experience_id": "toolsandbox::turn_on_wifi_low_battery_mode::action_2",
+          "method_version": "proper_v2_2_1_continuation_development",
+          "mode": "replan_required",
+          "remaining_invalid_replans": 1,
+          "remaining_repeat_replans": 1,
+          "replan_count": 1,
+          "schema_version": 1,
+          "stop_reason": null,
+          "transition_index": 2
+        }
+      },
+      "replan_handoff": true,
+      "safe_stop": false
+    },
+    {
+      "decision_phase": "post_failure",
+      "handoff_review": {
+        "decision_allowed": true,
+        "disposition": "allow",
+        "reason_code": "stop_decision_allowed",
+        "state": {
+          "blocked_repeat_count": 1,
+          "completed_actions": [
+            {
+              "action": {
+                "argument_template": {
+                  "on": true
+                },
+                "tool_name": "set_wifi_status"
+              },
+              "lifecycle_transition_index": 1,
+              "success_evidence": [
+                "action_succeeded",
+                "tool_result:success"
+              ]
+            }
+          ],
+          "feedback_codes": [],
+          "invalid_decision_count": 0,
+          "lifecycle_status": "consumed",
+          "lifecycle_transition_index": 1,
+          "memory_experience_id": "toolsandbox::turn_on_wifi_low_battery_mode::action_2",
+          "method_version": "proper_v2_2_1_continuation_development",
+          "mode": "stopped",
+          "remaining_invalid_replans": 1,
+          "remaining_repeat_replans": 1,
+          "replan_count": 1,
+          "schema_version": 1,
+          "stop_reason": "scripted_ordinary_planning_handoff",
+          "transition_index": 3
+        }
+      },
+      "initial_lifecycle_status": "consumed",
+      "pair_id": "toolsandbox-v2-1-03",
+      "repeat_executed": false,
+      "repeat_replan": true,
+      "repeat_review": {
+        "decision_allowed": false,
+        "disposition": "replan",
+        "reason_code": "consumed_action_repeat_replan_required",
+        "state": {
+          "blocked_repeat_count": 1,
+          "completed_actions": [
+            {
+              "action": {
+                "argument_template": {
+                  "on": true
+                },
+                "tool_name": "set_wifi_status"
+              },
+              "lifecycle_transition_index": 1,
+              "success_evidence": [
+                "action_succeeded",
+                "tool_result:success"
+              ]
+            }
+          ],
+          "feedback_codes": [
+            "completed_action_repeat_blocked",
+            "continue_original_task",
+            "select_uncompleted_next_step"
+          ],
+          "invalid_decision_count": 0,
+          "lifecycle_status": "consumed",
+          "lifecycle_transition_index": 1,
+          "memory_experience_id": "toolsandbox::turn_on_wifi_low_battery_mode::action_2",
+          "method_version": "proper_v2_2_1_continuation_development",
+          "mode": "replan_required",
+          "remaining_invalid_replans": 1,
+          "remaining_repeat_replans": 1,
+          "replan_count": 1,
+          "schema_version": 1,
+          "stop_reason": null,
+          "transition_index": 2
+        }
+      },
+      "replan_handoff": true,
+      "safe_stop": false
+    },
+    {
+      "decision_phase": "pre_action",
+      "initial_lifecycle_status": "active",
+      "pair_id": "toolsandbox-v2-1-04",
+      "repeat_executed": false,
+      "repeat_replan": false,
+      "replan_handoff": false,
+      "review": {
+        "decision_allowed": false,
+        "disposition": "stop",
+        "reason_code": "active_stop_policy_tool_call_blocked",
+        "state": {
+          "blocked_repeat_count": 0,
+          "completed_actions": [],
+          "feedback_codes": [
+            "active_stop_policy_tool_call_blocked"
+          ],
+          "invalid_decision_count": 0,
+          "lifecycle_status": "active",
+          "lifecycle_transition_index": 0,
+          "memory_experience_id": "toolsandbox::search_reminder_upcoming_insufficient_information::stop",
+          "method_version": "proper_v2_2_1_continuation_development",
+          "mode": "stopped",
+          "remaining_invalid_replans": 1,
+          "remaining_repeat_replans": 2,
+          "replan_count": 0,
+          "schema_version": 1,
+          "stop_reason": "active_stop_policy_tool_call_blocked",
+          "transition_index": 1
+        }
+      },
+      "safe_stop": true
+    },
+    {
+      "decision_phase": "pre_action",
+      "initial_lifecycle_status": "active",
+      "pair_id": "toolsandbox-v2-1-05",
+      "repeat_executed": false,
+      "repeat_replan": false,
+      "replan_handoff": false,
+      "review": {
+        "decision_allowed": false,
+        "disposition": "stop",
+        "reason_code": "active_stop_policy_tool_call_blocked",
+        "state": {
+          "blocked_repeat_count": 0,
+          "completed_actions": [],
+          "feedback_codes": [
+            "active_stop_policy_tool_call_blocked"
+          ],
+          "invalid_decision_count": 0,
+          "lifecycle_status": "active",
+          "lifecycle_transition_index": 0,
+          "memory_experience_id": "toolsandbox::search_reminder_upcoming_insufficient_information::stop",
+          "method_version": "proper_v2_2_1_continuation_development",
+          "mode": "stopped",
+          "remaining_invalid_replans": 1,
+          "remaining_repeat_replans": 2,
+          "replan_count": 0,
+          "schema_version": 1,
+          "stop_reason": "active_stop_policy_tool_call_blocked",
+          "transition_index": 1
+        }
+      },
+      "safe_stop": true
+    },
+    {
+      "decision_phase": "post_failure",
+      "handoff_review": {
+        "decision_allowed": true,
+        "disposition": "allow",
+        "reason_code": "stop_decision_allowed",
+        "state": {
+          "blocked_repeat_count": 1,
+          "completed_actions": [
+            {
+              "action": {
+                "argument_template": {
+                  "on": true
+                },
+                "tool_name": "set_cellular_service_status"
+              },
+              "lifecycle_transition_index": 1,
+              "success_evidence": [
+                "action_succeeded",
+                "tool_result:success"
+              ]
+            }
+          ],
+          "feedback_codes": [],
+          "invalid_decision_count": 0,
+          "lifecycle_status": "consumed",
+          "lifecycle_transition_index": 1,
+          "memory_experience_id": "toolsandbox::turn_on_cellular_low_battery_mode::action_2",
+          "method_version": "proper_v2_2_1_continuation_development",
+          "mode": "stopped",
+          "remaining_invalid_replans": 1,
+          "remaining_repeat_replans": 1,
+          "replan_count": 1,
+          "schema_version": 1,
+          "stop_reason": "scripted_ordinary_planning_handoff",
+          "transition_index": 3
+        }
+      },
+      "initial_lifecycle_status": "consumed",
+      "pair_id": "toolsandbox-v2-1-06",
+      "repeat_executed": false,
+      "repeat_replan": true,
+      "repeat_review": {
+        "decision_allowed": false,
+        "disposition": "replan",
+        "reason_code": "consumed_action_repeat_replan_required",
+        "state": {
+          "blocked_repeat_count": 1,
+          "completed_actions": [
+            {
+              "action": {
+                "argument_template": {
+                  "on": true
+                },
+                "tool_name": "set_cellular_service_status"
+              },
+              "lifecycle_transition_index": 1,
+              "success_evidence": [
+                "action_succeeded",
+                "tool_result:success"
+              ]
+            }
+          ],
+          "feedback_codes": [
+            "completed_action_repeat_blocked",
+            "continue_original_task",
+            "select_uncompleted_next_step"
+          ],
+          "invalid_decision_count": 0,
+          "lifecycle_status": "consumed",
+          "lifecycle_transition_index": 1,
+          "memory_experience_id": "toolsandbox::turn_on_cellular_low_battery_mode::action_2",
+          "method_version": "proper_v2_2_1_continuation_development",
+          "mode": "replan_required",
+          "remaining_invalid_replans": 1,
+          "remaining_repeat_replans": 1,
+          "replan_count": 1,
+          "schema_version": 1,
+          "stop_reason": null,
+          "transition_index": 2
+        }
+      },
+      "replan_handoff": true,
+      "safe_stop": false
+    },
+    {
+      "decision_phase": "post_failure",
+      "handoff_review": {
+        "decision_allowed": true,
+        "disposition": "allow",
+        "reason_code": "stop_decision_allowed",
+        "state": {
+          "blocked_repeat_count": 1,
+          "completed_actions": [
+            {
+              "action": {
+                "argument_template": {
+                  "on": true
+                },
+                "tool_name": "set_cellular_service_status"
+              },
+              "lifecycle_transition_index": 1,
+              "success_evidence": [
+                "action_succeeded",
+                "tool_result:success"
+              ]
+            }
+          ],
+          "feedback_codes": [],
+          "invalid_decision_count": 0,
+          "lifecycle_status": "consumed",
+          "lifecycle_transition_index": 1,
+          "memory_experience_id": "toolsandbox::turn_on_cellular_low_battery_mode::action_2",
+          "method_version": "proper_v2_2_1_continuation_development",
+          "mode": "stopped",
+          "remaining_invalid_replans": 1,
+          "remaining_repeat_replans": 1,
+          "replan_count": 1,
+          "schema_version": 1,
+          "stop_reason": "scripted_ordinary_planning_handoff",
+          "transition_index": 3
+        }
+      },
+      "initial_lifecycle_status": "consumed",
+      "pair_id": "toolsandbox-v2-1-07",
+      "repeat_executed": false,
+      "repeat_replan": true,
+      "repeat_review": {
+        "decision_allowed": false,
+        "disposition": "replan",
+        "reason_code": "consumed_action_repeat_replan_required",
+        "state": {
+          "blocked_repeat_count": 1,
+          "completed_actions": [
+            {
+              "action": {
+                "argument_template": {
+                  "on": true
+                },
+                "tool_name": "set_cellular_service_status"
+              },
+              "lifecycle_transition_index": 1,
+              "success_evidence": [
+                "action_succeeded",
+                "tool_result:success"
+              ]
+            }
+          ],
+          "feedback_codes": [
+            "completed_action_repeat_blocked",
+            "continue_original_task",
+            "select_uncompleted_next_step"
+          ],
+          "invalid_decision_count": 0,
+          "lifecycle_status": "consumed",
+          "lifecycle_transition_index": 1,
+          "memory_experience_id": "toolsandbox::turn_on_cellular_low_battery_mode::action_2",
+          "method_version": "proper_v2_2_1_continuation_development",
+          "mode": "replan_required",
+          "remaining_invalid_replans": 1,
+          "remaining_repeat_replans": 1,
+          "replan_count": 1,
+          "schema_version": 1,
+          "stop_reason": null,
+          "transition_index": 2
+        }
+      },
+      "replan_handoff": true,
+      "safe_stop": false
+    },
+    {
+      "decision_phase": "pre_action",
+      "initial_lifecycle_status": "active",
+      "pair_id": "toolsandbox-v2-1-08",
+      "repeat_executed": false,
+      "repeat_replan": false,
+      "replan_handoff": false,
+      "review": {
+        "decision_allowed": false,
+        "disposition": "stop",
+        "reason_code": "active_stop_policy_tool_call_blocked",
+        "state": {
+          "blocked_repeat_count": 0,
+          "completed_actions": [],
+          "feedback_codes": [
+            "active_stop_policy_tool_call_blocked"
+          ],
+          "invalid_decision_count": 0,
+          "lifecycle_status": "active",
+          "lifecycle_transition_index": 0,
+          "memory_experience_id": "toolsandbox::remove_contact_without_search::stop",
+          "method_version": "proper_v2_2_1_continuation_development",
+          "mode": "stopped",
+          "remaining_invalid_replans": 1,
+          "remaining_repeat_replans": 2,
+          "replan_count": 0,
+          "schema_version": 1,
+          "stop_reason": "active_stop_policy_tool_call_blocked",
+          "transition_index": 1
+        }
+      },
+      "safe_stop": true
+    },
+    {
+      "decision_phase": "post_failure",
+      "handoff_review": {
+        "decision_allowed": true,
+        "disposition": "allow",
+        "reason_code": "stop_decision_allowed",
+        "state": {
+          "blocked_repeat_count": 1,
+          "completed_actions": [
+            {
+              "action": {
+                "argument_template": {
+                  "on": true
+                },
+                "tool_name": "set_cellular_service_status"
+              },
+              "lifecycle_transition_index": 1,
+              "success_evidence": [
+                "action_succeeded",
+                "tool_result:success"
+              ]
+            }
+          ],
+          "feedback_codes": [],
+          "invalid_decision_count": 0,
+          "lifecycle_status": "consumed",
+          "lifecycle_transition_index": 1,
+          "memory_experience_id": "toolsandbox::turn_on_cellular_low_battery_mode::action_2",
+          "method_version": "proper_v2_2_1_continuation_development",
+          "mode": "stopped",
+          "remaining_invalid_replans": 1,
+          "remaining_repeat_replans": 1,
+          "replan_count": 1,
+          "schema_version": 1,
+          "stop_reason": "scripted_ordinary_planning_handoff",
+          "transition_index": 3
+        }
+      },
+      "initial_lifecycle_status": "consumed",
+      "pair_id": "toolsandbox-v2-1-09",
+      "repeat_executed": false,
+      "repeat_replan": true,
+      "repeat_review": {
+        "decision_allowed": false,
+        "disposition": "replan",
+        "reason_code": "consumed_action_repeat_replan_required",
+        "state": {
+          "blocked_repeat_count": 1,
+          "completed_actions": [
+            {
+              "action": {
+                "argument_template": {
+                  "on": true
+                },
+                "tool_name": "set_cellular_service_status"
+              },
+              "lifecycle_transition_index": 1,
+              "success_evidence": [
+                "action_succeeded",
+                "tool_result:success"
+              ]
+            }
+          ],
+          "feedback_codes": [
+            "completed_action_repeat_blocked",
+            "continue_original_task",
+            "select_uncompleted_next_step"
+          ],
+          "invalid_decision_count": 0,
+          "lifecycle_status": "consumed",
+          "lifecycle_transition_index": 1,
+          "memory_experience_id": "toolsandbox::turn_on_cellular_low_battery_mode::action_2",
+          "method_version": "proper_v2_2_1_continuation_development",
+          "mode": "replan_required",
+          "remaining_invalid_replans": 1,
+          "remaining_repeat_replans": 1,
+          "replan_count": 1,
+          "schema_version": 1,
+          "stop_reason": null,
+          "transition_index": 2
+        }
+      },
+      "replan_handoff": true,
+      "safe_stop": false
+    },
+    {
+      "decision_phase": "post_failure",
+      "handoff_review": {
+        "decision_allowed": true,
+        "disposition": "allow",
+        "reason_code": "stop_decision_allowed",
+        "state": {
+          "blocked_repeat_count": 1,
+          "completed_actions": [
+            {
+              "action": {
+                "argument_template": {
+                  "on": true
+                },
+                "tool_name": "set_cellular_service_status"
+              },
+              "lifecycle_transition_index": 1,
+              "success_evidence": [
+                "action_succeeded",
+                "tool_result:success"
+              ]
+            }
+          ],
+          "feedback_codes": [],
+          "invalid_decision_count": 0,
+          "lifecycle_status": "consumed",
+          "lifecycle_transition_index": 1,
+          "memory_experience_id": "toolsandbox::turn_on_cellular_low_battery_mode::action_2",
+          "method_version": "proper_v2_2_1_continuation_development",
+          "mode": "stopped",
+          "remaining_invalid_replans": 1,
+          "remaining_repeat_replans": 1,
+          "replan_count": 1,
+          "schema_version": 1,
+          "stop_reason": "scripted_ordinary_planning_handoff",
+          "transition_index": 3
+        }
+      },
+      "initial_lifecycle_status": "consumed",
+      "pair_id": "toolsandbox-v2-1-10",
+      "repeat_executed": false,
+      "repeat_replan": true,
+      "repeat_review": {
+        "decision_allowed": false,
+        "disposition": "replan",
+        "reason_code": "consumed_action_repeat_replan_required",
+        "state": {
+          "blocked_repeat_count": 1,
+          "completed_actions": [
+            {
+              "action": {
+                "argument_template": {
+                  "on": true
+                },
+                "tool_name": "set_cellular_service_status"
+              },
+              "lifecycle_transition_index": 1,
+              "success_evidence": [
+                "action_succeeded",
+                "tool_result:success"
+              ]
+            }
+          ],
+          "feedback_codes": [
+            "completed_action_repeat_blocked",
+            "continue_original_task",
+            "select_uncompleted_next_step"
+          ],
+          "invalid_decision_count": 0,
+          "lifecycle_status": "consumed",
+          "lifecycle_transition_index": 1,
+          "memory_experience_id": "toolsandbox::turn_on_cellular_low_battery_mode::action_2",
+          "method_version": "proper_v2_2_1_continuation_development",
+          "mode": "replan_required",
+          "remaining_invalid_replans": 1,
+          "remaining_repeat_replans": 1,
+          "replan_count": 1,
+          "schema_version": 1,
+          "stop_reason": null,
+          "transition_index": 2
+        }
+      },
+      "replan_handoff": true,
+      "safe_stop": false
+    },
+    {
+      "decision_phase": "post_failure",
+      "handoff_review": {
+        "decision_allowed": true,
+        "disposition": "allow",
+        "reason_code": "stop_decision_allowed",
+        "state": {
+          "blocked_repeat_count": 1,
+          "completed_actions": [
+            {
+              "action": {
+                "argument_template": {
+                  "on": false
+                },
+                "tool_name": "set_low_battery_mode_status"
+              },
+              "lifecycle_transition_index": 1,
+              "success_evidence": [
+                "action_succeeded",
+                "tool_result:success"
+              ]
+            }
+          ],
+          "feedback_codes": [],
+          "invalid_decision_count": 0,
+          "lifecycle_status": "consumed",
+          "lifecycle_transition_index": 1,
+          "memory_experience_id": "toolsandbox::turn_on_cellular_low_battery_mode::action_1",
+          "method_version": "proper_v2_2_1_continuation_development",
+          "mode": "stopped",
+          "remaining_invalid_replans": 1,
+          "remaining_repeat_replans": 1,
+          "replan_count": 1,
+          "schema_version": 1,
+          "stop_reason": "scripted_ordinary_planning_handoff",
+          "transition_index": 3
+        }
+      },
+      "initial_lifecycle_status": "consumed",
+      "pair_id": "toolsandbox-v2-1-11",
+      "repeat_executed": false,
+      "repeat_replan": true,
+      "repeat_review": {
+        "decision_allowed": false,
+        "disposition": "replan",
+        "reason_code": "consumed_action_repeat_replan_required",
+        "state": {
+          "blocked_repeat_count": 1,
+          "completed_actions": [
+            {
+              "action": {
+                "argument_template": {
+                  "on": false
+                },
+                "tool_name": "set_low_battery_mode_status"
+              },
+              "lifecycle_transition_index": 1,
+              "success_evidence": [
+                "action_succeeded",
+                "tool_result:success"
+              ]
+            }
+          ],
+          "feedback_codes": [
+            "completed_action_repeat_blocked",
+            "continue_original_task",
+            "select_uncompleted_next_step"
+          ],
+          "invalid_decision_count": 0,
+          "lifecycle_status": "consumed",
+          "lifecycle_transition_index": 1,
+          "memory_experience_id": "toolsandbox::turn_on_cellular_low_battery_mode::action_1",
+          "method_version": "proper_v2_2_1_continuation_development",
+          "mode": "replan_required",
+          "remaining_invalid_replans": 1,
+          "remaining_repeat_replans": 1,
+          "replan_count": 1,
+          "schema_version": 1,
+          "stop_reason": null,
+          "transition_index": 2
+        }
+      },
+      "replan_handoff": true,
+      "safe_stop": false
+    },
+    {
+      "decision_phase": "post_failure",
+      "handoff_review": {
+        "decision_allowed": true,
+        "disposition": "allow",
+        "reason_code": "stop_decision_allowed",
+        "state": {
+          "blocked_repeat_count": 1,
+          "completed_actions": [
+            {
+              "action": {
+                "argument_template": {
+                  "on": false
+                },
+                "tool_name": "set_low_battery_mode_status"
+              },
+              "lifecycle_transition_index": 1,
+              "success_evidence": [
+                "action_succeeded",
+                "tool_result:success"
+              ]
+            }
+          ],
+          "feedback_codes": [],
+          "invalid_decision_count": 0,
+          "lifecycle_status": "consumed",
+          "lifecycle_transition_index": 1,
+          "memory_experience_id": "toolsandbox::turn_on_cellular_low_battery_mode::action_1",
+          "method_version": "proper_v2_2_1_continuation_development",
+          "mode": "stopped",
+          "remaining_invalid_replans": 1,
+          "remaining_repeat_replans": 1,
+          "replan_count": 1,
+          "schema_version": 1,
+          "stop_reason": "scripted_ordinary_planning_handoff",
+          "transition_index": 3
+        }
+      },
+      "initial_lifecycle_status": "consumed",
+      "pair_id": "toolsandbox-v2-1-12",
+      "repeat_executed": false,
+      "repeat_replan": true,
+      "repeat_review": {
+        "decision_allowed": false,
+        "disposition": "replan",
+        "reason_code": "consumed_action_repeat_replan_required",
+        "state": {
+          "blocked_repeat_count": 1,
+          "completed_actions": [
+            {
+              "action": {
+                "argument_template": {
+                  "on": false
+                },
+                "tool_name": "set_low_battery_mode_status"
+              },
+              "lifecycle_transition_index": 1,
+              "success_evidence": [
+                "action_succeeded",
+                "tool_result:success"
+              ]
+            }
+          ],
+          "feedback_codes": [
+            "completed_action_repeat_blocked",
+            "continue_original_task",
+            "select_uncompleted_next_step"
+          ],
+          "invalid_decision_count": 0,
+          "lifecycle_status": "consumed",
+          "lifecycle_transition_index": 1,
+          "memory_experience_id": "toolsandbox::turn_on_cellular_low_battery_mode::action_1",
+          "method_version": "proper_v2_2_1_continuation_development",
+          "mode": "replan_required",
+          "remaining_invalid_replans": 1,
+          "remaining_repeat_replans": 1,
+          "replan_count": 1,
+          "schema_version": 1,
+          "stop_reason": null,
+          "transition_index": 2
+        }
+      },
+      "replan_handoff": true,
+      "safe_stop": false
+    }
+  ],
+  "run_kind": "proper_v2_2_1_static_continuation_development",
+  "schema_version": 1,
+  "summary": {
+    "pair_count": 12,
+    "post_failure_consumed_count": 9,
+    "post_failure_repeat_execution_count": 0,
+    "post_failure_repeat_replan_count": 9,
+    "post_failure_replan_handoff_count": 9,
+    "pre_action_safe_stop_count": 3
+  }
+}

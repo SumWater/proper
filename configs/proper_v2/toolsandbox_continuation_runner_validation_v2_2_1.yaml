@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "status": "scripted_runner_validation_before_model_outputs",
+  "prepared_manifest": {
+    "path": "outputs/proper_v2/toolsandbox_continuation_development_v2_2_1/prepared_manifest.json",
+    "sha256": "3efcd90ee2e8b30685430326c1d1781caec15c35c6fd8ee28dfd066e13c89f21",
+    "prepared_payload_sha256": "44bba9b8363de6f21054b705463d1950d4a45a24f0c5157e69683ad25fe699fd"
+  },
+  "expected": {
+    "pair_count": 12,
+    "condition_count": 48,
+    "post_failure_pair_count": 9,
+    "pre_action_pair_count": 3,
+    "identical_branch_prefix_pair_count": 12
+  },
+  "synthetic_baseline_actions": {
+    "search_reminder_with_creation_recency_yesterday_insufficient_information": {
+      "tool_name": "search_reminder",
+      "arguments": {
+        "creation_timestamp_lowerbound": 0
+      }
+    },
+    "send_message_with_contact_content_cellular_off_insufficient_information": {
+      "tool_name": "send_message_with_phone_number",
+      "arguments": {
+        "phone_number": "+12453344098",
+        "content": "How's the new album coming along"
+      }
+    }
+  },
+  "checks": {
+    "require_all_post_failure_exceptions": true,
+    "require_identical_branch_prefixes": true,
+    "require_all_proper_first_decisions_aligned": true,
+    "require_proper_no_minefield": true,
+    "expected_proper_similarity_by_family": {
+      "find_days_till_holiday_wifi_off": 0.8,
+      "send_message_with_contact_content_cellular_off": 1.0,
+      "turn_on_location_low_battery_mode": 1.0,
+      "search_reminder_with_creation_recency_yesterday_insufficient_information": 1.0,
+      "send_message_with_contact_content_cellular_off_insufficient_information": 1.0
+    },
+    "require_holiday_dynamic_reference_limitation_reproduced": true,
+    "require_phase_stratified_improvement": true
+  },
+  "boundary": {
+    "scripted_decisions_only": true,
+    "target_scenarios_played": true,
+    "model_loaded": false,
+    "model_outputs_read": false,
+    "external_api_called": false,
+    "gpu_run_authorized": false,
+    "selector_effect_claim_authorized": false,
+    "confirmatory_claim_authorized": false
+  },
+  "known_evaluator_limitation": {
+    "scope": "find_days_till_holiday_wifi_off",
+    "description": "Preserve the native dynamic-reference scores; do not rewrite them.",
+    "affected_milestone_node": 3,
+    "required_dependent_final_milestone_node": 4,
+    "raw_native_scores_must_be_preserved": true
+  },
+  "output": {
+    "path": "outputs/proper_v2/toolsandbox_continuation_development_v2_2_1/runner_validation.json"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "status": "prospective_continuation_target_inventory_before_new_model_outputs",
+  "repository": {
+    "local_directory": "external/toolsandbox",
+    "revision": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+    "python_source_file_count": 46,
+    "python_source_manifest_sha256": "d7f26cdb8feedd4c2feb108206dc90314e277e011d67536b2a5d499c89e1a297"
+  },
+  "frozen_inputs": {
+    "v2_1_prepared_manifest": {
+      "path": "outputs/proper_v2/toolsandbox_model_pilot_v2_1/prepared_manifest.json",
+      "sha256": "a66d12c559b462833cb1876861a783bf2c44db32d55b3a469c2aafc0baed2154"
+    }
+  },
+  "eligibility_screen": {
+    "required_categories": [
+      "STATE_DEPENDENCY",
+      "MULTIPLE_TOOL_CALL",
+      "NO_DISTRACTION_TOOLS"
+    ],
+    "minimum_milestone_count": 3,
+    "minimum_steps_after_prerequisite": 2,
+    "external_tool_exclusions": [
+      "search_lat_lon",
+      "search_location_around_lat_lon",
+      "search_weather_around_lat_lon",
+      "search_stock",
+      "convert_currency"
+    ],
+    "protected_memory_source_families": [
+      "find_days_till_holiday_insufficient_information",
+      "remove_contact_without_search",
+      "search_reminder_upcoming_insufficient_information",
+      "turn_on_cellular_low_battery_mode",
+      "turn_on_wifi_low_battery_mode"
+    ],
+    "exclude_model_exposed_semantic_families": true
+  },
+  "next_gate": {
+    "candidate_disposition": "requires_cpu_selector_and_branch_screening",
+    "model_run_authorized_from_inventory_alone": false,
+    "confirmatory_ready_from_inventory_alone": false
+  },
+  "boundary": {
+    "inventory_only": true,
+    "scenario_played": false,
+    "model_loaded": false,
+    "model_outputs_read": false,
+    "external_api_called": false,
+    "gpu_run_authorized": false,
+    "confirmatory_claim_authorized": false
+  },
+  "output": {
+    "path": "outputs/proper_v2/toolsandbox_continuation_target_inventory_v2_2_1/audit.json"
+  }
+}

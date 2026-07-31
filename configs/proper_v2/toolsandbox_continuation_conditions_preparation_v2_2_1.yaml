@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "status": "continuation_condition_preparation_development_only",
+  "frozen_inputs": {
+    "v2_1_prepared_manifest": {
+      "path": "outputs/proper_v2/toolsandbox_model_pilot_v2_1/prepared_manifest.json",
+      "sha256": "a66d12c559b462833cb1876861a783bf2c44db32d55b3a469c2aafc0baed2154"
+    }
+  },
+  "condition_variants": [
+    {
+      "name": "tfidf_rank1_memory",
+      "report_name": "tfidf_persistent_memory",
+      "source_condition": "tfidf_rank1_memory",
+      "selector": "tfidf_rank1",
+      "memory_exposure": "persistent",
+      "continuation_controller": false
+    },
+    {
+      "name": "proper_v2_1_memory",
+      "report_name": "proper_persistent_memory",
+      "source_condition": "proper_v2_1_memory",
+      "selector": "proper_v2_1",
+      "memory_exposure": "persistent",
+      "continuation_controller": false
+    },
+    {
+      "name": "proper_lifecycle_prompt_only",
+      "report_name": "proper_lifecycle_prompt_only",
+      "source_condition": "proper_v2_1_memory",
+      "selector": "proper_v2_1",
+      "memory_exposure": "consume_and_remove",
+      "continuation_controller": false
+    },
+    {
+      "name": "proper_lifecycle_replan_controller",
+      "report_name": "proper_lifecycle_replan_controller",
+      "source_condition": "proper_v2_1_memory",
+      "selector": "proper_v2_1",
+      "memory_exposure": "consume_and_remove",
+      "continuation_controller": true
+    }
+  ],
+  "expected": {
+    "pair_count": 12,
+    "condition_count": 48,
+    "condition_count_per_pair": 4,
+    "pre_action_pair_count": 3,
+    "post_failure_pair_count": 9
+  },
+  "boundary": {
+    "existing_model_exposed_pairs": true,
+    "development_only": true,
+    "model_loaded": false,
+    "model_outputs_read_by_preparation": false,
+    "target_scenarios_played": false,
+    "gpu_run_authorized": false,
+    "confirmatory_claim_authorized": false
+  },
+  "output": {
+    "path": "outputs/proper_v2/toolsandbox_continuation_development_v2_2_1/prepared_manifest.json"
+  }
+}

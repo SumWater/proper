@@ -54,3 +54,25 @@ CPU-only capacity screening. The completed screen is recorded in:
 Both targets are preservation-only: TF-IDF and PROPER select the same safe-stop
 behavior, and the selected memory lacks a target-specific trigger match. No
 model run on these two targets is authorized.
+
+## Versioned continuation extension
+
+The frozen v2.2 result showed that six consumed-action proposals still needed
+controller termination. Follow-up development is isolated under v2.2.1:
+
+- `memory_continuation_v2_2_1_protocol.md`;
+- `src/failure_memory/proper_v2/v2_2_1/`;
+- four same-start conditions separating selector, lifecycle prompt, and
+  controller/replan effects;
+- a prospective complete-inventory audit for new continuation targets;
+- `run_toolsandbox_continuation_stage_v2_2_1.py` as the one-shot remote entry.
+
+This is a new development contract created after v2.2 outputs. It does not
+modify the frozen v2.2 protocol and is not confirmatory.
+
+The completed v2.2.1 run is recorded in
+`toolsandbox_qwen_continuation_development_v2_2_1_results.md`. It blocked 10
+consumed-recovery-action repeats and improved partial progress, but
+post-failure completion remained 0/9 and 8 later ordinary-task repeats were
+executed. The prospective 1,032-scenario inventory yielded no eligible new
+targets, so no confirmatory run is authorized.

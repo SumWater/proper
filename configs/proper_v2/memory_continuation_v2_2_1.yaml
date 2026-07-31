@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "status": "versioned_continuation_development_after_v2_2_outputs",
+  "method_version": "proper_v2_2_1_continuation_development",
+  "extends_frozen_lifecycle": "proper_v2_2_development",
+  "continuation_policy": {
+    "maximum_repeat_replans": 2,
+    "maximum_invalid_replans": 1,
+    "require_completed_action_evidence": true
+  },
+  "execution_ledger": {
+    "store_exact_completed_action": true,
+    "store_runtime_success_evidence": true,
+    "actionable_memory_content_allowed": false,
+    "natural_memory_text_allowed": false
+  },
+  "controller": {
+    "execute_blocked_repeat": false,
+    "first_consumed_repeat_disposition": "replan",
+    "stop_only_after_replan_budget_exhaustion": true,
+    "terminal_lifecycle_tool_call_disposition": "stop",
+    "active_stop_policy_tool_call_disposition": "stop"
+  },
+  "unified_interface": {
+    "decision_phases": [
+      "pre_action",
+      "post_failure"
+    ],
+    "scenario_specific_branches_allowed": false
+  },
+  "development_data": {
+    "v2_1_pair_count": 12,
+    "usage": "development_and_regression_only",
+    "confirmatory_reuse_authorized": false
+  },
+  "required_reporting": [
+    "selector_first_step",
+    "memory_lifecycle",
+    "continuation",
+    "final_task_completion",
+    "safety",
+    "cost"
+  ],
+  "boundary": {
+    "v2_1_model_outputs_read_before_contract": true,
+    "v2_2_model_outputs_read_before_contract": true,
+    "new_heldout_model_outputs_read": false,
+    "gpu_run_authorized": false,
+    "confirmatory_claim_authorized": false,
+    "all_agent_memory_generalization_authorized": false
+  }
+}

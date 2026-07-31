@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "status": "scripted_continuation_development_before_v2_2_1_model_outputs",
+  "frozen_inputs": {
+    "prepared_manifest": {
+      "path": "outputs/proper_v2/toolsandbox_continuation_development_v2_2_1/prepared_manifest.json",
+      "sha256": "3efcd90ee2e8b30685430326c1d1781caec15c35c6fd8ee28dfd066e13c89f21"
+    },
+    "runner_config": {
+      "path": "configs/proper_v2/toolsandbox_continuation_runner_validation_v2_2_1.yaml",
+      "sha256": "e42c1c2e27166336687b851783a1763c96c4336a0f18483b2dfcc9e7f9aa9f15"
+    },
+    "runner_source": {
+      "path": "experiments/proper_v2/toolsandbox_model_pilot_runner_validation_v2_1.py",
+      "sha256": "a45a27ab5ba8b624f9fa4e3fa4b1791519a4284bbe4dc465bdd89cfe6c20a051"
+    },
+    "lifecycle_config": {
+      "path": "configs/proper_v2/memory_lifecycle_v2_2.yaml",
+      "sha256": "592a972df5fb28de79dc19983733c79f2db93c5583ea4514699ff49d39b08001"
+    },
+    "lifecycle_source": {
+      "path": "src/failure_memory/proper_v2/v2_2/lifecycle.py",
+      "sha256": "dc0ce49099455d6760a8b2db24230db0401868f8811b71caa3eb3dc77aa681b9"
+    },
+    "continuation_config": {
+      "path": "configs/proper_v2/memory_continuation_v2_2_1.yaml",
+      "sha256": "b07a45447259b57de860cf961c278049bb574ec8db2812d620471b4c0adbfc4c"
+    },
+    "continuation_source": {
+      "path": "src/failure_memory/proper_v2/v2_2_1/continuation.py",
+      "sha256": "87fc7ad4cc4276b1c592137280cbb50f2cae310e725169eaf4d147e39328e001"
+    },
+    "continuation_schema": {
+      "path": "schemas/proper_v2/memory_continuation_v2_2_1.schema.json",
+      "sha256": "d2ac3ad574b0f50d4df80ce13b6e3374a631614308cfc7667c4baa44e593b059"
+    },
+    "continuation_protocol": {
+      "path": "docs/proper_v2/memory_continuation_v2_2_1_protocol.md",
+      "sha256": "f9cf6df61e856a440c2ff8c4247acbb21bbd14eeaa9b29ffdded9aeee9f05fd8"
+    }
+  },
+  "lifecycle_policy": {
+    "maximum_application_attempts": 2,
+    "consumed_memory_weight": 0.0,
+    "require_success_evidence": true,
+    "stop_on_success_trigger_conflict": true
+  },
+  "continuation_policy": {
+    "maximum_repeat_replans": 2,
+    "maximum_invalid_replans": 1,
+    "require_completed_action_evidence": true
+  },
+  "development_cohort": {
+    "pair_count": 12,
+    "pre_action_pair_count": 3,
+    "post_failure_pair_count": 9,
+    "usage": "development_only"
+  },
+  "scripted_expectations": {
+    "post_failure_consumed_count": 9,
+    "pre_action_safe_stop_count": 3,
+    "post_failure_repeat_replan_count": 9,
+    "post_failure_repeat_execution_count": 0,
+    "post_failure_replan_handoff_count": 9
+  },
+  "outputs": {
+    "static_validation": "outputs/proper_v2/toolsandbox_continuation_development_v2_2_1/static_validation.json",
+    "dynamic_validation": "outputs/proper_v2/toolsandbox_continuation_development_v2_2_1/dynamic_validation.json"
+  },
+  "boundary": {
+    "scripted_decisions_only": true,
+    "existing_model_exposed_pairs": true,
+    "model_loaded": false,
+    "new_model_outputs_read": false,
+    "external_api_called": false,
+    "gpu_run_authorized": false,
+    "confirmatory_claim_authorized": false
+  }
+}

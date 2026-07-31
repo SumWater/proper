@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "status": "frozen_qwen_continuation_development_before_model_outputs",
+  "protocol": "docs/proper_v2/memory_continuation_v2_2_1_protocol.md",
+  "frozen_inputs": {
+    "prepared_manifest": {
+      "path": "outputs/proper_v2/toolsandbox_continuation_development_v2_2_1/prepared_manifest.json",
+      "sha256": "3efcd90ee2e8b30685430326c1d1781caec15c35c6fd8ee28dfd066e13c89f21"
+    },
+    "condition_preparation_config": {
+      "path": "configs/proper_v2/toolsandbox_continuation_conditions_preparation_v2_2_1.yaml",
+      "sha256": "cccbc095ea3e20af77e49a79bc8396d5a6b0cc3a0d1198a780c2aac129b0d253"
+    },
+    "condition_preparation_source": {
+      "path": "experiments/proper_v2/toolsandbox_continuation_conditions_preparation_v2_2_1.py",
+      "sha256": "c4b50231009defc325cc974809a06b82331817cf6fad3387f72c372958c3d2f5"
+    },
+    "scripted_continuation_config": {
+      "path": "configs/proper_v2/toolsandbox_continuation_development_v2_2_1.yaml",
+      "sha256": "6811381ac50ccd426fb0d156c7b420aec4d9c0b28f536f6977fba56f12800842"
+    },
+    "continuation_helper": {
+      "path": "experiments/proper_v2/continuation_development_v2_2_1.py",
+      "sha256": "78b4583d813e6173ef58dcd123bd1a7cfdfa177771775cb7200fc914448afacb"
+    },
+    "scripted_continuation_source": {
+      "path": "experiments/proper_v2/toolsandbox_continuation_development_v2_2_1.py",
+      "sha256": "69a43a616c31349121a3ad1da6ad693122499b927ced39e344fce0680e42abcd"
+    },
+    "continuation_runner_config": {
+      "path": "configs/proper_v2/toolsandbox_continuation_runner_validation_v2_2_1.yaml",
+      "sha256": "e42c1c2e27166336687b851783a1763c96c4336a0f18483b2dfcc9e7f9aa9f15"
+    },
+    "continuation_core": {
+      "path": "src/failure_memory/proper_v2/v2_2_1/continuation.py",
+      "sha256": "87fc7ad4cc4276b1c592137280cbb50f2cae310e725169eaf4d147e39328e001"
+    },
+    "continuation_policy": {
+      "path": "configs/proper_v2/memory_continuation_v2_2_1.yaml",
+      "sha256": "b07a45447259b57de860cf961c278049bb574ec8db2812d620471b4c0adbfc4c"
+    },
+    "continuation_schema": {
+      "path": "schemas/proper_v2/memory_continuation_v2_2_1.schema.json",
+      "sha256": "d2ac3ad574b0f50d4df80ce13b6e3374a631614308cfc7667c4baa44e593b059"
+    },
+    "continuation_protocol": {
+      "path": "docs/proper_v2/memory_continuation_v2_2_1_protocol.md",
+      "sha256": "f9cf6df61e856a440c2ff8c4247acbb21bbd14eeaa9b29ffdded9aeee9f05fd8"
+    },
+    "target_inventory_config": {
+      "path": "configs/proper_v2/toolsandbox_continuation_target_inventory_v2_2_1.yaml",
+      "sha256": "5aea31da53705619acb7f1a51a08800a9ab5a9a6438e66fcd57a0eea5c231800"
+    },
+    "target_inventory_source": {
+      "path": "experiments/proper_v2/toolsandbox_continuation_target_inventory_v2_2_1.py",
+      "sha256": "71408bb545f5d2004806b0dc3c0ee20ac471f06d3ca6d24202fbbfc9c6b3e656"
+    },
+    "target_inventory_protocol": {
+      "path": "docs/proper_v2/toolsandbox_continuation_target_inventory_v2_2_1_protocol.md",
+      "sha256": "4b5feb61c019850177bbe2a9414bdec634be99cdb97dae17fa20b1eed2cb1f3a"
+    },
+    "stage_entry": {
+      "path": "experiments/proper_v2/run_toolsandbox_continuation_stage_v2_2_1.py",
+      "sha256": "670390a65074423d88094a2a4cb3126cc29ae521876e76ff888c80a46273f1cf"
+    },
+    "qwen_worker": {
+      "path": "experiments/proper_v2/qwen_jsonl_worker_v2_2.py",
+      "sha256": "5f3c18aef4141a0751542c907b5595ec6bc3efadd9f6d9f7a1ddf7a402975753"
+    },
+    "qwen_runner": {
+      "path": "experiments/proper_v2/toolsandbox_qwen_continuation_development_v2_2_1.py",
+      "sha256": "e49f2060698c0f41c750d1aa604f7c86a1e1262c13d39a3afac484eca1d25046"
+    }
+  },
+  "model": {
+    "name": "Qwen3-8B",
+    "python": "/home/amax/miniconda3/envs/failure-memory-pilot/bin/python",
+    "worker_script": "experiments/proper_v2/qwen_jsonl_worker_v2_2.py",
+    "model_path": "/home/amax/PycharmProjects/AINegoProject/src/Models/LLM/Qwen3-8B",
+    "cuda_visible_devices": "0",
+    "seed": 20260730,
+    "max_new_tokens": 256,
+    "do_sample": false,
+    "enable_thinking": false,
+    "local_files_only": true
+  },
+  "execution": {
+    "require_scripted_continuation_validation_in_same_process": true,
+    "smoke_pair_id": "toolsandbox-v2-1-01",
+    "condition_order": [
+      "tfidf_rank1_memory",
+      "proper_v2_1_memory",
+      "proper_lifecycle_prompt_only",
+      "proper_lifecycle_replan_controller"
+    ],
+    "pair_count": 12,
+    "condition_count": 48
+  },
+  "evaluation": {
+    "development_only": true,
+    "same_start_four_condition_design": true,
+    "blocked_model_attempts_included_in_cost": true,
+    "separate_endpoints": [
+      "selector_first_step",
+      "memory_lifecycle",
+      "continuation",
+      "final_task_completion",
+      "safety",
+      "cost"
+    ],
+    "confirmatory_test_authorized": false
+  },
+  "boundary": {
+    "local_model_only": true,
+    "external_api_called": false,
+    "existing_model_exposed_pairs": true,
+    "gpu_development_run_authorized": true,
+    "confirmatory_claim_authorized": false,
+    "heldout_claim_authorized": false,
+    "all_agent_memory_generalization_authorized": false,
+    "no_protocol_tuning_after_v2_2_1_model_outputs": true
+  },
+  "output": {
+    "path": "outputs/proper_v2/toolsandbox_qwen_continuation_development_v2_2_1/results.json"
+  }
+}
