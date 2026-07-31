@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://proper.local/schemas/proper_v2_3/action_execution_ledger.schema.json",
+  "title": "PROPER v2.3 ActionExecutionLedger",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "method_version", "trajectory_id", "entries"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "method_version": {
+      "const": "proper_v2_3_action_execution_ledger_development"
+    },
+    "trajectory_id": {"type": "string", "minLength": 1},
+    "entries": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/ledger_entry"}
+    }
+  },
+  "$defs": {
+    "action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tool_name", "arguments", "normalized_identity"],
+      "properties": {
+        "tool_name": {"type": "string", "minLength": 1},
+        "arguments": {"type": "object"},
+        "normalized_identity": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "effect_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "effect_class",
+        "classification_evidence",
+        "retry_safety",
+        "retry_safety_evidence",
+        "verification_supported",
+        "verification_evidence"
+      ],
+      "properties": {
+        "effect_class": {
+          "enum": [
+            "read_only",
+            "idempotent_state_setting",
+            "non_idempotent_side_effect",
+            "unknown_effect"
+          ]
+        },
+        "classification_evidence": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "retry_safety": {"enum": ["safe", "unsafe", "unknown"]},
+        "retry_safety_evidence": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "verification_supported": {"type": "boolean"},
+        "verification_evidence": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "code", "observed_at_step"],
+      "properties": {
+        "source": {
+          "enum": [
+            "tool_schema",
+            "public_environment_contract",
+            "tool_result",
+            "public_state",
+            "agent_decision",
+            "controller"
+          ]
+        },
+        "code": {"type": "string", "minLength": 1},
+        "observed_at_step": {"type": "integer", "minimum": 0}
+      }
+    },
+    "ledger_entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "entry_id",
+        "sequence_index",
+        "action",
+        "effect_contract",
+        "phase",
+        "purpose",
+        "status",
+        "controller_disposition",
+        "decision_allowed",
+        "reason_codes",
+        "related_entry_ids",
+        "evidence"
+      ],
+      "properties": {
+        "entry_id": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "sequence_index": {"type": "integer", "minimum": 0},
+        "action": {"$ref": "#/$defs/action"},
+        "effect_contract": {"$ref": "#/$defs/effect_contract"},
+        "phase": {"enum": ["pre_action", "post_failure"]},
+        "purpose": {
+          "enum": ["recovery", "ordinary_task", "verification"]
+        },
+        "status": {
+          "enum": [
+            "proposed",
+            "executed",
+            "succeeded",
+            "failed",
+            "outcome_unknown"
+          ]
+        },
+        "controller_disposition": {
+          "enum": ["allow", "verify", "replan", "stop"]
+        },
+        "decision_allowed": {"type": "boolean"},
+        "reason_codes": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "related_entry_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        },
+        "evidence": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/evidence"}
+        }
+      }
+    }
+  }
+}

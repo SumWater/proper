@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "status": "development_contract_before_any_v2_3_model_output",
+  "method_version": "proper_v2_3_execution_controller_development",
+  "observable_input_only": true,
+  "action_effect_taxonomy": [
+    "read_only",
+    "idempotent_state_setting",
+    "non_idempotent_side_effect",
+    "unknown_effect"
+  ],
+  "execution_statuses": [
+    "proposed",
+    "executed",
+    "succeeded",
+    "failed",
+    "outcome_unknown"
+  ],
+  "controller_dispositions": [
+    "allow",
+    "verify",
+    "replan",
+    "stop"
+  ],
+  "lifecycle_statuses": [
+    "active",
+    "consumed",
+    "failed",
+    "stopped"
+  ],
+  "budgets": {
+    "maximum_retries": 1,
+    "maximum_verifications": 2,
+    "maximum_invalid_decisions": 1,
+    "maximum_replans": 2
+  },
+  "policy": {
+    "known_effect_requires_public_evidence": true,
+    "known_retry_safety_requires_public_evidence": true,
+    "unknown_effect_disposition": "stop",
+    "successful_exact_repeat_disposition": "replan",
+    "successful_repeat_after_replan_exhaustion": "stop",
+    "non_idempotent_unknown_outcome_retry_allowed": false,
+    "unknown_outcome_requires_declared_verification": true,
+    "verification_action_must_be_read_only": true,
+    "successful_verification_repeat_disposition": "replan",
+    "action_effect_class_change_allowed": false,
+    "retry_safety_unknown_may_strengthen_with_additive_public_evidence": true,
+    "known_retry_safety_downgrade_or_flip_allowed": false,
+    "failed_action_retry_requires_public_retry_safety": true,
+    "all_proposals_recorded_in_ledger": true,
+    "blocked_proposals_executed": false
+  },
+  "unified_interface": {
+    "decision_phases": [
+      "pre_action",
+      "post_failure"
+    ],
+    "scenario_specific_branches_allowed": false,
+    "scenario_name_method_input_allowed": false,
+    "semantic_family_method_input_allowed": false,
+    "benchmark_gold_method_input_allowed": false
+  },
+  "development_data": {
+    "existing_pair_count": 12,
+    "usage": "development_regression_only",
+    "heldout_label_allowed": false,
+    "confirmatory_reuse_authorized": false
+  },
+  "boundary": {
+    "gpu_run_authorized": false,
+    "model_runner_in_scope": false,
+    "confirmatory_claim_authorized": false,
+    "all_agent_memory_generalization_authorized": false
+  }
+}

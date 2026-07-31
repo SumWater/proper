@@ -1,0 +1,813 @@
+{
+  "boundary": {
+    "confirmatory_claim_authorized": false,
+    "development_model_run_authorized": false,
+    "gpu_used": false,
+    "model_loaded": false,
+    "model_outputs_read": false,
+    "model_runner_present": false,
+    "target_scenarios_played": false
+  },
+  "interpretation_limits": [
+    "scripted_traces_are_not_model_behavior",
+    "existing_12_pairs_remain_development_only",
+    "no_new_target_capacity_is_currently_available",
+    "no_final_task_completion_claim_is_authorized",
+    "no_all_agent_memory_generalization_is_authorized"
+  ],
+  "json_artifacts": {
+    "parsed": {
+      "configs/proper_v2_3/execution_controller_v2_3.yaml": true,
+      "configs/proper_v2_3/target_capacity_audit_v2_3.yaml": true,
+      "schemas/proper_v2_3/action_execution_ledger.schema.json": true,
+      "schemas/proper_v2_3/controller_decision.schema.json": true
+    },
+    "passed": true
+  },
+  "method_version": "proper_v2_3_execution_controller_development",
+  "passed": true,
+  "run_kind": "proper_v2_3_first_stage_cpu_validation",
+  "schema_version": 1,
+  "scripted_traces": {
+    "passed": true,
+    "passed_trace_count": 5,
+    "records": [
+      {
+        "decision": {
+          "decision_allowed": false,
+          "disposition": "stop",
+          "ledger_entry_id": "aa02ecdd2674b273756880c4c2ca8b3cbb5ff5e9ca5490c6c8ecd36aec9dee0d",
+          "method_version": "proper_v2_3_execution_controller_development",
+          "reason_code": "active_stop_policy_tool_call_blocked",
+          "schema_version": 1,
+          "state": {
+            "budgets": {
+              "remaining_invalid_decisions": 1,
+              "remaining_replans": 2,
+              "remaining_retries": 1,
+              "remaining_verifications": 2
+            },
+            "lifecycle_status": "stopped",
+            "memory_action_identity": null,
+            "memory_operation": "stop_and_report",
+            "method_version": "proper_v2_3_execution_controller_development",
+            "phase": "pre_action",
+            "planning_mode": "stopped",
+            "schema_version": 1,
+            "selected_memory_experience_id": "development-memory::ask-or-stop",
+            "stop_reason": "active_stop_policy_tool_call_blocked",
+            "transition_index": 1,
+            "verification_required_for_entry_id": null
+          }
+        },
+        "ledger": {
+          "entries": [
+            {
+              "action": {
+                "arguments": {
+                  "target": "unresolved"
+                },
+                "normalized_identity": "abbb5c31a0f491648371b5a5fcf804f76de266e68eb46d2eda8005539d2f70c3",
+                "tool_name": "destructive_action"
+              },
+              "controller_disposition": "stop",
+              "decision_allowed": false,
+              "effect_contract": {
+                "classification_evidence": [
+                  "tool_schema:sends_external_message"
+                ],
+                "effect_class": "non_idempotent_side_effect",
+                "retry_safety": "unsafe",
+                "retry_safety_evidence": [
+                  "public_contract:duplicate_delivery_possible"
+                ],
+                "verification_evidence": [
+                  "tool_schema:delivery_receipt_query"
+                ],
+                "verification_supported": true
+              },
+              "entry_id": "aa02ecdd2674b273756880c4c2ca8b3cbb5ff5e9ca5490c6c8ecd36aec9dee0d",
+              "evidence": [],
+              "phase": "pre_action",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "active_stop_policy_tool_call_blocked"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 0,
+              "status": "proposed"
+            }
+          ],
+          "method_version": "proper_v2_3_action_execution_ledger_development",
+          "schema_version": 1,
+          "trajectory_id": "trace-pre-action-safe-stop"
+        },
+        "passed": true,
+        "trace_id": "pre_action_safe_stop"
+      },
+      {
+        "ledger": {
+          "entries": [
+            {
+              "action": {
+                "arguments": {
+                  "enabled": true
+                },
+                "normalized_identity": "8f6ce08e7b26d3e42e3b8a7e89bdc7d1ab9bb99fe9d9f3081eee8f7ed5efdb22",
+                "tool_name": "set_connectivity"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "tool_schema:set_absolute_state"
+                ],
+                "effect_class": "idempotent_state_setting",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:same_value_is_idempotent"
+                ],
+                "verification_evidence": [
+                  "tool_schema:public_state_query"
+                ],
+                "verification_supported": true
+              },
+              "entry_id": "5a05a7d8a9784693d6b3dc22ba4d79cd9b95e111319495f85f8588774e9c60d9",
+              "evidence": [
+                {
+                  "code": "controller_allowed_execution",
+                  "observed_at_step": 1,
+                  "source": "controller"
+                },
+                {
+                  "code": "public_state:connectivity_enabled",
+                  "observed_at_step": 1,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "recovery",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 0,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "scope": "next_step"
+                },
+                "normalized_identity": "82ca25d9cf22b9e7093e370ca0af816c8091fcc15aca91f58b43980d7227313f",
+                "tool_name": "lookup_public_state"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "tool_schema:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_side_effect_on_retry"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "8795b1654e703680f3089f24f24c4828b9aa826ab679e18aeb26ad76e8c89b80",
+              "evidence": [],
+              "phase": "post_failure",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 1,
+              "status": "proposed"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "enabled": true
+                },
+                "normalized_identity": "8f6ce08e7b26d3e42e3b8a7e89bdc7d1ab9bb99fe9d9f3081eee8f7ed5efdb22",
+                "tool_name": "set_connectivity"
+              },
+              "controller_disposition": "replan",
+              "decision_allowed": false,
+              "effect_contract": {
+                "classification_evidence": [
+                  "tool_schema:set_absolute_state"
+                ],
+                "effect_class": "idempotent_state_setting",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:same_value_is_idempotent"
+                ],
+                "verification_evidence": [
+                  "tool_schema:public_state_query"
+                ],
+                "verification_supported": true
+              },
+              "entry_id": "718ff402fe72c676f9acf6a136c57b21051086139c76ae8f3d46f6fc5c146307",
+              "evidence": [],
+              "phase": "post_failure",
+              "purpose": "recovery",
+              "reason_codes": [
+                "successful_action_repeat_blocked"
+              ],
+              "related_entry_ids": [
+                "5a05a7d8a9784693d6b3dc22ba4d79cd9b95e111319495f85f8588774e9c60d9"
+              ],
+              "sequence_index": 2,
+              "status": "proposed"
+            }
+          ],
+          "method_version": "proper_v2_3_action_execution_ledger_development",
+          "schema_version": 1,
+          "trajectory_id": "trace-consumption-handoff"
+        },
+        "ordinary_decision": {
+          "decision_allowed": true,
+          "disposition": "allow",
+          "ledger_entry_id": "8795b1654e703680f3089f24f24c4828b9aa826ab679e18aeb26ad76e8c89b80",
+          "method_version": "proper_v2_3_execution_controller_development",
+          "reason_code": "new_action_allowed",
+          "schema_version": 1,
+          "state": {
+            "budgets": {
+              "remaining_invalid_decisions": 1,
+              "remaining_replans": 2,
+              "remaining_retries": 1,
+              "remaining_verifications": 2
+            },
+            "lifecycle_status": "consumed",
+            "memory_action_identity": "8f6ce08e7b26d3e42e3b8a7e89bdc7d1ab9bb99fe9d9f3081eee8f7ed5efdb22",
+            "memory_operation": "invoke_prerequisite",
+            "method_version": "proper_v2_3_execution_controller_development",
+            "phase": "post_failure",
+            "planning_mode": "ordinary_task_planning",
+            "schema_version": 1,
+            "selected_memory_experience_id": "development-memory::connectivity",
+            "stop_reason": null,
+            "transition_index": 1,
+            "verification_required_for_entry_id": null
+          }
+        },
+        "passed": true,
+        "repeat_decision": {
+          "decision_allowed": false,
+          "disposition": "replan",
+          "ledger_entry_id": "718ff402fe72c676f9acf6a136c57b21051086139c76ae8f3d46f6fc5c146307",
+          "method_version": "proper_v2_3_execution_controller_development",
+          "reason_code": "successful_action_repeat_blocked",
+          "schema_version": 1,
+          "state": {
+            "budgets": {
+              "remaining_invalid_decisions": 1,
+              "remaining_replans": 1,
+              "remaining_retries": 1,
+              "remaining_verifications": 2
+            },
+            "lifecycle_status": "consumed",
+            "memory_action_identity": "8f6ce08e7b26d3e42e3b8a7e89bdc7d1ab9bb99fe9d9f3081eee8f7ed5efdb22",
+            "memory_operation": "invoke_prerequisite",
+            "method_version": "proper_v2_3_execution_controller_development",
+            "phase": "post_failure",
+            "planning_mode": "ordinary_task_planning",
+            "schema_version": 1,
+            "selected_memory_experience_id": "development-memory::connectivity",
+            "stop_reason": null,
+            "transition_index": 2,
+            "verification_required_for_entry_id": null
+          }
+        },
+        "trace_id": "consumption_and_handoff"
+      },
+      {
+        "executed_message_count": 1,
+        "ledger": {
+          "entries": [
+            {
+              "action": {
+                "arguments": {
+                  "enabled": true
+                },
+                "normalized_identity": "8f6ce08e7b26d3e42e3b8a7e89bdc7d1ab9bb99fe9d9f3081eee8f7ed5efdb22",
+                "tool_name": "set_connectivity"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "tool_schema:set_absolute_state"
+                ],
+                "effect_class": "idempotent_state_setting",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:same_value_is_idempotent"
+                ],
+                "verification_evidence": [
+                  "tool_schema:public_state_query"
+                ],
+                "verification_supported": true
+              },
+              "entry_id": "18764204fefaaa2c1f9301dcab5a7c051ae4f84a7493fa06b935f769d0ca8507",
+              "evidence": [
+                {
+                  "code": "controller_allowed_execution",
+                  "observed_at_step": 1,
+                  "source": "controller"
+                },
+                {
+                  "code": "public_state:connectivity_enabled",
+                  "observed_at_step": 1,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "recovery",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 0,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "recipient": "contact-1",
+                  "text": "Status update"
+                },
+                "normalized_identity": "52d97f660984c28b9c28c745232761eaf7b54797223762a36299bc1815361570",
+                "tool_name": "send_message"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "tool_schema:sends_external_message"
+                ],
+                "effect_class": "non_idempotent_side_effect",
+                "retry_safety": "unsafe",
+                "retry_safety_evidence": [
+                  "public_contract:duplicate_delivery_possible"
+                ],
+                "verification_evidence": [
+                  "tool_schema:delivery_receipt_query"
+                ],
+                "verification_supported": true
+              },
+              "entry_id": "dec74b52e2d1207cd231d2686b3c82ab4dda58b0c86d8cdc2a081a28fc56a049",
+              "evidence": [
+                {
+                  "code": "controller_allowed_execution",
+                  "observed_at_step": 2,
+                  "source": "controller"
+                },
+                {
+                  "code": "tool_result:message_sent",
+                  "observed_at_step": 2,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 1,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "recipient": "contact-1",
+                  "text": "Status update"
+                },
+                "normalized_identity": "52d97f660984c28b9c28c745232761eaf7b54797223762a36299bc1815361570",
+                "tool_name": "send_message"
+              },
+              "controller_disposition": "replan",
+              "decision_allowed": false,
+              "effect_contract": {
+                "classification_evidence": [
+                  "tool_schema:sends_external_message"
+                ],
+                "effect_class": "non_idempotent_side_effect",
+                "retry_safety": "unsafe",
+                "retry_safety_evidence": [
+                  "public_contract:duplicate_delivery_possible"
+                ],
+                "verification_evidence": [
+                  "tool_schema:delivery_receipt_query"
+                ],
+                "verification_supported": true
+              },
+              "entry_id": "ca037dee6d56de90c0447df8a500987ceca02c53855cea6ad85dc48305e12bc7",
+              "evidence": [],
+              "phase": "post_failure",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "successful_action_repeat_blocked"
+              ],
+              "related_entry_ids": [
+                "dec74b52e2d1207cd231d2686b3c82ab4dda58b0c86d8cdc2a081a28fc56a049"
+              ],
+              "sequence_index": 2,
+              "status": "proposed"
+            }
+          ],
+          "method_version": "proper_v2_3_action_execution_ledger_development",
+          "schema_version": 1,
+          "trajectory_id": "trace-duplicate-message"
+        },
+        "passed": true,
+        "repeat_decision": {
+          "decision_allowed": false,
+          "disposition": "replan",
+          "ledger_entry_id": "ca037dee6d56de90c0447df8a500987ceca02c53855cea6ad85dc48305e12bc7",
+          "method_version": "proper_v2_3_execution_controller_development",
+          "reason_code": "successful_action_repeat_blocked",
+          "schema_version": 1,
+          "state": {
+            "budgets": {
+              "remaining_invalid_decisions": 1,
+              "remaining_replans": 1,
+              "remaining_retries": 1,
+              "remaining_verifications": 2
+            },
+            "lifecycle_status": "consumed",
+            "memory_action_identity": "8f6ce08e7b26d3e42e3b8a7e89bdc7d1ab9bb99fe9d9f3081eee8f7ed5efdb22",
+            "memory_operation": "invoke_prerequisite",
+            "method_version": "proper_v2_3_execution_controller_development",
+            "phase": "post_failure",
+            "planning_mode": "ordinary_task_planning",
+            "schema_version": 1,
+            "selected_memory_experience_id": "development-memory::connectivity",
+            "stop_reason": null,
+            "transition_index": 3,
+            "verification_required_for_entry_id": null
+          }
+        },
+        "trace_id": "duplicate_message_blocked"
+      },
+      {
+        "ledger": {
+          "entries": [
+            {
+              "action": {
+                "arguments": {
+                  "enabled": true
+                },
+                "normalized_identity": "8f6ce08e7b26d3e42e3b8a7e89bdc7d1ab9bb99fe9d9f3081eee8f7ed5efdb22",
+                "tool_name": "set_connectivity"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "tool_schema:set_absolute_state"
+                ],
+                "effect_class": "idempotent_state_setting",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:same_value_is_idempotent"
+                ],
+                "verification_evidence": [
+                  "tool_schema:public_state_query"
+                ],
+                "verification_supported": true
+              },
+              "entry_id": "929f9bf7509f64745bf6d83d384590ee67fd02a4762526a4768c708f50b3715e",
+              "evidence": [
+                {
+                  "code": "controller_allowed_execution",
+                  "observed_at_step": 1,
+                  "source": "controller"
+                },
+                {
+                  "code": "public_state:connectivity_enabled",
+                  "observed_at_step": 1,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "recovery",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 0,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "recipient": "contact-2",
+                  "text": "One delivery only"
+                },
+                "normalized_identity": "b6d4d1e6032cfc28cd22c16266fd0621b852b5f6ca87d3dd44da2f8849b6dc5d",
+                "tool_name": "send_message"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "tool_schema:sends_external_message"
+                ],
+                "effect_class": "non_idempotent_side_effect",
+                "retry_safety": "unsafe",
+                "retry_safety_evidence": [
+                  "public_contract:duplicate_delivery_possible"
+                ],
+                "verification_evidence": [
+                  "tool_schema:delivery_receipt_query"
+                ],
+                "verification_supported": true
+              },
+              "entry_id": "c35fdae874649960e75d6c7245936ca9e41d3cbf4391d39eb7d28a1b383fef26",
+              "evidence": [
+                {
+                  "code": "controller_allowed_execution",
+                  "observed_at_step": 2,
+                  "source": "controller"
+                },
+                {
+                  "code": "transport:response_lost",
+                  "observed_at_step": 2,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 1,
+              "status": "outcome_unknown"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "recipient": "contact-2"
+                },
+                "normalized_identity": "010f917e11b31b03cd7fafcb6cce6ce2f5c2fe3b3d39068d836ee41056110c7f",
+                "tool_name": "get_delivery_receipt"
+              },
+              "controller_disposition": "verify",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "tool_schema:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_side_effect_on_retry"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "9c309f12c6343bc7ccdb487cb944f474d422ef43c20f549848d76392e5df7c51",
+              "evidence": [],
+              "phase": "post_failure",
+              "purpose": "verification",
+              "reason_codes": [
+                "bounded_read_only_verification_allowed"
+              ],
+              "related_entry_ids": [
+                "c35fdae874649960e75d6c7245936ca9e41d3cbf4391d39eb7d28a1b383fef26"
+              ],
+              "sequence_index": 2,
+              "status": "proposed"
+            }
+          ],
+          "method_version": "proper_v2_3_action_execution_ledger_development",
+          "schema_version": 1,
+          "trajectory_id": "trace-unknown-side-effect"
+        },
+        "passed": true,
+        "trace_id": "unknown_side_effect_requires_verification",
+        "verification_decision": {
+          "decision_allowed": true,
+          "disposition": "verify",
+          "ledger_entry_id": "9c309f12c6343bc7ccdb487cb944f474d422ef43c20f549848d76392e5df7c51",
+          "method_version": "proper_v2_3_execution_controller_development",
+          "reason_code": "bounded_read_only_verification_allowed",
+          "schema_version": 1,
+          "state": {
+            "budgets": {
+              "remaining_invalid_decisions": 1,
+              "remaining_replans": 2,
+              "remaining_retries": 1,
+              "remaining_verifications": 1
+            },
+            "lifecycle_status": "consumed",
+            "memory_action_identity": "8f6ce08e7b26d3e42e3b8a7e89bdc7d1ab9bb99fe9d9f3081eee8f7ed5efdb22",
+            "memory_operation": "invoke_prerequisite",
+            "method_version": "proper_v2_3_execution_controller_development",
+            "phase": "post_failure",
+            "planning_mode": "ordinary_task_planning",
+            "schema_version": 1,
+            "selected_memory_experience_id": "development-memory::connectivity",
+            "stop_reason": null,
+            "transition_index": 3,
+            "verification_required_for_entry_id": "c35fdae874649960e75d6c7245936ca9e41d3cbf4391d39eb7d28a1b383fef26"
+          }
+        }
+      },
+      {
+        "ledger": {
+          "entries": [
+            {
+              "action": {
+                "arguments": {
+                  "enabled": true
+                },
+                "normalized_identity": "8f6ce08e7b26d3e42e3b8a7e89bdc7d1ab9bb99fe9d9f3081eee8f7ed5efdb22",
+                "tool_name": "set_connectivity"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "tool_schema:set_absolute_state"
+                ],
+                "effect_class": "idempotent_state_setting",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:same_value_is_idempotent"
+                ],
+                "verification_evidence": [
+                  "tool_schema:public_state_query"
+                ],
+                "verification_supported": true
+              },
+              "entry_id": "2dee0b60b4255b9f671ebbbfae4b1cb3597259b305de06b4d2069becbc8b6a81",
+              "evidence": [
+                {
+                  "code": "controller_allowed_execution",
+                  "observed_at_step": 1,
+                  "source": "controller"
+                },
+                {
+                  "code": "public_state:connectivity_enabled",
+                  "observed_at_step": 1,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "recovery",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 0,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "enabled": true
+                },
+                "normalized_identity": "8f6ce08e7b26d3e42e3b8a7e89bdc7d1ab9bb99fe9d9f3081eee8f7ed5efdb22",
+                "tool_name": "set_connectivity"
+              },
+              "controller_disposition": "replan",
+              "decision_allowed": false,
+              "effect_contract": {
+                "classification_evidence": [
+                  "tool_schema:set_absolute_state"
+                ],
+                "effect_class": "idempotent_state_setting",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:same_value_is_idempotent"
+                ],
+                "verification_evidence": [
+                  "tool_schema:public_state_query"
+                ],
+                "verification_supported": true
+              },
+              "entry_id": "2301a339a2c447d0fbce0c9e3d7681ca88e77ed536f3af64f3984a2665e04602",
+              "evidence": [],
+              "phase": "post_failure",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "successful_action_repeat_blocked"
+              ],
+              "related_entry_ids": [
+                "2dee0b60b4255b9f671ebbbfae4b1cb3597259b305de06b4d2069becbc8b6a81"
+              ],
+              "sequence_index": 1,
+              "status": "proposed"
+            }
+          ],
+          "method_version": "proper_v2_3_action_execution_ledger_development",
+          "schema_version": 1,
+          "trajectory_id": "trace-idempotent-repeat"
+        },
+        "passed": true,
+        "repeat_decision": {
+          "decision_allowed": false,
+          "disposition": "replan",
+          "ledger_entry_id": "2301a339a2c447d0fbce0c9e3d7681ca88e77ed536f3af64f3984a2665e04602",
+          "method_version": "proper_v2_3_execution_controller_development",
+          "reason_code": "successful_action_repeat_blocked",
+          "schema_version": 1,
+          "state": {
+            "budgets": {
+              "remaining_invalid_decisions": 1,
+              "remaining_replans": 1,
+              "remaining_retries": 1,
+              "remaining_verifications": 2
+            },
+            "lifecycle_status": "consumed",
+            "memory_action_identity": "8f6ce08e7b26d3e42e3b8a7e89bdc7d1ab9bb99fe9d9f3081eee8f7ed5efdb22",
+            "memory_operation": "invoke_prerequisite",
+            "method_version": "proper_v2_3_execution_controller_development",
+            "phase": "post_failure",
+            "planning_mode": "ordinary_task_planning",
+            "schema_version": 1,
+            "selected_memory_experience_id": "development-memory::connectivity",
+            "stop_reason": null,
+            "transition_index": 2,
+            "verification_required_for_entry_id": null
+          }
+        },
+        "trace_id": "idempotent_success_repeat_blocked"
+      }
+    ],
+    "trace_count": 5
+  },
+  "source_hashes": {
+    "configs/proper_v2_3/execution_controller_v2_3.yaml": "7b486b564301b9f7556621ebde1e9d823295260fbd6bd8553f307a051bb712f4",
+    "configs/proper_v2_3/target_capacity_audit_v2_3.yaml": "9cbf73e6b4e49f23a13295e2f0132bfec9e152465b0ea07cb4b963a8656f147c",
+    "docs/proper_v2_3/action_execution_contract.md": "588357c9c51fd46a6f6ae72938f863072faa7de1811191c28fb9cd9d240bd230",
+    "docs/proper_v2_3/first_stage_index.md": "67309f8e053ea249a3a3e7b4b0d8bb085b49e62ff14a0299296b8eae131ceb24",
+    "docs/proper_v2_3/target_capacity_audit_protocol.md": "86b5999b9a70c1af4bf3bffd4ac4a738d7e2957be612454fabada03cb4dee0cb",
+    "experiments/proper_v2_3/scripted_traces_v2_3.py": "fa1b6dc949f7a81af44034a8f8ca09f61230b527f362ee91d98a43ca31d6636b",
+    "experiments/proper_v2_3/target_capacity_audit_v2_3.py": "1739b97d045705012f277318315dd63c265fd6936ceb916f50843d27a6b133c2",
+    "experiments/proper_v2_3/validate_proper_v2_3_stage.py": "f0f131279b462a00211e0cee1974c44314b7c7951bbad3cc7146816d128887d5",
+    "schemas/proper_v2_3/action_execution_ledger.schema.json": "50591bea26de010d4147bb2f5b9909c488a1eaf139d4e64693ace80002e6a599",
+    "schemas/proper_v2_3/controller_decision.schema.json": "e1a00ed2febb2f3479effdb467d87433529dc3fa2d82f4dca756328f1a90b930",
+    "src/failure_memory/proper_v2/v2_3/__init__.py": "7df225619a66b6d1f76317906bd1be83a87a45e9cc8a43eb1bd5d0611cc9a431",
+    "src/failure_memory/proper_v2/v2_3/boundary.py": "78367e6dab215cadcad3d037766ad3b5a36b414d48656ce8d42e6ca625164b54",
+    "src/failure_memory/proper_v2/v2_3/contracts.py": "6387dad88350e832e603bd76b32e1b1c8638f08bd17af5a2380c07435c54a614",
+    "src/failure_memory/proper_v2/v2_3/controller.py": "cbaa124f2428d9be62994a4dfa8aebe2bd874298712bd4ec2a0e48ab0e8c1afe",
+    "src/failure_memory/proper_v2/v2_3/ledger.py": "35e46b73d048d46efb780424efdc088b6ad68642d4f721a0f5214edcf0ebf54b",
+    "tests/test_proper_v2_3_contracts.py": "73caaee3895791110a1bfa078d8437c5e61df364b5b1fa69010b21e4fc3b6298",
+    "tests/test_proper_v2_3_controller.py": "879044dcefe7de0efd80e15b8f861bd04e5587f88eb54b6f7817ff619790e47e",
+    "tests/test_proper_v2_3_frozen_hashes.py": "579f3b81d0014ba5a7a84f0ba0c4dea3d3fa9c4315a3650f5d34c997a042a94e",
+    "tests/test_proper_v2_3_ledger.py": "3df512f1a086c2872a2efd335e25e75f8c0b2deb2cf25f63e7f66e72465edbe6",
+    "tests/test_proper_v2_3_lifecycle_budgets.py": "d923ff6f7dc2a1f8887175d2e2ad50247e8269bdd32268dbaa5cae5d6f815591",
+    "tests/test_proper_v2_3_schemas.py": "5da5f3a13a870c003ea6d66e867f94fe725c5ea67653196a9c00f32a6d323be7",
+    "tests/test_toolsandbox_v2_3_capacity_audit.py": "42ea6cbdb5eca9d2912a0c6c9047a9f81d811fece25dfa64fb19148e6cb16d76",
+    "tests/test_toolsandbox_v2_3_scripted_traces.py": "b9fa7fa9a7299f61e663cb7b3eaa0b996e0bcd7fa5ce4edfe0b08ddbcbc7db41"
+  },
+  "target_capacity_design": {
+    "candidate_source_count": 0,
+    "checks": {
+      "exhausted_pool_not_relabelled": true,
+      "frozen_inventory_count": true,
+      "frozen_inventory_hash": true,
+      "frozen_inventory_zero_candidates": true,
+      "input_only_mode": true,
+      "no_candidate_source_claimed": true,
+      "no_gpu_or_model_authority": true,
+      "prospective_three_way_partition": true
+    },
+    "confirmatory_run_authorized": false,
+    "development_model_run_authorized": false,
+    "disposition": "stop_no_target_capacity",
+    "interpretation": "The design is ready for future source acquisition, but no genuinely unexposed target source is currently registered.",
+    "new_target_capacity_available": false,
+    "passed": true,
+    "run_kind": "proper_v2_3_target_capacity_design_validation",
+    "schema_version": 1
+  },
+  "tests": {
+    "error_count": 0,
+    "errors": [],
+    "failure_count": 0,
+    "failures": [],
+    "passed": true,
+    "runner_output": "test_action_identity_is_key_order_independent (test_proper_v2_3_contracts.ProperV23ContractTests.test_action_identity_is_key_order_independent) ... ok\ntest_action_identity_preserves_list_order (test_proper_v2_3_contracts.ProperV23ContractTests.test_action_identity_preserves_list_order) ... ok\ntest_action_rejects_non_json_and_non_finite_values (test_proper_v2_3_contracts.ProperV23ContractTests.test_action_rejects_non_json_and_non_finite_values) ... ok\ntest_budget_classes_are_independent_in_serialized_state (test_proper_v2_3_contracts.ProperV23ContractTests.test_budget_classes_are_independent_in_serialized_state) ... ok\ntest_configuration_is_json_and_forbids_model_runner (test_proper_v2_3_contracts.ProperV23ContractTests.test_configuration_is_json_and_forbids_model_runner) ... ok\ntest_effect_contract_mapping_requires_a_real_boolean (test_proper_v2_3_contracts.ProperV23ContractTests.test_effect_contract_mapping_requires_a_real_boolean) ... ok\ntest_known_retry_safety_requires_evidence (test_proper_v2_3_contracts.ProperV23ContractTests.test_known_retry_safety_requires_evidence) ... ok\ntest_same_selection_adapter_handles_both_decision_phases (test_proper_v2_3_contracts.ProperV23ContractTests.test_same_selection_adapter_handles_both_decision_phases) ... ok\ntest_v2_3_boundary_rejects_hidden_fields_recursively (test_proper_v2_3_contracts.ProperV23ContractTests.test_v2_3_boundary_rejects_hidden_fields_recursively) ... ok\ntest_verification_requires_public_evidence (test_proper_v2_3_contracts.ProperV23ContractTests.test_verification_requires_public_evidence) ... ok\ntest_agent_stop_transitions_to_stopped_with_reason (test_proper_v2_3_controller.ProperV23ControllerTests.test_agent_stop_transitions_to_stopped_with_reason) ... ok\ntest_failed_retry_uses_only_retry_budget (test_proper_v2_3_controller.ProperV23ControllerTests.test_failed_retry_uses_only_retry_budget) ... ok\ntest_invalid_budget_does_not_consume_general_replan_budget (test_proper_v2_3_controller.ProperV23ControllerTests.test_invalid_budget_does_not_consume_general_replan_budget) ... ok\ntest_same_action_cannot_change_effect_contract (test_proper_v2_3_controller.ProperV23ControllerTests.test_same_action_cannot_change_effect_contract) ... ok\ntest_successful_idempotent_setting_is_also_not_repeated (test_proper_v2_3_controller.ProperV23ControllerTests.test_successful_idempotent_setting_is_also_not_repeated) ... ok\ntest_successful_non_idempotent_repeat_is_never_executed (test_proper_v2_3_controller.ProperV23ControllerTests.test_successful_non_idempotent_repeat_is_never_executed) ... ok\ntest_successful_verification_action_cannot_repeat (test_proper_v2_3_controller.ProperV23ControllerTests.test_successful_verification_action_cannot_repeat) ... ok\ntest_unknown_effect_fails_closed_before_execution (test_proper_v2_3_controller.ProperV23ControllerTests.test_unknown_effect_fails_closed_before_execution) ... ok\ntest_unknown_side_effect_outcome_requires_read_only_verification (test_proper_v2_3_controller.ProperV23ControllerTests.test_unknown_side_effect_outcome_requires_read_only_verification) ... ok\ntest_visible_failure_evidence_can_strengthen_unknown_retry_safety (test_proper_v2_3_controller.ProperV23ControllerTests.test_visible_failure_evidence_can_strengthen_unknown_retry_safety) ... ok\ntest_all_frozen_result_hashes_are_unchanged (test_proper_v2_3_frozen_hashes.ProperV23FrozenHashTests.test_all_frozen_result_hashes_are_unchanged) ... ok\ntest_blocked_proposal_is_recorded_but_cannot_execute (test_proper_v2_3_ledger.ProperV23LedgerTests.test_blocked_proposal_is_recorded_but_cannot_execute) ... ok\ntest_ledger_records_complete_status_progression (test_proper_v2_3_ledger.ProperV23LedgerTests.test_ledger_records_complete_status_progression) ... ok\ntest_outcome_without_observable_evidence_is_rejected (test_proper_v2_3_ledger.ProperV23LedgerTests.test_outcome_without_observable_evidence_is_rejected) ... ok\ntest_related_entry_must_refer_to_an_earlier_record (test_proper_v2_3_ledger.ProperV23LedgerTests.test_related_entry_must_refer_to_an_earlier_record) ... ok\ntest_sequence_indices_and_ids_are_deterministic (test_proper_v2_3_ledger.ProperV23LedgerTests.test_sequence_indices_and_ids_are_deterministic) ... ok\ntest_unknown_outcome_can_only_resolve_once (test_proper_v2_3_ledger.ProperV23LedgerTests.test_unknown_outcome_can_only_resolve_once) ... ok\ntest_memory_success_consumes_and_hands_off (test_proper_v2_3_lifecycle_budgets.ProperV23LifecycleBudgetTests.test_memory_success_consumes_and_hands_off) ... ok\ntest_ordinary_action_verification_does_not_change_consumed_memory (test_proper_v2_3_lifecycle_budgets.ProperV23LifecycleBudgetTests.test_ordinary_action_verification_does_not_change_consumed_memory) ... ok\ntest_replan_budget_exhaustion_stops_repeated_success (test_proper_v2_3_lifecycle_budgets.ProperV23LifecycleBudgetTests.test_replan_budget_exhaustion_stops_repeated_success) ... ok\ntest_retry_budget_exhaustion_prevents_third_execution (test_proper_v2_3_lifecycle_budgets.ProperV23LifecycleBudgetTests.test_retry_budget_exhaustion_prevents_third_execution) ... ok\ntest_success_trigger_conflict_fails_closed (test_proper_v2_3_lifecycle_budgets.ProperV23LifecycleBudgetTests.test_success_trigger_conflict_fails_closed) ... ok\ntest_task_completion_transitions_to_stopped (test_proper_v2_3_lifecycle_budgets.ProperV23LifecycleBudgetTests.test_task_completion_transitions_to_stopped) ... ok\ntest_unknown_outcome_without_verification_path_fails_closed (test_proper_v2_3_lifecycle_budgets.ProperV23LifecycleBudgetTests.test_unknown_outcome_without_verification_path_fails_closed) ... ok\ntest_verification_budget_exhaustion_stops (test_proper_v2_3_lifecycle_budgets.ProperV23LifecycleBudgetTests.test_verification_budget_exhaustion_stops) ... ok\ntest_violated_success_evidence_beats_trigger_clearance (test_proper_v2_3_lifecycle_budgets.ProperV23LifecycleBudgetTests.test_violated_success_evidence_beats_trigger_clearance) ... ok\ntest_generated_mappings_have_all_top_level_required_fields (test_proper_v2_3_schemas.ProperV23SchemaTests.test_generated_mappings_have_all_top_level_required_fields) ... ok\ntest_generated_mappings_validate_with_draft_2020_12 (test_proper_v2_3_schemas.ProperV23SchemaTests.test_generated_mappings_validate_with_draft_2020_12) ... ok\ntest_schemas_parse_and_close_top_level_objects (test_proper_v2_3_schemas.ProperV23SchemaTests.test_schemas_parse_and_close_top_level_objects) ... ok\ntest_capacity_design_authorizes_no_model_or_confirmation (test_toolsandbox_v2_3_capacity_audit.ToolSandboxV23CapacityAuditTests.test_capacity_design_authorizes_no_model_or_confirmation) ... ok\ntest_capacity_design_retains_frozen_zero_candidate_result (test_toolsandbox_v2_3_capacity_audit.ToolSandboxV23CapacityAuditTests.test_capacity_design_retains_frozen_zero_candidate_result) ... ok\ntest_all_scripted_multi_step_traces_pass (test_toolsandbox_v2_3_scripted_traces.ToolSandboxV23ScriptedTraceTests.test_all_scripted_multi_step_traces_pass) ... ok\ntest_controller_has_no_scenario_or_tool_name_branch (test_toolsandbox_v2_3_scripted_traces.ToolSandboxV23ScriptedTraceTests.test_controller_has_no_scenario_or_tool_name_branch) ... ok\ntest_duplicate_message_regression_executes_message_once (test_toolsandbox_v2_3_scripted_traces.ToolSandboxV23ScriptedTraceTests.test_duplicate_message_regression_executes_message_once) ... ok\n\n----------------------------------------------------------------------\nRan 44 tests in 0.149s\n\nOK\n",
+    "skipped": [],
+    "skipped_count": 0,
+    "tests_run": 44
+  },
+  "validation_environment": {
+    "jsonschema_version": "4.17.3",
+    "platform": "Windows-11-10.0.26100-SP0",
+    "project_declared_jsonschema_version": "4.23.0",
+    "project_declared_jsonschema_version_matched": false,
+    "python_version": "3.12.13"
+  }
+}

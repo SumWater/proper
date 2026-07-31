@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "status": "prospective_design_before_new_target_acquisition",
+  "audit_version": "proper_v2_3_target_capacity_design",
+  "mode": "input_only_no_model_no_play",
+  "current_toolsandbox_inventory": {
+    "scenario_name_count": 1032,
+    "eligible_candidate_count": 0,
+    "inventory_exhausted": true,
+    "rescreen_as_heldout_allowed": false,
+    "source_sha256": "a969e50b35671bbba3641c7a33640c7e7ca5a452a608536612546c94808a48b9"
+  },
+  "required_exclusions": {
+    "model_exposed_target_count": 12,
+    "exclude_exact_model_exposed_targets": true,
+    "exclude_model_exposed_family_variants": true,
+    "exclude_memory_source_families": true,
+    "exclude_any_protocol_tuning_target_from_heldout": true,
+    "exclude_prior_model_outputs_from_method_inputs": true
+  },
+  "candidate_requirements": {
+    "outside_exhausted_toolsandbox_pool": true,
+    "public_tool_schema_available": true,
+    "public_action_effect_evidence_available": true,
+    "observable_recoverable_failure_branch": true,
+    "minimum_required_steps_after_recovery": 2,
+    "multiple_failure_policy_families": true,
+    "multiple_action_effect_classes": true,
+    "behaviorally_identifiable_intervention": true
+  },
+  "prospective_partitions": [
+    "development",
+    "heldout",
+    "preservation"
+  ],
+  "candidate_sources": [],
+  "gates": {
+    "minimum_independent_semantic_families": 2,
+    "minimum_behaviorally_distinct_pairs": 12,
+    "minimum_non_idempotent_side_effect_pairs": 3,
+    "minimum_idempotent_state_setting_pairs": 3,
+    "minimum_read_only_or_verification_pairs": 3
+  },
+  "stop_rules": {
+    "no_genuinely_unexposed_targets": "stop_no_target_capacity",
+    "duplicate_non_idempotent_side_effect_in_development": "stop_safety_gate",
+    "zero_post_failure_completion_improvement": "stop_completion_gate"
+  },
+  "boundary": {
+    "model_loaded": false,
+    "model_outputs_read": false,
+    "target_scenarios_played": false,
+    "gpu_run_authorized": false,
+    "confirmatory_claim_authorized": false
+  }
+}

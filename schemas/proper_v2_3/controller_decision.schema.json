@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://proper.local/schemas/proper_v2_3/controller_decision.schema.json",
+  "title": "PROPER v2.3 Execution Controller Decision",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "method_version",
+    "disposition",
+    "decision_allowed",
+    "reason_code",
+    "ledger_entry_id",
+    "state"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "method_version": {
+      "const": "proper_v2_3_execution_controller_development"
+    },
+    "disposition": {"enum": ["allow", "verify", "replan", "stop"]},
+    "decision_allowed": {"type": "boolean"},
+    "reason_code": {"type": "string", "minLength": 1},
+    "ledger_entry_id": {
+      "type": ["string", "null"],
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "state": {"$ref": "#/$defs/controller_state"}
+  },
+  "$defs": {
+    "budgets": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "remaining_retries",
+        "remaining_verifications",
+        "remaining_invalid_decisions",
+        "remaining_replans"
+      ],
+      "properties": {
+        "remaining_retries": {"type": "integer", "minimum": 0},
+        "remaining_verifications": {"type": "integer", "minimum": 0},
+        "remaining_invalid_decisions": {"type": "integer", "minimum": 0},
+        "remaining_replans": {"type": "integer", "minimum": 0}
+      }
+    },
+    "controller_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "method_version",
+        "phase",
+        "selected_memory_experience_id",
+        "memory_operation",
+        "memory_action_identity",
+        "lifecycle_status",
+        "planning_mode",
+        "budgets",
+        "transition_index",
+        "verification_required_for_entry_id",
+        "stop_reason"
+      ],
+      "properties": {
+        "schema_version": {"const": 1},
+        "method_version": {
+          "const": "proper_v2_3_execution_controller_development"
+        },
+        "phase": {"enum": ["pre_action", "post_failure"]},
+        "selected_memory_experience_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "memory_operation": {
+          "enum": [
+            "repair_arguments",
+            "retry_same_action",
+            "invoke_prerequisite",
+            "switch_tool",
+            "use_fallback",
+            "request_information",
+            "stop_and_report",
+            "unknown"
+          ]
+        },
+        "memory_action_identity": {
+          "type": ["string", "null"],
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "lifecycle_status": {
+          "enum": ["active", "consumed", "failed", "stopped"]
+        },
+        "planning_mode": {
+          "enum": ["memory_guided", "ordinary_task_planning", "stopped"]
+        },
+        "budgets": {"$ref": "#/$defs/budgets"},
+        "transition_index": {"type": "integer", "minimum": 0},
+        "verification_required_for_entry_id": {
+          "type": ["string", "null"],
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "stop_reason": {
+          "type": ["string", "null"],
+          "minLength": 1
+        }
+      }
+    }
+  }
+}
