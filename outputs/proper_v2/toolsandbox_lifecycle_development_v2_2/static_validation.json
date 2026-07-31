@@ -1,0 +1,367 @@
+{
+  "boundary": {
+    "confirmatory_claim_authorized": false,
+    "gpu_run_authorized": false,
+    "model_loaded": false,
+    "model_outputs_read": false,
+    "scripted_decisions_only": true
+  },
+  "checks": {
+    "all_memory_action_repeats_blocked": true,
+    "ordinary_planning_handoff": true,
+    "pair_count": true,
+    "phase_counts": true,
+    "post_failure_consumed": true,
+    "pre_action_stopped": true
+  },
+  "identities": {
+    "config_sha256": "855e9d9679e8d7d87c5698d51b56c6297fa3a3a136cafdb0b66cca117b681632",
+    "prepared_manifest_sha256": "a66d12c559b462833cb1876861a783bf2c44db32d55b3a469c2aafc0baed2154"
+  },
+  "interpretation_limits": {
+    "cost_effect_not_tested": true,
+    "final_task_completion_not_tested": true,
+    "no_model_behavior_tested": true,
+    "safety_guards_tested": true,
+    "selector_first_step_not_retested": true,
+    "v2_1_pairs_are_development_only": true
+  },
+  "passed": true,
+  "records": [
+    {
+      "decision_phase": "post_failure",
+      "final_lifecycle": {
+        "application_attempt_count": 1,
+        "exposure_mode": "removed",
+        "failed_attempt_count": 0,
+        "injection_weight": 0.0,
+        "memory_experience_id": "toolsandbox::turn_on_wifi_low_battery_mode::action_2",
+        "method_version": "proper_v2_2_development",
+        "phase": "post_failure",
+        "planning_mode": "ordinary_task_planning",
+        "reason_codes": [
+          "success_evidence_verified_memory_consumed"
+        ],
+        "remaining_application_attempts": 1,
+        "schema_version": 1,
+        "status": "consumed",
+        "success_evidence_status": "satisfied",
+        "transition_index": 1,
+        "trigger_status": "unknown"
+      },
+      "guard_reason": "consumed_memory_action_repeat_blocked",
+      "memory_action_repeat_blocked": true,
+      "memory_experience_id": "toolsandbox::turn_on_wifi_low_battery_mode::action_2",
+      "ordinary_planning_handoff": true,
+      "pair_id": "toolsandbox-v2-1-01"
+    },
+    {
+      "decision_phase": "post_failure",
+      "final_lifecycle": {
+        "application_attempt_count": 1,
+        "exposure_mode": "removed",
+        "failed_attempt_count": 0,
+        "injection_weight": 0.0,
+        "memory_experience_id": "toolsandbox::turn_on_wifi_low_battery_mode::action_2",
+        "method_version": "proper_v2_2_development",
+        "phase": "post_failure",
+        "planning_mode": "ordinary_task_planning",
+        "reason_codes": [
+          "success_evidence_verified_memory_consumed"
+        ],
+        "remaining_application_attempts": 1,
+        "schema_version": 1,
+        "status": "consumed",
+        "success_evidence_status": "satisfied",
+        "transition_index": 1,
+        "trigger_status": "unknown"
+      },
+      "guard_reason": "consumed_memory_action_repeat_blocked",
+      "memory_action_repeat_blocked": true,
+      "memory_experience_id": "toolsandbox::turn_on_wifi_low_battery_mode::action_2",
+      "ordinary_planning_handoff": true,
+      "pair_id": "toolsandbox-v2-1-02"
+    },
+    {
+      "decision_phase": "post_failure",
+      "final_lifecycle": {
+        "application_attempt_count": 1,
+        "exposure_mode": "removed",
+        "failed_attempt_count": 0,
+        "injection_weight": 0.0,
+        "memory_experience_id": "toolsandbox::turn_on_wifi_low_battery_mode::action_2",
+        "method_version": "proper_v2_2_development",
+        "phase": "post_failure",
+        "planning_mode": "ordinary_task_planning",
+        "reason_codes": [
+          "success_evidence_verified_memory_consumed"
+        ],
+        "remaining_application_attempts": 1,
+        "schema_version": 1,
+        "status": "consumed",
+        "success_evidence_status": "satisfied",
+        "transition_index": 1,
+        "trigger_status": "unknown"
+      },
+      "guard_reason": "consumed_memory_action_repeat_blocked",
+      "memory_action_repeat_blocked": true,
+      "memory_experience_id": "toolsandbox::turn_on_wifi_low_battery_mode::action_2",
+      "ordinary_planning_handoff": true,
+      "pair_id": "toolsandbox-v2-1-03"
+    },
+    {
+      "decision_phase": "pre_action",
+      "final_lifecycle": {
+        "application_attempt_count": 0,
+        "exposure_mode": "removed",
+        "failed_attempt_count": 0,
+        "injection_weight": 0.0,
+        "memory_experience_id": "toolsandbox::search_reminder_upcoming_insufficient_information::stop",
+        "method_version": "proper_v2_2_development",
+        "phase": "pre_action",
+        "planning_mode": "stopped",
+        "reason_codes": [
+          "agent_stopped"
+        ],
+        "remaining_application_attempts": 2,
+        "schema_version": 1,
+        "status": "stopped",
+        "success_evidence_status": "satisfied",
+        "transition_index": 1,
+        "trigger_status": "unknown"
+      },
+      "guard_reason": "active_stop_policy_tool_call_blocked",
+      "memory_action_repeat_blocked": true,
+      "memory_experience_id": "toolsandbox::search_reminder_upcoming_insufficient_information::stop",
+      "ordinary_planning_handoff": false,
+      "pair_id": "toolsandbox-v2-1-04"
+    },
+    {
+      "decision_phase": "pre_action",
+      "final_lifecycle": {
+        "application_attempt_count": 0,
+        "exposure_mode": "removed",
+        "failed_attempt_count": 0,
+        "injection_weight": 0.0,
+        "memory_experience_id": "toolsandbox::search_reminder_upcoming_insufficient_information::stop",
+        "method_version": "proper_v2_2_development",
+        "phase": "pre_action",
+        "planning_mode": "stopped",
+        "reason_codes": [
+          "agent_stopped"
+        ],
+        "remaining_application_attempts": 2,
+        "schema_version": 1,
+        "status": "stopped",
+        "success_evidence_status": "satisfied",
+        "transition_index": 1,
+        "trigger_status": "unknown"
+      },
+      "guard_reason": "active_stop_policy_tool_call_blocked",
+      "memory_action_repeat_blocked": true,
+      "memory_experience_id": "toolsandbox::search_reminder_upcoming_insufficient_information::stop",
+      "ordinary_planning_handoff": false,
+      "pair_id": "toolsandbox-v2-1-05"
+    },
+    {
+      "decision_phase": "post_failure",
+      "final_lifecycle": {
+        "application_attempt_count": 1,
+        "exposure_mode": "removed",
+        "failed_attempt_count": 0,
+        "injection_weight": 0.0,
+        "memory_experience_id": "toolsandbox::turn_on_cellular_low_battery_mode::action_2",
+        "method_version": "proper_v2_2_development",
+        "phase": "post_failure",
+        "planning_mode": "ordinary_task_planning",
+        "reason_codes": [
+          "success_evidence_verified_memory_consumed"
+        ],
+        "remaining_application_attempts": 1,
+        "schema_version": 1,
+        "status": "consumed",
+        "success_evidence_status": "satisfied",
+        "transition_index": 1,
+        "trigger_status": "unknown"
+      },
+      "guard_reason": "consumed_memory_action_repeat_blocked",
+      "memory_action_repeat_blocked": true,
+      "memory_experience_id": "toolsandbox::turn_on_cellular_low_battery_mode::action_2",
+      "ordinary_planning_handoff": true,
+      "pair_id": "toolsandbox-v2-1-06"
+    },
+    {
+      "decision_phase": "post_failure",
+      "final_lifecycle": {
+        "application_attempt_count": 1,
+        "exposure_mode": "removed",
+        "failed_attempt_count": 0,
+        "injection_weight": 0.0,
+        "memory_experience_id": "toolsandbox::turn_on_cellular_low_battery_mode::action_2",
+        "method_version": "proper_v2_2_development",
+        "phase": "post_failure",
+        "planning_mode": "ordinary_task_planning",
+        "reason_codes": [
+          "success_evidence_verified_memory_consumed"
+        ],
+        "remaining_application_attempts": 1,
+        "schema_version": 1,
+        "status": "consumed",
+        "success_evidence_status": "satisfied",
+        "transition_index": 1,
+        "trigger_status": "unknown"
+      },
+      "guard_reason": "consumed_memory_action_repeat_blocked",
+      "memory_action_repeat_blocked": true,
+      "memory_experience_id": "toolsandbox::turn_on_cellular_low_battery_mode::action_2",
+      "ordinary_planning_handoff": true,
+      "pair_id": "toolsandbox-v2-1-07"
+    },
+    {
+      "decision_phase": "pre_action",
+      "final_lifecycle": {
+        "application_attempt_count": 0,
+        "exposure_mode": "removed",
+        "failed_attempt_count": 0,
+        "injection_weight": 0.0,
+        "memory_experience_id": "toolsandbox::remove_contact_without_search::stop",
+        "method_version": "proper_v2_2_development",
+        "phase": "pre_action",
+        "planning_mode": "stopped",
+        "reason_codes": [
+          "agent_stopped"
+        ],
+        "remaining_application_attempts": 2,
+        "schema_version": 1,
+        "status": "stopped",
+        "success_evidence_status": "satisfied",
+        "transition_index": 1,
+        "trigger_status": "unknown"
+      },
+      "guard_reason": "active_stop_policy_tool_call_blocked",
+      "memory_action_repeat_blocked": true,
+      "memory_experience_id": "toolsandbox::remove_contact_without_search::stop",
+      "ordinary_planning_handoff": false,
+      "pair_id": "toolsandbox-v2-1-08"
+    },
+    {
+      "decision_phase": "post_failure",
+      "final_lifecycle": {
+        "application_attempt_count": 1,
+        "exposure_mode": "removed",
+        "failed_attempt_count": 0,
+        "injection_weight": 0.0,
+        "memory_experience_id": "toolsandbox::turn_on_cellular_low_battery_mode::action_2",
+        "method_version": "proper_v2_2_development",
+        "phase": "post_failure",
+        "planning_mode": "ordinary_task_planning",
+        "reason_codes": [
+          "success_evidence_verified_memory_consumed"
+        ],
+        "remaining_application_attempts": 1,
+        "schema_version": 1,
+        "status": "consumed",
+        "success_evidence_status": "satisfied",
+        "transition_index": 1,
+        "trigger_status": "unknown"
+      },
+      "guard_reason": "consumed_memory_action_repeat_blocked",
+      "memory_action_repeat_blocked": true,
+      "memory_experience_id": "toolsandbox::turn_on_cellular_low_battery_mode::action_2",
+      "ordinary_planning_handoff": true,
+      "pair_id": "toolsandbox-v2-1-09"
+    },
+    {
+      "decision_phase": "post_failure",
+      "final_lifecycle": {
+        "application_attempt_count": 1,
+        "exposure_mode": "removed",
+        "failed_attempt_count": 0,
+        "injection_weight": 0.0,
+        "memory_experience_id": "toolsandbox::turn_on_cellular_low_battery_mode::action_2",
+        "method_version": "proper_v2_2_development",
+        "phase": "post_failure",
+        "planning_mode": "ordinary_task_planning",
+        "reason_codes": [
+          "success_evidence_verified_memory_consumed"
+        ],
+        "remaining_application_attempts": 1,
+        "schema_version": 1,
+        "status": "consumed",
+        "success_evidence_status": "satisfied",
+        "transition_index": 1,
+        "trigger_status": "unknown"
+      },
+      "guard_reason": "consumed_memory_action_repeat_blocked",
+      "memory_action_repeat_blocked": true,
+      "memory_experience_id": "toolsandbox::turn_on_cellular_low_battery_mode::action_2",
+      "ordinary_planning_handoff": true,
+      "pair_id": "toolsandbox-v2-1-10"
+    },
+    {
+      "decision_phase": "post_failure",
+      "final_lifecycle": {
+        "application_attempt_count": 1,
+        "exposure_mode": "removed",
+        "failed_attempt_count": 0,
+        "injection_weight": 0.0,
+        "memory_experience_id": "toolsandbox::turn_on_cellular_low_battery_mode::action_1",
+        "method_version": "proper_v2_2_development",
+        "phase": "post_failure",
+        "planning_mode": "ordinary_task_planning",
+        "reason_codes": [
+          "success_evidence_verified_memory_consumed"
+        ],
+        "remaining_application_attempts": 1,
+        "schema_version": 1,
+        "status": "consumed",
+        "success_evidence_status": "satisfied",
+        "transition_index": 1,
+        "trigger_status": "unknown"
+      },
+      "guard_reason": "consumed_memory_action_repeat_blocked",
+      "memory_action_repeat_blocked": true,
+      "memory_experience_id": "toolsandbox::turn_on_cellular_low_battery_mode::action_1",
+      "ordinary_planning_handoff": true,
+      "pair_id": "toolsandbox-v2-1-11"
+    },
+    {
+      "decision_phase": "post_failure",
+      "final_lifecycle": {
+        "application_attempt_count": 1,
+        "exposure_mode": "removed",
+        "failed_attempt_count": 0,
+        "injection_weight": 0.0,
+        "memory_experience_id": "toolsandbox::turn_on_cellular_low_battery_mode::action_1",
+        "method_version": "proper_v2_2_development",
+        "phase": "post_failure",
+        "planning_mode": "ordinary_task_planning",
+        "reason_codes": [
+          "success_evidence_verified_memory_consumed"
+        ],
+        "remaining_application_attempts": 1,
+        "schema_version": 1,
+        "status": "consumed",
+        "success_evidence_status": "satisfied",
+        "transition_index": 1,
+        "trigger_status": "unknown"
+      },
+      "guard_reason": "consumed_memory_action_repeat_blocked",
+      "memory_action_repeat_blocked": true,
+      "memory_experience_id": "toolsandbox::turn_on_cellular_low_battery_mode::action_1",
+      "ordinary_planning_handoff": true,
+      "pair_id": "toolsandbox-v2-1-12"
+    }
+  ],
+  "run_kind": "proper_v2_2_static_lifecycle_development_validation",
+  "schema_version": 1,
+  "summary": {
+    "memory_action_repeat_blocked_count": 12,
+    "ordinary_planning_handoff_count": 9,
+    "pair_count": 12,
+    "post_failure_consumed_count": 9,
+    "post_failure_pair_count": 9,
+    "pre_action_pair_count": 3,
+    "pre_action_stopped_count": 3
+  }
+}

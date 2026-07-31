@@ -1,0 +1,649 @@
+{
+  "boundary": {
+    "confirmatory_claim_authorized": false,
+    "gpu_run_authorized": false,
+    "model_loaded": false,
+    "model_outputs_read": false,
+    "scripted_decisions_only": true
+  },
+  "checks": {
+    "no_memory_action_repeats": true,
+    "no_post_failure_tool_exceptions": true,
+    "one_recovery_call_per_post_failure_pair": true,
+    "ordinary_planning_handoff": true,
+    "pair_count": true,
+    "post_failure_consumed": true,
+    "pre_action_stopped": true
+  },
+  "identities": {
+    "config_sha256": "855e9d9679e8d7d87c5698d51b56c6297fa3a3a136cafdb0b66cca117b681632",
+    "prepared_manifest_sha256": "a66d12c559b462833cb1876861a783bf2c44db32d55b3a469c2aafc0baed2154"
+  },
+  "interpretation_limits": {
+    "final_task_completion_not_tested": true,
+    "lifecycle_transition_tested": true,
+    "ordinary_planning_handoff_tested": true,
+    "raw_toolsandbox_scores_not_rewritten": true,
+    "scripted_decisions_are_not_model_behavior": true,
+    "selector_first_step_not_retested": true,
+    "v2_1_pairs_are_development_only": true
+  },
+  "passed": true,
+  "records": [
+    {
+      "decision_count": 2,
+      "decision_phase": "post_failure",
+      "final_lifecycle": {
+        "application_attempt_count": 1,
+        "exposure_mode": "removed",
+        "failed_attempt_count": 0,
+        "injection_weight": 0.0,
+        "memory_experience_id": "toolsandbox::turn_on_wifi_low_battery_mode::action_2",
+        "method_version": "proper_v2_2_development",
+        "phase": "post_failure",
+        "planning_mode": "ordinary_task_planning",
+        "reason_codes": [
+          "success_evidence_verified_memory_consumed"
+        ],
+        "remaining_application_attempts": 1,
+        "schema_version": 1,
+        "status": "consumed",
+        "success_evidence_status": "satisfied",
+        "transition_index": 1,
+        "trigger_status": "unknown"
+      },
+      "ordinary_planning_handoff": true,
+      "pair_id": "toolsandbox-v2-1-01",
+      "raw_toolsandbox_evaluation": {
+        "milestone_mapping": {
+          "0": [
+            17,
+            1.0
+          ],
+          "1": [
+            21,
+            1.0
+          ],
+          "2": [
+            21,
+            0.0
+          ],
+          "3": [
+            21,
+            0.0
+          ],
+          "4": [
+            21,
+            0.0
+          ]
+        },
+        "milestone_similarity": 0.4,
+        "minefield_mapping": {},
+        "minefield_similarity": 0.0,
+        "similarity": 0.4,
+        "turn_count": 6
+      },
+      "repeated_identical_tool_call_count": 0,
+      "tool_call_count": 1,
+      "tool_exception_count": 0
+    },
+    {
+      "decision_count": 2,
+      "decision_phase": "post_failure",
+      "final_lifecycle": {
+        "application_attempt_count": 1,
+        "exposure_mode": "removed",
+        "failed_attempt_count": 0,
+        "injection_weight": 0.0,
+        "memory_experience_id": "toolsandbox::turn_on_wifi_low_battery_mode::action_2",
+        "method_version": "proper_v2_2_development",
+        "phase": "post_failure",
+        "planning_mode": "ordinary_task_planning",
+        "reason_codes": [
+          "success_evidence_verified_memory_consumed"
+        ],
+        "remaining_application_attempts": 1,
+        "schema_version": 1,
+        "status": "consumed",
+        "success_evidence_status": "satisfied",
+        "transition_index": 1,
+        "trigger_status": "unknown"
+      },
+      "ordinary_planning_handoff": true,
+      "pair_id": "toolsandbox-v2-1-02",
+      "raw_toolsandbox_evaluation": {
+        "milestone_mapping": {
+          "0": [
+            17,
+            1.0
+          ],
+          "1": [
+            21,
+            1.0
+          ],
+          "2": [
+            21,
+            0.0
+          ],
+          "3": [
+            21,
+            0.0
+          ],
+          "4": [
+            21,
+            0.0
+          ]
+        },
+        "milestone_similarity": 0.4,
+        "minefield_mapping": {},
+        "minefield_similarity": 0.0,
+        "similarity": 0.4,
+        "turn_count": 6
+      },
+      "repeated_identical_tool_call_count": 0,
+      "tool_call_count": 1,
+      "tool_exception_count": 0
+    },
+    {
+      "decision_count": 2,
+      "decision_phase": "post_failure",
+      "final_lifecycle": {
+        "application_attempt_count": 1,
+        "exposure_mode": "removed",
+        "failed_attempt_count": 0,
+        "injection_weight": 0.0,
+        "memory_experience_id": "toolsandbox::turn_on_wifi_low_battery_mode::action_2",
+        "method_version": "proper_v2_2_development",
+        "phase": "post_failure",
+        "planning_mode": "ordinary_task_planning",
+        "reason_codes": [
+          "success_evidence_verified_memory_consumed"
+        ],
+        "remaining_application_attempts": 1,
+        "schema_version": 1,
+        "status": "consumed",
+        "success_evidence_status": "satisfied",
+        "transition_index": 1,
+        "trigger_status": "unknown"
+      },
+      "ordinary_planning_handoff": true,
+      "pair_id": "toolsandbox-v2-1-03",
+      "raw_toolsandbox_evaluation": {
+        "milestone_mapping": {
+          "0": [
+            17,
+            1.0
+          ],
+          "1": [
+            21,
+            1.0
+          ],
+          "2": [
+            21,
+            0.0
+          ],
+          "3": [
+            21,
+            0.0
+          ],
+          "4": [
+            21,
+            0.0
+          ]
+        },
+        "milestone_similarity": 0.4,
+        "minefield_mapping": {},
+        "minefield_similarity": 0.0,
+        "similarity": 0.4,
+        "turn_count": 6
+      },
+      "repeated_identical_tool_call_count": 0,
+      "tool_call_count": 1,
+      "tool_exception_count": 0
+    },
+    {
+      "decision_count": 1,
+      "decision_phase": "pre_action",
+      "final_lifecycle": {
+        "application_attempt_count": 0,
+        "exposure_mode": "removed",
+        "failed_attempt_count": 0,
+        "injection_weight": 0.0,
+        "memory_experience_id": "toolsandbox::search_reminder_upcoming_insufficient_information::stop",
+        "method_version": "proper_v2_2_development",
+        "phase": "pre_action",
+        "planning_mode": "stopped",
+        "reason_codes": [
+          "agent_stopped"
+        ],
+        "remaining_application_attempts": 2,
+        "schema_version": 1,
+        "status": "stopped",
+        "success_evidence_status": "satisfied",
+        "transition_index": 1,
+        "trigger_status": "unknown"
+      },
+      "ordinary_planning_handoff": false,
+      "pair_id": "toolsandbox-v2-1-04",
+      "raw_toolsandbox_evaluation": {
+        "milestone_mapping": {},
+        "milestone_similarity": 1.0,
+        "minefield_mapping": {
+          "0": [
+            15,
+            0.0
+          ]
+        },
+        "minefield_similarity": 0.0,
+        "similarity": 1.0,
+        "turn_count": 1
+      },
+      "repeated_identical_tool_call_count": 0,
+      "tool_call_count": 0,
+      "tool_exception_count": 0
+    },
+    {
+      "decision_count": 1,
+      "decision_phase": "pre_action",
+      "final_lifecycle": {
+        "application_attempt_count": 0,
+        "exposure_mode": "removed",
+        "failed_attempt_count": 0,
+        "injection_weight": 0.0,
+        "memory_experience_id": "toolsandbox::search_reminder_upcoming_insufficient_information::stop",
+        "method_version": "proper_v2_2_development",
+        "phase": "pre_action",
+        "planning_mode": "stopped",
+        "reason_codes": [
+          "agent_stopped"
+        ],
+        "remaining_application_attempts": 2,
+        "schema_version": 1,
+        "status": "stopped",
+        "success_evidence_status": "satisfied",
+        "transition_index": 1,
+        "trigger_status": "unknown"
+      },
+      "ordinary_planning_handoff": false,
+      "pair_id": "toolsandbox-v2-1-05",
+      "raw_toolsandbox_evaluation": {
+        "milestone_mapping": {},
+        "milestone_similarity": 1.0,
+        "minefield_mapping": {
+          "0": [
+            15,
+            0.0
+          ]
+        },
+        "minefield_similarity": 0.0,
+        "similarity": 1.0,
+        "turn_count": 1
+      },
+      "repeated_identical_tool_call_count": 0,
+      "tool_call_count": 0,
+      "tool_exception_count": 0
+    },
+    {
+      "decision_count": 2,
+      "decision_phase": "post_failure",
+      "final_lifecycle": {
+        "application_attempt_count": 1,
+        "exposure_mode": "removed",
+        "failed_attempt_count": 0,
+        "injection_weight": 0.0,
+        "memory_experience_id": "toolsandbox::turn_on_cellular_low_battery_mode::action_2",
+        "method_version": "proper_v2_2_development",
+        "phase": "post_failure",
+        "planning_mode": "ordinary_task_planning",
+        "reason_codes": [
+          "success_evidence_verified_memory_consumed"
+        ],
+        "remaining_application_attempts": 1,
+        "schema_version": 1,
+        "status": "consumed",
+        "success_evidence_status": "satisfied",
+        "transition_index": 1,
+        "trigger_status": "unknown"
+      },
+      "ordinary_planning_handoff": true,
+      "pair_id": "toolsandbox-v2-1-06",
+      "raw_toolsandbox_evaluation": {
+        "milestone_mapping": {
+          "0": [
+            21,
+            1.0
+          ],
+          "1": [
+            17,
+            1.0
+          ],
+          "2": [
+            21,
+            0.0
+          ],
+          "3": [
+            21,
+            0.0
+          ]
+        },
+        "milestone_similarity": 0.5,
+        "minefield_mapping": {},
+        "minefield_similarity": 0.0,
+        "similarity": 0.5,
+        "turn_count": 6
+      },
+      "repeated_identical_tool_call_count": 0,
+      "tool_call_count": 1,
+      "tool_exception_count": 0
+    },
+    {
+      "decision_count": 2,
+      "decision_phase": "post_failure",
+      "final_lifecycle": {
+        "application_attempt_count": 1,
+        "exposure_mode": "removed",
+        "failed_attempt_count": 0,
+        "injection_weight": 0.0,
+        "memory_experience_id": "toolsandbox::turn_on_cellular_low_battery_mode::action_2",
+        "method_version": "proper_v2_2_development",
+        "phase": "post_failure",
+        "planning_mode": "ordinary_task_planning",
+        "reason_codes": [
+          "success_evidence_verified_memory_consumed"
+        ],
+        "remaining_application_attempts": 1,
+        "schema_version": 1,
+        "status": "consumed",
+        "success_evidence_status": "satisfied",
+        "transition_index": 1,
+        "trigger_status": "unknown"
+      },
+      "ordinary_planning_handoff": true,
+      "pair_id": "toolsandbox-v2-1-07",
+      "raw_toolsandbox_evaluation": {
+        "milestone_mapping": {
+          "0": [
+            21,
+            1.0
+          ],
+          "1": [
+            17,
+            1.0
+          ],
+          "2": [
+            21,
+            0.0
+          ],
+          "3": [
+            21,
+            0.0
+          ]
+        },
+        "milestone_similarity": 0.5,
+        "minefield_mapping": {},
+        "minefield_similarity": 0.0,
+        "similarity": 0.5,
+        "turn_count": 6
+      },
+      "repeated_identical_tool_call_count": 0,
+      "tool_call_count": 1,
+      "tool_exception_count": 0
+    },
+    {
+      "decision_count": 1,
+      "decision_phase": "pre_action",
+      "final_lifecycle": {
+        "application_attempt_count": 0,
+        "exposure_mode": "removed",
+        "failed_attempt_count": 0,
+        "injection_weight": 0.0,
+        "memory_experience_id": "toolsandbox::remove_contact_without_search::stop",
+        "method_version": "proper_v2_2_development",
+        "phase": "pre_action",
+        "planning_mode": "stopped",
+        "reason_codes": [
+          "agent_stopped"
+        ],
+        "remaining_application_attempts": 2,
+        "schema_version": 1,
+        "status": "stopped",
+        "success_evidence_status": "satisfied",
+        "transition_index": 1,
+        "trigger_status": "unknown"
+      },
+      "ordinary_planning_handoff": false,
+      "pair_id": "toolsandbox-v2-1-08",
+      "raw_toolsandbox_evaluation": {
+        "milestone_mapping": {},
+        "milestone_similarity": 1.0,
+        "minefield_mapping": {
+          "0": [
+            15,
+            0.0
+          ]
+        },
+        "minefield_similarity": 0.0,
+        "similarity": 1.0,
+        "turn_count": 1
+      },
+      "repeated_identical_tool_call_count": 0,
+      "tool_call_count": 0,
+      "tool_exception_count": 0
+    },
+    {
+      "decision_count": 2,
+      "decision_phase": "post_failure",
+      "final_lifecycle": {
+        "application_attempt_count": 1,
+        "exposure_mode": "removed",
+        "failed_attempt_count": 0,
+        "injection_weight": 0.0,
+        "memory_experience_id": "toolsandbox::turn_on_cellular_low_battery_mode::action_2",
+        "method_version": "proper_v2_2_development",
+        "phase": "post_failure",
+        "planning_mode": "ordinary_task_planning",
+        "reason_codes": [
+          "success_evidence_verified_memory_consumed"
+        ],
+        "remaining_application_attempts": 1,
+        "schema_version": 1,
+        "status": "consumed",
+        "success_evidence_status": "satisfied",
+        "transition_index": 1,
+        "trigger_status": "unknown"
+      },
+      "ordinary_planning_handoff": true,
+      "pair_id": "toolsandbox-v2-1-09",
+      "raw_toolsandbox_evaluation": {
+        "milestone_mapping": {
+          "0": [
+            33,
+            1.0
+          ],
+          "1": [
+            29,
+            1.0
+          ],
+          "2": [
+            33,
+            0.0
+          ],
+          "3": [
+            33,
+            0.0
+          ]
+        },
+        "milestone_similarity": 0.5,
+        "minefield_mapping": {},
+        "minefield_similarity": 0.0,
+        "similarity": 0.5,
+        "turn_count": 6
+      },
+      "repeated_identical_tool_call_count": 0,
+      "tool_call_count": 1,
+      "tool_exception_count": 0
+    },
+    {
+      "decision_count": 2,
+      "decision_phase": "post_failure",
+      "final_lifecycle": {
+        "application_attempt_count": 1,
+        "exposure_mode": "removed",
+        "failed_attempt_count": 0,
+        "injection_weight": 0.0,
+        "memory_experience_id": "toolsandbox::turn_on_cellular_low_battery_mode::action_2",
+        "method_version": "proper_v2_2_development",
+        "phase": "post_failure",
+        "planning_mode": "ordinary_task_planning",
+        "reason_codes": [
+          "success_evidence_verified_memory_consumed"
+        ],
+        "remaining_application_attempts": 1,
+        "schema_version": 1,
+        "status": "consumed",
+        "success_evidence_status": "satisfied",
+        "transition_index": 1,
+        "trigger_status": "unknown"
+      },
+      "ordinary_planning_handoff": true,
+      "pair_id": "toolsandbox-v2-1-10",
+      "raw_toolsandbox_evaluation": {
+        "milestone_mapping": {
+          "0": [
+            33,
+            1.0
+          ],
+          "1": [
+            29,
+            1.0
+          ],
+          "2": [
+            33,
+            0.0
+          ],
+          "3": [
+            33,
+            0.0
+          ]
+        },
+        "milestone_similarity": 0.5,
+        "minefield_mapping": {},
+        "minefield_similarity": 0.0,
+        "similarity": 0.5,
+        "turn_count": 6
+      },
+      "repeated_identical_tool_call_count": 0,
+      "tool_call_count": 1,
+      "tool_exception_count": 0
+    },
+    {
+      "decision_count": 2,
+      "decision_phase": "post_failure",
+      "final_lifecycle": {
+        "application_attempt_count": 1,
+        "exposure_mode": "removed",
+        "failed_attempt_count": 0,
+        "injection_weight": 0.0,
+        "memory_experience_id": "toolsandbox::turn_on_cellular_low_battery_mode::action_1",
+        "method_version": "proper_v2_2_development",
+        "phase": "post_failure",
+        "planning_mode": "ordinary_task_planning",
+        "reason_codes": [
+          "success_evidence_verified_memory_consumed"
+        ],
+        "remaining_application_attempts": 1,
+        "schema_version": 1,
+        "status": "consumed",
+        "success_evidence_status": "satisfied",
+        "transition_index": 1,
+        "trigger_status": "unknown"
+      },
+      "ordinary_planning_handoff": true,
+      "pair_id": "toolsandbox-v2-1-11",
+      "raw_toolsandbox_evaluation": {
+        "milestone_mapping": {
+          "0": [
+            19,
+            1.0
+          ],
+          "1": [
+            19,
+            0.0
+          ],
+          "2": [
+            19,
+            0.0
+          ]
+        },
+        "milestone_similarity": 0.3333333333333333,
+        "minefield_mapping": {},
+        "minefield_similarity": 0.0,
+        "similarity": 0.3333333333333333,
+        "turn_count": 4
+      },
+      "repeated_identical_tool_call_count": 0,
+      "tool_call_count": 1,
+      "tool_exception_count": 0
+    },
+    {
+      "decision_count": 2,
+      "decision_phase": "post_failure",
+      "final_lifecycle": {
+        "application_attempt_count": 1,
+        "exposure_mode": "removed",
+        "failed_attempt_count": 0,
+        "injection_weight": 0.0,
+        "memory_experience_id": "toolsandbox::turn_on_cellular_low_battery_mode::action_1",
+        "method_version": "proper_v2_2_development",
+        "phase": "post_failure",
+        "planning_mode": "ordinary_task_planning",
+        "reason_codes": [
+          "success_evidence_verified_memory_consumed"
+        ],
+        "remaining_application_attempts": 1,
+        "schema_version": 1,
+        "status": "consumed",
+        "success_evidence_status": "satisfied",
+        "transition_index": 1,
+        "trigger_status": "unknown"
+      },
+      "ordinary_planning_handoff": true,
+      "pair_id": "toolsandbox-v2-1-12",
+      "raw_toolsandbox_evaluation": {
+        "milestone_mapping": {
+          "0": [
+            19,
+            1.0
+          ],
+          "1": [
+            19,
+            0.0
+          ],
+          "2": [
+            19,
+            0.0
+          ]
+        },
+        "milestone_similarity": 0.3333333333333333,
+        "minefield_mapping": {},
+        "minefield_similarity": 0.0,
+        "similarity": 0.3333333333333333,
+        "turn_count": 4
+      },
+      "repeated_identical_tool_call_count": 0,
+      "tool_call_count": 1,
+      "tool_exception_count": 0
+    }
+  ],
+  "run_kind": "proper_v2_2_toolsandbox_scripted_lifecycle_development",
+  "schema_version": 1,
+  "summary": {
+    "memory_action_repeat_count": 0,
+    "ordinary_planning_handoff_count": 9,
+    "pair_count": 12,
+    "post_failure_consumed_count": 9,
+    "post_failure_tool_call_count": 9,
+    "post_failure_tool_exception_count": 0,
+    "pre_action_stopped_count": 3
+  }
+}

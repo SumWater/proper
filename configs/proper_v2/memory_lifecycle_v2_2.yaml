@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "status": "development_protocol_frozen_before_v2_2_model_outputs",
+  "method_version": "proper_v2_2_development",
+  "lifecycle_policy": {
+    "maximum_application_attempts": 2,
+    "consumed_memory_weight": 0.0,
+    "require_success_evidence": true,
+    "stop_on_success_trigger_conflict": true
+  },
+  "runtime_success_evidence": {
+    "action_memory_default": [
+      "action_succeeded"
+    ],
+    "stop_memory_default": [
+      "agent_stopped"
+    ],
+    "task_terminal_default": [
+      "task_complete"
+    ]
+  },
+  "state_machine": {
+    "statuses": [
+      "active",
+      "consumed",
+      "failed",
+      "stopped"
+    ],
+    "active_exposure": "full",
+    "consumed_exposure": "removed",
+    "failed_exposure": "removed",
+    "stopped_exposure": "removed",
+    "consumed_planning_mode": "ordinary_task_planning",
+    "failed_planning_mode": "stopped",
+    "stopped_planning_mode": "stopped"
+  },
+  "guards": {
+    "block_consumed_memory_action_repeat": true,
+    "block_terminal_lifecycle_tool_calls": true,
+    "enforce_active_stop_policy": true
+  },
+  "development_data": {
+    "v2_1_pair_count": 12,
+    "usage": "development_only",
+    "confirmatory_reuse_authorized": false
+  },
+  "interpretation": {
+    "selector_first_step_separate": true,
+    "memory_lifecycle_separate": true,
+    "final_task_completion_separate": true,
+    "safety_separate": true,
+    "cost_separate": true,
+    "all_agent_memory_generalization_authorized": false
+  },
+  "boundary": {
+    "v2_1_model_outputs_used_as_development_evidence": true,
+    "v2_2_model_outputs_read_before_protocol_freeze": false,
+    "gpu_run_authorized": false,
+    "confirmatory_claim_authorized": false
+  }
+}

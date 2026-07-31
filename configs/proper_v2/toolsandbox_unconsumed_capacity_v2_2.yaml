@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "status": "frozen_unconsumed_cpu_capacity_before_any_target_model_outputs",
+  "protocol": "docs/proper_v2/toolsandbox_unconsumed_capacity_v2_2_protocol.md",
+  "frozen_inputs": {
+    "dynamic_inventory": {
+      "path": "outputs/proper_v2/toolsandbox_dynamic_pilot/inventory.json",
+      "sha256": "b5d8cbcff96b82c005046596fd0d742feed328f513f685543727a11c3002be99"
+    },
+    "phase_aware_capacity": {
+      "path": "outputs/proper_v2/toolsandbox_selector_capacity_v2_1/screening.json",
+      "sha256": "9a26b4c95b8a8f34ab184cebc175f0e63a78af11e10c67d295a56cb3eb7c0983"
+    },
+    "v2_1_prepared_manifest": {
+      "path": "outputs/proper_v2/toolsandbox_model_pilot_v2_1/prepared_manifest.json",
+      "sha256": "a66d12c559b462833cb1876861a783bf2c44db32d55b3a469c2aafc0baed2154"
+    },
+    "behavioral_capacity_config": {
+      "path": "configs/proper_v2/toolsandbox_selector_capacity_v2.yaml",
+      "sha256": "f2151f92ed6ea11cadebe65354e1664a9efc397f240280669870dcd488371474"
+    },
+    "action_memory_preparation": {
+      "path": "outputs/proper_v2/toolsandbox_action_memory_preparation/result.json",
+      "sha256": "177534fd76d0b08ea347bb09c320174beb810e66b5e4294b3e1ab5cbfb2fb614"
+    },
+    "legacy_selection_manifest": {
+      "path": "outputs/proper_v1/candidate_selection/selection_manifest.json",
+      "sha256": "5570d6399a91a558b0957f623bb2bc70a2d6dc52e5918b2b7c30b4a0103f8cdb"
+    },
+    "scenario_source": {
+      "path": "external/toolsandbox/tool_sandbox/scenarios/insufficient_information_scenarios.py",
+      "sha256": "5373b605f87fe1acc4ec757e57248d7d875feb5e00739694b9d2d103ef476315"
+    },
+    "contracts_source": {
+      "path": "src/failure_memory/proper_v2/contracts.py",
+      "sha256": "777eea54f06ede1c626869737f26d24a1502a8dd30d5118dd28b12c803251f54"
+    },
+    "compatibility_source": {
+      "path": "src/failure_memory/proper_v2/compatibility.py",
+      "sha256": "056b119a8a401a913e44dec73901cb18dc5fc8dc8bd128a17c56da7dd57cecf5"
+    },
+    "selector_source": {
+      "path": "src/failure_memory/proper_v2/selector.py",
+      "sha256": "8abed366cd89b284f6c353191d1df2e586cb0d761ed2a9b978076b2106003b22"
+    },
+    "lifecycle_source": {
+      "path": "src/failure_memory/proper_v2/v2_2/lifecycle.py",
+      "sha256": "dc0ce49099455d6760a8b2db24230db0401868f8811b71caa3eb3dc77aa681b9"
+    }
+  },
+  "target_family": "remove_contact_by_phone_no_remove_contact_insufficient_information",
+  "related_memory_source_family": "remove_contact_by_phone_no_search_contacts_insufficient_information",
+  "target_declarations": [
+    {
+      "scenario_name": "remove_contact_by_phone_no_remove_contact_insufficient_information",
+      "instruction": "Remove phone number +12453344098 from my contact",
+      "available_tools": [
+        "end_conversation",
+        "search_contacts"
+      ],
+      "unavailable_required_capability": "remove_contact",
+      "policy_type": "stop_and_report",
+      "evidence_codes": [
+        "failure_state:insufficient_information",
+        "insufficient_information:missing_execution_capability"
+      ]
+    },
+    {
+      "scenario_name": "remove_contact_by_phone_no_remove_contact_insufficient_information_alt",
+      "instruction": "The guy at +12453344098, I feel like we don't talk much anymore. Get him out of my contacts.",
+      "available_tools": [
+        "end_conversation",
+        "search_contacts"
+      ],
+      "unavailable_required_capability": "remove_contact",
+      "policy_type": "stop_and_report",
+      "evidence_codes": [
+        "failure_state:insufficient_information",
+        "insufficient_information:missing_execution_capability"
+      ]
+    }
+  ],
+  "retrieval": {
+    "top_k": 12
+  },
+  "selector": {
+    "minimum_extraction_confidence": 0.75
+  },
+  "capacity_gate": {
+    "exact_target_count": 2,
+    "minimum_behaviorally_distinct_pairs_for_development_holdout": 2,
+    "minimum_independent_semantic_families_for_confirmation": 2,
+    "require_all_selected_policies_safe": true,
+    "require_all_selected_specific_trigger_match": true,
+    "require_all_lifecycle_guards_safe": true,
+    "require_no_v2_1_model_exposure": true,
+    "require_no_exact_source_family_overlap": true
+  },
+  "boundary": {
+    "cpu_only": true,
+    "public_target_inputs_inspected_for_capacity": true,
+    "target_model_outputs_read": false,
+    "target_scenarios_played": false,
+    "model_loaded": false,
+    "gpu_run_authorized": false,
+    "confirmatory_run_authorized": false,
+    "within_domain_sibling_family": true
+  },
+  "output": {
+    "path": "outputs/proper_v2/toolsandbox_unconsumed_capacity_v2_2/audit.json"
+  }
+}

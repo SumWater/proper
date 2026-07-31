@@ -1,0 +1,722 @@
+{
+  "audit_checks": {
+    "all_lifecycle_guards_safe": true,
+    "all_selected_policies_safe": true,
+    "all_selected_specific_trigger_match": false,
+    "exact_target_count": true,
+    "no_exact_source_family_overlap": true,
+    "no_v2_1_model_exposure": true
+  },
+  "audit_passed": true,
+  "boundary": {
+    "confirmatory_run_authorized": false,
+    "cpu_only": true,
+    "gpu_run_authorized": false,
+    "model_loaded": false,
+    "public_target_inputs_inspected_for_capacity": true,
+    "target_model_outputs_read": false,
+    "target_scenarios_played": false,
+    "within_domain_sibling_family": true
+  },
+  "identities": {
+    "config_sha256": "c2935eacf61a9fd20dfa5bf389ff40edae1a646a50bda20c2a2e7d38f874bcfc",
+    "frozen_input_sha256": {
+      "action_memory_preparation": "177534fd76d0b08ea347bb09c320174beb810e66b5e4294b3e1ab5cbfb2fb614",
+      "behavioral_capacity_config": "f2151f92ed6ea11cadebe65354e1664a9efc397f240280669870dcd488371474",
+      "compatibility_source": "056b119a8a401a913e44dec73901cb18dc5fc8dc8bd128a17c56da7dd57cecf5",
+      "contracts_source": "777eea54f06ede1c626869737f26d24a1502a8dd30d5118dd28b12c803251f54",
+      "dynamic_inventory": "b5d8cbcff96b82c005046596fd0d742feed328f513f685543727a11c3002be99",
+      "legacy_selection_manifest": "5570d6399a91a558b0957f623bb2bc70a2d6dc52e5918b2b7c30b4a0103f8cdb",
+      "lifecycle_source": "dc0ce49099455d6760a8b2db24230db0401868f8811b71caa3eb3dc77aa681b9",
+      "phase_aware_capacity": "9a26b4c95b8a8f34ab184cebc175f0e63a78af11e10c67d295a56cb3eb7c0983",
+      "scenario_source": "5373b605f87fe1acc4ec757e57248d7d875feb5e00739694b9d2d103ef476315",
+      "selector_source": "8abed366cd89b284f6c353191d1df2e586cb0d761ed2a9b978076b2106003b22",
+      "v2_1_prepared_manifest": "a66d12c559b462833cb1876861a783bf2c44db32d55b3a469c2aafc0baed2154"
+    },
+    "producer_source_sha256": "c245d6608776dd2bdb4b916ab37529df0d4a8a585244db3562479012b94044da",
+    "protocol_sha256": "e3466c369838ad3fb423a8f9ee2b8460aa556ef16ec2ea1bb4647a9d48984a90"
+  },
+  "interpretation_limits": {
+    "confirmatory_run_not_authorized": true,
+    "cost_not_tested": true,
+    "final_task_completion_not_tested": true,
+    "lifecycle_guard_capacity_is_not_model_effect": true,
+    "safety_outcome_not_tested_with_model": true,
+    "selector_capacity_is_not_model_effect": true,
+    "within_domain_sibling_transfer_only": true
+  },
+  "next_action": "do_not_run_model_preservation_only_and_specific_trigger_mismatch",
+  "records": [
+    {
+      "behaviorally_distinct": false,
+      "exact_source_family_overlap": false,
+      "instruction": "Remove phone number +12453344098 from my contact",
+      "lifecycle_guard_reason": "active_stop_policy_tool_call_blocked",
+      "lifecycle_initial_status": "active",
+      "lifecycle_tool_call_blocked": true,
+      "rank1_experience_id": "toolsandbox::remove_contact_without_search::stop",
+      "rank1_operation": "stop_and_report",
+      "scenario_name": "remove_contact_by_phone_no_remove_contact_insufficient_information",
+      "selected_experience_id": "toolsandbox::remove_contact_without_search::stop",
+      "selected_operation": "stop_and_report",
+      "selected_policy_safe": true,
+      "selected_specific_trigger_match": false,
+      "selection_changed": false,
+      "selection_decision": {
+        "abstained": false,
+        "candidate_evaluations": [
+          {
+            "compatibility": "compatible",
+            "contradictions": [],
+            "eligible": true,
+            "experience_id": "toolsandbox::remove_contact_without_search::stop",
+            "extraction_confidence": 1.0,
+            "original_rank": 1,
+            "precondition_status": "satisfied",
+            "repair_target_agreement": 0,
+            "sort_key": [
+              0,
+              -2,
+              -2,
+              0,
+              -1,
+              0,
+              -1.0,
+              1,
+              "toolsandbox::remove_contact_without_search::stop"
+            ],
+            "tool_compatibility": 0,
+            "trigger_evidence_agreement": 1
+          },
+          {
+            "compatibility": "incompatible",
+            "contradictions": [
+              "retry_requires_post_failure",
+              "retry_safety_unknown"
+            ],
+            "eligible": false,
+            "experience_id": "experience::dev_v2_retrieval_authz_medium_relaxed_00743::authorization_transient",
+            "extraction_confidence": 1.0,
+            "original_rank": 2,
+            "precondition_status": "satisfied",
+            "repair_target_agreement": 0,
+            "sort_key": [
+              2,
+              0,
+              -2,
+              0,
+              0,
+              0,
+              -1.0,
+              2,
+              "experience::dev_v2_retrieval_authz_medium_relaxed_00743::authorization_transient"
+            ],
+            "tool_compatibility": 0,
+            "trigger_evidence_agreement": 0
+          },
+          {
+            "compatibility": "incompatible",
+            "contradictions": [
+              "repair_requires_post_failure",
+              "repair_target_absent_from_public_schema"
+            ],
+            "eligible": false,
+            "experience_id": "experience::dev_v2_retrieval_clean_medium_relaxed_00707::argument_omission_extension",
+            "extraction_confidence": 1.0,
+            "original_rank": 3,
+            "precondition_status": "satisfied",
+            "repair_target_agreement": 0,
+            "sort_key": [
+              2,
+              0,
+              -2,
+              0,
+              0,
+              0,
+              -1.0,
+              3,
+              "experience::dev_v2_retrieval_clean_medium_relaxed_00707::argument_omission_extension"
+            ],
+            "tool_compatibility": 0,
+            "trigger_evidence_agreement": 0
+          },
+          {
+            "compatibility": "incompatible",
+            "contradictions": [
+              "repair_requires_post_failure",
+              "repair_target_absent_from_public_schema"
+            ],
+            "eligible": false,
+            "experience_id": "experience::dev_v2_crud_clean_medium_tight_00435::argument_omission_extension",
+            "extraction_confidence": 1.0,
+            "original_rank": 4,
+            "precondition_status": "satisfied",
+            "repair_target_agreement": 0,
+            "sort_key": [
+              2,
+              0,
+              -2,
+              0,
+              0,
+              0,
+              -1.0,
+              4,
+              "experience::dev_v2_crud_clean_medium_tight_00435::argument_omission_extension"
+            ],
+            "tool_compatibility": 0,
+            "trigger_evidence_agreement": 0
+          },
+          {
+            "compatibility": "compatible",
+            "contradictions": [],
+            "eligible": true,
+            "experience_id": "toolsandbox::search_reminder_upcoming_insufficient_information::stop",
+            "extraction_confidence": 1.0,
+            "original_rank": 5,
+            "precondition_status": "satisfied",
+            "repair_target_agreement": 0,
+            "sort_key": [
+              0,
+              -2,
+              -2,
+              0,
+              -1,
+              0,
+              -1.0,
+              5,
+              "toolsandbox::search_reminder_upcoming_insufficient_information::stop"
+            ],
+            "tool_compatibility": 0,
+            "trigger_evidence_agreement": 1
+          },
+          {
+            "compatibility": "incompatible",
+            "contradictions": [
+              "retry_requires_post_failure",
+              "retry_safety_unknown"
+            ],
+            "eligible": false,
+            "experience_id": "experience::dev_v2_crud_timeout_hard_tight_00879::timeout_transient",
+            "extraction_confidence": 1.0,
+            "original_rank": 6,
+            "precondition_status": "satisfied",
+            "repair_target_agreement": 0,
+            "sort_key": [
+              2,
+              0,
+              -2,
+              0,
+              0,
+              0,
+              -1.0,
+              6,
+              "experience::dev_v2_crud_timeout_hard_tight_00879::timeout_transient"
+            ],
+            "tool_compatibility": 0,
+            "trigger_evidence_agreement": 0
+          },
+          {
+            "compatibility": "uncertain",
+            "contradictions": [],
+            "eligible": true,
+            "experience_id": "experience::dev_v2_files_authz_easy_tight_00360::authorization_persistent_extension",
+            "extraction_confidence": 1.0,
+            "original_rank": 7,
+            "precondition_status": "satisfied",
+            "repair_target_agreement": 0,
+            "sort_key": [
+              0,
+              -1,
+              -2,
+              0,
+              0,
+              0,
+              -1.0,
+              7,
+              "experience::dev_v2_files_authz_easy_tight_00360::authorization_persistent_extension"
+            ],
+            "tool_compatibility": 0,
+            "trigger_evidence_agreement": 0
+          },
+          {
+            "compatibility": "uncertain",
+            "contradictions": [],
+            "eligible": true,
+            "experience_id": "experience::dev_v2_scheduling_authz_easy_tight_00630::authorization_persistent_extension",
+            "extraction_confidence": 1.0,
+            "original_rank": 8,
+            "precondition_status": "satisfied",
+            "repair_target_agreement": 0,
+            "sort_key": [
+              0,
+              -1,
+              -2,
+              0,
+              0,
+              0,
+              -1.0,
+              8,
+              "experience::dev_v2_scheduling_authz_easy_tight_00630::authorization_persistent_extension"
+            ],
+            "tool_compatibility": 0,
+            "trigger_evidence_agreement": 0
+          },
+          {
+            "compatibility": "compatible",
+            "contradictions": [],
+            "eligible": true,
+            "experience_id": "toolsandbox::find_days_till_holiday_insufficient_information::stop",
+            "extraction_confidence": 1.0,
+            "original_rank": 9,
+            "precondition_status": "satisfied",
+            "repair_target_agreement": 0,
+            "sort_key": [
+              0,
+              -2,
+              -2,
+              0,
+              -1,
+              0,
+              -1.0,
+              9,
+              "toolsandbox::find_days_till_holiday_insufficient_information::stop"
+            ],
+            "tool_compatibility": 0,
+            "trigger_evidence_agreement": 1
+          },
+          {
+            "compatibility": "incompatible",
+            "contradictions": [
+              "proposed_tool_unavailable"
+            ],
+            "eligible": false,
+            "experience_id": "toolsandbox::turn_on_cellular_low_battery_mode::action_1",
+            "extraction_confidence": 1.0,
+            "original_rank": 10,
+            "precondition_status": "satisfied",
+            "repair_target_agreement": 0,
+            "sort_key": [
+              1,
+              0,
+              -2,
+              0,
+              0,
+              0,
+              -1.0,
+              10,
+              "toolsandbox::turn_on_cellular_low_battery_mode::action_1"
+            ],
+            "tool_compatibility": 0,
+            "trigger_evidence_agreement": 0
+          },
+          {
+            "compatibility": "incompatible",
+            "contradictions": [
+              "proposed_tool_unavailable"
+            ],
+            "eligible": false,
+            "experience_id": "toolsandbox::turn_on_cellular_low_battery_mode::action_2",
+            "extraction_confidence": 1.0,
+            "original_rank": 11,
+            "precondition_status": "satisfied",
+            "repair_target_agreement": 0,
+            "sort_key": [
+              1,
+              0,
+              -2,
+              0,
+              0,
+              0,
+              -1.0,
+              11,
+              "toolsandbox::turn_on_cellular_low_battery_mode::action_2"
+            ],
+            "tool_compatibility": 0,
+            "trigger_evidence_agreement": 0
+          },
+          {
+            "compatibility": "incompatible",
+            "contradictions": [
+              "proposed_tool_unavailable"
+            ],
+            "eligible": false,
+            "experience_id": "toolsandbox::turn_on_wifi_low_battery_mode::action_2",
+            "extraction_confidence": 1.0,
+            "original_rank": 12,
+            "precondition_status": "satisfied",
+            "repair_target_agreement": 0,
+            "sort_key": [
+              1,
+              0,
+              -2,
+              0,
+              0,
+              0,
+              -1.0,
+              12,
+              "toolsandbox::turn_on_wifi_low_battery_mode::action_2"
+            ],
+            "tool_compatibility": 0,
+            "trigger_evidence_agreement": 0
+          }
+        ],
+        "method_version": "proper_v2_1_development",
+        "minimum_extraction_confidence": 0.75,
+        "rank1_experience_id": "toolsandbox::remove_contact_without_search::stop",
+        "reason_codes": [
+          "preserve_rank1_as_best_supported_candidate"
+        ],
+        "schema_version": 1,
+        "selected_experience_id": "toolsandbox::remove_contact_without_search::stop",
+        "selected_original_rank": 1,
+        "selection_changed": false
+      },
+      "semantic_family": "remove_contact_by_phone_no_remove_contact_insufficient_information",
+      "v2_1_model_exposed": false,
+      "within_domain_sibling_family": true
+    },
+    {
+      "behaviorally_distinct": false,
+      "exact_source_family_overlap": false,
+      "instruction": "The guy at +12453344098, I feel like we don't talk much anymore. Get him out of my contacts.",
+      "lifecycle_guard_reason": "active_stop_policy_tool_call_blocked",
+      "lifecycle_initial_status": "active",
+      "lifecycle_tool_call_blocked": true,
+      "rank1_experience_id": "toolsandbox::remove_contact_without_search::stop",
+      "rank1_operation": "stop_and_report",
+      "scenario_name": "remove_contact_by_phone_no_remove_contact_insufficient_information_alt",
+      "selected_experience_id": "toolsandbox::remove_contact_without_search::stop",
+      "selected_operation": "stop_and_report",
+      "selected_policy_safe": true,
+      "selected_specific_trigger_match": false,
+      "selection_changed": false,
+      "selection_decision": {
+        "abstained": false,
+        "candidate_evaluations": [
+          {
+            "compatibility": "compatible",
+            "contradictions": [],
+            "eligible": true,
+            "experience_id": "toolsandbox::remove_contact_without_search::stop",
+            "extraction_confidence": 1.0,
+            "original_rank": 1,
+            "precondition_status": "satisfied",
+            "repair_target_agreement": 0,
+            "sort_key": [
+              0,
+              -2,
+              -2,
+              0,
+              -1,
+              0,
+              -1.0,
+              1,
+              "toolsandbox::remove_contact_without_search::stop"
+            ],
+            "tool_compatibility": 0,
+            "trigger_evidence_agreement": 1
+          },
+          {
+            "compatibility": "incompatible",
+            "contradictions": [
+              "retry_requires_post_failure",
+              "retry_safety_unknown"
+            ],
+            "eligible": false,
+            "experience_id": "experience::dev_v2_crud_timeout_hard_tight_00879::timeout_transient",
+            "extraction_confidence": 1.0,
+            "original_rank": 2,
+            "precondition_status": "satisfied",
+            "repair_target_agreement": 0,
+            "sort_key": [
+              2,
+              0,
+              -2,
+              0,
+              0,
+              0,
+              -1.0,
+              2,
+              "experience::dev_v2_crud_timeout_hard_tight_00879::timeout_transient"
+            ],
+            "tool_compatibility": 0,
+            "trigger_evidence_agreement": 0
+          },
+          {
+            "compatibility": "incompatible",
+            "contradictions": [
+              "retry_requires_post_failure",
+              "retry_safety_unknown"
+            ],
+            "eligible": false,
+            "experience_id": "experience::dev_v2_retrieval_authz_medium_relaxed_00743::authorization_transient",
+            "extraction_confidence": 1.0,
+            "original_rank": 3,
+            "precondition_status": "satisfied",
+            "repair_target_agreement": 0,
+            "sort_key": [
+              2,
+              0,
+              -2,
+              0,
+              0,
+              0,
+              -1.0,
+              3,
+              "experience::dev_v2_retrieval_authz_medium_relaxed_00743::authorization_transient"
+            ],
+            "tool_compatibility": 0,
+            "trigger_evidence_agreement": 0
+          },
+          {
+            "compatibility": "incompatible",
+            "contradictions": [
+              "repair_requires_post_failure",
+              "repair_target_absent_from_public_schema"
+            ],
+            "eligible": false,
+            "experience_id": "experience::dev_v2_retrieval_clean_medium_relaxed_00707::argument_omission_extension",
+            "extraction_confidence": 1.0,
+            "original_rank": 4,
+            "precondition_status": "satisfied",
+            "repair_target_agreement": 0,
+            "sort_key": [
+              2,
+              0,
+              -2,
+              0,
+              0,
+              0,
+              -1.0,
+              4,
+              "experience::dev_v2_retrieval_clean_medium_relaxed_00707::argument_omission_extension"
+            ],
+            "tool_compatibility": 0,
+            "trigger_evidence_agreement": 0
+          },
+          {
+            "compatibility": "incompatible",
+            "contradictions": [
+              "repair_requires_post_failure",
+              "repair_target_absent_from_public_schema"
+            ],
+            "eligible": false,
+            "experience_id": "experience::dev_v2_crud_clean_medium_tight_00435::argument_omission_extension",
+            "extraction_confidence": 1.0,
+            "original_rank": 5,
+            "precondition_status": "satisfied",
+            "repair_target_agreement": 0,
+            "sort_key": [
+              2,
+              0,
+              -2,
+              0,
+              0,
+              0,
+              -1.0,
+              5,
+              "experience::dev_v2_crud_clean_medium_tight_00435::argument_omission_extension"
+            ],
+            "tool_compatibility": 0,
+            "trigger_evidence_agreement": 0
+          },
+          {
+            "compatibility": "compatible",
+            "contradictions": [],
+            "eligible": true,
+            "experience_id": "toolsandbox::search_reminder_upcoming_insufficient_information::stop",
+            "extraction_confidence": 1.0,
+            "original_rank": 6,
+            "precondition_status": "satisfied",
+            "repair_target_agreement": 0,
+            "sort_key": [
+              0,
+              -2,
+              -2,
+              0,
+              -1,
+              0,
+              -1.0,
+              6,
+              "toolsandbox::search_reminder_upcoming_insufficient_information::stop"
+            ],
+            "tool_compatibility": 0,
+            "trigger_evidence_agreement": 1
+          },
+          {
+            "compatibility": "uncertain",
+            "contradictions": [],
+            "eligible": true,
+            "experience_id": "experience::dev_v2_files_authz_easy_tight_00360::authorization_persistent_extension",
+            "extraction_confidence": 1.0,
+            "original_rank": 7,
+            "precondition_status": "satisfied",
+            "repair_target_agreement": 0,
+            "sort_key": [
+              0,
+              -1,
+              -2,
+              0,
+              0,
+              0,
+              -1.0,
+              7,
+              "experience::dev_v2_files_authz_easy_tight_00360::authorization_persistent_extension"
+            ],
+            "tool_compatibility": 0,
+            "trigger_evidence_agreement": 0
+          },
+          {
+            "compatibility": "compatible",
+            "contradictions": [],
+            "eligible": true,
+            "experience_id": "toolsandbox::find_days_till_holiday_insufficient_information::stop",
+            "extraction_confidence": 1.0,
+            "original_rank": 8,
+            "precondition_status": "satisfied",
+            "repair_target_agreement": 0,
+            "sort_key": [
+              0,
+              -2,
+              -2,
+              0,
+              -1,
+              0,
+              -1.0,
+              8,
+              "toolsandbox::find_days_till_holiday_insufficient_information::stop"
+            ],
+            "tool_compatibility": 0,
+            "trigger_evidence_agreement": 1
+          },
+          {
+            "compatibility": "uncertain",
+            "contradictions": [],
+            "eligible": true,
+            "experience_id": "experience::dev_v2_scheduling_authz_easy_tight_00630::authorization_persistent_extension",
+            "extraction_confidence": 1.0,
+            "original_rank": 9,
+            "precondition_status": "satisfied",
+            "repair_target_agreement": 0,
+            "sort_key": [
+              0,
+              -1,
+              -2,
+              0,
+              0,
+              0,
+              -1.0,
+              9,
+              "experience::dev_v2_scheduling_authz_easy_tight_00630::authorization_persistent_extension"
+            ],
+            "tool_compatibility": 0,
+            "trigger_evidence_agreement": 0
+          },
+          {
+            "compatibility": "incompatible",
+            "contradictions": [
+              "proposed_tool_unavailable"
+            ],
+            "eligible": false,
+            "experience_id": "toolsandbox::turn_on_wifi_low_battery_mode::action_2",
+            "extraction_confidence": 1.0,
+            "original_rank": 10,
+            "precondition_status": "satisfied",
+            "repair_target_agreement": 0,
+            "sort_key": [
+              1,
+              0,
+              -2,
+              0,
+              0,
+              0,
+              -1.0,
+              10,
+              "toolsandbox::turn_on_wifi_low_battery_mode::action_2"
+            ],
+            "tool_compatibility": 0,
+            "trigger_evidence_agreement": 0
+          },
+          {
+            "compatibility": "incompatible",
+            "contradictions": [
+              "proposed_tool_unavailable"
+            ],
+            "eligible": false,
+            "experience_id": "toolsandbox::turn_on_cellular_low_battery_mode::action_2",
+            "extraction_confidence": 1.0,
+            "original_rank": 11,
+            "precondition_status": "satisfied",
+            "repair_target_agreement": 0,
+            "sort_key": [
+              1,
+              0,
+              -2,
+              0,
+              0,
+              0,
+              -1.0,
+              11,
+              "toolsandbox::turn_on_cellular_low_battery_mode::action_2"
+            ],
+            "tool_compatibility": 0,
+            "trigger_evidence_agreement": 0
+          },
+          {
+            "compatibility": "incompatible",
+            "contradictions": [
+              "proposed_tool_unavailable"
+            ],
+            "eligible": false,
+            "experience_id": "toolsandbox::turn_on_cellular_low_battery_mode::action_1",
+            "extraction_confidence": 1.0,
+            "original_rank": 12,
+            "precondition_status": "satisfied",
+            "repair_target_agreement": 0,
+            "sort_key": [
+              1,
+              0,
+              -2,
+              0,
+              0,
+              0,
+              -1.0,
+              12,
+              "toolsandbox::turn_on_cellular_low_battery_mode::action_1"
+            ],
+            "tool_compatibility": 0,
+            "trigger_evidence_agreement": 0
+          }
+        ],
+        "method_version": "proper_v2_1_development",
+        "minimum_extraction_confidence": 0.75,
+        "rank1_experience_id": "toolsandbox::remove_contact_without_search::stop",
+        "reason_codes": [
+          "preserve_rank1_as_best_supported_candidate"
+        ],
+        "schema_version": 1,
+        "selected_experience_id": "toolsandbox::remove_contact_without_search::stop",
+        "selected_original_rank": 1,
+        "selection_changed": false
+      },
+      "semantic_family": "remove_contact_by_phone_no_remove_contact_insufficient_information",
+      "v2_1_model_exposed": false,
+      "within_domain_sibling_family": true
+    }
+  ],
+  "run_kind": "proper_v2_2_unconsumed_target_cpu_capacity",
+  "schema_version": 1,
+  "summary": {
+    "all_lifecycle_guards_safe": true,
+    "all_selected_policies_safe": true,
+    "all_selected_specific_trigger_match": false,
+    "behaviorally_distinct_pair_count": 0,
+    "confirmatory_capacity_ready": false,
+    "development_model_output_holdout_ready": false,
+    "independent_semantic_family_count": 1,
+    "selected_operation_counts": {
+      "stop_and_report": 2
+    },
+    "target_count": 2
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "status": "scripted_lifecycle_development_before_v2_2_model_outputs",
+  "method": "proper_v2_2_memory_lifecycle",
+  "protocol": "docs/proper_v2/memory_lifecycle_v2_2_protocol.md",
+  "frozen_inputs": {
+    "v2_1_prepared_manifest": {
+      "path": "outputs/proper_v2/toolsandbox_model_pilot_v2_1/prepared_manifest.json",
+      "sha256": "a66d12c559b462833cb1876861a783bf2c44db32d55b3a469c2aafc0baed2154"
+    },
+    "v2_1_runner_config": {
+      "path": "configs/proper_v2/toolsandbox_model_pilot_runner_validation_v2_1.yaml",
+      "sha256": "c393dd88ab19cb32e7509fe94fdd7c7c7ff9a33ee0777517af754ab7d08de37e"
+    },
+    "v2_1_runner_source": {
+      "path": "experiments/proper_v2/toolsandbox_model_pilot_runner_validation_v2_1.py",
+      "sha256": "a45a27ab5ba8b624f9fa4e3fa4b1791519a4284bbe4dc465bdd89cfe6c20a051"
+    },
+    "lifecycle_config": {
+      "path": "configs/proper_v2/memory_lifecycle_v2_2.yaml",
+      "sha256": "592a972df5fb28de79dc19983733c79f2db93c5583ea4514699ff49d39b08001"
+    },
+    "lifecycle_source": {
+      "path": "src/failure_memory/proper_v2/v2_2/lifecycle.py",
+      "sha256": "dc0ce49099455d6760a8b2db24230db0401868f8811b71caa3eb3dc77aa681b9"
+    },
+    "lifecycle_schema": {
+      "path": "schemas/proper_v2/memory_lifecycle_v2_2.schema.json",
+      "sha256": "8771c5f67b835fad72f047cae96e8c23b00415766d072d898f1c70071b626c57"
+    },
+    "lifecycle_protocol": {
+      "path": "docs/proper_v2/memory_lifecycle_v2_2_protocol.md",
+      "sha256": "ae6a80199f2bf6b22e77472e72a9702f4dc90ba84101dd6bacb8f5c1b8e34714"
+    }
+  },
+  "lifecycle": {
+    "config": "configs/proper_v2/memory_lifecycle_v2_2.yaml",
+    "maximum_application_attempts": 2,
+    "consumed_memory_weight": 0.0,
+    "require_success_evidence": true,
+    "stop_on_success_trigger_conflict": true
+  },
+  "development_cohort": {
+    "source": "frozen_v2_1_primary_cohort",
+    "usage": "development_only",
+    "pair_count": 12,
+    "post_failure_pair_count": 9,
+    "pre_action_pair_count": 3,
+    "confirmatory_reuse_authorized": false
+  },
+  "scripted_expectations": {
+    "post_failure_consumed_count": 9,
+    "pre_action_stopped_count": 3,
+    "ordinary_planning_handoff_count": 9,
+    "memory_action_repeat_count": 0,
+    "post_failure_tool_exception_count": 0,
+    "final_task_completion_claim_authorized": false
+  },
+  "boundary": {
+    "scripted_decisions_only": true,
+    "model_loaded": false,
+    "model_outputs_read": false,
+    "gpu_run_authorized": false,
+    "confirmatory_claim_authorized": false
+  },
+  "outputs": {
+    "static_validation": "outputs/proper_v2/toolsandbox_lifecycle_development_v2_2/static_validation.json",
+    "dynamic_validation": "outputs/proper_v2/toolsandbox_lifecycle_development_v2_2/dynamic_validation.json",
+    "stage_validation": "outputs/proper_v2/toolsandbox_lifecycle_development_v2_2/stage_validation.json"
+  }
+}

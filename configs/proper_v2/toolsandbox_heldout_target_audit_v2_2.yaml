@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "status": "heldout_target_audit_before_v2_2_model_outputs",
+  "purpose": "identify_unconsumed_targets_for_future_validation",
+  "frozen_inputs": {
+    "dynamic_inventory": {
+      "path": "outputs/proper_v2/toolsandbox_dynamic_pilot/inventory.json",
+      "sha256": "b5d8cbcff96b82c005046596fd0d742feed328f513f685543727a11c3002be99"
+    },
+    "phase_aware_capacity": {
+      "path": "outputs/proper_v2/toolsandbox_selector_capacity_v2_1/screening.json",
+      "sha256": "9a26b4c95b8a8f34ab184cebc175f0e63a78af11e10c67d295a56cb3eb7c0983"
+    },
+    "v2_1_prepared_manifest": {
+      "path": "outputs/proper_v2/toolsandbox_model_pilot_v2_1/prepared_manifest.json",
+      "sha256": "a66d12c559b462833cb1876861a783bf2c44db32d55b3a469c2aafc0baed2154"
+    }
+  },
+  "exclusion_order": [
+    "v2_1_model_exposed_development_target",
+    "memory_source_family_overlap",
+    "behaviorally_nonidentifiable_preservation_target"
+  ],
+  "eligibility": {
+    "require_not_model_exposed": true,
+    "require_no_memory_source_family_overlap": true,
+    "require_behaviorally_distinct_intervention": true,
+    "allow_capacity_screened_input_holdout": true
+  },
+  "expected_current_inventory": {
+    "scenario_count": 31,
+    "v2_1_model_exposed_count": 12,
+    "memory_source_family_overlap_count": 10,
+    "preservation_only_count": 7,
+    "requires_capacity_screening_count": 2,
+    "eligible_effect_validation_count": 0
+  },
+  "boundary": {
+    "model_outputs_read": false,
+    "target_scenarios_played": false,
+    "gpu_run_authorized": false,
+    "confirmatory_run_authorized": false,
+    "acquisition_required_if_no_eligible_target": true
+  },
+  "output": {
+    "path": "outputs/proper_v2/toolsandbox_heldout_target_audit_v2_2/audit.json"
+  }
+}

@@ -1,0 +1,449 @@
+{
+  "audit_passed": true,
+  "boundary": {
+    "acquisition_required_if_no_eligible_target": true,
+    "confirmatory_run_authorized": false,
+    "gpu_run_authorized": false,
+    "model_outputs_read": false,
+    "target_scenarios_played": false
+  },
+  "checks": {
+    "eligible_effect_validation_count": true,
+    "memory_source_family_overlap_count": true,
+    "preservation_only_count": true,
+    "requires_capacity_screening_count": true,
+    "scenario_count": true,
+    "v2_1_model_exposed_count": true
+  },
+  "heldout_effect_validation_ready": false,
+  "identities": {
+    "config_sha256": "3b16284b9a6b5de1a6a01ca0dd9760b59e3343d73cd0497c223f46aa43bba672",
+    "frozen_input_sha256": {
+      "dynamic_inventory": "b5d8cbcff96b82c005046596fd0d742feed328f513f685543727a11c3002be99",
+      "phase_aware_capacity": "9a26b4c95b8a8f34ab184cebc175f0e63a78af11e10c67d295a56cb3eb7c0983",
+      "v2_1_prepared_manifest": "a66d12c559b462833cb1876861a783bf2c44db32d55b3a469c2aafc0baed2154"
+    }
+  },
+  "interpretation_limits": {
+    "no_model_outputs_read": true,
+    "preservation_targets_are_not_effect_identifiable": true,
+    "source_family_targets_are_not_held_out": true,
+    "zero_eligible_targets_does_not_authorize_confirmation": true
+  },
+  "next_action": "screen_unconsumed_non_source_targets_without_model_outputs",
+  "records": [
+    {
+      "capacity_screened": false,
+      "disposition": "excluded",
+      "intervention_distinct": null,
+      "memory_source_family_overlap": true,
+      "policy_categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "reason_code": "memory_source_family_overlap",
+      "scenario_name": "find_days_till_holiday_insufficient_information",
+      "semantic_family": "find_days_till_holiday_insufficient_information",
+      "v2_1_model_exposed": false
+    },
+    {
+      "capacity_screened": false,
+      "disposition": "excluded",
+      "intervention_distinct": null,
+      "memory_source_family_overlap": true,
+      "policy_categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "reason_code": "memory_source_family_overlap",
+      "scenario_name": "find_days_till_holiday_insufficient_information_alt",
+      "semantic_family": "find_days_till_holiday_insufficient_information",
+      "v2_1_model_exposed": false
+    },
+    {
+      "capacity_screened": true,
+      "disposition": "excluded",
+      "intervention_distinct": true,
+      "memory_source_family_overlap": false,
+      "policy_categories": [
+        "STATE_DEPENDENCY"
+      ],
+      "reason_code": "v2_1_model_exposed_development_target",
+      "scenario_name": "find_days_till_holiday_wifi_off",
+      "semantic_family": "find_days_till_holiday_wifi_off",
+      "v2_1_model_exposed": true
+    },
+    {
+      "capacity_screened": true,
+      "disposition": "excluded",
+      "intervention_distinct": true,
+      "memory_source_family_overlap": false,
+      "policy_categories": [
+        "STATE_DEPENDENCY"
+      ],
+      "reason_code": "v2_1_model_exposed_development_target",
+      "scenario_name": "find_days_till_holiday_wifi_off_alt",
+      "semantic_family": "find_days_till_holiday_wifi_off",
+      "v2_1_model_exposed": true
+    },
+    {
+      "capacity_screened": true,
+      "disposition": "excluded",
+      "intervention_distinct": true,
+      "memory_source_family_overlap": false,
+      "policy_categories": [
+        "STATE_DEPENDENCY"
+      ],
+      "reason_code": "v2_1_model_exposed_development_target",
+      "scenario_name": "find_days_till_holiday_wifi_off_multiple_user_turn",
+      "semantic_family": "find_days_till_holiday_wifi_off",
+      "v2_1_model_exposed": true
+    },
+    {
+      "capacity_screened": true,
+      "disposition": "preservation_only",
+      "intervention_distinct": false,
+      "memory_source_family_overlap": false,
+      "policy_categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "reason_code": "behaviorally_nonidentifiable_preservation_target",
+      "scenario_name": "modify_contact_with_message_recency_insufficient_information",
+      "semantic_family": "modify_contact_with_message_recency_insufficient_information",
+      "v2_1_model_exposed": false
+    },
+    {
+      "capacity_screened": true,
+      "disposition": "preservation_only",
+      "intervention_distinct": false,
+      "memory_source_family_overlap": false,
+      "policy_categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "reason_code": "behaviorally_nonidentifiable_preservation_target",
+      "scenario_name": "modify_contact_with_message_recency_insufficient_information_alt",
+      "semantic_family": "modify_contact_with_message_recency_insufficient_information",
+      "v2_1_model_exposed": false
+    },
+    {
+      "capacity_screened": true,
+      "disposition": "preservation_only",
+      "intervention_distinct": false,
+      "memory_source_family_overlap": false,
+      "policy_categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "reason_code": "behaviorally_nonidentifiable_preservation_target",
+      "scenario_name": "modify_reminder_with_recency_latest_insufficient_information",
+      "semantic_family": "modify_reminder_with_recency_latest_insufficient_information",
+      "v2_1_model_exposed": false
+    },
+    {
+      "capacity_screened": false,
+      "disposition": "requires_capacity_screening",
+      "intervention_distinct": null,
+      "memory_source_family_overlap": false,
+      "policy_categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "reason_code": "unconsumed_unscreened_target",
+      "scenario_name": "remove_contact_by_phone_no_remove_contact_insufficient_information",
+      "semantic_family": "remove_contact_by_phone_no_remove_contact_insufficient_information",
+      "v2_1_model_exposed": false
+    },
+    {
+      "capacity_screened": false,
+      "disposition": "requires_capacity_screening",
+      "intervention_distinct": null,
+      "memory_source_family_overlap": false,
+      "policy_categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "reason_code": "unconsumed_unscreened_target",
+      "scenario_name": "remove_contact_by_phone_no_remove_contact_insufficient_information_alt",
+      "semantic_family": "remove_contact_by_phone_no_remove_contact_insufficient_information",
+      "v2_1_model_exposed": false
+    },
+    {
+      "capacity_screened": false,
+      "disposition": "excluded",
+      "intervention_distinct": null,
+      "memory_source_family_overlap": true,
+      "policy_categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "reason_code": "memory_source_family_overlap",
+      "scenario_name": "remove_contact_by_phone_no_search_contacts_insufficient_information",
+      "semantic_family": "remove_contact_by_phone_no_search_contacts_insufficient_information",
+      "v2_1_model_exposed": false
+    },
+    {
+      "capacity_screened": false,
+      "disposition": "excluded",
+      "intervention_distinct": null,
+      "memory_source_family_overlap": true,
+      "policy_categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "reason_code": "memory_source_family_overlap",
+      "scenario_name": "remove_contact_by_phone_no_search_contacts_insufficient_information_alt",
+      "semantic_family": "remove_contact_by_phone_no_search_contacts_insufficient_information",
+      "v2_1_model_exposed": false
+    },
+    {
+      "capacity_screened": true,
+      "disposition": "preservation_only",
+      "intervention_distinct": false,
+      "memory_source_family_overlap": false,
+      "policy_categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "reason_code": "behaviorally_nonidentifiable_preservation_target",
+      "scenario_name": "remove_reminder_with_recency_latest_insufficient_information",
+      "semantic_family": "remove_reminder_with_recency_latest_insufficient_information",
+      "v2_1_model_exposed": false
+    },
+    {
+      "capacity_screened": true,
+      "disposition": "excluded",
+      "intervention_distinct": true,
+      "memory_source_family_overlap": false,
+      "policy_categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "reason_code": "v2_1_model_exposed_development_target",
+      "scenario_name": "search_reminder_with_creation_recency_yesterday_insufficient_information",
+      "semantic_family": "search_reminder_with_creation_recency_yesterday_insufficient_information",
+      "v2_1_model_exposed": true
+    },
+    {
+      "capacity_screened": true,
+      "disposition": "excluded",
+      "intervention_distinct": true,
+      "memory_source_family_overlap": false,
+      "policy_categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "reason_code": "v2_1_model_exposed_development_target",
+      "scenario_name": "search_reminder_with_creation_recency_yesterday_insufficient_information_implicit",
+      "semantic_family": "search_reminder_with_creation_recency_yesterday_insufficient_information",
+      "v2_1_model_exposed": true
+    },
+    {
+      "capacity_screened": false,
+      "disposition": "excluded",
+      "intervention_distinct": null,
+      "memory_source_family_overlap": true,
+      "policy_categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "reason_code": "memory_source_family_overlap",
+      "scenario_name": "search_reminder_with_recency_upcoming_insufficient_information",
+      "semantic_family": "search_reminder_with_recency_upcoming_insufficient_information",
+      "v2_1_model_exposed": false
+    },
+    {
+      "capacity_screened": false,
+      "disposition": "excluded",
+      "intervention_distinct": null,
+      "memory_source_family_overlap": true,
+      "policy_categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "reason_code": "memory_source_family_overlap",
+      "scenario_name": "search_reminder_with_recency_upcoming_insufficient_information_implicit",
+      "semantic_family": "search_reminder_with_recency_upcoming_insufficient_information",
+      "v2_1_model_exposed": false
+    },
+    {
+      "capacity_screened": true,
+      "disposition": "preservation_only",
+      "intervention_distinct": false,
+      "memory_source_family_overlap": false,
+      "policy_categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "reason_code": "behaviorally_nonidentifiable_preservation_target",
+      "scenario_name": "search_reminder_with_recency_yesterday_insufficient_information",
+      "semantic_family": "search_reminder_with_recency_yesterday_insufficient_information",
+      "v2_1_model_exposed": false
+    },
+    {
+      "capacity_screened": true,
+      "disposition": "preservation_only",
+      "intervention_distinct": false,
+      "memory_source_family_overlap": false,
+      "policy_categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "reason_code": "behaviorally_nonidentifiable_preservation_target",
+      "scenario_name": "search_reminder_with_recency_yesterday_insufficient_information_implicit",
+      "semantic_family": "search_reminder_with_recency_yesterday_insufficient_information",
+      "v2_1_model_exposed": false
+    },
+    {
+      "capacity_screened": true,
+      "disposition": "excluded",
+      "intervention_distinct": true,
+      "memory_source_family_overlap": false,
+      "policy_categories": [
+        "STATE_DEPENDENCY"
+      ],
+      "reason_code": "v2_1_model_exposed_development_target",
+      "scenario_name": "send_message_with_contact_content_cellular_off",
+      "semantic_family": "send_message_with_contact_content_cellular_off",
+      "v2_1_model_exposed": true
+    },
+    {
+      "capacity_screened": true,
+      "disposition": "excluded",
+      "intervention_distinct": true,
+      "memory_source_family_overlap": false,
+      "policy_categories": [
+        "STATE_DEPENDENCY"
+      ],
+      "reason_code": "v2_1_model_exposed_development_target",
+      "scenario_name": "send_message_with_contact_content_cellular_off_alt",
+      "semantic_family": "send_message_with_contact_content_cellular_off",
+      "v2_1_model_exposed": true
+    },
+    {
+      "capacity_screened": true,
+      "disposition": "preservation_only",
+      "intervention_distinct": false,
+      "memory_source_family_overlap": false,
+      "policy_categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "reason_code": "behaviorally_nonidentifiable_preservation_target",
+      "scenario_name": "send_message_with_contact_content_cellular_off_insufficient_information",
+      "semantic_family": "send_message_with_contact_content_cellular_off_insufficient_information",
+      "v2_1_model_exposed": false
+    },
+    {
+      "capacity_screened": true,
+      "disposition": "excluded",
+      "intervention_distinct": true,
+      "memory_source_family_overlap": false,
+      "policy_categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "reason_code": "v2_1_model_exposed_development_target",
+      "scenario_name": "send_message_with_contact_content_cellular_off_insufficient_information_alt",
+      "semantic_family": "send_message_with_contact_content_cellular_off_insufficient_information",
+      "v2_1_model_exposed": true
+    },
+    {
+      "capacity_screened": true,
+      "disposition": "excluded",
+      "intervention_distinct": true,
+      "memory_source_family_overlap": false,
+      "policy_categories": [
+        "STATE_DEPENDENCY"
+      ],
+      "reason_code": "v2_1_model_exposed_development_target",
+      "scenario_name": "send_message_with_contact_content_cellular_off_multiple_user_turn",
+      "semantic_family": "send_message_with_contact_content_cellular_off",
+      "v2_1_model_exposed": true
+    },
+    {
+      "capacity_screened": true,
+      "disposition": "excluded",
+      "intervention_distinct": true,
+      "memory_source_family_overlap": false,
+      "policy_categories": [
+        "STATE_DEPENDENCY"
+      ],
+      "reason_code": "v2_1_model_exposed_development_target",
+      "scenario_name": "send_message_with_contact_content_cellular_off_multiple_user_turn_alt",
+      "semantic_family": "send_message_with_contact_content_cellular_off",
+      "v2_1_model_exposed": true
+    },
+    {
+      "capacity_screened": false,
+      "disposition": "excluded",
+      "intervention_distinct": null,
+      "memory_source_family_overlap": true,
+      "policy_categories": [
+        "STATE_DEPENDENCY"
+      ],
+      "reason_code": "memory_source_family_overlap",
+      "scenario_name": "turn_on_cellular_low_battery_mode",
+      "semantic_family": "turn_on_cellular_low_battery_mode",
+      "v2_1_model_exposed": false
+    },
+    {
+      "capacity_screened": false,
+      "disposition": "excluded",
+      "intervention_distinct": null,
+      "memory_source_family_overlap": true,
+      "policy_categories": [
+        "STATE_DEPENDENCY"
+      ],
+      "reason_code": "memory_source_family_overlap",
+      "scenario_name": "turn_on_cellular_low_battery_mode_implicit",
+      "semantic_family": "turn_on_cellular_low_battery_mode",
+      "v2_1_model_exposed": false
+    },
+    {
+      "capacity_screened": true,
+      "disposition": "excluded",
+      "intervention_distinct": true,
+      "memory_source_family_overlap": false,
+      "policy_categories": [
+        "STATE_DEPENDENCY"
+      ],
+      "reason_code": "v2_1_model_exposed_development_target",
+      "scenario_name": "turn_on_location_low_battery_mode",
+      "semantic_family": "turn_on_location_low_battery_mode",
+      "v2_1_model_exposed": true
+    },
+    {
+      "capacity_screened": true,
+      "disposition": "excluded",
+      "intervention_distinct": true,
+      "memory_source_family_overlap": false,
+      "policy_categories": [
+        "STATE_DEPENDENCY"
+      ],
+      "reason_code": "v2_1_model_exposed_development_target",
+      "scenario_name": "turn_on_location_low_battery_mode_implicit",
+      "semantic_family": "turn_on_location_low_battery_mode",
+      "v2_1_model_exposed": true
+    },
+    {
+      "capacity_screened": false,
+      "disposition": "excluded",
+      "intervention_distinct": null,
+      "memory_source_family_overlap": true,
+      "policy_categories": [
+        "STATE_DEPENDENCY"
+      ],
+      "reason_code": "memory_source_family_overlap",
+      "scenario_name": "turn_on_wifi_low_battery_mode",
+      "semantic_family": "turn_on_wifi_low_battery_mode",
+      "v2_1_model_exposed": false
+    },
+    {
+      "capacity_screened": false,
+      "disposition": "excluded",
+      "intervention_distinct": null,
+      "memory_source_family_overlap": true,
+      "policy_categories": [
+        "STATE_DEPENDENCY"
+      ],
+      "reason_code": "memory_source_family_overlap",
+      "scenario_name": "turn_on_wifi_low_battery_mode_implicit",
+      "semantic_family": "turn_on_wifi_low_battery_mode",
+      "v2_1_model_exposed": false
+    }
+  ],
+  "run_kind": "proper_v2_2_toolsandbox_heldout_target_audit",
+  "schema_version": 1,
+  "summary": {
+    "eligible_effect_validation_count": 0,
+    "memory_source_family_overlap_count": 10,
+    "preservation_only_count": 7,
+    "requires_capacity_screening_count": 2,
+    "scenario_count": 31,
+    "v2_1_model_exposed_count": 12
+  }
+}

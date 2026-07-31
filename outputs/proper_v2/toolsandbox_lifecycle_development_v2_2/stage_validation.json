@@ -1,0 +1,54 @@
+{
+  "boundary": {
+    "confirmatory_claim_authorized": false,
+    "gpu_run_authorized": false,
+    "model_loaded": false,
+    "model_outputs_read": false
+  },
+  "checks": {
+    "dynamic_toolsandbox_validation_passed": true,
+    "heldout_confirmation_not_prematurely_authorized": true,
+    "heldout_input_audit_passed": true,
+    "static_lifecycle_validation_passed": true,
+    "unit_tests_passed": true
+  },
+  "dynamic_lifecycle_summary": {
+    "memory_action_repeat_count": 0,
+    "ordinary_planning_handoff_count": 9,
+    "pair_count": 12,
+    "post_failure_consumed_count": 9,
+    "post_failure_tool_call_count": 9,
+    "post_failure_tool_exception_count": 0,
+    "pre_action_stopped_count": 3
+  },
+  "heldout_audit_summary": {
+    "eligible_effect_validation_count": 0,
+    "memory_source_family_overlap_count": 10,
+    "preservation_only_count": 7,
+    "requires_capacity_screening_count": 2,
+    "scenario_count": 31,
+    "v2_1_model_exposed_count": 12
+  },
+  "heldout_effect_validation_ready": false,
+  "mode": "full_toolsandbox",
+  "next_heldout_action": "screen_unconsumed_non_source_targets_without_model_outputs",
+  "passed": true,
+  "run_kind": "proper_v2_2_lifecycle_stage_validation",
+  "schema_version": 1,
+  "static_lifecycle_summary": {
+    "memory_action_repeat_blocked_count": 12,
+    "ordinary_planning_handoff_count": 9,
+    "pair_count": 12,
+    "post_failure_consumed_count": 9,
+    "post_failure_pair_count": 9,
+    "pre_action_pair_count": 3,
+    "pre_action_stopped_count": 3
+  },
+  "unit_tests": {
+    "error_count": 0,
+    "failure_count": 0,
+    "passed": true,
+    "skipped_count": 0,
+    "tests_run": 18
+  }
+}
