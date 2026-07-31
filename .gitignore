@@ -38,6 +38,9 @@ outputs/*
 !outputs/proper_v2/
 outputs/proper_v2/*
 !outputs/proper_v2/README.md
+!outputs/proper_v2_3/
+outputs/proper_v2_3/*
+!outputs/proper_v2_3/README.md
 rollouts/
 *.log
 !work/lab_confirmatory_gate_v1.log
@@ -52,3 +55,6 @@ rollouts/
 .idea/
 .DS_Store
 Thumbs.db
+
+# One-time remote synchronization package; frozen evidence lives in Git.
+proper_v2_remote_overlay.zip
