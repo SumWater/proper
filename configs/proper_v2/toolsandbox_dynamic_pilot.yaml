@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "status": "exploratory_mechanism_pilot_not_confirmatory_evidence",
+  "repository": {
+    "local_directory": "external/toolsandbox",
+    "revision": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+    "python_source_file_count": 46,
+    "python_source_manifest_sha256": "d7f26cdb8feedd4c2feb108206dc90314e277e011d67536b2a5d499c89e1a297"
+  },
+  "scenario_scope": {
+    "augmentation": "NO_DISTRACTION_TOOLS",
+    "policy_categories": [
+      "STATE_DEPENDENCY",
+      "INSUFFICIENT_INFORMATION"
+    ],
+    "external_tool_exclusions": [
+      "search_lat_lon",
+      "search_location_around_lat_lon",
+      "search_weather_around_lat_lon",
+      "search_stock",
+      "convert_currency"
+    ],
+    "expected_offline_counts": {
+      "STATE_DEPENDENCY": 13,
+      "INSUFFICIENT_INFORMATION": 18
+    }
+  },
+  "engineering_gate": {
+    "minimum_policy_type_count": 2,
+    "minimum_state_dependency_family_count": 5,
+    "minimum_insufficient_information_family_count": 8,
+    "require_milestones_or_minefields_for_every_scenario": true,
+    "require_snapshot_capable_context_for_every_scenario": true
+  },
+  "boundary": {
+    "isolated_environment_required": true,
+    "scenario_played": false,
+    "model_loaded": false,
+    "model_outputs_read": false,
+    "external_api_called": false,
+    "gpu_run_authorized": false,
+    "confirmatory_claim_authorized": false
+  },
+  "output": {
+    "path": "outputs/proper_v2/toolsandbox_dynamic_pilot/inventory.json"
+  }
+}

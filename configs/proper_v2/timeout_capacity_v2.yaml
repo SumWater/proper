@@ -1,0 +1,67 @@
+schema_version: 1
+status: development_cpu_capacity_before_timeout_model_outputs
+method: unified_proper_v2
+
+scope:
+  included: released_native_timeout_tasks_only
+  prior_used_base_tasks_excluded: true
+  model_output_holdout_not_unseen_input_claim: true
+
+dataset:
+  split: test_public
+  local_directory: work/toolmisusebench_test
+  local_filename: test_public.jsonl
+  expected_task_count: 1200
+  expected_bytes: 1695141
+  sha256: 12c5e1e93926f4089dfc8d0c60cea53b556057360562375510744858fc6f1161
+
+memory_bank:
+  split: dev
+  source_count: 100
+  prepared_manifest: work/memory_bank_prepared.json
+  prepared_manifest_sha256: da06c6538fb8494a1ab50fee9d4a97d74f6a4e6f7ee161b014cec97d7c459011
+  top_k: 10
+
+prior_result_exclusions:
+  - name: argument_omission
+    result: outputs/proper_v1/confirmatory_gate_v1/results.json
+    result_sha256: 6e44ef0eba2bf7efeed7163d61a621d2a1a5385b6aa507f7ce0417222d2fceb8
+    expected_source_task_count: 189
+  - name: transient_authorization
+    result: outputs/proper_v1/confirmatory_transient_authz_v1/results.json
+    result_sha256: 26fd9c062a3d462f7cefd164c3d9f7bc5460b06a2bd16cd66e5b177e1c0cd276
+    expected_source_task_count: 175
+
+selector:
+  minimum_extraction_confidence: 0.75
+  candidate_representation: deterministic_public_v1_parser_to_v2_policy_card
+  timeout_retry_public_contract:
+    error_code: timeout
+    requires_positive_retry_budget: true
+    benchmark_failure_phase: before_tool_execution
+    no_tool_side_effect_before_timeout_error: true
+  forbidden_inputs:
+    - provenance
+    - fault_plan
+    - fault_type
+    - recoverability
+    - environment_applicability
+    - recovery_outcome
+
+capacity_gate:
+  minimum_valid_native_targets: 50
+  minimum_selection_changed_pairs: 20
+  preferred_selection_changed_pairs: 30
+  minimum_changed_pair_distinct_tools: 3
+  minimum_selected_memory_count: 3
+  maximum_single_selected_memory_share: 0.5
+
+boundary:
+  cohort_fault_label_used_evaluator_side_only: true
+  selector_hidden_labels_forbidden: true
+  model_loaded: false
+  model_outputs_read: false
+  gpu_run_authorized: false
+
+outputs:
+  screening: outputs/proper_v2/timeout_capacity_v2/screening.json

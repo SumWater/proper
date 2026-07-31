@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "status": "proper_v2_1_phase_aware_cpu_capacity_before_model_outputs",
+  "base_behavioral_capacity_config": {
+    "path": "configs/proper_v2/toolsandbox_selector_capacity_v2.yaml",
+    "sha256": "f2151f92ed6ea11cadebe65354e1664a9efc397f240280669870dcd488371474"
+  },
+  "method_sources": {
+    "contracts": {
+      "path": "src/failure_memory/proper_v2/contracts.py",
+      "sha256": "777eea54f06ede1c626869737f26d24a1502a8dd30d5118dd28b12c803251f54"
+    },
+    "compatibility": {
+      "path": "src/failure_memory/proper_v2/compatibility.py",
+      "sha256": "056b119a8a401a913e44dec73901cb18dc5fc8dc8bd128a17c56da7dd57cecf5"
+    },
+    "selector": {
+      "path": "src/failure_memory/proper_v2/selector.py",
+      "sha256": "8abed366cd89b284f6c353191d1df2e586cb0d761ed2a9b978076b2106003b22"
+    }
+  },
+  "phase_mapping": {
+    "invoke_prerequisite": "post_failure",
+    "stop_and_report": "pre_action"
+  },
+  "expected": {
+    "valid_target_count": 19,
+    "post_failure_count": 9,
+    "pre_action_count": 10,
+    "minimum_intervention_distinct_count": 12,
+    "minimum_post_failure_intervention_count": 9,
+    "minimum_pre_action_intervention_count": 3,
+    "required_method_version": "proper_v2_1_development"
+  },
+  "boundary": {
+    "cpu_only": true,
+    "target_scenario_played": false,
+    "model_loaded": false,
+    "model_outputs_read": false,
+    "external_api_called": false,
+    "gpu_run_authorized": false,
+    "confirmatory_claim_authorized": false
+  },
+  "output": {
+    "path": "outputs/proper_v2/toolsandbox_selector_capacity_v2_1/screening.json"
+  }
+}

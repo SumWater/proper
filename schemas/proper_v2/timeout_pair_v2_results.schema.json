@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://proper.local/schemas/proper_v2/timeout_pair_v2_results.schema.json",
+  "title": "PROPER v2 Timeout Paired Results",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "run_kind",
+    "identities",
+    "screening",
+    "primary_comparison",
+    "descriptive_all_targets",
+    "secondary_outcomes",
+    "model_output_parse_failure_count",
+    "model_call_count",
+    "records"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "run_kind": {"const": "proper_v2_timeout_pair_results"},
+    "identities": {"type": "object"},
+    "screening": {"type": "object"},
+    "primary_comparison": {"$ref": "#/$defs/comparison"},
+    "descriptive_all_targets": {"$ref": "#/$defs/comparison"},
+    "secondary_outcomes": {"type": "object"},
+    "model_output_parse_failure_count": {"type": "integer", "minimum": 0},
+    "model_call_count": {"const": 209},
+    "records": {
+      "type": "array",
+      "minItems": 177,
+      "maxItems": 177,
+      "items": {"type": "object"}
+    }
+  },
+  "$defs": {
+    "comparison": {
+      "type": "object",
+      "required": [
+        "pair_count",
+        "baseline_recovery_validity_count",
+        "proper_recovery_validity_count",
+        "paired_positive_transfer_count",
+        "paired_negative_transfer_count",
+        "paired_risk_difference",
+        "paired_risk_difference_ci95",
+        "exact_mcnemar_two_sided_p",
+        "directional_hypothesis_supported",
+        "hypothesis_direction"
+      ],
+      "properties": {
+        "pair_count": {"type": "integer", "minimum": 0},
+        "baseline_recovery_validity_count": {"type": "integer", "minimum": 0},
+        "proper_recovery_validity_count": {"type": "integer", "minimum": 0},
+        "paired_positive_transfer_count": {"type": "integer", "minimum": 0},
+        "paired_negative_transfer_count": {"type": "integer", "minimum": 0},
+        "paired_risk_difference": {"type": "number"},
+        "paired_risk_difference_ci95": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {"type": "number"}
+        },
+        "exact_mcnemar_two_sided_p": {"type": "number", "minimum": 0, "maximum": 1},
+        "directional_hypothesis_supported": {"type": "boolean"},
+        "hypothesis_direction": {"const": "ppt_greater_than_pnt"},
+        "confirmatory_test_performed": {"type": "boolean"}
+      }
+    }
+  }
+}
+

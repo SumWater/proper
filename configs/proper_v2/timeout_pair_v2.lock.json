@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "status": "frozen_before_timeout_model_outputs",
+  "formal_config": {
+    "path": "configs/proper_v2/timeout_pair_v2_formal.yaml",
+    "sha256": "3fd3244c4e17fbef2e390ce88def506d6fe8aa65e1d06cecb8cb87cc90593a27"
+  },
+  "formal_runner": {
+    "path": "experiments/proper_v2/timeout_pair_v2.py",
+    "sha256": "269d540568080f19e7c978aa0a1417ae236a6697c517e0044ead85c37c254778"
+  },
+  "preparation_config": {
+    "path": "configs/proper_v2/timeout_pair_v2.yaml",
+    "sha256": "31229bac2778ad8f12fcac8f474c2654ee49d96864c4c7f0ede5a2ecb1b5a0a0"
+  },
+  "preparation_runner": {
+    "path": "experiments/proper_v2/timeout_pair_preparation_v2.py",
+    "sha256": "1318bfb90777e50a2ef5632382a946d545b26259540cc2ce1824ea209988caff"
+  },
+  "prepared_manifest": {
+    "path": "work/timeout_pair_v2_prepared.json",
+    "sha256": "18a7ad8c26fb0bcf17e308a24830d591cd7e017f35664e311d6bcc0fe639a0c3",
+    "payload_sha256": "195012ac8f2d815f7c38e8c42c76c9a84ad6dbb8eb0d6471496b2ae1825d1e7d"
+  },
+  "preparation_screening": {
+    "path": "outputs/proper_v2/timeout_pair_v2/screening.json",
+    "sha256": "1cbe8a6bf780cbd9467ad7acb6153eff7f33f87d73092099a970b90cb76f9085"
+  },
+  "capacity_config": {
+    "path": "configs/proper_v2/timeout_capacity_v2.yaml",
+    "sha256": "d95bc48cc442517b7fca868cf9b6500111cc2f0ca20643273ff4c57e34498292"
+  },
+  "capacity_screening": {
+    "path": "outputs/proper_v2/timeout_capacity_v2/screening.json",
+    "sha256": "72c2ffe725df3697de9c5cf9516c7e7a3a2f57052fe2ae3c5889d670fb312db9"
+  },
+  "protocol": {
+    "path": "docs/proper_v2/timeout_pair_v2_protocol.md",
+    "sha256": "5ca970ee1e578b7327dfd2e862223e0a7f43571f957fd7539fc43b5994fcfbae"
+  },
+  "result_schema": {
+    "path": "schemas/proper_v2/timeout_pair_v2_results.schema.json",
+    "sha256": "9ce490ca04b187159c86607021470b3b11cb7d33e1c6c08bacf76db45749b341"
+  },
+  "source_manifest": {
+    "path": "configs/proper_v2/timeout_pair_v2_source.sha256",
+    "sha256": "37af0ab4548e4b6e5cda7f142a653e31625cf64c70e84bc625e63020c3c4d4e1"
+  },
+  "toolmisusebench_source_manifest": {
+    "path": "configs/proper_v1/toolmisusebench_source.runtime.sha256",
+    "sha256": "5bcd5fb7f3c5428c8a4d23547a4fc4de826f25abbf46fa072fc74637f0ff1b2f"
+  },
+  "environment_lock": {
+    "path": "configs/proper_v1/confirmatory_transient_authz_v1.environment.lock.json",
+    "sha256": "b06394e92c8e84b7221d14d6fc5e4b45083102e9c73ba58b39d3bf544615c0e1"
+  },
+  "model_manifest": {
+    "path": "configs/proper_v1/qwen3_8b_model.sha256",
+    "sha256": "aa3e07db476dac6f3af8ad14958cb6febee947243f4bc29d7f6c5eda5c92e4ba"
+  },
+  "counts": {
+    "all_target_count": 177,
+    "primary_pair_count": 32,
+    "planned_model_call_count": 209,
+    "global_distinct_prompt_count": 198
+  },
+  "model_outputs_generated": false,
+  "gpu_run_authorized": true,
+  "result_must_not_overwrite_prior_evidence": true
+}

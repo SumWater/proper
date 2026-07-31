@@ -1,0 +1,2662 @@
+{
+  "all_readiness_checks_met": false,
+  "boundary": {
+    "dependencies_installed": false,
+    "external_api_called": false,
+    "gpu_run_authorized": false,
+    "model_loaded": false,
+    "model_outputs_read": false,
+    "static_source_only": true
+  },
+  "identities": {
+    "config_sha256": "5f87026b6733f18a261a546b4ced06963ca73473bfe2e3de7e300175dd27dbf1",
+    "pyproject_sha256": "15e712fb4854ebc24fbf17db9de38e4d2619c444d2fdd6fb8b078511fce0b3f2",
+    "repository_revision": "165848b9a78cead7ca7fe7c89c688b58e6501219"
+  },
+  "interpretation_limits": {
+    "policy_mapping_requires_dynamic_validation": true,
+    "static_scenario_count_is_not_model_effect_evidence": true,
+    "static_scenario_count_is_not_selector_capacity": true
+  },
+  "planning_decision": {
+    "native_cross_policy_capacity_present": true,
+    "native_switch_or_fallback_capacity_present": false,
+    "next_action": "stop_or_narrow_toolsandbox_scope"
+  },
+  "python_311_declared": true,
+  "readiness_checks": {
+    "explicit_implicit_pair_capacity_met": true,
+    "insufficient_information_capacity_met": true,
+    "milestone_dag_supported": true,
+    "minefield_supported": true,
+    "python_311_declared": true,
+    "snapshot_history_supported": true,
+    "state_dependency_capacity_met": false,
+    "state_dependency_tool_diversity_met": true,
+    "state_dependency_tool_set_diversity_met": false
+  },
+  "records": [
+    {
+      "base_scenario": "base",
+      "categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "find_current_city_insufficient_information",
+      "offline_eligible": false,
+      "requires_external_api": true,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/insufficient_information_scenarios.py",
+      "source_line": 42,
+      "tools": [
+        "search_lat_lon"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "find_current_location_insufficient_information",
+      "offline_eligible": false,
+      "requires_external_api": true,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/insufficient_information_scenarios.py",
+      "source_line": 91,
+      "tools": [
+        "search_lat_lon"
+      ]
+    },
+    {
+      "base_scenario": "base_low_battery_mode_on_wifi_off_location_service_off_cellular_off",
+      "categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "find_current_city_low_battery_mode_insufficient_information",
+      "offline_eligible": false,
+      "requires_external_api": true,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/insufficient_information_scenarios.py",
+      "source_line": 140,
+      "tools": [
+        "search_lat_lon",
+        "set_location_service_status",
+        "set_low_battery_mode_status",
+        "set_wifi_status"
+      ]
+    },
+    {
+      "base_scenario": "base_low_battery_mode_on_wifi_off_location_service_off_cellular_off",
+      "categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "find_current_location_low_battery_mode_insufficient_information",
+      "offline_eligible": false,
+      "requires_external_api": true,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/insufficient_information_scenarios.py",
+      "source_line": 193,
+      "tools": [
+        "search_lat_lon",
+        "set_location_service_status",
+        "set_low_battery_mode_status",
+        "set_wifi_status"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "find_min_temperature_weekday_insufficient_information",
+      "offline_eligible": false,
+      "requires_external_api": true,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/insufficient_information_scenarios.py",
+      "source_line": 246,
+      "tools": [
+        "search_weather_around_lat_lon",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "find_min_temperature_weekday_insufficient_information_alt",
+      "offline_eligible": false,
+      "requires_external_api": true,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/insufficient_information_scenarios.py",
+      "source_line": 299,
+      "tools": [
+        "search_weather_around_lat_lon",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "find_days_till_holiday_insufficient_information",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/insufficient_information_scenarios.py",
+      "source_line": 352,
+      "tools": [
+        "search_holiday",
+        "timestamp_diff"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "find_days_till_holiday_insufficient_information_alt",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/insufficient_information_scenarios.py",
+      "source_line": 401,
+      "tools": [
+        "search_holiday",
+        "timestamp_diff"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "find_temperature_f_with_location_insufficient_information",
+      "offline_eligible": false,
+      "requires_external_api": true,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/insufficient_information_scenarios.py",
+      "source_line": 450,
+      "tools": [
+        "search_location_around_lat_lon",
+        "unit_conversion"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "find_temperature_f_with_location_insufficient_information_alt",
+      "offline_eligible": false,
+      "requires_external_api": true,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/insufficient_information_scenarios.py",
+      "source_line": 498,
+      "tools": [
+        "search_location_around_lat_lon",
+        "unit_conversion"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "modify_contact_with_message_recency_insufficient_information",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/insufficient_information_scenarios.py",
+      "source_line": 546,
+      "tools": [
+        "get_current_timestamp",
+        "modify_contact",
+        "search_contacts"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "modify_contact_with_message_recency_insufficient_information_alt",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/insufficient_information_scenarios.py",
+      "source_line": 595,
+      "tools": [
+        "get_current_timestamp",
+        "modify_contact",
+        "search_contacts"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 1,
+      "minefield_count": 0,
+      "name": "remove_contact_by_phone_no_remove_contact_insufficient_information",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/insufficient_information_scenarios.py",
+      "source_line": 644,
+      "tools": [
+        "search_contacts"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 1,
+      "minefield_count": 0,
+      "name": "remove_contact_by_phone_no_remove_contact_insufficient_information_alt",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/insufficient_information_scenarios.py",
+      "source_line": 685,
+      "tools": [
+        "search_contacts"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "remove_contact_by_phone_no_search_contacts_insufficient_information",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/insufficient_information_scenarios.py",
+      "source_line": 727,
+      "tools": [
+        "remove_contact"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "remove_contact_by_phone_no_search_contacts_insufficient_information_alt",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/insufficient_information_scenarios.py",
+      "source_line": 769,
+      "tools": [
+        "remove_contact"
+      ]
+    },
+    {
+      "base_scenario": "base_cellular_off",
+      "categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "send_message_with_contact_content_cellular_off_insufficient_information",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/insufficient_information_scenarios.py",
+      "source_line": 812,
+      "tools": [
+        "get_cellular_service_status",
+        "send_message_with_phone_number",
+        "set_cellular_service_status"
+      ]
+    },
+    {
+      "base_scenario": "base_cellular_off",
+      "categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "send_message_with_contact_content_cellular_off_insufficient_information_alt",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/insufficient_information_scenarios.py",
+      "source_line": 861,
+      "tools": [
+        "get_cellular_service_status",
+        "send_message_with_phone_number",
+        "set_cellular_service_status"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "find_distance_with_location_name_insufficient_information",
+      "offline_eligible": false,
+      "requires_external_api": true,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/insufficient_information_scenarios.py",
+      "source_line": 909,
+      "tools": [
+        "calculate_lat_lon_distance",
+        "search_location_around_lat_lon"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "find_distance_with_location_name_insufficient_information_alt",
+      "offline_eligible": false,
+      "requires_external_api": true,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/insufficient_information_scenarios.py",
+      "source_line": 958,
+      "tools": [
+        "calculate_lat_lon_distance",
+        "search_location_around_lat_lon"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "search_reminder_with_recency_upcoming_insufficient_information",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/insufficient_information_scenarios.py",
+      "source_line": 1007,
+      "tools": [
+        "search_reminder",
+        "shift_timestamp",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "search_reminder_with_recency_upcoming_insufficient_information_implicit",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/insufficient_information_scenarios.py",
+      "source_line": 1091,
+      "tools": [
+        "search_reminder",
+        "shift_timestamp",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "search_reminder_with_recency_yesterday_insufficient_information",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/insufficient_information_scenarios.py",
+      "source_line": 1175,
+      "tools": [
+        "search_reminder",
+        "shift_timestamp",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "search_reminder_with_recency_yesterday_insufficient_information_implicit",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/insufficient_information_scenarios.py",
+      "source_line": 1259,
+      "tools": [
+        "search_reminder",
+        "shift_timestamp",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "search_reminder_with_creation_recency_yesterday_insufficient_information",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/insufficient_information_scenarios.py",
+      "source_line": 1343,
+      "tools": [
+        "search_reminder",
+        "shift_timestamp",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "search_reminder_with_creation_recency_yesterday_insufficient_information_implicit",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/insufficient_information_scenarios.py",
+      "source_line": 1427,
+      "tools": [
+        "search_reminder",
+        "shift_timestamp",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "modify_reminder_with_recency_latest_insufficient_information",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/insufficient_information_scenarios.py",
+      "source_line": 1511,
+      "tools": [
+        "datetime_info_to_timestamp",
+        "modify_reminder",
+        "search_reminder",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "remove_reminder_with_recency_latest_insufficient_information",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/insufficient_information_scenarios.py",
+      "source_line": 1570,
+      "tools": [
+        "datetime_info_to_timestamp",
+        "remove_reminder",
+        "search_reminder",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 2,
+      "minefield_count": 0,
+      "name": "search_message_with_recency_latest",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 61,
+      "tools": [
+        "get_current_timestamp",
+        "search_messages"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 2,
+      "minefield_count": 0,
+      "name": "search_message_with_recency_latest_alt",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 133,
+      "tools": [
+        "get_current_timestamp",
+        "search_messages"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "search_message_with_recency_oldest",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 205,
+      "tools": [
+        "get_current_timestamp",
+        "search_messages"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "search_message_with_recency_oldest_alt",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 297,
+      "tools": [
+        "get_current_timestamp",
+        "search_messages"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": 4,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 5,
+      "minefield_count": 0,
+      "name": "modify_contact_with_message_recency",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 389,
+      "tools": [
+        "get_current_timestamp",
+        "modify_contact",
+        "search_contacts",
+        "search_messages"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": 4,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 5,
+      "minefield_count": 0,
+      "name": "modify_contact_with_message_recency_alt",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 515,
+      "tools": [
+        "get_current_timestamp",
+        "modify_contact",
+        "search_contacts",
+        "search_messages"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "remove_contact_by_phone",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 641,
+      "tools": [
+        "remove_contact",
+        "search_contacts"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "remove_contact_by_phone_alt",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 717,
+      "tools": [
+        "remove_contact",
+        "search_contacts"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "remove_contact_by_phone_ambiguous",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 794,
+      "tools": [
+        "remove_contact",
+        "search_contacts"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "remove_contact_by_phone_ambiguous_alt",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 870,
+      "tools": [
+        "remove_contact",
+        "search_contacts"
+      ]
+    },
+    {
+      "base_scenario": "base_low_battery_mode_on_wifi_off_location_service_off_cellular_off",
+      "categories": [
+        "STATE_DEPENDENCY"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "turn_on_wifi_low_battery_mode",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 946,
+      "tools": [
+        "get_low_battery_mode_status",
+        "get_wifi_status",
+        "set_low_battery_mode_status",
+        "set_wifi_status"
+      ]
+    },
+    {
+      "base_scenario": "base_low_battery_mode_on_wifi_off_location_service_off_cellular_off",
+      "categories": [
+        "STATE_DEPENDENCY"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "turn_on_wifi_low_battery_mode_implicit",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 1014,
+      "tools": [
+        "get_low_battery_mode_status",
+        "get_wifi_status",
+        "set_low_battery_mode_status",
+        "set_wifi_status"
+      ]
+    },
+    {
+      "base_scenario": "base_low_battery_mode_on_wifi_off_location_service_off_cellular_off",
+      "categories": [
+        "STATE_DEPENDENCY"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "turn_on_cellular_low_battery_mode",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 1082,
+      "tools": [
+        "get_cellular_service_status",
+        "get_low_battery_mode_status",
+        "set_cellular_service_status",
+        "set_low_battery_mode_status"
+      ]
+    },
+    {
+      "base_scenario": "base_low_battery_mode_on_wifi_off_location_service_off_cellular_off",
+      "categories": [
+        "STATE_DEPENDENCY"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "turn_on_cellular_low_battery_mode_implicit",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 1150,
+      "tools": [
+        "get_cellular_service_status",
+        "get_low_battery_mode_status",
+        "set_cellular_service_status",
+        "set_low_battery_mode_status"
+      ]
+    },
+    {
+      "base_scenario": "base_low_battery_mode_on_wifi_off_location_service_off_cellular_off",
+      "categories": [
+        "STATE_DEPENDENCY"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "turn_on_location_low_battery_mode",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 1218,
+      "tools": [
+        "get_location_service_status",
+        "get_low_battery_mode_status",
+        "set_location_service_status",
+        "set_low_battery_mode_status"
+      ]
+    },
+    {
+      "base_scenario": "base_low_battery_mode_on_wifi_off_location_service_off_cellular_off",
+      "categories": [
+        "STATE_DEPENDENCY"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "turn_on_location_low_battery_mode_implicit",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 1286,
+      "tools": [
+        "get_location_service_status",
+        "get_low_battery_mode_status",
+        "set_location_service_status",
+        "set_low_battery_mode_status"
+      ]
+    },
+    {
+      "base_scenario": "base_cellular_off",
+      "categories": [
+        "STATE_DEPENDENCY"
+      ],
+      "explicit_milestone_edge_count": 3,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 4,
+      "minefield_count": 0,
+      "name": "send_message_with_contact_content_cellular_off",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 1355,
+      "tools": [
+        "get_cellular_service_status",
+        "search_contacts",
+        "send_message_with_phone_number",
+        "set_cellular_service_status"
+      ]
+    },
+    {
+      "base_scenario": "base_cellular_off",
+      "categories": [
+        "STATE_DEPENDENCY"
+      ],
+      "explicit_milestone_edge_count": 3,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 4,
+      "minefield_count": 0,
+      "name": "send_message_with_contact_content_cellular_off_alt",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 1452,
+      "tools": [
+        "get_cellular_service_status",
+        "search_contacts",
+        "send_message_with_phone_number",
+        "set_cellular_service_status"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "update_contact_relationship_with_relationship",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 1548,
+      "tools": [
+        "modify_contact",
+        "search_contacts"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 2,
+      "minefield_count": 0,
+      "name": "update_contact_relationship_with_relationship_alt",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 1639,
+      "tools": [
+        "modify_contact",
+        "search_contacts"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": 3,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 4,
+      "minefield_count": 0,
+      "name": "find_days_till_holiday",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 1715,
+      "tools": [
+        "get_current_timestamp",
+        "search_holiday",
+        "timestamp_diff"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": 3,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 4,
+      "minefield_count": 0,
+      "name": "find_days_till_holiday_alt",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 1899,
+      "tools": [
+        "get_current_timestamp",
+        "search_holiday",
+        "timestamp_diff"
+      ]
+    },
+    {
+      "base_scenario": "base_wifi_off",
+      "categories": [
+        "CANONICALIZATION",
+        "STATE_DEPENDENCY"
+      ],
+      "explicit_milestone_edge_count": 4,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 5,
+      "minefield_count": 0,
+      "name": "find_days_till_holiday_wifi_off",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 2083,
+      "tools": [
+        "get_current_timestamp",
+        "get_wifi_status",
+        "search_holiday",
+        "set_wifi_status",
+        "timestamp_diff"
+      ]
+    },
+    {
+      "base_scenario": "base_wifi_off",
+      "categories": [
+        "CANONICALIZATION",
+        "STATE_DEPENDENCY"
+      ],
+      "explicit_milestone_edge_count": 4,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 5,
+      "minefield_count": 0,
+      "name": "find_days_till_holiday_wifi_off_alt",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 2286,
+      "tools": [
+        "get_current_timestamp",
+        "get_wifi_status",
+        "search_holiday",
+        "set_wifi_status",
+        "timestamp_diff"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "find_temperature_f_with_location",
+      "offline_eligible": false,
+      "requires_external_api": true,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 2491,
+      "tools": [
+        "search_location_around_lat_lon",
+        "search_weather_around_lat_lon",
+        "unit_conversion"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "find_temperature_f_with_location_alt",
+      "offline_eligible": false,
+      "requires_external_api": true,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 2628,
+      "tools": [
+        "search_location_around_lat_lon",
+        "search_weather_around_lat_lon",
+        "unit_conversion"
+      ]
+    },
+    {
+      "base_scenario": "base_wifi_off",
+      "categories": [
+        "CANONICALIZATION",
+        "STATE_DEPENDENCY"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 4,
+      "minefield_count": 0,
+      "name": "find_temperature_f_with_location_wifi_off",
+      "offline_eligible": false,
+      "requires_external_api": true,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 2765,
+      "tools": [
+        "get_wifi_status",
+        "search_location_around_lat_lon",
+        "search_weather_around_lat_lon",
+        "set_wifi_status",
+        "unit_conversion"
+      ]
+    },
+    {
+      "base_scenario": "base_wifi_off",
+      "categories": [
+        "CANONICALIZATION",
+        "STATE_DEPENDENCY"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 4,
+      "minefield_count": 0,
+      "name": "find_temperature_f_with_location_wifi_off_alt",
+      "offline_eligible": false,
+      "requires_external_api": true,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 2920,
+      "tools": [
+        "get_wifi_status",
+        "search_location_around_lat_lon",
+        "search_weather_around_lat_lon",
+        "set_wifi_status",
+        "unit_conversion"
+      ]
+    },
+    {
+      "base_scenario": "base_low_battery_mode_on_wifi_off_location_service_off_cellular_off",
+      "categories": [
+        "CANONICALIZATION",
+        "STATE_DEPENDENCY"
+      ],
+      "explicit_milestone_edge_count": 5,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 5,
+      "minefield_count": 0,
+      "name": "find_temperature_low_battery_mode",
+      "offline_eligible": false,
+      "requires_external_api": true,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 3075,
+      "tools": [
+        "get_location_service_status",
+        "get_low_battery_mode_status",
+        "get_wifi_status",
+        "search_weather_around_lat_lon",
+        "set_location_service_status",
+        "set_low_battery_mode_status",
+        "set_wifi_status"
+      ]
+    },
+    {
+      "base_scenario": "base_low_battery_mode_on_wifi_off_location_service_off_cellular_off",
+      "categories": [
+        "CANONICALIZATION",
+        "STATE_DEPENDENCY"
+      ],
+      "explicit_milestone_edge_count": 5,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 5,
+      "minefield_count": 0,
+      "name": "find_temperature_low_battery_mode_alt",
+      "offline_eligible": false,
+      "requires_external_api": true,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 3205,
+      "tools": [
+        "get_location_service_status",
+        "get_low_battery_mode_status",
+        "get_wifi_status",
+        "search_weather_around_lat_lon",
+        "set_location_service_status",
+        "set_low_battery_mode_status",
+        "set_wifi_status"
+      ]
+    },
+    {
+      "base_scenario": "base_low_battery_mode_on_wifi_off_location_service_off_cellular_off",
+      "categories": [
+        "STATE_DEPENDENCY"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 4,
+      "minefield_count": 0,
+      "name": "find_stock_symbol_with_company_name_low_battery_mode",
+      "offline_eligible": false,
+      "requires_external_api": true,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 3335,
+      "tools": [
+        "get_low_battery_mode_status",
+        "get_wifi_status",
+        "search_stock",
+        "set_low_battery_mode_status",
+        "set_wifi_status"
+      ]
+    },
+    {
+      "base_scenario": "base_low_battery_mode_on_wifi_off_location_service_off_cellular_off",
+      "categories": [
+        "STATE_DEPENDENCY"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 4,
+      "minefield_count": 0,
+      "name": "find_stock_symbol_with_company_name_low_battery_mode_alt",
+      "offline_eligible": false,
+      "requires_external_api": true,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 3445,
+      "tools": [
+        "get_low_battery_mode_status",
+        "get_wifi_status",
+        "search_stock",
+        "set_low_battery_mode_status",
+        "set_wifi_status"
+      ]
+    },
+    {
+      "base_scenario": "base_low_battery_mode_on_wifi_off_location_service_off_cellular_off",
+      "categories": [
+        "STATE_DEPENDENCY"
+      ],
+      "explicit_milestone_edge_count": 6,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 6,
+      "minefield_count": 0,
+      "name": "find_current_city_low_battery_mode",
+      "offline_eligible": false,
+      "requires_external_api": true,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 3555,
+      "tools": [
+        "get_current_location",
+        "get_location_service_status",
+        "get_low_battery_mode_status",
+        "get_wifi_status",
+        "search_lat_lon",
+        "set_location_service_status",
+        "set_low_battery_mode_status",
+        "set_wifi_status"
+      ]
+    },
+    {
+      "base_scenario": "base_low_battery_mode_on_wifi_off_location_service_off_cellular_off",
+      "categories": [
+        "CANONICALIZATION",
+        "STATE_DEPENDENCY"
+      ],
+      "explicit_milestone_edge_count": 6,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 6,
+      "minefield_count": 0,
+      "name": "find_current_city_low_battery_mode_alt",
+      "offline_eligible": false,
+      "requires_external_api": true,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 3707,
+      "tools": [
+        "get_current_location",
+        "get_location_service_status",
+        "get_low_battery_mode_status",
+        "get_wifi_status",
+        "search_lat_lon",
+        "set_location_service_status",
+        "set_low_battery_mode_status",
+        "set_wifi_status"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "find_distance_with_location_name",
+      "offline_eligible": false,
+      "requires_external_api": true,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 3860,
+      "tools": [
+        "calculate_lat_lon_distance",
+        "get_current_location",
+        "search_location_around_lat_lon"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "find_distance_with_location_name_alt",
+      "offline_eligible": false,
+      "requires_external_api": true,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 3971,
+      "tools": [
+        "calculate_lat_lon_distance",
+        "get_current_location",
+        "search_location_around_lat_lon"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "search_reminder_with_recency_upcoming",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 4082,
+      "tools": [
+        "get_current_timestamp",
+        "search_reminder",
+        "shift_timestamp",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "search_reminder_with_recency_upcoming_implicit",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 4194,
+      "tools": [
+        "get_current_timestamp",
+        "search_reminder",
+        "shift_timestamp",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "search_reminder_with_recency_yesterday",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 4306,
+      "tools": [
+        "get_current_timestamp",
+        "search_reminder",
+        "shift_timestamp",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "search_reminder_with_recency_yesterday_implicit",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 4405,
+      "tools": [
+        "get_current_timestamp",
+        "search_reminder",
+        "shift_timestamp",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "search_reminder_with_creation_recency_yesterday",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 4504,
+      "tools": [
+        "get_current_timestamp",
+        "search_reminder",
+        "shift_timestamp",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "search_reminder_with_creation_recency_yesterday_implicit",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 4604,
+      "tools": [
+        "get_current_timestamp",
+        "search_reminder",
+        "shift_timestamp",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 2,
+      "minefield_count": 0,
+      "name": "add_reminder_content_and_date_and_time",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 4704,
+      "tools": [
+        "add_reminder",
+        "datetime_info_to_timestamp"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 2,
+      "minefield_count": 0,
+      "name": "add_reminder_content_and_date_and_time_alt",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 4770,
+      "tools": [
+        "add_reminder",
+        "datetime_info_to_timestamp",
+        "modify_reminder"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 2,
+      "minefield_count": 0,
+      "name": "add_reminder_content_and_week_delta_and_time",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 4837,
+      "tools": [
+        "add_reminder",
+        "datetime_info_to_timestamp",
+        "get_current_timestamp",
+        "modify_reminder",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 2,
+      "minefield_count": 0,
+      "name": "add_reminder_content_and_week_delta_and_time_alt",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 4906,
+      "tools": [
+        "add_reminder",
+        "datetime_info_to_timestamp",
+        "get_current_timestamp",
+        "modify_reminder",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 2,
+      "minefield_count": 0,
+      "name": "add_reminder_content_and_weekday_delta_and_time",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 4975,
+      "tools": [
+        "add_reminder",
+        "datetime_info_to_timestamp",
+        "get_current_timestamp",
+        "modify_reminder",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 2,
+      "minefield_count": 0,
+      "name": "add_reminder_content_and_weekday_delta_and_time_alt",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 5050,
+      "tools": [
+        "add_reminder",
+        "datetime_info_to_timestamp",
+        "get_current_timestamp",
+        "modify_reminder",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": 2,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "add_reminder_content_and_week_delta_and_time_and_location",
+      "offline_eligible": false,
+      "requires_external_api": true,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 5125,
+      "tools": [
+        "add_reminder",
+        "datetime_info_to_timestamp",
+        "get_current_timestamp",
+        "modify_reminder",
+        "search_location_around_lat_lon",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": 2,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "add_reminder_content_and_week_delta_and_time_and_location_alt",
+      "offline_eligible": false,
+      "requires_external_api": true,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 5232,
+      "tools": [
+        "add_reminder",
+        "datetime_info_to_timestamp",
+        "get_current_timestamp",
+        "modify_reminder",
+        "search_location_around_lat_lon",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": 2,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "modify_reminder_with_recency_latest",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 5339,
+      "tools": [
+        "datetime_info_to_timestamp",
+        "get_current_timestamp",
+        "modify_reminder",
+        "search_reminder",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": 2,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "modify_reminder_with_recency_latest_alt",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 5436,
+      "tools": [
+        "datetime_info_to_timestamp",
+        "get_current_timestamp",
+        "modify_reminder",
+        "search_reminder",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": 2,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "remove_reminder_with_recency_latest",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 5533,
+      "tools": [
+        "datetime_info_to_timestamp",
+        "get_current_timestamp",
+        "remove_reminder",
+        "search_reminder",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": 2,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "remove_reminder_with_recency_latest_alt",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+      "source_line": 5624,
+      "tools": [
+        "datetime_info_to_timestamp",
+        "get_current_timestamp",
+        "remove_reminder",
+        "search_reminder",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 2,
+      "minefield_count": 0,
+      "name": "search_message_with_recency_latest_multiple_user_turn",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_user_turn_scenarios.py",
+      "source_line": 64,
+      "tools": [
+        "get_current_timestamp",
+        "search_messages"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 2,
+      "minefield_count": 0,
+      "name": "search_message_with_recency_latest_multiple_user_turn_alt",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_user_turn_scenarios.py",
+      "source_line": 138,
+      "tools": [
+        "get_current_timestamp",
+        "search_messages"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "search_message_with_recency_oldest_multiple_user_turn",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_user_turn_scenarios.py",
+      "source_line": 212,
+      "tools": [
+        "get_current_timestamp",
+        "search_messages"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "search_message_with_recency_oldest_multiple_user_turn_alt",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_user_turn_scenarios.py",
+      "source_line": 307,
+      "tools": [
+        "get_current_timestamp",
+        "search_messages"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": 4,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 5,
+      "minefield_count": 0,
+      "name": "modify_contact_with_message_recency_multiple_user_turn",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_user_turn_scenarios.py",
+      "source_line": 402,
+      "tools": [
+        "get_current_timestamp",
+        "modify_contact",
+        "search_contacts",
+        "search_messages"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": 4,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 5,
+      "minefield_count": 0,
+      "name": "modify_contact_with_message_recency_multiple_user_turn_alt",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_user_turn_scenarios.py",
+      "source_line": 530,
+      "tools": [
+        "get_current_timestamp",
+        "modify_contact",
+        "search_contacts",
+        "search_messages"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "remove_contact_by_phone_multiple_user_turn",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_user_turn_scenarios.py",
+      "source_line": 658,
+      "tools": [
+        "remove_contact",
+        "search_contacts"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "remove_contact_by_phone_multiple_user_turn_alt",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_user_turn_scenarios.py",
+      "source_line": 736,
+      "tools": [
+        "remove_contact",
+        "search_contacts"
+      ]
+    },
+    {
+      "base_scenario": "base_cellular_off",
+      "categories": [
+        "STATE_DEPENDENCY"
+      ],
+      "explicit_milestone_edge_count": 3,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 4,
+      "minefield_count": 0,
+      "name": "send_message_with_contact_content_cellular_off_multiple_user_turn",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_user_turn_scenarios.py",
+      "source_line": 814,
+      "tools": [
+        "get_cellular_service_status",
+        "search_contacts",
+        "send_message_with_phone_number",
+        "set_cellular_service_status"
+      ]
+    },
+    {
+      "base_scenario": "base_cellular_off",
+      "categories": [
+        "STATE_DEPENDENCY"
+      ],
+      "explicit_milestone_edge_count": 3,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 4,
+      "minefield_count": 0,
+      "name": "send_message_with_contact_content_cellular_off_multiple_user_turn_alt",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_user_turn_scenarios.py",
+      "source_line": 913,
+      "tools": [
+        "get_cellular_service_status",
+        "search_contacts",
+        "send_message_with_phone_number",
+        "set_cellular_service_status"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "update_contact_relationship_with_relationship_multiple_user_turn",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_user_turn_scenarios.py",
+      "source_line": 1012,
+      "tools": [
+        "modify_contact",
+        "search_contacts"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 5,
+      "minefield_count": 0,
+      "name": "update_contact_relationship_with_relationship_twice_multiple_user_turn",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_user_turn_scenarios.py",
+      "source_line": 1103,
+      "tools": [
+        "modify_contact",
+        "search_contacts"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": 3,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 4,
+      "minefield_count": 0,
+      "name": "find_days_till_holiday_multiple_user_turn",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_user_turn_scenarios.py",
+      "source_line": 1241,
+      "tools": [
+        "get_current_timestamp",
+        "search_holiday",
+        "timestamp_diff"
+      ]
+    },
+    {
+      "base_scenario": "base_wifi_off",
+      "categories": [
+        "CANONICALIZATION",
+        "STATE_DEPENDENCY"
+      ],
+      "explicit_milestone_edge_count": 4,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 5,
+      "minefield_count": 0,
+      "name": "find_days_till_holiday_wifi_off_multiple_user_turn",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_user_turn_scenarios.py",
+      "source_line": 1425,
+      "tools": [
+        "get_current_timestamp",
+        "get_wifi_status",
+        "search_holiday",
+        "set_wifi_status",
+        "timestamp_diff"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "find_temperature_f_with_location_and_time_diff_multiple_user_turn",
+      "offline_eligible": false,
+      "requires_external_api": true,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_user_turn_scenarios.py",
+      "source_line": 1628,
+      "tools": [
+        "search_location_around_lat_lon",
+        "search_weather_around_lat_lon",
+        "unit_conversion"
+      ]
+    },
+    {
+      "base_scenario": "base_wifi_off",
+      "categories": [
+        "CANONICALIZATION",
+        "STATE_DEPENDENCY"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 4,
+      "minefield_count": 0,
+      "name": "find_temperature_f_with_location_and_time_diff_wifi_off_multiple_user_turn",
+      "offline_eligible": false,
+      "requires_external_api": true,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_user_turn_scenarios.py",
+      "source_line": 1770,
+      "tools": [
+        "get_wifi_status",
+        "search_location_around_lat_lon",
+        "search_weather_around_lat_lon",
+        "set_wifi_status",
+        "unit_conversion"
+      ]
+    },
+    {
+      "base_scenario": "base_low_battery_mode_on_wifi_off_location_service_off_cellular_off",
+      "categories": [
+        "CANONICALIZATION",
+        "STATE_DEPENDENCY"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 5,
+      "minefield_count": 0,
+      "name": "find_temperature_f_with_location_and_time_diff_low_battery_mode_multiple_user_turn",
+      "offline_eligible": false,
+      "requires_external_api": true,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_user_turn_scenarios.py",
+      "source_line": 1930,
+      "tools": [
+        "get_location_service_status",
+        "get_low_battery_mode_status",
+        "get_wifi_status",
+        "search_weather_around_lat_lon",
+        "set_location_service_status",
+        "set_low_battery_mode_status",
+        "set_wifi_status"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "find_distance_with_location_name_multiple_user_turn",
+      "offline_eligible": false,
+      "requires_external_api": true,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_user_turn_scenarios.py",
+      "source_line": 2107,
+      "tools": [
+        "calculate_lat_lon_distance",
+        "get_current_location",
+        "search_location_around_lat_lon"
+      ]
+    },
+    {
+      "base_scenario": "base_low_battery_mode_on_wifi_off_location_service_off_cellular_off",
+      "categories": [
+        "CANONICALIZATION",
+        "STATE_DEPENDENCY"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 5,
+      "minefield_count": 0,
+      "name": "find_distance_with_location_name_low_battery_mode_multiple_user_turn",
+      "offline_eligible": false,
+      "requires_external_api": true,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_user_turn_scenarios.py",
+      "source_line": 2218,
+      "tools": [
+        "calculate_lat_lon_distance",
+        "get_current_location",
+        "get_location_service_status",
+        "get_low_battery_mode_status",
+        "get_wifi_status",
+        "search_location_around_lat_lon",
+        "set_location_service_status",
+        "set_low_battery_mode_status",
+        "set_wifi_status"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 2,
+      "minefield_count": 0,
+      "name": "add_reminder_content_and_date_and_time_multiple_user_turn",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_user_turn_scenarios.py",
+      "source_line": 2366,
+      "tools": [
+        "add_reminder",
+        "datetime_info_to_timestamp"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 2,
+      "minefield_count": 0,
+      "name": "add_reminder_content_and_date_and_time_multiple_user_turn_alt",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_user_turn_scenarios.py",
+      "source_line": 2432,
+      "tools": [
+        "add_reminder",
+        "datetime_info_to_timestamp",
+        "modify_reminder"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 2,
+      "minefield_count": 0,
+      "name": "add_reminder_content_and_week_delta_and_time_multiple_user_turn",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_user_turn_scenarios.py",
+      "source_line": 2499,
+      "tools": [
+        "add_reminder",
+        "datetime_info_to_timestamp",
+        "get_current_timestamp",
+        "modify_reminder",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 2,
+      "minefield_count": 0,
+      "name": "add_reminder_content_and_week_delta_and_time_multiple_user_turn_alt",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_user_turn_scenarios.py",
+      "source_line": 2568,
+      "tools": [
+        "add_reminder",
+        "datetime_info_to_timestamp",
+        "get_current_timestamp",
+        "modify_reminder",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 2,
+      "minefield_count": 0,
+      "name": "add_reminder_content_and_weekday_delta_and_time_multiple_user_turn",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_user_turn_scenarios.py",
+      "source_line": 2637,
+      "tools": [
+        "add_reminder",
+        "datetime_info_to_timestamp",
+        "get_current_timestamp",
+        "modify_reminder",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 2,
+      "minefield_count": 0,
+      "name": "add_reminder_content_and_weekday_delta_and_time_multiple_user_turn_alt",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_user_turn_scenarios.py",
+      "source_line": 2712,
+      "tools": [
+        "add_reminder",
+        "datetime_info_to_timestamp",
+        "get_current_timestamp",
+        "modify_reminder",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": 2,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "add_reminder_content_and_week_delta_and_time_and_location_multiple_user_turn",
+      "offline_eligible": false,
+      "requires_external_api": true,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_user_turn_scenarios.py",
+      "source_line": 2787,
+      "tools": [
+        "add_reminder",
+        "datetime_info_to_timestamp",
+        "get_current_timestamp",
+        "modify_reminder",
+        "search_location_around_lat_lon",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": 2,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "add_reminder_content_and_week_delta_and_time_and_location_multiple_user_turn_alt",
+      "offline_eligible": false,
+      "requires_external_api": true,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_user_turn_scenarios.py",
+      "source_line": 2894,
+      "tools": [
+        "add_reminder",
+        "datetime_info_to_timestamp",
+        "get_current_timestamp",
+        "modify_reminder",
+        "search_location_around_lat_lon",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "base_scenario": "base_low_battery_mode_on_wifi_off_location_service_off_cellular_off",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": 4,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 5,
+      "minefield_count": 0,
+      "name": "add_reminder_content_and_week_delta_and_time_and_location_low_battery_mode_multiple_user_turn_alt",
+      "offline_eligible": false,
+      "requires_external_api": true,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/multiple_user_turn_scenarios.py",
+      "source_line": 3001,
+      "tools": [
+        "add_reminder",
+        "datetime_info_to_timestamp",
+        "get_current_timestamp",
+        "get_low_battery_mode_status",
+        "get_wifi_status",
+        "modify_reminder",
+        "search_location_around_lat_lon",
+        "set_low_battery_mode_status",
+        "set_wifi_status",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 2,
+      "minefield_count": 0,
+      "name": "cellular_off",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/single_tool_call_scenarios.py",
+      "source_line": 45,
+      "tools": [
+        "set_cellular_service_status"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 2,
+      "minefield_count": 0,
+      "name": "get_cellular",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/single_tool_call_scenarios.py",
+      "source_line": 92,
+      "tools": [
+        "get_cellular_service_status"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 2,
+      "minefield_count": 0,
+      "name": "wifi_off",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/single_tool_call_scenarios.py",
+      "source_line": 147,
+      "tools": [
+        "set_wifi_status"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 2,
+      "minefield_count": 0,
+      "name": "get_wifi",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/single_tool_call_scenarios.py",
+      "source_line": 194,
+      "tools": [
+        "get_wifi_status"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 2,
+      "minefield_count": 0,
+      "name": "search_phone_number_with_name",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/single_tool_call_scenarios.py",
+      "source_line": 249,
+      "tools": [
+        "search_contacts"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 2,
+      "minefield_count": 0,
+      "name": "search_name_with_relationship",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/single_tool_call_scenarios.py",
+      "source_line": 320,
+      "tools": [
+        "search_contacts"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 2,
+      "minefield_count": 0,
+      "name": "search_relationship_with_phone_number",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/single_tool_call_scenarios.py",
+      "source_line": 377,
+      "tools": [
+        "search_contacts"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 2,
+      "minefield_count": 0,
+      "name": "add_contact_with_name_and_phone_number",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/single_tool_call_scenarios.py",
+      "source_line": 437,
+      "tools": [
+        "add_contact"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 2,
+      "minefield_count": 0,
+      "name": "remove_contact_with_id",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/single_tool_call_scenarios.py",
+      "source_line": 497,
+      "tools": [
+        "remove_contact"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 2,
+      "minefield_count": 0,
+      "name": "update_contact_with_id_and_phone_number",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/single_tool_call_scenarios.py",
+      "source_line": 552,
+      "tools": [
+        "modify_contact"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 2,
+      "minefield_count": 0,
+      "name": "search_sender_phone_number_with_content",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/single_tool_call_scenarios.py",
+      "source_line": 613,
+      "tools": [
+        "search_messages"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 2,
+      "minefield_count": 0,
+      "name": "send_message_with_phone_number_and_content",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/single_tool_call_scenarios.py",
+      "source_line": 670,
+      "tools": [
+        "send_message_with_phone_number"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 1,
+      "minefield_count": 0,
+      "name": "find_thanksgiving_timestamp",
+      "offline_eligible": true,
+      "requires_external_api": false,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/single_tool_call_scenarios.py",
+      "source_line": 722,
+      "tools": [
+        "search_holiday"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 2,
+      "minefield_count": 0,
+      "name": "find_address_with_lat_lon",
+      "offline_eligible": false,
+      "requires_external_api": true,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/single_tool_call_scenarios.py",
+      "source_line": 767,
+      "tools": [
+        "search_lat_lon"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 2,
+      "minefield_count": 0,
+      "name": "find_phone_number_with_location_name",
+      "offline_eligible": false,
+      "requires_external_api": true,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/single_tool_call_scenarios.py",
+      "source_line": 828,
+      "tools": [
+        "search_location_around_lat_lon"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 2,
+      "minefield_count": 0,
+      "name": "find_temperature",
+      "offline_eligible": false,
+      "requires_external_api": true,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/single_tool_call_scenarios.py",
+      "source_line": 890,
+      "tools": [
+        "search_weather_around_lat_lon"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 2,
+      "minefield_count": 0,
+      "name": "find_stock_symbol_with_company_name",
+      "offline_eligible": false,
+      "requires_external_api": true,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/single_tool_call_scenarios.py",
+      "source_line": 956,
+      "tools": [
+        "search_stock"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 1,
+      "minefield_count": 0,
+      "name": "convert_currency",
+      "offline_eligible": false,
+      "requires_external_api": true,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/single_tool_call_scenarios.py",
+      "source_line": 1014,
+      "tools": [
+        "convert_currency"
+      ]
+    },
+    {
+      "base_scenario": "base",
+      "categories": [
+        "CANONICALIZATION"
+      ],
+      "explicit_milestone_edge_count": null,
+      "explicit_minefield_edge_count": null,
+      "milestone_count": 1,
+      "minefield_count": 0,
+      "name": "convert_currency_canonicalize",
+      "offline_eligible": false,
+      "requires_external_api": true,
+      "source_file": "external/toolsandbox/tool_sandbox/scenarios/single_tool_call_scenarios.py",
+      "source_line": 1060,
+      "tools": [
+        "convert_currency"
+      ]
+    }
+  ],
+  "run_kind": "proper_v2_toolsandbox_static_feasibility_audit",
+  "schema_version": 1,
+  "source_capabilities": {
+    "milestone_dag_supported": true,
+    "minefield_supported": true,
+    "snapshot_history_supported": true
+  },
+  "summary": {
+    "category_counts": {
+      "CANONICALIZATION": 59,
+      "INSUFFICIENT_INFORMATION": 28,
+      "STATE_DEPENDENCY": 24
+    },
+    "explicit_implicit_pair_count": 3,
+    "explicit_implicit_pairs": [
+      {
+        "explicit": "turn_on_cellular_low_battery_mode",
+        "implicit": "turn_on_cellular_low_battery_mode_implicit"
+      },
+      {
+        "explicit": "turn_on_location_low_battery_mode",
+        "implicit": "turn_on_location_low_battery_mode_implicit"
+      },
+      {
+        "explicit": "turn_on_wifi_low_battery_mode",
+        "implicit": "turn_on_wifi_low_battery_mode_implicit"
+      }
+    ],
+    "offline_insufficient_information_count": 18,
+    "offline_scenario_extension_count": 91,
+    "offline_state_dependency_count": 13,
+    "operation_capacity": {
+      "invoke_prerequisite": 13,
+      "request_information_or_stop": 18,
+      "switch_tool": 0,
+      "use_fallback": 0
+    },
+    "scenario_extension_count": 129,
+    "state_dependency_distinct_tool_count": 13,
+    "state_dependency_tool_set_count": 5,
+    "state_dependency_tools": [
+      "get_cellular_service_status",
+      "get_current_timestamp",
+      "get_location_service_status",
+      "get_low_battery_mode_status",
+      "get_wifi_status",
+      "search_contacts",
+      "search_holiday",
+      "send_message_with_phone_number",
+      "set_cellular_service_status",
+      "set_location_service_status",
+      "set_low_battery_mode_status",
+      "set_wifi_status",
+      "timestamp_diff"
+    ]
+  }
+}

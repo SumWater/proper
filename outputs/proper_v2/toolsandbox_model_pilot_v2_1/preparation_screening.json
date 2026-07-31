@@ -1,0 +1,101 @@
+{
+  "agent_budget": {
+    "invalid_output_policy": "stop_condition_as_invalid_model_output",
+    "maximum_decisions_after_branch": 4,
+    "maximum_tool_calls_after_branch": 4,
+    "memory_injected_on_each_decision": true,
+    "tool_exception_policy": "return_visible_exception_and_continue_within_budget"
+  },
+  "boundary": {
+    "confirmatory_claim_authorized": false,
+    "cpu_preparation_only": true,
+    "external_api_called": false,
+    "gpu_run_authorized": false,
+    "model_loaded": false,
+    "model_outputs_read": false,
+    "target_scenario_played": false
+  },
+  "cohort": {
+    "condition_order": [
+      "tfidf_rank1_memory",
+      "proper_v2_1_memory"
+    ],
+    "distinct_initial_request_count": 24,
+    "memory_exposure_counts": {
+      "experience::dev_v2_crud_timeout_hard_tight_00879::timeout_transient": 4,
+      "experience::dev_v2_files_authz_easy_tight_00360::authorization_persistent_extension": 4,
+      "experience::dev_v2_scheduling_authz_easy_tight_00630::authorization_persistent_extension": 4,
+      "toolsandbox::remove_contact_without_search::stop": 1,
+      "toolsandbox::search_reminder_upcoming_insufficient_information::stop": 2,
+      "toolsandbox::turn_on_cellular_low_battery_mode::action_1": 2,
+      "toolsandbox::turn_on_cellular_low_battery_mode::action_2": 4,
+      "toolsandbox::turn_on_wifi_low_battery_mode::action_2": 3
+    },
+    "phase_counts": {
+      "post_failure": 9,
+      "pre_action": 3
+    },
+    "planned_initial_model_call_count": 24,
+    "primary_pair_count": 12,
+    "secondary_preservation_pair_count": 7
+  },
+  "evaluation": {
+    "confirmatory_test_authorized": false,
+    "diagnostic_endpoints": [
+      "first_decision_policy_alignment",
+      "milestone_similarity",
+      "minefield_similarity",
+      "task_completion_at_similarity_one",
+      "invalid_model_output",
+      "tool_exceptions",
+      "repeated_identical_tool_calls",
+      "recovery_decisions",
+      "recovery_tool_calls"
+    ],
+    "primary_exploratory_endpoint": "toolsandbox_final_similarity",
+    "report_phases_separately": true
+  },
+  "identities": {
+    "config_sha256": "ac0f4d3a4c397f2669642c4af41f4588c8335506e06bf4fae026658f0e87479f",
+    "frozen_input_sha256": {
+      "action_memory_preparation": "177534fd76d0b08ea347bb09c320174beb810e66b5e4294b3e1ab5cbfb2fb614",
+      "behavioral_capacity_config": "f2151f92ed6ea11cadebe65354e1664a9efc397f240280669870dcd488371474",
+      "dynamic_inventory": "b5d8cbcff96b82c005046596fd0d742feed328f513f685543727a11c3002be99",
+      "legacy_selection_manifest": "5570d6399a91a558b0957f623bb2bc70a2d6dc52e5918b2b7c30b4a0103f8cdb",
+      "phase_aware_capacity": "9a26b4c95b8a8f34ab184cebc175f0e63a78af11e10c67d295a56cb3eb7c0983",
+      "phase_aware_capacity_config": "734746df47e65c487cb56fa5dc14f102770d0df011767894d0f909d7fabbff25"
+    },
+    "prepared_payload_sha256": "56d6161ce58209903efee4a6dc990d14bde6c942c01868d7d6772130a11a73e0"
+  },
+  "interpretation_limits": {
+    "capacity_selected_exploratory_pilot": true,
+    "gpu_run_not_yet_authorized": true,
+    "not_evidence_for_all_agent_memory_scenarios": true,
+    "phases_must_be_reported_separately": true
+  },
+  "model_protocol": {
+    "cuda_visible_devices": "0",
+    "do_sample": false,
+    "enable_thinking": false,
+    "local_files_only": true,
+    "max_new_tokens": 256,
+    "model_path": "/home/amax/PycharmProjects/AINegoProject/src/Models/LLM/Qwen3-8B",
+    "name": "Qwen3-8B",
+    "seed": 20260730,
+    "temperature": 0.0,
+    "worker_environment": "failure-memory-pilot",
+    "worker_script": "experiments/proper_v2/qwen_jsonl_worker_v2_1.py"
+  },
+  "preparation_checks": {
+    "all_initial_requests_distinct": true,
+    "condition_count_frozen": true,
+    "condition_order_frozen": true,
+    "no_source_target_family_overlap": true,
+    "pair_count_frozen": true,
+    "post_failure_count_frozen": true,
+    "pre_action_count_frozen": true
+  },
+  "ready_for_runner_implementation": true,
+  "run_kind": "proper_v2_1_toolsandbox_model_pilot_preparation_screening",
+  "schema_version": 1
+}

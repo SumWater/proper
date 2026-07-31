@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "status": "exploratory_static_feasibility_before_toolsandbox_install_or_model_outputs",
+  "purpose": "decide_whether_toolsandbox_can_support_cross_policy_proper_v2_development",
+  "repository": {
+    "url": "https://github.com/apple/ToolSandbox.git",
+    "local_directory": "external/toolsandbox",
+    "revision": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+    "scenario_glob": "tool_sandbox/scenarios/*_scenarios.py",
+    "pyproject": "pyproject.toml"
+  },
+  "candidate_policy_mapping": {
+    "state_dependency": "invoke_prerequisite",
+    "insufficient_information": "request_information_or_stop",
+    "native_switch_tool": "audit_required",
+    "native_fallback": "audit_required",
+    "verification": "continuation_policy_not_recovery_operation"
+  },
+  "offline_exclusions": {
+    "tools": [
+      "search_lat_lon",
+      "search_location_around_lat_lon",
+      "search_weather_around_lat_lon",
+      "search_stock",
+      "convert_currency"
+    ],
+    "reason": "requires_external_rapidapi_key"
+  },
+  "readiness_gate": {
+    "minimum_offline_state_dependency_scenarios": 20,
+    "minimum_state_dependency_tool_set_count": 8,
+    "minimum_state_dependency_distinct_tool_count": 10,
+    "minimum_explicit_implicit_pairs": 3,
+    "minimum_offline_insufficient_information_scenarios": 10,
+    "require_snapshot_history": true,
+    "require_milestone_dag": true,
+    "require_minefield_support": true,
+    "require_python_311_declared": true
+  },
+  "boundary": {
+    "static_source_only": true,
+    "dependencies_installed": false,
+    "external_api_called": false,
+    "model_loaded": false,
+    "model_outputs_read": false,
+    "gpu_run_authorized": false
+  },
+  "output": {
+    "path": "outputs/proper_v2/toolsandbox_feasibility/audit.json"
+  }
+}

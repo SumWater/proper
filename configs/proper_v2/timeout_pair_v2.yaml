@@ -1,0 +1,99 @@
+schema_version: 1
+status: preparation_protocol_before_timeout_model_outputs
+method: unified_proper_v2
+protocol: docs/proper_v2/timeout_pair_v2_protocol.md
+
+frozen_capacity:
+  config: configs/proper_v2/timeout_capacity_v2.yaml
+  config_sha256: d95bc48cc442517b7fca868cf9b6500111cc2f0ca20643273ff4c57e34498292
+  screening: outputs/proper_v2/timeout_capacity_v2/screening.json
+  screening_sha256: 72c2ffe725df3697de9c5cf9516c7e7a3a2f57052fe2ae3c5889d670fb312db9
+  expected_all_target_count: 177
+  expected_primary_pair_count: 32
+  expected_planned_model_call_count: 209
+
+dataset:
+  split: test_public
+  local_directory: work/toolmisusebench_test
+  local_filename: test_public.jsonl
+  expected_task_count: 1200
+  sha256: 12c5e1e93926f4089dfc8d0c60cea53b556057360562375510744858fc6f1161
+
+memory_bank:
+  split: dev
+  source_count: 100
+  prepared_manifest: work/memory_bank_prepared.json
+  prepared_manifest_sha256: da06c6538fb8494a1ab50fee9d4a97d74f6a4e6f7ee161b014cec97d7c459011
+  prepared_payload_sha256: b2841f434e2ffd89a11de73be3fe7c3d5dc0dbd42dd9d2990b6b49a0b4ff6c42
+
+cohort:
+  included: released_native_timeout_only
+  primary_population: selector_changed_before_model_outputs
+  descriptive_population: all_valid_timeout_targets
+  prior_used_base_tasks_excluded: true
+  primary_pair_count: 32
+  changed_target_tool_count: 7
+  changed_selected_memory_count: 6
+  maximum_single_selected_memory_share: 0.375
+
+conditions:
+  fixed_order:
+    - tfidf_rank1_memory
+    - proper_v2_memory
+  primary_comparison: proper_v2_memory_vs_tfidf_rank1_memory
+  identical_prompt_reuse_permitted: true
+  full_prompt_and_model_output_required: true
+
+model:
+  name: Qwen3-8B
+  backend: transformers
+  manifest: configs/proper_v1/qwen3_8b_model.sha256
+  manifest_sha256: aa3e07db476dac6f3af8ad14958cb6febee947243f4bc29d7f6c5eda5c92e4ba
+  enable_thinking: false
+  do_sample: false
+  temperature: 0.0
+  max_new_tokens: 256
+  maximum_post_failure_decisions: 1
+  cuda_visible_devices: "0"
+
+environment:
+  conda_explicit_sha256: ed07021e8c5584886c6a31c639811e0bfaf66143a10dc263ab27797dcfd72679
+  pip_freeze_sha256: e215575984b1f02914e781348564fa8426adb717154bc91a5d39d8af6ec8cc8b
+
+primary_endpoint:
+  name: recovery_validity
+  paired_positive_transfer: "I[R_proper_v2 > R_rank1]"
+  paired_negative_transfer: "I[R_proper_v2 < R_rank1]"
+  hypothesis_direction: paired_positive_transfer_greater_than_paired_negative_transfer
+  test: exact_two_sided_mcnemar
+  alpha: 0.05
+  support_rule: ppt_greater_than_pnt_and_p_value_below_alpha
+  confidence_level: 0.95
+
+secondary_endpoints:
+  - task_completion
+  - exact_retry
+  - memory_induced_action_change
+  - safety_violation
+  - repeated_invalid_calls
+  - all_valid_target_recovery_validity
+  - target_tool_strata
+  - rank1_operation_transition_strata
+  - selected_memory_concentration
+
+boundary:
+  capacity_is_not_effect_evidence: true
+  model_output_holdout_not_unseen_input_claim: true
+  selector_hidden_labels_forbidden: true
+  no_refit_after_capacity: true
+  no_threshold_tuning_after_capacity: true
+  gpu_run_authorized_at_preparation_stage: false
+
+outputs:
+  prepared_manifest: work/timeout_pair_v2_prepared.json
+  screening_output: outputs/proper_v2/timeout_pair_v2/screening.json
+  result_output: outputs/proper_v2/timeout_pair_v2/results.json
+  never_overwrite:
+    - outputs/proper_v1/confirmatory_gate_v1/results.json
+    - outputs/proper_v1/confirmatory_transient_authz_v1/results.json
+

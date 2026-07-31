@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "status": "preparation_before_toolsandbox_model_outputs",
+  "method": "proper_v2_1_phase_aware",
+  "protocol": "docs/proper_v2/toolsandbox_model_pilot_v2_1_protocol.md",
+  "frozen_inputs": {
+    "phase_aware_capacity": {
+      "path": "outputs/proper_v2/toolsandbox_selector_capacity_v2_1/screening.json",
+      "sha256": "9a26b4c95b8a8f34ab184cebc175f0e63a78af11e10c67d295a56cb3eb7c0983"
+    },
+    "phase_aware_capacity_config": {
+      "path": "configs/proper_v2/toolsandbox_selector_capacity_v2_1.yaml",
+      "sha256": "734746df47e65c487cb56fa5dc14f102770d0df011767894d0f909d7fabbff25"
+    },
+    "behavioral_capacity_config": {
+      "path": "configs/proper_v2/toolsandbox_selector_capacity_v2.yaml",
+      "sha256": "f2151f92ed6ea11cadebe65354e1664a9efc397f240280669870dcd488371474"
+    },
+    "dynamic_inventory": {
+      "path": "outputs/proper_v2/toolsandbox_dynamic_pilot/inventory.json",
+      "sha256": "b5d8cbcff96b82c005046596fd0d742feed328f513f685543727a11c3002be99"
+    },
+    "action_memory_preparation": {
+      "path": "outputs/proper_v2/toolsandbox_action_memory_preparation/result.json",
+      "sha256": "177534fd76d0b08ea347bb09c320174beb810e66b5e4294b3e1ab5cbfb2fb614"
+    },
+    "legacy_selection_manifest": {
+      "path": "outputs/proper_v1/candidate_selection/selection_manifest.json",
+      "sha256": "5570d6399a91a558b0957f623bb2bc70a2d6dc52e5918b2b7c30b4a0103f8cdb"
+    }
+  },
+  "cohort": {
+    "selection_rule": "intervention_distinct_is_true",
+    "expected_pair_count": 12,
+    "expected_post_failure_pair_count": 9,
+    "expected_pre_action_pair_count": 3,
+    "expected_condition_count_per_pair": 2,
+    "conditions_in_fixed_order": [
+      "tfidf_rank1_memory",
+      "proper_v2_1_memory"
+    ],
+    "secondary_preservation_pair_count": 7
+  },
+  "model": {
+    "name": "Qwen3-8B",
+    "model_path": "/home/amax/PycharmProjects/AINegoProject/src/Models/LLM/Qwen3-8B",
+    "worker_environment": "failure-memory-pilot",
+    "worker_script": "experiments/proper_v2/qwen_jsonl_worker_v2_1.py",
+    "cuda_visible_devices": "0",
+    "local_files_only": true,
+    "enable_thinking": false,
+    "do_sample": false,
+    "temperature": 0.0,
+    "max_new_tokens": 256,
+    "seed": 20260730
+  },
+  "agent_budget": {
+    "maximum_decisions_after_branch": 4,
+    "maximum_tool_calls_after_branch": 4,
+    "memory_injected_on_each_decision": true,
+    "invalid_output_policy": "stop_condition_as_invalid_model_output",
+    "tool_exception_policy": "return_visible_exception_and_continue_within_budget"
+  },
+  "post_failure_prefix_recipes": {
+    "find_days_till_holiday_wifi_off": {
+      "prelude_actions": [
+        {
+          "tool_name": "get_current_timestamp",
+          "arguments": {}
+        }
+      ],
+      "failed_action": {
+        "tool_name": "search_holiday",
+        "arguments": {
+          "holiday_name": "Christmas Day",
+          "year": null
+        }
+      },
+      "required_exception_substring": "Wifi is not enabled"
+    },
+    "send_message_with_contact_content_cellular_off": {
+      "prelude_actions": [
+        {
+          "tool_name": "search_contacts",
+          "arguments": {
+            "name": "Fredrik Thordendal"
+          }
+        }
+      ],
+      "failed_action": {
+        "tool_name": "send_message_with_phone_number",
+        "arguments": {
+          "phone_number": "+12453344098",
+          "content": "How's the new album coming along"
+        }
+      },
+      "required_exception_substring": "Cellular service is not enabled"
+    },
+    "turn_on_location_low_battery_mode": {
+      "prelude_actions": [],
+      "failed_action": {
+        "tool_name": "set_location_service_status",
+        "arguments": {
+          "on": true
+        }
+      },
+      "required_exception_substring": "Location service cannot be turned on in low battery mode"
+    }
+  },
+  "evaluation": {
+    "report_phases_separately": true,
+    "primary_exploratory_endpoint": "toolsandbox_final_similarity",
+    "diagnostic_endpoints": [
+      "first_decision_policy_alignment",
+      "milestone_similarity",
+      "minefield_similarity",
+      "task_completion_at_similarity_one",
+      "invalid_model_output",
+      "tool_exceptions",
+      "repeated_identical_tool_calls",
+      "recovery_decisions",
+      "recovery_tool_calls"
+    ],
+    "confirmatory_test_authorized": false
+  },
+  "boundary": {
+    "cpu_preparation_only": true,
+    "target_scenario_played": false,
+    "model_loaded": false,
+    "model_outputs_read": false,
+    "external_api_called": false,
+    "gpu_run_authorized": false,
+    "confirmatory_claim_authorized": false
+  },
+  "outputs": {
+    "prepared_manifest": "outputs/proper_v2/toolsandbox_model_pilot_v2_1/prepared_manifest.json",
+    "screening": "outputs/proper_v2/toolsandbox_model_pilot_v2_1/preparation_screening.json"
+  }
+}

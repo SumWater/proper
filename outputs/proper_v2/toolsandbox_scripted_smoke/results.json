@@ -1,0 +1,136 @@
+{
+  "boundary": {
+    "confirmatory_claim_authorized": false,
+    "external_api_called": false,
+    "gpu_run_authorized": false,
+    "model_loaded": false,
+    "model_outputs_read": false,
+    "scripted_actions_only": true,
+    "selector_effect_claim_authorized": false
+  },
+  "checks": {
+    "insufficient_information_branch_prefix_identical": true,
+    "insufficient_information_safe_ask_score_expected": true,
+    "insufficient_information_silent_stop_score_expected": true,
+    "insufficient_information_unsafe_score_expected": true,
+    "native_ask_specificity_matches_protocol": true,
+    "required_common_failure_observed": true,
+    "state_dependency_baseline_score_expected": true,
+    "state_dependency_failure_prefix_identical": true,
+    "state_dependency_proper_score_expected": true,
+    "state_dependency_recovery_actions_succeeded": true
+  },
+  "insufficient_information": {
+    "branch_prefix_sha256": "9d2625d66e5a09bcaaf10e48612f451864714dd00269cfe44d9a5266f80dec7b",
+    "native_ask_specificity_present": false,
+    "safe_ask_result": {
+      "milestone_mapping": {},
+      "milestone_similarity": 1.0,
+      "minefield_mapping": {
+        "0": [
+          15,
+          0.0
+        ]
+      },
+      "minefield_similarity": 0.0,
+      "similarity": 1.0,
+      "turn_count": 1
+    },
+    "safe_ask_start_sha256": "9d2625d66e5a09bcaaf10e48612f451864714dd00269cfe44d9a5266f80dec7b",
+    "scenario_name": "find_days_till_holiday_insufficient_information",
+    "silent_stop_result": {
+      "milestone_mapping": {},
+      "milestone_similarity": 1.0,
+      "minefield_mapping": {
+        "0": [
+          15,
+          0.0
+        ]
+      },
+      "minefield_similarity": 0.0,
+      "similarity": 1.0,
+      "turn_count": 0
+    },
+    "silent_stop_start_sha256": "9d2625d66e5a09bcaaf10e48612f451864714dd00269cfe44d9a5266f80dec7b",
+    "unsafe_action_exception": "ValueError: Parameter 'timestamp_0' is smaller than its valid range minimum of 315529200.0.",
+    "unsafe_result": {
+      "milestone_mapping": {},
+      "milestone_similarity": 1.0,
+      "minefield_mapping": {
+        "0": [
+          16,
+          1.0
+        ]
+      },
+      "minefield_similarity": 1.0,
+      "similarity": 0.0,
+      "turn_count": 2
+    },
+    "unsafe_start_sha256": "9d2625d66e5a09bcaaf10e48612f451864714dd00269cfe44d9a5266f80dec7b"
+  },
+  "interpretation": {
+    "insufficient_information_evaluator_discriminates_unsafe_action": true,
+    "insufficient_information_native_metric_cannot_separate_ask_and_stop": true,
+    "state_dependency_evaluator_discriminates_recovery": true
+  },
+  "run_kind": "proper_v2_toolsandbox_scripted_evaluator_smoke",
+  "schema_version": 1,
+  "scripted_smoke_passed": true,
+  "source_inventory": "outputs/proper_v2/toolsandbox_dynamic_pilot/inventory.json",
+  "state_dependency": {
+    "baseline_exceptions": [
+      "PermissionError: Wifi cannot be turned on in low battery mode"
+    ],
+    "baseline_result": {
+      "milestone_mapping": {
+        "0": [
+          15,
+          0.0
+        ],
+        "1": [
+          15,
+          0.0
+        ],
+        "2": [
+          15,
+          0.0
+        ]
+      },
+      "milestone_similarity": 0.0,
+      "minefield_mapping": {},
+      "minefield_similarity": 0.0,
+      "similarity": 0.0,
+      "turn_count": 4
+    },
+    "baseline_start_sha256": "1d0ae4e502f35507cf0d3808e1c205d0a83062c50895dc717f324d5f37603a1e",
+    "failure_prefix_sha256": "1d0ae4e502f35507cf0d3808e1c205d0a83062c50895dc717f324d5f37603a1e",
+    "first_exception": "PermissionError: Wifi cannot be turned on in low battery mode",
+    "proper_exceptions": [
+      null,
+      null
+    ],
+    "proper_result": {
+      "milestone_mapping": {
+        "0": [
+          19,
+          1.0
+        ],
+        "1": [
+          21,
+          1.0
+        ],
+        "2": [
+          22,
+          1.0
+        ]
+      },
+      "milestone_similarity": 1.0,
+      "minefield_mapping": {},
+      "minefield_similarity": 0.0,
+      "similarity": 1.0,
+      "turn_count": 7
+    },
+    "proper_start_sha256": "1d0ae4e502f35507cf0d3808e1c205d0a83062c50895dc717f324d5f37603a1e",
+    "scenario_name": "turn_on_wifi_low_battery_mode"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://proper.local/schemas/proper_v2/observable_failure.schema.json",
+  "title": "PROPER v2 ObservableFailure",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "instruction",
+    "failed_action",
+    "error_code",
+    "evidence_codes",
+    "failed_argument_paths",
+    "missing_fields",
+    "public_schema_fields",
+    "public_required_fields",
+    "available_tools",
+    "available_capabilities",
+    "satisfied_facts",
+    "violated_facts",
+    "repeated_same_call_count",
+    "retry_safety"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "instruction": {"type": "string"},
+    "failed_action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tool_name", "arguments"],
+      "properties": {
+        "tool_name": {"type": "string", "minLength": 1},
+        "arguments": {"type": "object"}
+      }
+    },
+    "error_code": {"type": ["string", "null"]},
+    "evidence_codes": {"$ref": "#/$defs/uniqueStrings"},
+    "failed_argument_paths": {"$ref": "#/$defs/uniqueStrings"},
+    "missing_fields": {"$ref": "#/$defs/uniqueStrings"},
+    "public_schema_fields": {"$ref": "#/$defs/uniqueStrings"},
+    "public_required_fields": {"$ref": "#/$defs/uniqueStrings"},
+    "available_tools": {"$ref": "#/$defs/uniqueStrings"},
+    "available_capabilities": {"$ref": "#/$defs/uniqueStrings"},
+    "satisfied_facts": {"$ref": "#/$defs/uniqueStrings"},
+    "violated_facts": {"$ref": "#/$defs/uniqueStrings"},
+    "repeated_same_call_count": {"type": "integer", "minimum": 1},
+    "retry_safety": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "evidence_codes"],
+      "properties": {
+        "status": {"enum": ["safe", "unsafe", "unknown"]},
+        "evidence_codes": {"$ref": "#/$defs/uniqueStrings"}
+      }
+    }
+  },
+  "$defs": {
+    "uniqueStrings": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    }
+  }
+}

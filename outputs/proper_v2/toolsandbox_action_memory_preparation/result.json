@@ -1,0 +1,169 @@
+{
+  "boundary": {
+    "confirmatory_claim_authorized": false,
+    "external_api_called": false,
+    "gpu_run_authorized": false,
+    "model_loaded": false,
+    "model_outputs_read": false,
+    "scripted_source_scenarios_played": true,
+    "selector_effect_claim_authorized": false
+  },
+  "deduplicated_action_card_count": 3,
+  "derivation_rule": {
+    "deduplication": "identical_behavior_signature_keep_lexicographically_first_source",
+    "include_failed_goal_action": false,
+    "require_action_without_exception": true,
+    "require_complete_source_trajectory_similarity": 1.0,
+    "unit": "causally_necessary_recovery_action"
+  },
+  "duplicate_behavior_count": 1,
+  "identities": {
+    "config_sha256": "1f5995349caf62d4287e6c8ebf42eda771509c12d45aa902d564bfa5f8f3424a",
+    "dynamic_inventory_sha256": "b5d8cbcff96b82c005046596fd0d742feed328f513f685543727a11c3002be99",
+    "scripted_smoke_sha256": "de4e92de84644e1892b6f002995c1f0a5e15d49bde3cb35ad2ad8e0a4bbc4c6f"
+  },
+  "memory_cards": [
+    {
+      "behavior_signature": "{\"arguments\":{\"on\":false},\"continuation_policy\":\"verify_then_continue\",\"recovery_operation\":\"invoke_prerequisite\",\"tool_name\":\"set_low_battery_mode_status\"}",
+      "continuation_policy": "verify_then_continue",
+      "experience_id": "toolsandbox::turn_on_cellular_low_battery_mode::action_1",
+      "extraction_confidence": 1.0,
+      "natural_text": "When enabling a service fails because low battery mode blocks it, first disable low battery mode and then continue with the requested service action.",
+      "proposed_action": {
+        "argument_template": {
+          "on": false
+        },
+        "tool_name": "set_low_battery_mode_status"
+      },
+      "recovery_operation": "invoke_prerequisite",
+      "source_family": "turn_on_cellular_low_battery_mode",
+      "source_recovery_index": 1,
+      "source_scenario": "turn_on_cellular_low_battery_mode",
+      "source_tool": "set_cellular_service_status",
+      "stop_conditions": [],
+      "success_evidence": [
+        "source_trajectory_similarity:1.0",
+        "source_action_without_exception"
+      ],
+      "trigger_evidence": [
+        "error_code:permission_error",
+        "state_dependency:low_battery_mode_blocks_service"
+      ]
+    },
+    {
+      "behavior_signature": "{\"arguments\":{\"on\":true},\"continuation_policy\":\"verify_then_continue\",\"recovery_operation\":\"invoke_prerequisite\",\"tool_name\":\"set_cellular_service_status\"}",
+      "continuation_policy": "verify_then_continue",
+      "experience_id": "toolsandbox::turn_on_cellular_low_battery_mode::action_2",
+      "extraction_confidence": 1.0,
+      "natural_text": "When a task requires cellular connectivity and cellular service is disabled, enable cellular service as the prerequisite and then continue the original task.",
+      "proposed_action": {
+        "argument_template": {
+          "on": true
+        },
+        "tool_name": "set_cellular_service_status"
+      },
+      "recovery_operation": "invoke_prerequisite",
+      "source_family": "turn_on_cellular_low_battery_mode",
+      "source_recovery_index": 2,
+      "source_scenario": "turn_on_cellular_low_battery_mode",
+      "source_tool": "set_cellular_service_status",
+      "stop_conditions": [],
+      "success_evidence": [
+        "source_trajectory_similarity:1.0",
+        "source_action_without_exception"
+      ],
+      "trigger_evidence": [
+        "state_dependency:cellular_service_disabled"
+      ]
+    },
+    {
+      "behavior_signature": "{\"arguments\":{\"on\":true},\"continuation_policy\":\"verify_then_continue\",\"recovery_operation\":\"invoke_prerequisite\",\"tool_name\":\"set_wifi_status\"}",
+      "continuation_policy": "verify_then_continue",
+      "experience_id": "toolsandbox::turn_on_wifi_low_battery_mode::action_2",
+      "extraction_confidence": 1.0,
+      "natural_text": "When a task requires network access and wifi is disabled, enable wifi as the prerequisite and then continue the original task.",
+      "proposed_action": {
+        "argument_template": {
+          "on": true
+        },
+        "tool_name": "set_wifi_status"
+      },
+      "recovery_operation": "invoke_prerequisite",
+      "source_family": "turn_on_wifi_low_battery_mode",
+      "source_recovery_index": 2,
+      "source_scenario": "turn_on_wifi_low_battery_mode",
+      "source_tool": "set_wifi_status",
+      "stop_conditions": [],
+      "success_evidence": [
+        "source_trajectory_similarity:1.0",
+        "source_action_without_exception"
+      ],
+      "trigger_evidence": [
+        "state_dependency:wifi_disabled"
+      ]
+    }
+  ],
+  "model_pilot_authorized": false,
+  "raw_action_card_count": 4,
+  "run_kind": "proper_v2_toolsandbox_action_memory_preparation",
+  "schema_version": 1,
+  "source_trajectories_passed": true,
+  "trajectory_records": [
+    {
+      "failed_goal_exception": "PermissionError: Wifi cannot be turned on in low battery mode",
+      "milestone_similarity": 1.0,
+      "minefield_similarity": 0.0,
+      "recovery_actions": [
+        {
+          "arguments": {
+            "on": false
+          },
+          "behavior_signature": "{\"arguments\":{\"on\":false},\"continuation_policy\":\"verify_then_continue\",\"recovery_operation\":\"invoke_prerequisite\",\"tool_name\":\"set_low_battery_mode_status\"}",
+          "exception": null,
+          "recovery_index": 1,
+          "tool": "set_low_battery_mode_status"
+        },
+        {
+          "arguments": {
+            "on": true
+          },
+          "behavior_signature": "{\"arguments\":{\"on\":true},\"continuation_policy\":\"verify_then_continue\",\"recovery_operation\":\"invoke_prerequisite\",\"tool_name\":\"set_wifi_status\"}",
+          "exception": null,
+          "recovery_index": 2,
+          "tool": "set_wifi_status"
+        }
+      ],
+      "scenario_name": "turn_on_wifi_low_battery_mode",
+      "similarity": 1.0,
+      "source_family": "turn_on_wifi_low_battery_mode"
+    },
+    {
+      "failed_goal_exception": "PermissionError: Cellular service cannot be turned on in low battery mode",
+      "milestone_similarity": 1.0,
+      "minefield_similarity": 0.0,
+      "recovery_actions": [
+        {
+          "arguments": {
+            "on": false
+          },
+          "behavior_signature": "{\"arguments\":{\"on\":false},\"continuation_policy\":\"verify_then_continue\",\"recovery_operation\":\"invoke_prerequisite\",\"tool_name\":\"set_low_battery_mode_status\"}",
+          "exception": null,
+          "recovery_index": 1,
+          "tool": "set_low_battery_mode_status"
+        },
+        {
+          "arguments": {
+            "on": true
+          },
+          "behavior_signature": "{\"arguments\":{\"on\":true},\"continuation_policy\":\"verify_then_continue\",\"recovery_operation\":\"invoke_prerequisite\",\"tool_name\":\"set_cellular_service_status\"}",
+          "exception": null,
+          "recovery_index": 2,
+          "tool": "set_cellular_service_status"
+        }
+      ],
+      "scenario_name": "turn_on_cellular_low_battery_mode",
+      "similarity": 1.0,
+      "source_family": "turn_on_cellular_low_battery_mode"
+    }
+  ]
+}

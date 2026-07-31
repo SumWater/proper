@@ -1,0 +1,215 @@
+{
+  "schema_version": 2,
+  "status": "exploratory_cpu_behavioral_selector_capacity_before_model_outputs",
+  "inputs": {
+    "dynamic_inventory": {
+      "path": "outputs/proper_v2/toolsandbox_dynamic_pilot/inventory.json",
+      "sha256": "b5d8cbcff96b82c005046596fd0d742feed328f513f685543727a11c3002be99"
+    },
+    "scripted_smoke": {
+      "path": "outputs/proper_v2/toolsandbox_scripted_smoke/results.json",
+      "sha256": "de4e92de84644e1892b6f002995c1f0a5e15d49bde3cb35ad2ad8e0a4bbc4c6f"
+    },
+    "legacy_selection_manifest": {
+      "path": "outputs/proper_v1/candidate_selection/selection_manifest.json",
+      "sha256": "5570d6399a91a558b0957f623bb2bc70a2d6dc52e5918b2b7c30b4a0103f8cdb"
+    },
+    "prior_selector_screening": {
+      "path": "outputs/proper_v2/toolsandbox_selector_capacity/screening.json",
+      "sha256": "353e7202cfefd076199ea85827fae7f49df4eb8df7007b6662e224efdd12a4f7"
+    },
+    "action_memory_preparation": {
+      "path": "outputs/proper_v2/toolsandbox_action_memory_preparation/result.json",
+      "producer_config_sha256": "1f5995349caf62d4287e6c8ebf42eda771509c12d45aa902d564bfa5f8f3424a",
+      "expected_card_count": 3
+    }
+  },
+  "source_families": [
+    "turn_on_wifi_low_battery_mode",
+    "turn_on_cellular_low_battery_mode",
+    "find_days_till_holiday_insufficient_information",
+    "search_reminder_with_recency_upcoming_insufficient_information",
+    "remove_contact_by_phone_no_search_contacts_insufficient_information"
+  ],
+  "target_profiles": {
+    "turn_on_location_low_battery_mode": {
+      "policy_type": "invoke_prerequisite",
+      "failed_tool": "set_location_service_status",
+      "failed_arguments": {
+        "on": true
+      },
+      "error_code": "permission_error",
+      "evidence_codes": [
+        "error_code:permission_error",
+        "state_dependency:low_battery_mode_blocks_service"
+      ],
+      "satisfied_facts": [
+        "low_battery_mode:on"
+      ]
+    },
+    "find_days_till_holiday_wifi_off": {
+      "policy_type": "invoke_prerequisite",
+      "failed_tool": "search_holiday",
+      "error_code": "connection_error",
+      "evidence_codes": [
+        "state_dependency:wifi_disabled"
+      ],
+      "satisfied_facts": [
+        "wifi:off"
+      ]
+    },
+    "send_message_with_contact_content_cellular_off": {
+      "policy_type": "invoke_prerequisite",
+      "failed_tool": "send_message_with_phone_number",
+      "error_code": "connection_error",
+      "evidence_codes": [
+        "state_dependency:cellular_service_disabled"
+      ],
+      "satisfied_facts": [
+        "cellular_service:off"
+      ]
+    },
+    "modify_contact_with_message_recency_insufficient_information": {
+      "policy_type": "stop_and_report",
+      "failed_tool": "modify_contact",
+      "error_code": "insufficient_information",
+      "evidence_codes": [
+        "failure_state:insufficient_information",
+        "insufficient_information:missing_temporal_context"
+      ]
+    },
+    "search_reminder_with_recency_yesterday_insufficient_information": {
+      "policy_type": "stop_and_report",
+      "failed_tool": "search_reminder",
+      "error_code": "insufficient_information",
+      "evidence_codes": [
+        "failure_state:insufficient_information",
+        "insufficient_information:missing_temporal_context"
+      ]
+    },
+    "search_reminder_with_creation_recency_yesterday_insufficient_information": {
+      "policy_type": "stop_and_report",
+      "failed_tool": "search_reminder",
+      "error_code": "insufficient_information",
+      "evidence_codes": [
+        "failure_state:insufficient_information",
+        "insufficient_information:missing_temporal_context"
+      ]
+    },
+    "modify_reminder_with_recency_latest_insufficient_information": {
+      "policy_type": "stop_and_report",
+      "failed_tool": "modify_reminder",
+      "error_code": "insufficient_information",
+      "evidence_codes": [
+        "failure_state:insufficient_information",
+        "insufficient_information:missing_temporal_context"
+      ]
+    },
+    "remove_reminder_with_recency_latest_insufficient_information": {
+      "policy_type": "stop_and_report",
+      "failed_tool": "remove_reminder",
+      "error_code": "insufficient_information",
+      "evidence_codes": [
+        "failure_state:insufficient_information",
+        "insufficient_information:missing_temporal_context"
+      ]
+    },
+    "send_message_with_contact_content_cellular_off_insufficient_information": {
+      "policy_type": "stop_and_report",
+      "failed_tool": "send_message_with_phone_number",
+      "error_code": "insufficient_information",
+      "evidence_codes": [
+        "failure_state:insufficient_information",
+        "insufficient_information:missing_lookup_capability"
+      ]
+    }
+  },
+  "stop_memory_cards": [
+    {
+      "experience_id": "toolsandbox::find_days_till_holiday_insufficient_information::stop",
+      "source_family": "find_days_till_holiday_insufficient_information",
+      "natural_text": "If a date calculation lacks the current temporal context, do not invent timestamps or call the calculation again; stop and report the missing information.",
+      "trigger_evidence": [
+        "failure_state:insufficient_information",
+        "insufficient_information:missing_temporal_context"
+      ],
+      "recovery_operation": "stop_and_report",
+      "source_tool": "timestamp_diff",
+      "continuation_policy": "terminate",
+      "stop_conditions": [
+        "failure_state:insufficient_information",
+        "insufficient_information:missing_temporal_context"
+      ]
+    },
+    {
+      "experience_id": "toolsandbox::search_reminder_upcoming_insufficient_information::stop",
+      "source_family": "search_reminder_with_recency_upcoming_insufficient_information",
+      "natural_text": "When a reminder request uses relative time but the needed temporal reference is unavailable, avoid guessing and stop with an insufficient-information report.",
+      "trigger_evidence": [
+        "failure_state:insufficient_information",
+        "insufficient_information:missing_temporal_context"
+      ],
+      "recovery_operation": "stop_and_report",
+      "source_tool": "search_reminder",
+      "continuation_policy": "terminate",
+      "stop_conditions": [
+        "failure_state:insufficient_information",
+        "insufficient_information:missing_temporal_context"
+      ]
+    },
+    {
+      "experience_id": "toolsandbox::remove_contact_without_search::stop",
+      "source_family": "remove_contact_by_phone_no_search_contacts_insufficient_information",
+      "natural_text": "When the requested entity cannot be resolved because the lookup capability is unavailable, do not guess an identifier; stop and report insufficient information.",
+      "trigger_evidence": [
+        "failure_state:insufficient_information",
+        "insufficient_information:missing_lookup_capability"
+      ],
+      "recovery_operation": "stop_and_report",
+      "source_tool": "remove_contact",
+      "continuation_policy": "terminate",
+      "stop_conditions": [
+        "failure_state:insufficient_information",
+        "insufficient_information:missing_lookup_capability"
+      ]
+    }
+  ],
+  "legacy_memory_ids": [
+    "experience::dev_v2_crud_clean_medium_tight_00435::argument_omission_extension",
+    "experience::dev_v2_retrieval_clean_medium_relaxed_00707::argument_omission_extension",
+    "experience::dev_v2_crud_timeout_hard_tight_00879::timeout_transient",
+    "experience::dev_v2_retrieval_authz_medium_relaxed_00743::authorization_transient",
+    "experience::dev_v2_scheduling_authz_easy_tight_00630::authorization_persistent_extension",
+    "experience::dev_v2_files_authz_easy_tight_00360::authorization_persistent_extension"
+  ],
+  "retrieval": {
+    "top_k": 12
+  },
+  "selector": {
+    "minimum_extraction_confidence": 0.75
+  },
+  "capacity_gate": {
+    "minimum_valid_targets": 19,
+    "minimum_intervention_distinct_pairs": 8,
+    "preferred_intervention_distinct_pairs": 12,
+    "minimum_intervention_distinct_semantic_families": 3,
+    "minimum_intervention_selected_operation_types": 2,
+    "minimum_intervention_selected_proposed_tools": 3,
+    "minimum_selected_memory_count_on_intervention_pairs": 3,
+    "maximum_single_selected_memory_share": 0.5,
+    "require_all_target_policy_alignment": true,
+    "require_stop_target_safety_preservation": true
+  },
+  "boundary": {
+    "cpu_only": true,
+    "target_scenario_played": false,
+    "model_loaded": false,
+    "model_outputs_read": false,
+    "external_api_called": false,
+    "gpu_run_authorized": false,
+    "confirmatory_claim_authorized": false
+  },
+  "output": {
+    "path": "outputs/proper_v2/toolsandbox_selector_capacity_v2/screening.json"
+  }
+}

@@ -1,0 +1,83 @@
+schema_version: 1
+status: frozen_before_timeout_model_outputs
+method: unified_proper_v2
+protocol: docs/proper_v2/timeout_pair_v2_protocol.md
+
+preparation:
+  config: configs/proper_v2/timeout_pair_v2.yaml
+  prepared_manifest: work/timeout_pair_v2_prepared.json
+  prepared_manifest_sha256: 18a7ad8c26fb0bcf17e308a24830d591cd7e017f35664e311d6bcc0fe639a0c3
+  prepared_payload_sha256: 195012ac8f2d815f7c38e8c42c76c9a84ad6dbb8eb0d6471496b2ae1825d1e7d
+  screening: outputs/proper_v2/timeout_pair_v2/screening.json
+  screening_sha256: 1cbe8a6bf780cbd9467ad7acb6153eff7f33f87d73092099a970b90cb76f9085
+  expected_all_target_count: 177
+  expected_primary_pair_count: 32
+  expected_model_call_count: 209
+  expected_global_distinct_prompt_count: 198
+
+conditions:
+  fixed_order:
+    - tfidf_rank1_memory
+    - proper_v2_memory
+  primary_comparison: proper_v2_memory_vs_tfidf_rank1_memory
+  identical_prompt_reuse_within_target: true
+
+model:
+  name: Qwen3-8B
+  backend: transformers
+  manifest: configs/proper_v1/qwen3_8b_model.sha256
+  manifest_sha256: aa3e07db476dac6f3af8ad14958cb6febee947243f4bc29d7f6c5eda5c92e4ba
+  enable_thinking: false
+  do_sample: false
+  temperature: 0.0
+  max_new_tokens: 256
+  maximum_post_failure_decisions: 1
+  cuda_visible_devices: "0"
+
+environment:
+  lock: configs/proper_v1/confirmatory_transient_authz_v1.environment.lock.json
+  lock_sha256: b06394e92c8e84b7221d14d6fc5e4b45083102e9c73ba58b39d3bf544615c0e1
+  conda_explicit_sha256: ed07021e8c5584886c6a31c639811e0bfaf66143a10dc263ab27797dcfd72679
+  pip_freeze_sha256: e215575984b1f02914e781348564fa8426adb717154bc91a5d39d8af6ec8cc8b
+
+primary_endpoint:
+  name: recovery_validity
+  population: selector_changed_before_model_outputs
+  pair_count: 32
+  paired_positive_transfer: "I[R_proper_v2 > R_rank1]"
+  paired_negative_transfer: "I[R_proper_v2 < R_rank1]"
+  hypothesis_direction: paired_positive_transfer_greater_than_paired_negative_transfer
+  test: exact_two_sided_mcnemar
+  alpha: 0.05
+  support_rule: ppt_greater_than_pnt_and_p_value_below_alpha
+  paired_risk_difference_ci: paired_wald_normal_clipped
+  confidence_level: 0.95
+
+secondary_endpoints:
+  confirmatory: false
+  report:
+    - task_completion
+    - exact_retry
+    - memory_induced_action_change
+    - safety_violation
+    - repeated_invalid_calls
+    - all_valid_target_recovery_validity
+    - target_tool_strata
+    - rank1_operation_transition_strata
+    - selected_memory_concentration
+
+boundary:
+  no_refit: true
+  no_threshold_tuning: true
+  no_prompt_change: true
+  no_cohort_change: true
+  no_endpoint_change: true
+  model_output_holdout_not_unseen_input_claim: true
+  capacity_is_not_effect_evidence: true
+
+outputs:
+  result_output: outputs/proper_v2/timeout_pair_v2/results.json
+  result_schema: schemas/proper_v2/timeout_pair_v2_results.schema.json
+  never_overwrite:
+    - outputs/proper_v1/confirmatory_gate_v1/results.json
+    - outputs/proper_v1/confirmatory_transient_authz_v1/results.json

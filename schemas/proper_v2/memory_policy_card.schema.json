@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://proper.local/schemas/proper_v2/memory_policy_card.schema.json",
+  "title": "PROPER v2 MemoryPolicyCard",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "experience_id",
+    "natural_text",
+    "original_rank",
+    "retrieval_score",
+    "trigger_evidence",
+    "required_preconditions",
+    "recovery_operation",
+    "target_object",
+    "proposed_action",
+    "repair_targets",
+    "continuation_policy",
+    "success_evidence",
+    "stop_conditions",
+    "source_tool",
+    "extraction_confidence"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "experience_id": {"type": "string", "minLength": 1},
+    "natural_text": {"type": "string", "minLength": 1},
+    "original_rank": {"type": "integer", "minimum": 1},
+    "retrieval_score": {"type": "number"},
+    "trigger_evidence": {"$ref": "#/$defs/uniqueStrings"},
+    "required_preconditions": {"$ref": "#/$defs/uniqueStrings"},
+    "recovery_operation": {
+      "enum": [
+        "repair_arguments",
+        "retry_same_action",
+        "invoke_prerequisite",
+        "switch_tool",
+        "use_fallback",
+        "request_information",
+        "stop_and_report",
+        "unknown"
+      ]
+    },
+    "target_object": {"type": ["string", "null"]},
+    "proposed_action": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["tool_name", "argument_template"],
+      "properties": {
+        "tool_name": {"type": "string", "minLength": 1},
+        "argument_template": {"type": "object"}
+      }
+    },
+    "repair_targets": {"$ref": "#/$defs/uniqueStrings"},
+    "continuation_policy": {
+      "enum": [
+        "continue_directly",
+        "verify_then_continue",
+        "retry_then_verify",
+        "terminate",
+        "unknown"
+      ]
+    },
+    "success_evidence": {"$ref": "#/$defs/uniqueStrings"},
+    "stop_conditions": {"$ref": "#/$defs/uniqueStrings"},
+    "source_tool": {"type": ["string", "null"]},
+    "extraction_confidence": {"type": "number", "minimum": 0, "maximum": 1}
+  },
+  "$defs": {
+    "uniqueStrings": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    }
+  }
+}

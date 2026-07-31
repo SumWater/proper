@@ -1,0 +1,3676 @@
+{
+  "boundary": {
+    "confirmatory_claim_authorized": false,
+    "external_api_called": false,
+    "gpu_exploratory_pilot_authorized": true,
+    "local_model_only": true,
+    "no_prompt_or_cohort_tuning_after_model_outputs": true
+  },
+  "full_pilot_completed": true,
+  "identities": {
+    "config_sha256": "e9af9e0fd7b95f8615d57e4d8fddc888047f7f02a994d470694d3a3194e20e82",
+    "prepared_manifest_sha256": "a66d12c559b462833cb1876861a783bf2c44db32d55b3a469c2aafc0baed2154",
+    "prepared_payload_sha256": "56d6161ce58209903efee4a6dc990d14bde6c942c01868d7d6772130a11a73e0"
+  },
+  "interpretation_limits": {
+    "all_agent_memory_generalization_not_authorized": true,
+    "confirmatory_claim_not_authorized": true,
+    "exploratory_capacity_selected_pilot": true,
+    "phase_stratified_reporting_required": true,
+    "raw_toolsandbox_scores_preserved": true
+  },
+  "model_protocol": {
+    "cuda_visible_devices": "0",
+    "do_sample": false,
+    "enable_thinking": false,
+    "local_files_only": true,
+    "max_new_tokens": 256,
+    "model_path": "/home/amax/PycharmProjects/AINegoProject/src/Models/LLM/Qwen3-8B",
+    "name": "Qwen3-8B",
+    "python": "/home/amax/miniconda3/envs/failure-memory-pilot/bin/python",
+    "seed": 20260730,
+    "worker_script": "experiments/proper_v2/qwen_jsonl_worker_v2_1.py",
+    "worker_script_sha256": "eb940c9a77751419426a9246052543c41f608240134e2125d30ff530368418a6"
+  },
+  "model_request_log": [
+    {
+      "request_id": "toolsandbox-v2-1-01:tfidf_rank1_memory:step-01",
+      "request_sha256": "6d01ac3e45f2c18ebeade5311e826942f03d218943c6fe6c2b257fd899dcf0ca",
+      "response_sha256": "93eb7365c677b1bd324df17499ada5e482aa935416aec8af3175a2b290f0041a"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-01:tfidf_rank1_memory:step-02",
+      "request_sha256": "fb34ac3d4dfb7a9df3848fc58803ada9f7f281ca9a36f3dab78af05471384b1b",
+      "response_sha256": "caff2d50d4d0d089a82a7be2d1dcddcb03cc51dccfc36b88c178c93bc0eee61c"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-01:tfidf_rank1_memory:step-03",
+      "request_sha256": "45d97b67041359146b88141e10708eb0c6bd9ab32c4cef18b28c1153c9a86de4",
+      "response_sha256": "5406f2b1d3e2eaafd22440fabbb060b7e55c61011a6ebd9a7a773ab8612015c7"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-01:tfidf_rank1_memory:step-04",
+      "request_sha256": "afa3f1e72e4145c64a5b4aa49ce8ad7e4b71ba3d64369a9ea007ff742854700d",
+      "response_sha256": "d0ecb4d0f6633767f575ef770f58fc6915561c7a5fcbff4308b27de7542be349"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-01:proper_v2_1_memory:step-01",
+      "request_sha256": "631f957e2835cc0cd1af04d4974c2500dd23a2695d84dc3f53f0c822f3389d25",
+      "response_sha256": "2341a6c00d6c46a0ca0d75cfd6abc5e9a4f60cbaed9a7032ccc21a322f848a50"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-01:proper_v2_1_memory:step-02",
+      "request_sha256": "7d27003e4dd58165ea408257e1e381c70fdb604bf77141a64da02335eebcf5a6",
+      "response_sha256": "8ee0dbd06ef4a09542864c4addaef6e74588676f9b8d9c598259478e2976d034"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-01:proper_v2_1_memory:step-03",
+      "request_sha256": "145b273b2a78231964b729271f9cb7359516190f410d4478704c4be2115a91c0",
+      "response_sha256": "1f602a186ef42c270926b41aa58f812b9e21d45b56a2def3946db5d2868ceb04"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-01:proper_v2_1_memory:step-04",
+      "request_sha256": "1d21927b05cff7e5349cb10b0b6fbda5daf6d46dcfa7999b1d4ee01b0aae6923",
+      "response_sha256": "ccc6b4f6029209dc8b8c792ebd61464cf85112139f6471b07fa8d09d3192fa28"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-02:tfidf_rank1_memory:step-01",
+      "request_sha256": "568fb627943dc3a8869069ac19fed03ac0965bdd075013ae4318b0a18212012d",
+      "response_sha256": "3282ce4bdd3f2c06dd09d8ce1b76fca81311cf6ff49a17f3acdc61309d3789c8"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-02:tfidf_rank1_memory:step-02",
+      "request_sha256": "692a5f282aea013c4ffacf68e31189d6b6c6e71551a029b1e3eb27493ce19c7b",
+      "response_sha256": "c7eb1dc17cc5f7c8ed600cf57d80d44b5fe8dc3406011d43f1c7147558ae8403"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-02:tfidf_rank1_memory:step-03",
+      "request_sha256": "c26529abbe3122538795a839c5d1d69723dcb9d9e0a40093ab3b70b980588a2b",
+      "response_sha256": "318a743c0ca5953e3cd067bd0ff0616bd8304b33f0282026b361239710723800"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-02:tfidf_rank1_memory:step-04",
+      "request_sha256": "103ed4852e256f764dd2b540b3a486ad0e816f1b3eafe29695a9237d9d7b3ada",
+      "response_sha256": "7d0ab1d2cb6eefae3c6bba57f37b57772c8a0f5caf7d6e0c81bcdd04b69af5e0"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-02:proper_v2_1_memory:step-01",
+      "request_sha256": "f92301836040fc00582af7095223073df5e9ecf9eb5798788ddf4c8dd6fafd7b",
+      "response_sha256": "3bfa27ef088468da458fecbedd9d699450b27acc89bb270533640484d57cd112"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-02:proper_v2_1_memory:step-02",
+      "request_sha256": "556323faab290c001105b207bbdea2d5ffffa90b53912c1573249b263911717f",
+      "response_sha256": "390722e8b5d90978b061be2ec40dae7d348b59551e17f6db0c698bdc8a3ad46e"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-02:proper_v2_1_memory:step-03",
+      "request_sha256": "e8cd38e12b6464c25c0ca14586b8a34a0a709a7d154e6b47931963b28abb1d61",
+      "response_sha256": "857ff51a0707dad802fe2c4663024611f5e631bd8f049f3e82f7669e87070536"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-02:proper_v2_1_memory:step-04",
+      "request_sha256": "7775e0d30e2f7eb90ade8042579f5b253e34b3f11bdbdffb2b51df396c0a8ba5",
+      "response_sha256": "087b875549e7591ab64e8923318f1a60cc110d89fe4138672f467f1953705ca2"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-03:tfidf_rank1_memory:step-01",
+      "request_sha256": "81ca972ee8d103b342ea2251d08ffd53a20c0b3cec298649cadf9146dc893830",
+      "response_sha256": "2c9b02e3edbd63e352d6032b4cc668469835aabf3d3331d32b25b108dc0df70e"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-03:tfidf_rank1_memory:step-02",
+      "request_sha256": "b104cd4a5a0425bd5690b198eff4952d655f0eef54dc1facc5d5a4208d2a7cd4",
+      "response_sha256": "44b40b2dc8ccc0019e5527e94bd1a2acd88dda88b52a18c4b668d567f51722d8"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-03:tfidf_rank1_memory:step-03",
+      "request_sha256": "5d7eead6b5ef1f5a53f072d9ac7a06732b4771f0bb570d8124956dbc543264a6",
+      "response_sha256": "bb36dbc0578bb10eb5c257046188ce45401800cf3e8578c2b4158b6c9f5e382d"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-03:tfidf_rank1_memory:step-04",
+      "request_sha256": "55a51eb773e6f6f34876b8b8f5dd153c1dabf9aba332b78649a73313a27c0cf8",
+      "response_sha256": "3ad3c3b8fffaf3634b2e6508e6f2876fd61fbb6fd9858349f46f3f8598191554"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-03:proper_v2_1_memory:step-01",
+      "request_sha256": "08b532ab9c34463017cea55c24d109438b07aecde675b1207b361acf422c5078",
+      "response_sha256": "23787a52840385720d86f9802f427e38f2e592ba4e945d029939578c58055fd2"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-03:proper_v2_1_memory:step-02",
+      "request_sha256": "a122f5fa74bc2106a9fb3065c55a1ebf5262ab8bb669446f9ac5f4c1206cb40c",
+      "response_sha256": "c781c72c0c14060bb5394327074e79bc12283ba0c9eab1799e1e5d7e400978bd"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-03:proper_v2_1_memory:step-03",
+      "request_sha256": "6aebdbe54c87fc75a1e4fa3f142e9be0a983954746cf6872a11303dcc4ddeaa1",
+      "response_sha256": "57be35f4d67f1fc84a041200d02ee3d07bb6a889b264d136eece00a2e5d0e457"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-03:proper_v2_1_memory:step-04",
+      "request_sha256": "09e20a85ab657d7859389687c610ddfb4cc2e9ffa4c984f67f918926402562d4",
+      "response_sha256": "a2438e26522f4be0c80dd4f5d1170152e3e4f66dee460d49d1fa0b6706de7f0a"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-04:tfidf_rank1_memory:step-01",
+      "request_sha256": "9ff5ce4b86f017b11eb805ac687630a7488fe0d792f3aae2fa5097856d4c9bec",
+      "response_sha256": "49acd00060be14afc8b31dc0041f1f2752d3e46d33353401d9a23ed1c693a30e"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-04:tfidf_rank1_memory:step-02",
+      "request_sha256": "dc0c9d87194430bf732aef77165a75e6bb7ec0daeaf56a37e2dd1ede188c864d",
+      "response_sha256": "145ba8fbcc885e18914e44656ea0e2b27fe7c6a626a58db5fe64db65f72d0b3e"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-04:tfidf_rank1_memory:step-03",
+      "request_sha256": "b9f87e8e3b89aa269b8e2dea86ebb783ac5a894202d9357a96d5d54e26060f20",
+      "response_sha256": "89922ef8ea50ce930babc253cbe37ce8aa02ad0e49d111b776330ad6841d495d"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-04:tfidf_rank1_memory:step-04",
+      "request_sha256": "d2ff6972ea0ff1b60d2caaeaa274674190f08d7c53cfe5cfa6f9d8161a0f3412",
+      "response_sha256": "35f6bd79b0346f35b995af959f1ff121abd4ae00c585bf79c10f6c33adc31c0a"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-04:proper_v2_1_memory:step-01",
+      "request_sha256": "7d283dc1f2d3665800eb9d9f2e7ccaa0a1980a5f56ccfc8b7537c0427e12ecae",
+      "response_sha256": "25f32e76d91f4ef867e72ecb432a8aa2fd51abf3ffeed35ac9feba76d8696ae7"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-05:tfidf_rank1_memory:step-01",
+      "request_sha256": "f86bca09acf6f7cf703b232886ff2d3c23c650f66e4cbc61fc0c19fbf85b68d3",
+      "response_sha256": "b1eedeb98dd5f1e5b1ac5d36934ea30917687bbf3d4215db7728147275a88e7d"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-05:tfidf_rank1_memory:step-02",
+      "request_sha256": "6de05fbfd7c1505f0c60d6b082cba848f727fe5e94e68cf8357bba554adc8629",
+      "response_sha256": "bd0d3943bfe0af8ae3206afd1f1ec3c709b27841985c12bff6f196d3df77a3dc"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-05:tfidf_rank1_memory:step-03",
+      "request_sha256": "4cd84237d9b337fa0f6b8bb0d02ce72698eb821dec71a40cceb37b7cd7575d10",
+      "response_sha256": "5d80377effda1c015fb02d653ac383381b166958ab7c13c5be3890011be9fc69"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-05:tfidf_rank1_memory:step-04",
+      "request_sha256": "0b4f7e0b0fc157233575d3638c39398fd1268e152bb278cdd27285518b86f3c7",
+      "response_sha256": "711887196076bc9e51637a39bf18e5251d5014b2403e79678b885608082dfae7"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-05:proper_v2_1_memory:step-01",
+      "request_sha256": "288a2b1530580ac8d9da9f16c6f8fefaab57f01106278c856e847ecba5c1cd0d",
+      "response_sha256": "d4072266ced51659e6a923589b412c57156f0db87387c44c48d783f042578d93"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-06:tfidf_rank1_memory:step-01",
+      "request_sha256": "25685a445ba170d95d90e36dc79a709c0c617a08c1d18076bc4e9cb6e7e04b60",
+      "response_sha256": "878c01336185003b1a991035f1a708deb8efc9424d006bb5eed37e5449b6626b"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-06:tfidf_rank1_memory:step-02",
+      "request_sha256": "98324d3770d5ce13b0258b7a4de88921ab586ca59d3cbb2e51c2271ec1a49b87",
+      "response_sha256": "75f115b300da098a8492295675c22a4b9dd5616ccded16a333e068e9f5211b36"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-06:tfidf_rank1_memory:step-03",
+      "request_sha256": "e76ca90d22917493a01a5e936145449628c371e5a82bafb14b6c8d1d9a70b083",
+      "response_sha256": "7728e200027e52455992de7ed48be12f95b013aa05cf31a4bde076d6c9b6275a"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-06:tfidf_rank1_memory:step-04",
+      "request_sha256": "2678d2e0064105e20b764d23bb0b31092819e29f2ee27fc98b35820e1fa4d357",
+      "response_sha256": "7c53bd8ddbb1909d7909d999c055eb9f531079fe22c09595ad105c5934448a87"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-06:proper_v2_1_memory:step-01",
+      "request_sha256": "261dcb1dd4df9604b3c202fc67ded4d6ef4f2f7020f5c29628f8f4a6d0d85f34",
+      "response_sha256": "43e76f282e1cc7f80c7e872c153582f6ce76b65c6efb14f5642848b7f284d121"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-06:proper_v2_1_memory:step-02",
+      "request_sha256": "51735ee97481c1dee96633aaff7c0687bc22208f70d5c81134d50445c6d262ed",
+      "response_sha256": "092bcdd2ca00d5c39f8e5f83c03eec453bfa96d5c5b8b3802a3fa1eab191a62c"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-06:proper_v2_1_memory:step-03",
+      "request_sha256": "303744fa229f489df56bf2ab475716ff56f681cdc453f1ac11e1fec710a02625",
+      "response_sha256": "a295b724dbffe33b3989f51b083f859cadb01652e38c42820645fb2196bafc6f"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-06:proper_v2_1_memory:step-04",
+      "request_sha256": "3ec75a4018c8e1b5ae4c4717922a522d02274f05a8e17d670c7bb9433a23757d",
+      "response_sha256": "ca2235470dd1775c8a63a5b05305232d4cb00153271369c09ec4515b9bc70bba"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-07:tfidf_rank1_memory:step-01",
+      "request_sha256": "490357dd5fc55c05b1049349b2026feb3e3f16c8713b2d516f932d0f29780aa4",
+      "response_sha256": "7aa05d7a190d7e8a8e06f98167301ae78971505659e9397c17b09dea5d3fbe53"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-07:tfidf_rank1_memory:step-02",
+      "request_sha256": "b0d87a660639a8bf595317d36c033d08388b19802ebb5ecd75a0026fb3572def",
+      "response_sha256": "12cccbab538b8f9be81812806d96666b7e6dfd9bf7304aa9923efa1a19a81f70"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-07:tfidf_rank1_memory:step-03",
+      "request_sha256": "5da991a22f9b05196cb76c76e00a91f478e141c5aab4fcb265425653362ee202",
+      "response_sha256": "bc80ca5346336872e867f97f3056bbcdbc85ee12f6afb7b9d459fde39154439d"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-07:tfidf_rank1_memory:step-04",
+      "request_sha256": "04f7d98f8d7e8586fdc4ddd522d09aab51df5fd3f9125ac9776ff465fb87ea28",
+      "response_sha256": "8f5bfecf0116ce07c8cb58ce4daff995cad99ce805c9f2682c5041933634df42"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-07:proper_v2_1_memory:step-01",
+      "request_sha256": "252f27f6f713ff43db70299635e71ae7ca7a5d0243b39fe14ea4b0348d2f74f3",
+      "response_sha256": "f7ba519296c766b75258a87e3e5b22c5bbba5effc1e2a72a4e0594a82a806ec8"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-07:proper_v2_1_memory:step-02",
+      "request_sha256": "ba34dfe8f5679b59152b543e141da197f7f82023281c000f919e6fbedb657b29",
+      "response_sha256": "aae90af6defeb1cd99ce137701bddb3fa63fa1aee1f68619930eca65f83cbc71"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-07:proper_v2_1_memory:step-03",
+      "request_sha256": "04d4aa8a5874dfe1f8fbd94fde80ef1be56c4bf90772ac3dbd01934a9cf82545",
+      "response_sha256": "02378532c943c93dd37e7558bb1636791f6e8a7366654f5fa7ecb94706ff2235"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-07:proper_v2_1_memory:step-04",
+      "request_sha256": "a496a1e4f7e444e8408dfdd27ec7c172aca3ece36a888e3d635e19fb68f95643",
+      "response_sha256": "654bee95d82be96a3354e555b7121ebfc7d3e228614fbf7b77e570baa59290fb"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-08:tfidf_rank1_memory:step-01",
+      "request_sha256": "0e310653bdb5a52003e2150972d18f729dcab045a69836c2393fabac82ae0592",
+      "response_sha256": "6366c2324782a4fe2f725015d9a80d6f6281d2c5bc48a02dacceb8f9c060df11"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-08:tfidf_rank1_memory:step-02",
+      "request_sha256": "ae9880375db49a5284dc422363d3d0d8a6c907ecadf67a589be010b0d1672b1f",
+      "response_sha256": "279295cb5c09d6858d5508eedda91dd46c429a630338fee01d64ba6f8e6d7875"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-08:tfidf_rank1_memory:step-03",
+      "request_sha256": "a300d4e4e24ce88ff98ddcd7f54dd8ba3f49edd38a7d3a2a79a1a23acef2cf06",
+      "response_sha256": "82780d5f3fcbe638bb1bf9d2fdfd792e3467db4ac2114aade7bf84e2227604cb"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-08:tfidf_rank1_memory:step-04",
+      "request_sha256": "e0743aedc7ed33ab493f981ee82cbfe587f660029eee5971ed981e657d18b59d",
+      "response_sha256": "f5eb1d6273278dbbe9671aafbe721c2f3a59d35ccdf1380ad4794b5f0efa2678"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-08:proper_v2_1_memory:step-01",
+      "request_sha256": "6d005e4b0bfbfaaa5d660fe2e338ea734d65d6790c9a7df407a7a425ff39bdd1",
+      "response_sha256": "c171d5669e3224eaefab8e08518061ba8dd56345371826a6e73947aa1174e84c"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-09:tfidf_rank1_memory:step-01",
+      "request_sha256": "5c06952c1352db8a3dea7faaea4224c9dd1cb6813201849898027f3dbd25a0b4",
+      "response_sha256": "bb111150509775c5513d012c89951b986f55b1047c5fae75fda99407d4fdf7c3"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-09:tfidf_rank1_memory:step-02",
+      "request_sha256": "04011bf3fb2fd7ee717458100d6704deb5f2580a9001e97b76e8897aad353392",
+      "response_sha256": "1a49229f35b2fe0d21064c084b68b1a54e86b3e53662e903842f20a0398268dc"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-09:tfidf_rank1_memory:step-03",
+      "request_sha256": "026dbc84b965a52e883377fb05dc8d21dda2f34bda6614ae4b263fa85b8fca32",
+      "response_sha256": "3e795d0f97c8b995ed00335bf533fa4e7619bbce514a46b9563c5ad094929f07"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-09:tfidf_rank1_memory:step-04",
+      "request_sha256": "d411d07926f6707a7df9310dd83e43cef976e9727819c1595770a8fce8677b67",
+      "response_sha256": "c96384a072084aa2809005c794a0e9c8980dddb30cafc0071fd104dc1180d4ee"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-09:proper_v2_1_memory:step-01",
+      "request_sha256": "1b0e74b04909fa423b5db909d29f5bebfa3fac8e23c880c304a0a2bcc9302903",
+      "response_sha256": "3fffffbf860972539807f3273a0f9f1d4148741c536d87f54dbf4397ea916937"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-09:proper_v2_1_memory:step-02",
+      "request_sha256": "266fae107fa1d9bdeea220df1b3c4954f3262c865f69fba131c44f2d909b9ebe",
+      "response_sha256": "df0f6740c74c28493e9da253c480393e8102e403cbaa1f658d9491429ba312c4"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-09:proper_v2_1_memory:step-03",
+      "request_sha256": "a5673aafdec5299801edf448621627720e06f240f6d9125a8cf36d005a2a57f8",
+      "response_sha256": "bad7462f815ebaec69f9904b8078bb31e4054eb5652ed01cc48591a4f080f824"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-09:proper_v2_1_memory:step-04",
+      "request_sha256": "1c5b8cc9cfd5294eb9254deaf7469235ce91361515a7310e8b827309a6fb6b09",
+      "response_sha256": "1f526e0d41ceb6e6bdc019f1a3d4dfb6fb097fcb791c5ee04350c0f62da5eb07"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-10:tfidf_rank1_memory:step-01",
+      "request_sha256": "5e9b98a3d28916f8b9f83339b6c8556727b1205a9b91d60a8f660e39738e9592",
+      "response_sha256": "1f1b4be48feeaff7ffc42918551ebd6b66d8161b7705241811666c05bf51b713"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-10:tfidf_rank1_memory:step-02",
+      "request_sha256": "b5cbcd8ece9659576e957dce1fcfc363dc83f656dcb0d32d517dba0dfb7ba729",
+      "response_sha256": "a1e5456dbb972b62d06d3f169fcf85eede0eed885b1dc2a267597825652b711b"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-10:tfidf_rank1_memory:step-03",
+      "request_sha256": "d3241ffa4f204981d95aab12c9c2e07959e91d926d3c3f85f214d37cadec8c50",
+      "response_sha256": "ecd2b3f8d40e9e41a11a66e468cce361f568cc68da079677b43e2e5e97152be7"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-10:tfidf_rank1_memory:step-04",
+      "request_sha256": "97d07c8fd4693223a4a542570e33dcc1291f0f0349d6308d122d38d7a70eadc2",
+      "response_sha256": "9945fc41e1017cc35a1ccaac6cbe534ab5aedff0a0cedd690283f57aa6e2b6a9"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-10:proper_v2_1_memory:step-01",
+      "request_sha256": "9b716fb1747d86791039760fedd21de55854408b62734494d9a3eac1e445ab15",
+      "response_sha256": "17808e9a9b66d73feff067ec40270b9225e0745f3ca9c82e4de7b8cb6819709a"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-10:proper_v2_1_memory:step-02",
+      "request_sha256": "b3718f5ab5c5991dbea3f42f797cf77e631e2a1667f0a8668e82fb2d91b7c5b9",
+      "response_sha256": "04419cda330b7e6bdf6dc8e370d9bff1860199c0e4ab172296fb4fcb4860616f"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-10:proper_v2_1_memory:step-03",
+      "request_sha256": "3c010980e5eece775aaebd43336cca44f6e3b4ba33c2eeea373a46008eb740e2",
+      "response_sha256": "96551edcb8c542a78f0c2bc0ad0c2f9e93211b992df467d059994f2190207b99"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-10:proper_v2_1_memory:step-04",
+      "request_sha256": "313f561060148b9fe17e09fbb18ea0c35142ad447e59e0a3d30458d86fa502c9",
+      "response_sha256": "04ce95f2157083cc11151c0fab0a3a49cac42a6244474640fcef2e28d657a25a"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-11:tfidf_rank1_memory:step-01",
+      "request_sha256": "fcef9fd0e08812f9e8da6a8bc90177836173cbc8781641e66892e2484b827a66",
+      "response_sha256": "e769a7a9a839ff21eb4e3e5cb4ab19bbb3d802e276e7183359ae4055f862ad52"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-11:tfidf_rank1_memory:step-02",
+      "request_sha256": "ef4d2ad8c40325a4af5b5aa88a35895d5398a3781786abe1516a0cc7330c008c",
+      "response_sha256": "5394ef1af73500b636ce79e28f1e2f85622db4434d7da7aa2acf221801b4ca09"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-11:tfidf_rank1_memory:step-03",
+      "request_sha256": "d796d91469e06637ab33b512e661db274734ebdb71e75fc1fbb9dc9c714a6c40",
+      "response_sha256": "920f484ca6a39f7d6079beb00b5d707331c74f2a67c73ba759908ec972871d3c"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-11:tfidf_rank1_memory:step-04",
+      "request_sha256": "d070bf0d76aa39433c3e6a7563921a690db9e83a186aaa76fc62247f6096c8b8",
+      "response_sha256": "a74755e5f20eb27cfbac307dd30139e5b28a444de1a0049f15ddb741426953a4"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-11:proper_v2_1_memory:step-01",
+      "request_sha256": "b220b32ea2eab04cf243682e559da750b990d4f471b62a986c9c459d2bfb06ff",
+      "response_sha256": "01b576d81ad37f0b612a853751cff2416d37a1e6f8a90d412b28537b617a4586"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-11:proper_v2_1_memory:step-02",
+      "request_sha256": "afe657becd4aba1a80b3648b86c33c0d0d1fdce7d4933ebcee4ea2307251e92b",
+      "response_sha256": "7cc489753c6ed4d1d6a129c1d4a8db0f380c30b9d2acb69ec85b5ad217c98388"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-11:proper_v2_1_memory:step-03",
+      "request_sha256": "510e714eab4fec8921da2bfe5622b4585b78db1a9a6b88496ffa1bdd0eccff37",
+      "response_sha256": "890f76febae048d9f340ba848d0ca2f37b02b3d7b35274dbe40d1ef49d57ac59"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-11:proper_v2_1_memory:step-04",
+      "request_sha256": "5f7e04c722e1a86b03409d8255a2eaa484b75b6a899da081e0234c9ee1d78afa",
+      "response_sha256": "1ca0f94d0bf64325b5558d8972ae9012c6b16d74318e10b54cdd358da2881277"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-12:tfidf_rank1_memory:step-01",
+      "request_sha256": "b9401ef974301fe34452ff1d39c4955b8fc52a34c6a1e9ce137c1cee1e4fac42",
+      "response_sha256": "5e96d4a8729c6c93ab2a2dc55e7ddb23afbc1329e347db21c5a1948fb435f146"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-12:tfidf_rank1_memory:step-02",
+      "request_sha256": "f1c290733f36880cfc78adeab86e7bb7b41102ec0e2d2919766462aaea986b07",
+      "response_sha256": "2d84a0c3ed3d9167543ea2e1e78b374e700908778215373e5b02bdadcc6d64e1"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-12:tfidf_rank1_memory:step-03",
+      "request_sha256": "83d15bff01e2ab120ba8f5880c98d61b84d26b5f3d1f90ec74e6b456dc67d4d1",
+      "response_sha256": "cf7240b194f4e27074c706976274ace8df07b7312550e97726a8165b7bbdd50e"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-12:tfidf_rank1_memory:step-04",
+      "request_sha256": "6a50843ca72fde304aed97b74d084d517947a4dc73a08e7c97a8dbf55b8498b4",
+      "response_sha256": "3ed3554030b8f9cb0228f93d8cd15afd8f27b9da6380847ae9d2c19ea42b6015"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-12:proper_v2_1_memory:step-01",
+      "request_sha256": "51f4d90f0a5e1689e71fa7f418d66e1c759d5404cbc42906e7c4cf8c03b83457",
+      "response_sha256": "3b1f541e828ede8fd51f0c834b8756399dc47dfbab08bd5b5b8c93820c31a71f"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-12:proper_v2_1_memory:step-02",
+      "request_sha256": "f3ee756a5507976e0f077c4fc3348b95b1727b454f11066c2e93aaa4ee20d30e",
+      "response_sha256": "aa378b54f52e7bda9e7ca463bff6fb6d794fd7424a0e3f59aa675d13a84c28f3"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-12:proper_v2_1_memory:step-03",
+      "request_sha256": "2155a8fc982f15ac18b19814c00cae6ed4b127b89847668afad6493c281e6cbd",
+      "response_sha256": "5e9afc9c482999ce3b2285427a83d840a5091e2081aa1fee89d08057475f93ca"
+    },
+    {
+      "request_id": "toolsandbox-v2-1-12:proper_v2_1_memory:step-04",
+      "request_sha256": "f05521d2c70f8c9c2e07dd4daeb7bab5279e8df618fab62c3520f7b8f887c5f4",
+      "response_sha256": "6b182149526ca958b405ba463c0a60440a289d2024484c6f4522dde3f0dbdbc7"
+    }
+  ],
+  "records": [
+    {
+      "branch_prefix_sha256": "573f06bfdd5e8ce354a2d38ad84a17e5fd012535ba26fd3b6e69cd46498e94f0",
+      "conditions": {
+        "proper_v2_1_memory": {
+          "decisions": [
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_wifi_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-01:proper_v2_1_memory:step-01",
+                "request_sha256": "631f957e2835cc0cd1af04d4974c2500dd23a2695d84dc3f53f0c822f3389d25",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_wifi_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_wifi_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-01:proper_v2_1_memory:step-02",
+                "request_sha256": "7d27003e4dd58165ea408257e1e381c70fdb604bf77141a64da02335eebcf5a6",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_wifi_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"get_current_timestamp\",\"arguments\":{}}",
+                "request_id": "toolsandbox-v2-1-01:proper_v2_1_memory:step-03",
+                "request_sha256": "145b273b2a78231964b729271f9cb7359516190f410d4478704c4be2115a91c0",
+                "valid_json_decision": true
+              },
+              "arguments": {},
+              "kind": "tool",
+              "tool_name": "get_current_timestamp"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_wifi_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-01:proper_v2_1_memory:step-04",
+                "request_sha256": "1d21927b05cff7e5349cb10b0b6fbda5daf6d46dcfa7999b1d4ee01b0aae6923",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_wifi_status"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {
+              "0": [
+                17,
+                1.0
+              ],
+              "1": [
+                21,
+                1.0
+              ],
+              "2": [
+                21,
+                0.0
+              ],
+              "3": [
+                21,
+                0.0
+              ],
+              "4": [
+                21,
+                0.0
+              ]
+            },
+            "milestone_similarity": 0.4,
+            "minefield_mapping": {},
+            "minefield_similarity": 0.0,
+            "similarity": 0.4,
+            "turn_count": 12
+          },
+          "final_context_sha256": "a9be15b0dba449ca2db185eee81c10c2df1d5f55fc6c9e85886da5e101eab3f3",
+          "first_decision_policy_alignment": true,
+          "recovery_decision_count": 4,
+          "recovery_tool_call_count": 4,
+          "repeated_identical_tool_call_count": 1,
+          "start_sha256": "573f06bfdd5e8ce354a2d38ad84a17e5fd012535ba26fd3b6e69cd46498e94f0",
+          "tool_exception_count": 2,
+          "tool_history": [
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": null,
+              "result": null,
+              "tool_name": "set_wifi_status",
+              "visible_content": "None"
+            },
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": "ValueError: wifi already enabled",
+              "result": null,
+              "tool_name": "set_wifi_status",
+              "visible_content": "ValueError: wifi already enabled"
+            },
+            {
+              "arguments": {},
+              "exception": null,
+              "result": 1785379596.402995,
+              "tool_name": "get_current_timestamp",
+              "visible_content": "1785379596.402995"
+            },
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": "ValueError: wifi already enabled",
+              "result": null,
+              "tool_name": "set_wifi_status",
+              "visible_content": "ValueError: wifi already enabled"
+            }
+          ]
+        },
+        "tfidf_rank1_memory": {
+          "decisions": [
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"get_wifi_status\",\"arguments\":{}}",
+                "request_id": "toolsandbox-v2-1-01:tfidf_rank1_memory:step-01",
+                "request_sha256": "6d01ac3e45f2c18ebeade5311e826942f03d218943c6fe6c2b257fd899dcf0ca",
+                "valid_json_decision": true
+              },
+              "arguments": {},
+              "kind": "tool",
+              "tool_name": "get_wifi_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_wifi_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-01:tfidf_rank1_memory:step-02",
+                "request_sha256": "fb34ac3d4dfb7a9df3848fc58803ada9f7f281ca9a36f3dab78af05471384b1b",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_wifi_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"get_current_timestamp\",\"arguments\":{}}",
+                "request_id": "toolsandbox-v2-1-01:tfidf_rank1_memory:step-03",
+                "request_sha256": "45d97b67041359146b88141e10708eb0c6bd9ab32c4cef18b28c1153c9a86de4",
+                "valid_json_decision": true
+              },
+              "arguments": {},
+              "kind": "tool",
+              "tool_name": "get_current_timestamp"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"timestamp_diff\",\"arguments\":{\"timestamp_0\":1785379570.516965,\"timestamp_1\":1785379578.088692}}",
+                "request_id": "toolsandbox-v2-1-01:tfidf_rank1_memory:step-04",
+                "request_sha256": "afa3f1e72e4145c64a5b4aa49ce8ad7e4b71ba3d64369a9ea007ff742854700d",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "timestamp_0": 1785379570.516965,
+                "timestamp_1": 1785379578.088692
+              },
+              "kind": "tool",
+              "tool_name": "timestamp_diff"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {
+              "0": [
+                17,
+                1.0
+              ],
+              "1": [
+                23,
+                1.0
+              ],
+              "2": [
+                23,
+                0.0
+              ],
+              "3": [
+                23,
+                0.0
+              ],
+              "4": [
+                23,
+                0.0
+              ]
+            },
+            "milestone_similarity": 0.4,
+            "minefield_mapping": {},
+            "minefield_similarity": 0.0,
+            "similarity": 0.4,
+            "turn_count": 12
+          },
+          "final_context_sha256": "8e5278d6874e680b9af99819f52dd487299d140d828d845bc19ac9775c582a30",
+          "first_decision_policy_alignment": false,
+          "recovery_decision_count": 4,
+          "recovery_tool_call_count": 4,
+          "repeated_identical_tool_call_count": 0,
+          "start_sha256": "573f06bfdd5e8ce354a2d38ad84a17e5fd012535ba26fd3b6e69cd46498e94f0",
+          "tool_exception_count": 0,
+          "tool_history": [
+            {
+              "arguments": {},
+              "exception": null,
+              "result": false,
+              "tool_name": "get_wifi_status",
+              "visible_content": "False"
+            },
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": null,
+              "result": null,
+              "tool_name": "set_wifi_status",
+              "visible_content": "None"
+            },
+            {
+              "arguments": {},
+              "exception": null,
+              "result": 1785379578.088692,
+              "tool_name": "get_current_timestamp",
+              "visible_content": "1785379578.088692"
+            },
+            {
+              "arguments": {
+                "timestamp_0": 1785379570.516965,
+                "timestamp_1": 1785379578.088692
+              },
+              "exception": null,
+              "result": {
+                "days": 0,
+                "seconds": 7
+              },
+              "tool_name": "timestamp_diff",
+              "visible_content": "{'days': 0, 'seconds': 7}"
+            }
+          ]
+        }
+      },
+      "decision_phase": "post_failure",
+      "holiday_dynamic_reference_diagnostic": {
+        "applicable": true,
+        "complete_required_trace_present": false,
+        "reproduced": false
+      },
+      "identical_condition_start": true,
+      "pair_id": "toolsandbox-v2-1-01",
+      "prefix_exception_verified": true,
+      "prefix_history": [
+        {
+          "arguments": {},
+          "exception": null,
+          "result": 1785379570.516965,
+          "tool_name": "get_current_timestamp",
+          "visible_content": "1785379570.516965"
+        },
+        {
+          "arguments": {
+            "holiday_name": "Christmas Day",
+            "year": null
+          },
+          "exception": "ConnectionError: Wifi is not enabled",
+          "result": null,
+          "tool_name": "search_holiday",
+          "visible_content": "ConnectionError: Wifi is not enabled"
+        }
+      ],
+      "scenario_name": "find_days_till_holiday_wifi_off",
+      "semantic_family": "find_days_till_holiday_wifi_off"
+    },
+    {
+      "branch_prefix_sha256": "859f4cfdaa52bb6c838c478873dfcf7ebe68591c184244aac559aa2e6efb368a",
+      "conditions": {
+        "proper_v2_1_memory": {
+          "decisions": [
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_wifi_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-02:proper_v2_1_memory:step-01",
+                "request_sha256": "f92301836040fc00582af7095223073df5e9ecf9eb5798788ddf4c8dd6fafd7b",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_wifi_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_wifi_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-02:proper_v2_1_memory:step-02",
+                "request_sha256": "556323faab290c001105b207bbdea2d5ffffa90b53912c1573249b263911717f",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_wifi_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"get_current_timestamp\",\"arguments\":{}}",
+                "request_id": "toolsandbox-v2-1-02:proper_v2_1_memory:step-03",
+                "request_sha256": "e8cd38e12b6464c25c0ca14586b8a34a0a709a7d154e6b47931963b28abb1d61",
+                "valid_json_decision": true
+              },
+              "arguments": {},
+              "kind": "tool",
+              "tool_name": "get_current_timestamp"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_wifi_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-02:proper_v2_1_memory:step-04",
+                "request_sha256": "7775e0d30e2f7eb90ade8042579f5b253e34b3f11bdbdffb2b51df396c0a8ba5",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_wifi_status"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {
+              "0": [
+                17,
+                1.0
+              ],
+              "1": [
+                21,
+                1.0
+              ],
+              "2": [
+                21,
+                0.0
+              ],
+              "3": [
+                21,
+                0.0
+              ],
+              "4": [
+                21,
+                0.0
+              ]
+            },
+            "milestone_similarity": 0.4,
+            "minefield_mapping": {},
+            "minefield_similarity": 0.0,
+            "similarity": 0.4,
+            "turn_count": 12
+          },
+          "final_context_sha256": "f981bec2e2e80fa9c25dda8740fbe5f82f40a804fce8966b6a6ecf7b29effa2e",
+          "first_decision_policy_alignment": true,
+          "recovery_decision_count": 4,
+          "recovery_tool_call_count": 4,
+          "repeated_identical_tool_call_count": 1,
+          "start_sha256": "859f4cfdaa52bb6c838c478873dfcf7ebe68591c184244aac559aa2e6efb368a",
+          "tool_exception_count": 2,
+          "tool_history": [
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": null,
+              "result": null,
+              "tool_name": "set_wifi_status",
+              "visible_content": "None"
+            },
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": "ValueError: wifi already enabled",
+              "result": null,
+              "tool_name": "set_wifi_status",
+              "visible_content": "ValueError: wifi already enabled"
+            },
+            {
+              "arguments": {},
+              "exception": null,
+              "result": 1785379638.303329,
+              "tool_name": "get_current_timestamp",
+              "visible_content": "1785379638.303329"
+            },
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": "ValueError: wifi already enabled",
+              "result": null,
+              "tool_name": "set_wifi_status",
+              "visible_content": "ValueError: wifi already enabled"
+            }
+          ]
+        },
+        "tfidf_rank1_memory": {
+          "decisions": [
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"get_wifi_status\",\"arguments\":{}}",
+                "request_id": "toolsandbox-v2-1-02:tfidf_rank1_memory:step-01",
+                "request_sha256": "568fb627943dc3a8869069ac19fed03ac0965bdd075013ae4318b0a18212012d",
+                "valid_json_decision": true
+              },
+              "arguments": {},
+              "kind": "tool",
+              "tool_name": "get_wifi_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_wifi_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-02:tfidf_rank1_memory:step-02",
+                "request_sha256": "692a5f282aea013c4ffacf68e31189d6b6c6e71551a029b1e3eb27493ce19c7b",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_wifi_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"get_wifi_status\",\"arguments\":{}}",
+                "request_id": "toolsandbox-v2-1-02:tfidf_rank1_memory:step-03",
+                "request_sha256": "c26529abbe3122538795a839c5d1d69723dcb9d9e0a40093ab3b70b980588a2b",
+                "valid_json_decision": true
+              },
+              "arguments": {},
+              "kind": "tool",
+              "tool_name": "get_wifi_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"get_current_timestamp\",\"arguments\":{}}",
+                "request_id": "toolsandbox-v2-1-02:tfidf_rank1_memory:step-04",
+                "request_sha256": "103ed4852e256f764dd2b540b3a486ad0e816f1b3eafe29695a9237d9d7b3ada",
+                "valid_json_decision": true
+              },
+              "arguments": {},
+              "kind": "tool",
+              "tool_name": "get_current_timestamp"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {
+              "0": [
+                17,
+                1.0
+              ],
+              "1": [
+                23,
+                1.0
+              ],
+              "2": [
+                23,
+                0.0
+              ],
+              "3": [
+                23,
+                0.0
+              ],
+              "4": [
+                23,
+                0.0
+              ]
+            },
+            "milestone_similarity": 0.4,
+            "minefield_mapping": {},
+            "minefield_similarity": 0.0,
+            "similarity": 0.4,
+            "turn_count": 12
+          },
+          "final_context_sha256": "9ea505dab615766d480c4027e137da0b2852a73a4741680b47b04d4cec528644",
+          "first_decision_policy_alignment": false,
+          "recovery_decision_count": 4,
+          "recovery_tool_call_count": 4,
+          "repeated_identical_tool_call_count": 0,
+          "start_sha256": "859f4cfdaa52bb6c838c478873dfcf7ebe68591c184244aac559aa2e6efb368a",
+          "tool_exception_count": 0,
+          "tool_history": [
+            {
+              "arguments": {},
+              "exception": null,
+              "result": false,
+              "tool_name": "get_wifi_status",
+              "visible_content": "False"
+            },
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": null,
+              "result": null,
+              "tool_name": "set_wifi_status",
+              "visible_content": "None"
+            },
+            {
+              "arguments": {},
+              "exception": null,
+              "result": true,
+              "tool_name": "get_wifi_status",
+              "visible_content": "True"
+            },
+            {
+              "arguments": {},
+              "exception": null,
+              "result": 1785379621.812036,
+              "tool_name": "get_current_timestamp",
+              "visible_content": "1785379621.812036"
+            }
+          ]
+        }
+      },
+      "decision_phase": "post_failure",
+      "holiday_dynamic_reference_diagnostic": {
+        "applicable": true,
+        "complete_required_trace_present": false,
+        "reproduced": false
+      },
+      "identical_condition_start": true,
+      "pair_id": "toolsandbox-v2-1-02",
+      "prefix_exception_verified": true,
+      "prefix_history": [
+        {
+          "arguments": {},
+          "exception": null,
+          "result": 1785379618.822472,
+          "tool_name": "get_current_timestamp",
+          "visible_content": "1785379618.822472"
+        },
+        {
+          "arguments": {
+            "holiday_name": "Christmas Day",
+            "year": null
+          },
+          "exception": "ConnectionError: Wifi is not enabled",
+          "result": null,
+          "tool_name": "search_holiday",
+          "visible_content": "ConnectionError: Wifi is not enabled"
+        }
+      ],
+      "scenario_name": "find_days_till_holiday_wifi_off_alt",
+      "semantic_family": "find_days_till_holiday_wifi_off"
+    },
+    {
+      "branch_prefix_sha256": "8c5c92a5901244148376fe7bcfad8ea4206caaae670db60d9a657dd0fc904318",
+      "conditions": {
+        "proper_v2_1_memory": {
+          "decisions": [
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_wifi_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-03:proper_v2_1_memory:step-01",
+                "request_sha256": "08b532ab9c34463017cea55c24d109438b07aecde675b1207b361acf422c5078",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_wifi_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_wifi_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-03:proper_v2_1_memory:step-02",
+                "request_sha256": "a122f5fa74bc2106a9fb3065c55a1ebf5262ab8bb669446f9ac5f4c1206cb40c",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_wifi_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"get_wifi_status\",\"arguments\":{}}",
+                "request_id": "toolsandbox-v2-1-03:proper_v2_1_memory:step-03",
+                "request_sha256": "6aebdbe54c87fc75a1e4fa3f142e9be0a983954746cf6872a11303dcc4ddeaa1",
+                "valid_json_decision": true
+              },
+              "arguments": {},
+              "kind": "tool",
+              "tool_name": "get_wifi_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_wifi_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-03:proper_v2_1_memory:step-04",
+                "request_sha256": "09e20a85ab657d7859389687c610ddfb4cc2e9ffa4c984f67f918926402562d4",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_wifi_status"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {
+              "0": [
+                17,
+                1.0
+              ],
+              "1": [
+                21,
+                1.0
+              ],
+              "2": [
+                21,
+                0.0
+              ],
+              "3": [
+                21,
+                0.0
+              ],
+              "4": [
+                21,
+                0.0
+              ]
+            },
+            "milestone_similarity": 0.4,
+            "minefield_mapping": {},
+            "minefield_similarity": 0.0,
+            "similarity": 0.4,
+            "turn_count": 12
+          },
+          "final_context_sha256": "611f93570429252aaeef8540e31de31ba2b0574c4b2697a6e5e26697077da99b",
+          "first_decision_policy_alignment": true,
+          "recovery_decision_count": 4,
+          "recovery_tool_call_count": 4,
+          "repeated_identical_tool_call_count": 1,
+          "start_sha256": "8c5c92a5901244148376fe7bcfad8ea4206caaae670db60d9a657dd0fc904318",
+          "tool_exception_count": 2,
+          "tool_history": [
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": null,
+              "result": null,
+              "tool_name": "set_wifi_status",
+              "visible_content": "None"
+            },
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": "ValueError: wifi already enabled",
+              "result": null,
+              "tool_name": "set_wifi_status",
+              "visible_content": "ValueError: wifi already enabled"
+            },
+            {
+              "arguments": {},
+              "exception": null,
+              "result": true,
+              "tool_name": "get_wifi_status",
+              "visible_content": "True"
+            },
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": "ValueError: wifi already enabled",
+              "result": null,
+              "tool_name": "set_wifi_status",
+              "visible_content": "ValueError: wifi already enabled"
+            }
+          ]
+        },
+        "tfidf_rank1_memory": {
+          "decisions": [
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_wifi_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-03:tfidf_rank1_memory:step-01",
+                "request_sha256": "81ca972ee8d103b342ea2251d08ffd53a20c0b3cec298649cadf9146dc893830",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_wifi_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_wifi_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-03:tfidf_rank1_memory:step-02",
+                "request_sha256": "b104cd4a5a0425bd5690b198eff4952d655f0eef54dc1facc5d5a4208d2a7cd4",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_wifi_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"get_wifi_status\",\"arguments\":{}}",
+                "request_id": "toolsandbox-v2-1-03:tfidf_rank1_memory:step-03",
+                "request_sha256": "5d7eead6b5ef1f5a53f072d9ac7a06732b4771f0bb570d8124956dbc543264a6",
+                "valid_json_decision": true
+              },
+              "arguments": {},
+              "kind": "tool",
+              "tool_name": "get_wifi_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"get_wifi_status\",\"arguments\":{}}",
+                "request_id": "toolsandbox-v2-1-03:tfidf_rank1_memory:step-04",
+                "request_sha256": "55a51eb773e6f6f34876b8b8f5dd153c1dabf9aba332b78649a73313a27c0cf8",
+                "valid_json_decision": true
+              },
+              "arguments": {},
+              "kind": "tool",
+              "tool_name": "get_wifi_status"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {
+              "0": [
+                17,
+                1.0
+              ],
+              "1": [
+                21,
+                1.0
+              ],
+              "2": [
+                21,
+                0.0
+              ],
+              "3": [
+                21,
+                0.0
+              ],
+              "4": [
+                21,
+                0.0
+              ]
+            },
+            "milestone_similarity": 0.4,
+            "minefield_mapping": {},
+            "minefield_similarity": 0.0,
+            "similarity": 0.4,
+            "turn_count": 12
+          },
+          "final_context_sha256": "e1d4b69d27b1447cd069bbb7358f88715788ca1cce0fe79e41313203608d9cba",
+          "first_decision_policy_alignment": true,
+          "recovery_decision_count": 4,
+          "recovery_tool_call_count": 4,
+          "repeated_identical_tool_call_count": 2,
+          "start_sha256": "8c5c92a5901244148376fe7bcfad8ea4206caaae670db60d9a657dd0fc904318",
+          "tool_exception_count": 1,
+          "tool_history": [
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": null,
+              "result": null,
+              "tool_name": "set_wifi_status",
+              "visible_content": "None"
+            },
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": "ValueError: wifi already enabled",
+              "result": null,
+              "tool_name": "set_wifi_status",
+              "visible_content": "ValueError: wifi already enabled"
+            },
+            {
+              "arguments": {},
+              "exception": null,
+              "result": true,
+              "tool_name": "get_wifi_status",
+              "visible_content": "True"
+            },
+            {
+              "arguments": {},
+              "exception": null,
+              "result": true,
+              "tool_name": "get_wifi_status",
+              "visible_content": "True"
+            }
+          ]
+        }
+      },
+      "decision_phase": "post_failure",
+      "holiday_dynamic_reference_diagnostic": {
+        "applicable": true,
+        "complete_required_trace_present": false,
+        "reproduced": false
+      },
+      "identical_condition_start": true,
+      "pair_id": "toolsandbox-v2-1-03",
+      "prefix_exception_verified": true,
+      "prefix_history": [
+        {
+          "arguments": {},
+          "exception": null,
+          "result": 1785379653.453132,
+          "tool_name": "get_current_timestamp",
+          "visible_content": "1785379653.453132"
+        },
+        {
+          "arguments": {
+            "holiday_name": "Christmas Day",
+            "year": null
+          },
+          "exception": "ConnectionError: Wifi is not enabled",
+          "result": null,
+          "tool_name": "search_holiday",
+          "visible_content": "ConnectionError: Wifi is not enabled"
+        }
+      ],
+      "scenario_name": "find_days_till_holiday_wifi_off_multiple_user_turn",
+      "semantic_family": "find_days_till_holiday_wifi_off"
+    },
+    {
+      "branch_prefix_sha256": "e5a1bec2c7acd014886519b477c591669dad1b6b632d5d7ec685ed3715e76d36",
+      "conditions": {
+        "proper_v2_1_memory": {
+          "decisions": [
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"stop\",\"reason_code\":\"failure_state:insufficient_information\",\"message\":\"Insufficient information: Missing temporal context.\"}",
+                "request_id": "toolsandbox-v2-1-04:proper_v2_1_memory:step-01",
+                "request_sha256": "7d283dc1f2d3665800eb9d9f2e7ccaa0a1980a5f56ccfc8b7537c0427e12ecae",
+                "valid_json_decision": true
+              },
+              "kind": "stop",
+              "message": "Insufficient information: Missing temporal context.",
+              "reason_code": "failure_state:insufficient_information"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {},
+            "milestone_similarity": 1.0,
+            "minefield_mapping": {
+              "0": [
+                15,
+                0.0
+              ]
+            },
+            "minefield_similarity": 0.0,
+            "similarity": 1.0,
+            "turn_count": 1
+          },
+          "final_context_sha256": "dd906f2ba21996ef969aaf689887159a1a7bddc49150b522efee3b5b5a5348ed",
+          "first_decision_policy_alignment": true,
+          "recovery_decision_count": 1,
+          "recovery_tool_call_count": 0,
+          "repeated_identical_tool_call_count": 0,
+          "start_sha256": "e5a1bec2c7acd014886519b477c591669dad1b6b632d5d7ec685ed3715e76d36",
+          "tool_exception_count": 0,
+          "tool_history": []
+        },
+        "tfidf_rank1_memory": {
+          "decisions": [
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"search_reminder\",\"arguments\":{\"creation_timestamp_lowerbound\":1717027200,\"creation_timestamp_upperbound\":1717027200}}",
+                "request_id": "toolsandbox-v2-1-04:tfidf_rank1_memory:step-01",
+                "request_sha256": "9ff5ce4b86f017b11eb805ac687630a7488fe0d792f3aae2fa5097856d4c9bec",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "creation_timestamp_lowerbound": 1717027200,
+                "creation_timestamp_upperbound": 1717027200
+              },
+              "kind": "tool",
+              "tool_name": "search_reminder"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"search_reminder\",\"arguments\":{\"creation_timestamp_lowerbound\":1717027200,\"creation_timestamp_upperbound\":1717027200}}",
+                "request_id": "toolsandbox-v2-1-04:tfidf_rank1_memory:step-02",
+                "request_sha256": "dc0c9d87194430bf732aef77165a75e6bb7ec0daeaf56a37e2dd1ede188c864d",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "creation_timestamp_lowerbound": 1717027200,
+                "creation_timestamp_upperbound": 1717027200
+              },
+              "kind": "tool",
+              "tool_name": "search_reminder"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"search_reminder\",\"arguments\":{\"creation_timestamp_lowerbound\":1717027200,\"creation_timestamp_upperbound\":1717027200}}",
+                "request_id": "toolsandbox-v2-1-04:tfidf_rank1_memory:step-03",
+                "request_sha256": "b9f87e8e3b89aa269b8e2dea86ebb783ac5a894202d9357a96d5d54e26060f20",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "creation_timestamp_lowerbound": 1717027200,
+                "creation_timestamp_upperbound": 1717027200
+              },
+              "kind": "tool",
+              "tool_name": "search_reminder"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"search_reminder\",\"arguments\":{\"creation_timestamp_lowerbound\":1717027200,\"creation_timestamp_upperbound\":1717027200}}",
+                "request_id": "toolsandbox-v2-1-04:tfidf_rank1_memory:step-04",
+                "request_sha256": "d2ff6972ea0ff1b60d2caaeaa274674190f08d7c53cfe5cfa6f9d8161a0f3412",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "creation_timestamp_lowerbound": 1717027200,
+                "creation_timestamp_upperbound": 1717027200
+              },
+              "kind": "tool",
+              "tool_name": "search_reminder"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {},
+            "milestone_similarity": 1.0,
+            "minefield_mapping": {
+              "0": [
+                17,
+                1.0
+              ]
+            },
+            "minefield_similarity": 1.0,
+            "similarity": 0.0,
+            "turn_count": 8
+          },
+          "final_context_sha256": "a4169845868760cb21ba3d909c853a74bda62ec3fc876135f9951a5e6c1336f6",
+          "first_decision_policy_alignment": false,
+          "recovery_decision_count": 4,
+          "recovery_tool_call_count": 4,
+          "repeated_identical_tool_call_count": 3,
+          "start_sha256": "e5a1bec2c7acd014886519b477c591669dad1b6b632d5d7ec685ed3715e76d36",
+          "tool_exception_count": 0,
+          "tool_history": [
+            {
+              "arguments": {
+                "creation_timestamp_lowerbound": 1717027200,
+                "creation_timestamp_upperbound": 1717027200
+              },
+              "exception": null,
+              "result": [],
+              "tool_name": "search_reminder",
+              "visible_content": "[]"
+            },
+            {
+              "arguments": {
+                "creation_timestamp_lowerbound": 1717027200,
+                "creation_timestamp_upperbound": 1717027200
+              },
+              "exception": null,
+              "result": [],
+              "tool_name": "search_reminder",
+              "visible_content": "[]"
+            },
+            {
+              "arguments": {
+                "creation_timestamp_lowerbound": 1717027200,
+                "creation_timestamp_upperbound": 1717027200
+              },
+              "exception": null,
+              "result": [],
+              "tool_name": "search_reminder",
+              "visible_content": "[]"
+            },
+            {
+              "arguments": {
+                "creation_timestamp_lowerbound": 1717027200,
+                "creation_timestamp_upperbound": 1717027200
+              },
+              "exception": null,
+              "result": [],
+              "tool_name": "search_reminder",
+              "visible_content": "[]"
+            }
+          ]
+        }
+      },
+      "decision_phase": "pre_action",
+      "holiday_dynamic_reference_diagnostic": {
+        "applicable": false,
+        "reproduced": false
+      },
+      "identical_condition_start": true,
+      "pair_id": "toolsandbox-v2-1-04",
+      "prefix_exception_verified": true,
+      "prefix_history": [],
+      "scenario_name": "search_reminder_with_creation_recency_yesterday_insufficient_information",
+      "semantic_family": "search_reminder_with_creation_recency_yesterday_insufficient_information"
+    },
+    {
+      "branch_prefix_sha256": "f5b6087b470d155b3c9bbdd75b0bc2ddeaeccd6ae4a1c3d29af61b8cc22cd052",
+      "conditions": {
+        "proper_v2_1_memory": {
+          "decisions": [
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"stop\",\"reason_code\":\"failure_state:insufficient_information\",\"message\":\"Insufficient information: Missing temporal context.\"}",
+                "request_id": "toolsandbox-v2-1-05:proper_v2_1_memory:step-01",
+                "request_sha256": "288a2b1530580ac8d9da9f16c6f8fefaab57f01106278c856e847ecba5c1cd0d",
+                "valid_json_decision": true
+              },
+              "kind": "stop",
+              "message": "Insufficient information: Missing temporal context.",
+              "reason_code": "failure_state:insufficient_information"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {},
+            "milestone_similarity": 1.0,
+            "minefield_mapping": {
+              "0": [
+                15,
+                0.0
+              ]
+            },
+            "minefield_similarity": 0.0,
+            "similarity": 1.0,
+            "turn_count": 1
+          },
+          "final_context_sha256": "45892766b6740505f60205eb5787f6fbcb43eda9331c70574c78f140cad0da21",
+          "first_decision_policy_alignment": true,
+          "recovery_decision_count": 1,
+          "recovery_tool_call_count": 0,
+          "repeated_identical_tool_call_count": 0,
+          "start_sha256": "f5b6087b470d155b3c9bbdd75b0bc2ddeaeccd6ae4a1c3d29af61b8cc22cd052",
+          "tool_exception_count": 0,
+          "tool_history": []
+        },
+        "tfidf_rank1_memory": {
+          "decisions": [
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"search_reminder\",\"arguments\":{\"creation_timestamp_lowerbound\":1717027200,\"creation_timestamp_upperbound\":1717027200}}",
+                "request_id": "toolsandbox-v2-1-05:tfidf_rank1_memory:step-01",
+                "request_sha256": "f86bca09acf6f7cf703b232886ff2d3c23c650f66e4cbc61fc0c19fbf85b68d3",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "creation_timestamp_lowerbound": 1717027200,
+                "creation_timestamp_upperbound": 1717027200
+              },
+              "kind": "tool",
+              "tool_name": "search_reminder"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"search_reminder\",\"arguments\":{\"creation_timestamp_lowerbound\":1717027200,\"creation_timestamp_upperbound\":1717027200}}",
+                "request_id": "toolsandbox-v2-1-05:tfidf_rank1_memory:step-02",
+                "request_sha256": "6de05fbfd7c1505f0c60d6b082cba848f727fe5e94e68cf8357bba554adc8629",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "creation_timestamp_lowerbound": 1717027200,
+                "creation_timestamp_upperbound": 1717027200
+              },
+              "kind": "tool",
+              "tool_name": "search_reminder"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"search_reminder\",\"arguments\":{\"creation_timestamp_lowerbound\":1717027200,\"creation_timestamp_upperbound\":1717027200}}",
+                "request_id": "toolsandbox-v2-1-05:tfidf_rank1_memory:step-03",
+                "request_sha256": "4cd84237d9b337fa0f6b8bb0d02ce72698eb821dec71a40cceb37b7cd7575d10",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "creation_timestamp_lowerbound": 1717027200,
+                "creation_timestamp_upperbound": 1717027200
+              },
+              "kind": "tool",
+              "tool_name": "search_reminder"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"search_reminder\",\"arguments\":{\"creation_timestamp_lowerbound\":1717027200,\"creation_timestamp_upperbound\":1717027200}}",
+                "request_id": "toolsandbox-v2-1-05:tfidf_rank1_memory:step-04",
+                "request_sha256": "0b4f7e0b0fc157233575d3638c39398fd1268e152bb278cdd27285518b86f3c7",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "creation_timestamp_lowerbound": 1717027200,
+                "creation_timestamp_upperbound": 1717027200
+              },
+              "kind": "tool",
+              "tool_name": "search_reminder"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {},
+            "milestone_similarity": 1.0,
+            "minefield_mapping": {
+              "0": [
+                17,
+                1.0
+              ]
+            },
+            "minefield_similarity": 1.0,
+            "similarity": 0.0,
+            "turn_count": 8
+          },
+          "final_context_sha256": "c4aa0c5e0d7380940f4ab14c6742ff16c14c6dcf8595044526a81ec9a117c950",
+          "first_decision_policy_alignment": false,
+          "recovery_decision_count": 4,
+          "recovery_tool_call_count": 4,
+          "repeated_identical_tool_call_count": 3,
+          "start_sha256": "f5b6087b470d155b3c9bbdd75b0bc2ddeaeccd6ae4a1c3d29af61b8cc22cd052",
+          "tool_exception_count": 0,
+          "tool_history": [
+            {
+              "arguments": {
+                "creation_timestamp_lowerbound": 1717027200,
+                "creation_timestamp_upperbound": 1717027200
+              },
+              "exception": null,
+              "result": [],
+              "tool_name": "search_reminder",
+              "visible_content": "[]"
+            },
+            {
+              "arguments": {
+                "creation_timestamp_lowerbound": 1717027200,
+                "creation_timestamp_upperbound": 1717027200
+              },
+              "exception": null,
+              "result": [],
+              "tool_name": "search_reminder",
+              "visible_content": "[]"
+            },
+            {
+              "arguments": {
+                "creation_timestamp_lowerbound": 1717027200,
+                "creation_timestamp_upperbound": 1717027200
+              },
+              "exception": null,
+              "result": [],
+              "tool_name": "search_reminder",
+              "visible_content": "[]"
+            },
+            {
+              "arguments": {
+                "creation_timestamp_lowerbound": 1717027200,
+                "creation_timestamp_upperbound": 1717027200
+              },
+              "exception": null,
+              "result": [],
+              "tool_name": "search_reminder",
+              "visible_content": "[]"
+            }
+          ]
+        }
+      },
+      "decision_phase": "pre_action",
+      "holiday_dynamic_reference_diagnostic": {
+        "applicable": false,
+        "reproduced": false
+      },
+      "identical_condition_start": true,
+      "pair_id": "toolsandbox-v2-1-05",
+      "prefix_exception_verified": true,
+      "prefix_history": [],
+      "scenario_name": "search_reminder_with_creation_recency_yesterday_insufficient_information_implicit",
+      "semantic_family": "search_reminder_with_creation_recency_yesterday_insufficient_information"
+    },
+    {
+      "branch_prefix_sha256": "d176fcb7213871ef3c66919f456ee93f2ee851b9cd58a898ec0606a349e776d8",
+      "conditions": {
+        "proper_v2_1_memory": {
+          "decisions": [
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_cellular_service_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-06:proper_v2_1_memory:step-01",
+                "request_sha256": "261dcb1dd4df9604b3c202fc67ded4d6ef4f2f7020f5c29628f8f4a6d0d85f34",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_cellular_service_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_cellular_service_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-06:proper_v2_1_memory:step-02",
+                "request_sha256": "51735ee97481c1dee96633aaff7c0687bc22208f70d5c81134d50445c6d262ed",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_cellular_service_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_cellular_service_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-06:proper_v2_1_memory:step-03",
+                "request_sha256": "303744fa229f489df56bf2ab475716ff56f681cdc453f1ac11e1fec710a02625",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_cellular_service_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_cellular_service_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-06:proper_v2_1_memory:step-04",
+                "request_sha256": "3ec75a4018c8e1b5ae4c4717922a522d02274f05a8e17d670c7bb9433a23757d",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_cellular_service_status"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {
+              "0": [
+                21,
+                1.0
+              ],
+              "1": [
+                17,
+                1.0
+              ],
+              "2": [
+                21,
+                0.0
+              ],
+              "3": [
+                21,
+                0.0
+              ]
+            },
+            "milestone_similarity": 0.5,
+            "minefield_mapping": {},
+            "minefield_similarity": 0.0,
+            "similarity": 0.5,
+            "turn_count": 12
+          },
+          "final_context_sha256": "c599e18db51b211b19d46fe009b755ab1a7c73f9c9fc137a17e6617febf65837",
+          "first_decision_policy_alignment": true,
+          "recovery_decision_count": 4,
+          "recovery_tool_call_count": 4,
+          "repeated_identical_tool_call_count": 3,
+          "start_sha256": "d176fcb7213871ef3c66919f456ee93f2ee851b9cd58a898ec0606a349e776d8",
+          "tool_exception_count": 3,
+          "tool_history": [
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": null,
+              "result": null,
+              "tool_name": "set_cellular_service_status",
+              "visible_content": "None"
+            },
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": "ValueError: cellular already enabled",
+              "result": null,
+              "tool_name": "set_cellular_service_status",
+              "visible_content": "ValueError: cellular already enabled"
+            },
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": "ValueError: cellular already enabled",
+              "result": null,
+              "tool_name": "set_cellular_service_status",
+              "visible_content": "ValueError: cellular already enabled"
+            },
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": "ValueError: cellular already enabled",
+              "result": null,
+              "tool_name": "set_cellular_service_status",
+              "visible_content": "ValueError: cellular already enabled"
+            }
+          ]
+        },
+        "tfidf_rank1_memory": {
+          "decisions": [
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_cellular_service_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-06:tfidf_rank1_memory:step-01",
+                "request_sha256": "25685a445ba170d95d90e36dc79a709c0c617a08c1d18076bc4e9cb6e7e04b60",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_cellular_service_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_cellular_service_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-06:tfidf_rank1_memory:step-02",
+                "request_sha256": "98324d3770d5ce13b0258b7a4de88921ab586ca59d3cbb2e51c2271ec1a49b87",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_cellular_service_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"get_cellular_service_status\",\"arguments\":{}}",
+                "request_id": "toolsandbox-v2-1-06:tfidf_rank1_memory:step-03",
+                "request_sha256": "e76ca90d22917493a01a5e936145449628c371e5a82bafb14b6c8d1d9a70b083",
+                "valid_json_decision": true
+              },
+              "arguments": {},
+              "kind": "tool",
+              "tool_name": "get_cellular_service_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_cellular_service_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-06:tfidf_rank1_memory:step-04",
+                "request_sha256": "2678d2e0064105e20b764d23bb0b31092819e29f2ee27fc98b35820e1fa4d357",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_cellular_service_status"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {
+              "0": [
+                21,
+                1.0
+              ],
+              "1": [
+                17,
+                1.0
+              ],
+              "2": [
+                21,
+                0.0
+              ],
+              "3": [
+                21,
+                0.0
+              ]
+            },
+            "milestone_similarity": 0.5,
+            "minefield_mapping": {},
+            "minefield_similarity": 0.0,
+            "similarity": 0.5,
+            "turn_count": 12
+          },
+          "final_context_sha256": "d38731f5e041d2e4814b332bf99736aa0867eebabfefbf13b8487234556c5283",
+          "first_decision_policy_alignment": true,
+          "recovery_decision_count": 4,
+          "recovery_tool_call_count": 4,
+          "repeated_identical_tool_call_count": 1,
+          "start_sha256": "d176fcb7213871ef3c66919f456ee93f2ee851b9cd58a898ec0606a349e776d8",
+          "tool_exception_count": 2,
+          "tool_history": [
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": null,
+              "result": null,
+              "tool_name": "set_cellular_service_status",
+              "visible_content": "None"
+            },
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": "ValueError: cellular already enabled",
+              "result": null,
+              "tool_name": "set_cellular_service_status",
+              "visible_content": "ValueError: cellular already enabled"
+            },
+            {
+              "arguments": {},
+              "exception": null,
+              "result": true,
+              "tool_name": "get_cellular_service_status",
+              "visible_content": "True"
+            },
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": "ValueError: cellular already enabled",
+              "result": null,
+              "tool_name": "set_cellular_service_status",
+              "visible_content": "ValueError: cellular already enabled"
+            }
+          ]
+        }
+      },
+      "decision_phase": "post_failure",
+      "holiday_dynamic_reference_diagnostic": {
+        "applicable": false,
+        "reproduced": false
+      },
+      "identical_condition_start": true,
+      "pair_id": "toolsandbox-v2-1-06",
+      "prefix_exception_verified": true,
+      "prefix_history": [
+        {
+          "arguments": {
+            "name": "Fredrik Thordendal"
+          },
+          "exception": null,
+          "result": [
+            {
+              "is_self": false,
+              "name": "Fredrik Thordendal",
+              "person_id": "9e137f06-916a-5310-8174-cf0b7e9f7054",
+              "phone_number": "+12453344098",
+              "relationship": "friend"
+            }
+          ],
+          "tool_name": "search_contacts",
+          "visible_content": "[{'person_id': '9e137f06-916a-5310-8174-cf0b7e9f7054', 'name': 'Fredrik Thordendal', 'phone_number': '+12453344098', 'relationship': 'friend', 'is_self': False}]"
+        },
+        {
+          "arguments": {
+            "content": "How's the new album coming along",
+            "phone_number": "+12453344098"
+          },
+          "exception": "ConnectionError: Cellular service is not enabled",
+          "result": null,
+          "tool_name": "send_message_with_phone_number",
+          "visible_content": "ConnectionError: Cellular service is not enabled"
+        }
+      ],
+      "scenario_name": "send_message_with_contact_content_cellular_off",
+      "semantic_family": "send_message_with_contact_content_cellular_off"
+    },
+    {
+      "branch_prefix_sha256": "c634e692d7b60fecf8b938f719abe6cf44a122b8c0c6e47388f94f26030da45a",
+      "conditions": {
+        "proper_v2_1_memory": {
+          "decisions": [
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_cellular_service_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-07:proper_v2_1_memory:step-01",
+                "request_sha256": "252f27f6f713ff43db70299635e71ae7ca7a5d0243b39fe14ea4b0348d2f74f3",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_cellular_service_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_cellular_service_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-07:proper_v2_1_memory:step-02",
+                "request_sha256": "ba34dfe8f5679b59152b543e141da197f7f82023281c000f919e6fbedb657b29",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_cellular_service_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_cellular_service_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-07:proper_v2_1_memory:step-03",
+                "request_sha256": "04d4aa8a5874dfe1f8fbd94fde80ef1be56c4bf90772ac3dbd01934a9cf82545",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_cellular_service_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_cellular_service_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-07:proper_v2_1_memory:step-04",
+                "request_sha256": "a496a1e4f7e444e8408dfdd27ec7c172aca3ece36a888e3d635e19fb68f95643",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_cellular_service_status"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {
+              "0": [
+                21,
+                1.0
+              ],
+              "1": [
+                17,
+                1.0
+              ],
+              "2": [
+                21,
+                0.0
+              ],
+              "3": [
+                21,
+                0.0
+              ]
+            },
+            "milestone_similarity": 0.5,
+            "minefield_mapping": {},
+            "minefield_similarity": 0.0,
+            "similarity": 0.5,
+            "turn_count": 12
+          },
+          "final_context_sha256": "1cbede4bd0d7eda16c449fd43b32256d2283cf3bbc617fdc93422da7b17c7542",
+          "first_decision_policy_alignment": true,
+          "recovery_decision_count": 4,
+          "recovery_tool_call_count": 4,
+          "repeated_identical_tool_call_count": 3,
+          "start_sha256": "c634e692d7b60fecf8b938f719abe6cf44a122b8c0c6e47388f94f26030da45a",
+          "tool_exception_count": 3,
+          "tool_history": [
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": null,
+              "result": null,
+              "tool_name": "set_cellular_service_status",
+              "visible_content": "None"
+            },
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": "ValueError: cellular already enabled",
+              "result": null,
+              "tool_name": "set_cellular_service_status",
+              "visible_content": "ValueError: cellular already enabled"
+            },
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": "ValueError: cellular already enabled",
+              "result": null,
+              "tool_name": "set_cellular_service_status",
+              "visible_content": "ValueError: cellular already enabled"
+            },
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": "ValueError: cellular already enabled",
+              "result": null,
+              "tool_name": "set_cellular_service_status",
+              "visible_content": "ValueError: cellular already enabled"
+            }
+          ]
+        },
+        "tfidf_rank1_memory": {
+          "decisions": [
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_cellular_service_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-07:tfidf_rank1_memory:step-01",
+                "request_sha256": "490357dd5fc55c05b1049349b2026feb3e3f16c8713b2d516f932d0f29780aa4",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_cellular_service_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_cellular_service_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-07:tfidf_rank1_memory:step-02",
+                "request_sha256": "b0d87a660639a8bf595317d36c033d08388b19802ebb5ecd75a0026fb3572def",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_cellular_service_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"get_cellular_service_status\",\"arguments\":{}}",
+                "request_id": "toolsandbox-v2-1-07:tfidf_rank1_memory:step-03",
+                "request_sha256": "5da991a22f9b05196cb76c76e00a91f478e141c5aab4fcb265425653362ee202",
+                "valid_json_decision": true
+              },
+              "arguments": {},
+              "kind": "tool",
+              "tool_name": "get_cellular_service_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"get_cellular_service_status\",\"arguments\":{}}",
+                "request_id": "toolsandbox-v2-1-07:tfidf_rank1_memory:step-04",
+                "request_sha256": "04f7d98f8d7e8586fdc4ddd522d09aab51df5fd3f9125ac9776ff465fb87ea28",
+                "valid_json_decision": true
+              },
+              "arguments": {},
+              "kind": "tool",
+              "tool_name": "get_cellular_service_status"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {
+              "0": [
+                21,
+                1.0
+              ],
+              "1": [
+                17,
+                1.0
+              ],
+              "2": [
+                21,
+                0.0
+              ],
+              "3": [
+                21,
+                0.0
+              ]
+            },
+            "milestone_similarity": 0.5,
+            "minefield_mapping": {},
+            "minefield_similarity": 0.0,
+            "similarity": 0.5,
+            "turn_count": 12
+          },
+          "final_context_sha256": "b9198e698b9d457b95c0a253fff550f5464ab06f98ecd99680782447f2cbb6bf",
+          "first_decision_policy_alignment": true,
+          "recovery_decision_count": 4,
+          "recovery_tool_call_count": 4,
+          "repeated_identical_tool_call_count": 2,
+          "start_sha256": "c634e692d7b60fecf8b938f719abe6cf44a122b8c0c6e47388f94f26030da45a",
+          "tool_exception_count": 1,
+          "tool_history": [
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": null,
+              "result": null,
+              "tool_name": "set_cellular_service_status",
+              "visible_content": "None"
+            },
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": "ValueError: cellular already enabled",
+              "result": null,
+              "tool_name": "set_cellular_service_status",
+              "visible_content": "ValueError: cellular already enabled"
+            },
+            {
+              "arguments": {},
+              "exception": null,
+              "result": true,
+              "tool_name": "get_cellular_service_status",
+              "visible_content": "True"
+            },
+            {
+              "arguments": {},
+              "exception": null,
+              "result": true,
+              "tool_name": "get_cellular_service_status",
+              "visible_content": "True"
+            }
+          ]
+        }
+      },
+      "decision_phase": "post_failure",
+      "holiday_dynamic_reference_diagnostic": {
+        "applicable": false,
+        "reproduced": false
+      },
+      "identical_condition_start": true,
+      "pair_id": "toolsandbox-v2-1-07",
+      "prefix_exception_verified": true,
+      "prefix_history": [
+        {
+          "arguments": {
+            "name": "Fredrik Thordendal"
+          },
+          "exception": null,
+          "result": [
+            {
+              "is_self": false,
+              "name": "Fredrik Thordendal",
+              "person_id": "9e137f06-916a-5310-8174-cf0b7e9f7054",
+              "phone_number": "+12453344098",
+              "relationship": "friend"
+            }
+          ],
+          "tool_name": "search_contacts",
+          "visible_content": "[{'person_id': '9e137f06-916a-5310-8174-cf0b7e9f7054', 'name': 'Fredrik Thordendal', 'phone_number': '+12453344098', 'relationship': 'friend', 'is_self': False}]"
+        },
+        {
+          "arguments": {
+            "content": "How's the new album coming along",
+            "phone_number": "+12453344098"
+          },
+          "exception": "ConnectionError: Cellular service is not enabled",
+          "result": null,
+          "tool_name": "send_message_with_phone_number",
+          "visible_content": "ConnectionError: Cellular service is not enabled"
+        }
+      ],
+      "scenario_name": "send_message_with_contact_content_cellular_off_alt",
+      "semantic_family": "send_message_with_contact_content_cellular_off"
+    },
+    {
+      "branch_prefix_sha256": "8556ece92f3d35a9e3dbdd083167addac7195df026af76b511d4dc0894f42ab5",
+      "conditions": {
+        "proper_v2_1_memory": {
+          "decisions": [
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"stop\",\"reason_code\":\"insufficient_information:missing_lookup_capability\",\"message\":\"Unable to resolve Fredrik Thordendal's phone number due to missing lookup capability.\"}",
+                "request_id": "toolsandbox-v2-1-08:proper_v2_1_memory:step-01",
+                "request_sha256": "6d005e4b0bfbfaaa5d660fe2e338ea734d65d6790c9a7df407a7a425ff39bdd1",
+                "valid_json_decision": true
+              },
+              "kind": "stop",
+              "message": "Unable to resolve Fredrik Thordendal's phone number due to missing lookup capability.",
+              "reason_code": "insufficient_information:missing_lookup_capability"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {},
+            "milestone_similarity": 1.0,
+            "minefield_mapping": {
+              "0": [
+                15,
+                0.0
+              ]
+            },
+            "minefield_similarity": 0.0,
+            "similarity": 1.0,
+            "turn_count": 1
+          },
+          "final_context_sha256": "3e3daa52b026b281ca8b4dd770d5cca3f9c8916994626f47220826304254e47c",
+          "first_decision_policy_alignment": true,
+          "recovery_decision_count": 1,
+          "recovery_tool_call_count": 0,
+          "repeated_identical_tool_call_count": 0,
+          "start_sha256": "8556ece92f3d35a9e3dbdd083167addac7195df026af76b511d4dc0894f42ab5",
+          "tool_exception_count": 0,
+          "tool_history": []
+        },
+        "tfidf_rank1_memory": {
+          "decisions": [
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"send_message_with_phone_number\",\"arguments\":{\"content\":\"How's the new album coming along?\",\"phone_number\":\"1234567890\"}}",
+                "request_id": "toolsandbox-v2-1-08:tfidf_rank1_memory:step-01",
+                "request_sha256": "0e310653bdb5a52003e2150972d18f729dcab045a69836c2393fabac82ae0592",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "content": "How's the new album coming along?",
+                "phone_number": "1234567890"
+              },
+              "kind": "tool",
+              "tool_name": "send_message_with_phone_number"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"get_cellular_service_status\",\"arguments\":{}}",
+                "request_id": "toolsandbox-v2-1-08:tfidf_rank1_memory:step-02",
+                "request_sha256": "ae9880375db49a5284dc422363d3d0d8a6c907ecadf67a589be010b0d1672b1f",
+                "valid_json_decision": true
+              },
+              "arguments": {},
+              "kind": "tool",
+              "tool_name": "get_cellular_service_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"send_message_with_phone_number\",\"arguments\":{\"content\":\"How's the new album coming along?\",\"phone_number\":\"1234567890\"}}",
+                "request_id": "toolsandbox-v2-1-08:tfidf_rank1_memory:step-03",
+                "request_sha256": "a300d4e4e24ce88ff98ddcd7f54dd8ba3f49edd38a7d3a2a79a1a23acef2cf06",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "content": "How's the new album coming along?",
+                "phone_number": "1234567890"
+              },
+              "kind": "tool",
+              "tool_name": "send_message_with_phone_number"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"get_cellular_service_status\",\"arguments\":{}}",
+                "request_id": "toolsandbox-v2-1-08:tfidf_rank1_memory:step-04",
+                "request_sha256": "e0743aedc7ed33ab493f981ee82cbfe587f660029eee5971ed981e657d18b59d",
+                "valid_json_decision": true
+              },
+              "arguments": {},
+              "kind": "tool",
+              "tool_name": "get_cellular_service_status"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {},
+            "milestone_similarity": 1.0,
+            "minefield_mapping": {
+              "0": [
+                16,
+                1.0
+              ]
+            },
+            "minefield_similarity": 1.0,
+            "similarity": 0.0,
+            "turn_count": 8
+          },
+          "final_context_sha256": "d84001d06e42801d99ea8c6839eec184c6da4a84da702c8c58bba991a1ee9def",
+          "first_decision_policy_alignment": false,
+          "recovery_decision_count": 4,
+          "recovery_tool_call_count": 4,
+          "repeated_identical_tool_call_count": 0,
+          "start_sha256": "8556ece92f3d35a9e3dbdd083167addac7195df026af76b511d4dc0894f42ab5",
+          "tool_exception_count": 2,
+          "tool_history": [
+            {
+              "arguments": {
+                "content": "How's the new album coming along?",
+                "phone_number": "1234567890"
+              },
+              "exception": "phonenumbers.phonenumberutil.NumberParseException: (0) Missing or invalid default region.",
+              "result": null,
+              "tool_name": "send_message_with_phone_number",
+              "visible_content": "phonenumbers.phonenumberutil.NumberParseException: (0) Missing or invalid default region."
+            },
+            {
+              "arguments": {},
+              "exception": null,
+              "result": false,
+              "tool_name": "get_cellular_service_status",
+              "visible_content": "False"
+            },
+            {
+              "arguments": {
+                "content": "How's the new album coming along?",
+                "phone_number": "1234567890"
+              },
+              "exception": "phonenumbers.phonenumberutil.NumberParseException: (0) Missing or invalid default region.",
+              "result": null,
+              "tool_name": "send_message_with_phone_number",
+              "visible_content": "phonenumbers.phonenumberutil.NumberParseException: (0) Missing or invalid default region."
+            },
+            {
+              "arguments": {},
+              "exception": null,
+              "result": false,
+              "tool_name": "get_cellular_service_status",
+              "visible_content": "False"
+            }
+          ]
+        }
+      },
+      "decision_phase": "pre_action",
+      "holiday_dynamic_reference_diagnostic": {
+        "applicable": false,
+        "reproduced": false
+      },
+      "identical_condition_start": true,
+      "pair_id": "toolsandbox-v2-1-08",
+      "prefix_exception_verified": true,
+      "prefix_history": [],
+      "scenario_name": "send_message_with_contact_content_cellular_off_insufficient_information_alt",
+      "semantic_family": "send_message_with_contact_content_cellular_off_insufficient_information"
+    },
+    {
+      "branch_prefix_sha256": "bc919beaddbbd1316038ba95a11893865821ee11f335f0f028c77418f685e121",
+      "conditions": {
+        "proper_v2_1_memory": {
+          "decisions": [
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_cellular_service_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-09:proper_v2_1_memory:step-01",
+                "request_sha256": "1b0e74b04909fa423b5db909d29f5bebfa3fac8e23c880c304a0a2bcc9302903",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_cellular_service_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_cellular_service_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-09:proper_v2_1_memory:step-02",
+                "request_sha256": "266fae107fa1d9bdeea220df1b3c4954f3262c865f69fba131c44f2d909b9ebe",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_cellular_service_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_cellular_service_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-09:proper_v2_1_memory:step-03",
+                "request_sha256": "a5673aafdec5299801edf448621627720e06f240f6d9125a8cf36d005a2a57f8",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_cellular_service_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_cellular_service_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-09:proper_v2_1_memory:step-04",
+                "request_sha256": "1c5b8cc9cfd5294eb9254deaf7469235ce91361515a7310e8b827309a6fb6b09",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_cellular_service_status"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {
+              "0": [
+                33,
+                1.0
+              ],
+              "1": [
+                29,
+                1.0
+              ],
+              "2": [
+                33,
+                0.0
+              ],
+              "3": [
+                33,
+                0.0
+              ]
+            },
+            "milestone_similarity": 0.5,
+            "minefield_mapping": {},
+            "minefield_similarity": 0.0,
+            "similarity": 0.5,
+            "turn_count": 12
+          },
+          "final_context_sha256": "46425504ddf7c288647035d955e87b0e2a0121ed164ebeab42da89a3b0f059a7",
+          "first_decision_policy_alignment": true,
+          "recovery_decision_count": 4,
+          "recovery_tool_call_count": 4,
+          "repeated_identical_tool_call_count": 3,
+          "start_sha256": "bc919beaddbbd1316038ba95a11893865821ee11f335f0f028c77418f685e121",
+          "tool_exception_count": 3,
+          "tool_history": [
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": null,
+              "result": null,
+              "tool_name": "set_cellular_service_status",
+              "visible_content": "None"
+            },
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": "ValueError: cellular already enabled",
+              "result": null,
+              "tool_name": "set_cellular_service_status",
+              "visible_content": "ValueError: cellular already enabled"
+            },
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": "ValueError: cellular already enabled",
+              "result": null,
+              "tool_name": "set_cellular_service_status",
+              "visible_content": "ValueError: cellular already enabled"
+            },
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": "ValueError: cellular already enabled",
+              "result": null,
+              "tool_name": "set_cellular_service_status",
+              "visible_content": "ValueError: cellular already enabled"
+            }
+          ]
+        },
+        "tfidf_rank1_memory": {
+          "decisions": [
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_cellular_service_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-09:tfidf_rank1_memory:step-01",
+                "request_sha256": "5c06952c1352db8a3dea7faaea4224c9dd1cb6813201849898027f3dbd25a0b4",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_cellular_service_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_cellular_service_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-09:tfidf_rank1_memory:step-02",
+                "request_sha256": "04011bf3fb2fd7ee717458100d6704deb5f2580a9001e97b76e8897aad353392",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_cellular_service_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"get_cellular_service_status\",\"arguments\":{}}",
+                "request_id": "toolsandbox-v2-1-09:tfidf_rank1_memory:step-03",
+                "request_sha256": "026dbc84b965a52e883377fb05dc8d21dda2f34bda6614ae4b263fa85b8fca32",
+                "valid_json_decision": true
+              },
+              "arguments": {},
+              "kind": "tool",
+              "tool_name": "get_cellular_service_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_cellular_service_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-09:tfidf_rank1_memory:step-04",
+                "request_sha256": "d411d07926f6707a7df9310dd83e43cef976e9727819c1595770a8fce8677b67",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_cellular_service_status"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {
+              "0": [
+                33,
+                1.0
+              ],
+              "1": [
+                29,
+                1.0
+              ],
+              "2": [
+                33,
+                0.0
+              ],
+              "3": [
+                33,
+                0.0
+              ]
+            },
+            "milestone_similarity": 0.5,
+            "minefield_mapping": {},
+            "minefield_similarity": 0.0,
+            "similarity": 0.5,
+            "turn_count": 12
+          },
+          "final_context_sha256": "f3f17066124e268bce587904c34e2d4983f22169294a0621488ee3873b67badd",
+          "first_decision_policy_alignment": true,
+          "recovery_decision_count": 4,
+          "recovery_tool_call_count": 4,
+          "repeated_identical_tool_call_count": 1,
+          "start_sha256": "bc919beaddbbd1316038ba95a11893865821ee11f335f0f028c77418f685e121",
+          "tool_exception_count": 2,
+          "tool_history": [
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": null,
+              "result": null,
+              "tool_name": "set_cellular_service_status",
+              "visible_content": "None"
+            },
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": "ValueError: cellular already enabled",
+              "result": null,
+              "tool_name": "set_cellular_service_status",
+              "visible_content": "ValueError: cellular already enabled"
+            },
+            {
+              "arguments": {},
+              "exception": null,
+              "result": true,
+              "tool_name": "get_cellular_service_status",
+              "visible_content": "True"
+            },
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": "ValueError: cellular already enabled",
+              "result": null,
+              "tool_name": "set_cellular_service_status",
+              "visible_content": "ValueError: cellular already enabled"
+            }
+          ]
+        }
+      },
+      "decision_phase": "post_failure",
+      "holiday_dynamic_reference_diagnostic": {
+        "applicable": false,
+        "reproduced": false
+      },
+      "identical_condition_start": true,
+      "pair_id": "toolsandbox-v2-1-09",
+      "prefix_exception_verified": true,
+      "prefix_history": [
+        {
+          "arguments": {
+            "name": "Fredrik Thordendal"
+          },
+          "exception": null,
+          "result": [
+            {
+              "is_self": false,
+              "name": "Fredrik Thordendal",
+              "person_id": "9e137f06-916a-5310-8174-cf0b7e9f7054",
+              "phone_number": "+12453344098",
+              "relationship": "friend"
+            }
+          ],
+          "tool_name": "search_contacts",
+          "visible_content": "[{'person_id': '9e137f06-916a-5310-8174-cf0b7e9f7054', 'name': 'Fredrik Thordendal', 'phone_number': '+12453344098', 'relationship': 'friend', 'is_self': False}]"
+        },
+        {
+          "arguments": {
+            "content": "How's the new album coming along",
+            "phone_number": "+12453344098"
+          },
+          "exception": "ConnectionError: Cellular service is not enabled",
+          "result": null,
+          "tool_name": "send_message_with_phone_number",
+          "visible_content": "ConnectionError: Cellular service is not enabled"
+        }
+      ],
+      "scenario_name": "send_message_with_contact_content_cellular_off_multiple_user_turn",
+      "semantic_family": "send_message_with_contact_content_cellular_off"
+    },
+    {
+      "branch_prefix_sha256": "8d6c44bbccf7cb9d2b7b5b98f4da97035e1c99fd958311cfc1e89ab2145406cd",
+      "conditions": {
+        "proper_v2_1_memory": {
+          "decisions": [
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_cellular_service_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-10:proper_v2_1_memory:step-01",
+                "request_sha256": "9b716fb1747d86791039760fedd21de55854408b62734494d9a3eac1e445ab15",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_cellular_service_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_cellular_service_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-10:proper_v2_1_memory:step-02",
+                "request_sha256": "b3718f5ab5c5991dbea3f42f797cf77e631e2a1667f0a8668e82fb2d91b7c5b9",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_cellular_service_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_cellular_service_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-10:proper_v2_1_memory:step-03",
+                "request_sha256": "3c010980e5eece775aaebd43336cca44f6e3b4ba33c2eeea373a46008eb740e2",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_cellular_service_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_cellular_service_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-10:proper_v2_1_memory:step-04",
+                "request_sha256": "313f561060148b9fe17e09fbb18ea0c35142ad447e59e0a3d30458d86fa502c9",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_cellular_service_status"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {
+              "0": [
+                33,
+                1.0
+              ],
+              "1": [
+                29,
+                1.0
+              ],
+              "2": [
+                33,
+                0.0
+              ],
+              "3": [
+                33,
+                0.0
+              ]
+            },
+            "milestone_similarity": 0.5,
+            "minefield_mapping": {},
+            "minefield_similarity": 0.0,
+            "similarity": 0.5,
+            "turn_count": 12
+          },
+          "final_context_sha256": "e6df916f4a47d1afc0afe7db755dd62fdbb265da84495cc9c257743ed886d0b8",
+          "first_decision_policy_alignment": true,
+          "recovery_decision_count": 4,
+          "recovery_tool_call_count": 4,
+          "repeated_identical_tool_call_count": 3,
+          "start_sha256": "8d6c44bbccf7cb9d2b7b5b98f4da97035e1c99fd958311cfc1e89ab2145406cd",
+          "tool_exception_count": 3,
+          "tool_history": [
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": null,
+              "result": null,
+              "tool_name": "set_cellular_service_status",
+              "visible_content": "None"
+            },
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": "ValueError: cellular already enabled",
+              "result": null,
+              "tool_name": "set_cellular_service_status",
+              "visible_content": "ValueError: cellular already enabled"
+            },
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": "ValueError: cellular already enabled",
+              "result": null,
+              "tool_name": "set_cellular_service_status",
+              "visible_content": "ValueError: cellular already enabled"
+            },
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": "ValueError: cellular already enabled",
+              "result": null,
+              "tool_name": "set_cellular_service_status",
+              "visible_content": "ValueError: cellular already enabled"
+            }
+          ]
+        },
+        "tfidf_rank1_memory": {
+          "decisions": [
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_cellular_service_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-10:tfidf_rank1_memory:step-01",
+                "request_sha256": "5e9b98a3d28916f8b9f83339b6c8556727b1205a9b91d60a8f660e39738e9592",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_cellular_service_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_cellular_service_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-10:tfidf_rank1_memory:step-02",
+                "request_sha256": "b5cbcd8ece9659576e957dce1fcfc363dc83f656dcb0d32d517dba0dfb7ba729",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_cellular_service_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"get_cellular_service_status\",\"arguments\":{}}",
+                "request_id": "toolsandbox-v2-1-10:tfidf_rank1_memory:step-03",
+                "request_sha256": "d3241ffa4f204981d95aab12c9c2e07959e91d926d3c3f85f214d37cadec8c50",
+                "valid_json_decision": true
+              },
+              "arguments": {},
+              "kind": "tool",
+              "tool_name": "get_cellular_service_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_cellular_service_status\",\"arguments\":{\"on\":true}}",
+                "request_id": "toolsandbox-v2-1-10:tfidf_rank1_memory:step-04",
+                "request_sha256": "97d07c8fd4693223a4a542570e33dcc1291f0f0349d6308d122d38d7a70eadc2",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_cellular_service_status"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {
+              "0": [
+                33,
+                1.0
+              ],
+              "1": [
+                29,
+                1.0
+              ],
+              "2": [
+                33,
+                0.0
+              ],
+              "3": [
+                33,
+                0.0
+              ]
+            },
+            "milestone_similarity": 0.5,
+            "minefield_mapping": {},
+            "minefield_similarity": 0.0,
+            "similarity": 0.5,
+            "turn_count": 12
+          },
+          "final_context_sha256": "007752b54a89e713a0e1c7fc8e6a421fb2facff1bb156a40687431061e785a9f",
+          "first_decision_policy_alignment": true,
+          "recovery_decision_count": 4,
+          "recovery_tool_call_count": 4,
+          "repeated_identical_tool_call_count": 1,
+          "start_sha256": "8d6c44bbccf7cb9d2b7b5b98f4da97035e1c99fd958311cfc1e89ab2145406cd",
+          "tool_exception_count": 2,
+          "tool_history": [
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": null,
+              "result": null,
+              "tool_name": "set_cellular_service_status",
+              "visible_content": "None"
+            },
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": "ValueError: cellular already enabled",
+              "result": null,
+              "tool_name": "set_cellular_service_status",
+              "visible_content": "ValueError: cellular already enabled"
+            },
+            {
+              "arguments": {},
+              "exception": null,
+              "result": true,
+              "tool_name": "get_cellular_service_status",
+              "visible_content": "True"
+            },
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": "ValueError: cellular already enabled",
+              "result": null,
+              "tool_name": "set_cellular_service_status",
+              "visible_content": "ValueError: cellular already enabled"
+            }
+          ]
+        }
+      },
+      "decision_phase": "post_failure",
+      "holiday_dynamic_reference_diagnostic": {
+        "applicable": false,
+        "reproduced": false
+      },
+      "identical_condition_start": true,
+      "pair_id": "toolsandbox-v2-1-10",
+      "prefix_exception_verified": true,
+      "prefix_history": [
+        {
+          "arguments": {
+            "name": "Fredrik Thordendal"
+          },
+          "exception": null,
+          "result": [
+            {
+              "is_self": false,
+              "name": "Fredrik Thordendal",
+              "person_id": "9e137f06-916a-5310-8174-cf0b7e9f7054",
+              "phone_number": "+12453344098",
+              "relationship": "friend"
+            }
+          ],
+          "tool_name": "search_contacts",
+          "visible_content": "[{'person_id': '9e137f06-916a-5310-8174-cf0b7e9f7054', 'name': 'Fredrik Thordendal', 'phone_number': '+12453344098', 'relationship': 'friend', 'is_self': False}]"
+        },
+        {
+          "arguments": {
+            "content": "How's the new album coming along",
+            "phone_number": "+12453344098"
+          },
+          "exception": "ConnectionError: Cellular service is not enabled",
+          "result": null,
+          "tool_name": "send_message_with_phone_number",
+          "visible_content": "ConnectionError: Cellular service is not enabled"
+        }
+      ],
+      "scenario_name": "send_message_with_contact_content_cellular_off_multiple_user_turn_alt",
+      "semantic_family": "send_message_with_contact_content_cellular_off"
+    },
+    {
+      "branch_prefix_sha256": "b60392203bee3185bce948de60ab81e32a38fd309dc94196491b8e578a60aa4b",
+      "conditions": {
+        "proper_v2_1_memory": {
+          "decisions": [
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_low_battery_mode_status\",\"arguments\":{\"on\":false}}",
+                "request_id": "toolsandbox-v2-1-11:proper_v2_1_memory:step-01",
+                "request_sha256": "b220b32ea2eab04cf243682e559da750b990d4f471b62a986c9c459d2bfb06ff",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": false
+              },
+              "kind": "tool",
+              "tool_name": "set_low_battery_mode_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_low_battery_mode_status\",\"arguments\":{\"on\":false}}",
+                "request_id": "toolsandbox-v2-1-11:proper_v2_1_memory:step-02",
+                "request_sha256": "afe657becd4aba1a80b3648b86c33c0d0d1fdce7d4933ebcee4ea2307251e92b",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": false
+              },
+              "kind": "tool",
+              "tool_name": "set_low_battery_mode_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_low_battery_mode_status\",\"arguments\":{\"on\":false}}",
+                "request_id": "toolsandbox-v2-1-11:proper_v2_1_memory:step-03",
+                "request_sha256": "510e714eab4fec8921da2bfe5622b4585b78db1a9a6b88496ffa1bdd0eccff37",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": false
+              },
+              "kind": "tool",
+              "tool_name": "set_low_battery_mode_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_low_battery_mode_status\",\"arguments\":{\"on\":false}}",
+                "request_id": "toolsandbox-v2-1-11:proper_v2_1_memory:step-04",
+                "request_sha256": "5f7e04c722e1a86b03409d8255a2eaa484b75b6a899da081e0234c9ee1d78afa",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": false
+              },
+              "kind": "tool",
+              "tool_name": "set_low_battery_mode_status"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {
+              "0": [
+                19,
+                1.0
+              ],
+              "1": [
+                19,
+                0.0
+              ],
+              "2": [
+                19,
+                0.0
+              ]
+            },
+            "milestone_similarity": 0.3333333333333333,
+            "minefield_mapping": {},
+            "minefield_similarity": 0.0,
+            "similarity": 0.3333333333333333,
+            "turn_count": 10
+          },
+          "final_context_sha256": "d9bfd9e1c42c19c8e0572ded467b88f904c9c4c53c437d8af25412d2bfa933e8",
+          "first_decision_policy_alignment": true,
+          "recovery_decision_count": 4,
+          "recovery_tool_call_count": 4,
+          "repeated_identical_tool_call_count": 3,
+          "start_sha256": "b60392203bee3185bce948de60ab81e32a38fd309dc94196491b8e578a60aa4b",
+          "tool_exception_count": 3,
+          "tool_history": [
+            {
+              "arguments": {
+                "on": false
+              },
+              "exception": null,
+              "result": null,
+              "tool_name": "set_low_battery_mode_status",
+              "visible_content": "None"
+            },
+            {
+              "arguments": {
+                "on": false
+              },
+              "exception": "ValueError: low_battery_mode already disabled",
+              "result": null,
+              "tool_name": "set_low_battery_mode_status",
+              "visible_content": "ValueError: low_battery_mode already disabled"
+            },
+            {
+              "arguments": {
+                "on": false
+              },
+              "exception": "ValueError: low_battery_mode already disabled",
+              "result": null,
+              "tool_name": "set_low_battery_mode_status",
+              "visible_content": "ValueError: low_battery_mode already disabled"
+            },
+            {
+              "arguments": {
+                "on": false
+              },
+              "exception": "ValueError: low_battery_mode already disabled",
+              "result": null,
+              "tool_name": "set_low_battery_mode_status",
+              "visible_content": "ValueError: low_battery_mode already disabled"
+            }
+          ]
+        },
+        "tfidf_rank1_memory": {
+          "decisions": [
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_low_battery_mode_status\",\"arguments\":{\"on\":false}}",
+                "request_id": "toolsandbox-v2-1-11:tfidf_rank1_memory:step-01",
+                "request_sha256": "fcef9fd0e08812f9e8da6a8bc90177836173cbc8781641e66892e2484b827a66",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": false
+              },
+              "kind": "tool",
+              "tool_name": "set_low_battery_mode_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"end_conversation\",\"arguments\":{}}",
+                "request_id": "toolsandbox-v2-1-11:tfidf_rank1_memory:step-02",
+                "request_sha256": "ef4d2ad8c40325a4af5b5aa88a35895d5398a3781786abe1516a0cc7330c008c",
+                "valid_json_decision": true
+              },
+              "arguments": {},
+              "kind": "tool",
+              "tool_name": "end_conversation"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"get_low_battery_mode_status\",\"arguments\":{}}",
+                "request_id": "toolsandbox-v2-1-11:tfidf_rank1_memory:step-03",
+                "request_sha256": "d796d91469e06637ab33b512e661db274734ebdb71e75fc1fbb9dc9c714a6c40",
+                "valid_json_decision": true
+              },
+              "arguments": {},
+              "kind": "tool",
+              "tool_name": "get_low_battery_mode_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"end_conversation\",\"arguments\":{}}",
+                "request_id": "toolsandbox-v2-1-11:tfidf_rank1_memory:step-04",
+                "request_sha256": "d070bf0d76aa39433c3e6a7563921a690db9e83a186aaa76fc62247f6096c8b8",
+                "valid_json_decision": true
+              },
+              "arguments": {},
+              "kind": "tool",
+              "tool_name": "end_conversation"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {
+              "0": [
+                19,
+                1.0
+              ],
+              "1": [
+                19,
+                0.0
+              ],
+              "2": [
+                19,
+                0.0
+              ]
+            },
+            "milestone_similarity": 0.3333333333333333,
+            "minefield_mapping": {},
+            "minefield_similarity": 0.0,
+            "similarity": 0.3333333333333333,
+            "turn_count": 10
+          },
+          "final_context_sha256": "576610be909d4e38fbe88460f9bb7a0888c4b6fd872f4e9fbba21dd3db3bc5af",
+          "first_decision_policy_alignment": true,
+          "recovery_decision_count": 4,
+          "recovery_tool_call_count": 4,
+          "repeated_identical_tool_call_count": 0,
+          "start_sha256": "b60392203bee3185bce948de60ab81e32a38fd309dc94196491b8e578a60aa4b",
+          "tool_exception_count": 0,
+          "tool_history": [
+            {
+              "arguments": {
+                "on": false
+              },
+              "exception": null,
+              "result": null,
+              "tool_name": "set_low_battery_mode_status",
+              "visible_content": "None"
+            },
+            {
+              "arguments": {},
+              "exception": null,
+              "result": null,
+              "tool_name": "end_conversation",
+              "visible_content": "None"
+            },
+            {
+              "arguments": {},
+              "exception": null,
+              "result": false,
+              "tool_name": "get_low_battery_mode_status",
+              "visible_content": "False"
+            },
+            {
+              "arguments": {},
+              "exception": null,
+              "result": null,
+              "tool_name": "end_conversation",
+              "visible_content": "None"
+            }
+          ]
+        }
+      },
+      "decision_phase": "post_failure",
+      "holiday_dynamic_reference_diagnostic": {
+        "applicable": false,
+        "reproduced": false
+      },
+      "identical_condition_start": true,
+      "pair_id": "toolsandbox-v2-1-11",
+      "prefix_exception_verified": true,
+      "prefix_history": [
+        {
+          "arguments": {
+            "on": true
+          },
+          "exception": "PermissionError: Location service cannot be turned on in low battery mode",
+          "result": null,
+          "tool_name": "set_location_service_status",
+          "visible_content": "PermissionError: Location service cannot be turned on in low battery mode"
+        }
+      ],
+      "scenario_name": "turn_on_location_low_battery_mode",
+      "semantic_family": "turn_on_location_low_battery_mode"
+    },
+    {
+      "branch_prefix_sha256": "9b4f678f3ac65390d5c5f550d5ca942a267c59c47b77f1dec4e4706cd62dc886",
+      "conditions": {
+        "proper_v2_1_memory": {
+          "decisions": [
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_low_battery_mode_status\",\"arguments\":{\"on\":false}}",
+                "request_id": "toolsandbox-v2-1-12:proper_v2_1_memory:step-01",
+                "request_sha256": "51f4d90f0a5e1689e71fa7f418d66e1c759d5404cbc42906e7c4cf8c03b83457",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": false
+              },
+              "kind": "tool",
+              "tool_name": "set_low_battery_mode_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_low_battery_mode_status\",\"arguments\":{\"on\":false}}",
+                "request_id": "toolsandbox-v2-1-12:proper_v2_1_memory:step-02",
+                "request_sha256": "f3ee756a5507976e0f077c4fc3348b95b1727b454f11066c2e93aaa4ee20d30e",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": false
+              },
+              "kind": "tool",
+              "tool_name": "set_low_battery_mode_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_low_battery_mode_status\",\"arguments\":{\"on\":false}}",
+                "request_id": "toolsandbox-v2-1-12:proper_v2_1_memory:step-03",
+                "request_sha256": "2155a8fc982f15ac18b19814c00cae6ed4b127b89847668afad6493c281e6cbd",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": false
+              },
+              "kind": "tool",
+              "tool_name": "set_low_battery_mode_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_low_battery_mode_status\",\"arguments\":{\"on\":false}}",
+                "request_id": "toolsandbox-v2-1-12:proper_v2_1_memory:step-04",
+                "request_sha256": "f05521d2c70f8c9c2e07dd4daeb7bab5279e8df618fab62c3520f7b8f887c5f4",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": false
+              },
+              "kind": "tool",
+              "tool_name": "set_low_battery_mode_status"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {
+              "0": [
+                19,
+                1.0
+              ],
+              "1": [
+                19,
+                0.0
+              ],
+              "2": [
+                19,
+                0.0
+              ]
+            },
+            "milestone_similarity": 0.3333333333333333,
+            "minefield_mapping": {},
+            "minefield_similarity": 0.0,
+            "similarity": 0.3333333333333333,
+            "turn_count": 10
+          },
+          "final_context_sha256": "7f6ead01d623db4ec730f06c249935596e168c1f3087374018fc3afc3bfaf525",
+          "first_decision_policy_alignment": true,
+          "recovery_decision_count": 4,
+          "recovery_tool_call_count": 4,
+          "repeated_identical_tool_call_count": 3,
+          "start_sha256": "9b4f678f3ac65390d5c5f550d5ca942a267c59c47b77f1dec4e4706cd62dc886",
+          "tool_exception_count": 3,
+          "tool_history": [
+            {
+              "arguments": {
+                "on": false
+              },
+              "exception": null,
+              "result": null,
+              "tool_name": "set_low_battery_mode_status",
+              "visible_content": "None"
+            },
+            {
+              "arguments": {
+                "on": false
+              },
+              "exception": "ValueError: low_battery_mode already disabled",
+              "result": null,
+              "tool_name": "set_low_battery_mode_status",
+              "visible_content": "ValueError: low_battery_mode already disabled"
+            },
+            {
+              "arguments": {
+                "on": false
+              },
+              "exception": "ValueError: low_battery_mode already disabled",
+              "result": null,
+              "tool_name": "set_low_battery_mode_status",
+              "visible_content": "ValueError: low_battery_mode already disabled"
+            },
+            {
+              "arguments": {
+                "on": false
+              },
+              "exception": "ValueError: low_battery_mode already disabled",
+              "result": null,
+              "tool_name": "set_low_battery_mode_status",
+              "visible_content": "ValueError: low_battery_mode already disabled"
+            }
+          ]
+        },
+        "tfidf_rank1_memory": {
+          "decisions": [
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_low_battery_mode_status\",\"arguments\":{\"on\":false}}",
+                "request_id": "toolsandbox-v2-1-12:tfidf_rank1_memory:step-01",
+                "request_sha256": "b9401ef974301fe34452ff1d39c4955b8fc52a34c6a1e9ce137c1cee1e4fac42",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": false
+              },
+              "kind": "tool",
+              "tool_name": "set_low_battery_mode_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"set_low_battery_mode_status\",\"arguments\":{\"on\":false}}",
+                "request_id": "toolsandbox-v2-1-12:tfidf_rank1_memory:step-02",
+                "request_sha256": "f1c290733f36880cfc78adeab86e7bb7b41102ec0e2d2919766462aaea986b07",
+                "valid_json_decision": true
+              },
+              "arguments": {
+                "on": false
+              },
+              "kind": "tool",
+              "tool_name": "set_low_battery_mode_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"get_low_battery_mode_status\",\"arguments\":{}}",
+                "request_id": "toolsandbox-v2-1-12:tfidf_rank1_memory:step-03",
+                "request_sha256": "83d15bff01e2ab120ba8f5880c98d61b84d26b5f3d1f90ec74e6b456dc67d4d1",
+                "valid_json_decision": true
+              },
+              "arguments": {},
+              "kind": "tool",
+              "tool_name": "get_low_battery_mode_status"
+            },
+            {
+              "_model": {
+                "parse_error": null,
+                "raw_text": "{\"kind\":\"tool\",\"tool_name\":\"end_conversation\",\"arguments\":{}}",
+                "request_id": "toolsandbox-v2-1-12:tfidf_rank1_memory:step-04",
+                "request_sha256": "6a50843ca72fde304aed97b74d084d517947a4dc73a08e7c97a8dbf55b8498b4",
+                "valid_json_decision": true
+              },
+              "arguments": {},
+              "kind": "tool",
+              "tool_name": "end_conversation"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {
+              "0": [
+                19,
+                1.0
+              ],
+              "1": [
+                19,
+                0.0
+              ],
+              "2": [
+                19,
+                0.0
+              ]
+            },
+            "milestone_similarity": 0.3333333333333333,
+            "minefield_mapping": {},
+            "minefield_similarity": 0.0,
+            "similarity": 0.3333333333333333,
+            "turn_count": 10
+          },
+          "final_context_sha256": "55afcc5b4927f20e7596a7faf54225ea7173680c64a9c707038b1461d1de64c8",
+          "first_decision_policy_alignment": true,
+          "recovery_decision_count": 4,
+          "recovery_tool_call_count": 4,
+          "repeated_identical_tool_call_count": 1,
+          "start_sha256": "9b4f678f3ac65390d5c5f550d5ca942a267c59c47b77f1dec4e4706cd62dc886",
+          "tool_exception_count": 1,
+          "tool_history": [
+            {
+              "arguments": {
+                "on": false
+              },
+              "exception": null,
+              "result": null,
+              "tool_name": "set_low_battery_mode_status",
+              "visible_content": "None"
+            },
+            {
+              "arguments": {
+                "on": false
+              },
+              "exception": "ValueError: low_battery_mode already disabled",
+              "result": null,
+              "tool_name": "set_low_battery_mode_status",
+              "visible_content": "ValueError: low_battery_mode already disabled"
+            },
+            {
+              "arguments": {},
+              "exception": null,
+              "result": false,
+              "tool_name": "get_low_battery_mode_status",
+              "visible_content": "False"
+            },
+            {
+              "arguments": {},
+              "exception": null,
+              "result": null,
+              "tool_name": "end_conversation",
+              "visible_content": "None"
+            }
+          ]
+        }
+      },
+      "decision_phase": "post_failure",
+      "holiday_dynamic_reference_diagnostic": {
+        "applicable": false,
+        "reproduced": false
+      },
+      "identical_condition_start": true,
+      "pair_id": "toolsandbox-v2-1-12",
+      "prefix_exception_verified": true,
+      "prefix_history": [
+        {
+          "arguments": {
+            "on": true
+          },
+          "exception": "PermissionError: Location service cannot be turned on in low battery mode",
+          "result": null,
+          "tool_name": "set_location_service_status",
+          "visible_content": "PermissionError: Location service cannot be turned on in low battery mode"
+        }
+      ],
+      "scenario_name": "turn_on_location_low_battery_mode_implicit",
+      "semantic_family": "turn_on_location_low_battery_mode"
+    }
+  ],
+  "run_kind": "proper_v2_1_toolsandbox_qwen_exploratory_pilot",
+  "schema_version": 1,
+  "scripted_validation_summary": {
+    "condition_count": 24,
+    "gpu_run_authorized": false,
+    "pair_count": 12,
+    "phase_summary": {
+      "post_failure": {
+        "pair_count": 9,
+        "proper_better_pair_count": 9,
+        "proper_mean_similarity": 0.9333333333333333,
+        "tfidf_mean_similarity": 0.23244016920692973
+      },
+      "pre_action": {
+        "pair_count": 3,
+        "proper_better_pair_count": 1,
+        "proper_mean_similarity": 1.0,
+        "tfidf_mean_similarity": 0.6666666666666666
+      }
+    },
+    "runner_validation_passed": true,
+    "validation_checks": {
+      "all_condition_starts_identical": true,
+      "all_post_failure_exceptions_verified": true,
+      "all_proper_first_decisions_aligned": true,
+      "condition_count_frozen": true,
+      "holiday_dynamic_reference_limitation_reproduced": true,
+      "non_holiday_proper_similarity_one": true,
+      "pair_count_frozen": true,
+      "phase_counts_frozen": true,
+      "phase_stratified_improvement": true,
+      "proper_no_minefield": true,
+      "proper_similarity_matches_scripted_expectation": true
+    }
+  },
+  "smoke_pair_id": "toolsandbox-v2-1-01",
+  "smoke_passed": true,
+  "summary": {
+    "all_condition_starts_identical": true,
+    "condition_count": 24,
+    "invalid_json_decision_count": 0,
+    "pair_count": 12,
+    "phase_counts": {
+      "post_failure": 9,
+      "pre_action": 3
+    },
+    "phase_summary": {
+      "post_failure": {
+        "pair_count": 9,
+        "proper_better_pair_count": 0,
+        "proper_mean_similarity": 0.4296296296296297,
+        "proper_worse_pair_count": 0,
+        "tfidf_mean_similarity": 0.4296296296296297,
+        "tie_pair_count": 9
+      },
+      "pre_action": {
+        "pair_count": 3,
+        "proper_better_pair_count": 3,
+        "proper_mean_similarity": 1.0,
+        "proper_worse_pair_count": 0,
+        "tfidf_mean_similarity": 0.0,
+        "tie_pair_count": 0
+      }
+    },
+    "proper_first_decision_alignment_count": 12,
+    "proper_minefield_condition_count": 0,
+    "tfidf_first_decision_alignment_count": 7,
+    "tfidf_minefield_condition_count": 3,
+    "total_model_decision_count": 87,
+    "valid_json_decision_count": 87
+  }
+}

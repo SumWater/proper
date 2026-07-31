@@ -1,0 +1,33 @@
+{
+  "boundary": {
+    "gpu_run_authorized": false,
+    "memory_source_split": "dev",
+    "model_loaded": false,
+    "model_outputs_read": false,
+    "prior_used_base_tasks_excluded": true,
+    "released_native_timeout_only": true,
+    "selector_hidden_labels_used": false,
+    "target_split": "test_public"
+  },
+  "identities": {
+    "capacity_screening_sha256": "72c2ffe725df3697de9c5cf9516c7e7a3a2f57052fe2ae3c5889d670fb312db9",
+    "config_sha256": "31229bac2778ad8f12fcac8f474c2654ee49d96864c4c7f0ede5a2ecb1b5a0a0",
+    "frozen_memory_bank_manifest_sha256": "da06c6538fb8494a1ab50fee9d4a97d74f6a4e6f7ee161b014cec97d7c459011",
+    "frozen_memory_bank_payload_sha256": "b2841f434e2ffd89a11de73be3fe7c3d5dc0dbd42dd9d2990b6b49a0b4ff6c42",
+    "prepared_payload_sha256": "195012ac8f2d815f7c38e8c42c76c9a84ad6dbb8eb0d6471496b2ae1825d1e7d",
+    "public_test_sha256": "12c5e1e93926f4089dfc8d0c60cea53b556057360562375510744858fc6f1161"
+  },
+  "run_kind": "proper_v2_timeout_pair_screening",
+  "schema_version": 1,
+  "screening": {
+    "all_target_count": 177,
+    "distinct_primary_selected_memory_count": 6,
+    "distinct_primary_target_tool_count": 7,
+    "global_distinct_prompt_count": 198,
+    "gpu_run_authorized": false,
+    "planned_model_call_count": 209,
+    "primary_selection_changed_pair_count": 32,
+    "ready_for_source_and_environment_lock": true,
+    "unchanged_target_count": 145
+  }
+}

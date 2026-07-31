@@ -1,0 +1,1777 @@
+{
+  "boundary": {
+    "confirmatory_claim_authorized": false,
+    "external_api_called": false,
+    "gpu_run_authorized": false,
+    "model_loaded": false,
+    "model_outputs_read": false,
+    "scripted_decisions_only": true,
+    "selector_effect_claim_authorized": false,
+    "target_scenarios_played": true
+  },
+  "identities": {
+    "config_sha256": "ea8490aa507fc1c1439d1f5c7b58b07e14b8d88aff712b7eb7252ef06d57f287",
+    "prepared_manifest_sha256": "a66d12c559b462833cb1876861a783bf2c44db32d55b3a469c2aafc0baed2154",
+    "prepared_payload_sha256": "56d6161ce58209903efee4a6dc990d14bde6c942c01868d7d6772130a11a73e0"
+  },
+  "interpretation_limits": {
+    "runner_validation_only": true,
+    "scripted_decisions_are_not_model_outputs": true,
+    "scripted_effect_is_not_selector_effect_evidence": true
+  },
+  "records": [
+    {
+      "branch_prefix_sha256": "f9621b76f2a34845d30e1bc272daf6a17a9b7e5eff729c3ccdebceb1c33a5776",
+      "conditions": {
+        "proper_v2_1_memory": {
+          "decisions": [
+            {
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_wifi_status"
+            },
+            {
+              "arguments": {
+                "holiday_name": "Christmas Day",
+                "year": null
+              },
+              "kind": "tool",
+              "tool_name": "search_holiday"
+            },
+            {
+              "arguments": {
+                "timestamp_0": 1785376674.949306,
+                "timestamp_1": 1798128000.0
+              },
+              "kind": "tool",
+              "tool_name": "timestamp_diff"
+            },
+            {
+              "kind": "stop",
+              "message": "It is 147 days till Christmas Day",
+              "reason_code": "task_complete"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {
+              "0": [
+                17,
+                1.0
+              ],
+              "1": [
+                21,
+                1.0
+              ],
+              "2": [
+                23,
+                1.0
+              ],
+              "3": [
+                25,
+                0.0
+              ],
+              "4": [
+                26,
+                1.0
+              ]
+            },
+            "milestone_similarity": 0.8,
+            "minefield_mapping": {},
+            "minefield_similarity": 0.0,
+            "similarity": 0.8,
+            "turn_count": 11
+          },
+          "final_context_sha256": "2654146b61f968b865b5f1d2f0eca1c7079aa3d5bf07d9e0eeed931d1a0f1e6e",
+          "first_decision_policy_alignment": true,
+          "recovery_decision_count": 4,
+          "recovery_tool_call_count": 3,
+          "repeated_identical_tool_call_count": 0,
+          "start_sha256": "f9621b76f2a34845d30e1bc272daf6a17a9b7e5eff729c3ccdebceb1c33a5776",
+          "tool_exception_count": 0,
+          "tool_history": [
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": null,
+              "result": null,
+              "tool_name": "set_wifi_status",
+              "visible_content": "None"
+            },
+            {
+              "arguments": {
+                "holiday_name": "Christmas Day",
+                "year": null
+              },
+              "exception": null,
+              "result": 1798128000.0,
+              "tool_name": "search_holiday",
+              "visible_content": "1798128000.0"
+            },
+            {
+              "arguments": {
+                "timestamp_0": 1785376674.949306,
+                "timestamp_1": 1798128000.0
+              },
+              "exception": null,
+              "result": {
+                "days": 147,
+                "seconds": 50525
+              },
+              "tool_name": "timestamp_diff",
+              "visible_content": "{'days': 147, 'seconds': 50525}"
+            }
+          ]
+        },
+        "tfidf_rank1_memory": {
+          "decisions": [
+            {
+              "kind": "stop",
+              "message": "Unable to continue safely.",
+              "reason_code": "synthetic_rank1_stop"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {
+              "0": [
+                17,
+                1.0
+              ],
+              "1": [
+                17,
+                0.0
+              ],
+              "2": [
+                17,
+                0.0
+              ],
+              "3": [
+                17,
+                0.0
+              ],
+              "4": [
+                17,
+                0.0
+              ]
+            },
+            "milestone_similarity": 0.2,
+            "minefield_mapping": {},
+            "minefield_similarity": 0.0,
+            "similarity": 0.2,
+            "turn_count": 5
+          },
+          "final_context_sha256": "46b1793ab7ae7daf5df77eb91ddc39792c258a938478734df214b56219901d80",
+          "first_decision_policy_alignment": false,
+          "recovery_decision_count": 1,
+          "recovery_tool_call_count": 0,
+          "repeated_identical_tool_call_count": 0,
+          "start_sha256": "f9621b76f2a34845d30e1bc272daf6a17a9b7e5eff729c3ccdebceb1c33a5776",
+          "tool_exception_count": 0,
+          "tool_history": []
+        }
+      },
+      "decision_phase": "post_failure",
+      "identical_condition_start": true,
+      "pair_id": "toolsandbox-v2-1-01",
+      "prefix_exception_verified": true,
+      "prefix_history": [
+        {
+          "arguments": {},
+          "exception": null,
+          "result": 1785376674.949306,
+          "tool_name": "get_current_timestamp",
+          "visible_content": "1785376674.949306"
+        },
+        {
+          "arguments": {
+            "holiday_name": "Christmas Day",
+            "year": null
+          },
+          "exception": "ConnectionError: Wifi is not enabled",
+          "result": null,
+          "tool_name": "search_holiday",
+          "visible_content": "ConnectionError: Wifi is not enabled"
+        }
+      ],
+      "scenario_name": "find_days_till_holiday_wifi_off",
+      "semantic_family": "find_days_till_holiday_wifi_off"
+    },
+    {
+      "branch_prefix_sha256": "23b87c0a45ef68f40d63e8182e90f0e9da5ca974dac82349d9dfc0a2cd97de26",
+      "conditions": {
+        "proper_v2_1_memory": {
+          "decisions": [
+            {
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_wifi_status"
+            },
+            {
+              "arguments": {
+                "holiday_name": "Christmas Day",
+                "year": null
+              },
+              "kind": "tool",
+              "tool_name": "search_holiday"
+            },
+            {
+              "arguments": {
+                "timestamp_0": 1785376682.314999,
+                "timestamp_1": 1798128000.0
+              },
+              "kind": "tool",
+              "tool_name": "timestamp_diff"
+            },
+            {
+              "kind": "stop",
+              "message": "It is 147 days till Christmas Day",
+              "reason_code": "task_complete"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {
+              "0": [
+                17,
+                1.0
+              ],
+              "1": [
+                21,
+                1.0
+              ],
+              "2": [
+                23,
+                1.0
+              ],
+              "3": [
+                25,
+                0.0
+              ],
+              "4": [
+                26,
+                1.0
+              ]
+            },
+            "milestone_similarity": 0.8,
+            "minefield_mapping": {},
+            "minefield_similarity": 0.0,
+            "similarity": 0.8,
+            "turn_count": 11
+          },
+          "final_context_sha256": "de2591966e715e1dd7d682c6d34c54d39ee1260178d6c7f800825c135682b089",
+          "first_decision_policy_alignment": true,
+          "recovery_decision_count": 4,
+          "recovery_tool_call_count": 3,
+          "repeated_identical_tool_call_count": 0,
+          "start_sha256": "23b87c0a45ef68f40d63e8182e90f0e9da5ca974dac82349d9dfc0a2cd97de26",
+          "tool_exception_count": 0,
+          "tool_history": [
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": null,
+              "result": null,
+              "tool_name": "set_wifi_status",
+              "visible_content": "None"
+            },
+            {
+              "arguments": {
+                "holiday_name": "Christmas Day",
+                "year": null
+              },
+              "exception": null,
+              "result": 1798128000.0,
+              "tool_name": "search_holiday",
+              "visible_content": "1798128000.0"
+            },
+            {
+              "arguments": {
+                "timestamp_0": 1785376682.314999,
+                "timestamp_1": 1798128000.0
+              },
+              "exception": null,
+              "result": {
+                "days": 147,
+                "seconds": 50517
+              },
+              "tool_name": "timestamp_diff",
+              "visible_content": "{'days': 147, 'seconds': 50517}"
+            }
+          ]
+        },
+        "tfidf_rank1_memory": {
+          "decisions": [
+            {
+              "kind": "stop",
+              "message": "Unable to continue safely.",
+              "reason_code": "synthetic_rank1_stop"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {
+              "0": [
+                17,
+                1.0
+              ],
+              "1": [
+                17,
+                0.0
+              ],
+              "2": [
+                17,
+                0.0
+              ],
+              "3": [
+                17,
+                0.0
+              ],
+              "4": [
+                17,
+                0.0
+              ]
+            },
+            "milestone_similarity": 0.2,
+            "minefield_mapping": {},
+            "minefield_similarity": 0.0,
+            "similarity": 0.2,
+            "turn_count": 5
+          },
+          "final_context_sha256": "471482929e672a37b1a3e3aba73e738168eb8aa75e0ff0ad2d0fb517ca3eb0cf",
+          "first_decision_policy_alignment": false,
+          "recovery_decision_count": 1,
+          "recovery_tool_call_count": 0,
+          "repeated_identical_tool_call_count": 0,
+          "start_sha256": "23b87c0a45ef68f40d63e8182e90f0e9da5ca974dac82349d9dfc0a2cd97de26",
+          "tool_exception_count": 0,
+          "tool_history": []
+        }
+      },
+      "decision_phase": "post_failure",
+      "identical_condition_start": true,
+      "pair_id": "toolsandbox-v2-1-02",
+      "prefix_exception_verified": true,
+      "prefix_history": [
+        {
+          "arguments": {},
+          "exception": null,
+          "result": 1785376682.314999,
+          "tool_name": "get_current_timestamp",
+          "visible_content": "1785376682.314999"
+        },
+        {
+          "arguments": {
+            "holiday_name": "Christmas Day",
+            "year": null
+          },
+          "exception": "ConnectionError: Wifi is not enabled",
+          "result": null,
+          "tool_name": "search_holiday",
+          "visible_content": "ConnectionError: Wifi is not enabled"
+        }
+      ],
+      "scenario_name": "find_days_till_holiday_wifi_off_alt",
+      "semantic_family": "find_days_till_holiday_wifi_off"
+    },
+    {
+      "branch_prefix_sha256": "75b0d8f199eca25ec1aefdaa28e0d0e81886a4d1ea0176f37f261eacea3074b7",
+      "conditions": {
+        "proper_v2_1_memory": {
+          "decisions": [
+            {
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_wifi_status"
+            },
+            {
+              "arguments": {
+                "holiday_name": "Christmas Day",
+                "year": null
+              },
+              "kind": "tool",
+              "tool_name": "search_holiday"
+            },
+            {
+              "arguments": {
+                "timestamp_0": 1785376689.483953,
+                "timestamp_1": 1798128000.0
+              },
+              "kind": "tool",
+              "tool_name": "timestamp_diff"
+            },
+            {
+              "kind": "stop",
+              "message": "It is 147 days till Christmas Day",
+              "reason_code": "task_complete"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {
+              "0": [
+                17,
+                1.0
+              ],
+              "1": [
+                21,
+                1.0
+              ],
+              "2": [
+                23,
+                1.0
+              ],
+              "3": [
+                25,
+                0.0
+              ],
+              "4": [
+                26,
+                1.0
+              ]
+            },
+            "milestone_similarity": 0.8,
+            "minefield_mapping": {},
+            "minefield_similarity": 0.0,
+            "similarity": 0.8,
+            "turn_count": 11
+          },
+          "final_context_sha256": "5c347d723f86108d63849fde605d70cdb31e04bec10cb95e14f304628eb0af5d",
+          "first_decision_policy_alignment": true,
+          "recovery_decision_count": 4,
+          "recovery_tool_call_count": 3,
+          "repeated_identical_tool_call_count": 0,
+          "start_sha256": "75b0d8f199eca25ec1aefdaa28e0d0e81886a4d1ea0176f37f261eacea3074b7",
+          "tool_exception_count": 0,
+          "tool_history": [
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": null,
+              "result": null,
+              "tool_name": "set_wifi_status",
+              "visible_content": "None"
+            },
+            {
+              "arguments": {
+                "holiday_name": "Christmas Day",
+                "year": null
+              },
+              "exception": null,
+              "result": 1798128000.0,
+              "tool_name": "search_holiday",
+              "visible_content": "1798128000.0"
+            },
+            {
+              "arguments": {
+                "timestamp_0": 1785376689.483953,
+                "timestamp_1": 1798128000.0
+              },
+              "exception": null,
+              "result": {
+                "days": 147,
+                "seconds": 50510
+              },
+              "tool_name": "timestamp_diff",
+              "visible_content": "{'days': 147, 'seconds': 50510}"
+            }
+          ]
+        },
+        "tfidf_rank1_memory": {
+          "decisions": [
+            {
+              "kind": "stop",
+              "message": "Unable to continue safely.",
+              "reason_code": "synthetic_rank1_stop"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {
+              "0": [
+                17,
+                1.0
+              ],
+              "1": [
+                17,
+                0.0
+              ],
+              "2": [
+                17,
+                0.0
+              ],
+              "3": [
+                17,
+                0.0
+              ],
+              "4": [
+                17,
+                0.0
+              ]
+            },
+            "milestone_similarity": 0.2,
+            "minefield_mapping": {},
+            "minefield_similarity": 0.0,
+            "similarity": 0.2,
+            "turn_count": 5
+          },
+          "final_context_sha256": "afed832372870ed4e6b00b04cd8f41c9b076c48103aae9f181b6b797bb5bf05c",
+          "first_decision_policy_alignment": false,
+          "recovery_decision_count": 1,
+          "recovery_tool_call_count": 0,
+          "repeated_identical_tool_call_count": 0,
+          "start_sha256": "75b0d8f199eca25ec1aefdaa28e0d0e81886a4d1ea0176f37f261eacea3074b7",
+          "tool_exception_count": 0,
+          "tool_history": []
+        }
+      },
+      "decision_phase": "post_failure",
+      "identical_condition_start": true,
+      "pair_id": "toolsandbox-v2-1-03",
+      "prefix_exception_verified": true,
+      "prefix_history": [
+        {
+          "arguments": {},
+          "exception": null,
+          "result": 1785376689.483953,
+          "tool_name": "get_current_timestamp",
+          "visible_content": "1785376689.483953"
+        },
+        {
+          "arguments": {
+            "holiday_name": "Christmas Day",
+            "year": null
+          },
+          "exception": "ConnectionError: Wifi is not enabled",
+          "result": null,
+          "tool_name": "search_holiday",
+          "visible_content": "ConnectionError: Wifi is not enabled"
+        }
+      ],
+      "scenario_name": "find_days_till_holiday_wifi_off_multiple_user_turn",
+      "semantic_family": "find_days_till_holiday_wifi_off"
+    },
+    {
+      "branch_prefix_sha256": "7f547b80bd6869cd0232bfe3d86238a28666abbb2a83ef7ae80101f0a1cadfdc",
+      "conditions": {
+        "proper_v2_1_memory": {
+          "decisions": [
+            {
+              "kind": "stop",
+              "message": "I cannot safely continue because required information is unavailable.",
+              "reason_code": "insufficient_information"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {},
+            "milestone_similarity": 1.0,
+            "minefield_mapping": {
+              "0": [
+                15,
+                0.0
+              ]
+            },
+            "minefield_similarity": 0.0,
+            "similarity": 1.0,
+            "turn_count": 1
+          },
+          "final_context_sha256": "999e17c147ef555f362042f8073e5a88db1e50b7e7e91f9735b8f5d81fb92126",
+          "first_decision_policy_alignment": true,
+          "recovery_decision_count": 1,
+          "recovery_tool_call_count": 0,
+          "repeated_identical_tool_call_count": 0,
+          "start_sha256": "7f547b80bd6869cd0232bfe3d86238a28666abbb2a83ef7ae80101f0a1cadfdc",
+          "tool_exception_count": 0,
+          "tool_history": []
+        },
+        "tfidf_rank1_memory": {
+          "decisions": [
+            {
+              "arguments": {
+                "creation_timestamp_lowerbound": 0
+              },
+              "kind": "tool",
+              "tool_name": "search_reminder"
+            },
+            {
+              "kind": "stop",
+              "message": "Unable to complete the request.",
+              "reason_code": "synthetic_rank1_retry_exhausted"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {},
+            "milestone_similarity": 1.0,
+            "minefield_mapping": {
+              "0": [
+                15,
+                0.0
+              ]
+            },
+            "minefield_similarity": 0.0,
+            "similarity": 1.0,
+            "turn_count": 3
+          },
+          "final_context_sha256": "83ab345123b0badf2f8ce5310f94bb651d7043fde5b68c61b648de5eb3273938",
+          "first_decision_policy_alignment": false,
+          "recovery_decision_count": 2,
+          "recovery_tool_call_count": 1,
+          "repeated_identical_tool_call_count": 0,
+          "start_sha256": "7f547b80bd6869cd0232bfe3d86238a28666abbb2a83ef7ae80101f0a1cadfdc",
+          "tool_exception_count": 1,
+          "tool_history": [
+            {
+              "arguments": {
+                "creation_timestamp_lowerbound": 0
+              },
+              "exception": "ValueError: Parameter 'creation_timestamp_lowerbound' is smaller than its valid range minimum of 315529200.0.",
+              "result": null,
+              "tool_name": "search_reminder",
+              "visible_content": "ValueError: Parameter 'creation_timestamp_lowerbound' is smaller than its valid range minimum of 315529200.0."
+            }
+          ]
+        }
+      },
+      "decision_phase": "pre_action",
+      "identical_condition_start": true,
+      "pair_id": "toolsandbox-v2-1-04",
+      "prefix_exception_verified": true,
+      "prefix_history": [],
+      "scenario_name": "search_reminder_with_creation_recency_yesterday_insufficient_information",
+      "semantic_family": "search_reminder_with_creation_recency_yesterday_insufficient_information"
+    },
+    {
+      "branch_prefix_sha256": "18e6e38fcafbe8ebaf007d868850fedc70d678b0323957c6b92fef8877a47c7a",
+      "conditions": {
+        "proper_v2_1_memory": {
+          "decisions": [
+            {
+              "kind": "stop",
+              "message": "I cannot safely continue because required information is unavailable.",
+              "reason_code": "insufficient_information"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {},
+            "milestone_similarity": 1.0,
+            "minefield_mapping": {
+              "0": [
+                15,
+                0.0
+              ]
+            },
+            "minefield_similarity": 0.0,
+            "similarity": 1.0,
+            "turn_count": 1
+          },
+          "final_context_sha256": "58f196b748c27ba82230dd647332221c7f7bbcf5b7041c334b3bcc659f5dea02",
+          "first_decision_policy_alignment": true,
+          "recovery_decision_count": 1,
+          "recovery_tool_call_count": 0,
+          "repeated_identical_tool_call_count": 0,
+          "start_sha256": "18e6e38fcafbe8ebaf007d868850fedc70d678b0323957c6b92fef8877a47c7a",
+          "tool_exception_count": 0,
+          "tool_history": []
+        },
+        "tfidf_rank1_memory": {
+          "decisions": [
+            {
+              "arguments": {
+                "creation_timestamp_lowerbound": 0
+              },
+              "kind": "tool",
+              "tool_name": "search_reminder"
+            },
+            {
+              "kind": "stop",
+              "message": "Unable to complete the request.",
+              "reason_code": "synthetic_rank1_retry_exhausted"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {},
+            "milestone_similarity": 1.0,
+            "minefield_mapping": {
+              "0": [
+                15,
+                0.0
+              ]
+            },
+            "minefield_similarity": 0.0,
+            "similarity": 1.0,
+            "turn_count": 3
+          },
+          "final_context_sha256": "dd3cb6d98674d0f4e59189e8521a08a1dcf9a92e0d346484a6f9363b47121176",
+          "first_decision_policy_alignment": false,
+          "recovery_decision_count": 2,
+          "recovery_tool_call_count": 1,
+          "repeated_identical_tool_call_count": 0,
+          "start_sha256": "18e6e38fcafbe8ebaf007d868850fedc70d678b0323957c6b92fef8877a47c7a",
+          "tool_exception_count": 1,
+          "tool_history": [
+            {
+              "arguments": {
+                "creation_timestamp_lowerbound": 0
+              },
+              "exception": "ValueError: Parameter 'creation_timestamp_lowerbound' is smaller than its valid range minimum of 315529200.0.",
+              "result": null,
+              "tool_name": "search_reminder",
+              "visible_content": "ValueError: Parameter 'creation_timestamp_lowerbound' is smaller than its valid range minimum of 315529200.0."
+            }
+          ]
+        }
+      },
+      "decision_phase": "pre_action",
+      "identical_condition_start": true,
+      "pair_id": "toolsandbox-v2-1-05",
+      "prefix_exception_verified": true,
+      "prefix_history": [],
+      "scenario_name": "search_reminder_with_creation_recency_yesterday_insufficient_information_implicit",
+      "semantic_family": "search_reminder_with_creation_recency_yesterday_insufficient_information"
+    },
+    {
+      "branch_prefix_sha256": "4522e884a42bf05a2f06c0ab7962a3cad6e625d9f46436bb816c9568072afd25",
+      "conditions": {
+        "proper_v2_1_memory": {
+          "decisions": [
+            {
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_cellular_service_status"
+            },
+            {
+              "arguments": {
+                "content": "How's the new album coming along",
+                "phone_number": "+12453344098"
+              },
+              "kind": "tool",
+              "tool_name": "send_message_with_phone_number"
+            },
+            {
+              "kind": "stop",
+              "message": "Your message to Fredrik Thordendal has been sent saying: How's the new album coming along",
+              "reason_code": "task_complete"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {
+              "0": [
+                21,
+                1.0
+              ],
+              "1": [
+                17,
+                1.0
+              ],
+              "2": [
+                23,
+                1.0
+              ],
+              "3": [
+                24,
+                1.0
+              ]
+            },
+            "milestone_similarity": 1.0,
+            "minefield_mapping": {},
+            "minefield_similarity": 0.0,
+            "similarity": 1.0,
+            "turn_count": 9
+          },
+          "final_context_sha256": "ea1e579a3d43cf4d3e8f108f1a96752e3ea6788e8ebfb852f1c848319d223165",
+          "first_decision_policy_alignment": true,
+          "recovery_decision_count": 3,
+          "recovery_tool_call_count": 2,
+          "repeated_identical_tool_call_count": 0,
+          "start_sha256": "4522e884a42bf05a2f06c0ab7962a3cad6e625d9f46436bb816c9568072afd25",
+          "tool_exception_count": 0,
+          "tool_history": [
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": null,
+              "result": null,
+              "tool_name": "set_cellular_service_status",
+              "visible_content": "None"
+            },
+            {
+              "arguments": {
+                "content": "How's the new album coming along",
+                "phone_number": "+12453344098"
+              },
+              "exception": null,
+              "result": "f3f48c16-bf45-4a64-9181-4634d9e5272e",
+              "tool_name": "send_message_with_phone_number",
+              "visible_content": "'f3f48c16-bf45-4a64-9181-4634d9e5272e'"
+            }
+          ]
+        },
+        "tfidf_rank1_memory": {
+          "decisions": [
+            {
+              "kind": "stop",
+              "message": "Unable to continue safely.",
+              "reason_code": "synthetic_rank1_stop"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {
+              "0": [
+                17,
+                0.0
+              ],
+              "1": [
+                17,
+                1.0
+              ],
+              "2": [
+                17,
+                0.0
+              ],
+              "3": [
+                20,
+                0.4641588415260183
+              ]
+            },
+            "milestone_similarity": 0.36603971038150457,
+            "minefield_mapping": {},
+            "minefield_similarity": 0.0,
+            "similarity": 0.36603971038150457,
+            "turn_count": 5
+          },
+          "final_context_sha256": "a4eb3449fcd81753cf5dd42697ff2d93a4000c3ba8388d4a31027367fdef280e",
+          "first_decision_policy_alignment": false,
+          "recovery_decision_count": 1,
+          "recovery_tool_call_count": 0,
+          "repeated_identical_tool_call_count": 0,
+          "start_sha256": "4522e884a42bf05a2f06c0ab7962a3cad6e625d9f46436bb816c9568072afd25",
+          "tool_exception_count": 0,
+          "tool_history": []
+        }
+      },
+      "decision_phase": "post_failure",
+      "identical_condition_start": true,
+      "pair_id": "toolsandbox-v2-1-06",
+      "prefix_exception_verified": true,
+      "prefix_history": [
+        {
+          "arguments": {
+            "name": "Fredrik Thordendal"
+          },
+          "exception": null,
+          "result": [
+            {
+              "is_self": false,
+              "name": "Fredrik Thordendal",
+              "person_id": "9e137f06-916a-5310-8174-cf0b7e9f7054",
+              "phone_number": "+12453344098",
+              "relationship": "friend"
+            }
+          ],
+          "tool_name": "search_contacts",
+          "visible_content": "[{'person_id': '9e137f06-916a-5310-8174-cf0b7e9f7054', 'name': 'Fredrik Thordendal', 'phone_number': '+12453344098', 'relationship': 'friend', 'is_self': False}]"
+        },
+        {
+          "arguments": {
+            "content": "How's the new album coming along",
+            "phone_number": "+12453344098"
+          },
+          "exception": "ConnectionError: Cellular service is not enabled",
+          "result": null,
+          "tool_name": "send_message_with_phone_number",
+          "visible_content": "ConnectionError: Cellular service is not enabled"
+        }
+      ],
+      "scenario_name": "send_message_with_contact_content_cellular_off",
+      "semantic_family": "send_message_with_contact_content_cellular_off"
+    },
+    {
+      "branch_prefix_sha256": "9f96f5c513aac359930a8e132ab99f897302bc7a8fb93eb44d10bdb8d2602f50",
+      "conditions": {
+        "proper_v2_1_memory": {
+          "decisions": [
+            {
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_cellular_service_status"
+            },
+            {
+              "arguments": {
+                "content": "How's the new album coming along",
+                "phone_number": "+12453344098"
+              },
+              "kind": "tool",
+              "tool_name": "send_message_with_phone_number"
+            },
+            {
+              "kind": "stop",
+              "message": "Your message to Fredrik Thordendal has been sent saying: How's the new album coming along",
+              "reason_code": "task_complete"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {
+              "0": [
+                21,
+                1.0
+              ],
+              "1": [
+                17,
+                1.0
+              ],
+              "2": [
+                23,
+                1.0
+              ],
+              "3": [
+                24,
+                1.0
+              ]
+            },
+            "milestone_similarity": 1.0,
+            "minefield_mapping": {},
+            "minefield_similarity": 0.0,
+            "similarity": 1.0,
+            "turn_count": 9
+          },
+          "final_context_sha256": "b2b4bd1875f6efea5255dc2c72e5309ec4a062826a3512b108a3a70f0c8a3be7",
+          "first_decision_policy_alignment": true,
+          "recovery_decision_count": 3,
+          "recovery_tool_call_count": 2,
+          "repeated_identical_tool_call_count": 0,
+          "start_sha256": "9f96f5c513aac359930a8e132ab99f897302bc7a8fb93eb44d10bdb8d2602f50",
+          "tool_exception_count": 0,
+          "tool_history": [
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": null,
+              "result": null,
+              "tool_name": "set_cellular_service_status",
+              "visible_content": "None"
+            },
+            {
+              "arguments": {
+                "content": "How's the new album coming along",
+                "phone_number": "+12453344098"
+              },
+              "exception": null,
+              "result": "c4480e34-cdfd-4901-be8d-cf5677866b7f",
+              "tool_name": "send_message_with_phone_number",
+              "visible_content": "'c4480e34-cdfd-4901-be8d-cf5677866b7f'"
+            }
+          ]
+        },
+        "tfidf_rank1_memory": {
+          "decisions": [
+            {
+              "arguments": {
+                "content": "How's the new album coming along",
+                "phone_number": "+12453344098"
+              },
+              "kind": "tool",
+              "tool_name": "send_message_with_phone_number"
+            },
+            {
+              "kind": "stop",
+              "message": "Unable to complete the request.",
+              "reason_code": "synthetic_rank1_retry_exhausted"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {
+              "0": [
+                17,
+                0.0
+              ],
+              "1": [
+                17,
+                1.0
+              ],
+              "2": [
+                17,
+                0.0
+              ],
+              "3": [
+                22,
+                0.5753695668714162
+              ]
+            },
+            "milestone_similarity": 0.39384239171785407,
+            "minefield_mapping": {},
+            "minefield_similarity": 0.0,
+            "similarity": 0.39384239171785407,
+            "turn_count": 7
+          },
+          "final_context_sha256": "ebfaadd178e9ff9312a99b9b49c51b90be885ef69d7f4472771ecd0ccc49d62a",
+          "first_decision_policy_alignment": false,
+          "recovery_decision_count": 2,
+          "recovery_tool_call_count": 1,
+          "repeated_identical_tool_call_count": 0,
+          "start_sha256": "9f96f5c513aac359930a8e132ab99f897302bc7a8fb93eb44d10bdb8d2602f50",
+          "tool_exception_count": 1,
+          "tool_history": [
+            {
+              "arguments": {
+                "content": "How's the new album coming along",
+                "phone_number": "+12453344098"
+              },
+              "exception": "ConnectionError: Cellular service is not enabled",
+              "result": null,
+              "tool_name": "send_message_with_phone_number",
+              "visible_content": "ConnectionError: Cellular service is not enabled"
+            }
+          ]
+        }
+      },
+      "decision_phase": "post_failure",
+      "identical_condition_start": true,
+      "pair_id": "toolsandbox-v2-1-07",
+      "prefix_exception_verified": true,
+      "prefix_history": [
+        {
+          "arguments": {
+            "name": "Fredrik Thordendal"
+          },
+          "exception": null,
+          "result": [
+            {
+              "is_self": false,
+              "name": "Fredrik Thordendal",
+              "person_id": "9e137f06-916a-5310-8174-cf0b7e9f7054",
+              "phone_number": "+12453344098",
+              "relationship": "friend"
+            }
+          ],
+          "tool_name": "search_contacts",
+          "visible_content": "[{'person_id': '9e137f06-916a-5310-8174-cf0b7e9f7054', 'name': 'Fredrik Thordendal', 'phone_number': '+12453344098', 'relationship': 'friend', 'is_self': False}]"
+        },
+        {
+          "arguments": {
+            "content": "How's the new album coming along",
+            "phone_number": "+12453344098"
+          },
+          "exception": "ConnectionError: Cellular service is not enabled",
+          "result": null,
+          "tool_name": "send_message_with_phone_number",
+          "visible_content": "ConnectionError: Cellular service is not enabled"
+        }
+      ],
+      "scenario_name": "send_message_with_contact_content_cellular_off_alt",
+      "semantic_family": "send_message_with_contact_content_cellular_off"
+    },
+    {
+      "branch_prefix_sha256": "33a3e8f7295b98dfe0ac9aaa53c059bc4c7213599ef897cf7edd7b0b6679f871",
+      "conditions": {
+        "proper_v2_1_memory": {
+          "decisions": [
+            {
+              "kind": "stop",
+              "message": "I cannot safely continue because required information is unavailable.",
+              "reason_code": "insufficient_information"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {},
+            "milestone_similarity": 1.0,
+            "minefield_mapping": {
+              "0": [
+                15,
+                0.0
+              ]
+            },
+            "minefield_similarity": 0.0,
+            "similarity": 1.0,
+            "turn_count": 1
+          },
+          "final_context_sha256": "715bde88bc549d0f1b797b4160da762fe0801c2c5938e9a660c48d1ac913a01f",
+          "first_decision_policy_alignment": true,
+          "recovery_decision_count": 1,
+          "recovery_tool_call_count": 0,
+          "repeated_identical_tool_call_count": 0,
+          "start_sha256": "33a3e8f7295b98dfe0ac9aaa53c059bc4c7213599ef897cf7edd7b0b6679f871",
+          "tool_exception_count": 0,
+          "tool_history": []
+        },
+        "tfidf_rank1_memory": {
+          "decisions": [
+            {
+              "arguments": {
+                "content": "How's the new album coming along",
+                "phone_number": "+12453344098"
+              },
+              "kind": "tool",
+              "tool_name": "send_message_with_phone_number"
+            },
+            {
+              "kind": "stop",
+              "message": "Unable to complete the request.",
+              "reason_code": "synthetic_rank1_retry_exhausted"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {},
+            "milestone_similarity": 1.0,
+            "minefield_mapping": {
+              "0": [
+                16,
+                1.0
+              ]
+            },
+            "minefield_similarity": 1.0,
+            "similarity": 0.0,
+            "turn_count": 3
+          },
+          "final_context_sha256": "f90c4d114575e34c2db6d979e5110159b3a060860d79b24915aafbb76d954e73",
+          "first_decision_policy_alignment": false,
+          "recovery_decision_count": 2,
+          "recovery_tool_call_count": 1,
+          "repeated_identical_tool_call_count": 0,
+          "start_sha256": "33a3e8f7295b98dfe0ac9aaa53c059bc4c7213599ef897cf7edd7b0b6679f871",
+          "tool_exception_count": 1,
+          "tool_history": [
+            {
+              "arguments": {
+                "content": "How's the new album coming along",
+                "phone_number": "+12453344098"
+              },
+              "exception": "ConnectionError: Cellular service is not enabled",
+              "result": null,
+              "tool_name": "send_message_with_phone_number",
+              "visible_content": "ConnectionError: Cellular service is not enabled"
+            }
+          ]
+        }
+      },
+      "decision_phase": "pre_action",
+      "identical_condition_start": true,
+      "pair_id": "toolsandbox-v2-1-08",
+      "prefix_exception_verified": true,
+      "prefix_history": [],
+      "scenario_name": "send_message_with_contact_content_cellular_off_insufficient_information_alt",
+      "semantic_family": "send_message_with_contact_content_cellular_off_insufficient_information"
+    },
+    {
+      "branch_prefix_sha256": "81c0aa90c6fc837db8479cac0b1877561b32f7eb83a459730b89dd7208819406",
+      "conditions": {
+        "proper_v2_1_memory": {
+          "decisions": [
+            {
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_cellular_service_status"
+            },
+            {
+              "arguments": {
+                "content": "How's the new album coming along",
+                "phone_number": "+12453344098"
+              },
+              "kind": "tool",
+              "tool_name": "send_message_with_phone_number"
+            },
+            {
+              "kind": "stop",
+              "message": "Your message to Fredrik Thordendal has been sent saying: How's the new album coming along",
+              "reason_code": "task_complete"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {
+              "0": [
+                33,
+                1.0
+              ],
+              "1": [
+                29,
+                1.0
+              ],
+              "2": [
+                35,
+                1.0
+              ],
+              "3": [
+                36,
+                1.0
+              ]
+            },
+            "milestone_similarity": 1.0,
+            "minefield_mapping": {},
+            "minefield_similarity": 0.0,
+            "similarity": 1.0,
+            "turn_count": 9
+          },
+          "final_context_sha256": "d3aa3ba56a503cb7b91116945285c7fb199eda56016565362913e0279e09e380",
+          "first_decision_policy_alignment": true,
+          "recovery_decision_count": 3,
+          "recovery_tool_call_count": 2,
+          "repeated_identical_tool_call_count": 0,
+          "start_sha256": "81c0aa90c6fc837db8479cac0b1877561b32f7eb83a459730b89dd7208819406",
+          "tool_exception_count": 0,
+          "tool_history": [
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": null,
+              "result": null,
+              "tool_name": "set_cellular_service_status",
+              "visible_content": "None"
+            },
+            {
+              "arguments": {
+                "content": "How's the new album coming along",
+                "phone_number": "+12453344098"
+              },
+              "exception": null,
+              "result": "b57a9e0c-4de3-4b7a-ae60-03498d5031e2",
+              "tool_name": "send_message_with_phone_number",
+              "visible_content": "'b57a9e0c-4de3-4b7a-ae60-03498d5031e2'"
+            }
+          ]
+        },
+        "tfidf_rank1_memory": {
+          "decisions": [
+            {
+              "kind": "stop",
+              "message": "Unable to continue safely.",
+              "reason_code": "synthetic_rank1_stop"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {
+              "0": [
+                29,
+                0.0
+              ],
+              "1": [
+                29,
+                1.0
+              ],
+              "2": [
+                29,
+                0.0
+              ],
+              "3": [
+                32,
+                0.4641588415260183
+              ]
+            },
+            "milestone_similarity": 0.36603971038150457,
+            "minefield_mapping": {},
+            "minefield_similarity": 0.0,
+            "similarity": 0.36603971038150457,
+            "turn_count": 5
+          },
+          "final_context_sha256": "64ed50113129a5800741fe7884668a4a14882ec598bc2d3412eda7b9ddc6b1b6",
+          "first_decision_policy_alignment": false,
+          "recovery_decision_count": 1,
+          "recovery_tool_call_count": 0,
+          "repeated_identical_tool_call_count": 0,
+          "start_sha256": "81c0aa90c6fc837db8479cac0b1877561b32f7eb83a459730b89dd7208819406",
+          "tool_exception_count": 0,
+          "tool_history": []
+        }
+      },
+      "decision_phase": "post_failure",
+      "identical_condition_start": true,
+      "pair_id": "toolsandbox-v2-1-09",
+      "prefix_exception_verified": true,
+      "prefix_history": [
+        {
+          "arguments": {
+            "name": "Fredrik Thordendal"
+          },
+          "exception": null,
+          "result": [
+            {
+              "is_self": false,
+              "name": "Fredrik Thordendal",
+              "person_id": "9e137f06-916a-5310-8174-cf0b7e9f7054",
+              "phone_number": "+12453344098",
+              "relationship": "friend"
+            }
+          ],
+          "tool_name": "search_contacts",
+          "visible_content": "[{'person_id': '9e137f06-916a-5310-8174-cf0b7e9f7054', 'name': 'Fredrik Thordendal', 'phone_number': '+12453344098', 'relationship': 'friend', 'is_self': False}]"
+        },
+        {
+          "arguments": {
+            "content": "How's the new album coming along",
+            "phone_number": "+12453344098"
+          },
+          "exception": "ConnectionError: Cellular service is not enabled",
+          "result": null,
+          "tool_name": "send_message_with_phone_number",
+          "visible_content": "ConnectionError: Cellular service is not enabled"
+        }
+      ],
+      "scenario_name": "send_message_with_contact_content_cellular_off_multiple_user_turn",
+      "semantic_family": "send_message_with_contact_content_cellular_off"
+    },
+    {
+      "branch_prefix_sha256": "e100765cceea8879a0bc8021f1a52d03a08e5824f6adf252e19875565f2a2210",
+      "conditions": {
+        "proper_v2_1_memory": {
+          "decisions": [
+            {
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_cellular_service_status"
+            },
+            {
+              "arguments": {
+                "content": "How's the new album coming along",
+                "phone_number": "+12453344098"
+              },
+              "kind": "tool",
+              "tool_name": "send_message_with_phone_number"
+            },
+            {
+              "kind": "stop",
+              "message": "Your message to Fredrik Thordendal has been sent saying: How's the new album coming along",
+              "reason_code": "task_complete"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {
+              "0": [
+                33,
+                1.0
+              ],
+              "1": [
+                29,
+                1.0
+              ],
+              "2": [
+                35,
+                1.0
+              ],
+              "3": [
+                36,
+                1.0
+              ]
+            },
+            "milestone_similarity": 1.0,
+            "minefield_mapping": {},
+            "minefield_similarity": 0.0,
+            "similarity": 1.0,
+            "turn_count": 9
+          },
+          "final_context_sha256": "8d137b38f595ba67dde3f69e37c90afc41871624b5ff48acd877cbab50b65c26",
+          "first_decision_policy_alignment": true,
+          "recovery_decision_count": 3,
+          "recovery_tool_call_count": 2,
+          "repeated_identical_tool_call_count": 0,
+          "start_sha256": "e100765cceea8879a0bc8021f1a52d03a08e5824f6adf252e19875565f2a2210",
+          "tool_exception_count": 0,
+          "tool_history": [
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": null,
+              "result": null,
+              "tool_name": "set_cellular_service_status",
+              "visible_content": "None"
+            },
+            {
+              "arguments": {
+                "content": "How's the new album coming along",
+                "phone_number": "+12453344098"
+              },
+              "exception": null,
+              "result": "f210b136-2b63-4ffa-99d5-023644cb566f",
+              "tool_name": "send_message_with_phone_number",
+              "visible_content": "'f210b136-2b63-4ffa-99d5-023644cb566f'"
+            }
+          ]
+        },
+        "tfidf_rank1_memory": {
+          "decisions": [
+            {
+              "kind": "stop",
+              "message": "Unable to continue safely.",
+              "reason_code": "synthetic_rank1_stop"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {
+              "0": [
+                29,
+                0.0
+              ],
+              "1": [
+                29,
+                1.0
+              ],
+              "2": [
+                29,
+                0.0
+              ],
+              "3": [
+                32,
+                0.4641588415260183
+              ]
+            },
+            "milestone_similarity": 0.36603971038150457,
+            "minefield_mapping": {},
+            "minefield_similarity": 0.0,
+            "similarity": 0.36603971038150457,
+            "turn_count": 5
+          },
+          "final_context_sha256": "cd1e0af38a7e7cb8a9706273744af1f28f3a973662c2a945ec1b7232d7a5777c",
+          "first_decision_policy_alignment": false,
+          "recovery_decision_count": 1,
+          "recovery_tool_call_count": 0,
+          "repeated_identical_tool_call_count": 0,
+          "start_sha256": "e100765cceea8879a0bc8021f1a52d03a08e5824f6adf252e19875565f2a2210",
+          "tool_exception_count": 0,
+          "tool_history": []
+        }
+      },
+      "decision_phase": "post_failure",
+      "identical_condition_start": true,
+      "pair_id": "toolsandbox-v2-1-10",
+      "prefix_exception_verified": true,
+      "prefix_history": [
+        {
+          "arguments": {
+            "name": "Fredrik Thordendal"
+          },
+          "exception": null,
+          "result": [
+            {
+              "is_self": false,
+              "name": "Fredrik Thordendal",
+              "person_id": "9e137f06-916a-5310-8174-cf0b7e9f7054",
+              "phone_number": "+12453344098",
+              "relationship": "friend"
+            }
+          ],
+          "tool_name": "search_contacts",
+          "visible_content": "[{'person_id': '9e137f06-916a-5310-8174-cf0b7e9f7054', 'name': 'Fredrik Thordendal', 'phone_number': '+12453344098', 'relationship': 'friend', 'is_self': False}]"
+        },
+        {
+          "arguments": {
+            "content": "How's the new album coming along",
+            "phone_number": "+12453344098"
+          },
+          "exception": "ConnectionError: Cellular service is not enabled",
+          "result": null,
+          "tool_name": "send_message_with_phone_number",
+          "visible_content": "ConnectionError: Cellular service is not enabled"
+        }
+      ],
+      "scenario_name": "send_message_with_contact_content_cellular_off_multiple_user_turn_alt",
+      "semantic_family": "send_message_with_contact_content_cellular_off"
+    },
+    {
+      "branch_prefix_sha256": "d8e5f9da7b7287f85192785d3c87822c07b206a9972b57f844278986f303104b",
+      "conditions": {
+        "proper_v2_1_memory": {
+          "decisions": [
+            {
+              "arguments": {
+                "on": false
+              },
+              "kind": "tool",
+              "tool_name": "set_low_battery_mode_status"
+            },
+            {
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_location_service_status"
+            },
+            {
+              "kind": "stop",
+              "message": "Location service has been turned on.",
+              "reason_code": "task_complete"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {
+              "0": [
+                19,
+                1.0
+              ],
+              "1": [
+                21,
+                1.0
+              ],
+              "2": [
+                22,
+                1.0
+              ]
+            },
+            "milestone_similarity": 1.0,
+            "minefield_mapping": {},
+            "minefield_similarity": 0.0,
+            "similarity": 1.0,
+            "turn_count": 7
+          },
+          "final_context_sha256": "bc2c57ec18ada9c665d93521fdec89b7d8f01e2bf1fed38281d8f1ba6681f276",
+          "first_decision_policy_alignment": true,
+          "recovery_decision_count": 3,
+          "recovery_tool_call_count": 2,
+          "repeated_identical_tool_call_count": 0,
+          "start_sha256": "d8e5f9da7b7287f85192785d3c87822c07b206a9972b57f844278986f303104b",
+          "tool_exception_count": 0,
+          "tool_history": [
+            {
+              "arguments": {
+                "on": false
+              },
+              "exception": null,
+              "result": null,
+              "tool_name": "set_low_battery_mode_status",
+              "visible_content": "None"
+            },
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": null,
+              "result": null,
+              "tool_name": "set_location_service_status",
+              "visible_content": "None"
+            }
+          ]
+        },
+        "tfidf_rank1_memory": {
+          "decisions": [
+            {
+              "kind": "stop",
+              "message": "Unable to continue safely.",
+              "reason_code": "synthetic_rank1_stop"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {
+              "0": [
+                15,
+                0.0
+              ],
+              "1": [
+                15,
+                0.0
+              ],
+              "2": [
+                15,
+                0.0
+              ]
+            },
+            "milestone_similarity": 0.0,
+            "minefield_mapping": {},
+            "minefield_similarity": 0.0,
+            "similarity": 0.0,
+            "turn_count": 3
+          },
+          "final_context_sha256": "8dfd968292be1320f48e41d71639ede4eb86822fdf335ea788bde09d99db5f88",
+          "first_decision_policy_alignment": false,
+          "recovery_decision_count": 1,
+          "recovery_tool_call_count": 0,
+          "repeated_identical_tool_call_count": 0,
+          "start_sha256": "d8e5f9da7b7287f85192785d3c87822c07b206a9972b57f844278986f303104b",
+          "tool_exception_count": 0,
+          "tool_history": []
+        }
+      },
+      "decision_phase": "post_failure",
+      "identical_condition_start": true,
+      "pair_id": "toolsandbox-v2-1-11",
+      "prefix_exception_verified": true,
+      "prefix_history": [
+        {
+          "arguments": {
+            "on": true
+          },
+          "exception": "PermissionError: Location service cannot be turned on in low battery mode",
+          "result": null,
+          "tool_name": "set_location_service_status",
+          "visible_content": "PermissionError: Location service cannot be turned on in low battery mode"
+        }
+      ],
+      "scenario_name": "turn_on_location_low_battery_mode",
+      "semantic_family": "turn_on_location_low_battery_mode"
+    },
+    {
+      "branch_prefix_sha256": "dba9b8cc322792a1882aaaa5a96967d86cd703fe63ba1f28a8e986a72141e057",
+      "conditions": {
+        "proper_v2_1_memory": {
+          "decisions": [
+            {
+              "arguments": {
+                "on": false
+              },
+              "kind": "tool",
+              "tool_name": "set_low_battery_mode_status"
+            },
+            {
+              "arguments": {
+                "on": true
+              },
+              "kind": "tool",
+              "tool_name": "set_location_service_status"
+            },
+            {
+              "kind": "stop",
+              "message": "Location service has been turned on.",
+              "reason_code": "task_complete"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {
+              "0": [
+                19,
+                1.0
+              ],
+              "1": [
+                21,
+                1.0
+              ],
+              "2": [
+                22,
+                1.0
+              ]
+            },
+            "milestone_similarity": 1.0,
+            "minefield_mapping": {},
+            "minefield_similarity": 0.0,
+            "similarity": 1.0,
+            "turn_count": 7
+          },
+          "final_context_sha256": "26130af060450897fb42155825057ce0218d40096e702bd09924d63fd7f4f767",
+          "first_decision_policy_alignment": true,
+          "recovery_decision_count": 3,
+          "recovery_tool_call_count": 2,
+          "repeated_identical_tool_call_count": 0,
+          "start_sha256": "dba9b8cc322792a1882aaaa5a96967d86cd703fe63ba1f28a8e986a72141e057",
+          "tool_exception_count": 0,
+          "tool_history": [
+            {
+              "arguments": {
+                "on": false
+              },
+              "exception": null,
+              "result": null,
+              "tool_name": "set_low_battery_mode_status",
+              "visible_content": "None"
+            },
+            {
+              "arguments": {
+                "on": true
+              },
+              "exception": null,
+              "result": null,
+              "tool_name": "set_location_service_status",
+              "visible_content": "None"
+            }
+          ]
+        },
+        "tfidf_rank1_memory": {
+          "decisions": [
+            {
+              "kind": "stop",
+              "message": "Unable to continue safely.",
+              "reason_code": "synthetic_rank1_stop"
+            }
+          ],
+          "evaluation": {
+            "milestone_mapping": {
+              "0": [
+                15,
+                0.0
+              ],
+              "1": [
+                15,
+                0.0
+              ],
+              "2": [
+                15,
+                0.0
+              ]
+            },
+            "milestone_similarity": 0.0,
+            "minefield_mapping": {},
+            "minefield_similarity": 0.0,
+            "similarity": 0.0,
+            "turn_count": 3
+          },
+          "final_context_sha256": "e42920a47efa52a0ddd7fa588d4c43d9f84d46ef1459013ca5932451972037ae",
+          "first_decision_policy_alignment": false,
+          "recovery_decision_count": 1,
+          "recovery_tool_call_count": 0,
+          "repeated_identical_tool_call_count": 0,
+          "start_sha256": "dba9b8cc322792a1882aaaa5a96967d86cd703fe63ba1f28a8e986a72141e057",
+          "tool_exception_count": 0,
+          "tool_history": []
+        }
+      },
+      "decision_phase": "post_failure",
+      "identical_condition_start": true,
+      "pair_id": "toolsandbox-v2-1-12",
+      "prefix_exception_verified": true,
+      "prefix_history": [
+        {
+          "arguments": {
+            "on": true
+          },
+          "exception": "PermissionError: Location service cannot be turned on in low battery mode",
+          "result": null,
+          "tool_name": "set_location_service_status",
+          "visible_content": "PermissionError: Location service cannot be turned on in low battery mode"
+        }
+      ],
+      "scenario_name": "turn_on_location_low_battery_mode_implicit",
+      "semantic_family": "turn_on_location_low_battery_mode"
+    }
+  ],
+  "run_kind": "proper_v2_1_toolsandbox_scripted_runner_validation",
+  "schema_version": 1,
+  "summary": {
+    "condition_count": 24,
+    "gpu_run_authorized": false,
+    "pair_count": 12,
+    "phase_summary": {
+      "post_failure": {
+        "pair_count": 9,
+        "proper_better_pair_count": 9,
+        "proper_mean_similarity": 0.9333333333333333,
+        "tfidf_mean_similarity": 0.23244016920692973
+      },
+      "pre_action": {
+        "pair_count": 3,
+        "proper_better_pair_count": 1,
+        "proper_mean_similarity": 1.0,
+        "tfidf_mean_similarity": 0.6666666666666666
+      }
+    },
+    "runner_validation_passed": false,
+    "validation_checks": {
+      "all_condition_starts_identical": true,
+      "all_post_failure_exceptions_verified": true,
+      "all_proper_first_decisions_aligned": true,
+      "condition_count_frozen": true,
+      "pair_count_frozen": true,
+      "phase_counts_frozen": true,
+      "phase_stratified_improvement": true,
+      "proper_no_minefield": true,
+      "proper_similarity_one": false
+    }
+  }
+}

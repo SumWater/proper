@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://proper.local/schemas/proper_v2/observable_recovery_state.schema.json",
+  "title": "PROPER v2.1 ObservableRecoveryState",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "phase",
+    "instruction",
+    "action",
+    "error_code",
+    "evidence_codes",
+    "failed_argument_paths",
+    "missing_fields",
+    "public_schema_fields",
+    "public_required_fields",
+    "available_tools",
+    "available_capabilities",
+    "satisfied_facts",
+    "violated_facts",
+    "repeated_same_call_count",
+    "retry_safety"
+  ],
+  "properties": {
+    "schema_version": {"const": 2},
+    "phase": {"enum": ["pre_action", "post_failure"]},
+    "instruction": {"type": "string"},
+    "action": {
+      "oneOf": [
+        {"type": "null"},
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["tool_name", "argument_template"],
+          "properties": {
+            "tool_name": {"type": "string", "minLength": 1},
+            "argument_template": {"type": "object"}
+          }
+        }
+      ]
+    },
+    "error_code": {"type": ["string", "null"]},
+    "evidence_codes": {"$ref": "#/$defs/uniqueStrings"},
+    "failed_argument_paths": {"$ref": "#/$defs/uniqueStrings"},
+    "missing_fields": {"$ref": "#/$defs/uniqueStrings"},
+    "public_schema_fields": {"$ref": "#/$defs/uniqueStrings"},
+    "public_required_fields": {"$ref": "#/$defs/uniqueStrings"},
+    "available_tools": {"$ref": "#/$defs/uniqueStrings"},
+    "available_capabilities": {"$ref": "#/$defs/uniqueStrings"},
+    "satisfied_facts": {"$ref": "#/$defs/uniqueStrings"},
+    "violated_facts": {"$ref": "#/$defs/uniqueStrings"},
+    "repeated_same_call_count": {"type": "integer", "minimum": 0},
+    "retry_safety": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "evidence_codes"],
+      "properties": {
+        "status": {"enum": ["safe", "unsafe", "unknown"]},
+        "evidence_codes": {"$ref": "#/$defs/uniqueStrings"}
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"phase": {"const": "pre_action"}}},
+      "then": {
+        "properties": {
+          "error_code": {"type": "null"},
+          "failed_argument_paths": {"maxItems": 0},
+          "repeated_same_call_count": {"const": 0},
+          "retry_safety": {
+            "properties": {"status": {"const": "unknown"}}
+          }
+        }
+      }
+    },
+    {
+      "if": {"properties": {"phase": {"const": "post_failure"}}},
+      "then": {
+        "properties": {
+          "action": {"type": "object"},
+          "repeated_same_call_count": {"minimum": 1}
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "uniqueStrings": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "status": "frozen_exploratory_qwen_pilot_before_model_outputs",
+  "prepared_manifest": {
+    "path": "outputs/proper_v2/toolsandbox_model_pilot_v2_1/prepared_manifest.json",
+    "sha256": "a66d12c559b462833cb1876861a783bf2c44db32d55b3a469c2aafc0baed2154",
+    "prepared_payload_sha256": "56d6161ce58209903efee4a6dc990d14bde6c942c01868d7d6772130a11a73e0"
+  },
+  "runner_validation": {
+    "config": "configs/proper_v2/toolsandbox_model_pilot_runner_validation_v2_1.yaml",
+    "config_sha256": "c393dd88ab19cb32e7509fe94fdd7c7c7ff9a33ee0777517af754ab7d08de37e",
+    "source": "experiments/proper_v2/toolsandbox_model_pilot_runner_validation_v2_1.py",
+    "source_sha256": "a45a27ab5ba8b624f9fa4e3fa4b1791519a4284bbe4dc465bdd89cfe6c20a051",
+    "must_pass_in_same_process_before_gpu": true
+  },
+  "model": {
+    "name": "Qwen3-8B",
+    "python": "/home/amax/miniconda3/envs/failure-memory-pilot/bin/python",
+    "worker_script": "experiments/proper_v2/qwen_jsonl_worker_v2_1.py",
+    "worker_script_sha256": "eb940c9a77751419426a9246052543c41f608240134e2125d30ff530368418a6",
+    "model_path": "/home/amax/PycharmProjects/AINegoProject/src/Models/LLM/Qwen3-8B",
+    "cuda_visible_devices": "0",
+    "seed": 20260730,
+    "max_new_tokens": 256,
+    "do_sample": false,
+    "enable_thinking": false,
+    "local_files_only": true
+  },
+  "execution": {
+    "smoke_pair_id": "toolsandbox-v2-1-01",
+    "require_smoke_valid_json_for_both_conditions": true,
+    "reuse_single_loaded_worker": true,
+    "condition_order": [
+      "tfidf_rank1_memory",
+      "proper_v2_1_memory"
+    ],
+    "full_pair_count": 12,
+    "full_condition_count": 24
+  },
+  "evaluation": {
+    "primary_exploratory_endpoint": "toolsandbox_final_similarity",
+    "report_phases_separately": true,
+    "confirmatory_test_authorized": false,
+    "generalization_to_all_agent_memory_scenarios_authorized": false
+  },
+  "boundary": {
+    "local_model_only": true,
+    "external_api_called": false,
+    "gpu_exploratory_pilot_authorized": true,
+    "confirmatory_claim_authorized": false,
+    "no_prompt_or_cohort_tuning_after_model_outputs": true
+  },
+  "output": {
+    "path": "outputs/proper_v2/toolsandbox_model_pilot_v2_1/qwen_results.json"
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "status": "exploratory_scripted_source_trajectory_memory_preparation",
+  "inputs": {
+    "dynamic_inventory": {
+      "path": "outputs/proper_v2/toolsandbox_dynamic_pilot/inventory.json",
+      "sha256": "b5d8cbcff96b82c005046596fd0d742feed328f513f685543727a11c3002be99"
+    },
+    "scripted_smoke": {
+      "path": "outputs/proper_v2/toolsandbox_scripted_smoke/results.json",
+      "sha256": "de4e92de84644e1892b6f002995c1f0a5e15d49bde3cb35ad2ad8e0a4bbc4c6f"
+    }
+  },
+  "derivation_rule": {
+    "unit": "causally_necessary_recovery_action",
+    "include_failed_goal_action": false,
+    "require_complete_source_trajectory_similarity": 1.0,
+    "require_action_without_exception": true,
+    "deduplication": "identical_behavior_signature_keep_lexicographically_first_source"
+  },
+  "source_trajectories": [
+    {
+      "scenario_name": "turn_on_wifi_low_battery_mode",
+      "source_family": "turn_on_wifi_low_battery_mode",
+      "failed_goal_action": {
+        "tool": "set_wifi_status",
+        "arguments": {
+          "on": true
+        },
+        "required_exception_substring": "Wifi cannot be turned on in low battery mode"
+      },
+      "recovery_actions": [
+        {
+          "tool": "set_low_battery_mode_status",
+          "arguments": {
+            "on": false
+          },
+          "trigger_evidence": [
+            "error_code:permission_error",
+            "state_dependency:low_battery_mode_blocks_service"
+          ],
+          "natural_text": "When enabling a service fails because low battery mode blocks it, first disable low battery mode and then continue with the requested service action."
+        },
+        {
+          "tool": "set_wifi_status",
+          "arguments": {
+            "on": true
+          },
+          "trigger_evidence": [
+            "state_dependency:wifi_disabled"
+          ],
+          "natural_text": "When a task requires network access and wifi is disabled, enable wifi as the prerequisite and then continue the original task."
+        }
+      ],
+      "final_message": "Wifi has been turned on."
+    },
+    {
+      "scenario_name": "turn_on_cellular_low_battery_mode",
+      "source_family": "turn_on_cellular_low_battery_mode",
+      "failed_goal_action": {
+        "tool": "set_cellular_service_status",
+        "arguments": {
+          "on": true
+        },
+        "required_exception_substring": "Cellular service cannot be turned on in low battery mode"
+      },
+      "recovery_actions": [
+        {
+          "tool": "set_low_battery_mode_status",
+          "arguments": {
+            "on": false
+          },
+          "trigger_evidence": [
+            "error_code:permission_error",
+            "state_dependency:low_battery_mode_blocks_service"
+          ],
+          "natural_text": "When enabling a service fails because low battery mode blocks it, first disable low battery mode and then continue with the requested service action."
+        },
+        {
+          "tool": "set_cellular_service_status",
+          "arguments": {
+            "on": true
+          },
+          "trigger_evidence": [
+            "state_dependency:cellular_service_disabled"
+          ],
+          "natural_text": "When a task requires cellular connectivity and cellular service is disabled, enable cellular service as the prerequisite and then continue the original task."
+        }
+      ],
+      "final_message": "Cellular service has been turned on."
+    }
+  ],
+  "boundary": {
+    "scripted_source_scenarios_played": true,
+    "model_loaded": false,
+    "model_outputs_read": false,
+    "external_api_called": false,
+    "gpu_run_authorized": false,
+    "selector_effect_claim_authorized": false,
+    "confirmatory_claim_authorized": false
+  },
+  "output": {
+    "path": "outputs/proper_v2/toolsandbox_action_memory_preparation/result.json"
+  }
+}

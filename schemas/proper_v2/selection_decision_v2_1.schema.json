@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://proper.local/schemas/proper_v2/selection_decision_v2_1.schema.json",
+  "title": "PROPER v2.1 SelectionDecision",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "method_version",
+    "rank1_experience_id",
+    "selected_experience_id",
+    "selected_original_rank",
+    "selection_changed",
+    "abstained",
+    "reason_codes",
+    "minimum_extraction_confidence",
+    "candidate_evaluations"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "method_version": {"const": "proper_v2_1_development"},
+    "rank1_experience_id": {"type": "string", "minLength": 1},
+    "selected_experience_id": {"type": "string", "minLength": 1},
+    "selected_original_rank": {"type": "integer", "minimum": 1},
+    "selection_changed": {"type": "boolean"},
+    "abstained": {"type": "boolean"},
+    "reason_codes": {"$ref": "#/$defs/uniqueStrings"},
+    "minimum_extraction_confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "candidate_evaluations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "experience_id",
+          "original_rank",
+          "eligible",
+          "contradictions",
+          "precondition_status",
+          "compatibility",
+          "repair_target_agreement",
+          "trigger_evidence_agreement",
+          "tool_compatibility",
+          "extraction_confidence",
+          "sort_key"
+        ],
+        "properties": {
+          "experience_id": {"type": "string", "minLength": 1},
+          "original_rank": {"type": "integer", "minimum": 1},
+          "eligible": {"type": "boolean"},
+          "contradictions": {"$ref": "#/$defs/uniqueStrings"},
+          "precondition_status": {
+            "enum": ["satisfied", "violated", "unknown"]
+          },
+          "compatibility": {
+            "enum": ["compatible", "uncertain", "incompatible"]
+          },
+          "repair_target_agreement": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 2
+          },
+          "trigger_evidence_agreement": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "tool_compatibility": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 2
+          },
+          "extraction_confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "sort_key": {
+            "type": "array",
+            "items": {
+              "type": ["integer", "number", "string"]
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "uniqueStrings": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    }
+  }
+}

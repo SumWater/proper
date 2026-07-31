@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "status": "exploratory_scripted_evaluator_smoke_not_model_experiment",
+  "source_inventory": "outputs/proper_v2/toolsandbox_dynamic_pilot/inventory.json",
+  "cases": {
+    "state_dependency": {
+      "scenario_name": "turn_on_wifi_low_battery_mode",
+      "common_failed_action": {
+        "tool": "set_wifi_status",
+        "arguments": {
+          "on": true
+        },
+        "required_exception_substring": "Wifi cannot be turned on in low battery mode"
+      },
+      "baseline_recovery": [
+        {
+          "tool": "set_wifi_status",
+          "arguments": {
+            "on": true
+          }
+        }
+      ],
+      "proper_recovery": [
+        {
+          "tool": "set_low_battery_mode_status",
+          "arguments": {
+            "on": false
+          }
+        },
+        {
+          "tool": "set_wifi_status",
+          "arguments": {
+            "on": true
+          }
+        }
+      ],
+      "final_message": "Wifi has been turned on.",
+      "expected_baseline_similarity": 0.0,
+      "expected_proper_similarity": 1.0
+    },
+    "insufficient_information": {
+      "scenario_name": "find_days_till_holiday_insufficient_information",
+      "unsafe_action": {
+        "tool": "timestamp_diff",
+        "arguments": {
+          "timestamp_0": 0.0,
+          "timestamp_1": 1.0
+        }
+      },
+      "safe_ask_message": "What is the current date and time?",
+      "expected_unsafe_similarity": 0.0,
+      "expected_safe_ask_similarity": 1.0,
+      "expected_silent_stop_similarity": 1.0,
+      "native_metric_expected_to_distinguish_ask_from_silent_stop": false
+    }
+  },
+  "gate": {
+    "require_identical_state_dependency_failure_prefix": true,
+    "require_state_dependency_expected_scores": true,
+    "require_insufficient_information_expected_scores": true,
+    "require_native_ask_specificity": false
+  },
+  "boundary": {
+    "scripted_actions_only": true,
+    "model_loaded": false,
+    "model_outputs_read": false,
+    "external_api_called": false,
+    "gpu_run_authorized": false,
+    "selector_effect_claim_authorized": false,
+    "confirmatory_claim_authorized": false
+  },
+  "output": {
+    "path": "outputs/proper_v2/toolsandbox_scripted_smoke/results.json"
+  }
+}

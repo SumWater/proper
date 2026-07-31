@@ -1,0 +1,596 @@
+{
+  "boundary": {
+    "confirmatory_claim_authorized": false,
+    "external_api_called": false,
+    "gpu_run_authorized": false,
+    "isolated_environment_required": true,
+    "model_loaded": false,
+    "model_outputs_read": false,
+    "scenario_played": false
+  },
+  "dynamic_inventory_ready": true,
+  "engineering_checks": {
+    "evaluation_definition_present": true,
+    "exact_frozen_counts_met": true,
+    "insufficient_information_family_count_met": true,
+    "policy_type_count_met": true,
+    "snapshot_capable_context_present": true,
+    "state_dependency_family_count_met": true
+  },
+  "records": [
+    {
+      "initial_snapshot_row_count": 16,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "find_days_till_holiday_insufficient_information",
+      "policy_categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "semantic_family": "find_days_till_holiday_insufficient_information",
+      "snapshot_capable": true,
+      "tools": [
+        "end_conversation",
+        "search_holiday",
+        "timestamp_diff"
+      ]
+    },
+    {
+      "initial_snapshot_row_count": 16,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "find_days_till_holiday_insufficient_information_alt",
+      "policy_categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "semantic_family": "find_days_till_holiday_insufficient_information",
+      "snapshot_capable": true,
+      "tools": [
+        "end_conversation",
+        "search_holiday",
+        "timestamp_diff"
+      ]
+    },
+    {
+      "initial_snapshot_row_count": 16,
+      "milestone_count": 5,
+      "minefield_count": 0,
+      "name": "find_days_till_holiday_wifi_off",
+      "policy_categories": [
+        "STATE_DEPENDENCY"
+      ],
+      "semantic_family": "find_days_till_holiday_wifi_off",
+      "snapshot_capable": true,
+      "tools": [
+        "end_conversation",
+        "get_current_timestamp",
+        "get_wifi_status",
+        "search_holiday",
+        "set_wifi_status",
+        "timestamp_diff"
+      ]
+    },
+    {
+      "initial_snapshot_row_count": 16,
+      "milestone_count": 5,
+      "minefield_count": 0,
+      "name": "find_days_till_holiday_wifi_off_alt",
+      "policy_categories": [
+        "STATE_DEPENDENCY"
+      ],
+      "semantic_family": "find_days_till_holiday_wifi_off",
+      "snapshot_capable": true,
+      "tools": [
+        "end_conversation",
+        "get_current_timestamp",
+        "get_wifi_status",
+        "search_holiday",
+        "set_wifi_status",
+        "timestamp_diff"
+      ]
+    },
+    {
+      "initial_snapshot_row_count": 16,
+      "milestone_count": 5,
+      "minefield_count": 0,
+      "name": "find_days_till_holiday_wifi_off_multiple_user_turn",
+      "policy_categories": [
+        "STATE_DEPENDENCY"
+      ],
+      "semantic_family": "find_days_till_holiday_wifi_off",
+      "snapshot_capable": true,
+      "tools": [
+        "end_conversation",
+        "get_current_timestamp",
+        "get_wifi_status",
+        "search_holiday",
+        "set_wifi_status",
+        "timestamp_diff"
+      ]
+    },
+    {
+      "initial_snapshot_row_count": 16,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "modify_contact_with_message_recency_insufficient_information",
+      "policy_categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "semantic_family": "modify_contact_with_message_recency_insufficient_information",
+      "snapshot_capable": true,
+      "tools": [
+        "end_conversation",
+        "get_current_timestamp",
+        "modify_contact",
+        "search_contacts"
+      ]
+    },
+    {
+      "initial_snapshot_row_count": 16,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "modify_contact_with_message_recency_insufficient_information_alt",
+      "policy_categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "semantic_family": "modify_contact_with_message_recency_insufficient_information",
+      "snapshot_capable": true,
+      "tools": [
+        "end_conversation",
+        "get_current_timestamp",
+        "modify_contact",
+        "search_contacts"
+      ]
+    },
+    {
+      "initial_snapshot_row_count": 16,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "modify_reminder_with_recency_latest_insufficient_information",
+      "policy_categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "semantic_family": "modify_reminder_with_recency_latest_insufficient_information",
+      "snapshot_capable": true,
+      "tools": [
+        "datetime_info_to_timestamp",
+        "end_conversation",
+        "modify_reminder",
+        "search_reminder",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "initial_snapshot_row_count": 16,
+      "milestone_count": 1,
+      "minefield_count": 0,
+      "name": "remove_contact_by_phone_no_remove_contact_insufficient_information",
+      "policy_categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "semantic_family": "remove_contact_by_phone_no_remove_contact_insufficient_information",
+      "snapshot_capable": true,
+      "tools": [
+        "end_conversation",
+        "search_contacts"
+      ]
+    },
+    {
+      "initial_snapshot_row_count": 16,
+      "milestone_count": 1,
+      "minefield_count": 0,
+      "name": "remove_contact_by_phone_no_remove_contact_insufficient_information_alt",
+      "policy_categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "semantic_family": "remove_contact_by_phone_no_remove_contact_insufficient_information",
+      "snapshot_capable": true,
+      "tools": [
+        "end_conversation",
+        "search_contacts"
+      ]
+    },
+    {
+      "initial_snapshot_row_count": 16,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "remove_contact_by_phone_no_search_contacts_insufficient_information",
+      "policy_categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "semantic_family": "remove_contact_by_phone_no_search_contacts_insufficient_information",
+      "snapshot_capable": true,
+      "tools": [
+        "end_conversation",
+        "remove_contact"
+      ]
+    },
+    {
+      "initial_snapshot_row_count": 16,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "remove_contact_by_phone_no_search_contacts_insufficient_information_alt",
+      "policy_categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "semantic_family": "remove_contact_by_phone_no_search_contacts_insufficient_information",
+      "snapshot_capable": true,
+      "tools": [
+        "end_conversation",
+        "remove_contact"
+      ]
+    },
+    {
+      "initial_snapshot_row_count": 16,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "remove_reminder_with_recency_latest_insufficient_information",
+      "policy_categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "semantic_family": "remove_reminder_with_recency_latest_insufficient_information",
+      "snapshot_capable": true,
+      "tools": [
+        "datetime_info_to_timestamp",
+        "end_conversation",
+        "remove_reminder",
+        "search_reminder",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "initial_snapshot_row_count": 16,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "search_reminder_with_creation_recency_yesterday_insufficient_information",
+      "policy_categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "semantic_family": "search_reminder_with_creation_recency_yesterday_insufficient_information",
+      "snapshot_capable": true,
+      "tools": [
+        "end_conversation",
+        "search_reminder",
+        "shift_timestamp",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "initial_snapshot_row_count": 16,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "search_reminder_with_creation_recency_yesterday_insufficient_information_implicit",
+      "policy_categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "semantic_family": "search_reminder_with_creation_recency_yesterday_insufficient_information",
+      "snapshot_capable": true,
+      "tools": [
+        "end_conversation",
+        "search_reminder",
+        "shift_timestamp",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "initial_snapshot_row_count": 16,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "search_reminder_with_recency_upcoming_insufficient_information",
+      "policy_categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "semantic_family": "search_reminder_with_recency_upcoming_insufficient_information",
+      "snapshot_capable": true,
+      "tools": [
+        "end_conversation",
+        "search_reminder",
+        "shift_timestamp",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "initial_snapshot_row_count": 16,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "search_reminder_with_recency_upcoming_insufficient_information_implicit",
+      "policy_categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "semantic_family": "search_reminder_with_recency_upcoming_insufficient_information",
+      "snapshot_capable": true,
+      "tools": [
+        "end_conversation",
+        "search_reminder",
+        "shift_timestamp",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "initial_snapshot_row_count": 16,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "search_reminder_with_recency_yesterday_insufficient_information",
+      "policy_categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "semantic_family": "search_reminder_with_recency_yesterday_insufficient_information",
+      "snapshot_capable": true,
+      "tools": [
+        "end_conversation",
+        "search_reminder",
+        "shift_timestamp",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "initial_snapshot_row_count": 16,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "search_reminder_with_recency_yesterday_insufficient_information_implicit",
+      "policy_categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "semantic_family": "search_reminder_with_recency_yesterday_insufficient_information",
+      "snapshot_capable": true,
+      "tools": [
+        "end_conversation",
+        "search_reminder",
+        "shift_timestamp",
+        "timestamp_to_datetime_info"
+      ]
+    },
+    {
+      "initial_snapshot_row_count": 16,
+      "milestone_count": 4,
+      "minefield_count": 0,
+      "name": "send_message_with_contact_content_cellular_off",
+      "policy_categories": [
+        "STATE_DEPENDENCY"
+      ],
+      "semantic_family": "send_message_with_contact_content_cellular_off",
+      "snapshot_capable": true,
+      "tools": [
+        "end_conversation",
+        "get_cellular_service_status",
+        "search_contacts",
+        "send_message_with_phone_number",
+        "set_cellular_service_status"
+      ]
+    },
+    {
+      "initial_snapshot_row_count": 16,
+      "milestone_count": 4,
+      "minefield_count": 0,
+      "name": "send_message_with_contact_content_cellular_off_alt",
+      "policy_categories": [
+        "STATE_DEPENDENCY"
+      ],
+      "semantic_family": "send_message_with_contact_content_cellular_off",
+      "snapshot_capable": true,
+      "tools": [
+        "end_conversation",
+        "get_cellular_service_status",
+        "search_contacts",
+        "send_message_with_phone_number",
+        "set_cellular_service_status"
+      ]
+    },
+    {
+      "initial_snapshot_row_count": 16,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "send_message_with_contact_content_cellular_off_insufficient_information",
+      "policy_categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "semantic_family": "send_message_with_contact_content_cellular_off_insufficient_information",
+      "snapshot_capable": true,
+      "tools": [
+        "end_conversation",
+        "get_cellular_service_status",
+        "send_message_with_phone_number",
+        "set_cellular_service_status"
+      ]
+    },
+    {
+      "initial_snapshot_row_count": 16,
+      "milestone_count": 0,
+      "minefield_count": 1,
+      "name": "send_message_with_contact_content_cellular_off_insufficient_information_alt",
+      "policy_categories": [
+        "INSUFFICIENT_INFORMATION"
+      ],
+      "semantic_family": "send_message_with_contact_content_cellular_off_insufficient_information",
+      "snapshot_capable": true,
+      "tools": [
+        "end_conversation",
+        "get_cellular_service_status",
+        "send_message_with_phone_number",
+        "set_cellular_service_status"
+      ]
+    },
+    {
+      "initial_snapshot_row_count": 28,
+      "milestone_count": 4,
+      "minefield_count": 0,
+      "name": "send_message_with_contact_content_cellular_off_multiple_user_turn",
+      "policy_categories": [
+        "STATE_DEPENDENCY"
+      ],
+      "semantic_family": "send_message_with_contact_content_cellular_off",
+      "snapshot_capable": true,
+      "tools": [
+        "end_conversation",
+        "get_cellular_service_status",
+        "search_contacts",
+        "send_message_with_phone_number",
+        "set_cellular_service_status"
+      ]
+    },
+    {
+      "initial_snapshot_row_count": 28,
+      "milestone_count": 4,
+      "minefield_count": 0,
+      "name": "send_message_with_contact_content_cellular_off_multiple_user_turn_alt",
+      "policy_categories": [
+        "STATE_DEPENDENCY"
+      ],
+      "semantic_family": "send_message_with_contact_content_cellular_off",
+      "snapshot_capable": true,
+      "tools": [
+        "end_conversation",
+        "get_cellular_service_status",
+        "search_contacts",
+        "send_message_with_phone_number",
+        "set_cellular_service_status"
+      ]
+    },
+    {
+      "initial_snapshot_row_count": 16,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "turn_on_cellular_low_battery_mode",
+      "policy_categories": [
+        "STATE_DEPENDENCY"
+      ],
+      "semantic_family": "turn_on_cellular_low_battery_mode",
+      "snapshot_capable": true,
+      "tools": [
+        "end_conversation",
+        "get_cellular_service_status",
+        "get_low_battery_mode_status",
+        "set_cellular_service_status",
+        "set_low_battery_mode_status"
+      ]
+    },
+    {
+      "initial_snapshot_row_count": 16,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "turn_on_cellular_low_battery_mode_implicit",
+      "policy_categories": [
+        "STATE_DEPENDENCY"
+      ],
+      "semantic_family": "turn_on_cellular_low_battery_mode",
+      "snapshot_capable": true,
+      "tools": [
+        "end_conversation",
+        "get_cellular_service_status",
+        "get_low_battery_mode_status",
+        "set_cellular_service_status",
+        "set_low_battery_mode_status"
+      ]
+    },
+    {
+      "initial_snapshot_row_count": 16,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "turn_on_location_low_battery_mode",
+      "policy_categories": [
+        "STATE_DEPENDENCY"
+      ],
+      "semantic_family": "turn_on_location_low_battery_mode",
+      "snapshot_capable": true,
+      "tools": [
+        "end_conversation",
+        "get_location_service_status",
+        "get_low_battery_mode_status",
+        "set_location_service_status",
+        "set_low_battery_mode_status"
+      ]
+    },
+    {
+      "initial_snapshot_row_count": 16,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "turn_on_location_low_battery_mode_implicit",
+      "policy_categories": [
+        "STATE_DEPENDENCY"
+      ],
+      "semantic_family": "turn_on_location_low_battery_mode",
+      "snapshot_capable": true,
+      "tools": [
+        "end_conversation",
+        "get_location_service_status",
+        "get_low_battery_mode_status",
+        "set_location_service_status",
+        "set_low_battery_mode_status"
+      ]
+    },
+    {
+      "initial_snapshot_row_count": 16,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "turn_on_wifi_low_battery_mode",
+      "policy_categories": [
+        "STATE_DEPENDENCY"
+      ],
+      "semantic_family": "turn_on_wifi_low_battery_mode",
+      "snapshot_capable": true,
+      "tools": [
+        "end_conversation",
+        "get_low_battery_mode_status",
+        "get_wifi_status",
+        "set_low_battery_mode_status",
+        "set_wifi_status"
+      ]
+    },
+    {
+      "initial_snapshot_row_count": 16,
+      "milestone_count": 3,
+      "minefield_count": 0,
+      "name": "turn_on_wifi_low_battery_mode_implicit",
+      "policy_categories": [
+        "STATE_DEPENDENCY"
+      ],
+      "semantic_family": "turn_on_wifi_low_battery_mode",
+      "snapshot_capable": true,
+      "tools": [
+        "end_conversation",
+        "get_low_battery_mode_status",
+        "get_wifi_status",
+        "set_low_battery_mode_status",
+        "set_wifi_status"
+      ]
+    }
+  ],
+  "run_kind": "proper_v2_toolsandbox_dynamic_inventory_pilot",
+  "schema_version": 1,
+  "source_identity": {
+    "python_source_file_count": 46,
+    "python_source_manifest_sha256": "d7f26cdb8feedd4c2feb108206dc90314e277e011d67536b2a5d499c89e1a297",
+    "revision": "165848b9a78cead7ca7fe7c89c688b58e6501219"
+  },
+  "summary": {
+    "policy_counts": {
+      "INSUFFICIENT_INFORMATION": 18,
+      "STATE_DEPENDENCY": 13
+    },
+    "scenario_count": 31,
+    "semantic_families": {
+      "INSUFFICIENT_INFORMATION": [
+        "find_days_till_holiday_insufficient_information",
+        "modify_contact_with_message_recency_insufficient_information",
+        "modify_reminder_with_recency_latest_insufficient_information",
+        "remove_contact_by_phone_no_remove_contact_insufficient_information",
+        "remove_contact_by_phone_no_search_contacts_insufficient_information",
+        "remove_reminder_with_recency_latest_insufficient_information",
+        "search_reminder_with_creation_recency_yesterday_insufficient_information",
+        "search_reminder_with_recency_upcoming_insufficient_information",
+        "search_reminder_with_recency_yesterday_insufficient_information",
+        "send_message_with_contact_content_cellular_off_insufficient_information"
+      ],
+      "STATE_DEPENDENCY": [
+        "find_days_till_holiday_wifi_off",
+        "send_message_with_contact_content_cellular_off",
+        "turn_on_cellular_low_battery_mode",
+        "turn_on_location_low_battery_mode",
+        "turn_on_wifi_low_battery_mode"
+      ]
+    },
+    "semantic_family_counts": {
+      "INSUFFICIENT_INFORMATION": 10,
+      "STATE_DEPENDENCY": 5
+    }
+  }
+}
