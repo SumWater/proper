@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "status": "guarded_runner_cpu_validation_before_v2_3_model_outputs",
+  "source_prepared_manifest": {
+    "path": "outputs/proper_v2_3/five_condition_development_remote/20260801T104150Z-amax-b701bafa4630/prepared_manifest.json",
+    "sha256": "f7f29d03753423351f49f4790ecd18d3c767a1bb3f0f073dccbfa7532768c85a"
+  },
+  "engine_base_config": {
+    "path": "configs/proper_v2/toolsandbox_model_pilot_runner_validation_v2_1.yaml",
+    "sha256": "c393dd88ab19cb32e7509fe94fdd7c7c7ff9a33ee0777517af754ab7d08de37e"
+  },
+  "lifecycle_config": {
+    "path": "configs/proper_v2/toolsandbox_continuation_development_v2_2_1.yaml",
+    "sha256": "6811381ac50ccd426fb0d156c7b420aec4d9c0b28f536f6977fba56f12800842"
+  },
+  "effect_registry": {
+    "path": "configs/proper_v2_3/toolsandbox_action_effect_contracts_v2_3.json",
+    "sha256": "49af685c023c4a48182baf13bc66460152623b8d885e10af341fc9095800d92a"
+  },
+  "frozen_inputs": [
+    {
+      "path": "outputs/proper_v2_3/five_condition_development_remote/20260801T104150Z-amax-b701bafa4630/prepared_manifest.json",
+      "sha256": "f7f29d03753423351f49f4790ecd18d3c767a1bb3f0f073dccbfa7532768c85a"
+    },
+    {
+      "path": "outputs/proper_v2_3/five_condition_development_remote/20260801T104150Z-amax-b701bafa4630/preparation_validation.json",
+      "sha256": "e2822620a16336c452d3d6ab8ffc239cbb4638243f30a56aaaa2a22849f6933e"
+    },
+    {
+      "path": "configs/proper_v2/toolsandbox_model_pilot_runner_validation_v2_1.yaml",
+      "sha256": "c393dd88ab19cb32e7509fe94fdd7c7c7ff9a33ee0777517af754ab7d08de37e"
+    },
+    {
+      "path": "configs/proper_v2/toolsandbox_continuation_development_v2_2_1.yaml",
+      "sha256": "6811381ac50ccd426fb0d156c7b420aec4d9c0b28f536f6977fba56f12800842"
+    },
+    {
+      "path": "configs/proper_v2_3/toolsandbox_action_effect_contracts_v2_3.json",
+      "sha256": "49af685c023c4a48182baf13bc66460152623b8d885e10af341fc9095800d92a"
+    }
+  ],
+  "agent_budget": {
+    "maximum_decisions_after_branch": 4,
+    "maximum_tool_calls_after_branch": 4,
+    "invalid_output_policy": "stop_condition_as_invalid_model_output",
+    "tool_exception_policy": "return_visible_exception_and_continue_within_budget"
+  },
+  "method_config": {
+    "controller_budget": {
+      "maximum_retries": 1,
+      "maximum_verifications": 2,
+      "maximum_invalid_decisions": 1,
+      "maximum_replans": 2
+    }
+  },
+  "method_source_forbidden_tokens": [
+    "scenario_name",
+    "semantic_family",
+    "benchmark_recoverability",
+    "gold_action",
+    "gold_label",
+    "evaluator_outcome",
+    "prior_model_result"
+  ],
+  "test_policy": {
+    "patterns": ["test_proper_v2_3_*.py", "test_toolsandbox_v2_3_*.py"],
+    "expected_test_count": 80
+  },
+  "remote_validation": {
+    "execution_role": "proper_v2_3_guarded_runner_remote_cpu_validation",
+    "allowed_python_minors": [11, 12],
+    "require_exact_revision": true,
+    "require_clean_tracked_worktree": true,
+    "cuda_visible_devices": "-1"
+  },
+  "output": {
+    "root": "outputs/proper_v2_3/guarded_runner_validation_remote",
+    "never_overwrite": true
+  },
+  "boundary": {
+    "scripted_decisions_only": true,
+    "existing_model_exposed_pairs": true,
+    "development_only": true,
+    "model_loaded": false,
+    "model_outputs_read": false,
+    "gpu_used": false,
+    "development_model_run_authorized": false,
+    "confirmatory_claim_authorized": false,
+    "heldout_claim_authorized": false
+  }
+}

@@ -67,3 +67,11 @@ This passing result authorizes only the next code stage: implement, validate,
 and freeze a separate guarded development model runner before considering GPU
 authorization. It is not selector, completion, safety, cost, or confirmatory
 model evidence.
+
+## Pending guarded-runner CPU validation
+
+The next remote attempt writes a unique directory under
+`guarded_runner_validation_remote/`. Its scripted 12x5 replay validates the
+complete-trajectory adapter and deliberately probes successful-action repeats
+without loading Qwen or using a GPU. No result exists or is claimed at the
+time this entry is frozen; a failed attempt must be retained as well.

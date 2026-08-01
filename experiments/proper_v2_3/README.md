@@ -18,6 +18,14 @@ command.
   schema, frozen-hash, and 72-test validation. It is not a model runner.
 - `run_five_condition_preparation_remote_v2_3.py`: isolated-environment,
   revision-guarded, CPU-only remote bootstrap for that validation.
+- `toolsandbox_five_condition_runner_adapter_v2_3.py`: maps public action
+  contracts and visible execution history into the generic v2.3 controller.
+- `toolsandbox_five_condition_provider_v2_3.py`: preserves the first four
+  frozen providers and guards the fifth condition's complete trajectory.
+- `validate_guarded_runner_v2_3.py`: scripted 12x5 ToolSandbox integration
+  validation with deliberate successful-action repeat proposals.
+- `run_guarded_runner_validation_remote_v2_3.py`: one-command CPU entry using
+  the active remote `proper-toolsandbox` Python environment.
 
 Preparation schema/validation protocol v2 preserves the failed fixed-path v1
 manifest and writes every subsequent attempt to a unique run directory.

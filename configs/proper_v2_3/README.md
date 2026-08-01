@@ -18,3 +18,6 @@ No GPU or confirmatory run is currently authorized.
 - `five_condition_development_v2_3.yaml`: frozen 12-pair, five-condition
   preparation, hashes, budgets, endpoints, exclusions, and stop rules. It
   authorizes neither a model runner nor GPU execution.
+- `guarded_runner_validation_v2_3.json`: CPU-only scripted integration gate
+  for the five-condition execution adapter; it freezes the passed preparation,
+  independent budgets, 80-test contract, and no-model/no-GPU boundary.

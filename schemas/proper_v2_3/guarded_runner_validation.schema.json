@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://proper.local/schemas/proper_v2_3/guarded_runner_validation.schema.json",
+  "type": "object",
+  "required": ["schema_version", "run_kind", "run_id", "passed", "preconditions", "identities", "checks", "tests", "boundary", "next_gate"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "run_kind": {"const": "proper_v2_3_guarded_runner_cpu_validation"},
+    "run_id": {"type": "string", "minLength": 20},
+    "passed": {"type": "boolean"},
+    "preconditions": {
+      "type": "object",
+      "required": ["execution_role", "project_revision", "tracked_worktree_clean", "cuda_visible_devices", "python_version"],
+      "properties": {
+        "execution_role": {"const": "proper_v2_3_guarded_runner_remote_cpu_validation"},
+        "project_revision": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "tracked_worktree_clean": {"const": true},
+        "cuda_visible_devices": {"const": "-1"},
+        "python_version": {"type": "string", "pattern": "^3\\.(11|12)\\."}
+      },
+      "additionalProperties": false
+    },
+    "identities": {
+      "type": "object",
+      "required": ["config_sha256", "engine_manifest_sha256", "engine_config_sha256", "adapter_sha256", "provider_sha256", "result_sha256"],
+      "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+    },
+    "checks": {"type": "object", "minProperties": 9, "additionalProperties": {"type": "boolean"}},
+    "tests": {
+      "type": "object",
+      "required": ["passed", "tests_run", "expected_test_count", "test_count_matches_contract", "failures", "errors", "skipped", "runner_output"],
+      "properties": {
+        "passed": {"type": "boolean"},
+        "tests_run": {"type": "integer", "minimum": 0},
+        "expected_test_count": {"const": 80},
+        "test_count_matches_contract": {"type": "boolean"},
+        "failures": {"type": "integer", "minimum": 0},
+        "errors": {"type": "integer", "minimum": 0},
+        "skipped": {"type": "integer", "minimum": 0},
+        "runner_output": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "boundary": {
+      "type": "object",
+      "required": ["scripted_decisions_only", "model_loaded", "model_outputs_read", "gpu_used", "development_model_run_authorized", "confirmatory_claim_authorized", "heldout_claim_authorized"],
+      "properties": {
+        "scripted_decisions_only": {"const": true},
+        "model_loaded": {"const": false},
+        "model_outputs_read": {"const": false},
+        "gpu_used": {"const": false},
+        "development_model_run_authorized": {"const": false},
+        "confirmatory_claim_authorized": {"const": false},
+        "heldout_claim_authorized": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"enum": ["freeze_guarded_model_runner_and_gpu_development_command", "stop_and_preserve_guarded_runner_failure"]}
+  },
+  "additionalProperties": false
+}

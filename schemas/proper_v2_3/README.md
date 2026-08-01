@@ -12,3 +12,5 @@ decision, and version-specific result schemas. Frozen schemas under
   fifth-condition observable-ledger contract.
 - `five_condition_preparation_validation.schema.json`: closed CPU preparation
   validation envelope with 72-test and no-model authorization boundaries.
+- `guarded_runner_validation.schema.json`: closed scripted integration result
+  with an 80-test contract and explicit no-model/no-GPU boundary.

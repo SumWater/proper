@@ -203,3 +203,12 @@ same-start development regression and adds
 mixed into that comparison. Preparation validation still authorizes no model
 runner or GPU use; a separate guarded runner must be implemented, reviewed,
 and frozen in a later commit before any model execution.
+
+The protocol-v2 five-condition preparation subsequently passed at run
+`20260801T104150Z-amax-b701bafa4630`; the passed prepared-manifest SHA-256 is
+`f7f29d03753423351f49f4790ecd18d3c767a1bb3f0f073dccbfa7532768c85a`.
+The current gate is the CPU-only scripted guarded-runner validation described
+in `guarded_runner_validation_handoff.md`. It deliberately probes duplicate
+successful actions across the full ledger and the non-idempotent-action guard,
+while loading no model and using no GPU. Only a preserved passing remote
+envelope may advance to freezing the real Qwen development runner.
