@@ -88,10 +88,20 @@ This is scripted runner evidence, not model completion or confirmatory
 evidence. It authorizes freezing a separate Qwen development runner but does
 not itself constitute a Qwen run.
 
-## Pending Qwen five-condition development
+## Frozen Qwen five-condition development
 
-The frozen Qwen runner will write one unique result directory under
-`qwen_five_condition_development_remote/`. No v2.3 model result exists at the
-time of this protocol freeze. Smoke failures and completed negative stage
-gates must be retained; this development run cannot create a held-out or
-confirmatory claim.
+Remote run `20260801T122152Z-amax-0044e8fd6417` completed all 12 pairs and 60
+conditions at revision `0044e8fd64177ddcbe3301bd44b639dea0e8140c`.
+Its `results.json` SHA-256 is
+`3853d82e4ac048e2821cbb06185ffe6b2ee8e58f52445f234176fc2733bcbe60`.
+
+The smoke and integrity gates passed, and duplicate non-idempotent execution
+was zero. The stage gate stopped because v2.3 post-failure completion remained
+0/9, not strictly better than condition four's 0/9. The full-ledger controller
+removed identical post-branch repeats (0 versus 8) but reduced mean partial
+similarity (0.5233 versus 0.6815) and increased post-failure total tokens by
+49.3%. The complete endpoint-separated report is in
+`docs/proper_v2_3/qwen_five_condition_development_result.md`.
+
+This negative development result is frozen. It is neither held-out nor
+confirmatory and must not be tuned on these same 12 pairs.

@@ -227,3 +227,12 @@ condition order, deterministic model settings, six endpoint groups, exclusions,
 independent budgets, smoke gate, and safety/completion/integrity stops are
 fixed before model output. The next permitted action is its one-shot remote
 development command; changing this protocol after that output is not allowed.
+
+That one-shot run subsequently completed at
+`20260801T122152Z-amax-0044e8fd6417`. Safety improved—identical post-branch
+repeats fell from 8 to 0 and duplicate non-idempotent execution remained
+zero—but post-failure completion remained 0/9, partial similarity fell versus
+condition four, and post-failure total-token cost rose 49.3%. The prespecified
+completion gate therefore stopped this development line on the existing 12
+pairs. See `qwen_five_condition_development_result.md`; do not retune and rerun
+this frozen cohort.
