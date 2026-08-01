@@ -212,3 +212,10 @@ in `guarded_runner_validation_handoff.md`. It deliberately probes duplicate
 successful actions across the full ledger and the non-idempotent-action guard,
 while loading no model and using no GPU. Only a preserved passing remote
 envelope may advance to freezing the real Qwen development runner.
+
+That gate passed in remote run
+`20260801T112852Z-amax-7aa3f0256e0d`: all 9 integration checks and 80 scoped
+tests passed, with 13 duplicate proposals blocked and zero duplicate
+non-idempotent executions. The current task is now to freeze the separate Qwen
+development runner, its exact input hashes, reporting endpoints, stop rules,
+and one-shot remote command before any v2.3 model output is generated.

@@ -68,10 +68,22 @@ and freeze a separate guarded development model runner before considering GPU
 authorization. It is not selector, completion, safety, cost, or confirmatory
 model evidence.
 
-## Pending guarded-runner CPU validation
+## Frozen guarded-runner CPU validation
 
-The next remote attempt writes a unique directory under
-`guarded_runner_validation_remote/`. Its scripted 12x5 replay validates the
-complete-trajectory adapter and deliberately probes successful-action repeats
-without loading Qwen or using a GPU. No result exists or is claimed at the
-time this entry is frozen; a failed attempt must be retained as well.
+Remote run `20260801T112852Z-amax-7aa3f0256e0d` passed at remote revision
+`7aa3f0256e0d022f10fc79cec7f6998a917d15a6`:
+
+- validation-envelope SHA-256:
+  `88a4a0750c05c6ab46272c9383ad609228d0c1c5b17f28445e44982fd30d7f22`;
+- scripted 12x5 result SHA-256:
+  `56b134e49694803c5bf95e1cf0c91819353dcc78b6fd777d3022211e9b718480`;
+- 9/9 integration and safety checks passed;
+- 80/80 scoped tests passed;
+- 13 duplicate proposals were blocked;
+- every allowed execution was resolved in the complete ledger;
+- no duplicate non-idempotent execution occurred;
+- model loaded/GPU used/model-output read: false/false/false.
+
+This is scripted runner evidence, not model completion or confirmatory
+evidence. It authorizes freezing a separate Qwen development runner but does
+not itself constitute a Qwen run.

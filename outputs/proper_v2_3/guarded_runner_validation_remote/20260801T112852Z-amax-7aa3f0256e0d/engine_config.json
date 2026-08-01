@@ -1,0 +1,67 @@
+{
+  "boundary": {
+    "confirmatory_claim_authorized": false,
+    "existing_model_exposed_pairs": true,
+    "external_api_called": false,
+    "gpu_run_authorized": false,
+    "model_loaded": false,
+    "model_outputs_read": false,
+    "scripted_decisions_only": true,
+    "selector_effect_claim_authorized": false,
+    "target_scenarios_played": true
+  },
+  "checks": {
+    "expected_proper_similarity_by_family": {
+      "find_days_till_holiday_wifi_off": 0.8,
+      "search_reminder_with_creation_recency_yesterday_insufficient_information": 1.0,
+      "send_message_with_contact_content_cellular_off": 1.0,
+      "send_message_with_contact_content_cellular_off_insufficient_information": 1.0,
+      "turn_on_location_low_battery_mode": 1.0
+    },
+    "require_all_post_failure_exceptions": true,
+    "require_all_proper_first_decisions_aligned": true,
+    "require_holiday_dynamic_reference_limitation_reproduced": true,
+    "require_identical_branch_prefixes": true,
+    "require_phase_stratified_improvement": true,
+    "require_proper_no_minefield": true
+  },
+  "expected": {
+    "condition_count": 60,
+    "identical_branch_prefix_pair_count": 12,
+    "pair_count": 12,
+    "post_failure_pair_count": 9,
+    "pre_action_pair_count": 3
+  },
+  "known_evaluator_limitation": {
+    "affected_milestone_node": 3,
+    "description": "After the required failed search_holiday call, the native dynamic timestamp_diff milestone scores zero even though its arguments exactly reuse the matched get_current_timestamp and successful search_holiday results; the dependent final-answer milestone still scores one.",
+    "raw_native_scores_must_be_preserved": true,
+    "required_dependent_final_milestone_node": 4,
+    "scope": "find_days_till_holiday_wifi_off"
+  },
+  "output": {
+    "path": "outputs/proper_v2_3/guarded_runner_validation_remote/20260801T112852Z-amax-7aa3f0256e0d/unused.json"
+  },
+  "prepared_manifest": {
+    "path": "outputs/proper_v2_3/guarded_runner_validation_remote/20260801T112852Z-amax-7aa3f0256e0d/engine_manifest.json",
+    "prepared_payload_sha256": "b30704e51f3a5d2feee845edbb021c9285e311e211a4f5543fb20b0bc30ae14f",
+    "sha256": "cbb9edd1e0efb7b1925612900f86aeaf287935835e45ca6fc429b8dd32288f06"
+  },
+  "schema_version": 1,
+  "status": "scripted_runner_validation_before_model_outputs",
+  "synthetic_baseline_actions": {
+    "search_reminder_with_creation_recency_yesterday_insufficient_information": {
+      "arguments": {
+        "creation_timestamp_lowerbound": 0
+      },
+      "tool_name": "search_reminder"
+    },
+    "send_message_with_contact_content_cellular_off_insufficient_information": {
+      "arguments": {
+        "content": "How's the new album coming along",
+        "phone_number": "+12453344098"
+      },
+      "tool_name": "send_message_with_phone_number"
+    }
+  }
+}
