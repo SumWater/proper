@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://proper.local/schemas/proper_v2_3/tau3_remote_execution.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "run_kind",
+    "run_id",
+    "passed",
+    "scientific_scope",
+    "started_at_utc",
+    "finished_at_utc",
+    "duration_seconds",
+    "preconditions",
+    "host",
+    "resolved_packages",
+    "source_manifest",
+    "branch_result_path",
+    "branch_result_sha256",
+    "branch_summary",
+    "schema_validation",
+    "repository_tests",
+    "execution_error",
+    "boundary",
+    "next_gate"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "run_kind": {"const": "proper_v2_3_remote_formal_cpu_branch_screen"},
+    "run_id": {"type": "string", "minLength": 20},
+    "passed": {"type": "boolean"},
+    "scientific_scope": {"const": "development_scripted_branch_capacity_only"},
+    "started_at_utc": {"type": "string", "format": "date-time"},
+    "finished_at_utc": {"type": "string", "format": "date-time"},
+    "duration_seconds": {"type": "number", "minimum": 0},
+    "preconditions": {
+      "type": "object",
+      "required": ["execution_role", "project_revision", "required_ancestor_present", "tracked_worktree_clean", "tau_revision", "cuda_visible_devices"],
+      "properties": {
+        "execution_role": {"const": "remote_formal_cpu_validation"},
+        "project_revision": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "required_ancestor_present": {"const": true},
+        "tracked_worktree_clean": {"const": true},
+        "tau_revision": {"const": "fc0055dc4e0a316c3f83133267fbd6faaa770992"},
+        "cuda_visible_devices": {"const": "-1"}
+      },
+      "additionalProperties": false
+    },
+    "host": {
+      "type": "object",
+      "required": ["node", "platform", "python_executable", "python_version"],
+      "properties": {
+        "node": {"type": "string", "minLength": 1},
+        "platform": {"type": "string", "minLength": 1},
+        "python_executable": {"type": "string", "minLength": 1},
+        "python_version": {"type": "string", "pattern": "^3\\.12\\."}
+      },
+      "additionalProperties": false
+    },
+    "resolved_packages": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["name", "version"],
+        "properties": {"name": {"type": "string"}, "version": {"type": "string"}},
+        "additionalProperties": false
+      }
+    },
+    "source_manifest": {
+      "type": "object",
+      "required": ["file_count", "bytes", "manifest_sha256", "records"],
+      "properties": {
+        "file_count": {"type": "integer", "minimum": 1},
+        "bytes": {"type": "integer", "minimum": 1},
+        "manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "records": {"type": "array", "minItems": 1}
+      }
+    },
+    "branch_result_path": {"type": "string", "pattern": "^outputs/proper_v2_3/tau3_branch_screen_remote/"},
+    "branch_result_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+    "branch_summary": {"type": ["object", "null"]},
+    "schema_validation": {"type": "object", "required": ["passed"]},
+    "repository_tests": {"type": "object", "required": ["passed", "tests_run"]},
+    "execution_error": {"type": ["object", "null"]},
+    "boundary": {
+      "type": "object",
+      "required": ["local_self_test_is_formal_evidence", "remote_cpu_development_evidence", "model_loaded", "gpu_used", "target_tasks_executed", "new_heldout_target_capacity", "development_model_run_authorized", "confirmatory_run_authorized"],
+      "properties": {
+        "local_self_test_is_formal_evidence": {"const": false},
+        "remote_cpu_development_evidence": {"const": true},
+        "model_loaded": {"const": false},
+        "gpu_used": {"const": false},
+        "target_tasks_executed": {"const": false},
+        "new_heldout_target_capacity": {"const": 0},
+        "development_model_run_authorized": {"const": false},
+        "confirmatory_run_authorized": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"enum": ["freeze_five_condition_development_protocol_before_any_model_run", "stop_and_preserve_remote_negative_result"]}
+  },
+  "additionalProperties": false
+}

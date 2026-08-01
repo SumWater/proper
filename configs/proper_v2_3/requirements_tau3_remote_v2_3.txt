@@ -1,0 +1,15 @@
+# PROPER v2.3 tau3 CPU branch-screen remote runtime (Python 3.12 only).
+# Exact top-level versions are part of the remote execution contract. The
+# remote envelope records the complete resolved environment for audit.
+addict==2.4.0
+deepdiff==8.6.1
+docstring-parser==0.17.0
+jsonschema==4.23.0
+loguru==0.7.3
+numpy==1.26.4
+pydantic==2.13.4
+python-dotenv==1.1.1
+PyYAML==6.0.2
+scikit-learn==1.5.1
+scipy==1.13.1
+toml==0.10.2

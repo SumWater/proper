@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "status": "remote_formal_cpu_development_validation_contract",
+  "execution_role": "remote_formal_cpu_validation",
+  "scientific_scope": "development_scripted_branch_capacity_only",
+  "python": {
+    "required_major": 3,
+    "required_minor": 12,
+    "requirements_file": "configs/proper_v2_3/requirements_tau3_remote_v2_3.txt"
+  },
+  "project": {
+    "required_ancestor": "42de557",
+    "require_exact_revision_from_command": true,
+    "require_clean_tracked_worktree": true
+  },
+  "tau_source": {
+    "directory": "external/tau2-bench",
+    "repository": "https://github.com/sierra-research/tau2-bench.git",
+    "tag": "v1.0.1",
+    "revision": "fc0055dc4e0a316c3f83133267fbd6faaa770992"
+  },
+  "local_self_test_is_not_formal_evidence": {
+    "commit": "42de557",
+    "branch_result": "outputs/proper_v2_3/tau3_branch_screen/branch_screen.json",
+    "branch_result_sha256": "24b9967ac3790d5056f716899791469ee017400fc7a34a32d8adecb14a579eae",
+    "validation_result": "outputs/proper_v2_3/tau3_branch_screen/validation.json",
+    "validation_result_sha256": "2025890fc7ca82dcff983b4e9140eefb25020c7c78f83f9e2279412be7f66a8b",
+    "canonical_remote_result": false
+  },
+  "remote_outputs": {
+    "root": "outputs/proper_v2_3/tau3_branch_screen_remote",
+    "raw_result_name": "branch_screen.json",
+    "envelope_name": "remote_validation.json",
+    "never_overwrite_existing_run": true
+  },
+  "runtime_guards": {
+    "cpu_only": true,
+    "cuda_visible_devices": "-1",
+    "model_loading_authorized": false,
+    "gpu_use_authorized": false,
+    "target_task_execution_authorized": false,
+    "confirmatory_claim_authorized": false
+  },
+  "test_policy": {
+    "discovery_start": "tests",
+    "pattern": "test_*.py",
+    "require_all_tests_pass": true
+  },
+  "sync_roots": [
+    "configs/proper_v2_3",
+    "docs/proper_v2_3",
+    "experiments/proper_v2_3",
+    "schemas/proper_v2_3",
+    "src/failure_memory/proper_v2",
+    "tests"
+  ],
+  "formal_pass_gates": {
+    "branch_screen_passed": true,
+    "schema_validation_passed": true,
+    "all_repository_tests_passed": true,
+    "qualified_development_pair_count": 12,
+    "new_heldout_target_capacity": 0,
+    "development_model_run_authorized": false,
+    "confirmatory_run_authorized": false
+  },
+  "next_gate_on_pass": "freeze_five_condition_development_protocol_before_any_model_run",
+  "next_gate_on_failure": "stop_and_preserve_remote_negative_result"
+}
