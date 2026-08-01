@@ -6,6 +6,10 @@ import argparse
 import importlib.metadata
 import io
 import json
+import os
+import platform
+import re
+import subprocess
 import sys
 import unittest
 from pathlib import Path
@@ -22,6 +26,47 @@ from prepare_five_condition_development_v2_3 import (  # noqa: E402
 
 MANIFEST_SCHEMA = ROOT / "schemas" / "proper_v2_3" / "five_condition_manifest.schema.json"
 VALIDATION_SCHEMA = ROOT / "schemas" / "proper_v2_3" / "five_condition_preparation_validation.schema.json"
+
+
+def git(*args: str, directory: Path = ROOT) -> str:
+    completed = subprocess.run(
+        ["git", "-C", str(directory), *args], capture_output=True, text=True,
+        encoding="utf-8", check=True,
+    )
+    return completed.stdout.strip()
+
+
+def verify_preconditions(config: Mapping[str, Any], expected_revision: str) -> dict[str, Any]:
+    policy = config["remote_preparation_validation"]
+    if os.environ.get("PROPER_V2_3_EXECUTION_ROLE") != policy["execution_role"]:
+        raise RuntimeError("five-condition remote execution role is missing")
+    if os.environ.get("CUDA_VISIBLE_DEVICES") != policy["cuda_visible_devices"]:
+        raise RuntimeError("CPU-only CUDA guard is missing")
+    if sys.version_info.major != 3 or sys.version_info.minor not in policy["allowed_python_minors"]:
+        raise RuntimeError(f"unsupported Python version: {platform.python_version()}")
+    if not re.fullmatch(r"[0-9a-f]{40}", expected_revision):
+        raise RuntimeError("expected project revision must be a full Git commit")
+    head = git("rev-parse", "HEAD")
+    if head != expected_revision:
+        raise RuntimeError(f"project revision mismatch: expected {expected_revision}, got {head}")
+    ancestor = subprocess.run(
+        ["git", "merge-base", "--is-ancestor", policy["required_project_ancestor"], head],
+        cwd=ROOT, check=False,
+    ).returncode == 0
+    if not ancestor:
+        raise RuntimeError("required five-condition protocol commit is not an ancestor")
+    tracked_status = git("status", "--porcelain", "--untracked-files=no")
+    if tracked_status:
+        raise RuntimeError("tracked project worktree must be clean")
+    tau_head = git("rev-parse", "HEAD", directory=ROOT / policy["tau_directory"])
+    if tau_head != policy["tau_revision"]:
+        raise RuntimeError("pinned tau revision mismatch")
+    return {
+        "execution_role": policy["execution_role"], "project_revision": head,
+        "required_ancestor_present": ancestor, "tracked_worktree_clean": not tracked_status,
+        "tau_revision": tau_head, "cuda_visible_devices": os.environ.get("CUDA_VISIBLE_DEVICES"),
+        "python_version": platform.python_version(),
+    }
 
 
 def run_tests(config: Mapping[str, Any]) -> dict[str, Any]:
@@ -64,9 +109,11 @@ def write_json(path: Path, value: Mapping[str, Any]) -> None:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
+    parser.add_argument("--expected-project-revision", required=True)
     args = parser.parse_args()
     config_path = args.config.resolve()
     config = load_object(config_path)
+    preconditions = verify_preconditions(config, args.expected_project_revision)
     manifest_path = ROOT / config["output"]["prepared_manifest"]
     validation_path = ROOT / config["output"]["validation"]
     for path in (manifest_path, validation_path):
@@ -81,6 +128,7 @@ def main() -> int:
         "schema_version": 1,
         "run_kind": "proper_v2_3_five_condition_preparation_validation",
         "passed": passed,
+        "preconditions": preconditions,
         "prepared_manifest_path": manifest_path.relative_to(ROOT).as_posix(),
         "prepared_manifest_sha256": sha256(manifest_path),
         "manifest_schema_validation": schema_result,

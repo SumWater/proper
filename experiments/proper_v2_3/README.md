@@ -16,3 +16,5 @@ command.
   content or executing a target.
 - `validate_five_condition_protocol_v2_3.py`: CPU-only one-shot preparation,
   schema, frozen-hash, and 72-test validation. It is not a model runner.
+- `run_five_condition_preparation_remote_v2_3.py`: isolated-environment,
+  revision-guarded, CPU-only remote bootstrap for that validation.

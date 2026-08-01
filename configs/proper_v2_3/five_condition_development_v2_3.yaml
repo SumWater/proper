@@ -199,6 +199,16 @@
     "expected_test_count": 72,
     "require_all_pass": true
   },
+  "remote_preparation_validation": {
+    "execution_role": "proper_v2_3_five_condition_remote_cpu_validation",
+    "cuda_visible_devices": "-1",
+    "allowed_python_minors": [11, 12],
+    "required_project_ancestor": "44e5b11",
+    "require_exact_revision_from_command": true,
+    "require_clean_tracked_worktree": true,
+    "tau_directory": "external/tau2-bench",
+    "tau_revision": "fc0055dc4e0a316c3f83133267fbd6faaa770992"
+  },
   "output": {
     "prepared_manifest": "outputs/proper_v2_3/five_condition_development/prepared_manifest.json",
     "validation": "outputs/proper_v2_3/five_condition_development/preparation_validation.json",

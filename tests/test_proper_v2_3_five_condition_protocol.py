@@ -16,6 +16,7 @@ CONFIG = ROOT / "configs" / "proper_v2_3" / "five_condition_development_v2_3.yam
 PROMPTS = ROOT / "configs" / "proper_v2_3" / "five_condition_prompts_v2_3.json"
 SCHEMA = ROOT / "schemas" / "proper_v2_3" / "five_condition_manifest.schema.json"
 EFFECTS = ROOT / "configs" / "proper_v2_3" / "toolsandbox_action_effect_contracts_v2_3.json"
+REMOTE_BOOTSTRAP = ROOT / "experiments" / "proper_v2_3" / "run_five_condition_preparation_remote_v2_3.py"
 
 
 class FiveConditionProtocolTests(unittest.TestCase):
@@ -95,6 +96,11 @@ class FiveConditionProtocolTests(unittest.TestCase):
         self.assertFalse(boundary["model_runner_implemented"])
         self.assertFalse(boundary["development_model_run_authorized"])
         self.assertFalse(boundary["confirmatory_claim_authorized"])
+        source = REMOTE_BOOTSTRAP.read_text(encoding="utf-8")
+        self.assertIn("CUDA_VISIBLE_DEVICES", source)
+        self.assertIn("--expected-project-revision", source)
+        self.assertIn("validate_five_condition_protocol_v2_3.py", source)
+        self.assertNotIn("qwen_jsonl_worker", source)
 
     def test_manifest_validates_and_prompts_forbid_hidden_fields(self) -> None:
         import jsonschema
