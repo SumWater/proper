@@ -38,3 +38,32 @@ safety, and branch capacity only. It supplies no selector, model completion,
 held-out, GPU, or confirmatory evidence. New held-out capacity remains zero;
 the next gate is to freeze the five-condition development protocol before any
 model execution.
+
+## Frozen five-condition preparation runs
+
+The first remote preparation at revision `956bee5` generated
+`five_condition_development/prepared_manifest.json` and then stopped before
+tests because schema v1 rejected the three legitimate pre-action records whose
+`branch_prefix_recipe` is null. Its SHA-256 is
+`11b062d601d8c3c9582fd006020c4fbb141b973f22f0bf06fbe61d0af5de4ee9`.
+This is a preserved infrastructure-negative preparation artifact, not method
+or model evidence.
+
+Validation protocol v2 passed in remote run
+`20260801T104150Z-amax-b701bafa4630` at remote project revision
+`b701bafa4630cc59555ab3ecf77c6bd7f21b04bd`:
+
+- prepared manifest SHA-256:
+  `f7f29d03753423351f49f4790ecd18d3c767a1bb3f0f073dccbfa7532768c85a`;
+- preparation validation SHA-256:
+  `e2822620a16336c452d3d6ab8ffc239cbb4638243f30a56aaaa2a22849f6933e`;
+- 12 pairs, 60 conditions, with 3 pre-action and 9 post-failure pairs;
+- 11/11 frozen input hashes and all preparation checks passed;
+- 72/72 scoped tests passed with zero failures, errors, or skips;
+- model runner implemented: false; model/GPU/target execution: false;
+- held-out capacity and model/confirmatory authorization: zero/false.
+
+This passing result authorizes only the next code stage: implement, validate,
+and freeze a separate guarded development model runner before considering GPU
+authorization. It is not selector, completion, safety, cost, or confirmatory
+model evidence.
