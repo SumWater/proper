@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://proper.local/schemas/proper_v2_3/tau3_branch_screen.schema.json",
+  "type": "object",
+  "required": ["schema_version", "run_kind", "config_sha256", "passed", "checks", "summary", "pairs", "boundary", "next_gate"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "run_kind": {"const": "proper_v2_3_cpu_scripted_development_branch_screen"},
+    "config_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "passed": {"type": "boolean"},
+    "checks": {
+      "type": "object",
+      "minProperties": 12,
+      "additionalProperties": {"type": "boolean"}
+    },
+    "summary": {
+      "type": "object",
+      "required": ["qualified_development_pair_count", "effect_counts", "domain_count", "new_development_target_capacity_available", "new_heldout_target_capacity", "development_model_run_authorized", "confirmatory_claim_authorized"],
+      "properties": {
+        "qualified_development_pair_count": {"type": "integer", "minimum": 0},
+        "effect_counts": {"type": "object"},
+        "domain_count": {"type": "integer", "minimum": 0},
+        "new_development_target_capacity_available": {"type": "boolean"},
+        "new_heldout_target_capacity": {"const": 0},
+        "development_model_run_authorized": {"const": false},
+        "confirmatory_claim_authorized": {"const": false}
+      }
+    },
+    "pairs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["pair_id", "domain", "phase", "failure_family", "effect_class", "guarded_native_execution_count", "verification_passed", "lifecycle_after_recovery", "planning_mode_after_recovery", "continuation_actions_allowed", "exact_repeat_blocked", "ledger"],
+        "properties": {
+          "pair_id": {"type": "string"},
+          "domain": {"enum": ["airline", "retail"]},
+          "phase": {"enum": ["pre_action", "post_failure"]},
+          "effect_class": {"enum": ["read_only", "idempotent_state_setting", "non_idempotent_side_effect"]},
+          "guarded_native_execution_count": {"type": "integer", "minimum": 1},
+          "verification_passed": {"type": "boolean"},
+          "lifecycle_after_recovery": {"enum": ["active", "consumed", "failed", "stopped"]},
+          "planning_mode_after_recovery": {"type": "string"},
+          "continuation_actions_allowed": {"type": "integer", "minimum": 0},
+          "exact_repeat_blocked": {"type": "boolean"},
+          "ledger": {"type": "object"}
+        }
+      }
+    },
+    "boundary": {
+      "type": "object",
+      "required": ["candidate_partition", "source_split", "method_receives_task_id_or_evaluator_metadata", "target_tasks_executed", "model_loaded", "gpu_used"],
+      "properties": {
+        "candidate_partition": {"const": "development_only"},
+        "source_split": {"const": "train"},
+        "method_receives_task_id_or_evaluator_metadata": {"const": false},
+        "target_tasks_executed": {"const": false},
+        "model_loaded": {"const": false},
+        "gpu_used": {"const": false}
+      }
+    },
+    "next_gate": {"type": "string"}
+  }
+}

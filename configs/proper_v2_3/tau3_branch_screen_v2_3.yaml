@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "status": "frozen_cpu_scripted_development_branch_screen",
+  "audit_version": "proper_v2_3_tau3_branch_screen_v1",
+  "mode": "cpu_native_tool_fixtures_no_model_no_gpu_no_target_task_execution",
+  "source_lock": {
+    "local_directory": "external/tau2-bench",
+    "tag": "v1.0.1",
+    "tag_object": "b711c1ead46f55111bf765cf44d5da8bacc2d28c",
+    "revision": "fc0055dc4e0a316c3f83133267fbd6faaa770992",
+    "execution_manifest_file_count": 32,
+    "execution_manifest_bytes": 10970191,
+    "execution_manifest_sha256": "00d2fb6ab1eba46443d780f107224c0ba6bbc9e71195fe3a068538fc64d3b4e4",
+    "database_sha256": {
+      "airline": "7184914bd3720d93f1160a09bb2724c3a5601d8ca39d02d371cbbfa62626f7e2",
+      "retail": "dbde692e380bb4ad17f9f7841172cf1e69bebad2daa405628ccdc52a42b3b9b0"
+    }
+  },
+  "frozen_project_inputs": {
+    "proper_v1_memory_bank": {
+      "path": "work/memory_bank_prepared.json",
+      "sha256": "7b1552099d28553eb9e6081df69bd52cc26e09082f40461de2687ac0feaa645d"
+    },
+    "proper_v2_exposed_manifest": {
+      "path": "outputs/proper_v2/toolsandbox_model_pilot_v2_1/prepared_manifest.json",
+      "sha256": "a66d12c559b462833cb1876861a783bf2c44db32d55b3a469c2aafc0baed2154"
+    },
+    "tau3_source_qualification": {
+      "path": "outputs/proper_v2_3/tau3_source_qualification/validation.json",
+      "sha256": "498a9eb3257145fdaad99a7506125aebad3a5cf4016bb4a62b7ffb5b9182d2a4"
+    }
+  },
+  "exclusion_audit": {
+    "proper_v1_failure_provenance": [
+      "argument_omission_extension",
+      "authorization_persistent_extension",
+      "authorization_transient",
+      "schema_backend_one_shot",
+      "timeout_transient"
+    ],
+    "proper_v2_exposed_semantic_families": [
+      "find_days_till_holiday_wifi_off",
+      "search_reminder_with_creation_recency_yesterday_insufficient_information",
+      "send_message_with_contact_content_cellular_off",
+      "send_message_with_contact_content_cellular_off_insufficient_information",
+      "turn_on_location_low_battery_mode"
+    ],
+    "new_failure_families": [
+      "outcome_unknown_requires_verification",
+      "public_precondition_evidence_missing",
+      "stale_public_reference"
+    ],
+    "candidate_targets_used_to_tune_controller": false
+  },
+  "budget_policy": {
+    "maximum_retries": 1,
+    "maximum_verifications": 2,
+    "maximum_invalid_decisions": 1,
+    "maximum_replans": 2
+  },
+  "candidates": [
+    {"pair_id":"tau3-dev-01","domain":"airline","source_task_id":"33","action_index":0,"guarded_action_name":"get_reservation_details","effect_class":"read_only","phase":"pre_action","failure_family":"public_precondition_evidence_missing","fixture_strategy":"airline_reservation_read","fixture_ordinal":0,"minimum_actions_after":2},
+    {"pair_id":"tau3-dev-02","domain":"airline","source_task_id":"12","action_index":0,"guarded_action_name":"get_reservation_details","effect_class":"read_only","phase":"pre_action","failure_family":"public_precondition_evidence_missing","fixture_strategy":"airline_reservation_read","fixture_ordinal":1,"minimum_actions_after":2},
+    {"pair_id":"tau3-dev-03","domain":"retail","source_task_id":"0","action_index":0,"guarded_action_name":"find_user_id_by_name_zip","effect_class":"read_only","phase":"pre_action","failure_family":"public_precondition_evidence_missing","fixture_strategy":"retail_user_name_zip_read","fixture_ordinal":0,"minimum_actions_after":2},
+    {"pair_id":"tau3-dev-04","domain":"retail","source_task_id":"10","action_index":0,"guarded_action_name":"find_user_id_by_email","effect_class":"read_only","phase":"pre_action","failure_family":"public_precondition_evidence_missing","fixture_strategy":"retail_user_email_read","fixture_ordinal":1,"minimum_actions_after":2},
+    {"pair_id":"tau3-dev-05","domain":"retail","source_task_id":"22","action_index":1,"guarded_action_name":"modify_user_address","effect_class":"idempotent_state_setting","phase":"post_failure","failure_family":"stale_public_reference","fixture_strategy":"retail_user_address_setting","fixture_ordinal":0,"minimum_actions_after":2},
+    {"pair_id":"tau3-dev-06","domain":"retail","source_task_id":"78","action_index":0,"guarded_action_name":"modify_pending_order_address","effect_class":"idempotent_state_setting","phase":"post_failure","failure_family":"stale_public_reference","fixture_strategy":"retail_pending_address_setting","fixture_ordinal":0,"minimum_actions_after":2},
+    {"pair_id":"tau3-dev-07","domain":"retail","source_task_id":"87","action_index":0,"guarded_action_name":"modify_pending_order_address","effect_class":"idempotent_state_setting","phase":"post_failure","failure_family":"stale_public_reference","fixture_strategy":"retail_pending_address_setting","fixture_ordinal":1,"minimum_actions_after":2},
+    {"pair_id":"tau3-dev-08","domain":"retail","source_task_id":"109","action_index":0,"guarded_action_name":"modify_pending_order_address","effect_class":"idempotent_state_setting","phase":"post_failure","failure_family":"stale_public_reference","fixture_strategy":"retail_pending_address_setting","fixture_ordinal":2,"minimum_actions_after":2},
+    {"pair_id":"tau3-dev-09","domain":"airline","source_task_id":"23","action_index":0,"guarded_action_name":"cancel_reservation","effect_class":"non_idempotent_side_effect","phase":"post_failure","failure_family":"outcome_unknown_requires_verification","fixture_strategy":"airline_cancel_unknown","fixture_ordinal":0,"minimum_actions_after":2},
+    {"pair_id":"tau3-dev-10","domain":"retail","source_task_id":"16","action_index":6,"guarded_action_name":"cancel_pending_order","effect_class":"non_idempotent_side_effect","phase":"post_failure","failure_family":"outcome_unknown_requires_verification","fixture_strategy":"retail_cancel_unknown","fixture_ordinal":0,"minimum_actions_after":2},
+    {"pair_id":"tau3-dev-11","domain":"retail","source_task_id":"98","action_index":0,"guarded_action_name":"exchange_delivered_order_items","effect_class":"non_idempotent_side_effect","phase":"post_failure","failure_family":"outcome_unknown_requires_verification","fixture_strategy":"retail_exchange_unknown","fixture_ordinal":0,"minimum_actions_after":2},
+    {"pair_id":"tau3-dev-12","domain":"retail","source_task_id":"103","action_index":0,"guarded_action_name":"return_delivered_order_items","effect_class":"non_idempotent_side_effect","phase":"post_failure","failure_family":"outcome_unknown_requires_verification","fixture_strategy":"retail_return_unknown","fixture_ordinal":1,"minimum_actions_after":2}
+  ],
+  "gates": {
+    "required_candidate_count": 12,
+    "required_domains": 2,
+    "required_per_effect_class": 4,
+    "required_continuation_actions": 2,
+    "require_exact_repeat_blocked": true,
+    "require_non_idempotent_native_execution_count": 1,
+    "heldout_target_capacity_claimed": 0,
+    "development_model_run_authorized": false,
+    "confirmatory_run_authorized": false
+  },
+  "boundary": {
+    "candidate_partition": "development_only",
+    "source_split": "train",
+    "evaluator_actions_used_only_for_offline_membership_and_depth_audit": true,
+    "method_receives_task_id_or_evaluator_metadata": false,
+    "target_tasks_executed": false,
+    "model_loaded": false,
+    "gpu_used": false
+  }
+}

@@ -1,0 +1,3413 @@
+{
+  "boundary": {
+    "confirmatory_run_authorized": false,
+    "development_model_run_authorized": false,
+    "gpu_used": false,
+    "model_loaded": false,
+    "new_heldout_target_capacity": 0,
+    "qualified_development_pair_count": 12,
+    "target_tasks_executed": false
+  },
+  "branch_screen": {
+    "boundary": {
+      "candidate_partition": "development_only",
+      "evaluator_actions_used_only_for_offline_membership_and_depth_audit": true,
+      "gpu_used": false,
+      "method_input_fields": [
+        "action_spec",
+        "action_effect_contract",
+        "observable_evidence",
+        "action_execution_ledger"
+      ],
+      "method_receives_task_id_or_evaluator_metadata": false,
+      "model_loaded": false,
+      "source_split": "train",
+      "target_tasks_executed": false
+    },
+    "candidate_audit": [
+      {
+        "action_index": 0,
+        "action_proxy_sha256": "57aef77b484a74a9dc09a25f146759ee9db5ef467d2a73f67b009aeda6ecf98a",
+        "actions_after": 4,
+        "depth_passed": true,
+        "domain": "airline",
+        "guarded_action_name": "get_reservation_details",
+        "name_matches": true,
+        "pair_id": "tau3-dev-01",
+        "source_split": "train",
+        "source_task_id_sha256": "6b889fc1b5d505a02b1e449e415a5ff65644115877a7802a7c8fc5b077006c50"
+      },
+      {
+        "action_index": 0,
+        "action_proxy_sha256": "32a8ea85ce760d7a531c9b4ea554704982656efb2cf827dbbb29970077039152",
+        "actions_after": 4,
+        "depth_passed": true,
+        "domain": "airline",
+        "guarded_action_name": "get_reservation_details",
+        "name_matches": true,
+        "pair_id": "tau3-dev-02",
+        "source_split": "train",
+        "source_task_id_sha256": "f9cacf3cb91a12e03bc4546834f95a50a4c5fe02276ac260148ea9296c442d39"
+      },
+      {
+        "action_index": 0,
+        "action_proxy_sha256": "a7733834406f14205af2a2b47a425943d0f12af483235501f1d93920aa84c90c",
+        "actions_after": 4,
+        "depth_passed": true,
+        "domain": "retail",
+        "guarded_action_name": "find_user_id_by_name_zip",
+        "name_matches": true,
+        "pair_id": "tau3-dev-03",
+        "source_split": "train",
+        "source_task_id_sha256": "98089e6d36f78e9766c9ea34d5acb3611f3a92cd81c5eb102095d924ffc7d08b"
+      },
+      {
+        "action_index": 0,
+        "action_proxy_sha256": "b7e50bc764aa31ffb9b5948767e5225a600bd1db6d8dd2ca295b38b7974d2c1d",
+        "actions_after": 4,
+        "depth_passed": true,
+        "domain": "retail",
+        "guarded_action_name": "find_user_id_by_email",
+        "name_matches": true,
+        "pair_id": "tau3-dev-04",
+        "source_split": "train",
+        "source_task_id_sha256": "536549599ec6c3b859cd3970025779a13d061783c73e663fea7f963e98379aa8"
+      },
+      {
+        "action_index": 1,
+        "action_proxy_sha256": "5c40ebdfbab1696cbf9568e0648b0d31ef68d7b828dec80fe0f4dad03ebe023c",
+        "actions_after": 5,
+        "depth_passed": true,
+        "domain": "retail",
+        "guarded_action_name": "modify_user_address",
+        "name_matches": true,
+        "pair_id": "tau3-dev-05",
+        "source_split": "train",
+        "source_task_id_sha256": "b16781f85251cf7a5bab973eb0927776b89a75f8def28c649ae65e01b3db5e28"
+      },
+      {
+        "action_index": 0,
+        "action_proxy_sha256": "cbb64734ebaebf62382e7b9984e9d1c592c374b61ac5a6e642d45a5c6d20b496",
+        "actions_after": 2,
+        "depth_passed": true,
+        "domain": "retail",
+        "guarded_action_name": "modify_pending_order_address",
+        "name_matches": true,
+        "pair_id": "tau3-dev-06",
+        "source_split": "train",
+        "source_task_id_sha256": "fda986670fb6a19243276a695af584678b074256977b0ce280b7866c8456ab06"
+      },
+      {
+        "action_index": 0,
+        "action_proxy_sha256": "9ebf16361869491189e0a34e02572d9391b7efb009e36bb81dd28fd74741039e",
+        "actions_after": 3,
+        "depth_passed": true,
+        "domain": "retail",
+        "guarded_action_name": "modify_pending_order_address",
+        "name_matches": true,
+        "pair_id": "tau3-dev-07",
+        "source_split": "train",
+        "source_task_id_sha256": "4d231049a895fe6ccb92cac773d7c76dfe7934209ca8de35548ec7a7f523fb2c"
+      },
+      {
+        "action_index": 0,
+        "action_proxy_sha256": "c08ad3156c6e3e98dec6ff3529de32f053894f719db797d2526a92f26a1f7205",
+        "actions_after": 2,
+        "depth_passed": true,
+        "domain": "retail",
+        "guarded_action_name": "modify_pending_order_address",
+        "name_matches": true,
+        "pair_id": "tau3-dev-08",
+        "source_split": "train",
+        "source_task_id_sha256": "7684c9ff6a1688ca4055a27ec5c32e6f59c1ea4e18732808a5d7986c5bf7f03f"
+      },
+      {
+        "action_index": 0,
+        "action_proxy_sha256": "d1f54e7fd551c87d1dcae99800713ba5ab7e7cab80ee65a978146b83a8b317dc",
+        "actions_after": 3,
+        "depth_passed": true,
+        "domain": "airline",
+        "guarded_action_name": "cancel_reservation",
+        "name_matches": true,
+        "pair_id": "tau3-dev-09",
+        "source_split": "train",
+        "source_task_id_sha256": "8be13c81ac497232a96221a069b568f26f5f6b771a360a76fcfef0fe1de4becd"
+      },
+      {
+        "action_index": 6,
+        "action_proxy_sha256": "d7d37eceb83051a1020108f891fe00e79232f77430c7501a696890330886186d",
+        "actions_after": 2,
+        "depth_passed": true,
+        "domain": "retail",
+        "guarded_action_name": "cancel_pending_order",
+        "name_matches": true,
+        "pair_id": "tau3-dev-10",
+        "source_split": "train",
+        "source_task_id_sha256": "17eed2c0e7c9788d0b46fafdf328b3e955aa0a22132c16cde72aa4f32dcd5282"
+      },
+      {
+        "action_index": 0,
+        "action_proxy_sha256": "e9b49597ed38c00aabf354e0bc791b7007e1a851d49194ed2248501d33181ae1",
+        "actions_after": 2,
+        "depth_passed": true,
+        "domain": "retail",
+        "guarded_action_name": "exchange_delivered_order_items",
+        "name_matches": true,
+        "pair_id": "tau3-dev-11",
+        "source_split": "train",
+        "source_task_id_sha256": "13b718d3b9fac107e9e173e7fd59c893058ac69ce239617e9a73dbc9ea8e409c"
+      },
+      {
+        "action_index": 0,
+        "action_proxy_sha256": "81c7762b6594338798b2be948d6e6165c86e3838ddef410d11dd43af51fbd570",
+        "actions_after": 3,
+        "depth_passed": true,
+        "domain": "retail",
+        "guarded_action_name": "return_delivered_order_items",
+        "name_matches": true,
+        "pair_id": "tau3-dev-12",
+        "source_split": "train",
+        "source_task_id_sha256": "bbabf4b8e7b264766129034213b17a8678f4ef932d3a8c79494a4439d4eb579d"
+      }
+    ],
+    "checks": {
+      "candidate_count_passed": true,
+      "candidate_membership_passed": true,
+      "database_hashes_pinned": true,
+      "domain_count_passed": true,
+      "effect_balance_passed": true,
+      "exclusion_audit_passed": true,
+      "execution_manifest_pinned": true,
+      "frozen_inputs_pinned": true,
+      "lifecycle_and_continuation_passed": true,
+      "non_idempotent_single_execution_passed": true,
+      "repeat_safety_passed": true,
+      "source_revision_pinned": true,
+      "tag_object_pinned": true
+    },
+    "config_sha256": "4e45860515d8fdd20f139353067cdfff83c250c6d9bc43fe516e2042ba755997",
+    "exclusion_audit": {
+      "candidate_targets_used_to_tune_controller": false,
+      "frozen_hash_checks": [
+        {
+          "name": "proper_v1_memory_bank",
+          "passed": true,
+          "path": "work/memory_bank_prepared.json",
+          "sha256": "7b1552099d28553eb9e6081df69bd52cc26e09082f40461de2687ac0feaa645d"
+        },
+        {
+          "name": "proper_v2_exposed_manifest",
+          "passed": true,
+          "path": "outputs/proper_v2/toolsandbox_model_pilot_v2_1/prepared_manifest.json",
+          "sha256": "a66d12c559b462833cb1876861a783bf2c44db32d55b3a469c2aafc0baed2154"
+        },
+        {
+          "name": "tau3_source_qualification",
+          "passed": true,
+          "path": "outputs/proper_v2_3/tau3_source_qualification/validation.json",
+          "sha256": "498a9eb3257145fdaad99a7506125aebad3a5cf4016bb4a62b7ffb5b9182d2a4"
+        }
+      ],
+      "new_family_string_disjoint_from_v1_and_v2": true,
+      "proper_v1_exact_match": true,
+      "proper_v1_failure_provenance": [
+        "argument_omission_extension",
+        "authorization_persistent_extension",
+        "authorization_transient",
+        "schema_backend_one_shot",
+        "timeout_transient"
+      ],
+      "proper_v2_exact_match": true,
+      "proper_v2_exposed_semantic_families": [
+        "find_days_till_holiday_wifi_off",
+        "search_reminder_with_creation_recency_yesterday_insufficient_information",
+        "send_message_with_contact_content_cellular_off",
+        "send_message_with_contact_content_cellular_off_insufficient_information",
+        "turn_on_location_low_battery_mode"
+      ]
+    },
+    "next_gate": "freeze_five_condition_development_protocol_before_any_model_run",
+    "pairs": [
+      {
+        "continuation_actions_allowed": 2,
+        "domain": "airline",
+        "effect_class": "read_only",
+        "exact_repeat_blocked": true,
+        "failure_family": "public_precondition_evidence_missing",
+        "final_budgets": {
+          "remaining_invalid_decisions": 1,
+          "remaining_replans": 1,
+          "remaining_retries": 1,
+          "remaining_verifications": 2
+        },
+        "fixture_strategy": "airline_reservation_read",
+        "guarded_native_execution_count": 1,
+        "ledger": {
+          "entries": [
+            {
+              "action": {
+                "arguments": {
+                  "reservation_id": "00GMVN"
+                },
+                "normalized_identity": "f15d6e2411610513f1b8e710ed08f59dd9e9e1e136cfd58b24c5186ef8857605",
+                "tool_name": "get_reservation_details"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "6bed7762145e674cfb728ccfd47f09ffd561efcc33c40eb27a9474b047b44be5",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 1,
+                  "source": "controller"
+                },
+                {
+                  "code": "public_tool_result:success",
+                  "observed_at_step": 1,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "pre_action",
+              "purpose": "recovery",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 0,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "pair": "tau3-dev-01",
+                  "step": 0
+                },
+                "normalized_identity": "74219f3537e339899c546ba350e9053411ce67c43df929e8cf4f2e96b55d0550",
+                "tool_name": "scripted_public_continuation_read"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "c282935d919f8f9878201eaa919b787c62b29a3a0621e59ebbb2ac24570e44d5",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 2,
+                  "source": "controller"
+                },
+                {
+                  "code": "scripted_public_result:continuation_observed",
+                  "observed_at_step": 2,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "pre_action",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 1,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "pair": "tau3-dev-01",
+                  "step": 1
+                },
+                "normalized_identity": "8248bf79f07e718e8fe4fa7ae5e1513e3fb01c600681d5e164c308f10e991e41",
+                "tool_name": "scripted_public_continuation_read"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "605738365ce2c3e603dbec4b06576ca1c3cd24b19d4e1bd50c935184f59a237b",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 3,
+                  "source": "controller"
+                },
+                {
+                  "code": "scripted_public_result:continuation_observed",
+                  "observed_at_step": 3,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "pre_action",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 2,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "reservation_id": "00GMVN"
+                },
+                "normalized_identity": "f15d6e2411610513f1b8e710ed08f59dd9e9e1e136cfd58b24c5186ef8857605",
+                "tool_name": "get_reservation_details"
+              },
+              "controller_disposition": "replan",
+              "decision_allowed": false,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "76c166c2a27bf17c6fb0de518a6f7988ec52f42d950140917d30c26b3e39042d",
+              "evidence": [],
+              "phase": "pre_action",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "successful_action_repeat_blocked"
+              ],
+              "related_entry_ids": [
+                "6bed7762145e674cfb728ccfd47f09ffd561efcc33c40eb27a9474b047b44be5"
+              ],
+              "sequence_index": 3,
+              "status": "proposed"
+            }
+          ],
+          "method_version": "proper_v2_3_action_execution_ledger_development",
+          "schema_version": 1,
+          "trajectory_id": "tau3-dev-01"
+        },
+        "lifecycle_after_recovery": "consumed",
+        "native_tool_calls": {
+          "get_reservation_details": 1
+        },
+        "pair_id": "tau3-dev-01",
+        "phase": "pre_action",
+        "planning_mode_after_recovery": "ordinary_task_planning",
+        "repeat_disposition": "replan",
+        "repeat_reason": "successful_action_repeat_blocked",
+        "verification_passed": true
+      },
+      {
+        "continuation_actions_allowed": 2,
+        "domain": "airline",
+        "effect_class": "read_only",
+        "exact_repeat_blocked": true,
+        "failure_family": "public_precondition_evidence_missing",
+        "final_budgets": {
+          "remaining_invalid_decisions": 1,
+          "remaining_replans": 1,
+          "remaining_retries": 1,
+          "remaining_verifications": 2
+        },
+        "fixture_strategy": "airline_reservation_read",
+        "guarded_native_execution_count": 1,
+        "ledger": {
+          "entries": [
+            {
+              "action": {
+                "arguments": {
+                  "reservation_id": "00Y36Z"
+                },
+                "normalized_identity": "b5255c3d4afec095b29a550cf0a4d60cdc8224b4cd8520fb14ff762ac5ae5efd",
+                "tool_name": "get_reservation_details"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "bb9e66d40ba1147d5282b4d7d232575fc00b0138906e8e4ad0b27a5f1153f4a3",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 1,
+                  "source": "controller"
+                },
+                {
+                  "code": "public_tool_result:success",
+                  "observed_at_step": 1,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "pre_action",
+              "purpose": "recovery",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 0,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "pair": "tau3-dev-02",
+                  "step": 0
+                },
+                "normalized_identity": "27c8d33b175dfbaecd09b7dd84821209005ecfd03083feaab044def9539ba7c5",
+                "tool_name": "scripted_public_continuation_read"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "ad0c2b08e8c213ebd777cf1c1577f4e6a8b72ccdf30796d5dac68d9f26cb8e31",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 2,
+                  "source": "controller"
+                },
+                {
+                  "code": "scripted_public_result:continuation_observed",
+                  "observed_at_step": 2,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "pre_action",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 1,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "pair": "tau3-dev-02",
+                  "step": 1
+                },
+                "normalized_identity": "10e805a72e66d97f5a568296b30d56a7dd7f3836b7ffe40e163d1bbf7c823f13",
+                "tool_name": "scripted_public_continuation_read"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "f4572ee320e6afa3e41e440caa17402baa5021d6d7ebc6c9f895f0ba5dc42518",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 3,
+                  "source": "controller"
+                },
+                {
+                  "code": "scripted_public_result:continuation_observed",
+                  "observed_at_step": 3,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "pre_action",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 2,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "reservation_id": "00Y36Z"
+                },
+                "normalized_identity": "b5255c3d4afec095b29a550cf0a4d60cdc8224b4cd8520fb14ff762ac5ae5efd",
+                "tool_name": "get_reservation_details"
+              },
+              "controller_disposition": "replan",
+              "decision_allowed": false,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "961b309c281e654c7e6baade47e1d88db49c9ff81eebeffd83c5d91991599833",
+              "evidence": [],
+              "phase": "pre_action",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "successful_action_repeat_blocked"
+              ],
+              "related_entry_ids": [
+                "bb9e66d40ba1147d5282b4d7d232575fc00b0138906e8e4ad0b27a5f1153f4a3"
+              ],
+              "sequence_index": 3,
+              "status": "proposed"
+            }
+          ],
+          "method_version": "proper_v2_3_action_execution_ledger_development",
+          "schema_version": 1,
+          "trajectory_id": "tau3-dev-02"
+        },
+        "lifecycle_after_recovery": "consumed",
+        "native_tool_calls": {
+          "get_reservation_details": 1
+        },
+        "pair_id": "tau3-dev-02",
+        "phase": "pre_action",
+        "planning_mode_after_recovery": "ordinary_task_planning",
+        "repeat_disposition": "replan",
+        "repeat_reason": "successful_action_repeat_blocked",
+        "verification_passed": true
+      },
+      {
+        "continuation_actions_allowed": 2,
+        "domain": "retail",
+        "effect_class": "read_only",
+        "exact_repeat_blocked": true,
+        "failure_family": "public_precondition_evidence_missing",
+        "final_budgets": {
+          "remaining_invalid_decisions": 1,
+          "remaining_replans": 1,
+          "remaining_retries": 1,
+          "remaining_verifications": 2
+        },
+        "fixture_strategy": "retail_user_name_zip_read",
+        "guarded_native_execution_count": 1,
+        "ledger": {
+          "entries": [
+            {
+              "action": {
+                "arguments": {
+                  "first_name": "Aarav",
+                  "last_name": "Anderson",
+                  "zip": "19031"
+                },
+                "normalized_identity": "47cfead72a83c476eddb8e498ade80215b4412bd1858df1bb915ab3fa75b6e5e",
+                "tool_name": "find_user_id_by_name_zip"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "2cd59cecce59de673d82770ef5c2a14ace1f0fe17e98d357f236926825f4ed47",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 1,
+                  "source": "controller"
+                },
+                {
+                  "code": "public_tool_result:success",
+                  "observed_at_step": 1,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "pre_action",
+              "purpose": "recovery",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 0,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "pair": "tau3-dev-03",
+                  "step": 0
+                },
+                "normalized_identity": "36801b3757aafbd6cb01ee9a2fd852fc897d714575fc5bcbd38cdd92b20bfcf9",
+                "tool_name": "scripted_public_continuation_read"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "a1722cf918df59809c030dc6c8eb55250b573ed382c83ef01ded3ac97acd9e59",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 2,
+                  "source": "controller"
+                },
+                {
+                  "code": "scripted_public_result:continuation_observed",
+                  "observed_at_step": 2,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "pre_action",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 1,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "pair": "tau3-dev-03",
+                  "step": 1
+                },
+                "normalized_identity": "f4b2f2b7e1d378c0a9cd96d8705e3e9ea0ae83178d1cf385a9a47f80ef746e50",
+                "tool_name": "scripted_public_continuation_read"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "f8c1d10d55915974bd186c26c6d032715f07e364a23100749964cf9b23538d04",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 3,
+                  "source": "controller"
+                },
+                {
+                  "code": "scripted_public_result:continuation_observed",
+                  "observed_at_step": 3,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "pre_action",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 2,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "first_name": "Aarav",
+                  "last_name": "Anderson",
+                  "zip": "19031"
+                },
+                "normalized_identity": "47cfead72a83c476eddb8e498ade80215b4412bd1858df1bb915ab3fa75b6e5e",
+                "tool_name": "find_user_id_by_name_zip"
+              },
+              "controller_disposition": "replan",
+              "decision_allowed": false,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "9df68d816770cff1897c32f05abfa33487557dd23ba5d5d7d046dd472f8e557c",
+              "evidence": [],
+              "phase": "pre_action",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "successful_action_repeat_blocked"
+              ],
+              "related_entry_ids": [
+                "2cd59cecce59de673d82770ef5c2a14ace1f0fe17e98d357f236926825f4ed47"
+              ],
+              "sequence_index": 3,
+              "status": "proposed"
+            }
+          ],
+          "method_version": "proper_v2_3_action_execution_ledger_development",
+          "schema_version": 1,
+          "trajectory_id": "tau3-dev-03"
+        },
+        "lifecycle_after_recovery": "consumed",
+        "native_tool_calls": {
+          "find_user_id_by_name_zip": 1
+        },
+        "pair_id": "tau3-dev-03",
+        "phase": "pre_action",
+        "planning_mode_after_recovery": "ordinary_task_planning",
+        "repeat_disposition": "replan",
+        "repeat_reason": "successful_action_repeat_blocked",
+        "verification_passed": true
+      },
+      {
+        "continuation_actions_allowed": 2,
+        "domain": "retail",
+        "effect_class": "read_only",
+        "exact_repeat_blocked": true,
+        "failure_family": "public_precondition_evidence_missing",
+        "final_budgets": {
+          "remaining_invalid_decisions": 1,
+          "remaining_replans": 1,
+          "remaining_retries": 1,
+          "remaining_verifications": 2
+        },
+        "fixture_strategy": "retail_user_email_read",
+        "guarded_native_execution_count": 1,
+        "ledger": {
+          "entries": [
+            {
+              "action": {
+                "arguments": {
+                  "email": "aarav.brown3708@example.com"
+                },
+                "normalized_identity": "f6fa68b33908af9b0eefe2efb9e7221799cc7748b599904039dd6043a36f237f",
+                "tool_name": "find_user_id_by_email"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "f5cf214d416b25e70b435e447f8a4557ee38b101d98359e3fa9b1e5091ddfd3a",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 1,
+                  "source": "controller"
+                },
+                {
+                  "code": "public_tool_result:success",
+                  "observed_at_step": 1,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "pre_action",
+              "purpose": "recovery",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 0,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "pair": "tau3-dev-04",
+                  "step": 0
+                },
+                "normalized_identity": "00bad0195462d6ef395c6e2cc4c7366e891dc92859173afcbd3b1c9134eb4f2b",
+                "tool_name": "scripted_public_continuation_read"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "edf176ef51dbce97be43a502c1b8696c0c56759b63a28b8c7bf4ce7533b6b45d",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 2,
+                  "source": "controller"
+                },
+                {
+                  "code": "scripted_public_result:continuation_observed",
+                  "observed_at_step": 2,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "pre_action",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 1,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "pair": "tau3-dev-04",
+                  "step": 1
+                },
+                "normalized_identity": "0087f0c606d33a4c3ee41d5612e09b26a5f1604b412d0324fd69aede74f87119",
+                "tool_name": "scripted_public_continuation_read"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "5ee360cc68202bd617e450c295c823b8cd8c14485ba164b056f9e2c09e457598",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 3,
+                  "source": "controller"
+                },
+                {
+                  "code": "scripted_public_result:continuation_observed",
+                  "observed_at_step": 3,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "pre_action",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 2,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "email": "aarav.brown3708@example.com"
+                },
+                "normalized_identity": "f6fa68b33908af9b0eefe2efb9e7221799cc7748b599904039dd6043a36f237f",
+                "tool_name": "find_user_id_by_email"
+              },
+              "controller_disposition": "replan",
+              "decision_allowed": false,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "d691cf2aa9f2ca14828dfeb4ae9ebc2c1e24c2cbd5eda7e0c1201bdaed8cea3a",
+              "evidence": [],
+              "phase": "pre_action",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "successful_action_repeat_blocked"
+              ],
+              "related_entry_ids": [
+                "f5cf214d416b25e70b435e447f8a4557ee38b101d98359e3fa9b1e5091ddfd3a"
+              ],
+              "sequence_index": 3,
+              "status": "proposed"
+            }
+          ],
+          "method_version": "proper_v2_3_action_execution_ledger_development",
+          "schema_version": 1,
+          "trajectory_id": "tau3-dev-04"
+        },
+        "lifecycle_after_recovery": "consumed",
+        "native_tool_calls": {
+          "find_user_id_by_email": 1
+        },
+        "pair_id": "tau3-dev-04",
+        "phase": "pre_action",
+        "planning_mode_after_recovery": "ordinary_task_planning",
+        "repeat_disposition": "replan",
+        "repeat_reason": "successful_action_repeat_blocked",
+        "verification_passed": true
+      },
+      {
+        "continuation_actions_allowed": 2,
+        "domain": "retail",
+        "effect_class": "idempotent_state_setting",
+        "exact_repeat_blocked": true,
+        "failure_family": "stale_public_reference",
+        "final_budgets": {
+          "remaining_invalid_decisions": 1,
+          "remaining_replans": 1,
+          "remaining_retries": 1,
+          "remaining_verifications": 1
+        },
+        "fixture_strategy": "retail_user_address_setting",
+        "guarded_native_execution_count": 2,
+        "ledger": {
+          "entries": [
+            {
+              "action": {
+                "arguments": {
+                  "address1": "105 Observable Ave",
+                  "address2": "",
+                  "city": "San Francisco",
+                  "country": "USA",
+                  "state": "CA",
+                  "user_id": "stale-aarav_anderson_8794",
+                  "zip": "94005"
+                },
+                "normalized_identity": "c4d10590e780d7a197ebeb1e7a87c722167351ddd7b53bd2fc6a60642ba59d9c",
+                "tool_name": "modify_user_address"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:idempotent_state_setting"
+                ],
+                "effect_class": "idempotent_state_setting",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:absolute_state_assignment"
+                ],
+                "verification_evidence": [
+                  "public_contract:read_back_supported"
+                ],
+                "verification_supported": true
+              },
+              "entry_id": "0407e228838ce08f769658b18e9b86837fc679472c88c81389f9f176454b92f9",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 1,
+                  "source": "controller"
+                },
+                {
+                  "code": "public_tool_error:reference_not_found",
+                  "observed_at_step": 1,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "observable_failed_prefix"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 0,
+              "status": "failed"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "address1": "105 Observable Ave",
+                  "address2": "",
+                  "city": "San Francisco",
+                  "country": "USA",
+                  "state": "CA",
+                  "user_id": "aarav_anderson_8794",
+                  "zip": "94005"
+                },
+                "normalized_identity": "aca731147216c4cd840a7255005ff970003e04ba331fae176edb99ad769ca6d0",
+                "tool_name": "modify_user_address"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:idempotent_state_setting"
+                ],
+                "effect_class": "idempotent_state_setting",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:absolute_state_assignment"
+                ],
+                "verification_evidence": [
+                  "public_contract:read_back_supported"
+                ],
+                "verification_supported": true
+              },
+              "entry_id": "3ab7bbb3d6bd756ac9a75852dcf1904758f9b11d3605248bb8c2cccb71b18dc7",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 2,
+                  "source": "controller"
+                },
+                {
+                  "code": "public_tool_result:success",
+                  "observed_at_step": 2,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "recovery",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 1,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "user_id": "aarav_anderson_8794"
+                },
+                "normalized_identity": "97246dde952c452407dbb0c558f65e298bd215643bf52905c1c6b47fb5e0ea36",
+                "tool_name": "get_user_details"
+              },
+              "controller_disposition": "verify",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "f52d3ea9e53e50d4015bbd0c6095eb7926ffa8f403abde1f9c40840f6a048eb9",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 3,
+                  "source": "controller"
+                },
+                {
+                  "code": "public_state:read_back_satisfied",
+                  "observed_at_step": 3,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "verification",
+              "reason_codes": [
+                "bounded_read_only_verification_allowed"
+              ],
+              "related_entry_ids": [
+                "3ab7bbb3d6bd756ac9a75852dcf1904758f9b11d3605248bb8c2cccb71b18dc7"
+              ],
+              "sequence_index": 2,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "pair": "tau3-dev-05",
+                  "step": 0
+                },
+                "normalized_identity": "46f7929282a8ff0c0b8b3297ba161e5e7fab70147153d4901fbe1073079d7ef9",
+                "tool_name": "scripted_public_continuation_read"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "0d45ae430999a4755d99ec614dfbe7083de782b2df53be942649b224595872c4",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 4,
+                  "source": "controller"
+                },
+                {
+                  "code": "scripted_public_result:continuation_observed",
+                  "observed_at_step": 4,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 3,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "pair": "tau3-dev-05",
+                  "step": 1
+                },
+                "normalized_identity": "792dd39e6d8cc5c8c041059334c3eb2f028419eb3a49fc76025b035be5561400",
+                "tool_name": "scripted_public_continuation_read"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "dfe9421be8c5e643f537a97e248fc21029d0caa29852f0ff4cde315f53c8d7f7",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 5,
+                  "source": "controller"
+                },
+                {
+                  "code": "scripted_public_result:continuation_observed",
+                  "observed_at_step": 5,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 4,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "address1": "105 Observable Ave",
+                  "address2": "",
+                  "city": "San Francisco",
+                  "country": "USA",
+                  "state": "CA",
+                  "user_id": "aarav_anderson_8794",
+                  "zip": "94005"
+                },
+                "normalized_identity": "aca731147216c4cd840a7255005ff970003e04ba331fae176edb99ad769ca6d0",
+                "tool_name": "modify_user_address"
+              },
+              "controller_disposition": "replan",
+              "decision_allowed": false,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:idempotent_state_setting"
+                ],
+                "effect_class": "idempotent_state_setting",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:absolute_state_assignment"
+                ],
+                "verification_evidence": [
+                  "public_contract:read_back_supported"
+                ],
+                "verification_supported": true
+              },
+              "entry_id": "d129fd2c9f8c9fc6a38281b5b110ddf3dcaaf49d578097aa4fbbdb768d7d8991",
+              "evidence": [],
+              "phase": "post_failure",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "successful_action_repeat_blocked"
+              ],
+              "related_entry_ids": [
+                "3ab7bbb3d6bd756ac9a75852dcf1904758f9b11d3605248bb8c2cccb71b18dc7"
+              ],
+              "sequence_index": 5,
+              "status": "proposed"
+            }
+          ],
+          "method_version": "proper_v2_3_action_execution_ledger_development",
+          "schema_version": 1,
+          "trajectory_id": "tau3-dev-05"
+        },
+        "lifecycle_after_recovery": "consumed",
+        "native_tool_calls": {
+          "get_user_details": 1,
+          "modify_user_address": 2
+        },
+        "pair_id": "tau3-dev-05",
+        "phase": "post_failure",
+        "planning_mode_after_recovery": "ordinary_task_planning",
+        "repeat_disposition": "replan",
+        "repeat_reason": "successful_action_repeat_blocked",
+        "verification_passed": true
+      },
+      {
+        "continuation_actions_allowed": 2,
+        "domain": "retail",
+        "effect_class": "idempotent_state_setting",
+        "exact_repeat_blocked": true,
+        "failure_family": "stale_public_reference",
+        "final_budgets": {
+          "remaining_invalid_decisions": 1,
+          "remaining_replans": 1,
+          "remaining_retries": 1,
+          "remaining_verifications": 1
+        },
+        "fixture_strategy": "retail_pending_address_setting",
+        "guarded_native_execution_count": 2,
+        "ledger": {
+          "entries": [
+            {
+              "action": {
+                "arguments": {
+                  "address1": "106 Observable Ave",
+                  "address2": "",
+                  "city": "San Francisco",
+                  "country": "USA",
+                  "order_id": "#STALE0000",
+                  "state": "CA",
+                  "zip": "94006"
+                },
+                "normalized_identity": "b2189a802c39ca7b448d1087a35849c6e60555b3cc103187e3c30dac0f4b730f",
+                "tool_name": "modify_pending_order_address"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:idempotent_state_setting"
+                ],
+                "effect_class": "idempotent_state_setting",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:absolute_state_assignment"
+                ],
+                "verification_evidence": [
+                  "public_contract:read_back_supported"
+                ],
+                "verification_supported": true
+              },
+              "entry_id": "028c02449a2f9a12246d158d61e7847f185582a3567efbacf2c432a4d0f75bc6",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 1,
+                  "source": "controller"
+                },
+                {
+                  "code": "public_tool_error:reference_not_found",
+                  "observed_at_step": 1,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "observable_failed_prefix"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 0,
+              "status": "failed"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "address1": "106 Observable Ave",
+                  "address2": "",
+                  "city": "San Francisco",
+                  "country": "USA",
+                  "order_id": "#W1006327",
+                  "state": "CA",
+                  "zip": "94006"
+                },
+                "normalized_identity": "8accf3adfb083bf5416f2a56f364786dcae7381eb49e2dd37cd96f284da5f167",
+                "tool_name": "modify_pending_order_address"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:idempotent_state_setting"
+                ],
+                "effect_class": "idempotent_state_setting",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:absolute_state_assignment"
+                ],
+                "verification_evidence": [
+                  "public_contract:read_back_supported"
+                ],
+                "verification_supported": true
+              },
+              "entry_id": "c7559bc96618c2326f76866db1aa09a75d9aabd8f595f401898b0cea6b603710",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 2,
+                  "source": "controller"
+                },
+                {
+                  "code": "public_tool_result:success",
+                  "observed_at_step": 2,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "recovery",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 1,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "order_id": "#W1006327"
+                },
+                "normalized_identity": "820d247257b8de324619dbf884130d0772f4fbd6cc61ea8d668a4df8d846f04e",
+                "tool_name": "get_order_details"
+              },
+              "controller_disposition": "verify",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "014fc69d8dd107fd5c4e1fc5480ad5022728b90ff539b26a2fc76e8480a2f8c3",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 3,
+                  "source": "controller"
+                },
+                {
+                  "code": "public_state:read_back_satisfied",
+                  "observed_at_step": 3,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "verification",
+              "reason_codes": [
+                "bounded_read_only_verification_allowed"
+              ],
+              "related_entry_ids": [
+                "c7559bc96618c2326f76866db1aa09a75d9aabd8f595f401898b0cea6b603710"
+              ],
+              "sequence_index": 2,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "pair": "tau3-dev-06",
+                  "step": 0
+                },
+                "normalized_identity": "acc071bbfd1e1391c845de57ca0fcd860ea2d60eb20667bb5c3adf37e4844af8",
+                "tool_name": "scripted_public_continuation_read"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "febb9f45f5f488190d1efc041fd4d6bf0bfdfc922f62b85b1769804180f9b788",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 4,
+                  "source": "controller"
+                },
+                {
+                  "code": "scripted_public_result:continuation_observed",
+                  "observed_at_step": 4,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 3,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "pair": "tau3-dev-06",
+                  "step": 1
+                },
+                "normalized_identity": "3fa0e7adefdf68f74a45e0ac148100c84ccb177bdbb66d23f3a08121065f8672",
+                "tool_name": "scripted_public_continuation_read"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "07eb139f058d4a0569d6189e295606d589be5007b5384d114458ef9bd9f332d2",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 5,
+                  "source": "controller"
+                },
+                {
+                  "code": "scripted_public_result:continuation_observed",
+                  "observed_at_step": 5,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 4,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "address1": "106 Observable Ave",
+                  "address2": "",
+                  "city": "San Francisco",
+                  "country": "USA",
+                  "order_id": "#W1006327",
+                  "state": "CA",
+                  "zip": "94006"
+                },
+                "normalized_identity": "8accf3adfb083bf5416f2a56f364786dcae7381eb49e2dd37cd96f284da5f167",
+                "tool_name": "modify_pending_order_address"
+              },
+              "controller_disposition": "replan",
+              "decision_allowed": false,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:idempotent_state_setting"
+                ],
+                "effect_class": "idempotent_state_setting",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:absolute_state_assignment"
+                ],
+                "verification_evidence": [
+                  "public_contract:read_back_supported"
+                ],
+                "verification_supported": true
+              },
+              "entry_id": "fdbfa573dad0d5b7a695a70f91f47928149c5d6aebe160cfde418a04937bf7c8",
+              "evidence": [],
+              "phase": "post_failure",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "successful_action_repeat_blocked"
+              ],
+              "related_entry_ids": [
+                "c7559bc96618c2326f76866db1aa09a75d9aabd8f595f401898b0cea6b603710"
+              ],
+              "sequence_index": 5,
+              "status": "proposed"
+            }
+          ],
+          "method_version": "proper_v2_3_action_execution_ledger_development",
+          "schema_version": 1,
+          "trajectory_id": "tau3-dev-06"
+        },
+        "lifecycle_after_recovery": "consumed",
+        "native_tool_calls": {
+          "get_order_details": 1,
+          "modify_pending_order_address": 2
+        },
+        "pair_id": "tau3-dev-06",
+        "phase": "post_failure",
+        "planning_mode_after_recovery": "ordinary_task_planning",
+        "repeat_disposition": "replan",
+        "repeat_reason": "successful_action_repeat_blocked",
+        "verification_passed": true
+      },
+      {
+        "continuation_actions_allowed": 2,
+        "domain": "retail",
+        "effect_class": "idempotent_state_setting",
+        "exact_repeat_blocked": true,
+        "failure_family": "stale_public_reference",
+        "final_budgets": {
+          "remaining_invalid_decisions": 1,
+          "remaining_replans": 1,
+          "remaining_retries": 1,
+          "remaining_verifications": 1
+        },
+        "fixture_strategy": "retail_pending_address_setting",
+        "guarded_native_execution_count": 2,
+        "ledger": {
+          "entries": [
+            {
+              "action": {
+                "arguments": {
+                  "address1": "107 Observable Ave",
+                  "address2": "",
+                  "city": "San Francisco",
+                  "country": "USA",
+                  "order_id": "#STALE0001",
+                  "state": "CA",
+                  "zip": "94007"
+                },
+                "normalized_identity": "5bdfa7d85335906d5c0af6793cd6b443021a8918e94524f36f31ff73d65a8f90",
+                "tool_name": "modify_pending_order_address"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:idempotent_state_setting"
+                ],
+                "effect_class": "idempotent_state_setting",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:absolute_state_assignment"
+                ],
+                "verification_evidence": [
+                  "public_contract:read_back_supported"
+                ],
+                "verification_supported": true
+              },
+              "entry_id": "4666439298457cfac3f485db7acf74f64829276de0000a2be13327e870a817ad",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 1,
+                  "source": "controller"
+                },
+                {
+                  "code": "public_tool_error:reference_not_found",
+                  "observed_at_step": 1,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "observable_failed_prefix"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 0,
+              "status": "failed"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "address1": "107 Observable Ave",
+                  "address2": "",
+                  "city": "San Francisco",
+                  "country": "USA",
+                  "order_id": "#W1013897",
+                  "state": "CA",
+                  "zip": "94007"
+                },
+                "normalized_identity": "eb9fff14fb54d9920cde02e7740d8afe14a5599b167ee398a87442ccd4d3c3cc",
+                "tool_name": "modify_pending_order_address"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:idempotent_state_setting"
+                ],
+                "effect_class": "idempotent_state_setting",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:absolute_state_assignment"
+                ],
+                "verification_evidence": [
+                  "public_contract:read_back_supported"
+                ],
+                "verification_supported": true
+              },
+              "entry_id": "13254bad854c65e08de32e1824ff45db94ba0e97da80f5796ed1d1446773d80f",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 2,
+                  "source": "controller"
+                },
+                {
+                  "code": "public_tool_result:success",
+                  "observed_at_step": 2,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "recovery",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 1,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "order_id": "#W1013897"
+                },
+                "normalized_identity": "37478b9139e7df3ac7d803c60f8e5c4e23042fa66ea41b93812ac03c2890ffdd",
+                "tool_name": "get_order_details"
+              },
+              "controller_disposition": "verify",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "c82cf9d053fd366b8563c84afffcc3bf1bb6496bba4c844e4d11bbdf624dc97a",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 3,
+                  "source": "controller"
+                },
+                {
+                  "code": "public_state:read_back_satisfied",
+                  "observed_at_step": 3,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "verification",
+              "reason_codes": [
+                "bounded_read_only_verification_allowed"
+              ],
+              "related_entry_ids": [
+                "13254bad854c65e08de32e1824ff45db94ba0e97da80f5796ed1d1446773d80f"
+              ],
+              "sequence_index": 2,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "pair": "tau3-dev-07",
+                  "step": 0
+                },
+                "normalized_identity": "393312af830483dfc5b4d40eb182ad04415c254406164c7839a8bc501fd172c1",
+                "tool_name": "scripted_public_continuation_read"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "cc50023da3ff29bd60e422959fee54ef3d2d0a16de4c4506973b512fcd3109a8",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 4,
+                  "source": "controller"
+                },
+                {
+                  "code": "scripted_public_result:continuation_observed",
+                  "observed_at_step": 4,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 3,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "pair": "tau3-dev-07",
+                  "step": 1
+                },
+                "normalized_identity": "510c88823bc9978f5b704be5d4af066110af953194da8a7b8dc77ceb50ac2100",
+                "tool_name": "scripted_public_continuation_read"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "1b9be05778da060a651789bb10ea0c0aac88588dc6fa884a3fbc79c04ab60aa2",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 5,
+                  "source": "controller"
+                },
+                {
+                  "code": "scripted_public_result:continuation_observed",
+                  "observed_at_step": 5,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 4,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "address1": "107 Observable Ave",
+                  "address2": "",
+                  "city": "San Francisco",
+                  "country": "USA",
+                  "order_id": "#W1013897",
+                  "state": "CA",
+                  "zip": "94007"
+                },
+                "normalized_identity": "eb9fff14fb54d9920cde02e7740d8afe14a5599b167ee398a87442ccd4d3c3cc",
+                "tool_name": "modify_pending_order_address"
+              },
+              "controller_disposition": "replan",
+              "decision_allowed": false,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:idempotent_state_setting"
+                ],
+                "effect_class": "idempotent_state_setting",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:absolute_state_assignment"
+                ],
+                "verification_evidence": [
+                  "public_contract:read_back_supported"
+                ],
+                "verification_supported": true
+              },
+              "entry_id": "ae56538c767e24fc1e302086c1cd67a7a6b8a4352c483dd5ec3bb1a87ea0fbc7",
+              "evidence": [],
+              "phase": "post_failure",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "successful_action_repeat_blocked"
+              ],
+              "related_entry_ids": [
+                "13254bad854c65e08de32e1824ff45db94ba0e97da80f5796ed1d1446773d80f"
+              ],
+              "sequence_index": 5,
+              "status": "proposed"
+            }
+          ],
+          "method_version": "proper_v2_3_action_execution_ledger_development",
+          "schema_version": 1,
+          "trajectory_id": "tau3-dev-07"
+        },
+        "lifecycle_after_recovery": "consumed",
+        "native_tool_calls": {
+          "get_order_details": 1,
+          "modify_pending_order_address": 2
+        },
+        "pair_id": "tau3-dev-07",
+        "phase": "post_failure",
+        "planning_mode_after_recovery": "ordinary_task_planning",
+        "repeat_disposition": "replan",
+        "repeat_reason": "successful_action_repeat_blocked",
+        "verification_passed": true
+      },
+      {
+        "continuation_actions_allowed": 2,
+        "domain": "retail",
+        "effect_class": "idempotent_state_setting",
+        "exact_repeat_blocked": true,
+        "failure_family": "stale_public_reference",
+        "final_budgets": {
+          "remaining_invalid_decisions": 1,
+          "remaining_replans": 1,
+          "remaining_retries": 1,
+          "remaining_verifications": 1
+        },
+        "fixture_strategy": "retail_pending_address_setting",
+        "guarded_native_execution_count": 2,
+        "ledger": {
+          "entries": [
+            {
+              "action": {
+                "arguments": {
+                  "address1": "108 Observable Ave",
+                  "address2": "",
+                  "city": "San Francisco",
+                  "country": "USA",
+                  "order_id": "#STALE0002",
+                  "state": "CA",
+                  "zip": "94008"
+                },
+                "normalized_identity": "84f45e9ba2e6565a75a7727eda1e843452903cc8901cdc92d20a1d5683d4e75f",
+                "tool_name": "modify_pending_order_address"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:idempotent_state_setting"
+                ],
+                "effect_class": "idempotent_state_setting",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:absolute_state_assignment"
+                ],
+                "verification_evidence": [
+                  "public_contract:read_back_supported"
+                ],
+                "verification_supported": true
+              },
+              "entry_id": "5e284b0fa7b51a9d9385fe3d3ea02b599f3e2b536a011098418fd43c03afad45",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 1,
+                  "source": "controller"
+                },
+                {
+                  "code": "public_tool_error:reference_not_found",
+                  "observed_at_step": 1,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "observable_failed_prefix"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 0,
+              "status": "failed"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "address1": "108 Observable Ave",
+                  "address2": "",
+                  "city": "San Francisco",
+                  "country": "USA",
+                  "order_id": "#W1046662",
+                  "state": "CA",
+                  "zip": "94008"
+                },
+                "normalized_identity": "fa1611d0e7852d5fc0fcfaafbb0d94e3b6ec63ad1d98de0f5b37eed51c1085d8",
+                "tool_name": "modify_pending_order_address"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:idempotent_state_setting"
+                ],
+                "effect_class": "idempotent_state_setting",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:absolute_state_assignment"
+                ],
+                "verification_evidence": [
+                  "public_contract:read_back_supported"
+                ],
+                "verification_supported": true
+              },
+              "entry_id": "6acbb52730973b7084580bcc0a025fa1783d1a38434e6ad69df845e0ee1f83b1",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 2,
+                  "source": "controller"
+                },
+                {
+                  "code": "public_tool_result:success",
+                  "observed_at_step": 2,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "recovery",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 1,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "order_id": "#W1046662"
+                },
+                "normalized_identity": "f34a63625751c073d166de497898486816552556983a15b9f84de5b04d110b45",
+                "tool_name": "get_order_details"
+              },
+              "controller_disposition": "verify",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "267ed241006bc0ada84bbb350bb15fcc72658211f7901a940f2e1eb324ec9271",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 3,
+                  "source": "controller"
+                },
+                {
+                  "code": "public_state:read_back_satisfied",
+                  "observed_at_step": 3,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "verification",
+              "reason_codes": [
+                "bounded_read_only_verification_allowed"
+              ],
+              "related_entry_ids": [
+                "6acbb52730973b7084580bcc0a025fa1783d1a38434e6ad69df845e0ee1f83b1"
+              ],
+              "sequence_index": 2,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "pair": "tau3-dev-08",
+                  "step": 0
+                },
+                "normalized_identity": "df9c62ceefe4a099256c20a0e450d827e426b8707d7ced12e913b36e7f932beb",
+                "tool_name": "scripted_public_continuation_read"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "34ff1800fe38b1df5d05f47618ccf2a044f0ef69ab9765cc5eedca49c4e3f32d",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 4,
+                  "source": "controller"
+                },
+                {
+                  "code": "scripted_public_result:continuation_observed",
+                  "observed_at_step": 4,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 3,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "pair": "tau3-dev-08",
+                  "step": 1
+                },
+                "normalized_identity": "e0f37e504aeadf74248c3f19cc1c86a6499744a7d1b47fa8544a5f4a1eccf38d",
+                "tool_name": "scripted_public_continuation_read"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "d01212817572588635a0311c99d3743fc939844a62747b19d82fa177e4ffcd49",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 5,
+                  "source": "controller"
+                },
+                {
+                  "code": "scripted_public_result:continuation_observed",
+                  "observed_at_step": 5,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 4,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "address1": "108 Observable Ave",
+                  "address2": "",
+                  "city": "San Francisco",
+                  "country": "USA",
+                  "order_id": "#W1046662",
+                  "state": "CA",
+                  "zip": "94008"
+                },
+                "normalized_identity": "fa1611d0e7852d5fc0fcfaafbb0d94e3b6ec63ad1d98de0f5b37eed51c1085d8",
+                "tool_name": "modify_pending_order_address"
+              },
+              "controller_disposition": "replan",
+              "decision_allowed": false,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:idempotent_state_setting"
+                ],
+                "effect_class": "idempotent_state_setting",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:absolute_state_assignment"
+                ],
+                "verification_evidence": [
+                  "public_contract:read_back_supported"
+                ],
+                "verification_supported": true
+              },
+              "entry_id": "5711174f934d044d716f34fc192ba0f44bf5c7bf31412cca0eeddf7f7eb86cac",
+              "evidence": [],
+              "phase": "post_failure",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "successful_action_repeat_blocked"
+              ],
+              "related_entry_ids": [
+                "6acbb52730973b7084580bcc0a025fa1783d1a38434e6ad69df845e0ee1f83b1"
+              ],
+              "sequence_index": 5,
+              "status": "proposed"
+            }
+          ],
+          "method_version": "proper_v2_3_action_execution_ledger_development",
+          "schema_version": 1,
+          "trajectory_id": "tau3-dev-08"
+        },
+        "lifecycle_after_recovery": "consumed",
+        "native_tool_calls": {
+          "get_order_details": 1,
+          "modify_pending_order_address": 2
+        },
+        "pair_id": "tau3-dev-08",
+        "phase": "post_failure",
+        "planning_mode_after_recovery": "ordinary_task_planning",
+        "repeat_disposition": "replan",
+        "repeat_reason": "successful_action_repeat_blocked",
+        "verification_passed": true
+      },
+      {
+        "continuation_actions_allowed": 2,
+        "domain": "airline",
+        "effect_class": "non_idempotent_side_effect",
+        "exact_repeat_blocked": true,
+        "failure_family": "outcome_unknown_requires_verification",
+        "final_budgets": {
+          "remaining_invalid_decisions": 1,
+          "remaining_replans": 1,
+          "remaining_retries": 1,
+          "remaining_verifications": 1
+        },
+        "fixture_strategy": "airline_cancel_unknown",
+        "guarded_native_execution_count": 1,
+        "ledger": {
+          "entries": [
+            {
+              "action": {
+                "arguments": {
+                  "reservation_id": "00GMVN"
+                },
+                "normalized_identity": "61f39dd0afae4819b281a07b14289d3ddc996730047e356f42778eb59dad914a",
+                "tool_name": "cancel_reservation"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:non_idempotent_side_effect"
+                ],
+                "effect_class": "non_idempotent_side_effect",
+                "retry_safety": "unsafe",
+                "retry_safety_evidence": [
+                  "public_contract:repeat_can_duplicate_or_conflict"
+                ],
+                "verification_evidence": [
+                  "public_contract:status_read_supported"
+                ],
+                "verification_supported": true
+              },
+              "entry_id": "fcfae0f1f8174f6407613ac68c2777cc34295340b87481942de04a293f5c12a4",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 1,
+                  "source": "controller"
+                },
+                {
+                  "code": "transport:response_suppressed_after_dispatch",
+                  "observed_at_step": 1,
+                  "source": "tool_result"
+                },
+                {
+                  "code": "public_state:unknown_outcome_resolved",
+                  "observed_at_step": 2,
+                  "source": "public_state"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "recovery",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 0,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "reservation_id": "00GMVN"
+                },
+                "normalized_identity": "f15d6e2411610513f1b8e710ed08f59dd9e9e1e136cfd58b24c5186ef8857605",
+                "tool_name": "get_reservation_details"
+              },
+              "controller_disposition": "verify",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "00aef5dcecb4b513c6a300b2818acb4301524e75f4919f3f6dcd9869d3f6a59a",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 2,
+                  "source": "controller"
+                },
+                {
+                  "code": "public_state:read_back_satisfied",
+                  "observed_at_step": 2,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "verification",
+              "reason_codes": [
+                "bounded_read_only_verification_allowed"
+              ],
+              "related_entry_ids": [
+                "fcfae0f1f8174f6407613ac68c2777cc34295340b87481942de04a293f5c12a4"
+              ],
+              "sequence_index": 1,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "pair": "tau3-dev-09",
+                  "step": 0
+                },
+                "normalized_identity": "f915a4ed61702bab44a703e6cfa72ea0c1bac9652c427a22457bfed670ab4dc5",
+                "tool_name": "scripted_public_continuation_read"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "3b024d30699ef6c6e402e0396cb06fa7033e7853d846d1a0c388c660bf61b88b",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 3,
+                  "source": "controller"
+                },
+                {
+                  "code": "scripted_public_result:continuation_observed",
+                  "observed_at_step": 3,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 2,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "pair": "tau3-dev-09",
+                  "step": 1
+                },
+                "normalized_identity": "c70b5516a6adec206894a20ad774ea0d10a36eaf48e16a86e6a7faac3811a607",
+                "tool_name": "scripted_public_continuation_read"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "b4ae0611d5cf60499d5ed630b29e91dea5893ecc9d935fc4dbac78b1d19a59ed",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 4,
+                  "source": "controller"
+                },
+                {
+                  "code": "scripted_public_result:continuation_observed",
+                  "observed_at_step": 4,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 3,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "reservation_id": "00GMVN"
+                },
+                "normalized_identity": "61f39dd0afae4819b281a07b14289d3ddc996730047e356f42778eb59dad914a",
+                "tool_name": "cancel_reservation"
+              },
+              "controller_disposition": "replan",
+              "decision_allowed": false,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:non_idempotent_side_effect"
+                ],
+                "effect_class": "non_idempotent_side_effect",
+                "retry_safety": "unsafe",
+                "retry_safety_evidence": [
+                  "public_contract:repeat_can_duplicate_or_conflict"
+                ],
+                "verification_evidence": [
+                  "public_contract:status_read_supported"
+                ],
+                "verification_supported": true
+              },
+              "entry_id": "d226bc2a669ebce10fd75f2ed2281e9125ca3bbc9512f615d3cf16a7a31b054f",
+              "evidence": [],
+              "phase": "post_failure",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "successful_action_repeat_blocked"
+              ],
+              "related_entry_ids": [
+                "fcfae0f1f8174f6407613ac68c2777cc34295340b87481942de04a293f5c12a4"
+              ],
+              "sequence_index": 4,
+              "status": "proposed"
+            }
+          ],
+          "method_version": "proper_v2_3_action_execution_ledger_development",
+          "schema_version": 1,
+          "trajectory_id": "tau3-dev-09"
+        },
+        "lifecycle_after_recovery": "consumed",
+        "native_tool_calls": {
+          "cancel_reservation": 1,
+          "get_reservation_details": 1
+        },
+        "pair_id": "tau3-dev-09",
+        "phase": "post_failure",
+        "planning_mode_after_recovery": "ordinary_task_planning",
+        "repeat_disposition": "replan",
+        "repeat_reason": "successful_action_repeat_blocked",
+        "verification_passed": true
+      },
+      {
+        "continuation_actions_allowed": 2,
+        "domain": "retail",
+        "effect_class": "non_idempotent_side_effect",
+        "exact_repeat_blocked": true,
+        "failure_family": "outcome_unknown_requires_verification",
+        "final_budgets": {
+          "remaining_invalid_decisions": 1,
+          "remaining_replans": 1,
+          "remaining_retries": 1,
+          "remaining_verifications": 1
+        },
+        "fixture_strategy": "retail_cancel_unknown",
+        "guarded_native_execution_count": 1,
+        "ledger": {
+          "entries": [
+            {
+              "action": {
+                "arguments": {
+                  "order_id": "#W1006327",
+                  "reason": "no longer needed"
+                },
+                "normalized_identity": "671fdb40618e66733d916c950f426a1882dbb37da8e3cf163a0efce2db44c726",
+                "tool_name": "cancel_pending_order"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:non_idempotent_side_effect"
+                ],
+                "effect_class": "non_idempotent_side_effect",
+                "retry_safety": "unsafe",
+                "retry_safety_evidence": [
+                  "public_contract:repeat_can_duplicate_or_conflict"
+                ],
+                "verification_evidence": [
+                  "public_contract:status_read_supported"
+                ],
+                "verification_supported": true
+              },
+              "entry_id": "32eb53428adf91acf951f15d839d4c01a7da397f22d2b064a741c59b06b58ea5",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 1,
+                  "source": "controller"
+                },
+                {
+                  "code": "transport:response_suppressed_after_dispatch",
+                  "observed_at_step": 1,
+                  "source": "tool_result"
+                },
+                {
+                  "code": "public_state:unknown_outcome_resolved",
+                  "observed_at_step": 2,
+                  "source": "public_state"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "recovery",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 0,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "order_id": "#W1006327"
+                },
+                "normalized_identity": "820d247257b8de324619dbf884130d0772f4fbd6cc61ea8d668a4df8d846f04e",
+                "tool_name": "get_order_details"
+              },
+              "controller_disposition": "verify",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "331b92cd199c9d8797c818c4b1614a58f6995198ff4029d34342858ecfd96388",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 2,
+                  "source": "controller"
+                },
+                {
+                  "code": "public_state:read_back_satisfied",
+                  "observed_at_step": 2,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "verification",
+              "reason_codes": [
+                "bounded_read_only_verification_allowed"
+              ],
+              "related_entry_ids": [
+                "32eb53428adf91acf951f15d839d4c01a7da397f22d2b064a741c59b06b58ea5"
+              ],
+              "sequence_index": 1,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "pair": "tau3-dev-10",
+                  "step": 0
+                },
+                "normalized_identity": "2aba9b350a0936e0efd23596a6705529e12c84ffb8c53063c6f68548018da497",
+                "tool_name": "scripted_public_continuation_read"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "6ae85d38eb2cf2308242a366af9bd8984f7c53d100b84707934568e98b9c3b2b",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 3,
+                  "source": "controller"
+                },
+                {
+                  "code": "scripted_public_result:continuation_observed",
+                  "observed_at_step": 3,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 2,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "pair": "tau3-dev-10",
+                  "step": 1
+                },
+                "normalized_identity": "e50b1438ac461f29d3bdcafc0736c1189a91ff7aa41c3d03b9a688edf776cdf9",
+                "tool_name": "scripted_public_continuation_read"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "91795fef66d04415cbe75962ce5f8c3c6e5b7fd5bf5b422bb4b78495119299ff",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 4,
+                  "source": "controller"
+                },
+                {
+                  "code": "scripted_public_result:continuation_observed",
+                  "observed_at_step": 4,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 3,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "order_id": "#W1006327",
+                  "reason": "no longer needed"
+                },
+                "normalized_identity": "671fdb40618e66733d916c950f426a1882dbb37da8e3cf163a0efce2db44c726",
+                "tool_name": "cancel_pending_order"
+              },
+              "controller_disposition": "replan",
+              "decision_allowed": false,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:non_idempotent_side_effect"
+                ],
+                "effect_class": "non_idempotent_side_effect",
+                "retry_safety": "unsafe",
+                "retry_safety_evidence": [
+                  "public_contract:repeat_can_duplicate_or_conflict"
+                ],
+                "verification_evidence": [
+                  "public_contract:status_read_supported"
+                ],
+                "verification_supported": true
+              },
+              "entry_id": "71f1bdd8a91349741218e15b49a40894b36624c411101cd9efd87e6d1626f0ce",
+              "evidence": [],
+              "phase": "post_failure",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "successful_action_repeat_blocked"
+              ],
+              "related_entry_ids": [
+                "32eb53428adf91acf951f15d839d4c01a7da397f22d2b064a741c59b06b58ea5"
+              ],
+              "sequence_index": 4,
+              "status": "proposed"
+            }
+          ],
+          "method_version": "proper_v2_3_action_execution_ledger_development",
+          "schema_version": 1,
+          "trajectory_id": "tau3-dev-10"
+        },
+        "lifecycle_after_recovery": "consumed",
+        "native_tool_calls": {
+          "cancel_pending_order": 1,
+          "get_order_details": 1
+        },
+        "pair_id": "tau3-dev-10",
+        "phase": "post_failure",
+        "planning_mode_after_recovery": "ordinary_task_planning",
+        "repeat_disposition": "replan",
+        "repeat_reason": "successful_action_repeat_blocked",
+        "verification_passed": true
+      },
+      {
+        "continuation_actions_allowed": 2,
+        "domain": "retail",
+        "effect_class": "non_idempotent_side_effect",
+        "exact_repeat_blocked": true,
+        "failure_family": "outcome_unknown_requires_verification",
+        "final_budgets": {
+          "remaining_invalid_decisions": 1,
+          "remaining_replans": 1,
+          "remaining_retries": 1,
+          "remaining_verifications": 1
+        },
+        "fixture_strategy": "retail_exchange_unknown",
+        "guarded_native_execution_count": 1,
+        "ledger": {
+          "entries": [
+            {
+              "action": {
+                "arguments": {
+                  "item_ids": [
+                    "5067898160"
+                  ],
+                  "new_item_ids": [
+                    "2405281423"
+                  ],
+                  "order_id": "#W1023987",
+                  "payment_method_id": "gift_card_9450778"
+                },
+                "normalized_identity": "a8d5a4b321d1b957fa7801785689622f110737b04ad2e4215877feab12aef2c9",
+                "tool_name": "exchange_delivered_order_items"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:non_idempotent_side_effect"
+                ],
+                "effect_class": "non_idempotent_side_effect",
+                "retry_safety": "unsafe",
+                "retry_safety_evidence": [
+                  "public_contract:repeat_can_duplicate_or_conflict"
+                ],
+                "verification_evidence": [
+                  "public_contract:status_read_supported"
+                ],
+                "verification_supported": true
+              },
+              "entry_id": "a10f326fef41b121fbb893686e3aa6891c65f9c7969a93ac5a73a5a634e738dc",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 1,
+                  "source": "controller"
+                },
+                {
+                  "code": "transport:response_suppressed_after_dispatch",
+                  "observed_at_step": 1,
+                  "source": "tool_result"
+                },
+                {
+                  "code": "public_state:unknown_outcome_resolved",
+                  "observed_at_step": 2,
+                  "source": "public_state"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "recovery",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 0,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "order_id": "#W1023987"
+                },
+                "normalized_identity": "30b73dfcbc8ddde04bab4f7546980c6d42b89a8615ce92d35e372433432c6ad1",
+                "tool_name": "get_order_details"
+              },
+              "controller_disposition": "verify",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "cc639b90697c9fc6b59a2692cc5243cd4491416b59ec821d56e2ce056ae6dc05",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 2,
+                  "source": "controller"
+                },
+                {
+                  "code": "public_state:read_back_satisfied",
+                  "observed_at_step": 2,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "verification",
+              "reason_codes": [
+                "bounded_read_only_verification_allowed"
+              ],
+              "related_entry_ids": [
+                "a10f326fef41b121fbb893686e3aa6891c65f9c7969a93ac5a73a5a634e738dc"
+              ],
+              "sequence_index": 1,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "pair": "tau3-dev-11",
+                  "step": 0
+                },
+                "normalized_identity": "7f5c71de3674a18005c5c4c85cd10221ac06b03431dc704b10383df3cb883c8e",
+                "tool_name": "scripted_public_continuation_read"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "1e1bfe4708a25611637a5dc7ef9c676172159ed9e2d78384af0c137336b3d391",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 3,
+                  "source": "controller"
+                },
+                {
+                  "code": "scripted_public_result:continuation_observed",
+                  "observed_at_step": 3,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 2,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "pair": "tau3-dev-11",
+                  "step": 1
+                },
+                "normalized_identity": "3ed6b6dc9bd7ef912c22e2b53f61128cb602cb04ca819a62acd6ee6ead026bcf",
+                "tool_name": "scripted_public_continuation_read"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "0b1cb1eff59c03fb865783365a15ea943020a36b6de9d8473c4c7d65aead7f4f",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 4,
+                  "source": "controller"
+                },
+                {
+                  "code": "scripted_public_result:continuation_observed",
+                  "observed_at_step": 4,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 3,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "item_ids": [
+                    "5067898160"
+                  ],
+                  "new_item_ids": [
+                    "2405281423"
+                  ],
+                  "order_id": "#W1023987",
+                  "payment_method_id": "gift_card_9450778"
+                },
+                "normalized_identity": "a8d5a4b321d1b957fa7801785689622f110737b04ad2e4215877feab12aef2c9",
+                "tool_name": "exchange_delivered_order_items"
+              },
+              "controller_disposition": "replan",
+              "decision_allowed": false,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:non_idempotent_side_effect"
+                ],
+                "effect_class": "non_idempotent_side_effect",
+                "retry_safety": "unsafe",
+                "retry_safety_evidence": [
+                  "public_contract:repeat_can_duplicate_or_conflict"
+                ],
+                "verification_evidence": [
+                  "public_contract:status_read_supported"
+                ],
+                "verification_supported": true
+              },
+              "entry_id": "6b4fe5d048cc3e7951eeb21aa9e2b2a26ff06b455bf6f96ca886ede8fe9938ea",
+              "evidence": [],
+              "phase": "post_failure",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "successful_action_repeat_blocked"
+              ],
+              "related_entry_ids": [
+                "a10f326fef41b121fbb893686e3aa6891c65f9c7969a93ac5a73a5a634e738dc"
+              ],
+              "sequence_index": 4,
+              "status": "proposed"
+            }
+          ],
+          "method_version": "proper_v2_3_action_execution_ledger_development",
+          "schema_version": 1,
+          "trajectory_id": "tau3-dev-11"
+        },
+        "lifecycle_after_recovery": "consumed",
+        "native_tool_calls": {
+          "exchange_delivered_order_items": 1,
+          "get_order_details": 1
+        },
+        "pair_id": "tau3-dev-11",
+        "phase": "post_failure",
+        "planning_mode_after_recovery": "ordinary_task_planning",
+        "repeat_disposition": "replan",
+        "repeat_reason": "successful_action_repeat_blocked",
+        "verification_passed": true
+      },
+      {
+        "continuation_actions_allowed": 2,
+        "domain": "retail",
+        "effect_class": "non_idempotent_side_effect",
+        "exact_repeat_blocked": true,
+        "failure_family": "outcome_unknown_requires_verification",
+        "final_budgets": {
+          "remaining_invalid_decisions": 1,
+          "remaining_replans": 1,
+          "remaining_retries": 1,
+          "remaining_verifications": 1
+        },
+        "fixture_strategy": "retail_return_unknown",
+        "guarded_native_execution_count": 1,
+        "ledger": {
+          "entries": [
+            {
+              "action": {
+                "arguments": {
+                  "item_ids": [
+                    "9747045638"
+                  ],
+                  "order_id": "#W1052399",
+                  "payment_method_id": "gift_card_3372949"
+                },
+                "normalized_identity": "ad8302ce9d5cf5fe1bd6ab5c1b211f49e5e97d0cba679a79ee8151ddc5bc9a2f",
+                "tool_name": "return_delivered_order_items"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:non_idempotent_side_effect"
+                ],
+                "effect_class": "non_idempotent_side_effect",
+                "retry_safety": "unsafe",
+                "retry_safety_evidence": [
+                  "public_contract:repeat_can_duplicate_or_conflict"
+                ],
+                "verification_evidence": [
+                  "public_contract:status_read_supported"
+                ],
+                "verification_supported": true
+              },
+              "entry_id": "94aa2a702b65039aaf495f1c010f0ca30ac228882d948e504147729733901916",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 1,
+                  "source": "controller"
+                },
+                {
+                  "code": "transport:response_suppressed_after_dispatch",
+                  "observed_at_step": 1,
+                  "source": "tool_result"
+                },
+                {
+                  "code": "public_state:unknown_outcome_resolved",
+                  "observed_at_step": 2,
+                  "source": "public_state"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "recovery",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 0,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "order_id": "#W1052399"
+                },
+                "normalized_identity": "8dc47a9c9da6e7d34b3fb2db2d963134a0982684a1a02a976b1c59157a0c6ac8",
+                "tool_name": "get_order_details"
+              },
+              "controller_disposition": "verify",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "433a886b3d214aa41b6846e9ea422eae58eb93da50252f13ca1803d4abc1af1f",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 2,
+                  "source": "controller"
+                },
+                {
+                  "code": "public_state:read_back_satisfied",
+                  "observed_at_step": 2,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "verification",
+              "reason_codes": [
+                "bounded_read_only_verification_allowed"
+              ],
+              "related_entry_ids": [
+                "94aa2a702b65039aaf495f1c010f0ca30ac228882d948e504147729733901916"
+              ],
+              "sequence_index": 1,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "pair": "tau3-dev-12",
+                  "step": 0
+                },
+                "normalized_identity": "bad1d57db649914c223771b43f6b80d3384db94437416af7dc6ffdf8cd162b75",
+                "tool_name": "scripted_public_continuation_read"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "95726a0d4ed45676fa7849022fae3f80c0a5399eb29ae1b7ca43749383baab1c",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 3,
+                  "source": "controller"
+                },
+                {
+                  "code": "scripted_public_result:continuation_observed",
+                  "observed_at_step": 3,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 2,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "pair": "tau3-dev-12",
+                  "step": 1
+                },
+                "normalized_identity": "ff4223133afcd763bf436189d9284575a1c28f76c6fd18d81f13f4f546462608",
+                "tool_name": "scripted_public_continuation_read"
+              },
+              "controller_disposition": "allow",
+              "decision_allowed": true,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:read_only"
+                ],
+                "effect_class": "read_only",
+                "retry_safety": "safe",
+                "retry_safety_evidence": [
+                  "public_contract:no_state_mutation"
+                ],
+                "verification_evidence": [],
+                "verification_supported": false
+              },
+              "entry_id": "879d92dedbe4f0b1c168cf248c47c36b556d1263144564b4d2da661f06dd8f9c",
+              "evidence": [
+                {
+                  "code": "dispatch_started",
+                  "observed_at_step": 4,
+                  "source": "controller"
+                },
+                {
+                  "code": "scripted_public_result:continuation_observed",
+                  "observed_at_step": 4,
+                  "source": "tool_result"
+                }
+              ],
+              "phase": "post_failure",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "new_action_allowed"
+              ],
+              "related_entry_ids": [],
+              "sequence_index": 3,
+              "status": "succeeded"
+            },
+            {
+              "action": {
+                "arguments": {
+                  "item_ids": [
+                    "9747045638"
+                  ],
+                  "order_id": "#W1052399",
+                  "payment_method_id": "gift_card_3372949"
+                },
+                "normalized_identity": "ad8302ce9d5cf5fe1bd6ab5c1b211f49e5e97d0cba679a79ee8151ddc5bc9a2f",
+                "tool_name": "return_delivered_order_items"
+              },
+              "controller_disposition": "replan",
+              "decision_allowed": false,
+              "effect_contract": {
+                "classification_evidence": [
+                  "public_tool_implementation:non_idempotent_side_effect"
+                ],
+                "effect_class": "non_idempotent_side_effect",
+                "retry_safety": "unsafe",
+                "retry_safety_evidence": [
+                  "public_contract:repeat_can_duplicate_or_conflict"
+                ],
+                "verification_evidence": [
+                  "public_contract:status_read_supported"
+                ],
+                "verification_supported": true
+              },
+              "entry_id": "ad2a56d2cea32f478ea046eae8bd2a1b1a58d8824ce81128a6a8199de1e395d1",
+              "evidence": [],
+              "phase": "post_failure",
+              "purpose": "ordinary_task",
+              "reason_codes": [
+                "successful_action_repeat_blocked"
+              ],
+              "related_entry_ids": [
+                "94aa2a702b65039aaf495f1c010f0ca30ac228882d948e504147729733901916"
+              ],
+              "sequence_index": 4,
+              "status": "proposed"
+            }
+          ],
+          "method_version": "proper_v2_3_action_execution_ledger_development",
+          "schema_version": 1,
+          "trajectory_id": "tau3-dev-12"
+        },
+        "lifecycle_after_recovery": "consumed",
+        "native_tool_calls": {
+          "get_order_details": 1,
+          "return_delivered_order_items": 1
+        },
+        "pair_id": "tau3-dev-12",
+        "phase": "post_failure",
+        "planning_mode_after_recovery": "ordinary_task_planning",
+        "repeat_disposition": "replan",
+        "repeat_reason": "successful_action_repeat_blocked",
+        "verification_passed": true
+      }
+    ],
+    "passed": true,
+    "run_kind": "proper_v2_3_cpu_scripted_development_branch_screen",
+    "schema_version": 1,
+    "source_checks": {
+      "database_sha256": {
+        "airline": "7184914bd3720d93f1160a09bb2724c3a5601d8ca39d02d371cbbfa62626f7e2",
+        "retail": "dbde692e380bb4ad17f9f7841172cf1e69bebad2daa405628ccdc52a42b3b9b0"
+      },
+      "execution_manifest": {
+        "bytes": 10970191,
+        "file_count": 32,
+        "sha256": "00d2fb6ab1eba46443d780f107224c0ba6bbc9e71195fe3a068538fc64d3b4e4"
+      },
+      "revision": "fc0055dc4e0a316c3f83133267fbd6faaa770992",
+      "tag_commit": "fc0055dc4e0a316c3f83133267fbd6faaa770992",
+      "tag_object": "b711c1ead46f55111bf765cf44d5da8bacc2d28c"
+    },
+    "summary": {
+      "confirmatory_claim_authorized": false,
+      "development_model_run_authorized": false,
+      "domain_count": 2,
+      "effect_counts": {
+        "idempotent_state_setting": 4,
+        "non_idempotent_side_effect": 4,
+        "read_only": 4
+      },
+      "new_development_target_capacity_available": true,
+      "new_heldout_target_capacity": 0,
+      "qualified_development_pair_count": 12
+    }
+  },
+  "generated_result_sha256": "24b9967ac3790d5056f716899791469ee017400fc7a34a32d8adecb14a579eae",
+  "next_gate": "freeze_five_condition_development_protocol_before_any_model_run",
+  "passed": true,
+  "run_kind": "proper_v2_3_tau3_branch_screen_stage_validation",
+  "schema_validation": {
+    "draft_2020_12_validation_performed": true,
+    "passed": true,
+    "validator": "jsonschema_4.25.1"
+  },
+  "schema_version": 1,
+  "source_hashes": {
+    "configs/proper_v2_3/tau3_branch_screen_v2_3.yaml": "4e45860515d8fdd20f139353067cdfff83c250c6d9bc43fe516e2042ba755997",
+    "docs/proper_v2_3/tau3_branch_screen_stage.md": "b531fd3898a27be611cb74bfeb903c457cacbfef8b2c1934668a83966fb3959e",
+    "experiments/proper_v2_3/tau3_branch_screen_v2_3.py": "dda3ba96848a667186f614e429698cbe21126af1531be3f198aabbbae58c310d",
+    "experiments/proper_v2_3/validate_tau3_branch_screen_v2_3.py": "ed372a32707eede1458516b77d888331a8a04b635985f64c70771b27c1a8582b",
+    "schemas/proper_v2_3/tau3_branch_screen.schema.json": "ce10d162f7948da26f82dae7a78c939f24edc6c6d464405a98d84a3bb7184ab1",
+    "tests/test_proper_v2_3_tau3_branch_screen.py": "4449b5ea665991387b249ed712bb016bd3223e30f3c8ee0536f1e8b160cee308"
+  },
+  "tests": {
+    "error_count": 0,
+    "failure_count": 0,
+    "passed": true,
+    "runner_output": "test_action_identity_is_key_order_independent (test_proper_v2_3_contracts.ProperV23ContractTests.test_action_identity_is_key_order_independent) ... ok\ntest_action_identity_preserves_list_order (test_proper_v2_3_contracts.ProperV23ContractTests.test_action_identity_preserves_list_order) ... ok\ntest_action_rejects_non_json_and_non_finite_values (test_proper_v2_3_contracts.ProperV23ContractTests.test_action_rejects_non_json_and_non_finite_values) ... ok\ntest_budget_classes_are_independent_in_serialized_state (test_proper_v2_3_contracts.ProperV23ContractTests.test_budget_classes_are_independent_in_serialized_state) ... ok\ntest_configuration_is_json_and_forbids_model_runner (test_proper_v2_3_contracts.ProperV23ContractTests.test_configuration_is_json_and_forbids_model_runner) ... ok\ntest_effect_contract_mapping_requires_a_real_boolean (test_proper_v2_3_contracts.ProperV23ContractTests.test_effect_contract_mapping_requires_a_real_boolean) ... ok\ntest_known_retry_safety_requires_evidence (test_proper_v2_3_contracts.ProperV23ContractTests.test_known_retry_safety_requires_evidence) ... ok\ntest_same_selection_adapter_handles_both_decision_phases (test_proper_v2_3_contracts.ProperV23ContractTests.test_same_selection_adapter_handles_both_decision_phases) ... ok\ntest_v2_3_boundary_rejects_hidden_fields_recursively (test_proper_v2_3_contracts.ProperV23ContractTests.test_v2_3_boundary_rejects_hidden_fields_recursively) ... ok\ntest_verification_requires_public_evidence (test_proper_v2_3_contracts.ProperV23ContractTests.test_verification_requires_public_evidence) ... ok\ntest_agent_stop_transitions_to_stopped_with_reason (test_proper_v2_3_controller.ProperV23ControllerTests.test_agent_stop_transitions_to_stopped_with_reason) ... ok\ntest_failed_retry_uses_only_retry_budget (test_proper_v2_3_controller.ProperV23ControllerTests.test_failed_retry_uses_only_retry_budget) ... ok\ntest_invalid_budget_does_not_consume_general_replan_budget (test_proper_v2_3_controller.ProperV23ControllerTests.test_invalid_budget_does_not_consume_general_replan_budget) ... ok\ntest_same_action_cannot_change_effect_contract (test_proper_v2_3_controller.ProperV23ControllerTests.test_same_action_cannot_change_effect_contract) ... ok\ntest_successful_idempotent_setting_is_also_not_repeated (test_proper_v2_3_controller.ProperV23ControllerTests.test_successful_idempotent_setting_is_also_not_repeated) ... ok\ntest_successful_non_idempotent_repeat_is_never_executed (test_proper_v2_3_controller.ProperV23ControllerTests.test_successful_non_idempotent_repeat_is_never_executed) ... ok\ntest_successful_verification_action_cannot_repeat (test_proper_v2_3_controller.ProperV23ControllerTests.test_successful_verification_action_cannot_repeat) ... ok\ntest_unknown_effect_fails_closed_before_execution (test_proper_v2_3_controller.ProperV23ControllerTests.test_unknown_effect_fails_closed_before_execution) ... ok\ntest_unknown_side_effect_outcome_requires_read_only_verification (test_proper_v2_3_controller.ProperV23ControllerTests.test_unknown_side_effect_outcome_requires_read_only_verification) ... ok\ntest_visible_failure_evidence_can_strengthen_unknown_retry_safety (test_proper_v2_3_controller.ProperV23ControllerTests.test_visible_failure_evidence_can_strengthen_unknown_retry_safety) ... ok\ntest_all_frozen_result_hashes_are_unchanged (test_proper_v2_3_frozen_hashes.ProperV23FrozenHashTests.test_all_frozen_result_hashes_are_unchanged) ... ok\ntest_blocked_proposal_is_recorded_but_cannot_execute (test_proper_v2_3_ledger.ProperV23LedgerTests.test_blocked_proposal_is_recorded_but_cannot_execute) ... ok\ntest_ledger_records_complete_status_progression (test_proper_v2_3_ledger.ProperV23LedgerTests.test_ledger_records_complete_status_progression) ... ok\ntest_outcome_without_observable_evidence_is_rejected (test_proper_v2_3_ledger.ProperV23LedgerTests.test_outcome_without_observable_evidence_is_rejected) ... ok\ntest_related_entry_must_refer_to_an_earlier_record (test_proper_v2_3_ledger.ProperV23LedgerTests.test_related_entry_must_refer_to_an_earlier_record) ... ok\ntest_sequence_indices_and_ids_are_deterministic (test_proper_v2_3_ledger.ProperV23LedgerTests.test_sequence_indices_and_ids_are_deterministic) ... ok\ntest_unknown_outcome_can_only_resolve_once (test_proper_v2_3_ledger.ProperV23LedgerTests.test_unknown_outcome_can_only_resolve_once) ... ok\ntest_memory_success_consumes_and_hands_off (test_proper_v2_3_lifecycle_budgets.ProperV23LifecycleBudgetTests.test_memory_success_consumes_and_hands_off) ... ok\ntest_ordinary_action_verification_does_not_change_consumed_memory (test_proper_v2_3_lifecycle_budgets.ProperV23LifecycleBudgetTests.test_ordinary_action_verification_does_not_change_consumed_memory) ... ok\ntest_replan_budget_exhaustion_stops_repeated_success (test_proper_v2_3_lifecycle_budgets.ProperV23LifecycleBudgetTests.test_replan_budget_exhaustion_stops_repeated_success) ... ok\ntest_retry_budget_exhaustion_prevents_third_execution (test_proper_v2_3_lifecycle_budgets.ProperV23LifecycleBudgetTests.test_retry_budget_exhaustion_prevents_third_execution) ... ok\ntest_success_trigger_conflict_fails_closed (test_proper_v2_3_lifecycle_budgets.ProperV23LifecycleBudgetTests.test_success_trigger_conflict_fails_closed) ... ok\ntest_task_completion_transitions_to_stopped (test_proper_v2_3_lifecycle_budgets.ProperV23LifecycleBudgetTests.test_task_completion_transitions_to_stopped) ... ok\ntest_unknown_outcome_without_verification_path_fails_closed (test_proper_v2_3_lifecycle_budgets.ProperV23LifecycleBudgetTests.test_unknown_outcome_without_verification_path_fails_closed) ... ok\ntest_verification_budget_exhaustion_stops (test_proper_v2_3_lifecycle_budgets.ProperV23LifecycleBudgetTests.test_verification_budget_exhaustion_stops) ... ok\ntest_violated_success_evidence_beats_trigger_clearance (test_proper_v2_3_lifecycle_budgets.ProperV23LifecycleBudgetTests.test_violated_success_evidence_beats_trigger_clearance) ... ok\ntest_generated_mappings_have_all_top_level_required_fields (test_proper_v2_3_schemas.ProperV23SchemaTests.test_generated_mappings_have_all_top_level_required_fields) ... ok\ntest_generated_mappings_validate_with_draft_2020_12 (test_proper_v2_3_schemas.ProperV23SchemaTests.test_generated_mappings_validate_with_draft_2020_12) ... ok\ntest_schemas_parse_and_close_top_level_objects (test_proper_v2_3_schemas.ProperV23SchemaTests.test_schemas_parse_and_close_top_level_objects) ... ok\ntest_all_candidates_are_train_members_with_continuation_depth (test_proper_v2_3_tau3_branch_screen.Tau3BranchScreenTests.test_all_candidates_are_train_members_with_continuation_depth) ... ok\ntest_candidate_set_is_balanced_and_development_only (test_proper_v2_3_tau3_branch_screen.Tau3BranchScreenTests.test_candidate_set_is_balanced_and_development_only) ... ok\ntest_exclusion_sources_and_hashes_are_recomputed (test_proper_v2_3_tau3_branch_screen.Tau3BranchScreenTests.test_exclusion_sources_and_hashes_are_recomputed) ... ok\ntest_execution_source_manifest_is_frozen (test_proper_v2_3_tau3_branch_screen.Tau3BranchScreenTests.test_execution_source_manifest_is_frozen) ... ok\ntest_generated_branch_result_preserves_safety_boundaries (test_proper_v2_3_tau3_branch_screen.Tau3BranchScreenTests.test_generated_branch_result_preserves_safety_boundaries) ... ok\ntest_method_handoff_excludes_task_and_evaluator_metadata (test_proper_v2_3_tau3_branch_screen.Tau3BranchScreenTests.test_method_handoff_excludes_task_and_evaluator_metadata) ... ok\ntest_config_selects_no_trajectory_or_result_path (test_proper_v2_3_tau3_source_qualification.Tau3SourceQualificationTests.test_config_selects_no_trajectory_or_result_path) ... ok\ntest_no_target_or_model_authority_is_created (test_proper_v2_3_tau3_source_qualification.Tau3SourceQualificationTests.test_no_target_or_model_authority_is_created) ... ok\ntest_partition_is_prospective_and_immutable (test_proper_v2_3_tau3_source_qualification.Tau3SourceQualificationTests.test_partition_is_prospective_and_immutable) ... ok\ntest_pinned_source_qualifies_only_for_cpu_branch_screening (test_proper_v2_3_tau3_source_qualification.Tau3SourceQualificationTests.test_pinned_source_qualifies_only_for_cpu_branch_screening) ... ok\ntest_result_validates_against_schema_when_jsonschema_is_available (test_proper_v2_3_tau3_source_qualification.Tau3SourceQualificationTests.test_result_validates_against_schema_when_jsonschema_is_available) ... ok\ntest_static_source_has_required_effect_diversity (test_proper_v2_3_tau3_source_qualification.Tau3SourceQualificationTests.test_static_source_has_required_effect_diversity) ... ok\ntest_capacity_design_authorizes_no_model_or_confirmation (test_toolsandbox_v2_3_capacity_audit.ToolSandboxV23CapacityAuditTests.test_capacity_design_authorizes_no_model_or_confirmation) ... ok\ntest_capacity_design_retains_frozen_zero_candidate_result (test_toolsandbox_v2_3_capacity_audit.ToolSandboxV23CapacityAuditTests.test_capacity_design_retains_frozen_zero_candidate_result) ... ok\ntest_all_scripted_multi_step_traces_pass (test_toolsandbox_v2_3_scripted_traces.ToolSandboxV23ScriptedTraceTests.test_all_scripted_multi_step_traces_pass) ... ok\ntest_controller_has_no_scenario_or_tool_name_branch (test_toolsandbox_v2_3_scripted_traces.ToolSandboxV23ScriptedTraceTests.test_controller_has_no_scenario_or_tool_name_branch) ... ok\ntest_duplicate_message_regression_executes_message_once (test_toolsandbox_v2_3_scripted_traces.ToolSandboxV23ScriptedTraceTests.test_duplicate_message_regression_executes_message_once) ... ok\n\n----------------------------------------------------------------------\nRan 56 tests in 0.620s\n\nOK\n",
+    "skipped_count": 0,
+    "tests_run": 56
+  }
+}
