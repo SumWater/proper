@@ -62,7 +62,7 @@ Remote acceptance requires all of the following:
 
 - exact handoff project revision and clean tracked worktree;
 - tau revision `fc0055dc4e0a316c3f83133267fbd6faaa770992`;
-- Python 3.12 and `CUDA_VISIBLE_DEVICES=-1`;
+- Python 3.11 or 3.12 and `CUDA_VISIBLE_DEVICES=-1`;
 - branch screen 12/12, including four pairs per effect class;
 - all repository tests and Draft 2020-12 schema validation passing;
 - every exact successful-action repeat blocked;

@@ -1,4 +1,4 @@
-# PROPER v2.3 tau3 CPU branch-screen remote runtime (Python 3.12 only).
+# PROPER v2.3 tau3 CPU branch-screen remote runtime (Python 3.11 or 3.12).
 # Exact top-level versions are part of the remote execution contract. The
 # remote envelope records the complete resolved environment for audit.
 addict==2.4.0

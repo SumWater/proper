@@ -48,8 +48,11 @@ def verify_preconditions(config: Mapping[str, Any], expected_revision: str) -> d
     if actual_role != config["execution_role"]:
         raise RuntimeError("remote execution role was not explicitly declared")
     required_python = config["python"]
-    if sys.version_info[:2] != (required_python["required_major"], required_python["required_minor"]):
-        raise RuntimeError(f"Python 3.12 is required, got {platform.python_version()}")
+    if (
+        sys.version_info.major != required_python["required_major"]
+        or sys.version_info.minor not in required_python["allowed_minors"]
+    ):
+        raise RuntimeError(f"unsupported Python version: {platform.python_version()}")
     if os.environ.get("CUDA_VISIBLE_DEVICES") != config["runtime_guards"]["cuda_visible_devices"]:
         raise RuntimeError("CPU-only CUDA guard is missing")
     head = git("rev-parse", "HEAD")

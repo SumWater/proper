@@ -30,6 +30,7 @@ class Tau3RemoteExecutionContractTests(unittest.TestCase):
 
     def test_runtime_is_cpu_only_and_authorizes_no_model_claim(self) -> None:
         guards = self.config["runtime_guards"]
+        self.assertEqual(self.config["python"]["allowed_minors"], [11, 12])
         self.assertTrue(guards["cpu_only"])
         self.assertEqual(guards["cuda_visible_devices"], "-1")
         self.assertFalse(guards["model_loading_authorized"])

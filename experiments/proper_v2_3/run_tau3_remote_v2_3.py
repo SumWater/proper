@@ -51,8 +51,14 @@ def prepare_tau(config: dict[str, Any]) -> None:
 
 def prepare_environment(config: dict[str, Any]) -> Path:
     required = config["python"]
-    if sys.version_info[:2] != (required["required_major"], required["required_minor"]):
-        raise RuntimeError(f"Python 3.12 is required, got {sys.version.split()[0]}")
+    if (
+        sys.version_info.major != required["required_major"]
+        or sys.version_info.minor not in required["allowed_minors"]
+    ):
+        allowed = ", ".join(
+            f"{required['required_major']}.{minor}" for minor in required["allowed_minors"]
+        )
+        raise RuntimeError(f"Python {allowed} is required, got {sys.version.split()[0]}")
     work = ROOT / "work"
     work.mkdir(parents=True, exist_ok=True)
     directory = Path(tempfile.mkdtemp(prefix="proper_v2_3_tau3_remote_venv_", dir=work))

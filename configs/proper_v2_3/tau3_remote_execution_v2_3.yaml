@@ -5,7 +5,7 @@
   "scientific_scope": "development_scripted_branch_capacity_only",
   "python": {
     "required_major": 3,
-    "required_minor": 12,
+    "allowed_minors": [11, 12],
     "requirements_file": "configs/proper_v2_3/requirements_tau3_remote_v2_3.txt"
   },
   "project": {
