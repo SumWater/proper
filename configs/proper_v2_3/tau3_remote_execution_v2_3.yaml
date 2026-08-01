@@ -1,5 +1,6 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
+  "run_kind": "proper_v2_3_remote_formal_cpu_branch_screen_v2",
   "status": "remote_formal_cpu_development_validation_contract",
   "execution_role": "remote_formal_cpu_validation",
   "scientific_scope": "development_scripted_branch_capacity_only",
@@ -43,8 +44,14 @@
   },
   "test_policy": {
     "discovery_start": "tests",
-    "pattern": "test_*.py",
-    "require_all_tests_pass": true
+    "scope": "proper_v2_3_remote_contract_regression",
+    "patterns": [
+      "test_proper_v2_3_*.py",
+      "test_toolsandbox_v2_3_*.py"
+    ],
+    "expected_test_count": 64,
+    "require_all_discovered_tests_pass": true,
+    "legacy_fixture_dependent_repository_tests_required": false
   },
   "sync_roots": [
     "configs/proper_v2_3",
@@ -57,7 +64,8 @@
   "formal_pass_gates": {
     "branch_screen_passed": true,
     "schema_validation_passed": true,
-    "all_repository_tests_passed": true,
+    "all_scoped_v2_3_tests_passed": true,
+    "scoped_v2_3_test_count": 64,
     "qualified_development_pair_count": 12,
     "new_heldout_target_capacity": 0,
     "development_model_run_authorized": false,

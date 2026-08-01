@@ -37,12 +37,24 @@ class Tau3RemoteExecutionContractTests(unittest.TestCase):
         self.assertFalse(guards["gpu_use_authorized"])
         self.assertFalse(guards["confirmatory_claim_authorized"])
 
-    def test_exact_top_level_requirements_cover_tau_and_full_regression(self) -> None:
+    def test_exact_top_level_requirements_cover_tau_and_scoped_regression(self) -> None:
         lines = [line.strip() for line in REQUIREMENTS.read_text(encoding="utf-8").splitlines()
                  if line.strip() and not line.startswith("#")]
         self.assertTrue(all("==" in line for line in lines))
         names = {line.split("==", 1)[0].lower() for line in lines}
         self.assertTrue({"pydantic", "loguru", "jsonschema", "pyyaml", "scikit-learn"}.issubset(names))
+
+    def test_remote_regression_is_limited_to_v2_3_contract_tests(self) -> None:
+        policy = self.config["test_policy"]
+        self.assertEqual(policy["scope"], "proper_v2_3_remote_contract_regression")
+        self.assertEqual(policy["patterns"], [
+            "test_proper_v2_3_*.py",
+            "test_toolsandbox_v2_3_*.py",
+        ])
+        self.assertEqual(policy["expected_test_count"], 64)
+        self.assertTrue(policy["require_all_discovered_tests_pass"])
+        self.assertFalse(policy["legacy_fixture_dependent_repository_tests_required"])
+        self.assertNotIn("test_*.py", policy["patterns"])
 
     def test_cross_platform_entry_requires_revision_and_sets_remote_role(self) -> None:
         source = BOOTSTRAP.read_text(encoding="utf-8")
@@ -57,11 +69,21 @@ class Tau3RemoteExecutionContractTests(unittest.TestCase):
         self.assertIn("project revision mismatch", source)
         self.assertIn("tracked project worktree must be clean", source)
         self.assertIn("mkdir(parents=True, exist_ok=False)", source)
+        self.assertIn("run_scoped_tests", source)
         self.assertIn("stop_and_preserve_remote_negative_result", CONFIG.read_text(encoding="utf-8"))
 
     def test_remote_envelope_schema_is_closed_and_keeps_heldout_zero(self) -> None:
         schema = json.loads(SCHEMA.read_text(encoding="utf-8"))
         self.assertFalse(schema["additionalProperties"])
+        self.assertEqual(self.config["schema_version"], 2)
+        self.assertEqual(
+            self.config["run_kind"], "proper_v2_3_remote_formal_cpu_branch_screen_v2"
+        )
+        self.assertEqual(schema["properties"]["schema_version"]["const"], 2)
+        self.assertEqual(
+            schema["properties"]["run_kind"]["const"],
+            "proper_v2_3_remote_formal_cpu_branch_screen_v2",
+        )
         boundary = schema["properties"]["boundary"]["properties"]
         self.assertEqual(boundary["new_heldout_target_capacity"]["const"], 0)
         self.assertFalse(boundary["development_model_run_authorized"]["const"])

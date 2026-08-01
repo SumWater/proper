@@ -104,14 +104,23 @@ def resolved_packages() -> list[dict[str, str]]:
     )
 
 
-def run_repository_tests(config: Mapping[str, Any]) -> dict[str, Any]:
+def run_scoped_tests(config: Mapping[str, Any]) -> dict[str, Any]:
     policy = config["test_policy"]
-    suite = unittest.defaultTestLoader.discover(
-        str(ROOT / policy["discovery_start"]), pattern=policy["pattern"], top_level_dir=str(ROOT / policy["discovery_start"])
-    )
+    discovery_start = ROOT / policy["discovery_start"]
+    patterns = policy["patterns"]
+    suite = unittest.TestSuite()
+    for pattern in patterns:
+        suite.addTests(unittest.defaultTestLoader.discover(
+            str(discovery_start), pattern=pattern, top_level_dir=str(discovery_start)
+        ))
     stream = io.StringIO()
     result = unittest.TextTestRunner(stream=stream, verbosity=2).run(suite)
-    return {"passed": result.wasSuccessful(), "tests_run": result.testsRun,
+    count_matches_contract = result.testsRun == policy["expected_test_count"]
+    return {"passed": result.wasSuccessful() and count_matches_contract,
+            "scope": policy["scope"],
+            "discovery_start": policy["discovery_start"], "patterns": patterns,
+            "expected_test_count": policy["expected_test_count"],
+            "tests_run": result.testsRun, "test_count_matches_contract": count_matches_contract,
             "failure_count": len(result.failures), "error_count": len(result.errors),
             "skipped_count": len(result.skipped), "runner_output": stream.getvalue()}
 
@@ -149,12 +158,19 @@ def execute_remote(expected_revision: str) -> tuple[Path, dict[str, Any]]:
     manifest = source_manifest(config)
     branch_result: dict[str, Any] | None = None
     schema_result: dict[str, Any] = {"passed": False, "not_run_reason": "branch_screen_not_completed"}
-    tests: dict[str, Any] = {"passed": False, "tests_run": 0, "not_run_reason": "branch_screen_not_completed"}
+    policy = config["test_policy"]
+    tests: dict[str, Any] = {
+        "passed": False, "scope": policy["scope"],
+        "discovery_start": policy["discovery_start"], "patterns": policy["patterns"],
+        "expected_test_count": policy["expected_test_count"], "tests_run": 0,
+        "test_count_matches_contract": False, "failure_count": 0, "error_count": 0,
+        "skipped_count": 0, "runner_output": "",
+    }
     execution_error: dict[str, str] | None = None
     try:
         branch_result = run(DEFAULT_CONFIG, raw_path, None)
         schema_result = validate_branch_schema(branch_result)
-        tests = run_repository_tests(config)
+        tests = run_scoped_tests(config)
     except Exception as exc:  # Preserve negative remote evidence before returning failure.
         execution_error = {"type": type(exc).__name__, "message": str(exc), "traceback": traceback.format_exc()}
     finished = datetime.now(timezone.utc)
@@ -163,14 +179,15 @@ def execute_remote(expected_revision: str) -> tuple[Path, dict[str, Any]]:
         execution_error is None and branch_result is not None
         and branch_result.get("passed") is gates["branch_screen_passed"]
         and schema_result.get("passed") is gates["schema_validation_passed"]
-        and tests.get("passed") is gates["all_repository_tests_passed"]
+        and tests.get("passed") is gates["all_scoped_v2_3_tests_passed"]
+        and tests.get("tests_run") == gates["scoped_v2_3_test_count"]
         and branch_result["summary"]["qualified_development_pair_count"] == gates["qualified_development_pair_count"]
         and branch_result["summary"]["new_heldout_target_capacity"] == gates["new_heldout_target_capacity"]
         and branch_result["summary"]["development_model_run_authorized"] is gates["development_model_run_authorized"]
         and branch_result["summary"]["confirmatory_claim_authorized"] is gates["confirmatory_run_authorized"]
     )
     envelope: dict[str, Any] = {
-        "schema_version": 1, "run_kind": "proper_v2_3_remote_formal_cpu_branch_screen",
+        "schema_version": config["schema_version"], "run_kind": config["run_kind"],
         "run_id": run_id, "passed": passed, "scientific_scope": config["scientific_scope"],
         "started_at_utc": started.isoformat(), "finished_at_utc": finished.isoformat(),
         "duration_seconds": round((finished - started).total_seconds(), 6),

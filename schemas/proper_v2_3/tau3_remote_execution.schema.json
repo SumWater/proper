@@ -25,8 +25,8 @@
     "next_gate"
   ],
   "properties": {
-    "schema_version": {"const": 1},
-    "run_kind": {"const": "proper_v2_3_remote_formal_cpu_branch_screen"},
+    "schema_version": {"const": 2},
+    "run_kind": {"const": "proper_v2_3_remote_formal_cpu_branch_screen_v2"},
     "run_id": {"type": "string", "minLength": 20},
     "passed": {"type": "boolean"},
     "scientific_scope": {"const": "development_scripted_branch_capacity_only"},
@@ -81,7 +81,26 @@
     "branch_result_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
     "branch_summary": {"type": ["object", "null"]},
     "schema_validation": {"type": "object", "required": ["passed"]},
-    "repository_tests": {"type": "object", "required": ["passed", "tests_run"]},
+    "repository_tests": {
+      "type": "object",
+      "required": ["passed", "scope", "discovery_start", "patterns", "expected_test_count", "tests_run", "test_count_matches_contract", "failure_count", "error_count", "skipped_count", "runner_output"],
+      "properties": {
+        "passed": {"type": "boolean"},
+        "scope": {"const": "proper_v2_3_remote_contract_regression"},
+        "discovery_start": {"const": "tests"},
+        "patterns": {
+          "const": ["test_proper_v2_3_*.py", "test_toolsandbox_v2_3_*.py"]
+        },
+        "expected_test_count": {"const": 64},
+        "tests_run": {"type": "integer", "minimum": 0},
+        "test_count_matches_contract": {"type": "boolean"},
+        "failure_count": {"type": "integer", "minimum": 0},
+        "error_count": {"type": "integer", "minimum": 0},
+        "skipped_count": {"type": "integer", "minimum": 0},
+        "runner_output": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
     "execution_error": {"type": ["object", "null"]},
     "boundary": {
       "type": "object",
