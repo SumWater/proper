@@ -189,3 +189,17 @@ Do not implement a model runner first. Begin with:
 
 Only after those artifacts are reviewed should the five-condition development
 runner be prepared and frozen.
+
+## Current gate after the remote tau3 CPU screen
+
+The protocol-v2 remote tau3 screen passed at run
+`20260801T094645Z-amax-43381b2a1295`; its frozen envelope remains development
+scripted evidence only. The next versioned stage is
+`five_condition_development_protocol.md` and its CPU-only preparation contract.
+
+That preparation uses the original 12 model-exposed ToolSandbox pairs for a
+same-start development regression and adds
+`proper_v2_3_full_ledger_controller` as the fifth condition. Tau3 pairs are not
+mixed into that comparison. Preparation validation still authorizes no model
+runner or GPU use; a separate guarded runner must be implemented, reviewed,
+and frozen in a later commit before any model execution.

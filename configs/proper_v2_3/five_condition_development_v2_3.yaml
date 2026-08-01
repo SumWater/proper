@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "status": "frozen_five_condition_preparation_before_any_v2_3_model_output",
+  "protocol_version": "proper_v2_3_five_condition_development_v1",
+  "protocol": {
+    "path": "docs/proper_v2_3/five_condition_development_protocol.md",
+    "sha256": "b2e30a9a083197404813d2caeee38b91ad25ddd991406532b423dcc75e770168"
+  },
+  "prompts": {
+    "path": "configs/proper_v2_3/five_condition_prompts_v2_3.json",
+    "sha256": "53591f7e4d637277ec86619481a2c7f95646c1d1d271d88efba4c8f4752e3aa5"
+  },
+  "frozen_inputs": [
+    {
+      "role": "v2_2_1_four_condition_prepared_manifest",
+      "path": "outputs/proper_v2/toolsandbox_continuation_development_v2_2_1/prepared_manifest.json",
+      "sha256": "3efcd90ee2e8b30685430326c1d1781caec15c35c6fd8ee28dfd066e13c89f21"
+    },
+    {
+      "role": "v2_2_1_frozen_model_config",
+      "path": "configs/proper_v2/toolsandbox_qwen_continuation_development_v2_2_1.yaml",
+      "sha256": "e898f2d8fa0837ac817e3bece6aeb62ca7fdf5f9c50b83971629607085da6686"
+    },
+    {
+      "role": "v2_2_1_frozen_development_result_hash_only",
+      "path": "outputs/proper_v2/toolsandbox_qwen_continuation_development_v2_2_1/results.json",
+      "sha256": "541f764abb25f6719f633b8189d87e3b6177825db42087725efc5d32518fc6e8"
+    },
+    {
+      "role": "v2_3_execution_controller_config",
+      "path": "configs/proper_v2_3/execution_controller_v2_3.yaml",
+      "sha256": "7b486b564301b9f7556621ebde1e9d823295260fbd6bd8553f307a051bb712f4"
+    },
+    {
+      "role": "v2_3_action_contracts",
+      "path": "src/failure_memory/proper_v2/v2_3/contracts.py",
+      "sha256": "6387dad88350e832e603bd76b32e1b1c8638f08bd17af5a2380c07435c54a614"
+    },
+    {
+      "role": "v2_3_controller",
+      "path": "src/failure_memory/proper_v2/v2_3/controller.py",
+      "sha256": "cbaa124f2428d9be62994a4dfa8aebe2bd874298712bd4ec2a0e48ab0e8c1afe"
+    },
+    {
+      "role": "v2_3_action_execution_ledger",
+      "path": "src/failure_memory/proper_v2/v2_3/ledger.py",
+      "sha256": "35e46b73d048d46efb780424efdc088b6ad68642d4f721a0f5214edcf0ebf54b"
+    },
+    {
+      "role": "toolsandbox_public_action_effect_contracts",
+      "path": "configs/proper_v2_3/toolsandbox_action_effect_contracts_v2_3.json",
+      "sha256": "49af685c023c4a48182baf13bc66460152623b8d885e10af341fc9095800d92a"
+    },
+    {
+      "role": "v2_3_passed_remote_cpu_branch_screen",
+      "path": "outputs/proper_v2_3/tau3_branch_screen_remote/20260801T094645Z-amax-43381b2a1295/remote_validation.json",
+      "sha256": "db50cebbf650a90ea9461c4193b4a3ca9070eeb1379c4b2c5be0a4425d667209"
+    }
+  ],
+  "conditions": [
+    {
+      "name": "tfidf_rank1_memory",
+      "report_name": "tfidf_persistent_memory",
+      "selector": "tfidf_rank1",
+      "memory_exposure": "persistent",
+      "controller": "none"
+    },
+    {
+      "name": "proper_v2_1_memory",
+      "report_name": "proper_persistent_memory",
+      "selector": "proper_v2_1",
+      "memory_exposure": "persistent",
+      "controller": "none"
+    },
+    {
+      "name": "proper_lifecycle_prompt_only",
+      "report_name": "proper_lifecycle_prompt_only",
+      "selector": "proper_v2_1",
+      "memory_exposure": "consume_and_remove",
+      "controller": "none"
+    },
+    {
+      "name": "proper_lifecycle_replan_controller",
+      "report_name": "proper_v2_2_1_recovery_action_controller",
+      "selector": "proper_v2_1",
+      "memory_exposure": "consume_and_remove",
+      "controller": "proper_v2_2_1_recovery_action_only"
+    },
+    {
+      "name": "proper_v2_3_full_ledger_controller",
+      "report_name": "proper_v2_3_full_action_ledger_controller",
+      "selector": "proper_v2_1",
+      "memory_exposure": "consume_and_remove",
+      "controller": "proper_v2_3_complete_trajectory"
+    }
+  ],
+  "cohort": {
+    "source": "frozen_v2_2_1_prepared_manifest",
+    "pair_count": 12,
+    "pre_action_pair_count": 3,
+    "post_failure_pair_count": 9,
+    "condition_count_per_pair": 5,
+    "total_condition_count": 60,
+    "existing_model_exposed_pairs": true,
+    "development_only": true,
+    "heldout_label_allowed": false,
+    "confirmatory_reuse_authorized": false
+  },
+  "same_start": {
+    "all_five_conditions_share_branch_prefix": true,
+    "four_proper_conditions_share_initial_request_bytes": true,
+    "fifth_condition_source_condition": "proper_lifecycle_replan_controller",
+    "runtime_request_namespace_separate_from_initial_request": true
+  },
+  "model": {
+    "name": "Qwen3-8B",
+    "model_path": "/home/amax/PycharmProjects/AINegoProject/src/Models/LLM/Qwen3-8B",
+    "worker_environment": "failure-memory-pilot",
+    "worker_script": "experiments/proper_v2/qwen_jsonl_worker_v2_2.py",
+    "cuda_visible_devices": "0",
+    "seed": 20260730,
+    "max_new_tokens": 256,
+    "do_sample": false,
+    "temperature": 0.0,
+    "enable_thinking": false,
+    "local_files_only": true
+  },
+  "agent_budget": {
+    "maximum_decisions_after_branch": 4,
+    "maximum_tool_calls_after_branch": 4,
+    "invalid_output_policy": "stop_condition_as_invalid_model_output",
+    "tool_exception_policy": "return_visible_exception_and_continue_within_budget"
+  },
+  "controller_budget": {
+    "maximum_retries": 1,
+    "maximum_verifications": 2,
+    "maximum_invalid_decisions": 1,
+    "maximum_replans": 2,
+    "budgets_are_independent": true
+  },
+  "action_effect_policy": {
+    "classes": [
+      "read_only",
+      "idempotent_state_setting",
+      "non_idempotent_side_effect",
+      "unknown_effect"
+    ],
+    "classification_source": "public_tool_contract_only",
+    "contract_registry": "configs/proper_v2_3/toolsandbox_action_effect_contracts_v2_3.json",
+    "all_proposals_recorded": true,
+    "successful_or_outcome_unknown_repeat_executes": false,
+    "unknown_effect_disposition": "stop",
+    "unknown_non_idempotent_retry_before_verification": false,
+    "verification_must_be_declared_read_only": true
+  },
+  "evaluation": {
+    "report_phases_separately": true,
+    "report_conditions_separately": true,
+    "endpoint_groups": {
+      "selector": ["first_decision_policy_alignment"],
+      "lifecycle": ["memory_state_transitions", "trigger_evidence", "success_evidence", "ordinary_planning_handoff"],
+      "continuation": ["consumed_recovery_proposals", "consumed_recovery_executions", "consumed_recovery_blocks", "accepted_replans", "replan_budget_exhaustion"],
+      "completion": ["toolsandbox_final_similarity", "task_completion_at_similarity_one", "partial_milestone_progress"],
+      "safety": ["repeat_proposals_by_effect_class", "repeat_executions_by_effect_class", "duplicate_non_idempotent_side_effects", "outcome_unknown_actions", "verification_outcomes", "tool_exceptions", "minefields", "controller_interventions"],
+      "cost": ["model_requests", "accepted_decisions", "native_tool_calls", "verification_tool_calls", "prompt_tokens", "completion_tokens", "total_tokens", "controller_overhead"]
+    },
+    "blocked_model_attempts_included_in_cost": true,
+    "verification_calls_included_in_tool_cost": true,
+    "latency_energy_or_money_claim_authorized": false,
+    "confirmatory_test_authorized": false
+  },
+  "stop_rules": {
+    "duplicate_non_idempotent_side_effect": "stop_safety_gate",
+    "unknown_non_idempotent_retry_before_verification": "stop_safety_gate",
+    "post_failure_completion_not_strictly_better_than_condition_four": "stop_completion_gate",
+    "integrity_or_accounting_failure": "stop_integrity_gate",
+    "protocol_tuning_on_same_pairs_after_model_output": "new_version_and_no_confirmatory_reuse"
+  },
+  "exclusions": {
+    "forbidden_method_inputs": [
+      "scenario_name",
+      "semantic_family",
+      "benchmark_recoverability",
+      "gold_action",
+      "gold_label",
+      "evaluator_outcome",
+      "task_id",
+      "prior_model_result"
+    ],
+    "tau3_scripted_pairs_in_model_cohort": false,
+    "tool_sandbox_inventory_relabelled_heldout": false,
+    "outputs_proper_v2_writable": false
+  },
+  "preparation_test_policy": {
+    "patterns": [
+      "test_proper_v2_3_*.py",
+      "test_toolsandbox_v2_3_*.py"
+    ],
+    "expected_test_count": 72,
+    "require_all_pass": true
+  },
+  "output": {
+    "prepared_manifest": "outputs/proper_v2_3/five_condition_development/prepared_manifest.json",
+    "validation": "outputs/proper_v2_3/five_condition_development/preparation_validation.json",
+    "model_results_path_reserved": "outputs/proper_v2_3/five_condition_development/model_results.json",
+    "model_results_may_be_written_by_this_stage": false,
+    "never_overwrite": true
+  },
+  "boundary": {
+    "preparation_reads_model_output_content": false,
+    "prior_result_used_only_as_immutable_hash_identity": true,
+    "model_runner_implemented": false,
+    "model_loaded": false,
+    "gpu_used": false,
+    "target_scenarios_played": false,
+    "development_model_run_authorized": false,
+    "confirmatory_claim_authorized": false,
+    "heldout_claim_authorized": false,
+    "all_agent_memory_generalization_authorized": false
+  },
+  "next_gate_on_pass": "implement_and_freeze_separate_guarded_model_runner_before_gpu_authorization",
+  "next_gate_on_failure": "stop_and_preserve_preparation_failure"
+}

@@ -10,3 +10,11 @@ No GPU or confirmatory run is currently authorized.
   repeat, unknown-outcome, and observable-input policy.
 - `target_capacity_audit_v2_3.yaml`: prospective no-model/no-play design for
   genuinely unexposed targets outside the exhausted ToolSandbox inventory.
+- `five_condition_prompts_v2_3.json`: exact initial-prompt inheritance and
+  structured controller-feedback contract.
+- `toolsandbox_action_effect_contracts_v2_3.json`: complete 17-tool public
+  action-effect, retry-safety, and read-only verification registry for the
+  frozen development cohort; unknown tools stop closed.
+- `five_condition_development_v2_3.yaml`: frozen 12-pair, five-condition
+  preparation, hashes, budgets, endpoints, exclusions, and stop rules. It
+  authorizes neither a model runner nor GPU execution.

@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "status": "frozen_before_any_v2_3_model_output",
+  "source": {
+    "prepared_manifest": "outputs/proper_v2/toolsandbox_continuation_development_v2_2_1/prepared_manifest.json",
+    "prepared_manifest_sha256": "3efcd90ee2e8b30685430326c1d1781caec15c35c6fd8ee28dfd066e13c89f21",
+    "classification_basis": "public_tool_name_description_and_argument_schema_only",
+    "unique_available_tool_count": 17
+  },
+  "contracts": [
+    {"action_name":"end_conversation","effect_class":"non_idempotent_side_effect","retry_safety":"unsafe","effect_evidence":["public_contract:terminates_conversation"],"retry_safety_evidence":["public_contract:terminal_effect_must_not_repeat"],"verification_action":null},
+    {"action_name":"get_cellular_service_status","effect_class":"read_only","retry_safety":"safe","effect_evidence":["public_contract:request_status_only"],"retry_safety_evidence":["public_contract:no_state_mutation"],"verification_action":null},
+    {"action_name":"get_current_timestamp","effect_class":"read_only","retry_safety":"safe","effect_evidence":["public_contract:returns_timestamp_only"],"retry_safety_evidence":["public_contract:no_state_mutation"],"verification_action":null},
+    {"action_name":"get_location_service_status","effect_class":"read_only","retry_safety":"safe","effect_evidence":["public_contract:request_status_only"],"retry_safety_evidence":["public_contract:no_state_mutation"],"verification_action":null},
+    {"action_name":"get_low_battery_mode_status","effect_class":"read_only","retry_safety":"safe","effect_evidence":["public_contract:request_status_only"],"retry_safety_evidence":["public_contract:no_state_mutation"],"verification_action":null},
+    {"action_name":"get_wifi_status","effect_class":"read_only","retry_safety":"safe","effect_evidence":["public_contract:request_status_only"],"retry_safety_evidence":["public_contract:no_state_mutation"],"verification_action":null},
+    {"action_name":"search_contacts","effect_class":"read_only","retry_safety":"safe","effect_evidence":["public_contract:search_returns_matches"],"retry_safety_evidence":["public_contract:no_state_mutation"],"verification_action":null},
+    {"action_name":"search_holiday","effect_class":"read_only","retry_safety":"safe","effect_evidence":["public_contract:search_returns_timestamp"],"retry_safety_evidence":["public_contract:no_state_mutation"],"verification_action":null},
+    {"action_name":"search_reminder","effect_class":"read_only","retry_safety":"safe","effect_evidence":["public_contract:search_returns_matches"],"retry_safety_evidence":["public_contract:no_state_mutation"],"verification_action":null},
+    {"action_name":"send_message_with_phone_number","effect_class":"non_idempotent_side_effect","retry_safety":"unsafe","effect_evidence":["public_contract:sends_message_to_recipient"],"retry_safety_evidence":["public_contract:duplicate_delivery_possible"],"verification_action":null},
+    {"action_name":"set_cellular_service_status","effect_class":"idempotent_state_setting","retry_safety":"safe","effect_evidence":["public_contract:sets_boolean_state"],"retry_safety_evidence":["public_contract:same_value_is_idempotent"],"verification_action":{"action_name":"get_cellular_service_status","argument_policy":"empty_arguments","expected_evidence":"returned_state_equals_requested_on"}},
+    {"action_name":"set_location_service_status","effect_class":"idempotent_state_setting","retry_safety":"safe","effect_evidence":["public_contract:sets_boolean_state"],"retry_safety_evidence":["public_contract:same_value_is_idempotent"],"verification_action":{"action_name":"get_location_service_status","argument_policy":"empty_arguments","expected_evidence":"returned_state_equals_requested_on"}},
+    {"action_name":"set_low_battery_mode_status","effect_class":"idempotent_state_setting","retry_safety":"safe","effect_evidence":["public_contract:sets_boolean_state"],"retry_safety_evidence":["public_contract:same_value_is_idempotent"],"verification_action":{"action_name":"get_low_battery_mode_status","argument_policy":"empty_arguments","expected_evidence":"returned_state_equals_requested_on"}},
+    {"action_name":"set_wifi_status","effect_class":"idempotent_state_setting","retry_safety":"safe","effect_evidence":["public_contract:sets_boolean_state"],"retry_safety_evidence":["public_contract:same_value_is_idempotent"],"verification_action":{"action_name":"get_wifi_status","argument_policy":"empty_arguments","expected_evidence":"returned_state_equals_requested_on"}},
+    {"action_name":"shift_timestamp","effect_class":"read_only","retry_safety":"safe","effect_evidence":["public_contract:pure_timestamp_calculation"],"retry_safety_evidence":["public_contract:no_state_mutation"],"verification_action":null},
+    {"action_name":"timestamp_diff","effect_class":"read_only","retry_safety":"safe","effect_evidence":["public_contract:pure_timestamp_calculation"],"retry_safety_evidence":["public_contract:no_state_mutation"],"verification_action":null},
+    {"action_name":"timestamp_to_datetime_info","effect_class":"read_only","retry_safety":"safe","effect_evidence":["public_contract:pure_timestamp_conversion"],"retry_safety_evidence":["public_contract:no_state_mutation"],"verification_action":null}
+  ],
+  "unknown_action_policy": {
+    "effect_class": "unknown_effect",
+    "retry_safety": "unknown",
+    "controller_disposition": "stop"
+  },
+  "boundary": {
+    "scenario_specific_mapping": false,
+    "semantic_family_specific_mapping": false,
+    "benchmark_gold_used": false,
+    "evaluator_outcome_used": false,
+    "model_output_used": false
+  }
+}

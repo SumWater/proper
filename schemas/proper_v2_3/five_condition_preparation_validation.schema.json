@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://proper.local/schemas/proper_v2_3/five_condition_preparation_validation.schema.json",
+  "type": "object",
+  "required": ["schema_version", "run_kind", "passed", "prepared_manifest_path", "prepared_manifest_sha256", "manifest_schema_validation", "tests", "boundary", "next_gate"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "run_kind": {"const": "proper_v2_3_five_condition_preparation_validation"},
+    "passed": {"type": "boolean"},
+    "prepared_manifest_path": {"const": "outputs/proper_v2_3/five_condition_development/prepared_manifest.json"},
+    "prepared_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "manifest_schema_validation": {
+      "type": "object",
+      "required": ["passed", "draft", "validator"],
+      "properties": {
+        "passed": {"type": "boolean"},
+        "draft": {"const": "2020-12"},
+        "validator": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "tests": {
+      "type": "object",
+      "required": ["passed", "patterns", "expected_test_count", "tests_run", "test_count_matches_contract", "failures", "errors", "skipped", "runner_output"],
+      "properties": {
+        "passed": {"type": "boolean"},
+        "patterns": {"const": ["test_proper_v2_3_*.py", "test_toolsandbox_v2_3_*.py"]},
+        "expected_test_count": {"const": 72},
+        "tests_run": {"type": "integer", "minimum": 0},
+        "test_count_matches_contract": {"type": "boolean"},
+        "failures": {"type": "integer", "minimum": 0},
+        "errors": {"type": "integer", "minimum": 0},
+        "skipped": {"type": "integer", "minimum": 0},
+        "runner_output": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "boundary": {
+      "type": "object",
+      "required": ["model_runner_implemented", "model_loaded", "gpu_used", "target_scenarios_played", "development_model_run_authorized", "confirmatory_claim_authorized", "new_heldout_target_capacity"],
+      "properties": {
+        "model_runner_implemented": {"const": false},
+        "model_loaded": {"const": false},
+        "gpu_used": {"const": false},
+        "target_scenarios_played": {"const": false},
+        "development_model_run_authorized": {"const": false},
+        "confirmatory_claim_authorized": {"const": false},
+        "new_heldout_target_capacity": {"const": 0}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"enum": ["implement_and_freeze_separate_guarded_model_runner_before_gpu_authorization", "stop_and_preserve_preparation_failure"]}
+  },
+  "additionalProperties": false
+}

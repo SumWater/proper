@@ -1,0 +1,182 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://proper.local/schemas/proper_v2_3/five_condition_manifest.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "run_kind",
+    "status",
+    "config_sha256",
+    "protocol_sha256",
+    "prompts_sha256",
+    "input_hash_checks",
+    "conditions",
+    "cohort",
+    "preparation_checks",
+    "records",
+    "boundary",
+    "next_gate"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "run_kind": {"const": "proper_v2_3_five_condition_prepared_manifest"},
+    "status": {"enum": ["passed", "failed"]},
+    "config_sha256": {"$ref": "#/$defs/sha256"},
+    "protocol_sha256": {"$ref": "#/$defs/sha256"},
+    "prompts_sha256": {"$ref": "#/$defs/sha256"},
+    "input_hash_checks": {
+      "type": "array",
+      "minItems": 10,
+      "items": {
+        "type": "object",
+        "required": ["role", "path", "expected_sha256", "actual_sha256", "passed"],
+        "properties": {
+          "role": {"type": "string", "minLength": 1},
+          "path": {"type": "string", "minLength": 1},
+          "expected_sha256": {"$ref": "#/$defs/sha256"},
+          "actual_sha256": {"$ref": "#/$defs/sha256"},
+          "passed": {"type": "boolean"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "conditions": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "prefixItems": [
+        {"$ref": "#/$defs/tfidfCondition"},
+        {"$ref": "#/$defs/properPersistentCondition"},
+        {"$ref": "#/$defs/promptOnlyCondition"},
+        {"$ref": "#/$defs/v221Condition"},
+        {"$ref": "#/$defs/v23Condition"}
+      ],
+      "items": false
+    },
+    "cohort": {
+      "type": "object",
+      "required": ["pair_count", "pre_action_pair_count", "post_failure_pair_count", "condition_count_per_pair", "total_condition_count"],
+      "properties": {
+        "pair_count": {"const": 12},
+        "pre_action_pair_count": {"const": 3},
+        "post_failure_pair_count": {"const": 9},
+        "condition_count_per_pair": {"const": 5},
+        "total_condition_count": {"const": 60}
+      },
+      "additionalProperties": false
+    },
+    "preparation_checks": {
+      "type": "object",
+      "required": [
+        "all_input_hashes_match",
+        "source_pair_count_matches",
+        "phase_counts_match",
+        "five_conditions_per_pair",
+        "source_four_conditions_unchanged",
+        "proper_initial_requests_byte_identical",
+        "fifth_memory_matches_condition_four",
+        "fifth_controller_is_full_trajectory",
+        "forbidden_method_inputs_absent_from_fifth_condition",
+        "no_model_output_content_read",
+        "ready_for_runner_implementation"
+      ],
+      "additionalProperties": {"type": "boolean"}
+    },
+    "records": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12,
+      "items": {"$ref": "#/$defs/record"}
+    },
+    "boundary": {
+      "type": "object",
+      "required": ["development_only", "existing_model_exposed_pairs", "model_runner_implemented", "model_loaded", "gpu_used", "target_scenarios_played", "development_model_run_authorized", "confirmatory_claim_authorized", "heldout_claim_authorized", "new_heldout_target_capacity"],
+      "properties": {
+        "development_only": {"const": true},
+        "existing_model_exposed_pairs": {"const": true},
+        "model_runner_implemented": {"const": false},
+        "model_loaded": {"const": false},
+        "gpu_used": {"const": false},
+        "target_scenarios_played": {"const": false},
+        "development_model_run_authorized": {"const": false},
+        "confirmatory_claim_authorized": {"const": false},
+        "heldout_claim_authorized": {"const": false},
+        "new_heldout_target_capacity": {"const": 0}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"enum": ["implement_and_freeze_separate_guarded_model_runner_before_gpu_authorization", "stop_and_preserve_preparation_failure"]}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "conditionBase": {
+      "type": "object",
+      "required": ["name", "report_name", "selector", "memory_exposure", "controller"],
+      "properties": {
+        "name": {"type": "string"},
+        "report_name": {"type": "string"},
+        "selector": {"enum": ["tfidf_rank1", "proper_v2_1"]},
+        "memory_exposure": {"enum": ["persistent", "consume_and_remove"]},
+        "controller": {"enum": ["none", "proper_v2_2_1_recovery_action_only", "proper_v2_3_complete_trajectory"]}
+      },
+      "additionalProperties": false
+    },
+    "tfidfCondition": {"allOf": [{"$ref": "#/$defs/conditionBase"}, {"properties": {"name": {"const": "tfidf_rank1_memory"}}}]},
+    "properPersistentCondition": {"allOf": [{"$ref": "#/$defs/conditionBase"}, {"properties": {"name": {"const": "proper_v2_1_memory"}}}]},
+    "promptOnlyCondition": {"allOf": [{"$ref": "#/$defs/conditionBase"}, {"properties": {"name": {"const": "proper_lifecycle_prompt_only"}}}]},
+    "v221Condition": {"allOf": [{"$ref": "#/$defs/conditionBase"}, {"properties": {"name": {"const": "proper_lifecycle_replan_controller"}}}]},
+    "v23Condition": {"allOf": [{"$ref": "#/$defs/conditionBase"}, {"properties": {"name": {"const": "proper_v2_3_full_ledger_controller"}}}]},
+    "record": {
+      "type": "object",
+      "required": ["pair_id", "decision_phase", "branch_prefix_recipe", "conditions"],
+      "properties": {
+        "pair_id": {"type": "string", "minLength": 1},
+        "decision_phase": {"enum": ["pre_action", "post_failure"]},
+        "branch_prefix_recipe": {"type": "object"},
+        "conditions": {
+          "type": "object",
+          "required": ["tfidf_rank1_memory", "proper_v2_1_memory", "proper_lifecycle_prompt_only", "proper_lifecycle_replan_controller", "proper_v2_3_full_ledger_controller"],
+          "properties": {
+            "tfidf_rank1_memory": {"type": "object"},
+            "proper_v2_1_memory": {"type": "object"},
+            "proper_lifecycle_prompt_only": {"type": "object"},
+            "proper_lifecycle_replan_controller": {"type": "object"},
+            "proper_v2_3_full_ledger_controller": {
+              "type": "object",
+              "required": ["source_condition", "experience_id", "memory", "initial_request", "initial_request_sha256", "runtime_request_namespace", "intervention"],
+              "properties": {
+                "source_condition": {"const": "proper_v2_1_memory"},
+                "experience_id": {"type": "string"},
+                "memory": {"type": "object"},
+                "initial_request": {"type": "object"},
+                "initial_request_sha256": {"$ref": "#/$defs/sha256"},
+                "runtime_request_namespace": {"type": "string", "minLength": 1},
+                "intervention": {
+                  "type": "object",
+                  "required": ["report_name", "selector", "memory_exposure", "continuation_controller", "execution_controller", "complete_trajectory_ledger", "observable_input_only", "effect_contract_source", "controller_budget", "forbidden_method_inputs"],
+                  "properties": {
+                    "report_name": {"const": "proper_v2_3_full_action_ledger_controller"},
+                    "selector": {"const": "proper_v2_1"},
+                    "memory_exposure": {"const": "consume_and_remove"},
+                    "continuation_controller": {"const": true},
+                    "execution_controller": {"const": "proper_v2_3_complete_trajectory"},
+                    "complete_trajectory_ledger": {"const": true},
+                    "observable_input_only": {"const": true},
+                    "effect_contract_source": {"const": "public_tool_contract_only"},
+                    "controller_budget": {"type": "object"},
+                    "forbidden_method_inputs": {"type": "array", "minItems": 8, "items": {"type": "string"}}
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

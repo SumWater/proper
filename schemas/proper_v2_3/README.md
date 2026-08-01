@@ -8,3 +8,7 @@ decision, and version-specific result schemas. Frozen schemas under
   executed, succeeded, failed, and outcome-unknown records.
 - `controller_decision.schema.json`: unified allow/verify/replan/stop decision
   and independent remaining budgets.
+- `five_condition_manifest.schema.json`: frozen 12x5 prepared-manifest and
+  fifth-condition observable-ledger contract.
+- `five_condition_preparation_validation.schema.json`: closed CPU preparation
+  validation envelope with 72-test and no-model authorization boundaries.
