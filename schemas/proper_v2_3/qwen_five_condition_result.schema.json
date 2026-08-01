@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://proper.local/schemas/proper_v2_3/qwen_five_condition_result.schema.json",
+  "type": "object",
+  "required": ["schema_version", "run_kind", "run_id", "runtime", "smoke_pair_id", "smoke_passed", "full_development_completed", "stage_gate_passed", "records", "model_request_log", "boundary"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "run_kind": {"enum": ["proper_v2_3_toolsandbox_qwen_five_condition_development", "proper_v2_3_qwen_five_condition_smoke_stopped"]},
+    "run_id": {"type": "string", "minLength": 20},
+    "runtime": {"type": "object"},
+    "smoke_pair_id": {"const": "toolsandbox-v2-1-01"},
+    "smoke_passed": {"type": "boolean"},
+    "full_development_completed": {"type": "boolean"},
+    "stage_gate_passed": {"type": "boolean"},
+    "stop_reason": {"type": "string"},
+    "stop_reasons": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "identities": {"type": "object"},
+    "summary": {"type": "object"},
+    "records": {"type": "array", "minItems": 1, "maxItems": 12},
+    "model_request_log": {"type": "array"},
+    "model_protocol": {"type": "object"},
+    "boundary": {"type": "object"},
+    "interpretation_limits": {"type": "object"}
+  },
+  "additionalProperties": false
+}

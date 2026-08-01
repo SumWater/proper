@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "status": "frozen_before_any_v2_3_qwen_output",
+  "protocol_version": "proper_v2_3_qwen_five_condition_development_v1",
+  "frozen_inputs": [
+    {"role":"guarded_runner_cpu_validation","path":"outputs/proper_v2_3/guarded_runner_validation_remote/20260801T112852Z-amax-7aa3f0256e0d/guarded_runner_validation.json","sha256":"88a4a0750c05c6ab46272c9383ad609228d0c1c5b17f28445e44982fd30d7f22"},
+    {"role":"engine_config","path":"outputs/proper_v2_3/guarded_runner_validation_remote/20260801T112852Z-amax-7aa3f0256e0d/engine_config.json","sha256":"9e306e4851ffca9c2a63d73f49ab4ddee1c35de19e7987925ce6c5ae98b08a2c"},
+    {"role":"five_condition_protocol","path":"configs/proper_v2_3/five_condition_development_v2_3.yaml","sha256":"fe092f1e9d4d089ed58c8991ace579f4736e6ce717fff5f719fe99c620d8fcec"},
+    {"role":"prompts","path":"configs/proper_v2_3/five_condition_prompts_v2_3.json","sha256":"53591f7e4d637277ec86619481a2c7f95646c1d1d271d88efba4c8f4752e3aa5"},
+    {"role":"effect_registry","path":"configs/proper_v2_3/toolsandbox_action_effect_contracts_v2_3.json","sha256":"49af685c023c4a48182baf13bc66460152623b8d885e10af341fc9095800d92a"},
+    {"role":"lifecycle_config","path":"configs/proper_v2/toolsandbox_continuation_development_v2_2_1.yaml","sha256":"6811381ac50ccd426fb0d156c7b420aec4d9c0b28f536f6977fba56f12800842"},
+    {"role":"execution_engine","path":"experiments/proper_v2/toolsandbox_model_pilot_runner_validation_v2_1.py","sha256":"a45a27ab5ba8b624f9fa4e3fa4b1791519a4284bbe4dc465bdd89cfe6c20a051"},
+    {"role":"qwen_worker","path":"experiments/proper_v2/qwen_jsonl_worker_v2_2.py","sha256":"5f3c18aef4141a0751542c907b5595ec6bc3efadd9f6d9f7a1ddf7a402975753"},
+    {"role":"v2_3_adapter","path":"experiments/proper_v2_3/toolsandbox_five_condition_runner_adapter_v2_3.py","sha256":"1ca8ff7a593e4673e84424333e67915609c7c1c290df81946d54089ae64de817"},
+    {"role":"v2_3_provider","path":"experiments/proper_v2_3/toolsandbox_five_condition_provider_v2_3.py","sha256":"0dc840fd4c4141a1e799c560ddd4fec8c387e03690b9e6d286174a5a095bacd4"},
+    {"role":"v2_3_qwen_runner","path":"experiments/proper_v2_3/toolsandbox_qwen_five_condition_development_v2_3.py","sha256":"d2258ed31c69fecd64066ee7240549307af423dde3d8960e9008ac6ae3333f82"},
+    {"role":"v2_3_remote_launcher","path":"experiments/proper_v2_3/run_qwen_five_condition_remote_v2_3.py","sha256":"fb1be0e08714d83b7aca9d55b6ca3ef4fe4fd3198e9379eee9bc2989fc789893"},
+    {"role":"v2_3_runner_tests","path":"tests/test_toolsandbox_v2_3_qwen_runner.py","sha256":"1331245c17e7da7f5366f1c8c294fccd3275b5a91a4826ec187d83405629d352"},
+    {"role":"v2_3_result_schema","path":"schemas/proper_v2_3/qwen_five_condition_result.schema.json","sha256":"1f1aded7968e015ea026d08eb82c2205bdca8ff25bb40c553fd4d9dac58d3010"}
+  ],
+  "engine_config": {
+    "path": "outputs/proper_v2_3/guarded_runner_validation_remote/20260801T112852Z-amax-7aa3f0256e0d/engine_config.json",
+    "sha256": "9e306e4851ffca9c2a63d73f49ab4ddee1c35de19e7987925ce6c5ae98b08a2c"
+  },
+  "lifecycle_config": {
+    "path": "configs/proper_v2/toolsandbox_continuation_development_v2_2_1.yaml",
+    "sha256": "6811381ac50ccd426fb0d156c7b420aec4d9c0b28f536f6977fba56f12800842"
+  },
+  "prompts": {"path":"configs/proper_v2_3/five_condition_prompts_v2_3.json","sha256":"53591f7e4d637277ec86619481a2c7f95646c1d1d271d88efba4c8f4752e3aa5"},
+  "effect_registry": {"path":"configs/proper_v2_3/toolsandbox_action_effect_contracts_v2_3.json","sha256":"49af685c023c4a48182baf13bc66460152623b8d885e10af341fc9095800d92a"},
+  "conditions": [
+    {"name":"tfidf_rank1_memory","report_name":"tfidf_persistent_memory"},
+    {"name":"proper_v2_1_memory","report_name":"proper_persistent_memory"},
+    {"name":"proper_lifecycle_prompt_only","report_name":"proper_lifecycle_prompt_only"},
+    {"name":"proper_lifecycle_replan_controller","report_name":"proper_v2_2_1_recovery_action_controller"},
+    {"name":"proper_v2_3_full_ledger_controller","report_name":"proper_v2_3_full_action_ledger_controller"}
+  ],
+  "model": {
+    "name": "Qwen3-8B",
+    "python": "/home/amax/miniconda3/envs/failure-memory-pilot/bin/python",
+    "worker_script": "experiments/proper_v2/qwen_jsonl_worker_v2_2.py",
+    "model_path": "/home/amax/PycharmProjects/AINegoProject/src/Models/LLM/Qwen3-8B",
+    "cuda_visible_devices": "0",
+    "seed": 20260730,
+    "max_new_tokens": 256,
+    "do_sample": false,
+    "temperature": 0.0,
+    "enable_thinking": false,
+    "local_files_only": true
+  },
+  "controller_budget": {
+    "maximum_retries": 1,
+    "maximum_verifications": 2,
+    "maximum_invalid_decisions": 1,
+    "maximum_replans": 2
+  },
+  "execution": {
+    "smoke_pair_id": "toolsandbox-v2-1-01",
+    "pair_count": 12,
+    "condition_count": 60,
+    "condition_order_frozen": true,
+    "preflight_test_file": "tests/test_toolsandbox_v2_3_qwen_runner.py",
+    "preflight_test_count": 6,
+    "smoke_before_full_run": true,
+    "never_overwrite": true
+  },
+  "stop_rules": {
+    "duplicate_non_idempotent_side_effect": "stop_safety_gate",
+    "post_failure_completion_not_strictly_better_than_condition_four": "stop_completion_gate",
+    "integrity_or_accounting_failure": "stop_integrity_gate",
+    "smoke_failure": "stop_before_full_development"
+  },
+  "evaluation": {
+    "report_phases_separately": true,
+    "report_conditions_separately": true,
+    "endpoint_groups": ["selector", "lifecycle", "continuation", "completion", "safety", "cost"],
+    "blocked_model_attempts_included_in_cost": true,
+    "verification_calls_included_in_tool_cost": true,
+    "raw_toolsandbox_scores_preserved": true
+  },
+  "exclusions": {
+    "forbidden_method_inputs": ["scenario_name", "semantic_family", "benchmark_recoverability", "gold_action", "gold_label", "evaluator_outcome", "prior_model_result"],
+    "tau3_scripted_pairs_in_model_cohort": false,
+    "outputs_proper_v2_writable": false,
+    "confirmatory_reuse_authorized": false
+  },
+  "remote_execution": {
+    "execution_role": "proper_v2_3_qwen_five_condition_remote_development",
+    "require_exact_revision": true,
+    "require_clean_tracked_worktree": true
+  },
+  "output": {
+    "root": "outputs/proper_v2_3/qwen_five_condition_development_remote",
+    "never_overwrite": true
+  },
+  "boundary": {
+    "local_model_only": true,
+    "external_api_called": false,
+    "existing_model_exposed_pairs": true,
+    "development_only": true,
+    "development_model_run_authorized": true,
+    "confirmatory_claim_authorized": false,
+    "heldout_claim_authorized": false,
+    "all_agent_memory_generalization_authorized": false,
+    "protocol_tuning_after_output_authorized": false
+  },
+  "interpretation_limits": {
+    "v1_confirmatory_evidence_unchanged": true,
+    "v2_3_pairs_are_development_only": true,
+    "selector_lifecycle_continuation_completion_safety_cost_reported_separately": true,
+    "blocked_model_attempts_included_in_cost": true,
+    "negative_results_must_be_preserved": true,
+    "confirmatory_claim_not_authorized": true,
+    "heldout_claim_not_authorized": true,
+    "all_agent_memory_generalization_not_authorized": true
+  }
+}

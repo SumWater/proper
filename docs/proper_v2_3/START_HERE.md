@@ -219,3 +219,11 @@ tests passed, with 13 duplicate proposals blocked and zero duplicate
 non-idempotent executions. The current task is now to freeze the separate Qwen
 development runner, its exact input hashes, reporting endpoints, stop rules,
 and one-shot remote command before any v2.3 model output is generated.
+
+The Qwen runner is now defined by
+`toolsandbox_qwen_five_condition_development_v2_3.json` and
+`qwen_five_condition_development_handoff.md`. Its 14 direct inputs, five
+condition order, deterministic model settings, six endpoint groups, exclusions,
+independent budgets, smoke gate, and safety/completion/integrity stops are
+fixed before model output. The next permitted action is its one-shot remote
+development command; changing this protocol after that output is not allowed.

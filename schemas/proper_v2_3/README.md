@@ -14,3 +14,5 @@ decision, and version-specific result schemas. Frozen schemas under
   validation envelope with 72-test and no-model authorization boundaries.
 - `guarded_runner_validation.schema.json`: closed scripted integration result
   with an 80-test contract and explicit no-model/no-GPU boundary.
+- `qwen_five_condition_result.schema.json`: top-level smoke or complete Qwen
+  development-result envelope; partial smoke failures remain serializable.

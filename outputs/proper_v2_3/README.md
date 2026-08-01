@@ -87,3 +87,11 @@ Remote run `20260801T112852Z-amax-7aa3f0256e0d` passed at remote revision
 This is scripted runner evidence, not model completion or confirmatory
 evidence. It authorizes freezing a separate Qwen development runner but does
 not itself constitute a Qwen run.
+
+## Pending Qwen five-condition development
+
+The frozen Qwen runner will write one unique result directory under
+`qwen_five_condition_development_remote/`. No v2.3 model result exists at the
+time of this protocol freeze. Smoke failures and completed negative stage
+gates must be retained; this development run cannot create a held-out or
+confirmatory claim.

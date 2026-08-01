@@ -26,6 +26,10 @@ command.
   validation with deliberate successful-action repeat proposals.
 - `run_guarded_runner_validation_remote_v2_3.py`: one-command CPU entry using
   the active remote `proper-toolsandbox` Python environment.
+- `toolsandbox_qwen_five_condition_development_v2_3.py`: frozen 12x5 Qwen
+  runner with endpoint-separated reporting and safety/completion stops.
+- `run_qwen_five_condition_remote_v2_3.py`: CPU preflight followed by one GPU
+  smoke and, only on smoke success, the remaining development pairs.
 
 Preparation schema/validation protocol v2 preserves the failed fixed-path v1
 manifest and writes every subsequent attempt to a unique run directory.
