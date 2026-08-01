@@ -5,6 +5,7 @@
   "required": [
     "schema_version",
     "run_kind",
+    "run_id",
     "status",
     "config_sha256",
     "protocol_sha256",
@@ -18,8 +19,9 @@
     "next_gate"
   ],
   "properties": {
-    "schema_version": {"const": 1},
-    "run_kind": {"const": "proper_v2_3_five_condition_prepared_manifest"},
+    "schema_version": {"const": 2},
+    "run_kind": {"const": "proper_v2_3_five_condition_prepared_manifest_v2"},
+    "run_id": {"type": "string", "minLength": 12},
     "status": {"enum": ["passed", "failed"]},
     "config_sha256": {"$ref": "#/$defs/sha256"},
     "protocol_sha256": {"$ref": "#/$defs/sha256"},
@@ -132,7 +134,7 @@
       "properties": {
         "pair_id": {"type": "string", "minLength": 1},
         "decision_phase": {"enum": ["pre_action", "post_failure"]},
-        "branch_prefix_recipe": {"type": "object"},
+        "branch_prefix_recipe": {"type": ["object", "null"]},
         "conditions": {
           "type": "object",
           "required": ["tfidf_rank1_memory", "proper_v2_1_memory", "proper_lifecycle_prompt_only", "proper_lifecycle_replan_controller", "proper_v2_3_full_ledger_controller"],

@@ -71,7 +71,10 @@ def fifth_condition(record: Mapping[str, Any], config: Mapping[str, Any]) -> dic
     return source
 
 
-def prepare(config_path: Path = DEFAULT_CONFIG) -> dict[str, Any]:
+def prepare(
+    config_path: Path = DEFAULT_CONFIG,
+    run_id: str = "static-preparation-validation",
+) -> dict[str, Any]:
     config = load_object(config_path)
     if config["status"] != "frozen_five_condition_preparation_before_any_v2_3_model_output":
         raise RuntimeError("five-condition preparation config is not frozen")
@@ -133,8 +136,9 @@ def prepare(config_path: Path = DEFAULT_CONFIG) -> dict[str, Any]:
     ready = all(value for key, value in checks.items() if key != "ready_for_runner_implementation")
     checks["ready_for_runner_implementation"] = ready
     result = {
-        "schema_version": 1,
-        "run_kind": "proper_v2_3_five_condition_prepared_manifest",
+        "schema_version": 2,
+        "run_kind": "proper_v2_3_five_condition_prepared_manifest_v2",
+        "run_id": run_id,
         "status": "passed" if ready else "failed",
         "config_sha256": sha256(config_path),
         "protocol_sha256": config["protocol"]["sha256"],
@@ -174,10 +178,13 @@ def main() -> int:
     args = parser.parse_args()
     config_path = args.config.resolve()
     config = load_object(config_path)
-    output = (args.output or (ROOT / config["output"]["prepared_manifest"])).resolve()
+    output = (args.output or (
+        ROOT / config["output"]["root"] / "manual-preparation" /
+        config["output"]["prepared_manifest_name"]
+    )).resolve()
     if output.exists() and config["output"]["never_overwrite"]:
         raise FileExistsError(f"refusing to overwrite prepared manifest: {output}")
-    result = prepare(config_path)
+    result = prepare(config_path, run_id="manual-preparation")
     write_result(result, output)
     print(json.dumps({"status": result["status"], "pairs": len(result["records"]),
                       "conditions": sum(len(item["conditions"]) for item in result["records"]),

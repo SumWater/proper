@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "status": "frozen_five_condition_preparation_before_any_v2_3_model_output",
   "protocol_version": "proper_v2_3_five_condition_development_v1",
   "protocol": {
@@ -200,6 +200,7 @@
     "require_all_pass": true
   },
   "remote_preparation_validation": {
+    "validation_protocol_version": 2,
     "execution_role": "proper_v2_3_five_condition_remote_cpu_validation",
     "cuda_visible_devices": "-1",
     "allowed_python_minors": [11, 12],
@@ -207,11 +208,14 @@
     "require_exact_revision_from_command": true,
     "require_clean_tracked_worktree": true,
     "tau_directory": "external/tau2-bench",
-    "tau_revision": "fc0055dc4e0a316c3f83133267fbd6faaa770992"
+    "tau_revision": "fc0055dc4e0a316c3f83133267fbd6faaa770992",
+    "require_prior_failed_preparation_preserved": true
   },
   "output": {
-    "prepared_manifest": "outputs/proper_v2_3/five_condition_development/prepared_manifest.json",
-    "validation": "outputs/proper_v2_3/five_condition_development/preparation_validation.json",
+    "root": "outputs/proper_v2_3/five_condition_development_remote",
+    "prepared_manifest_name": "prepared_manifest.json",
+    "validation_name": "preparation_validation.json",
+    "prior_failed_preparation": "outputs/proper_v2_3/five_condition_development/prepared_manifest.json",
     "model_results_path_reserved": "outputs/proper_v2_3/five_condition_development/model_results.json",
     "model_results_may_be_written_by_this_stage": false,
     "never_overwrite": true

@@ -12,6 +12,7 @@ import re
 import subprocess
 import sys
 import unittest
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Mapping
 
@@ -61,12 +62,22 @@ def verify_preconditions(config: Mapping[str, Any], expected_revision: str) -> d
     tau_head = git("rev-parse", "HEAD", directory=ROOT / policy["tau_directory"])
     if tau_head != policy["tau_revision"]:
         raise RuntimeError("pinned tau revision mismatch")
+    prior_path = ROOT / config["output"]["prior_failed_preparation"]
+    if policy["require_prior_failed_preparation_preserved"] and not prior_path.is_file():
+        raise RuntimeError("prior failed preparation manifest must remain preserved")
     return {
         "execution_role": policy["execution_role"], "project_revision": head,
         "required_ancestor_present": ancestor, "tracked_worktree_clean": not tracked_status,
         "tau_revision": tau_head, "cuda_visible_devices": os.environ.get("CUDA_VISIBLE_DEVICES"),
         "python_version": platform.python_version(),
+        "prior_failed_preparation_path": prior_path.relative_to(ROOT).as_posix(),
+        "prior_failed_preparation_sha256": sha256(prior_path),
     }
+
+
+def safe_host_token() -> str:
+    value = re.sub(r"[^a-zA-Z0-9_-]+", "-", platform.node()).strip("-").lower()
+    return value or "unnamed-host"
 
 
 def run_tests(config: Mapping[str, Any]) -> dict[str, Any]:
@@ -114,19 +125,24 @@ def main() -> int:
     config_path = args.config.resolve()
     config = load_object(config_path)
     preconditions = verify_preconditions(config, args.expected_project_revision)
-    manifest_path = ROOT / config["output"]["prepared_manifest"]
-    validation_path = ROOT / config["output"]["validation"]
+    started = datetime.now(timezone.utc)
+    run_id = f"{started.strftime('%Y%m%dT%H%M%SZ')}-{safe_host_token()}-{args.expected_project_revision[:12]}"
+    run_directory = ROOT / config["output"]["root"] / run_id
+    run_directory.mkdir(parents=True, exist_ok=False)
+    manifest_path = run_directory / config["output"]["prepared_manifest_name"]
+    validation_path = run_directory / config["output"]["validation_name"]
     for path in (manifest_path, validation_path):
         if path.exists() and config["output"]["never_overwrite"]:
             raise FileExistsError(f"refusing to overwrite frozen preparation artifact: {path}")
-    manifest = prepare(config_path)
+    manifest = prepare(config_path, run_id=run_id)
     write_result(manifest, manifest_path)
     schema_result = validate_manifest(manifest)
     tests = run_tests(config)
     passed = manifest["status"] == "passed" and schema_result["passed"] and tests["passed"]
     validation = {
-        "schema_version": 1,
-        "run_kind": "proper_v2_3_five_condition_preparation_validation",
+        "schema_version": 2,
+        "run_kind": "proper_v2_3_five_condition_preparation_validation_v2",
+        "run_id": run_id,
         "passed": passed,
         "preconditions": preconditions,
         "prepared_manifest_path": manifest_path.relative_to(ROOT).as_posix(),

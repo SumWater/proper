@@ -28,6 +28,7 @@ class FiveConditionProtocolTests(unittest.TestCase):
         cls.manifest = prepare(CONFIG)
 
     def test_condition_order_and_count_are_frozen(self) -> None:
+        self.assertEqual(self.config["schema_version"], 2)
         self.assertEqual([item["name"] for item in self.config["conditions"]], [
             "tfidf_rank1_memory", "proper_v2_1_memory",
             "proper_lifecycle_prompt_only", "proper_lifecycle_replan_controller",
@@ -108,6 +109,9 @@ class FiveConditionProtocolTests(unittest.TestCase):
         schema = json.loads(SCHEMA.read_text(encoding="utf-8"))
         jsonschema.Draft202012Validator.check_schema(schema)
         jsonschema.Draft202012Validator(schema).validate(self.manifest)
+        self.assertEqual(schema["properties"]["schema_version"]["const"], 2)
+        branch_prefix = schema["$defs"]["record"]["properties"]["branch_prefix_recipe"]
+        self.assertEqual(branch_prefix["type"], ["object", "null"])
         self.assertEqual(set(self.prompts["forbidden_prompt_fields"]), {
             "scenario_name", "semantic_family", "benchmark_recoverability",
             "gold_action", "gold_label", "evaluator_outcome", "prior_model_result",

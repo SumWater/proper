@@ -18,3 +18,6 @@ command.
   schema, frozen-hash, and 72-test validation. It is not a model runner.
 - `run_five_condition_preparation_remote_v2_3.py`: isolated-environment,
   revision-guarded, CPU-only remote bootstrap for that validation.
+
+Preparation schema/validation protocol v2 preserves the failed fixed-path v1
+manifest and writes every subsequent attempt to a unique run directory.
