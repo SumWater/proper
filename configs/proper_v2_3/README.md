@@ -36,3 +36,5 @@ No GPU or confirmatory run is currently authorized.
   contract; its model/task/GPU gates remain closed.
 - `qwen_model_inventory_v2_3.json`: exact remote model path and dependency-free
   read-only per-file/manifest hashing contract; all execution gates are closed.
+- `qwen_model_inventory_freeze_v2_3.json`: exact hashes and interpretations of
+  two preserved preflight failures and the returned successful inventory.

@@ -1,0 +1,36 @@
+{
+  "acquisition_runtime_freeze_authorized": false,
+  "acquisition_runtime_protocol_design_authorized": true,
+  "checks": {
+    "all_three_results_present_and_hashed": true,
+    "four_local_freeze_tests_pass": true,
+    "local_freeze_envelope_matches_schema_fields": true,
+    "remote_results_match_closed_schema_shape": true,
+    "successful_counts_match": true,
+    "successful_inventory_unique": true,
+    "successful_manifest_recomputed": true,
+    "successful_revision_and_config_match": true,
+    "successful_runtime_gates_closed": true,
+    "two_preflight_failures_preserved": true
+  },
+  "confirmatory_run_authorized": false,
+  "gpu_used": false,
+  "model_loaded": false,
+  "model_outputs_read": false,
+  "model_runner_authorized": false,
+  "next_gate": "design_acquisition_runtime_protocol",
+  "passed": true,
+  "preserved_preflight_failures": 2,
+  "real_branch_capture_authorized": false,
+  "remote_result_sha256": {
+    "outputs/proper_v2_3/qwen_model_inventory_remote/20260802T042437Z-amax-bcc758badf69/inventory.json": "4d369242f648fca11ec5b9f8a5df5e5572a80de9e873fd6aab7cb63d78195034",
+    "outputs/proper_v2_3/qwen_model_inventory_remote/20260802T042501Z-amax-bcc758badf69/inventory.json": "4d369242f648fca11ec5b9f8a5df5e5572a80de9e873fd6aab7cb63d78195034",
+    "outputs/proper_v2_3/qwen_model_inventory_remote/20260802T042655Z-amax-a740a864f8fe/inventory.json": "5717e0e22132b4392883e2b3f4896dfe77789ce856f47a42bf4023992eba8bc3"
+  },
+  "run_kind": "proper_v2_3_qwen_model_inventory_local_freeze",
+  "schema_version": 1,
+  "successful_file_count": 15,
+  "successful_manifest_sha256": "f981a4a7978fd128d6efb18d93b8810d98434a8e69c9bd517ad7aa4e5c1b6a07",
+  "successful_total_bytes": 16397461266,
+  "task_executed": false
+}

@@ -401,3 +401,17 @@ The next permitted action is the one-shot remote CPU command in
 `qwen_model_inventory_handoff.md`. Its result must be returned and frozen
 locally. Model loading, task execution, acquisition, branch capture, model
 runner implementation, external APIs, and GPU use remain unauthorized.
+
+## Current gate after Qwen inventory result freeze
+
+`qwen_model_inventory_result.md` freezes both clean-worktree preflight failures
+and the passing remote inventory. The passing revision contains 15 regular
+files totaling 16,397,461,266 bytes with canonical manifest SHA-256
+`f981a4a7978fd128d6efb18d93b8810d98434a8e69c9bd517ad7aa4e5c1b6a07`.
+Local validation independently recomputes the manifest, paths, counts, totals,
+and result hashes without accessing model files.
+
+The next permitted work is acquisition-runtime protocol design only. The
+inventory establishes exact content identity, not model compatibility or
+performance. Model loading, task execution, real capture, a comparison runner,
+external APIs, GPU use, and confirmatory claims remain unauthorized.

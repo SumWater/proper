@@ -29,6 +29,8 @@ decision, and version-specific result schemas. Frozen schemas under
   message-or-public-tool decision contract for the local participant adapter.
 - `qwen_model_inventory.schema.json`: closed successful or stopped remote
   per-file SHA-256 inventory envelope with explicit no-execution claims.
+- `qwen_model_inventory_freeze.schema.json`: closed local result-freeze
+  envelope preserving failed preflights and the successful content identity.
 - `planbench_xl_capacity_audit_design.schema.json`: closed no-source/no-model
   design-validation result before any external inventory.
 - `planbench_xl_source_qualification.schema.json`: frozen source hashes,

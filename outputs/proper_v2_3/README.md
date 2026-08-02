@@ -209,3 +209,14 @@ filesystem tests. It contains no remote model bytes or model output and
 authorizes only one read-only remote inventory. The returned inventory belongs
 under a unique `qwen_model_inventory_remote/` run directory and must be frozen
 locally before any later runtime decision.
+
+## Frozen Qwen model inventories
+
+All three returned run directories are preserved. Runs `20260802T042437Z` and
+`20260802T042501Z` stopped at the dirty-worktree preflight with zero files and
+bytes. Run `20260802T042655Z` passed at remote revision `a740a864f8fe...`,
+recording 15 files, 16,397,461,266 bytes, and manifest SHA-256
+`f981a4a7978fd128d6efb18d93b8810d98434a8e69c9bd517ad7aa4e5c1b6a07`.
+`qwen_model_inventory_freeze/validation.json` checks all three exact result
+hashes and recomputes the successful manifest. These artifacts identify model
+directory contents only; no model was loaded and no task or GPU ran.

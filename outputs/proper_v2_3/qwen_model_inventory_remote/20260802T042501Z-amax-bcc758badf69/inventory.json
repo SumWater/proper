@@ -1,0 +1,30 @@
+{
+  "acquisition_runtime_freeze_authorized": false,
+  "checks": {
+    "inventory_completed": false,
+    "project_revision_matches": true,
+    "python_version_allowed": true,
+    "read_only_boundary_closed": true,
+    "tracked_worktree_clean": false
+  },
+  "config_sha256": "4d7281b47cc331598bbd25a3c11ba537cdbf109f2c846537d5c154cc432e7c9a",
+  "confirmatory_run_authorized": false,
+  "expected_project_revision": "bcc758badf692932008824d0d0d05fcda865a177",
+  "file_count": 0,
+  "files": [],
+  "gpu_used": false,
+  "manifest_sha256": null,
+  "model_loaded": false,
+  "model_outputs_read": false,
+  "model_root": "/home/amax/PycharmProjects/AINegoProject/src/Models/LLM/Qwen3-8B",
+  "model_runner_authorized": false,
+  "next_gate": "stop_model_inventory",
+  "passed": false,
+  "project_revision": "bcc758badf692932008824d0d0d05fcda865a177",
+  "real_branch_capture_authorized": false,
+  "run_kind": "proper_v2_3_remote_read_only_qwen_model_inventory",
+  "schema_version": 1,
+  "stop_reason": "preflight_failed",
+  "task_executed": false,
+  "total_bytes": 0
+}
