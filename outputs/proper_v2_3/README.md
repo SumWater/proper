@@ -200,3 +200,12 @@ deterministic worker requests, and closed task/model/GPU gates. It contains no
 model output and authorizes only a remote read-only Qwen model-directory
 inventory. It is not runtime, capture, completion, safety, or confirmatory
 evidence.
+
+## Qwen model inventory preparation
+
+`qwen_model_inventory_preparation/validation.json` freezes the dependency-free
+remote inventory entry, exact model path, closed schema, input hashes, and toy
+filesystem tests. It contains no remote model bytes or model output and
+authorizes only one read-only remote inventory. The returned inventory belongs
+under a unique `qwen_model_inventory_remote/` run directory and must be frozen
+locally before any later runtime decision.

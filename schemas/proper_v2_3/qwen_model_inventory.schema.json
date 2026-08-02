@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://proper.local/schemas/proper_v2_3/qwen_model_inventory.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version","run_kind","project_revision","expected_project_revision","config_sha256","model_root","checks","passed","stop_reason","file_count","total_bytes","files","manifest_sha256","model_loaded","model_outputs_read","task_executed","gpu_used","acquisition_runtime_freeze_authorized","real_branch_capture_authorized","model_runner_authorized","confirmatory_run_authorized","next_gate"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "run_kind": {"const": "proper_v2_3_remote_read_only_qwen_model_inventory"},
+    "project_revision": {"type":"string","pattern":"^[0-9a-f]{40}$"},
+    "expected_project_revision": {"type":"string","pattern":"^[0-9a-f]{40}$"},
+    "config_sha256": {"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "model_root": {"type":"string","minLength":1},
+    "checks": {"type":"object","additionalProperties":{"type":"boolean"}},
+    "passed": {"type":"boolean"},
+    "stop_reason": {"type":["string","null"]},
+    "file_count": {"type":"integer","minimum":0},
+    "total_bytes": {"type":"integer","minimum":0},
+    "files": {"type":"array","items":{"type":"object","additionalProperties":false,"required":["relative_path","size_bytes","sha256"],"properties":{"relative_path":{"type":"string","minLength":1},"size_bytes":{"type":"integer","minimum":0},"sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"}}}},
+    "manifest_sha256": {"type":["string","null"],"pattern":"^[0-9a-f]{64}$"},
+    "model_loaded": {"const":false},
+    "model_outputs_read": {"const":false},
+    "task_executed": {"const":false},
+    "gpu_used": {"const":false},
+    "acquisition_runtime_freeze_authorized": {"const":false},
+    "real_branch_capture_authorized": {"const":false},
+    "model_runner_authorized": {"const":false},
+    "confirmatory_run_authorized": {"const":false},
+    "next_gate": {"enum":["sync_and_freeze_remote_model_inventory","stop_model_inventory"]}
+  }
+}

@@ -388,3 +388,16 @@ Passing this stage authorizes only a remote read-only content inventory of the
 known Qwen model directory. It does not authorize an acquisition runtime,
 running the 12 development tasks, capturing branches, implementing a model
 runner, calling an external endpoint, or using a GPU.
+
+## Current gate after Qwen inventory preparation
+
+`qwen_model_inventory_preparation.md` freezes the exact remote model path,
+streaming per-file SHA-256 contract, canonical manifest, unique result path,
+revision/worktree guards, and stop-closed handling of empty directories,
+symlinks, and special entries. The local preparation uses only temporary toy
+files and imports no model or tau library.
+
+The next permitted action is the one-shot remote CPU command in
+`qwen_model_inventory_handoff.md`. Its result must be returned and frozen
+locally. Model loading, task execution, acquisition, branch capture, model
+runner implementation, external APIs, and GPU use remain unauthorized.

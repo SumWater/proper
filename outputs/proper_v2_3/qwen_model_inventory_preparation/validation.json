@@ -1,0 +1,34 @@
+{
+  "acquisition_runtime_freeze_authorized": false,
+  "checks": {
+    "all_stage_inputs_hashed": true,
+    "failure_results_are_serializable": true,
+    "inventory_test_module_passes": true,
+    "model_root_is_absolute": true,
+    "model_task_gpu_gates_closed": true,
+    "no_model_or_tau_imports": true,
+    "schema_is_closed": true,
+    "symlinks_stop_closed": true
+  },
+  "confirmatory_run_authorized": false,
+  "gpu_used": false,
+  "model_loaded": false,
+  "model_outputs_read": false,
+  "model_runner_authorized": false,
+  "next_gate": "run_remote_read_only_qwen_model_inventory",
+  "passed": true,
+  "real_branch_capture_authorized": false,
+  "remote_read_only_inventory_authorized": true,
+  "run_kind": "proper_v2_3_qwen_model_inventory_preparation_validation",
+  "schema_version": 1,
+  "scoped_tests_run": 6,
+  "scoped_tests_skipped": 1,
+  "stage_input_sha256": {
+    "configs/proper_v2_3/qwen_model_inventory_v2_3.json": "4d7281b47cc331598bbd25a3c11ba537cdbf109f2c846537d5c154cc432e7c9a",
+    "experiments/proper_v2_3/run_qwen_model_inventory_remote_v2_3.py": "0280ea26478b4fa5f26a345a73824e5a4b552611f008344a9fef688116cc0471",
+    "schemas/proper_v2_3/qwen_model_inventory.schema.json": "1f4efa85dcc9246f4fa66f159c47b6ec61721cf66f9dcfae9718f1b2b2911be1",
+    "src/failure_memory/proper_v2/v2_3/model_inventory.py": "87fca5c5050841d939e702b6a07f401166b0b54a083c9e8298b6e2e0052a984b",
+    "tests/test_proper_v2_3_qwen_model_inventory.py": "517d800b64fd1823ae85d69333a5033b02839f257d6e7b0bb30e3f691388d917"
+  },
+  "task_executed": false
+}

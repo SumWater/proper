@@ -49,6 +49,10 @@ command.
 - `validate_local_tau_participant_adapter_v2_3.py`: runs the eight CPU-only
   agent/user message-contract tests and freezes their input hashes; it neither
   imports nor loads the local model.
+- `validate_qwen_model_inventory_preparation_v2_3.py`: validates the local
+  read-only inventory contract on temporary files.
+- `run_qwen_model_inventory_remote_v2_3.py`: one-shot revision-guarded remote
+  file inventory; it imports no model/tau package and performs no generation.
 
 Preparation schema/validation protocol v2 preserves the failed fixed-path v1
 manifest and writes every subsequent attempt to a unique run directory.

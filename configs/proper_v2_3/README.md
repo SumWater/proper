@@ -34,3 +34,5 @@ No GPU or confirmatory run is currently authorized.
 - `local_tau_participant_prompts_v2_3.json`: separate agent/user prompt,
   public-message encoding, strict JSON decision, and deterministic generation
   contract; its model/task/GPU gates remain closed.
+- `qwen_model_inventory_v2_3.json`: exact remote model path and dependency-free
+  read-only per-file/manifest hashing contract; all execution gates are closed.

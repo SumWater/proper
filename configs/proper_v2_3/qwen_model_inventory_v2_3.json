@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "status": "frozen_remote_read_only_inventory_before_model_loading",
+  "model_root": "/home/amax/PycharmProjects/AINegoProject/src/Models/LLM/Qwen3-8B",
+  "allowed_python": {
+    "major": 3,
+    "minors": [11, 12]
+  },
+  "hash_contract": {
+    "algorithm": "sha256",
+    "chunk_bytes": 8388608,
+    "relative_paths": "posix_sorted",
+    "include_hidden_regular_files": true,
+    "follow_symlinks": false,
+    "allow_empty_directory": false
+  },
+  "boundary": {
+    "read_file_bytes_only": true,
+    "import_model_libraries": false,
+    "load_model": false,
+    "read_model_outputs": false,
+    "execute_tau_task": false,
+    "use_gpu": false,
+    "acquisition_runtime_freeze_authorized": false,
+    "real_branch_capture_authorized": false
+  }
+}
