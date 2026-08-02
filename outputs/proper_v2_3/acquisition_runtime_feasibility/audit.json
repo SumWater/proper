@@ -1,0 +1,39 @@
+{
+  "acquisition_runtime_freeze_authorized": false,
+  "audit_passed": true,
+  "checks": {
+    "all_input_hashes_match": true,
+    "external_user_endpoint_is_not_frozen_or_authorized": true,
+    "local_user_adapter_is_not_implemented_or_validated": true,
+    "missing_freezes_are_explicit": true,
+    "model_directory_revision_is_not_frozen": true,
+    "prior_qwen_agent_run_is_local_and_complete": true,
+    "qwen_worker_is_text_role_only": true,
+    "qwen_worker_lacks_native_tool_objects": true,
+    "runtime_correctly_stops_before_capture": true,
+    "task_model_gpu_gates_closed": true,
+    "tau_default_user_model_is_external": true
+  },
+  "config_sha256": "5f48bbfb5138152fc3098aa0e3e727b931e18ab7d6248ac1bb3821e86d298bc2",
+  "confirmatory_run_authorized": false,
+  "gpu_used": false,
+  "missing_freezes": [
+    "local_tau_agent_message_and_tool_adapter",
+    "local_tau_user_simulator_message_adapter",
+    "agent_and_user_json_output_contracts",
+    "agent_and_user_prompt_templates",
+    "model_directory_manifest",
+    "participant_adapter_cpu_contract_tests",
+    "remote_read_only_model_inventory"
+  ],
+  "model_loaded": false,
+  "model_outputs_read": false,
+  "model_runner_authorized": false,
+  "next_gate": "implement_cpu_only_local_tau_participant_adapter_and_remote_model_inventory",
+  "participant_adapter_implementation_authorized": true,
+  "real_branch_capture_authorized": false,
+  "run_kind": "proper_v2_3_acquisition_runtime_feasibility_audit",
+  "runtime_ready": false,
+  "schema_version": 1,
+  "task_executed": false
+}

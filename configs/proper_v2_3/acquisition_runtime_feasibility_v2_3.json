@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "status": "frozen_cpu_only_acquisition_runtime_feasibility_audit",
+  "inputs": {
+    "capture_protocol": {"path":"configs/proper_v2_3/real_public_branch_capture_protocol_v2_3.json","sha256":"3d70a175142852b3d926fc4ad42b3478aaad7c194b48059648b5c75f3eb50013"},
+    "prior_qwen_result": {"path":"outputs/proper_v2_3/qwen_five_condition_development_remote/20260801T122152Z-amax-0044e8fd6417/results.json","sha256":"3853d82e4ac048e2821cbb06185ffe6b2ee8e58f52445f234176fc2733bcbe60"},
+    "qwen_worker": {"path":"experiments/proper_v2/qwen_jsonl_worker_v2_2.py","sha256":"5f3c18aef4141a0751542c907b5595ec6bc3efadd9f6d9f7a1ddf7a402975753"},
+    "tau_user_simulator": {"path":"external/tau2-bench/src/tau2/user/user_simulator.py","sha256":"0049b3b0bc9ef576c8fd58d0753cbb5fcb68bc197fe6cfeff4bea9c1b490279e"},
+    "tau_agent": {"path":"external/tau2-bench/src/tau2/agent/llm_agent.py","sha256":"d4bbd03fc1b395ac206a96bae126d3e61b9ca292b315fcd5cc4ca5528be1eeb7"},
+    "tau_llm_utils": {"path":"external/tau2-bench/src/tau2/utils/llm_utils.py","sha256":"cac243390c72672c76d855712162eedd583ac9cf042a31d92d92b295005b49e2"}
+  },
+  "known_agent_runtime": {
+    "model_name": "Qwen3-8B",
+    "model_path": "/home/amax/PycharmProjects/AINegoProject/src/Models/LLM/Qwen3-8B",
+    "prior_local_model_run_completed": true,
+    "external_api_called_in_prior_run": false,
+    "worker_supported_roles": ["system","user","assistant"],
+    "worker_supports_tau_tool_messages": false,
+    "worker_supports_native_tool_call_objects": false,
+    "model_directory_manifest_frozen": false
+  },
+  "user_simulator_runtime": {
+    "tau_default_model": "gpt-4.1-2025-04-14",
+    "tau_default_transport": "litellm_external_completion",
+    "external_endpoint_frozen": false,
+    "external_credentials_boundary_frozen": false,
+    "external_network_available": false,
+    "local_qwen_participant_adapter_implemented": false,
+    "local_qwen_user_simulator_validated": false,
+    "user_model_revision_frozen": false
+  },
+  "missing_freezes": [
+    "local_tau_agent_message_and_tool_adapter",
+    "local_tau_user_simulator_message_adapter",
+    "agent_and_user_json_output_contracts",
+    "agent_and_user_prompt_templates",
+    "model_directory_manifest",
+    "participant_adapter_cpu_contract_tests",
+    "remote_read_only_model_inventory"
+  ],
+  "boundary": {
+    "external_api_authorized": false,
+    "model_loading_authorized": false,
+    "task_execution_authorized": false,
+    "real_branch_capture_authorized": false,
+    "gpu_authorized": false,
+    "model_runner_authorized": false,
+    "confirmatory_claim_authorized": false
+  },
+  "disposition": "stop_before_acquisition_runtime_freeze",
+  "next_gate": "implement_cpu_only_local_tau_participant_adapter_and_remote_model_inventory"
+}

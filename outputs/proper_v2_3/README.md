@@ -181,3 +181,12 @@ action/verifier registry, separate failed versus unknown injection semantics,
 evaluator/method field separation, one-attempt stop policy, input hashes, and
 closed future-manifest schema. It authorizes acquisition-runtime freezing only;
 no task, model, or GPU was used.
+
+## Acquisition runtime feasibility
+
+`acquisition_runtime_feasibility/audit.json` freezes the CPU-only negative
+runtime audit. It confirms the prior Qwen agent evidence while recording the
+missing tau tool interface, local user-simulator adapter, prompts/contracts,
+model manifest, and remote inventory. The audit authorizes adapter and
+read-only inventory implementation only; acquisition and all model/GPU work
+remain closed.

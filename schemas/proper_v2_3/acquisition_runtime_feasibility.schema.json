@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://proper.local/schemas/proper_v2_3/acquisition_runtime_feasibility.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version","run_kind","config_sha256","checks","audit_passed","runtime_ready","missing_freezes","model_loaded","model_outputs_read","task_executed","gpu_used","participant_adapter_implementation_authorized","acquisition_runtime_freeze_authorized","real_branch_capture_authorized","model_runner_authorized","confirmatory_run_authorized","next_gate"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "run_kind": {"const": "proper_v2_3_acquisition_runtime_feasibility_audit"},
+    "config_sha256": {"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "checks": {"type":"object","minProperties":1,"additionalProperties":{"type":"boolean"}},
+    "audit_passed": {"type":"boolean"},
+    "runtime_ready": {"type":"boolean"},
+    "missing_freezes": {"type":"array","minItems":1,"uniqueItems":true,"items":{"type":"string"}},
+    "model_loaded": {"const":false}, "model_outputs_read": {"const":false},
+    "task_executed": {"const":false}, "gpu_used": {"const":false},
+    "participant_adapter_implementation_authorized": {"type":"boolean"},
+    "acquisition_runtime_freeze_authorized": {"const":false},
+    "real_branch_capture_authorized": {"const":false},
+    "model_runner_authorized": {"const":false},
+    "confirmatory_run_authorized": {"const":false},
+    "next_gate": {"const":"implement_cpu_only_local_tau_participant_adapter_and_remote_model_inventory"}
+  }
+}

@@ -43,6 +43,9 @@ command.
 - `validate_real_public_branch_capture_protocol_v2_3.py`: CPU-only validation
   of the one-attempt public acquisition, injection, isolation, and stop design;
   it is not a capture or model runner.
+- `validate_acquisition_runtime_feasibility_v2_3.py`: CPU-only audit of local
+  agent/user interfaces, model revision, endpoint, prompt, and inventory
+  readiness before an acquisition runtime can be frozen.
 
 Preparation schema/validation protocol v2 preserves the failed fixed-path v1
 manifest and writes every subsequent attempt to a unique run directory.

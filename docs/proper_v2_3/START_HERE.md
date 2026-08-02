@@ -357,3 +357,19 @@ routing remains evaluator-only. The validated design authorizes freezing the
 complete acquisition runtime only. It does not authorize running the 12 tasks,
 capturing branches, freezing a comparison model protocol, implementing a model
 runner, or using a GPU.
+
+## Current gate after acquisition-runtime feasibility audit
+
+`acquisition_runtime_feasibility_result.md` records a CPU-only stop before
+runtime freezing. The prior local Qwen3-8B worker is agent-tested but text-only:
+it has no tau3 tool-message/tool-call interface. Tau3's default user simulator
+uses external GPT-4.1 through LiteLLM, while this project has no frozen external
+endpoint, credentials boundary, network authorization, or user-model revision.
+Qwen3-8B has not been validated as the tau3 user simulator, and the model
+directory lacks a frozen content manifest.
+
+The next permitted work is limited to implementing CPU-contract-tested local
+Qwen agent/user participant adapters and producing a remote read-only model
+inventory. Acquisition-runtime freezing, task execution, branch capture,
+external API calls, model loading, model runner work, and GPU use remain
+unauthorized.
