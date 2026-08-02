@@ -296,3 +296,20 @@ not authorize constructing prefixes from gold actions, running the existing 12
 tasks through a model, implementing a model runner, or using a GPU. The eight
 real post-failure branches remain missing until that adapter captures and
 replays public evidence without evaluator leakage.
+
+## Current gate after local tau3 replay-adapter validation
+
+The split-state environment adapter and its remote native CPU smoke entry are
+frozen in `tau3_branch_replay_adapter.md`. Local fake-environment tests verify
+checkpoint restoration, complete public-history integrity, zero mutation
+replay, restored-state hashing, rejection of task initialization merging, and
+single initialization. The local machine cannot perform the native smoke
+because its bundled Python lacks tau3's `loguru` dependency.
+
+The next permitted action is the one-shot remote CPU command in
+`tau3_branch_replay_native_smoke_handoff.md`. It dynamically selects one
+pending order from a fresh in-memory retail database, executes cancellation
+once, restores the post-action checkpoint in a second fresh environment, and
+verifies that no mutation was replayed. It loads no benchmark task or model.
+No real branch capture, model protocol, model runner, or GPU use is authorized
+before that native smoke passes and its result is returned and frozen locally.

@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "status": "frozen_cpu_only_tau3_branch_replay_adapter",
+  "adapter_version": "proper_v2_3_tau3_split_state_replay_v1",
+  "input_contract": {
+    "participant_message_history": "complete_public_history",
+    "environment_initialization": "complete_evaluator_side_checkpoint",
+    "environment_replay_history": [],
+    "task_initialization_data": null,
+    "task_initialization_actions": null
+  },
+  "integrity_checks": [
+    "checkpoint_digest_matches_payload",
+    "participant_history_matches_frozen_history",
+    "task_initialization_is_not_merged",
+    "wrapped_environment_receives_empty_replay_history",
+    "restored_checkpoint_matches_digest",
+    "adapter_initializes_once"
+  ],
+  "runtime_boundary": {
+    "modify_tau2_source": false,
+    "tau_imports_are_lazy": true,
+    "model_facing_checkpoint": false,
+    "method_receives_evaluator_metadata": false
+  },
+  "gates": {
+    "authorize_remote_native_cpu_smoke_after_local_tests": true,
+    "authorize_real_branch_capture": false,
+    "authorize_model_runner": false,
+    "authorize_model_run": false,
+    "authorize_gpu": false
+  }
+}

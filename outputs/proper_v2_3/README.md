@@ -144,3 +144,13 @@ outcome-unknown non-idempotent effects are represented in the evaluator-side
 checkpoint and receive an empty environment replay history, preventing branch
 initialization from repeating the effect. This authorizes only a CPU tau3
 runtime adapter, not a model runner or model/GPU execution.
+
+## Tau3 branch replay adapter
+
+`tau3_branch_replay_adapter/validation.json` freezes the local CPU adapter
+stage. It validates the split participant/environment initialization boundary
+using fake environments and authorizes only the one-shot native tau3 CPU smoke.
+The native smoke result belongs under
+`tau3_branch_replay_native_smoke/result.json` after remote execution; until it
+is returned and frozen, real branch capture and all model/GPU work remain
+unauthorized.

@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "status": "frozen_remote_cpu_only_native_tau3_replay_smoke",
+  "source": {
+    "directory": "external/tau2-bench",
+    "revision": "fc0055dc4e0a316c3f83133267fbd6faaa770992",
+    "required_python": "3.12"
+  },
+  "fixture": {
+    "domain": "retail",
+    "selection": "lexicographically_first_pending_order_from_public_database",
+    "native_action": "cancel_pending_order",
+    "arguments": {"reason": "no longer needed"},
+    "expected_native_execution_count": 1,
+    "expected_restored_status": "cancelled"
+  },
+  "gates": {
+    "require_clean_project_worktree": true,
+    "require_exact_project_revision": true,
+    "require_exact_tau3_revision": true,
+    "require_checkpoint_hash_match": true,
+    "require_empty_environment_replay_history": true,
+    "require_single_native_execution": true,
+    "authorize_real_branch_capture_after_pass": true,
+    "authorize_model_runner": false,
+    "authorize_model_run": false,
+    "authorize_gpu": false
+  }
+}
