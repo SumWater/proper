@@ -33,6 +33,18 @@ from .boundary import (
     observable_action_from_mapping,
 )
 from .ledger import ActionExecutionLedger, LedgerEntry
+from .continuation import (
+    ContinuationDecision,
+    ContinuationDisposition,
+    ExecutionProgressState,
+    ObservableProgressEvidence,
+    ProgressStatus,
+    SubgoalContract,
+    SubgoalStatus,
+    initial_progress_state,
+    progress_state_from_mapping,
+    route_observable_progress,
+)
 
 __all__ = [
     "ActionEffectClass",
@@ -49,6 +61,13 @@ __all__ = [
     "EvidenceSource",
     "ExecutionStatus",
     "LedgerEntry",
+    "ContinuationDecision",
+    "ContinuationDisposition",
+    "ExecutionProgressState",
+    "ObservableProgressEvidence",
+    "ProgressStatus",
+    "SubgoalContract",
+    "SubgoalStatus",
     "initial_controller_state",
     "controller_state_from_selection",
     "action_effect_contract_from_mapping",
@@ -59,4 +78,7 @@ __all__ = [
     "review_invalid_decision",
     "stop_for_agent_decision",
     "stop_for_task_completion",
+    "initial_progress_state",
+    "progress_state_from_mapping",
+    "route_observable_progress",
 ]

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://proper.local/schemas/proper_v2_3/continuation_decision.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "method_version",
+    "disposition",
+    "reason_code",
+    "progress_state",
+    "controller_state"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "method_version": {"const": "proper_v2_3_execution_state_continuation_design"},
+    "disposition": {"enum": ["continue", "verify", "revise", "stop"]},
+    "reason_code": {"type": "string", "minLength": 1},
+    "progress_state": {"$ref": "execution_progress_state.schema.json"},
+    "controller_state": {"type": "object"}
+  }
+}

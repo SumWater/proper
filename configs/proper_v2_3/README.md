@@ -23,3 +23,7 @@ No GPU or confirmatory run is currently authorized.
   independent budgets, 80-test contract, and no-model/no-GPU boundary.
 - `toolsandbox_qwen_five_condition_development_v2_3.json`: exact one-run Qwen
   development protocol, input hashes, model settings, endpoints, and stops.
+- `execution_state_continuation_design_v2_3.json`: CPU-only post-stop design
+  for observable subgoal progress and bounded continuation routing.
+- `planbench_xl_capacity_audit_design_v2_3.json`: prospective source and
+  qualification contract; it stops before unfrozen source inventory.

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://proper.local/schemas/proper_v2_3/planbench_xl_capacity_audit_design.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "run_kind",
+    "checks",
+    "passed",
+    "source_acquired",
+    "inventory_performed",
+    "candidate_count",
+    "model_loaded",
+    "gpu_used",
+    "model_run_authorized",
+    "confirmatory_run_authorized",
+    "disposition"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "run_kind": {"const": "proper_v2_3_planbench_xl_capacity_audit_design_validation"},
+    "checks": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {"type": "boolean"}
+    },
+    "passed": {"type": "boolean"},
+    "source_acquired": {"const": false},
+    "inventory_performed": {"const": false},
+    "candidate_count": {"type": "null"},
+    "model_loaded": {"const": false},
+    "gpu_used": {"const": false},
+    "model_run_authorized": {"const": false},
+    "confirmatory_run_authorized": {"const": false},
+    "disposition": {"const": "stop_before_inventory"}
+  }
+}

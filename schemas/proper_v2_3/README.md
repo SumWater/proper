@@ -16,3 +16,9 @@ decision, and version-specific result schemas. Frozen schemas under
   with an 80-test contract and explicit no-model/no-GPU boundary.
 - `qwen_five_condition_result.schema.json`: top-level smoke or complete Qwen
   development-result envelope; partial smoke failures remain serializable.
+- `execution_progress_state.schema.json`: ordered observable subgoal state,
+  verified evidence, uncertainty, stall count, and terminal reason.
+- `continuation_decision.schema.json`: continue/verify/revise/stop envelope
+  joining progress state with the existing controller state.
+- `planbench_xl_capacity_audit_design.schema.json`: closed no-source/no-model
+  design-validation result before any external inventory.

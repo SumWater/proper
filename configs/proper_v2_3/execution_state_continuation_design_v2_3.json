@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "status": "prospective_cpu_only_design_after_frozen_v2_3_stop",
+  "method_version": "proper_v2_3_execution_state_continuation_design",
+  "relationship_to_frozen_v2_3": {
+    "frozen_result_revision": "e84772a6d703bb08a069c57c9c8d370769de73c5",
+    "retunes_frozen_five_condition_protocol": false,
+    "reruns_existing_12_pairs": false,
+    "preserves_action_execution_ledger": true
+  },
+  "observable_progress_sources": [
+    "tool_result",
+    "public_state",
+    "public_environment_contract"
+  ],
+  "agent_self_report_is_sufficient_success_evidence": false,
+  "subgoal_contract": {
+    "required_fields": [
+      "subgoal_id",
+      "description",
+      "success_evidence_codes"
+    ],
+    "statuses": [
+      "pending",
+      "active",
+      "completed",
+      "failed",
+      "stopped"
+    ]
+  },
+  "routing": {
+    "unresolved_action_effect": "verify",
+    "verified_subgoal_progress": "continue",
+    "stalled_before_threshold": "continue",
+    "stalled_at_threshold_with_replan_budget": "revise",
+    "stalled_at_threshold_without_replan_budget": "stop",
+    "all_subgoals_observably_complete": "stop"
+  },
+  "budgets": {
+    "stall_threshold": 2,
+    "replan_budget_source": "existing_controller_state.remaining_replans",
+    "new_shared_retry_budget_added": false
+  },
+  "forbidden_method_inputs": [
+    "scenario_name",
+    "semantic_family",
+    "recoverability",
+    "gold_action",
+    "gold_label",
+    "evaluator_outcome",
+    "prior_model_result"
+  ],
+  "boundary": {
+    "model_runner_in_scope": false,
+    "model_loaded": false,
+    "gpu_run_authorized": false,
+    "existing_12_pair_retuning_authorized": false,
+    "confirmatory_claim_authorized": false
+  }
+}

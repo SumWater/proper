@@ -30,6 +30,12 @@ command.
   runner with endpoint-separated reporting and safety/completion stops.
 - `run_qwen_five_condition_remote_v2_3.py`: CPU preflight followed by one GPU
   smoke and, only on smoke success, the remaining development pairs.
+- `scripted_continuation_traces_v2_3.py`: no-model recovery handoff, progress
+  stall, verification precedence, and evidence-boundary traces.
+- `planbench_xl_capacity_audit_v2_3.py`: validates the prospective static
+  source-qualification design and stops before inventory.
+- `validate_execution_state_continuation_stage_v2_3.py`: one-shot CPU-only
+  validation and SHA-256 envelope for the new design stage.
 
 Preparation schema/validation protocol v2 preserves the failed fixed-path v1
 manifest and writes every subsequent attempt to a unique run directory.

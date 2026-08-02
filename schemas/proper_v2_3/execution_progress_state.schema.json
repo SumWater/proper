@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://proper.local/schemas/proper_v2_3/execution_progress_state.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "method_version",
+    "trajectory_id",
+    "subgoals",
+    "active_subgoal_id",
+    "progress_status",
+    "consecutive_no_progress",
+    "last_verified_evidence",
+    "uncertain_ledger_entry_ids",
+    "transition_index",
+    "stop_reason"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "method_version": {"const": "proper_v2_3_execution_state_continuation_design"},
+    "trajectory_id": {"type": "string", "minLength": 1},
+    "subgoals": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["subgoal_id", "description", "success_evidence_codes", "status"],
+        "properties": {
+          "subgoal_id": {"type": "string", "minLength": 1},
+          "description": {"type": "string", "minLength": 1},
+          "success_evidence_codes": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {"type": "string", "minLength": 1}
+          },
+          "status": {
+            "enum": ["pending", "active", "completed", "failed", "stopped"]
+          }
+        }
+      }
+    },
+    "active_subgoal_id": {"type": ["string", "null"]},
+    "progress_status": {
+      "enum": ["unknown", "advancing", "stalled", "complete", "blocked"]
+    },
+    "consecutive_no_progress": {"type": "integer", "minimum": 0},
+    "last_verified_evidence": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "uncertain_ledger_entry_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "transition_index": {"type": "integer", "minimum": 0},
+    "stop_reason": {"type": ["string", "null"]}
+  }
+}

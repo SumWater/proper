@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "status": "prospective_source_qualification_not_target_selection",
+  "audit_version": "proper_v2_3_planbench_xl_capacity_audit_design",
+  "mode": "static_metadata_and_structure_only_no_model_no_play",
+  "source": {
+    "name": "PlanBench-XL",
+    "paper_url": "https://arxiv.org/abs/2606.22388",
+    "project_url": "https://planbench-xl.github.io/",
+    "repository_url": "https://github.com/JiayuJeff/PlanBench-XL",
+    "dataset_url": "https://huggingface.co/datasets/JiayuJeff/PlanBench-XL",
+    "expected_query_count": 327,
+    "expected_tool_count": 1665,
+    "local_source_acquired": false,
+    "local_revision": null,
+    "local_input_sha256": null
+  },
+  "qualification_sequence": [
+    "freeze_source_revision_and_input_hashes",
+    "structural_inventory_without_model_or_task_play",
+    "exclude_prior_exposure_and_related_families",
+    "scripted_recoverable_branch_validation",
+    "freeze_development_heldout_preservation_partitions",
+    "run_model_free_base_capability_gate_before_failure_intervention"
+  ],
+  "candidate_requirements": {
+    "public_tool_schema_available": true,
+    "public_action_effect_evidence_available": true,
+    "failure_is_observable_to_method": true,
+    "recovery_path_remains_available": true,
+    "minimum_required_steps_after_recovery": 2,
+    "observable_success_verification_available": true,
+    "contains_state_change_or_side_effect": true,
+    "method_does_not_require_gold_path": true
+  },
+  "audit_only_fields_never_passed_to_method": [
+    "correct_answer",
+    "golden_tool_path",
+    "blocking_annotation",
+    "benchmark_completion_label",
+    "semantic_family"
+  ],
+  "reported_endpoints": [
+    "raw_inventory_count",
+    "structurally_eligible_count",
+    "scripted_recoverable_count",
+    "base_capable_count",
+    "behaviorally_identifiable_count",
+    "non_idempotent_side_effect_count",
+    "excluded_count_by_reason"
+  ],
+  "gates": {
+    "minimum_behaviorally_distinct_pairs": 12,
+    "minimum_failure_policy_families": 2,
+    "minimum_non_idempotent_side_effect_pairs": 3,
+    "minimum_idempotent_state_setting_pairs": 3,
+    "minimum_read_only_or_verification_pairs": 3
+  },
+  "stop_rules": {
+    "source_not_frozen": "stop_before_inventory",
+    "no_genuinely_unexposed_targets": "stop_no_target_capacity",
+    "qwen_base_capability_floor": "stop_model_experiment",
+    "gold_information_required_by_method": "exclude_target"
+  },
+  "boundary": {
+    "network_acquisition_performed": false,
+    "model_loaded": false,
+    "model_outputs_read": false,
+    "target_scenarios_played": false,
+    "gpu_run_authorized": false,
+    "confirmatory_claim_authorized": false
+  }
+}
