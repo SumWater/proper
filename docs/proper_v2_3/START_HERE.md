@@ -313,3 +313,10 @@ once, restores the post-action checkpoint in a second fresh environment, and
 verifies that no mutation was replayed. It loads no benchmark task or model.
 No real branch capture, model protocol, model runner, or GPU use is authorized
 before that native smoke passes and its result is returned and frozen locally.
+
+The first remote smoke attempt stopped before tau3 import because protocol v1
+required Python 3.12 while the active remote environment was Python 3.11.15.
+No native action, task, or model ran. Protocol v2 now permits Python 3.11 or
+3.12, matching the earlier frozen tau3 source-checkout execution contract; no
+adapter behavior, fixture action, evaluator, or pass gate changed. Rerun the
+same one-shot command after synchronizing the protocol-v2 files.

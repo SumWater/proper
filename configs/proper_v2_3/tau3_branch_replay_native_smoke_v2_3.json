@@ -1,10 +1,12 @@
 {
-  "schema_version": 1,
-  "status": "frozen_remote_cpu_only_native_tau3_replay_smoke",
+  "schema_version": 2,
+  "status": "frozen_remote_cpu_only_native_tau3_replay_smoke_protocol_v2",
   "source": {
     "directory": "external/tau2-bench",
     "revision": "fc0055dc4e0a316c3f83133267fbd6faaa770992",
-    "required_python": "3.12"
+    "python_major": 3,
+    "allowed_python_minors": [11, 12],
+    "runtime_basis": "existing_frozen_tau3_remote_source_checkout_contract"
   },
   "fixture": {
     "domain": "retail",
@@ -25,5 +27,11 @@
     "authorize_model_runner": false,
     "authorize_model_run": false,
     "authorize_gpu": false
+  },
+  "protocol_v2_correction": {
+    "trigger": "protocol_v1_stopped_before_tau_import_on_python_3_11_15",
+    "native_action_executed_in_failed_attempt": false,
+    "task_or_model_loaded_in_failed_attempt": false,
+    "method_or_evaluation_changed": false
   }
 }

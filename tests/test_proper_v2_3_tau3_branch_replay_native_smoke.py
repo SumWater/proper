@@ -24,6 +24,9 @@ class Tau3BranchReplayNativeSmokeTests(unittest.TestCase):
         self.assertFalse(config["gates"]["authorize_model_run"])
         self.assertFalse(config["gates"]["authorize_gpu"])
         self.assertEqual(config["fixture"]["expected_native_execution_count"], 1)
+        self.assertEqual(config["source"]["allowed_python_minors"], [11, 12])
+        self.assertFalse(config["protocol_v2_correction"]["native_action_executed_in_failed_attempt"])
+        self.assertFalse(config["protocol_v2_correction"]["method_or_evaluation_changed"])
 
     def test_output_schema_is_closed_and_forbids_model_claims(self) -> None:
         schema = json.loads((ROOT / "schemas/proper_v2_3/tau3_branch_replay_native_smoke.schema.json").read_text(encoding="utf-8"))

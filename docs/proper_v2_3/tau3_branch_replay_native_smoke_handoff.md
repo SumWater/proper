@@ -23,7 +23,8 @@ worktree is clean.
 
 ## One complete command
 
-Run from the remote project root in its Python 3.12 tau3 environment:
+Run from the remote project root in its existing Python 3.11 or 3.12 tau3
+environment:
 
 ```bash
 python experiments/proper_v2_3/run_tau3_branch_replay_native_smoke_remote_v2_3.py --expected-project-revision "$(git rev-parse HEAD)"
@@ -31,3 +32,8 @@ python experiments/proper_v2_3/run_tau3_branch_replay_native_smoke_remote_v2_3.p
 
 Stop if the command fails. A passing result authorizes design of the public
 branch capture protocol only; it does not authorize a model runner or GPU run.
+
+Protocol v1 stopped on Python 3.11.15 before importing tau3 or executing the
+native action. Protocol v2 aligns this infrastructure guard with the existing
+frozen tau3 remote source-checkout contract, which permits Python 3.11 and
+3.12. No method, fixture action, evaluation, or scientific gate changed.

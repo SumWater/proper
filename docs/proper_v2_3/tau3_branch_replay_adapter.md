@@ -28,3 +28,10 @@ in-memory retail database, executes `cancel_pending_order` exactly once, marks
 its public result unknown, restores the post-action checkpoint into a second
 fresh environment, and verifies the restored cancelled state without replaying
 the call. It loads no benchmark task and uses no model or GPU.
+
+The first remote attempt stopped at the protocol-v1 Python 3.12 guard while the
+active environment was Python 3.11.15. It occurred before tau3 import and
+before any native action. Protocol v2 permits Python 3.11 or 3.12, matching the
+repository's pre-existing frozen tau3 source-checkout execution contract. This
+is an infrastructure correction only; adapter logic and pass criteria are
+unchanged.

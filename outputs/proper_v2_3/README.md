@@ -154,3 +154,8 @@ The native smoke result belongs under
 `tau3_branch_replay_native_smoke/result.json` after remote execution; until it
 is returned and frozen, real branch capture and all model/GPU work remain
 unauthorized.
+
+The first remote attempt stopped at the protocol-v1 Python 3.12 guard before
+tau3 import or native execution. Protocol v2 accepts Python 3.11/3.12 under the
+existing source-checkout contract. This is an infrastructure-only correction;
+the failed attempt contains no method or model evidence.

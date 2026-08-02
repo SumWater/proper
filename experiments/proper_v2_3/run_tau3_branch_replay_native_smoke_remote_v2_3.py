@@ -44,8 +44,10 @@ def run(expected_project_revision: str) -> dict[str, Any]:
         ["git", "-C", str(tau_directory), "rev-parse", "HEAD"],
         check=True, capture_output=True, text=True,
     ).stdout.strip()
-    if sys.version_info[:2] != (3, 12):
-        raise RuntimeError(f"Python 3.12 is required, got {sys.version.split()[0]}")
+    allowed_minors = config["source"]["allowed_python_minors"]
+    if sys.version_info.major != config["source"]["python_major"] or sys.version_info.minor not in allowed_minors:
+        allowed = ", ".join(f"3.{minor}" for minor in allowed_minors)
+        raise RuntimeError(f"Python {allowed} is required, got {sys.version.split()[0]}")
     if project_revision != expected_project_revision:
         raise RuntimeError(f"project revision mismatch: {project_revision} != {expected_project_revision}")
     if status:
