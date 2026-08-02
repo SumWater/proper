@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://proper.local/schemas/proper_v2_3/public_branch_artifact.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "method_view", "environment_checkpoint", "checkpoint_sha256", "checkpoint_applied_call_ids", "guarded_call_id", "native_execution_observed"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "method_view": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schema_version", "public_history", "effect_class", "receipt_kind", "controller_state"],
+      "properties": {
+        "schema_version": {"const": 1},
+        "public_history": {"type": "array", "items": {"type": "object"}},
+        "effect_class": {"enum": ["read_only", "idempotent_state_setting", "non_idempotent_side_effect", "outcome_unknown"]},
+        "receipt_kind": {"enum": ["pre_action_trigger", "executed_failure", "outcome_unknown"]},
+        "controller_state": {"type": "object"}
+      }
+    },
+    "environment_checkpoint": {"type": "object"},
+    "checkpoint_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "checkpoint_applied_call_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "guarded_call_id": {"type": ["string", "null"]},
+    "native_execution_observed": {"type": "boolean"}
+  }
+}

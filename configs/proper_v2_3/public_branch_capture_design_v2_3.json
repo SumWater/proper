@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "status": "frozen_cpu_only_public_branch_capture_design",
+  "design_version": "proper_v2_3_public_branch_capture_v1",
+  "conditions": [
+    "no_memory_baseline",
+    "proper_selector_persistent_memory",
+    "proper_lifecycle_prompt_only",
+    "proper_v2_3_full_ledger_controller",
+    "proper_v2_3_execution_state_continuation"
+  ],
+  "separation_contract": {
+    "participant_state": ["public_message_history", "public_tool_receipts", "effect_class", "receipt_kind", "controller_state"],
+    "evaluator_only_state": ["environment_checkpoint", "checkpoint_applied_call_ids", "checkpoint_sha256"],
+    "environment_replay_history_must_be_empty_when_checkpoint_is_complete": true,
+    "participant_history_must_remain_complete": true
+  },
+  "receipt_contract": {
+    "pre_action_trigger": {"native_execution_observed": false, "guarded_call_required": false},
+    "executed_failure": {"guarded_call_required": true},
+    "outcome_unknown": {"native_execution_observed": true, "guarded_call_in_checkpoint": true}
+  },
+  "forbidden_method_inputs": [
+    "task_id", "source_task_id", "evaluation_criteria", "gold_action", "gold_actions",
+    "recoverability", "evaluator_outcome", "environment_checkpoint", "checkpoint_payload",
+    "checkpoint_applied_call_ids"
+  ],
+  "gates": {
+    "require_three_effect_class_traces": true,
+    "require_identical_start_hash_across_five_conditions": true,
+    "require_unknown_outcome_without_reexecution": true,
+    "authorize_tau3_runtime_adapter_after_pass": true,
+    "authorize_model_runner": false,
+    "authorize_model_run": false,
+    "authorize_confirmatory_claim": false
+  }
+}

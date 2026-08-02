@@ -1,0 +1,39 @@
+{
+  "checks": {
+    "all_stage_inputs_hashed": true,
+    "closed_schemas_valid": true,
+    "five_condition_starts_identical": true,
+    "model_runner_remains_unauthorized": true,
+    "scoped_tests_pass": true,
+    "three_effect_classes_covered": true,
+    "three_scripted_traces_pass": true,
+    "unknown_outcome_trace_present": true,
+    "unknown_side_effect_not_replayed": true
+  },
+  "confirmatory_run_authorized": false,
+  "gpu_used": false,
+  "model_loaded": false,
+  "model_outputs_read": false,
+  "model_run_authorized": false,
+  "model_runner_authorized": false,
+  "next_gate": "implement_cpu_only_tau3_branch_replay_adapter",
+  "passed": true,
+  "run_kind": "proper_v2_3_public_branch_capture_design_validation",
+  "schema_validation_mode": "closed_shape_without_optional_jsonschema_dependency",
+  "schema_version": 1,
+  "scoped_tests_run": 8,
+  "scripted_trace_path": "outputs/proper_v2_3/public_branch_capture_design/scripted_traces.json",
+  "scripted_trace_sha256": "ad11868d3f5d3e592a6215ac5e8cffbff2856eeee6944b786c1f89bc47e0802c",
+  "stage_input_sha256": {
+    "configs/proper_v2_3/public_branch_capture_design_v2_3.json": "a9fc616573d19e0aa187e5f3517373f207b0b767a1cdf29ed064549bf9e403ac",
+    "docs/proper_v2_3/public_branch_capture_design.md": "b09ccf08fb228af9f6fb8882d7359b395e49b33636d286c3334923ebf197fca6",
+    "experiments/proper_v2_3/scripted_public_branch_capture_traces_v2_3.py": "8c1001704f6c874bff5d3e16b2973a166f20942ec1b1baa079b02d67944f2a66",
+    "experiments/proper_v2_3/validate_public_branch_capture_design_v2_3.py": "9a2d37e50609d0926c1f3c03c4be4c1553c45e5690122739669fc7af81c2589b",
+    "schemas/proper_v2_3/public_branch_artifact.schema.json": "7bffa43a50b13ffdbb15cdae8c84a3a255107b7739136dc41a38e3d143fc76cd",
+    "schemas/proper_v2_3/public_branch_capture_traces.schema.json": "94ba1f00826d874d47c68dd9433212d56d66c7c36f72c6b4de900aa8aa576d60",
+    "src/failure_memory/proper_v2/v2_3/branch_capture.py": "a27af29768489a8e89eae9479ba4df8da7a2e343d45eabf1b2a9056cc5088761",
+    "tests/test_proper_v2_3_public_branch_capture.py": "7d78b9fa713aa2aba47c58c4be490a5989f0026c8b6c81febdae107d59ac9e46"
+  },
+  "task_executed": false,
+  "tau3_runtime_adapter_authorized": true
+}

@@ -1,0 +1,91 @@
+{
+  "checks": {
+    "all_traces_pass": true,
+    "three_effect_class_traces": true,
+    "unknown_outcome_trace_present": true
+  },
+  "confirmatory_run_authorized": false,
+  "gpu_used": false,
+  "model_loaded": false,
+  "model_outputs_read": false,
+  "model_run_authorized": false,
+  "model_runner_authorized": false,
+  "next_gate": "implement_cpu_only_tau3_branch_replay_adapter",
+  "passed": true,
+  "run_kind": "proper_v2_3_scripted_public_branch_capture_traces",
+  "schema_version": 1,
+  "task_executed": false,
+  "tau3_runtime_adapter_authorized": true,
+  "trace_count": 3,
+  "traces": [
+    {
+      "checks": {
+        "checkpoint_hash_present": true,
+        "checkpoint_not_in_method_view": true,
+        "environment_replay_history_empty": true,
+        "executed_unknown_is_not_replayed": true,
+        "five_conditions_share_start": true,
+        "participant_history_complete": true
+      },
+      "condition_start_sha256": {
+        "no_memory_baseline": "f97062de44bcf6f4c4835e9ea3c988be49bcaaac1b21d31e0d39b8dd895d0a34",
+        "proper_lifecycle_prompt_only": "f97062de44bcf6f4c4835e9ea3c988be49bcaaac1b21d31e0d39b8dd895d0a34",
+        "proper_selector_persistent_memory": "f97062de44bcf6f4c4835e9ea3c988be49bcaaac1b21d31e0d39b8dd895d0a34",
+        "proper_v2_3_execution_state_continuation": "f97062de44bcf6f4c4835e9ea3c988be49bcaaac1b21d31e0d39b8dd895d0a34",
+        "proper_v2_3_full_ledger_controller": "f97062de44bcf6f4c4835e9ea3c988be49bcaaac1b21d31e0d39b8dd895d0a34"
+      },
+      "effect_class": "read_only",
+      "identical_start_sha256": "f97062de44bcf6f4c4835e9ea3c988be49bcaaac1b21d31e0d39b8dd895d0a34",
+      "native_execution_observed": false,
+      "passed": true,
+      "receipt_kind": "pre_action_trigger",
+      "trace_id": "read_only_pre_action"
+    },
+    {
+      "checks": {
+        "checkpoint_hash_present": true,
+        "checkpoint_not_in_method_view": true,
+        "environment_replay_history_empty": true,
+        "executed_unknown_is_not_replayed": true,
+        "five_conditions_share_start": true,
+        "participant_history_complete": true
+      },
+      "condition_start_sha256": {
+        "no_memory_baseline": "e98abc6a985ea773ad8480b43bdee7bc6f7a80581dc7f276e420e68025d427b2",
+        "proper_lifecycle_prompt_only": "e98abc6a985ea773ad8480b43bdee7bc6f7a80581dc7f276e420e68025d427b2",
+        "proper_selector_persistent_memory": "e98abc6a985ea773ad8480b43bdee7bc6f7a80581dc7f276e420e68025d427b2",
+        "proper_v2_3_execution_state_continuation": "e98abc6a985ea773ad8480b43bdee7bc6f7a80581dc7f276e420e68025d427b2",
+        "proper_v2_3_full_ledger_controller": "e98abc6a985ea773ad8480b43bdee7bc6f7a80581dc7f276e420e68025d427b2"
+      },
+      "effect_class": "idempotent_state_setting",
+      "identical_start_sha256": "e98abc6a985ea773ad8480b43bdee7bc6f7a80581dc7f276e420e68025d427b2",
+      "native_execution_observed": false,
+      "passed": true,
+      "receipt_kind": "executed_failure",
+      "trace_id": "idempotent_failed_without_execution"
+    },
+    {
+      "checks": {
+        "checkpoint_hash_present": true,
+        "checkpoint_not_in_method_view": true,
+        "environment_replay_history_empty": true,
+        "executed_unknown_is_not_replayed": true,
+        "five_conditions_share_start": true,
+        "participant_history_complete": true
+      },
+      "condition_start_sha256": {
+        "no_memory_baseline": "c373a22820091322d3a12430d31ff15a2b794d27343b67f937cfa60e957553c1",
+        "proper_lifecycle_prompt_only": "c373a22820091322d3a12430d31ff15a2b794d27343b67f937cfa60e957553c1",
+        "proper_selector_persistent_memory": "c373a22820091322d3a12430d31ff15a2b794d27343b67f937cfa60e957553c1",
+        "proper_v2_3_execution_state_continuation": "c373a22820091322d3a12430d31ff15a2b794d27343b67f937cfa60e957553c1",
+        "proper_v2_3_full_ledger_controller": "c373a22820091322d3a12430d31ff15a2b794d27343b67f937cfa60e957553c1"
+      },
+      "effect_class": "non_idempotent_side_effect",
+      "identical_start_sha256": "c373a22820091322d3a12430d31ff15a2b794d27343b67f937cfa60e957553c1",
+      "native_execution_observed": true,
+      "passed": true,
+      "receipt_kind": "outcome_unknown",
+      "trace_id": "non_idempotent_executed_unknown"
+    }
+  ]
+}

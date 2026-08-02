@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://proper.local/schemas/proper_v2_3/public_branch_capture_traces.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "run_kind", "checks", "passed", "trace_count", "traces", "task_executed", "model_loaded", "model_outputs_read", "gpu_used", "tau3_runtime_adapter_authorized", "model_runner_authorized", "model_run_authorized", "confirmatory_run_authorized", "next_gate"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "run_kind": {"const": "proper_v2_3_scripted_public_branch_capture_traces"},
+    "checks": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "boolean"}},
+    "passed": {"type": "boolean"},
+    "trace_count": {"type": "integer", "minimum": 0},
+    "traces": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["trace_id", "effect_class", "receipt_kind", "native_execution_observed", "identical_start_sha256", "condition_start_sha256", "checks", "passed"],
+        "properties": {
+          "trace_id": {"type": "string"},
+          "effect_class": {"enum": ["read_only", "idempotent_state_setting", "non_idempotent_side_effect", "outcome_unknown"]},
+          "receipt_kind": {"enum": ["pre_action_trigger", "executed_failure", "outcome_unknown"]},
+          "native_execution_observed": {"type": "boolean"},
+          "identical_start_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "condition_start_sha256": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+          "checks": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "boolean"}},
+          "passed": {"type": "boolean"}
+        }
+      }
+    },
+    "task_executed": {"const": false}, "model_loaded": {"const": false},
+    "model_outputs_read": {"const": false}, "gpu_used": {"const": false},
+    "tau3_runtime_adapter_authorized": {"type": "boolean"},
+    "model_runner_authorized": {"const": false}, "model_run_authorized": {"const": false},
+    "confirmatory_run_authorized": {"const": false},
+    "next_gate": {"const": "implement_cpu_only_tau3_branch_replay_adapter"}
+  }
+}

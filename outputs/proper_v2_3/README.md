@@ -134,3 +134,13 @@ but only four public `pre_action` starts are model-ready and zero of eight
 `validation.json` freezes the stage hashes and scoped-test result. The gate
 therefore stops before model-protocol freezing or runner implementation; no
 task, model, model output, or GPU was used.
+
+## Public branch capture design
+
+`public_branch_capture_design/scripted_traces.json` contains three CPU-only
+traces for public/evaluator state separation and identical-start hashing.
+`validation.json` freezes the stage inputs and validation result. Successful or
+outcome-unknown non-idempotent effects are represented in the evaluator-side
+checkpoint and receive an empty environment replay history, preventing branch
+initialization from repeating the effect. This authorizes only a CPU tau3
+runtime adapter, not a model runner or model/GPU execution.

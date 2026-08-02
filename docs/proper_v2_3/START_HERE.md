@@ -279,3 +279,20 @@ implementation, model execution, and GPU use are not authorized. The next
 permitted work is a CPU-only design for public branch capture that does not
 expose task IDs, future gold actions, recoverability labels, or evaluator
 outcomes to the method.
+
+## Current gate after public branch capture design
+
+`public_branch_capture_design.md` now freezes the scenario-neutral separation
+between complete participant-visible history and evaluator-only environment
+checkpoints. Three scripted CPU traces cover a read-only pre-action trigger, an
+idempotent setting failure without execution, and a non-idempotent action whose
+native execution succeeded but public result is unknown. Five planned
+development conditions receive an identical start hash in every trace, and
+checkpointed effects are never replayed into the environment.
+
+This design authorizes only a CPU-only tau3 runtime adapter that initializes
+participant histories and environment state through separate channels. It does
+not authorize constructing prefixes from gold actions, running the existing 12
+tasks through a model, implementing a model runner, or using a GPU. The eight
+real post-failure branches remain missing until that adapter captures and
+replays public evidence without evaluator leakage.
