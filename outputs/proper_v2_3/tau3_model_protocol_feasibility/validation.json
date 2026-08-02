@@ -1,0 +1,35 @@
+{
+  "audit_path": "outputs/proper_v2_3/tau3_model_protocol_feasibility/audit.json",
+  "audit_sha256": "a234b3c0f1ca9a0a59409c896b0218f5f4789ca85b76dd3f27fd627434d6391d",
+  "checks": {
+    "all_stage_inputs_hashed": true,
+    "audit_passed": true,
+    "closed_schema_valid": true,
+    "model_protocol_not_authorized": true,
+    "only_four_public_task_starts_ready": true,
+    "runner_implementation_not_authorized": true,
+    "scoped_tests_pass": true,
+    "source_actions_map_12_of_12": true,
+    "zero_post_failure_branches_ready": true
+  },
+  "confirmatory_run_authorized": false,
+  "development_model_run_authorized": false,
+  "gpu_used": false,
+  "model_loaded": false,
+  "model_outputs_read": false,
+  "next_gate": "design_public_branch_capture_without_model_exposure",
+  "passed": true,
+  "run_kind": "proper_v2_3_tau3_model_protocol_feasibility_stage_validation",
+  "schema_validation_mode": "closed_shape_without_optional_jsonschema_dependency",
+  "schema_version": 1,
+  "scoped_tests_run": 3,
+  "stage_input_sha256": {
+    "configs/proper_v2_3/tau3_model_protocol_feasibility_v2_3.json": "8f1c134cf8cd8d76bab81a0702aa9aa3191e5df3146ed08223f4a7891e830585",
+    "docs/proper_v2_3/tau3_model_protocol_feasibility_result.md": "56c48fc99375014ddb9aa68f578324affa6bcaff2cd4c11a4125bc35d08d862f",
+    "experiments/proper_v2_3/tau3_model_protocol_feasibility_v2_3.py": "7791c23bf3405121c0f7c7098ab5dddf0d3fd641085208a601bad3172b60f804",
+    "experiments/proper_v2_3/validate_tau3_model_protocol_feasibility_v2_3.py": "95712603d644a3c74d3782f5a4015c3c4b34fcbf1f4e2dd15e89b30f7bc813bf",
+    "schemas/proper_v2_3/tau3_model_protocol_feasibility.schema.json": "cdbcf444afb5dda818c982b28f62e2689035d317f414c9a3a73421a1e030dc12",
+    "tests/test_proper_v2_3_tau3_model_protocol_feasibility.py": "6b300c7d16d9d91fb351ae93222588e347e6f58c20a173b7a5313a374b6de2aa"
+  },
+  "task_executed": false
+}

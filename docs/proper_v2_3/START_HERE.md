@@ -263,3 +263,19 @@ SHA-256 is
 This authorizes freezing a tau3 development protocol only. It remains
 development-only, adds no held-out capacity, and authorizes no model or GPU
 run. See `tau3_execution_state_continuation_screen_result.md`.
+
+## Current gate after tau3 model-protocol feasibility audit
+
+The CPU-only audit in `tau3_model_protocol_feasibility_result.md` confirms that
+all 12 candidate action references still map to the pinned tau3 source. Only
+the four read-only `pre_action` candidates can start from public task-opening
+information. None of the eight `post_failure` candidates has a frozen public
+conversation prefix, matching environment initialization, public failure
+receipt, and identical-start replay proof.
+
+Consequently the current counts are 4/12 model-ready overall and 0/8
+model-ready for `post_failure`. Model-protocol freezing, model-runner
+implementation, model execution, and GPU use are not authorized. The next
+permitted work is a CPU-only design for public branch capture that does not
+expose task IDs, future gold actions, recoverability labels, or evaluator
+outcomes to the method.

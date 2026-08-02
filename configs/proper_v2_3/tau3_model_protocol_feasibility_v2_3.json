@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "status": "frozen_cpu_only_model_protocol_feasibility_gate",
+  "audit_version": "proper_v2_3_tau3_model_protocol_feasibility_v1",
+  "source": {
+    "directory": "external/tau2-bench",
+    "revision": "fc0055dc4e0a316c3f83133267fbd6faaa770992",
+    "candidate_config": "configs/proper_v2_3/tau3_branch_screen_v2_3.yaml",
+    "expected_candidate_count": 12
+  },
+  "model_facing_rules": {
+    "allow_user_scenario": true,
+    "allow_domain_policy": true,
+    "allow_public_tool_schemas": true,
+    "allow_public_message_history": true,
+    "allow_public_tool_results": true,
+    "allow_task_id": false,
+    "allow_evaluation_criteria": false,
+    "allow_gold_actions": false,
+    "allow_hidden_recoverability": false,
+    "allow_evaluator_outcome": false
+  },
+  "branch_requirements": {
+    "pre_action": [
+      "target_arguments_obtainable_from_user_visible_task_start",
+      "no_gold_prefix_required"
+    ],
+    "post_failure": [
+      "frozen_public_message_history",
+      "frozen_environment_initialization",
+      "public_failure_or_unknown_outcome_receipt",
+      "method_input_excludes_evaluator_metadata",
+      "replay_proves_identical_branch_start_across_conditions"
+    ]
+  },
+  "required_protocol_freezes": [
+    "agent_model_and_revision",
+    "user_simulator_model_and_revision",
+    "agent_prompt",
+    "user_simulator_prompt",
+    "method_prompts_for_all_conditions",
+    "tool_adapter_and_failure_injection",
+    "retry_verification_invalid_decision_replan_budgets",
+    "evaluation_endpoints",
+    "exclusion_rules",
+    "all_model_facing_input_hashes"
+  ],
+  "available_branch_artifacts": [],
+  "gates": {
+    "require_all_12_model_ready": true,
+    "require_all_three_effect_classes": true,
+    "require_post_failure_model_ready": true,
+    "model_protocol_freeze_authorized_if_ready": true,
+    "model_run_authorized": false,
+    "confirmatory_run_authorized": false
+  }
+}

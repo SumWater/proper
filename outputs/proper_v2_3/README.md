@@ -124,3 +124,13 @@ balanced tau3 development ledgers through the observable progress layer. All
 12 scripted handoffs passed. The file SHA-256 is
 `d954248cc05814f32759b02839584378b6cfe16bbec60bcfe98356c0ee35038c`.
 This authorizes protocol design only, not a model or GPU run.
+
+## Tau3 model-protocol feasibility gate
+
+`tau3_model_protocol_feasibility/audit.json` records the CPU-only check that
+precedes any tau3 model-protocol freeze. All 12 source action mappings pass,
+but only four public `pre_action` starts are model-ready and zero of eight
+`post_failure` starts have the required frozen public branch artifacts.
+`validation.json` freezes the stage hashes and scoped-test result. The gate
+therefore stops before model-protocol freezing or runner implementation; no
+task, model, model output, or GPU was used.

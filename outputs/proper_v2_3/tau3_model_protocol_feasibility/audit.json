@@ -1,0 +1,191 @@
+{
+  "audit_passed": true,
+  "candidate_config_sha256": "4e45860515d8fdd20f139353067cdfff83c250c6d9bc43fe516e2042ba755997",
+  "checks": {
+    "all_candidate_actions_map_to_source": true,
+    "audit_observes_expected_readiness_gap": true,
+    "candidate_count_matches": true,
+    "no_model_branch_artifact_was_invented": true,
+    "protocol_correctly_stops_before_model_runner": true,
+    "source_revision_matches": true
+  },
+  "config_sha256": "8f1c134cf8cd8d76bab81a0702aa9aa3191e5df3146ed08223f4a7891e830585",
+  "confirmatory_run_authorized": false,
+  "development_model_run_authorized": false,
+  "disposition": "stop_before_model_protocol",
+  "gpu_used": false,
+  "method_inputs_include_evaluator_metadata": false,
+  "model_loaded": false,
+  "model_outputs_read": false,
+  "model_protocol_freeze_authorized": false,
+  "model_runner_implementation_authorized": false,
+  "next_gate": "design_public_branch_capture_without_model_exposure",
+  "pairs": [
+    {
+      "domain": "airline",
+      "effect_class": "read_only",
+      "frozen_public_branch_artifact_present": false,
+      "model_ready": true,
+      "pair_id": "tau3-dev-01",
+      "phase": "pre_action",
+      "post_failure_branch_ready": false,
+      "reason": "public_task_start_is_sufficient",
+      "source_action_mapping_valid": true,
+      "task_start_arguments_publicly_visible": true
+    },
+    {
+      "domain": "airline",
+      "effect_class": "read_only",
+      "frozen_public_branch_artifact_present": false,
+      "model_ready": true,
+      "pair_id": "tau3-dev-02",
+      "phase": "pre_action",
+      "post_failure_branch_ready": false,
+      "reason": "public_task_start_is_sufficient",
+      "source_action_mapping_valid": true,
+      "task_start_arguments_publicly_visible": true
+    },
+    {
+      "domain": "retail",
+      "effect_class": "read_only",
+      "frozen_public_branch_artifact_present": false,
+      "model_ready": true,
+      "pair_id": "tau3-dev-03",
+      "phase": "pre_action",
+      "post_failure_branch_ready": false,
+      "reason": "public_task_start_is_sufficient",
+      "source_action_mapping_valid": true,
+      "task_start_arguments_publicly_visible": true
+    },
+    {
+      "domain": "retail",
+      "effect_class": "read_only",
+      "frozen_public_branch_artifact_present": false,
+      "model_ready": true,
+      "pair_id": "tau3-dev-04",
+      "phase": "pre_action",
+      "post_failure_branch_ready": false,
+      "reason": "public_task_start_is_sufficient",
+      "source_action_mapping_valid": true,
+      "task_start_arguments_publicly_visible": true
+    },
+    {
+      "domain": "retail",
+      "effect_class": "idempotent_state_setting",
+      "frozen_public_branch_artifact_present": false,
+      "model_ready": false,
+      "pair_id": "tau3-dev-05",
+      "phase": "post_failure",
+      "post_failure_branch_ready": false,
+      "reason": "missing_frozen_public_post_failure_branch",
+      "source_action_mapping_valid": true,
+      "task_start_arguments_publicly_visible": false
+    },
+    {
+      "domain": "retail",
+      "effect_class": "idempotent_state_setting",
+      "frozen_public_branch_artifact_present": false,
+      "model_ready": false,
+      "pair_id": "tau3-dev-06",
+      "phase": "post_failure",
+      "post_failure_branch_ready": false,
+      "reason": "missing_frozen_public_post_failure_branch",
+      "source_action_mapping_valid": true,
+      "task_start_arguments_publicly_visible": false
+    },
+    {
+      "domain": "retail",
+      "effect_class": "idempotent_state_setting",
+      "frozen_public_branch_artifact_present": false,
+      "model_ready": false,
+      "pair_id": "tau3-dev-07",
+      "phase": "post_failure",
+      "post_failure_branch_ready": false,
+      "reason": "missing_frozen_public_post_failure_branch",
+      "source_action_mapping_valid": true,
+      "task_start_arguments_publicly_visible": false
+    },
+    {
+      "domain": "retail",
+      "effect_class": "idempotent_state_setting",
+      "frozen_public_branch_artifact_present": false,
+      "model_ready": false,
+      "pair_id": "tau3-dev-08",
+      "phase": "post_failure",
+      "post_failure_branch_ready": false,
+      "reason": "missing_frozen_public_post_failure_branch",
+      "source_action_mapping_valid": true,
+      "task_start_arguments_publicly_visible": false
+    },
+    {
+      "domain": "airline",
+      "effect_class": "non_idempotent_side_effect",
+      "frozen_public_branch_artifact_present": false,
+      "model_ready": false,
+      "pair_id": "tau3-dev-09",
+      "phase": "post_failure",
+      "post_failure_branch_ready": false,
+      "reason": "missing_frozen_public_post_failure_branch",
+      "source_action_mapping_valid": true,
+      "task_start_arguments_publicly_visible": false
+    },
+    {
+      "domain": "retail",
+      "effect_class": "non_idempotent_side_effect",
+      "frozen_public_branch_artifact_present": false,
+      "model_ready": false,
+      "pair_id": "tau3-dev-10",
+      "phase": "post_failure",
+      "post_failure_branch_ready": false,
+      "reason": "missing_frozen_public_post_failure_branch",
+      "source_action_mapping_valid": true,
+      "task_start_arguments_publicly_visible": false
+    },
+    {
+      "domain": "retail",
+      "effect_class": "non_idempotent_side_effect",
+      "frozen_public_branch_artifact_present": false,
+      "model_ready": false,
+      "pair_id": "tau3-dev-11",
+      "phase": "post_failure",
+      "post_failure_branch_ready": false,
+      "reason": "missing_frozen_public_post_failure_branch",
+      "source_action_mapping_valid": true,
+      "task_start_arguments_publicly_visible": false
+    },
+    {
+      "domain": "retail",
+      "effect_class": "non_idempotent_side_effect",
+      "frozen_public_branch_artifact_present": false,
+      "model_ready": false,
+      "pair_id": "tau3-dev-12",
+      "phase": "post_failure",
+      "post_failure_branch_ready": false,
+      "reason": "missing_frozen_public_post_failure_branch",
+      "source_action_mapping_valid": true,
+      "task_start_arguments_publicly_visible": false
+    }
+  ],
+  "protocol_ready": false,
+  "run_kind": "proper_v2_3_tau3_model_protocol_feasibility_audit",
+  "schema_version": 1,
+  "source_revision": "fc0055dc4e0a316c3f83133267fbd6faaa770992",
+  "summary": {
+    "candidate_count": 12,
+    "model_ready_count": 4,
+    "model_ready_effect_counts": {
+      "read_only": 4
+    },
+    "model_ready_phase_counts": {
+      "post_failure": 0,
+      "pre_action": 4
+    },
+    "new_heldout_target_capacity": 0,
+    "phase_counts": {
+      "post_failure": 8,
+      "pre_action": 4
+    },
+    "source_action_mapping_count": 12
+  },
+  "task_executed": false
+}
