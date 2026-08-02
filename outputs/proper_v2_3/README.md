@@ -164,3 +164,11 @@ Protocol v2 subsequently stopped on an unused top-level batch-runner `pandas`
 import before constructing the retail environment. Protocol v3 loads only the
 required pinned tau2 source modules through a lightweight namespace. No native
 action ran in v2, and the adapter and scientific gates are unchanged.
+
+The protocol-v3 native result passed and is frozen in
+`tau3_branch_replay_native_smoke/result.json` with SHA-256
+`ef8fac9162e28af8ea0b9f552b370ffffb9d9289482eef40be604d9885166a14`.
+`local_freeze_validation.json` independently checks its schema, revisions,
+configuration hash, nine gates, single native execution, checkpoint round trip,
+and closed model/GPU claims. It authorizes public branch capture protocol design
+only.

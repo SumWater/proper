@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "status": "frozen_remote_native_tau3_cpu_smoke_result",
+  "result": {
+    "path": "outputs/proper_v2_3/tau3_branch_replay_native_smoke/result.json",
+    "sha256": "ef8fac9162e28af8ea0b9f552b370ffffb9d9289482eef40be604d9885166a14",
+    "remote_project_revision": "bcc758badf692932008824d0d0d05fcda865a177",
+    "tau3_revision": "fc0055dc4e0a316c3f83133267fbd6faaa770992",
+    "smoke_config_sha256": "7ae11aaf8e1b10ec49843b49c018d4cb181c3dbb07bd1c43e5f464ce9d92a3e4",
+    "checkpoint_sha256": "ef6888f24cb08db72f80d8a4d47c3ae9c530452d05fef760d61a77383c1a4d40",
+    "expected_native_execution_count": 1,
+    "expected_check_count": 9
+  },
+  "interpretation": {
+    "adapter_native_cpu_smoke_passed": true,
+    "real_public_branch_capture_protocol_design_authorized": true,
+    "real_branch_capture_execution_authorized": false,
+    "model_protocol_freeze_authorized": false,
+    "model_runner_authorized": false,
+    "model_run_authorized": false,
+    "gpu_authorized": false,
+    "confirmatory_claim_authorized": false
+  }
+}

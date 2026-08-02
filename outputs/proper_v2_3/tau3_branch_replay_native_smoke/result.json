@@ -1,0 +1,32 @@
+{
+  "checkpoint_sha256": "ef6888f24cb08db72f80d8a4d47c3ae9c530452d05fef760d61a77383c1a4d40",
+  "checks": {
+    "adapter_initialized_once": true,
+    "checkpoint_hash_matches": true,
+    "environment_replay_history_empty": true,
+    "native_execution_count_is_one": true,
+    "pending_order_cancelled_before_capture": true,
+    "project_revision_matches": true,
+    "project_worktree_clean": true,
+    "restored_order_status_matches": true,
+    "tau3_revision_matches": true
+  },
+  "config_sha256": "7ae11aaf8e1b10ec49843b49c018d4cb181c3dbb07bd1c43e5f464ce9d92a3e4",
+  "confirmatory_run_authorized": false,
+  "gpu_used": false,
+  "model_loaded": false,
+  "model_outputs_read": false,
+  "model_run_authorized": false,
+  "model_runner_authorized": false,
+  "native_execution_count": 1,
+  "next_gate": "freeze_public_branch_capture_protocol",
+  "passed": true,
+  "project_revision": "bcc758badf692932008824d0d0d05fcda865a177",
+  "real_branch_capture_authorized": true,
+  "restored_checkpoint_sha256": "ef6888f24cb08db72f80d8a4d47c3ae9c530452d05fef760d61a77383c1a4d40",
+  "run_kind": "proper_v2_3_tau3_branch_replay_native_cpu_smoke",
+  "schema_version": 1,
+  "selected_order_id_sha256": "993d758d42cb72fa9ccee2275c50fec1be69715fab78fbfb4be4e246a8affd99",
+  "task_loaded": false,
+  "tau3_revision": "fc0055dc4e0a316c3f83133267fbd6faaa770992"
+}

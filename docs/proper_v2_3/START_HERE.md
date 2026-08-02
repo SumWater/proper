@@ -326,3 +326,17 @@ tau2's top-level package eagerly imports the unused batch runner and its
 `pandas` dependency. Protocol v3 uses a lightweight namespace for the pinned
 source and imports only the retail environment modules required by the smoke.
 No native action, task, or model ran, and no method or pass gate changed.
+
+## Current gate after native tau3 replay smoke
+
+The protocol-v3 remote native CPU smoke passed at remote revision
+`bcc758badf692932008824d0d0d05fcda865a177`. One isolated
+`cancel_pending_order` action executed, and a second fresh environment restored
+the post-action checkpoint with empty mutation replay. All nine checks passed;
+the checkpoint hashes matched exactly. No task, model, model output, or GPU was
+used. See `tau3_branch_replay_native_smoke_result.md`.
+
+This result authorizes only freezing the real public branch capture protocol.
+It does not yet authorize capturing the eight missing post-failure branches,
+running the 12 development tasks, freezing a model protocol, implementing a
+model runner, or using a GPU.
