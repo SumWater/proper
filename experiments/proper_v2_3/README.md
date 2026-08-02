@@ -40,6 +40,9 @@ command.
   regenerates the explicit blocker plan, and reports the full-capacity stop.
 - `tau3_execution_state_continuation_screen_v2_3.py`: reconstructs the frozen
   complete ledgers and replays their public evidence through continuation.
+- `validate_real_public_branch_capture_protocol_v2_3.py`: CPU-only validation
+  of the one-attempt public acquisition, injection, isolation, and stop design;
+  it is not a capture or model runner.
 
 Preparation schema/validation protocol v2 preserves the failed fixed-path v1
 manifest and writes every subsequent attempt to a unique run directory.

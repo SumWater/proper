@@ -20,6 +20,9 @@ decision, and version-specific result schemas. Frozen schemas under
   verified evidence, uncertainty, stall count, and terminal reason.
 - `continuation_decision.schema.json`: continue/verify/revise/stop envelope
   joining progress state with the existing controller state.
+- `real_public_branch_capture_manifest.schema.json`: closed future output for
+  12 one-attempt public branch acquisitions, including integrity, execution,
+  cost, and preserved failure fields.
 - `planbench_xl_capacity_audit_design.schema.json`: closed no-source/no-model
   design-validation result before any external inventory.
 - `planbench_xl_source_qualification.schema.json`: frozen source hashes,

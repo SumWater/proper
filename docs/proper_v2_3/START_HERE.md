@@ -340,3 +340,20 @@ This result authorizes only freezing the real public branch capture protocol.
 It does not yet authorize capturing the eight missing post-failure branches,
 running the 12 development tasks, freezing a model protocol, implementing a
 model runner, or using a GPU.
+
+## Current gate after real public branch capture protocol design
+
+`real_public_branch_capture_protocol.md` now freezes the acquisition semantics
+before any development task is run. Each pair gets one ordinary public
+`no_memory_baseline` acquisition attempt with no gold-scripted prefix,
+resampling, or replacement. Pre-action branches stop after the initial public
+user message; idempotent settings receive a visible non-executed reference
+failure; non-idempotent actions execute exactly once and receive a public
+unknown-result receipt backed by the post-action checkpoint.
+
+The action/verifier registry is based on public tool contracts and covers all
+nine guarded tool names with read-only verification where declared. Pair/task
+routing remains evaluator-only. The validated design authorizes freezing the
+complete acquisition runtime only. It does not authorize running the 12 tasks,
+capturing branches, freezing a comparison model protocol, implementing a model
+runner, or using a GPU.

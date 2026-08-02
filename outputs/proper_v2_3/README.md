@@ -172,3 +172,12 @@ The protocol-v3 native result passed and is frozen in
 configuration hash, nine gates, single native execution, checkpoint round trip,
 and closed model/GPU claims. It authorizes public branch capture protocol design
 only.
+
+## Real public branch capture protocol
+
+`real_public_branch_capture_protocol/validation.json` is the CPU-only protocol
+design validation. It checks the frozen 12-pair development partition, public
+action/verifier registry, separate failed versus unknown injection semantics,
+evaluator/method field separation, one-attempt stop policy, input hashes, and
+closed future-manifest schema. It authorizes acquisition-runtime freezing only;
+no task, model, or GPU was used.

@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://proper.local/schemas/proper_v2_3/real_public_branch_capture_manifest.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "run_kind", "protocol_sha256", "runtime_sha256", "capture_attempt_count", "captured_branch_count", "post_failure_captured_count", "checks", "passed", "attempts", "task_model_or_gpu_boundary", "model_protocol_authorized", "confirmatory_run_authorized", "next_gate"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "run_kind": {"const": "proper_v2_3_real_public_branch_capture"},
+    "protocol_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "runtime_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "capture_attempt_count": {"const": 12},
+    "captured_branch_count": {"type": "integer", "minimum": 0, "maximum": 12},
+    "post_failure_captured_count": {"type": "integer", "minimum": 0, "maximum": 8},
+    "checks": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "boolean"}},
+    "passed": {"type": "boolean"},
+    "attempts": {
+      "type": "array", "minItems": 12, "maxItems": 12,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["pair_id", "phase", "effect_class", "capture_status", "public_history_sha256", "checkpoint_sha256", "identical_start_sha256", "native_execution_count", "failure_reason", "agent_cost", "user_simulator_cost"],
+        "properties": {
+          "pair_id": {"type": "string"},
+          "phase": {"enum": ["pre_action", "post_failure"]},
+          "effect_class": {"enum": ["read_only", "idempotent_state_setting", "non_idempotent_side_effect"]},
+          "capture_status": {"enum": ["captured", "target_not_reached", "invalid_guarded_arguments", "early_termination", "integrity_failure", "safety_failure"]},
+          "public_history_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+          "checkpoint_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+          "identical_start_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+          "native_execution_count": {"type": "integer", "minimum": 0, "maximum": 1},
+          "failure_reason": {"type": ["string", "null"]},
+          "agent_cost": {"type": "number", "minimum": 0},
+          "user_simulator_cost": {"type": "number", "minimum": 0}
+        }
+      }
+    },
+    "task_model_or_gpu_boundary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["development_tasks_only", "acquisition_agent_condition", "model_outputs_used_for_method_tuning", "gpu_used"],
+      "properties": {
+        "development_tasks_only": {"const": true},
+        "acquisition_agent_condition": {"const": "no_memory_baseline"},
+        "model_outputs_used_for_method_tuning": {"const": false},
+        "gpu_used": {"type": "boolean"}
+      }
+    },
+    "model_protocol_authorized": {"type": "boolean"},
+    "confirmatory_run_authorized": {"const": false},
+    "next_gate": {"enum": ["freeze_five_condition_tau3_model_protocol", "stop_and_preserve_capture_failure"]}
+  }
+}

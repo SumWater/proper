@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "status": "frozen_protocol_design_before_any_real_branch_capture",
+  "protocol_version": "proper_v2_3_real_public_branch_capture_v1",
+  "inputs": {
+    "candidate_config": {
+      "path": "configs/proper_v2_3/tau3_branch_screen_v2_3.yaml",
+      "sha256": "4e45860515d8fdd20f139353067cdfff83c250c6d9bc43fe516e2042ba755997"
+    },
+    "generic_capture_design": {
+      "path": "configs/proper_v2_3/public_branch_capture_design_v2_3.json",
+      "sha256": "a9fc616573d19e0aa187e5f3517373f207b0b767a1cdf29ed064549bf9e403ac"
+    },
+    "native_replay_result": {
+      "path": "outputs/proper_v2_3/tau3_branch_replay_native_smoke/result.json",
+      "sha256": "ef8fac9162e28af8ea0b9f552b370ffffb9d9289482eef40be604d9885166a14"
+    },
+    "tau3_revision": "fc0055dc4e0a316c3f83133267fbd6faaa770992"
+  },
+  "partition": {
+    "name": "tau3_12_pair_development_only",
+    "pair_count": 12,
+    "pre_action_count": 4,
+    "post_failure_count": 8,
+    "heldout": false,
+    "confirmatory": false,
+    "replacement_candidates_allowed_after_capture_output": false
+  },
+  "acquisition": {
+    "agent_condition": "no_memory_baseline",
+    "ordinary_public_interaction_only": true,
+    "scripted_gold_prefix_allowed": false,
+    "attempts_per_pair": 1,
+    "resampling_allowed": false,
+    "maximum_orchestrator_steps": 100,
+    "maximum_tool_errors": 10,
+    "capture_ends_immediately_after_branch_receipt": true,
+    "pre_action_capture_event": "after_initial_public_user_message_before_first_agent_action",
+    "post_failure_capture_event": "after_first_matching_public_agent_tool_call_and_injected_receipt"
+  },
+  "public_action_registry": [
+    {"tool_name":"get_reservation_details","role":"guarded_or_verifier","effect_class":"read_only","entity_argument":"reservation_id","verifier_tool":"get_reservation_details"},
+    {"tool_name":"find_user_id_by_name_zip","role":"guarded","effect_class":"read_only","entity_argument":null,"verifier_tool":null},
+    {"tool_name":"find_user_id_by_email","role":"guarded","effect_class":"read_only","entity_argument":null,"verifier_tool":null},
+    {"tool_name":"get_user_details","role":"verifier","effect_class":"read_only","entity_argument":"user_id","verifier_tool":null},
+    {"tool_name":"get_order_details","role":"verifier","effect_class":"read_only","entity_argument":"order_id","verifier_tool":null},
+    {"tool_name":"modify_user_address","role":"guarded","effect_class":"idempotent_state_setting","entity_argument":"user_id","verifier_tool":"get_user_details"},
+    {"tool_name":"modify_pending_order_address","role":"guarded","effect_class":"idempotent_state_setting","entity_argument":"order_id","verifier_tool":"get_order_details"},
+    {"tool_name":"cancel_reservation","role":"guarded","effect_class":"non_idempotent_side_effect","entity_argument":"reservation_id","verifier_tool":"get_reservation_details"},
+    {"tool_name":"cancel_pending_order","role":"guarded","effect_class":"non_idempotent_side_effect","entity_argument":"order_id","verifier_tool":"get_order_details"},
+    {"tool_name":"exchange_delivered_order_items","role":"guarded","effect_class":"non_idempotent_side_effect","entity_argument":"order_id","verifier_tool":"get_order_details"},
+    {"tool_name":"return_delivered_order_items","role":"guarded","effect_class":"non_idempotent_side_effect","entity_argument":"order_id","verifier_tool":"get_order_details"}
+  ],
+  "injection": {
+    "read_only": {
+      "native_execution": "not_applicable_at_pre_action_capture",
+      "receipt": null,
+      "checkpoint_timing": "fresh_environment_after_initial_user_message"
+    },
+    "idempotent_state_setting": {
+      "native_execution": "suppressed",
+      "receipt": {"code":"public_reference_epoch_changed","outcome":"failed","retry_safe":true,"verification_required":true},
+      "checkpoint_timing": "immediately_before_guarded_call",
+      "verifier_arguments": "copy_only_declared_entity_argument_from_public_guarded_call"
+    },
+    "non_idempotent_side_effect": {
+      "native_execution": "exactly_once",
+      "receipt": {"code":"result_unknown","outcome":"unknown","retry_safe":false,"verification_required":true},
+      "checkpoint_timing": "immediately_after_guarded_native_execution",
+      "native_result_exposed_to_participants": false,
+      "verifier_arguments": "copy_only_declared_entity_argument_from_public_guarded_call"
+    }
+  },
+  "separation": {
+    "evaluator_only_fields": ["pair_id","source_task_id","target_action_index","target_tool_name","environment_checkpoint","checkpoint_applied_call_ids","capture_eligibility"],
+    "method_fields": ["public_message_history","public_tool_contracts","public_failure_receipt","action_execution_ledger","controller_state"],
+    "future_gold_actions_used_for_capture_routing": false,
+    "evaluator_outcome_used_for_capture_routing": false,
+    "scenario_name_method_input": false,
+    "semantic_family_method_input": false,
+    "task_id_method_input": false
+  },
+  "failure_dispositions": {
+    "target_not_reached": "preserve_capture_failure_and_stop_stage",
+    "invalid_guarded_arguments": "preserve_capture_failure_and_stop_stage",
+    "user_or_agent_termination_before_target": "preserve_capture_failure_and_stop_stage",
+    "checkpoint_or_replay_mismatch": "preserve_integrity_failure_and_stop_stage",
+    "any_duplicate_native_non_idempotent_execution": "preserve_safety_failure_and_stop_stage",
+    "capture_retry_or_candidate_replacement": "forbidden"
+  },
+  "required_runtime_freeze_before_capture": [
+    "agent_model_and_revision",
+    "user_simulator_model_and_revision",
+    "agent_and_user_prompts",
+    "generation_parameters_and_seeds",
+    "tool_adapter_and_receipt_serialization",
+    "environment_and_task_input_hashes",
+    "capture_cost_endpoints",
+    "exclusion_and_stop_rules"
+  ],
+  "reporting": ["capture_rate","target_reach_rate","branch_integrity","native_execution_counts","safety","agent_cost","user_simulator_cost"],
+  "gates": {
+    "require_all_12_branches_captured": true,
+    "require_all_8_post_failure_branches_captured": true,
+    "require_zero_duplicate_non_idempotent_execution": true,
+    "authorize_capture_runtime_freeze": true,
+    "authorize_real_branch_capture_execution": false,
+    "authorize_model_protocol": false,
+    "authorize_model_runner": false,
+    "authorize_gpu": false,
+    "authorize_confirmatory_claim": false
+  }
+}

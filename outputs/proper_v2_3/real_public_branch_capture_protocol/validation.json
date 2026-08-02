@@ -1,0 +1,44 @@
+{
+  "candidate_count": 12,
+  "capture_runtime_freeze_authorized": true,
+  "checks": {
+    "all_declared_verifiers_are_public_read_only": true,
+    "all_frozen_input_hashes_match": true,
+    "candidate_partition_is_12_development_pairs": true,
+    "capture_execution_and_model_gates_closed": true,
+    "effect_balance_matches": true,
+    "failure_results_are_preserved_and_stage_stops": true,
+    "future_manifest_schema_is_closed": true,
+    "gold_and_evaluator_outcomes_not_used_for_routing": true,
+    "method_and_evaluator_fields_are_disjoint": true,
+    "non_idempotent_actions_execute_exactly_once": true,
+    "one_attempt_without_replacement": true,
+    "phase_balance_matches": true,
+    "registry_covers_all_guarded_tools": true,
+    "state_settings_are_not_executed_during_injection": true
+  },
+  "config_sha256": "3d70a175142852b3d926fc4ad42b3478aaad7c194b48059648b5c75f3eb50013",
+  "confirmatory_run_authorized": false,
+  "effect_counts": {
+    "idempotent_state_setting": 4,
+    "non_idempotent_side_effect": 4,
+    "read_only": 4
+  },
+  "gpu_used": false,
+  "guarded_tool_count": 9,
+  "model_loaded": false,
+  "model_outputs_read": false,
+  "model_protocol_authorized": false,
+  "model_runner_authorized": false,
+  "next_gate": "freeze_real_branch_capture_runtime",
+  "passed": true,
+  "phase_counts": {
+    "post_failure": 8,
+    "pre_action": 4
+  },
+  "real_branch_capture_execution_authorized": false,
+  "registry_tool_count": 11,
+  "run_kind": "proper_v2_3_real_public_branch_capture_protocol_validation",
+  "schema_version": 1,
+  "task_executed": false
+}
