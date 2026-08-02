@@ -31,9 +31,10 @@ def _sha256(path: Path) -> str:
 def validate() -> dict[str, Any]:
     audit = run_audit(DEFAULT_CONFIG)
     DEFAULT_OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    DEFAULT_OUTPUT.write_text(
-        json.dumps(audit, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
-        encoding="utf-8",
+    DEFAULT_OUTPUT.write_bytes(
+        (json.dumps(audit, ensure_ascii=False, indent=2, sort_keys=True) + "\n").encode(
+            "utf-8"
+        )
     )
     schema = json.loads(SCHEMA.read_text(encoding="utf-8"))
     schema_valid = schema.get("additionalProperties") is False
@@ -87,9 +88,10 @@ def validate() -> dict[str, Any]:
 def main() -> int:
     result = validate()
     VALIDATION_OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    VALIDATION_OUTPUT.write_text(
-        json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
-        encoding="utf-8",
+    VALIDATION_OUTPUT.write_bytes(
+        (json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n").encode(
+            "utf-8"
+        )
     )
     print(json.dumps(result, ensure_ascii=False, sort_keys=True))
     return 0 if result["passed"] else 1

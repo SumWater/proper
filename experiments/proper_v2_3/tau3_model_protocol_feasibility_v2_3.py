@@ -189,9 +189,10 @@ def main() -> int:
     args = parser.parse_args()
     result = run_audit(args.config)
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(
-        json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
-        encoding="utf-8",
+    args.output.write_bytes(
+        (json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n").encode(
+            "utf-8"
+        )
     )
     print(json.dumps(result["summary"], ensure_ascii=False, sort_keys=True))
     return 0 if result["audit_passed"] else 1

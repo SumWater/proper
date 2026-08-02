@@ -1,6 +1,6 @@
 {
   "audit_path": "outputs/proper_v2_3/tau3_model_protocol_feasibility/audit.json",
-  "audit_sha256": "a234b3c0f1ca9a0a59409c896b0218f5f4789ca85b76dd3f27fd627434d6391d",
+  "audit_sha256": "a4f0c26792c2ab690fa4ec6eebe040288ea293745b09e89813541e72ee219863",
   "checks": {
     "all_stage_inputs_hashed": true,
     "audit_passed": true,
@@ -26,8 +26,8 @@
   "stage_input_sha256": {
     "configs/proper_v2_3/tau3_model_protocol_feasibility_v2_3.json": "8f1c134cf8cd8d76bab81a0702aa9aa3191e5df3146ed08223f4a7891e830585",
     "docs/proper_v2_3/tau3_model_protocol_feasibility_result.md": "56c48fc99375014ddb9aa68f578324affa6bcaff2cd4c11a4125bc35d08d862f",
-    "experiments/proper_v2_3/tau3_model_protocol_feasibility_v2_3.py": "7791c23bf3405121c0f7c7098ab5dddf0d3fd641085208a601bad3172b60f804",
-    "experiments/proper_v2_3/validate_tau3_model_protocol_feasibility_v2_3.py": "95712603d644a3c74d3782f5a4015c3c4b34fcbf1f4e2dd15e89b30f7bc813bf",
+    "experiments/proper_v2_3/tau3_model_protocol_feasibility_v2_3.py": "e0c4ebf3b36a4376d6e3273443637531ab0d4f6d4ec1925eff70990b1a20e05a",
+    "experiments/proper_v2_3/validate_tau3_model_protocol_feasibility_v2_3.py": "a2b5763e9a7af8b0138b760a3a287790e6ed9983bf0a07294b53d61a2919b6ea",
     "schemas/proper_v2_3/tau3_model_protocol_feasibility.schema.json": "cdbcf444afb5dda818c982b28f62e2689035d317f414c9a3a73421a1e030dc12",
     "tests/test_proper_v2_3_tau3_model_protocol_feasibility.py": "6b300c7d16d9d91fb351ae93222588e347e6f58c20a173b7a5313a374b6de2aa"
   },
