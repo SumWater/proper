@@ -7,6 +7,7 @@ import hashlib
 import json
 import subprocess
 import sys
+import types
 from pathlib import Path
 from typing import Any
 
@@ -25,6 +26,19 @@ from src.failure_memory.proper_v2.v2_3.branch_replay_adapter import (
     make_tau_checkpoint_exporter,
     tau_initialization_data_builder,
 )
+
+
+def _install_lightweight_tau_source_namespace() -> None:
+    """Load required tau source modules without importing the unused batch runner."""
+
+    if "tau2" in sys.modules:
+        raise RuntimeError("tau2 was imported before the lightweight source namespace guard")
+    package_directory = TAU_SOURCE / "tau2"
+    package = types.ModuleType("tau2")
+    package.__file__ = str(package_directory / "__init__.py")
+    package.__package__ = "tau2"
+    package.__path__ = [str(package_directory)]
+    sys.modules["tau2"] = package
 
 
 def _git(*args: str) -> str:
@@ -55,6 +69,7 @@ def run(expected_project_revision: str) -> dict[str, Any]:
     if tau_revision != config["source"]["revision"]:
         raise RuntimeError(f"tau3 revision mismatch: {tau_revision}")
 
+    _install_lightweight_tau_source_namespace()
     from tau2.domains.retail.environment import get_environment
 
     source_environment = get_environment()

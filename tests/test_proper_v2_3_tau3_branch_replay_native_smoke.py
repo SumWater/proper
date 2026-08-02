@@ -27,6 +27,17 @@ class Tau3BranchReplayNativeSmokeTests(unittest.TestCase):
         self.assertEqual(config["source"]["allowed_python_minors"], [11, 12])
         self.assertFalse(config["protocol_v2_correction"]["native_action_executed_in_failed_attempt"])
         self.assertFalse(config["protocol_v2_correction"]["method_or_evaluation_changed"])
+        self.assertEqual(
+            config["protocol_v3_correction"]["tau_source_loading"],
+            "lightweight_source_namespace_without_top_level_batch_runner",
+        )
+        self.assertFalse(config["protocol_v3_correction"]["native_action_executed_in_failed_attempt"])
+        self.assertFalse(config["protocol_v3_correction"]["method_or_evaluation_changed"])
+
+    def test_remote_entry_bypasses_unused_top_level_batch_runner(self) -> None:
+        source = SCRIPT.read_text(encoding="utf-8")
+        self.assertIn("_install_lightweight_tau_source_namespace()", source)
+        self.assertIn('types.ModuleType("tau2")', source)
 
     def test_output_schema_is_closed_and_forbids_model_claims(self) -> None:
         schema = json.loads((ROOT / "schemas/proper_v2_3/tau3_branch_replay_native_smoke.schema.json").read_text(encoding="utf-8"))

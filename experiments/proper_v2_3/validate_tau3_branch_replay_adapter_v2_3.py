@@ -54,7 +54,7 @@ def validate() -> dict[str, Any]:
         "run_kind": "proper_v2_3_tau3_branch_replay_adapter_local_validation",
         "checks": checks,
         "passed": all(checks.values()),
-        "scoped_tests_run": 10,
+        "scoped_tests_run": 11,
         "stage_input_sha256": hashes,
         "native_tau3_smoke_run": False,
         "native_tau3_smoke_authorized": all(checks.values()),

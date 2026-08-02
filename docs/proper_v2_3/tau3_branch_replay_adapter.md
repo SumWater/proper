@@ -35,3 +35,11 @@ before any native action. Protocol v2 permits Python 3.11 or 3.12, matching the
 repository's pre-existing frozen tau3 source-checkout execution contract. This
 is an infrastructure correction only; adapter logic and pass criteria are
 unchanged.
+
+The protocol-v2 retry next stopped because importing tau2's top-level package
+eagerly imports the unused batch runner and therefore `pandas`. Protocol v3
+loads the pinned tau2 source as a lightweight namespace and imports only the
+retail domain, data-model, and environment modules used by the smoke. This
+avoids expanding the isolated environment with unrelated runner dependencies.
+The v2 attempt stopped before environment construction and native execution;
+method logic and pass criteria again remain unchanged.

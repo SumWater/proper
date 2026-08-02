@@ -159,3 +159,8 @@ The first remote attempt stopped at the protocol-v1 Python 3.12 guard before
 tau3 import or native execution. Protocol v2 accepts Python 3.11/3.12 under the
 existing source-checkout contract. This is an infrastructure-only correction;
 the failed attempt contains no method or model evidence.
+
+Protocol v2 subsequently stopped on an unused top-level batch-runner `pandas`
+import before constructing the retail environment. Protocol v3 loads only the
+required pinned tau2 source modules through a lightweight namespace. No native
+action ran in v2, and the adapter and scientific gates are unchanged.

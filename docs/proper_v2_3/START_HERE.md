@@ -320,3 +320,9 @@ No native action, task, or model ran. Protocol v2 now permits Python 3.11 or
 3.12, matching the earlier frozen tau3 source-checkout execution contract; no
 adapter behavior, fixture action, evaluator, or pass gate changed. Rerun the
 same one-shot command after synchronizing the protocol-v2 files.
+
+That protocol-v2 retry stopped before retail-environment construction because
+tau2's top-level package eagerly imports the unused batch runner and its
+`pandas` dependency. Protocol v3 uses a lightweight namespace for the pinned
+source and imports only the retail environment modules required by the smoke.
+No native action, task, or model ran, and no method or pass gate changed.

@@ -37,3 +37,10 @@ Protocol v1 stopped on Python 3.11.15 before importing tau3 or executing the
 native action. Protocol v2 aligns this infrastructure guard with the existing
 frozen tau3 remote source-checkout contract, which permits Python 3.11 and
 3.12. No method, fixture action, evaluation, or scientific gate changed.
+
+Protocol v2 then stopped before constructing the retail environment because
+tau2's top-level package imports the unused batch runner, which imports
+`pandas`. Protocol v3 installs a lightweight source namespace and imports only
+the retail domain, data-model, and environment modules needed by this smoke.
+It does not replace or modify tau2 source. No native action, task, or model ran
+in the failed v2 attempt, and no scientific gate changed.
