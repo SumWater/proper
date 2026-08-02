@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://proper.local/schemas/proper_v2_3/acquisition_participant_decision.schema.json",
+  "oneOf": [
+    {
+      "type":"object", "additionalProperties":false,
+      "required":["kind","content"],
+      "properties":{"kind":{"const":"message"},"content":{"type":"string","minLength":1}}
+    },
+    {
+      "type":"object", "additionalProperties":false,
+      "required":["kind","tool_name","arguments"],
+      "properties":{"kind":{"const":"tool"},"tool_name":{"type":"string","minLength":1},"arguments":{"type":"object"}}
+    }
+  ]
+}

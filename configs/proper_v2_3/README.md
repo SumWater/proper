@@ -31,3 +31,6 @@ No GPU or confirmatory run is currently authorized.
   file hashes, structural blocker generation, effect coverage, and stop rules.
 - `tau3_execution_state_continuation_screen_v2_3.json`: frozen replay contract
   joining the 12 balanced tau3 scripted branches to observable subgoal state.
+- `local_tau_participant_prompts_v2_3.json`: separate agent/user prompt,
+  public-message encoding, strict JSON decision, and deterministic generation
+  contract; its model/task/GPU gates remain closed.

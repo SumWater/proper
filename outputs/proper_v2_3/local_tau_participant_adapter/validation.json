@@ -1,0 +1,33 @@
+{
+  "acquisition_runtime_freeze_authorized": false,
+  "checks": {
+    "agent_worker_roles_match_existing_worker": true,
+    "all_stage_inputs_hashed": true,
+    "deterministic_generation_contract_frozen": true,
+    "eight_cpu_contract_tests_pass": true,
+    "evaluator_metadata_guard_present": true,
+    "participant_decision_schema_is_exclusive": true,
+    "private_scenario_not_sent_to_agent": true,
+    "strict_json_parsers_present": true,
+    "task_model_gpu_gates_closed": true
+  },
+  "confirmatory_run_authorized": false,
+  "gpu_used": false,
+  "model_loaded": false,
+  "model_outputs_read": false,
+  "model_runner_authorized": false,
+  "next_gate": "run_remote_read_only_qwen_model_inventory",
+  "passed": true,
+  "real_branch_capture_authorized": false,
+  "remote_model_inventory_authorized": true,
+  "run_kind": "proper_v2_3_local_tau_participant_adapter_validation",
+  "schema_version": 1,
+  "scoped_tests_run": 8,
+  "stage_input_sha256": {
+    "configs/proper_v2_3/local_tau_participant_prompts_v2_3.json": "ed3f83b6c5fd8ed65da779b40cd8933b3dd2b6ee7e0c7683b06199ca5d7082b7",
+    "schemas/proper_v2_3/acquisition_participant_decision.schema.json": "42286d6b9fb0a191965c2843881a53e1dae1007af0293d5df035a99e0d4cbe63",
+    "src/failure_memory/proper_v2/v2_3/acquisition_participants.py": "dc9ece5cb1cc2f8cf4a574a220e9095528ea957fdee268b7426b12c2bda35114",
+    "tests/test_proper_v2_3_acquisition_participants.py": "e099a80d5895ed992e1eb0f74e12131e87eb114054949840cb7d8cc6a093b319"
+  },
+  "task_executed": false
+}

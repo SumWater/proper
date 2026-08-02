@@ -190,3 +190,13 @@ missing tau tool interface, local user-simulator adapter, prompts/contracts,
 model manifest, and remote inventory. The audit authorizes adapter and
 read-only inventory implementation only; acquisition and all model/GPU work
 remain closed.
+
+## Local tau participant adapter
+
+`local_tau_participant_adapter/validation.json` is a CPU-only contract result
+covering separate agent/user context, canonical public tool messages, strict
+JSON decisions, public tool-schema validation, evaluator-metadata rejection,
+deterministic worker requests, and closed task/model/GPU gates. It contains no
+model output and authorizes only a remote read-only Qwen model-directory
+inventory. It is not runtime, capture, completion, safety, or confirmatory
+evidence.

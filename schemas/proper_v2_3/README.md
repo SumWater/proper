@@ -25,6 +25,8 @@ decision, and version-specific result schemas. Frozen schemas under
   cost, and preserved failure fields.
 - `acquisition_runtime_feasibility.schema.json`: closed negative or ready audit
   for agent/user interfaces, model revision, endpoint, and model/GPU gates.
+- `acquisition_participant_decision.schema.json`: exclusive strict JSON
+  message-or-public-tool decision contract for the local participant adapter.
 - `planbench_xl_capacity_audit_design.schema.json`: closed no-source/no-model
   design-validation result before any external inventory.
 - `planbench_xl_source_qualification.schema.json`: frozen source hashes,

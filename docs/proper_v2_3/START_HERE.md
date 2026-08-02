@@ -373,3 +373,18 @@ Qwen agent/user participant adapters and producing a remote read-only model
 inventory. Acquisition-runtime freezing, task execution, branch capture,
 external API calls, model loading, model runner work, and GPU use remain
 unauthorized.
+
+## Current gate after local tau participant adapter validation
+
+`local_tau_participant_adapter.md` freezes the CPU-only boundary between tau
+public messages and the existing text-only Qwen JSONL worker. Separate agent
+and user prompts, canonical public tool records, deterministic requests,
+exclusive JSON decisions, public tool-schema validation, and symmetric
+evaluator-metadata rejection are covered by eight scoped tests. The validation
+hashes all four contract inputs and uses no task, model output, model load, or
+GPU.
+
+Passing this stage authorizes only a remote read-only content inventory of the
+known Qwen model directory. It does not authorize an acquisition runtime,
+running the 12 development tasks, capturing branches, implementing a model
+runner, calling an external endpoint, or using a GPU.

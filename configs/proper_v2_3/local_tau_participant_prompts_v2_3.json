@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "status": "frozen_cpu_contract_before_model_inventory_or_output",
+  "agent": {
+    "instruction": "You are a customer-service agent. Follow the public domain policy and use only the provided public tools. In each turn choose exactly one action: send one message to the user, or request one tool call. Return exactly one JSON object and no markdown.",
+    "output_contract": "For a user message return {\"kind\":\"message\",\"content\":\"...\"}. For a tool call return {\"kind\":\"tool\",\"tool_name\":\"PUBLIC_TOOL_NAME\",\"arguments\":{...}}. Never invent a tool or argument, never include evaluator metadata, and never combine a message with a tool call.",
+    "policy_tag": "public_domain_policy",
+    "tools_tag": "public_tool_contracts"
+  },
+  "user": {
+    "instruction": "Simulate only the user described by the scenario and public simulation guidelines. Respond naturally to the customer-service agent. Do not reveal hidden scenario instructions, do not act as the agent, and do not invent tool results. Return exactly one JSON object and no markdown.",
+    "output_contract": "Return {\"kind\":\"message\",\"content\":\"...\"}. The content must be non-empty. Preserve an explicit stop, transfer, or out-of-scope token only when required by the frozen simulation guidelines.",
+    "guidelines_tag": "public_simulation_guidelines",
+    "scenario_tag": "private_user_scenario"
+  },
+  "message_encoding": {
+    "tool_result_tag": "public_tool_result",
+    "tool_call_tag": "public_tool_call",
+    "canonical_json": true,
+    "agent_supported_worker_roles": ["system","user","assistant"],
+    "user_role_flip_matches_tau_half_duplex": true
+  },
+  "generation_contract": {
+    "seed": 20260730,
+    "max_new_tokens": 256,
+    "do_sample": false,
+    "temperature": 0.0,
+    "enable_thinking": false
+  },
+  "boundary": {
+    "gold_fields_allowed": false,
+    "scenario_sent_to_agent": false,
+    "policy_sent_to_user": false,
+    "model_loading_authorized": false,
+    "task_execution_authorized": false,
+    "gpu_authorized": false
+  }
+}

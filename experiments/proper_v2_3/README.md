@@ -46,6 +46,9 @@ command.
 - `validate_acquisition_runtime_feasibility_v2_3.py`: CPU-only audit of local
   agent/user interfaces, model revision, endpoint, prompt, and inventory
   readiness before an acquisition runtime can be frozen.
+- `validate_local_tau_participant_adapter_v2_3.py`: runs the eight CPU-only
+  agent/user message-contract tests and freezes their input hashes; it neither
+  imports nor loads the local model.
 
 Preparation schema/validation protocol v2 preserves the failed fixed-path v1
 manifest and writes every subsequent attempt to a unique run directory.
