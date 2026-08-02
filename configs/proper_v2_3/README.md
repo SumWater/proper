@@ -29,3 +29,5 @@ No GPU or confirmatory run is currently authorized.
   qualification contract; it stops before unfrozen source inventory.
 - `planbench_xl_source_qualification_v2_3.json`: frozen upstream revision,
   file hashes, structural blocker generation, effect coverage, and stop rules.
+- `tau3_execution_state_continuation_screen_v2_3.json`: frozen replay contract
+  joining the 12 balanced tau3 scripted branches to observable subgoal state.

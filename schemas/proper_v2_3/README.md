@@ -24,3 +24,5 @@ decision, and version-specific result schemas. Frozen schemas under
   design-validation result before any external inventory.
 - `planbench_xl_source_qualification.schema.json`: frozen source hashes,
   inventory, structural continuation pool, effect coverage, and stop result.
+- `tau3_execution_state_continuation_screen.schema.json`: balanced 12-pair
+  scripted progress-handoff result and no-model authorization boundary.

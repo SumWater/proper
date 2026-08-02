@@ -1,0 +1,577 @@
+{
+  "checks": {
+    "all_input_branch_checks_passed": true,
+    "all_input_repeats_blocked": true,
+    "all_ledgers_resolved": true,
+    "all_progress_handoffs_pass": true,
+    "effect_balance_matches": true,
+    "frozen_branch_hash_matches": true,
+    "no_model_or_gpu_authority": true,
+    "non_idempotent_native_execution_once": true,
+    "pair_count_matches": true
+  },
+  "config_sha256": "605bc85c2561bd01f9fcb855d887d33ac888f63a42c696f43e1ee8e96bf4d755",
+  "confirmatory_run_authorized": false,
+  "development_model_protocol_design_authorized": true,
+  "development_model_run_authorized": false,
+  "gpu_used": false,
+  "input_branch_screen_sha256": "24b9967ac3790d5056f716899791469ee017400fc7a34a32d8adecb14a579eae",
+  "model_loaded": false,
+  "model_outputs_read": false,
+  "next_gate": "freeze_tau3_continuation_development_protocol",
+  "pairs": [
+    {
+      "domain": "airline",
+      "effect_class": "read_only",
+      "final_disposition": "stop",
+      "final_progress_state": {
+        "active_subgoal_id": null,
+        "consecutive_no_progress": 0,
+        "last_verified_evidence": [
+          "scripted_public_result:continuation_observed"
+        ],
+        "method_version": "proper_v2_3_execution_state_continuation_design",
+        "progress_status": "complete",
+        "schema_version": 1,
+        "stop_reason": "observable_task_complete",
+        "subgoals": [
+          {
+            "description": "Complete the first distinct ordinary continuation step.",
+            "status": "completed",
+            "subgoal_id": "continuation_step_1",
+            "success_evidence_codes": [
+              "scripted_public_result:continuation_observed"
+            ]
+          },
+          {
+            "description": "Complete the second distinct ordinary continuation step.",
+            "status": "completed",
+            "subgoal_id": "continuation_step_2",
+            "success_evidence_codes": [
+              "scripted_public_result:continuation_observed"
+            ]
+          }
+        ],
+        "trajectory_id": "tau3-dev-01",
+        "transition_index": 2,
+        "uncertain_ledger_entry_ids": []
+      },
+      "final_reason": "observable_task_complete",
+      "first_disposition": "continue",
+      "guarded_native_execution_count": 1,
+      "input_exact_repeat_blocked": true,
+      "input_lifecycle_consumed": true,
+      "pair_id": "tau3-dev-01",
+      "passed": true,
+      "unresolved_allowed_ledger_entry_ids": []
+    },
+    {
+      "domain": "airline",
+      "effect_class": "read_only",
+      "final_disposition": "stop",
+      "final_progress_state": {
+        "active_subgoal_id": null,
+        "consecutive_no_progress": 0,
+        "last_verified_evidence": [
+          "scripted_public_result:continuation_observed"
+        ],
+        "method_version": "proper_v2_3_execution_state_continuation_design",
+        "progress_status": "complete",
+        "schema_version": 1,
+        "stop_reason": "observable_task_complete",
+        "subgoals": [
+          {
+            "description": "Complete the first distinct ordinary continuation step.",
+            "status": "completed",
+            "subgoal_id": "continuation_step_1",
+            "success_evidence_codes": [
+              "scripted_public_result:continuation_observed"
+            ]
+          },
+          {
+            "description": "Complete the second distinct ordinary continuation step.",
+            "status": "completed",
+            "subgoal_id": "continuation_step_2",
+            "success_evidence_codes": [
+              "scripted_public_result:continuation_observed"
+            ]
+          }
+        ],
+        "trajectory_id": "tau3-dev-02",
+        "transition_index": 2,
+        "uncertain_ledger_entry_ids": []
+      },
+      "final_reason": "observable_task_complete",
+      "first_disposition": "continue",
+      "guarded_native_execution_count": 1,
+      "input_exact_repeat_blocked": true,
+      "input_lifecycle_consumed": true,
+      "pair_id": "tau3-dev-02",
+      "passed": true,
+      "unresolved_allowed_ledger_entry_ids": []
+    },
+    {
+      "domain": "retail",
+      "effect_class": "read_only",
+      "final_disposition": "stop",
+      "final_progress_state": {
+        "active_subgoal_id": null,
+        "consecutive_no_progress": 0,
+        "last_verified_evidence": [
+          "scripted_public_result:continuation_observed"
+        ],
+        "method_version": "proper_v2_3_execution_state_continuation_design",
+        "progress_status": "complete",
+        "schema_version": 1,
+        "stop_reason": "observable_task_complete",
+        "subgoals": [
+          {
+            "description": "Complete the first distinct ordinary continuation step.",
+            "status": "completed",
+            "subgoal_id": "continuation_step_1",
+            "success_evidence_codes": [
+              "scripted_public_result:continuation_observed"
+            ]
+          },
+          {
+            "description": "Complete the second distinct ordinary continuation step.",
+            "status": "completed",
+            "subgoal_id": "continuation_step_2",
+            "success_evidence_codes": [
+              "scripted_public_result:continuation_observed"
+            ]
+          }
+        ],
+        "trajectory_id": "tau3-dev-03",
+        "transition_index": 2,
+        "uncertain_ledger_entry_ids": []
+      },
+      "final_reason": "observable_task_complete",
+      "first_disposition": "continue",
+      "guarded_native_execution_count": 1,
+      "input_exact_repeat_blocked": true,
+      "input_lifecycle_consumed": true,
+      "pair_id": "tau3-dev-03",
+      "passed": true,
+      "unresolved_allowed_ledger_entry_ids": []
+    },
+    {
+      "domain": "retail",
+      "effect_class": "read_only",
+      "final_disposition": "stop",
+      "final_progress_state": {
+        "active_subgoal_id": null,
+        "consecutive_no_progress": 0,
+        "last_verified_evidence": [
+          "scripted_public_result:continuation_observed"
+        ],
+        "method_version": "proper_v2_3_execution_state_continuation_design",
+        "progress_status": "complete",
+        "schema_version": 1,
+        "stop_reason": "observable_task_complete",
+        "subgoals": [
+          {
+            "description": "Complete the first distinct ordinary continuation step.",
+            "status": "completed",
+            "subgoal_id": "continuation_step_1",
+            "success_evidence_codes": [
+              "scripted_public_result:continuation_observed"
+            ]
+          },
+          {
+            "description": "Complete the second distinct ordinary continuation step.",
+            "status": "completed",
+            "subgoal_id": "continuation_step_2",
+            "success_evidence_codes": [
+              "scripted_public_result:continuation_observed"
+            ]
+          }
+        ],
+        "trajectory_id": "tau3-dev-04",
+        "transition_index": 2,
+        "uncertain_ledger_entry_ids": []
+      },
+      "final_reason": "observable_task_complete",
+      "first_disposition": "continue",
+      "guarded_native_execution_count": 1,
+      "input_exact_repeat_blocked": true,
+      "input_lifecycle_consumed": true,
+      "pair_id": "tau3-dev-04",
+      "passed": true,
+      "unresolved_allowed_ledger_entry_ids": []
+    },
+    {
+      "domain": "retail",
+      "effect_class": "idempotent_state_setting",
+      "final_disposition": "stop",
+      "final_progress_state": {
+        "active_subgoal_id": null,
+        "consecutive_no_progress": 0,
+        "last_verified_evidence": [
+          "scripted_public_result:continuation_observed"
+        ],
+        "method_version": "proper_v2_3_execution_state_continuation_design",
+        "progress_status": "complete",
+        "schema_version": 1,
+        "stop_reason": "observable_task_complete",
+        "subgoals": [
+          {
+            "description": "Complete the first distinct ordinary continuation step.",
+            "status": "completed",
+            "subgoal_id": "continuation_step_1",
+            "success_evidence_codes": [
+              "scripted_public_result:continuation_observed"
+            ]
+          },
+          {
+            "description": "Complete the second distinct ordinary continuation step.",
+            "status": "completed",
+            "subgoal_id": "continuation_step_2",
+            "success_evidence_codes": [
+              "scripted_public_result:continuation_observed"
+            ]
+          }
+        ],
+        "trajectory_id": "tau3-dev-05",
+        "transition_index": 2,
+        "uncertain_ledger_entry_ids": []
+      },
+      "final_reason": "observable_task_complete",
+      "first_disposition": "continue",
+      "guarded_native_execution_count": 2,
+      "input_exact_repeat_blocked": true,
+      "input_lifecycle_consumed": true,
+      "pair_id": "tau3-dev-05",
+      "passed": true,
+      "unresolved_allowed_ledger_entry_ids": []
+    },
+    {
+      "domain": "retail",
+      "effect_class": "idempotent_state_setting",
+      "final_disposition": "stop",
+      "final_progress_state": {
+        "active_subgoal_id": null,
+        "consecutive_no_progress": 0,
+        "last_verified_evidence": [
+          "scripted_public_result:continuation_observed"
+        ],
+        "method_version": "proper_v2_3_execution_state_continuation_design",
+        "progress_status": "complete",
+        "schema_version": 1,
+        "stop_reason": "observable_task_complete",
+        "subgoals": [
+          {
+            "description": "Complete the first distinct ordinary continuation step.",
+            "status": "completed",
+            "subgoal_id": "continuation_step_1",
+            "success_evidence_codes": [
+              "scripted_public_result:continuation_observed"
+            ]
+          },
+          {
+            "description": "Complete the second distinct ordinary continuation step.",
+            "status": "completed",
+            "subgoal_id": "continuation_step_2",
+            "success_evidence_codes": [
+              "scripted_public_result:continuation_observed"
+            ]
+          }
+        ],
+        "trajectory_id": "tau3-dev-06",
+        "transition_index": 2,
+        "uncertain_ledger_entry_ids": []
+      },
+      "final_reason": "observable_task_complete",
+      "first_disposition": "continue",
+      "guarded_native_execution_count": 2,
+      "input_exact_repeat_blocked": true,
+      "input_lifecycle_consumed": true,
+      "pair_id": "tau3-dev-06",
+      "passed": true,
+      "unresolved_allowed_ledger_entry_ids": []
+    },
+    {
+      "domain": "retail",
+      "effect_class": "idempotent_state_setting",
+      "final_disposition": "stop",
+      "final_progress_state": {
+        "active_subgoal_id": null,
+        "consecutive_no_progress": 0,
+        "last_verified_evidence": [
+          "scripted_public_result:continuation_observed"
+        ],
+        "method_version": "proper_v2_3_execution_state_continuation_design",
+        "progress_status": "complete",
+        "schema_version": 1,
+        "stop_reason": "observable_task_complete",
+        "subgoals": [
+          {
+            "description": "Complete the first distinct ordinary continuation step.",
+            "status": "completed",
+            "subgoal_id": "continuation_step_1",
+            "success_evidence_codes": [
+              "scripted_public_result:continuation_observed"
+            ]
+          },
+          {
+            "description": "Complete the second distinct ordinary continuation step.",
+            "status": "completed",
+            "subgoal_id": "continuation_step_2",
+            "success_evidence_codes": [
+              "scripted_public_result:continuation_observed"
+            ]
+          }
+        ],
+        "trajectory_id": "tau3-dev-07",
+        "transition_index": 2,
+        "uncertain_ledger_entry_ids": []
+      },
+      "final_reason": "observable_task_complete",
+      "first_disposition": "continue",
+      "guarded_native_execution_count": 2,
+      "input_exact_repeat_blocked": true,
+      "input_lifecycle_consumed": true,
+      "pair_id": "tau3-dev-07",
+      "passed": true,
+      "unresolved_allowed_ledger_entry_ids": []
+    },
+    {
+      "domain": "retail",
+      "effect_class": "idempotent_state_setting",
+      "final_disposition": "stop",
+      "final_progress_state": {
+        "active_subgoal_id": null,
+        "consecutive_no_progress": 0,
+        "last_verified_evidence": [
+          "scripted_public_result:continuation_observed"
+        ],
+        "method_version": "proper_v2_3_execution_state_continuation_design",
+        "progress_status": "complete",
+        "schema_version": 1,
+        "stop_reason": "observable_task_complete",
+        "subgoals": [
+          {
+            "description": "Complete the first distinct ordinary continuation step.",
+            "status": "completed",
+            "subgoal_id": "continuation_step_1",
+            "success_evidence_codes": [
+              "scripted_public_result:continuation_observed"
+            ]
+          },
+          {
+            "description": "Complete the second distinct ordinary continuation step.",
+            "status": "completed",
+            "subgoal_id": "continuation_step_2",
+            "success_evidence_codes": [
+              "scripted_public_result:continuation_observed"
+            ]
+          }
+        ],
+        "trajectory_id": "tau3-dev-08",
+        "transition_index": 2,
+        "uncertain_ledger_entry_ids": []
+      },
+      "final_reason": "observable_task_complete",
+      "first_disposition": "continue",
+      "guarded_native_execution_count": 2,
+      "input_exact_repeat_blocked": true,
+      "input_lifecycle_consumed": true,
+      "pair_id": "tau3-dev-08",
+      "passed": true,
+      "unresolved_allowed_ledger_entry_ids": []
+    },
+    {
+      "domain": "airline",
+      "effect_class": "non_idempotent_side_effect",
+      "final_disposition": "stop",
+      "final_progress_state": {
+        "active_subgoal_id": null,
+        "consecutive_no_progress": 0,
+        "last_verified_evidence": [
+          "scripted_public_result:continuation_observed"
+        ],
+        "method_version": "proper_v2_3_execution_state_continuation_design",
+        "progress_status": "complete",
+        "schema_version": 1,
+        "stop_reason": "observable_task_complete",
+        "subgoals": [
+          {
+            "description": "Complete the first distinct ordinary continuation step.",
+            "status": "completed",
+            "subgoal_id": "continuation_step_1",
+            "success_evidence_codes": [
+              "scripted_public_result:continuation_observed"
+            ]
+          },
+          {
+            "description": "Complete the second distinct ordinary continuation step.",
+            "status": "completed",
+            "subgoal_id": "continuation_step_2",
+            "success_evidence_codes": [
+              "scripted_public_result:continuation_observed"
+            ]
+          }
+        ],
+        "trajectory_id": "tau3-dev-09",
+        "transition_index": 2,
+        "uncertain_ledger_entry_ids": []
+      },
+      "final_reason": "observable_task_complete",
+      "first_disposition": "continue",
+      "guarded_native_execution_count": 1,
+      "input_exact_repeat_blocked": true,
+      "input_lifecycle_consumed": true,
+      "pair_id": "tau3-dev-09",
+      "passed": true,
+      "unresolved_allowed_ledger_entry_ids": []
+    },
+    {
+      "domain": "retail",
+      "effect_class": "non_idempotent_side_effect",
+      "final_disposition": "stop",
+      "final_progress_state": {
+        "active_subgoal_id": null,
+        "consecutive_no_progress": 0,
+        "last_verified_evidence": [
+          "scripted_public_result:continuation_observed"
+        ],
+        "method_version": "proper_v2_3_execution_state_continuation_design",
+        "progress_status": "complete",
+        "schema_version": 1,
+        "stop_reason": "observable_task_complete",
+        "subgoals": [
+          {
+            "description": "Complete the first distinct ordinary continuation step.",
+            "status": "completed",
+            "subgoal_id": "continuation_step_1",
+            "success_evidence_codes": [
+              "scripted_public_result:continuation_observed"
+            ]
+          },
+          {
+            "description": "Complete the second distinct ordinary continuation step.",
+            "status": "completed",
+            "subgoal_id": "continuation_step_2",
+            "success_evidence_codes": [
+              "scripted_public_result:continuation_observed"
+            ]
+          }
+        ],
+        "trajectory_id": "tau3-dev-10",
+        "transition_index": 2,
+        "uncertain_ledger_entry_ids": []
+      },
+      "final_reason": "observable_task_complete",
+      "first_disposition": "continue",
+      "guarded_native_execution_count": 1,
+      "input_exact_repeat_blocked": true,
+      "input_lifecycle_consumed": true,
+      "pair_id": "tau3-dev-10",
+      "passed": true,
+      "unresolved_allowed_ledger_entry_ids": []
+    },
+    {
+      "domain": "retail",
+      "effect_class": "non_idempotent_side_effect",
+      "final_disposition": "stop",
+      "final_progress_state": {
+        "active_subgoal_id": null,
+        "consecutive_no_progress": 0,
+        "last_verified_evidence": [
+          "scripted_public_result:continuation_observed"
+        ],
+        "method_version": "proper_v2_3_execution_state_continuation_design",
+        "progress_status": "complete",
+        "schema_version": 1,
+        "stop_reason": "observable_task_complete",
+        "subgoals": [
+          {
+            "description": "Complete the first distinct ordinary continuation step.",
+            "status": "completed",
+            "subgoal_id": "continuation_step_1",
+            "success_evidence_codes": [
+              "scripted_public_result:continuation_observed"
+            ]
+          },
+          {
+            "description": "Complete the second distinct ordinary continuation step.",
+            "status": "completed",
+            "subgoal_id": "continuation_step_2",
+            "success_evidence_codes": [
+              "scripted_public_result:continuation_observed"
+            ]
+          }
+        ],
+        "trajectory_id": "tau3-dev-11",
+        "transition_index": 2,
+        "uncertain_ledger_entry_ids": []
+      },
+      "final_reason": "observable_task_complete",
+      "first_disposition": "continue",
+      "guarded_native_execution_count": 1,
+      "input_exact_repeat_blocked": true,
+      "input_lifecycle_consumed": true,
+      "pair_id": "tau3-dev-11",
+      "passed": true,
+      "unresolved_allowed_ledger_entry_ids": []
+    },
+    {
+      "domain": "retail",
+      "effect_class": "non_idempotent_side_effect",
+      "final_disposition": "stop",
+      "final_progress_state": {
+        "active_subgoal_id": null,
+        "consecutive_no_progress": 0,
+        "last_verified_evidence": [
+          "scripted_public_result:continuation_observed"
+        ],
+        "method_version": "proper_v2_3_execution_state_continuation_design",
+        "progress_status": "complete",
+        "schema_version": 1,
+        "stop_reason": "observable_task_complete",
+        "subgoals": [
+          {
+            "description": "Complete the first distinct ordinary continuation step.",
+            "status": "completed",
+            "subgoal_id": "continuation_step_1",
+            "success_evidence_codes": [
+              "scripted_public_result:continuation_observed"
+            ]
+          },
+          {
+            "description": "Complete the second distinct ordinary continuation step.",
+            "status": "completed",
+            "subgoal_id": "continuation_step_2",
+            "success_evidence_codes": [
+              "scripted_public_result:continuation_observed"
+            ]
+          }
+        ],
+        "trajectory_id": "tau3-dev-12",
+        "transition_index": 2,
+        "uncertain_ledger_entry_ids": []
+      },
+      "final_reason": "observable_task_complete",
+      "first_disposition": "continue",
+      "guarded_native_execution_count": 1,
+      "input_exact_repeat_blocked": true,
+      "input_lifecycle_consumed": true,
+      "pair_id": "tau3-dev-12",
+      "passed": true,
+      "unresolved_allowed_ledger_entry_ids": []
+    }
+  ],
+  "passed": true,
+  "run_kind": "proper_v2_3_tau3_execution_state_continuation_screen",
+  "schema_version": 1,
+  "summary": {
+    "effect_counts": {
+      "idempotent_state_setting": 4,
+      "non_idempotent_side_effect": 4,
+      "read_only": 4
+    },
+    "new_heldout_target_capacity": 0,
+    "pair_count": 12,
+    "scripted_progress_completion_count": 12
+  }
+}

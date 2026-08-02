@@ -252,3 +252,14 @@ settings and zero non-idempotent side effects. The repository also contained
 no root license file, and no prospective Qwen3-8B base-capability gate was
 run. Therefore accepted full-v2.3 candidate capacity remains zero and no model
 or GPU run is authorized. See `planbench_xl_source_qualification_result.md`.
+
+The previously frozen 12-pair tau3 scripted branch result was then replayed
+through the execution-state continuation layer. All four read-only, four
+idempotent-state-setting, and four non-idempotent-side-effect pairs completed
+both scripted subgoal handoffs; every ledger was resolved and every
+non-idempotent native action remained single-execution. The replay result
+SHA-256 is
+`d954248cc05814f32759b02839584378b6cfe16bbec60bcfe98356c0ee35038c`.
+This authorizes freezing a tau3 development protocol only. It remains
+development-only, adds no held-out capacity, and authorizes no model or GPU
+run. See `tau3_execution_state_continuation_screen_result.md`.

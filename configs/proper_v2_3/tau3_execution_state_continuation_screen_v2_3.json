@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "status": "frozen_cpu_only_replay_of_scripted_tau3_branch_evidence",
+  "screen_version": "proper_v2_3_tau3_execution_state_continuation_screen",
+  "method_commit": "8610118",
+  "input": {
+    "branch_screen_path": "outputs/proper_v2_3/tau3_branch_screen/branch_screen.json",
+    "branch_screen_sha256": "24b9967ac3790d5056f716899791469ee017400fc7a34a32d8adecb14a579eae",
+    "expected_pair_count": 12,
+    "expected_per_effect_class": 4,
+    "expected_continuation_actions_per_pair": 2
+  },
+  "progress_contract": {
+    "subgoals": [
+      {
+        "subgoal_id": "continuation_step_1",
+        "description": "Complete the first distinct ordinary continuation step.",
+        "success_evidence_code": "scripted_public_result:continuation_observed"
+      },
+      {
+        "subgoal_id": "continuation_step_2",
+        "description": "Complete the second distinct ordinary continuation step.",
+        "success_evidence_code": "scripted_public_result:continuation_observed"
+      }
+    ],
+    "stall_threshold": 2,
+    "required_final_disposition": "stop",
+    "required_final_reason": "observable_task_complete"
+  },
+  "gates": {
+    "require_all_input_branch_checks_passed": true,
+    "require_all_ledgers_fully_resolved": true,
+    "require_all_first_subgoal_handoffs_continue": true,
+    "require_all_second_subgoals_stop_complete": true,
+    "require_non_idempotent_native_execution_count": 1,
+    "require_zero_duplicate_non_idempotent_execution": true
+  },
+  "interpretation": {
+    "input_pairs_are_development_only": true,
+    "input_pairs_are_heldout": false,
+    "scripted_completion_is_model_completion": false,
+    "authorizes_model_protocol_design": true,
+    "authorizes_model_run": false
+  },
+  "boundary": {
+    "source_tasks_executed": false,
+    "model_loaded": false,
+    "model_outputs_read": false,
+    "gpu_used": false,
+    "scenario_specific_controller_branches": 0,
+    "confirmatory_claim_authorized": false
+  }
+}

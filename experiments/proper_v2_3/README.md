@@ -38,6 +38,8 @@ command.
   validation and SHA-256 envelope for the new design stage.
 - `qualify_planbench_xl_source_v2_3.py`: verifies a frozen external checkout,
   regenerates the explicit blocker plan, and reports the full-capacity stop.
+- `tau3_execution_state_continuation_screen_v2_3.py`: reconstructs the frozen
+  complete ledgers and replays their public evidence through continuation.
 
 Preparation schema/validation protocol v2 preserves the failed fixed-path v1
 manifest and writes every subsequent attempt to a unique run directory.

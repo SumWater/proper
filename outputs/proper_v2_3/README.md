@@ -116,3 +116,11 @@ Its SHA-256 is
 The structural continuation pool is 322, but accepted full-PROPER-v2.3
 capacity is zero because all 185 baseline tools are read-only. No model or GPU
 run is authorized.
+
+## Tau3 execution-state continuation screen
+
+`tau3_execution_state_continuation_screen/screen.json` replays the frozen 12
+balanced tau3 development ledgers through the observable progress layer. All
+12 scripted handoffs passed. The file SHA-256 is
+`d954248cc05814f32759b02839584378b6cfe16bbec60bcfe98356c0ee35038c`.
+This authorizes protocol design only, not a model or GPU run.
