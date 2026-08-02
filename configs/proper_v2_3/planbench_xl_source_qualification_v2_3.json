@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "status": "frozen_source_qualification_no_model_no_play",
+  "qualification_version": "proper_v2_3_planbench_xl_source_qualification",
+  "source": {
+    "repository_url": "https://github.com/JiayuJeff/PlanBench-XL",
+    "revision": "a0dacc2d227e197a61011a68d3b15c24aebbb2a1",
+    "branch_observed": "main",
+    "license_file_required_for_redistribution": true,
+    "license_file_present": false
+  },
+  "frozen_files": {
+    "README.md": "52cddfd257108153dee31a96cfbbd4368fc76978e1515577c7597dc69b34dce2",
+    "src/env/domains/executor.py": "67d08f3518ba0ea36d1ff00183b72fc741be0f2d2c87681fac8b2e4717dacba5",
+    "src/env/events/blocker.py": "b16beee5f3fc62edc7417604c33176e73ed550f06b3b85073a83b43e309d8873",
+    "src/env/runtime/runner.py": "00eb39ff094825b24fa7e08b0ccd7f836d61d2dbc2a17a053d7b5e31587da18a",
+    "src/data/retail/datatypes.json": "66e7c566298f3398164f355515953c826752800f6d374750d95364f1c5c333c4",
+    "src/data/retail/database.json": "42f27304989f10beb8a032e88e25162fe58b5797cb92710f27ac2302fc8742e4",
+    "src/data/retail/baseline_tools.json": "23cb2ea9b034cb9c38453768ca76a868ec803907e7499f8344525b30f75f9983",
+    "src/data/retail/noisy_tools.json": "b4de3a7393b9caa9722632397a56ce75a894af57e2124286aab2c32c651645e3",
+    "src/data/retail/blocker_tools.json": "4d1a8870dc6bf57650fb10ae3947b48942b496c18330cc2ca762e32ed55e2fa0",
+    "src/data/retail/tasks.json": "871c700648c327091f45ffa8b77ca96b23901ff48412c633015c0942719dccd6",
+    "src/data/retail/queries.json": "a622e7edc9f3a4a9a97356808586d52b196ae3c77ae1860c79be6249ea8d6dc3",
+    "src/data/retail/paths_set_catalog.json": "7721d4de833de6c1e2a70ae02b963ae55bdb24a82cfc48942aa5d2bdd8fe5fe0"
+  },
+  "expected_inventory": {
+    "query_count": 327,
+    "task_count": 327,
+    "datatype_count": 56,
+    "baseline_tool_count": 185,
+    "noisy_tool_count": 925,
+    "blocker_tool_count": 555,
+    "total_tool_count": 1665,
+    "minimum_task_steps": 5,
+    "maximum_task_steps": 9,
+    "blocker_count_per_noise_type": 185
+  },
+  "structural_blocker_plan": {
+    "selection_mode": "target_remaining_ratio",
+    "target_remaining_ratio": 0.6,
+    "min_remaining_paths": 1,
+    "remaining_tolerance": 1,
+    "remaining_path_length_objective": "none",
+    "blocking_edge_count_objective": "minimize",
+    "seed": 42,
+    "noise_mode": "fixed",
+    "fixed_noise_type": "explicit failures",
+    "max_combo_candidates": 5000,
+    "max_cover_size": 4,
+    "expected_plan_sha256": "a2ad0386b59744b5ddd0a285c7a96b8dab38daa60a914404d0ef87b3adefb810",
+    "expected_successful_task_plans": 327,
+    "expected_nonempty_failure_plans": 322,
+    "expected_zero_edge_plans": 5,
+    "expected_minimum_remaining_steps": 5
+  },
+  "effect_coverage_interpretation": {
+    "baseline_executor_is_read_only": true,
+    "read_only_tool_count": 185,
+    "idempotent_state_setting_tool_count": 0,
+    "non_idempotent_side_effect_tool_count": 0,
+    "unknown_effect_tool_count": 0
+  },
+  "audit_only_fields": [
+    "correct_answer",
+    "one_available_path",
+    "paths_set_catalog",
+    "blocker_noise_type",
+    "benchmark_completion_label"
+  ],
+  "stop_rules": {
+    "missing_redistribution_license": "do_not_vendor_or_package_source",
+    "zero_state_setting_or_side_effect_coverage": "stop_full_proper_v2_3_capacity_gate",
+    "base_model_floor_not_passed": "do_not_run_failure_intervention"
+  },
+  "boundary": {
+    "source_read_only": true,
+    "model_loaded": false,
+    "model_outputs_read": false,
+    "target_scenarios_played": false,
+    "gpu_run_authorized": false,
+    "confirmatory_claim_authorized": false
+  }
+}

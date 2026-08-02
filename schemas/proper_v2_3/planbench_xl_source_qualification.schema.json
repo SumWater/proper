@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://proper.local/schemas/proper_v2_3/planbench_xl_source_qualification.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "run_kind",
+    "source_revision",
+    "source_file_sha256",
+    "checks",
+    "passed",
+    "inventory",
+    "structural_blocker_plan",
+    "action_effect_coverage",
+    "license_files",
+    "structural_continuation_pool_size",
+    "accepted_full_proper_v2_3_candidate_count",
+    "model_loaded",
+    "model_outputs_read",
+    "gpu_used",
+    "model_run_authorized",
+    "confirmatory_run_authorized",
+    "disposition",
+    "stop_reasons"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "run_kind": {"const": "proper_v2_3_planbench_xl_source_qualification"},
+    "source_revision": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "source_file_sha256": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+    },
+    "checks": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {"type": "boolean"}
+    },
+    "passed": {"type": "boolean"},
+    "inventory": {"type": "object"},
+    "structural_blocker_plan": {"type": "object"},
+    "action_effect_coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "read_only",
+        "idempotent_state_setting",
+        "non_idempotent_side_effect",
+        "unknown_effect"
+      ],
+      "properties": {
+        "read_only": {"type": "integer", "minimum": 0},
+        "idempotent_state_setting": {"type": "integer", "minimum": 0},
+        "non_idempotent_side_effect": {"type": "integer", "minimum": 0},
+        "unknown_effect": {"type": "integer", "minimum": 0}
+      }
+    },
+    "license_files": {"type": "array", "items": {"type": "string"}},
+    "structural_continuation_pool_size": {"type": "integer", "minimum": 0},
+    "accepted_full_proper_v2_3_candidate_count": {"const": 0},
+    "model_loaded": {"const": false},
+    "model_outputs_read": {"const": false},
+    "gpu_used": {"const": false},
+    "model_run_authorized": {"const": false},
+    "confirmatory_run_authorized": {"const": false},
+    "disposition": {"const": "stop_full_proper_v2_3_capacity_gate"},
+    "stop_reasons": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    }
+  }
+}

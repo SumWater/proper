@@ -1,0 +1,82 @@
+{
+  "accepted_full_proper_v2_3_candidate_count": 0,
+  "action_effect_coverage": {
+    "idempotent_state_setting": 0,
+    "non_idempotent_side_effect": 0,
+    "read_only": 185,
+    "unknown_effect": 0
+  },
+  "checks": {
+    "all_frozen_file_hashes_match": true,
+    "all_path_catalog_tasks_present": true,
+    "all_task_plans_succeed": true,
+    "datatype_count_matches": true,
+    "effect_coverage_is_read_only_only": true,
+    "frozen_revision_matches": true,
+    "license_absence_matches_frozen_observation": true,
+    "no_model_or_gpu_authority": true,
+    "nonempty_failure_plan_count_matches": true,
+    "query_and_task_counts_match": true,
+    "query_task_ids_match": true,
+    "remaining_paths_are_long_horizon": true,
+    "structural_plan_hash_matches": true,
+    "task_step_range_matches": true,
+    "three_blocker_families_cover_all_baseline_tools": true,
+    "tool_counts_match": true,
+    "zero_edge_plan_count_matches": true
+  },
+  "confirmatory_run_authorized": false,
+  "disposition": "stop_full_proper_v2_3_capacity_gate",
+  "gpu_used": false,
+  "inventory": {
+    "baseline_tool_count": 185,
+    "blocker_count_by_noise_type": {
+      "explicit failures": 185,
+      "implicit failures": 185,
+      "semantic misleading": 185
+    },
+    "blocker_tool_count": 555,
+    "datatype_count": 56,
+    "maximum_task_steps": 9,
+    "minimum_task_steps": 5,
+    "noisy_tool_count": 925,
+    "query_count": 327,
+    "task_count": 327,
+    "total_tool_count": 1665
+  },
+  "license_files": [],
+  "model_loaded": false,
+  "model_outputs_read": false,
+  "model_run_authorized": false,
+  "passed": true,
+  "run_kind": "proper_v2_3_planbench_xl_source_qualification",
+  "schema_version": 1,
+  "source_file_sha256": {
+    "README.md": "52cddfd257108153dee31a96cfbbd4368fc76978e1515577c7597dc69b34dce2",
+    "src/data/retail/baseline_tools.json": "23cb2ea9b034cb9c38453768ca76a868ec803907e7499f8344525b30f75f9983",
+    "src/data/retail/blocker_tools.json": "4d1a8870dc6bf57650fb10ae3947b48942b496c18330cc2ca762e32ed55e2fa0",
+    "src/data/retail/database.json": "42f27304989f10beb8a032e88e25162fe58b5797cb92710f27ac2302fc8742e4",
+    "src/data/retail/datatypes.json": "66e7c566298f3398164f355515953c826752800f6d374750d95364f1c5c333c4",
+    "src/data/retail/noisy_tools.json": "b4de3a7393b9caa9722632397a56ce75a894af57e2124286aab2c32c651645e3",
+    "src/data/retail/paths_set_catalog.json": "7721d4de833de6c1e2a70ae02b963ae55bdb24a82cfc48942aa5d2bdd8fe5fe0",
+    "src/data/retail/queries.json": "a622e7edc9f3a4a9a97356808586d52b196ae3c77ae1860c79be6249ea8d6dc3",
+    "src/data/retail/tasks.json": "871c700648c327091f45ffa8b77ca96b23901ff48412c633015c0942719dccd6",
+    "src/env/domains/executor.py": "67d08f3518ba0ea36d1ff00183b72fc741be0f2d2c87681fac8b2e4717dacba5",
+    "src/env/events/blocker.py": "b16beee5f3fc62edc7417604c33176e73ed550f06b3b85073a83b43e309d8873",
+    "src/env/runtime/runner.py": "00eb39ff094825b24fa7e08b0ccd7f836d61d2dbc2a17a053d7b5e31587da18a"
+  },
+  "source_revision": "a0dacc2d227e197a61011a68d3b15c24aebbb2a1",
+  "stop_reasons": [
+    "zero_state_setting_or_non_idempotent_side_effect_coverage",
+    "base_model_capability_not_established",
+    "source_redistribution_license_not_present"
+  ],
+  "structural_blocker_plan": {
+    "minimum_remaining_path_steps": 5,
+    "nonempty_failure_plan_count": 322,
+    "sha256": "a2ad0386b59744b5ddd0a285c7a96b8dab38daa60a914404d0ef87b3adefb810",
+    "successful_task_plan_count": 327,
+    "zero_edge_plan_count": 5
+  },
+  "structural_continuation_pool_size": 322
+}

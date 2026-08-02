@@ -36,6 +36,8 @@ command.
   source-qualification design and stops before inventory.
 - `validate_execution_state_continuation_stage_v2_3.py`: one-shot CPU-only
   validation and SHA-256 envelope for the new design stage.
+- `qualify_planbench_xl_source_v2_3.py`: verifies a frozen external checkout,
+  regenerates the explicit blocker plan, and reports the full-capacity stop.
 
 Preparation schema/validation protocol v2 preserves the failed fixed-path v1
 manifest and writes every subsequent attempt to a unique run directory.

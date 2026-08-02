@@ -236,3 +236,19 @@ condition four, and post-failure total-token cost rose 49.3%. The prespecified
 completion gate therefore stopped this development line on the existing 12
 pairs. See `qwen_five_condition_development_result.md`; do not retune and rerun
 this frozen cohort.
+
+## Current gate after execution-state continuation design
+
+The CPU-only execution-state continuation design was frozen at project commit
+`8610118`. It adds observable subgoal handoff and bounded progress routing
+without rerunning the existing 12 pairs. Its four scripted traces passed; this
+is implementation evidence only, not a model-completion result.
+
+PlanBench-XL source revision
+`a0dacc2d227e197a61011a68d3b15c24aebbb2a1` was then qualified read-only.
+Its 322 nonempty explicit-blocker plans form a structural continuation pool,
+but all 185 baseline tools are read-only: there are zero idempotent state
+settings and zero non-idempotent side effects. The repository also contained
+no root license file, and no prospective Qwen3-8B base-capability gate was
+run. Therefore accepted full-v2.3 candidate capacity remains zero and no model
+or GPU run is authorized. See `planbench_xl_source_qualification_result.md`.

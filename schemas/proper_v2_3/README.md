@@ -22,3 +22,5 @@ decision, and version-specific result schemas. Frozen schemas under
   joining progress state with the existing controller state.
 - `planbench_xl_capacity_audit_design.schema.json`: closed no-source/no-model
   design-validation result before any external inventory.
+- `planbench_xl_source_qualification.schema.json`: frozen source hashes,
+  inventory, structural continuation pool, effect coverage, and stop result.

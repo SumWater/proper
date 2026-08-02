@@ -105,3 +105,14 @@ similarity (0.5233 versus 0.6815) and increased post-failure total tokens by
 
 This negative development result is frozen. It is neither held-out nor
 confirmatory and must not be tuned on these same 12 pairs.
+
+## PlanBench-XL source qualification
+
+`planbench_xl_source_qualification/source_qualification.json` records the
+read-only qualification of upstream revision
+`a0dacc2d227e197a61011a68d3b15c24aebbb2a1`. It contains no model output.
+Its SHA-256 is
+`e8ba4e0092aa5e7da584b80cc5ee98b7f47f98f19919fedbaf3dba726b65a267`.
+The structural continuation pool is 322, but accepted full-PROPER-v2.3
+capacity is zero because all 185 baseline tools are read-only. No model or GPU
+run is authorized.
