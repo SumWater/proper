@@ -8,7 +8,7 @@
 - all 12 frozen code/data/README hashes matched the qualification contract;
 - no `LICENSE` or `COPYING` file was present at repository root.
 - structured qualification result SHA-256:
-  `e8ba4e0092aa5e7da584b80cc5ee98b7f47f98f19919fedbaf3dba726b65a267`.
+  `90ef60e2670cde2c1d9628f19fde14b9eca5e249338234eef3fbb181bec1d121`.
 
 Because the source contains no redistribution license file, it was inspected
 from a temporary checkout but was not vendored, bundled, or committed into

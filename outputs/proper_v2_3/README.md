@@ -112,7 +112,7 @@ confirmatory and must not be tuned on these same 12 pairs.
 read-only qualification of upstream revision
 `a0dacc2d227e197a61011a68d3b15c24aebbb2a1`. It contains no model output.
 Its SHA-256 is
-`e8ba4e0092aa5e7da584b80cc5ee98b7f47f98f19919fedbaf3dba726b65a267`.
+`90ef60e2670cde2c1d9628f19fde14b9eca5e249338234eef3fbb181bec1d121`.
 The structural continuation pool is 322, but accepted full-PROPER-v2.3
 capacity is zero because all 185 baseline tools are read-only. No model or GPU
 run is authorized.
