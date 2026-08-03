@@ -245,3 +245,12 @@ closed. Its SHA-256 is
 This is synthetic implementation evidence, not model completion or safety
 evidence. It authorizes one-shot real-runner protocol design only; it does not
 authorize model loading or real branch acquisition.
+
+## One-shot acquisition-runner protocol
+
+`acquisition_one_shot_runner_protocol/validation.json` records 13 passing
+design checks and six passing scoped tests. Its SHA-256 is
+`52443099f6e6270e124e412bb841e45f3ed726f166f0076e8f2e6be1354353b4`.
+The result loads no model, reads no model output, executes no task, and uses no
+GPU. It authorizes local runner implementation and CPU validation only; the
+frozen remote command remains unauthorized.

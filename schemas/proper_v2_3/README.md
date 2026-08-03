@@ -38,6 +38,10 @@ decision, and version-specific result schemas. Frozen schemas under
   privacy checks, and explicit non-model boundaries.
 - `acquisition_runtime_implementation_validation.schema.json`: closed
   implementation validation and next-gate envelope.
+- `real_public_branch_capture_run.schema.json`: versioned remote-run envelope
+  that preserves zero-attempt preflight failures and 1–12 actual attempts.
+- `acquisition_one_shot_runner_protocol_validation.schema.json`: closed
+  CPU-only runner-protocol design validation envelope.
 - `planbench_xl_capacity_audit_design.schema.json`: closed no-source/no-model
   design-validation result before any external inventory.
 - `planbench_xl_source_qualification.schema.json`: frozen source hashes,

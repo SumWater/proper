@@ -448,3 +448,21 @@ The next permitted work is design and freeze of a separate one-shot real
 acquisition-runner protocol. Model loading, real acquisition of the 12
 development branches, comparison-runner implementation, external APIs, GPU
 use, and confirmatory claims remain unauthorized.
+
+## Current gate after one-shot acquisition-runner protocol design
+
+`acquisition_one_shot_runner_protocol.md` freezes the future remote preflight,
+separate tau/Qwen Python environments, persistent JSONL worker, pair order,
+pre-action smoke, no-retry/no-resume failure policy, atomic persistence, cost
+endpoints, and pass gate. Thirteen validation checks and six scoped tests pass
+without importing tau3 or model libraries.
+
+The versioned run envelope also closes a pre-model representational conflict:
+the old manifest required exactly 12 attempts even when the protocol stopped
+after the first failure. The old schema remains frozen; the new envelope
+preserves zero-attempt preflight failures and 1–12 actual acquisition attempts.
+
+The next permitted work is local implementation and CPU-only validation of the
+one-shot runner. The frozen command template is not yet authorized. Model
+loading, task execution, real capture, remote execution, GPU use, and
+confirmatory claims remain closed.

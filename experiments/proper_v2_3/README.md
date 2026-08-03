@@ -66,6 +66,9 @@ command.
 - `validate_acquisition_runtime_implementation_v2_3.py`: verifies frozen
   implementation hashes, closed schemas, 11 scoped tests, 15 synthetic checks,
   participant privacy, and no tau/model/task/GPU use.
+- `validate_acquisition_one_shot_runner_protocol_v2_3.py`: CPU-only validator
+  for the future remote environments, first-pair smoke, early-stop envelope,
+  frozen hashes, and still-closed execution gates. It is not the real runner.
 
 Preparation schema/validation protocol v2 preserves the failed fixed-path v1
 manifest and writes every subsequent attempt to a unique run directory.

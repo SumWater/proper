@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "status": "frozen_one_shot_runner_protocol_before_runner_implementation_or_model_loading",
+  "protocol_version": "proper_v2_3_tau3_qwen_acquisition_one_shot_v1",
+  "implementation_stage_revision": "0d208d50423a968635af327f852716590fb80954",
+  "frozen_inputs": [
+    {"role":"runtime_protocol","path":"configs/proper_v2_3/acquisition_runtime_protocol_v2_3.json","sha256":"23f3a1fe5f2f271c51e09e82b979dbc359e1e8e25a227b694ee337f455ecfc08"},
+    {"role":"runtime_implementation","path":"configs/proper_v2_3/acquisition_runtime_implementation_v2_3.json","sha256":"ff655f917c71d0a1e74123ac96d1a45985904e240676065186f1ae59c0c63422"},
+    {"role":"runtime_validation","path":"outputs/proper_v2_3/acquisition_runtime_implementation/validation.json","sha256":"09b1e92e85a2103f25f7024a7ce7cd97717bec366a46ab3b3a4fff0e16634b72"},
+    {"role":"runtime","path":"src/failure_memory/proper_v2/v2_3/acquisition_runtime.py","sha256":"48dd52750e1f4364ba2754abb0ea97fe4983d7320e3b0ce65eb81b4a1b70835c"},
+    {"role":"tau_adapter","path":"src/failure_memory/proper_v2/v2_3/tau3_acquisition_runtime_adapter.py","sha256":"90140450b2db4050a7111d5f50604136278ff86ac779b9b340379b60bab53a0a"},
+    {"role":"participant_adapter","path":"src/failure_memory/proper_v2/v2_3/acquisition_participants.py","sha256":"dc9ece5cb1cc2f8cf4a574a220e9095528ea957fdee268b7426b12c2bda35114"},
+    {"role":"participant_prompts","path":"configs/proper_v2_3/local_tau_participant_prompts_v2_3.json","sha256":"ed3f83b6c5fd8ed65da779b40cd8933b3dd2b6ee7e0c7683b06199ca5d7082b7"},
+    {"role":"action_effect_registry","path":"configs/proper_v2_3/tau3_acquisition_action_effects_v2_3.json","sha256":"4f458431a7382884583db6b06532b97db5c94cfa936224e10ea9e5ff6d82118b"},
+    {"role":"candidate_partition","path":"configs/proper_v2_3/tau3_branch_screen_v2_3.yaml","sha256":"4e45860515d8fdd20f139353067cdfff83c250c6d9bc43fe516e2042ba755997"},
+    {"role":"model_inventory_freeze","path":"outputs/proper_v2_3/qwen_model_inventory_freeze/validation.json","sha256":"b9fd166cc7d65a46e22d63263aa669e9c8fbbb48f9ffdc66db6ed4425d5d9dc8"},
+    {"role":"qwen_worker","path":"experiments/proper_v2/qwen_jsonl_worker_v2_2.py","sha256":"5f3c18aef4141a0751542c907b5595ec6bc3efadd9f6d9f7a1ddf7a402975753"}
+  ],
+  "remote_runtime": {
+    "platform": "linux",
+    "project_python": "work/proper_v2_3_tau3_replay_smoke_venv/bin/python",
+    "worker_python": "/home/amax/miniconda3/envs/failure-memory-pilot/bin/python",
+    "worker_script": "experiments/proper_v2/qwen_jsonl_worker_v2_2.py",
+    "tau_source": "external/tau2-bench",
+    "tau_revision": "fc0055dc4e0a316c3f83133267fbd6faaa770992",
+    "model_path": "/home/amax/PycharmProjects/AINegoProject/src/Models/LLM/Qwen3-8B",
+    "model_manifest_sha256": "f981a4a7978fd128d6efb18d93b8810d98434a8e69c9bd517ad7aa4e5c1b6a07",
+    "cuda_visible_devices": "0",
+    "tokenizers_parallelism": false,
+    "external_network_allowed": false,
+    "external_api_allowed": false
+  },
+  "preflight_order": [
+    "require_expected_project_revision_equals_head",
+    "require_clean_tracked_worktree_ignoring_file_mode",
+    "require_unique_absent_output_directory",
+    "verify_all_frozen_project_input_hashes",
+    "verify_tau_revision_and_source_manifest",
+    "verify_domain_task_policy_database_hashes",
+    "verify_qwen_inventory_file_count_bytes_and_manifest",
+    "verify_project_python_without_importing_model",
+    "verify_worker_python_can_import_torch_transformers_accelerate",
+    "verify_cuda_device_zero_visible",
+    "create_output_directory_and_write_preflight_envelope"
+  ],
+  "model_worker": {
+    "one_persistent_process_for_both_participants": true,
+    "sequential_requests_only": true,
+    "response_timeout_seconds": 180,
+    "shutdown_timeout_seconds": 5,
+    "restart_count": 0,
+    "invalid_output_retry_count": 0,
+    "stderr_file": "worker.stderr",
+    "synthetic_non_model_output_required": false,
+    "generation": {"seed":20260730,"max_new_tokens":256,"do_sample":false,"temperature":0.0,"enable_thinking":false}
+  },
+  "execution": {
+    "development_partition_only": true,
+    "attempts_per_pair": 1,
+    "capture_order": ["tau3-dev-01","tau3-dev-02","tau3-dev-03","tau3-dev-04","tau3-dev-05","tau3-dev-06","tau3-dev-07","tau3-dev-08","tau3-dev-09","tau3-dev-10","tau3-dev-11","tau3-dev-12"],
+    "smoke_pair_id": "tau3-dev-01",
+    "smoke_is_the_only_attempt_for_that_pair": true,
+    "smoke_requires_captured_pre_action_branch": true,
+    "continue_after_smoke_in_same_process": true,
+    "fresh_environment_per_pair": true,
+    "shared_environment_across_pairs": false,
+    "stop_entire_stage_after_first_non_captured_pair": true,
+    "resume_after_interruption": false,
+    "rerun_failed_or_interrupted_pair": false,
+    "replacement_or_resampling": false,
+    "native_non_idempotent_execution_limit_per_pair": 1
+  },
+  "persistence": {
+    "output_root": "outputs/proper_v2_3/tau3_acquisition_remote",
+    "run_directory_pattern": "UTC_TIMESTAMP-host-project_revision",
+    "never_overwrite": true,
+    "attempt_written_atomically_immediately": true,
+    "stage_summary_rewritten_atomically_after_each_attempt": true,
+    "partial_and_failed_runs_preserved": true,
+    "worker_stderr_preserved": true,
+    "attempt_artifacts_are_content_hashed": true,
+    "run_envelope_schema": "schemas/proper_v2_3/real_public_branch_capture_run.schema.json"
+  },
+  "schema_correction_before_model_output": {
+    "frozen_v1_schema": "schemas/proper_v2_3/real_public_branch_capture_manifest.schema.json",
+    "issue": "v1_requires_exactly_12_attempts_but_protocol_stops_after_first_uncaptured_pair",
+    "resolution": "new_run_envelope_accepts_1_to_12_actual_attempts_and_preserves_early_stop",
+    "modify_v1_schema": false
+  },
+  "pass_gate": {
+    "capture_attempt_count": 12,
+    "captured_branch_count": 12,
+    "post_failure_captured_count": 8,
+    "duplicate_non_idempotent_execution_count": 0,
+    "all_attempt_and_checkpoint_hashes_valid": true,
+    "all_cost_endpoints_present": true
+  },
+  "failure_policy": {
+    "preflight_failure": "preserve_envelope_without_starting_worker",
+    "smoke_failure": "preserve_attempt_and_stop",
+    "later_capture_failure": "preserve_completed_attempts_and_stop",
+    "worker_or_environment_failure": "preserve_evidence_and_stop_without_restart",
+    "interruption": "preserve_partial_run_and_do_not_resume_or_rerun",
+    "safety_or_integrity_failure": "stop_immediately"
+  },
+  "future_entrypoint_contract": {
+    "runner_path": "experiments/proper_v2_3/run_tau3_acquisition_remote_v2_3.py",
+    "runner_exists_at_protocol_freeze": false,
+    "required_argument": "--expected-project-revision",
+    "command_template": "work/proper_v2_3_tau3_replay_smoke_venv/bin/python experiments/proper_v2_3/run_tau3_acquisition_remote_v2_3.py --expected-project-revision $(git rev-parse HEAD)",
+    "command_execution_authorized_at_this_stage": false
+  },
+  "reporting": {
+    "separate_endpoints": ["capture_rate","target_reach_rate","branch_integrity","native_execution_counts","safety","agent_cost","user_simulator_cost"],
+    "raw_worker_text_and_usage_preserved": true,
+    "failed_and_blocked_requests_in_cost": true,
+    "preflight_wall_clock_reported": true,
+    "model_load_wall_clock_reported": true
+  },
+  "gates": {
+    "runner_implementation_authorized_after_cpu_validation": true,
+    "runner_implemented": false,
+    "remote_command_authorized": false,
+    "model_loading_authorized": false,
+    "task_execution_authorized": false,
+    "real_branch_capture_authorized": false,
+    "comparison_runner_authorized": false,
+    "gpu_authorized": false,
+    "confirmatory_claim_authorized": false
+  }
+}

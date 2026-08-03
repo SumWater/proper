@@ -45,3 +45,6 @@ No GPU or confirmatory run is currently authorized.
 - `acquisition_runtime_implementation_v2_3.json`: frozen implementation
   hashes, two pre-model safety/integrity corrections, JSONL transport,
   synthetic fixtures, persistence contract, and still-closed execution gates.
+- `acquisition_one_shot_runner_protocol_v2_3.json`: future remote environments,
+  preflight sequence, pair/smoke order, no-retry/no-resume policy, partial-run
+  persistence, pass gate, and command contract before runner implementation.

@@ -1,0 +1,36 @@
+{
+  "checks": {
+    "all_frozen_input_hashes_match": true,
+    "all_twelve_pair_ids_are_unique_and_frozen": true,
+    "early_stop_output_accepts_partial_attempt_count": true,
+    "external_network_and_api_are_closed": true,
+    "frozen_v1_schema_is_not_modified": true,
+    "model_task_capture_remote_gpu_gates_are_closed": true,
+    "one_native_non_idempotent_execution_is_the_limit": true,
+    "partial_failed_and_worker_stderr_evidence_are_preserved": true,
+    "retry_resume_resample_and_worker_restart_are_zero": true,
+    "runner_file_does_not_exist_at_design_freeze": true,
+    "six_scoped_protocol_tests_pass": true,
+    "smoke_is_first_and_counts_as_only_pair_attempt": true,
+    "validation_output_matches_closed_schema_fields": true
+  },
+  "gpu_used": false,
+  "input_sha256": {
+    "configs/proper_v2_3/acquisition_one_shot_runner_protocol_v2_3.json": "ad5fb6a719969aa1dde6a9ba4d88d3d5683eb543f11ebee3fc81d7104e5d5668",
+    "schemas/proper_v2_3/acquisition_one_shot_runner_protocol_validation.schema.json": "5b474426be0e99fd5c1d54e69f74bcfa45fdcc9b50fcecb44ac5612eb4c64159",
+    "schemas/proper_v2_3/real_public_branch_capture_run.schema.json": "e0bd45eb800b5df627ede3d583e1e3cbd837c506ada4af984c1e490e45f3b9c0",
+    "tests/test_proper_v2_3_acquisition_one_shot_runner_protocol.py": "44768872db71c3a621e39442206bddd61125e6113d7a883833b4c1e1622bdb24"
+  },
+  "model_loaded": false,
+  "model_outputs_read": false,
+  "next_gate": "implement_and_cpu_validate_one_shot_acquisition_runner",
+  "passed": true,
+  "protocol_config_sha256": "ad5fb6a719969aa1dde6a9ba4d88d3d5683eb543f11ebee3fc81d7104e5d5668",
+  "remote_command_authorized": false,
+  "run_kind": "proper_v2_3_acquisition_one_shot_runner_protocol_validation",
+  "runner_implementation_authorized": true,
+  "runner_implemented": false,
+  "schema_version": 1,
+  "scoped_tests_run": 6,
+  "task_executed": false
+}
