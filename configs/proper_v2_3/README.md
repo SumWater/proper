@@ -59,3 +59,6 @@ No GPU or confirmatory run is currently authorized.
 - `appworld_source_qualification_design_v2_3.json`: prospective primary-source
   metadata, encrypted-material boundary, single-call ledger interface,
   exposure language, capacity gates, and no-download/no-model stop.
+- `appworld_offline_wheel_inventory_v2_3.json`: pinned official wheel identity,
+  ZIP safety bounds, encrypted-bundle checks, read-only persistence contract,
+  and closed installation/task/model gates.

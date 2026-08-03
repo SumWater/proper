@@ -308,3 +308,13 @@ model loading, model output reading, or GPU use. Candidate count is null.
 The result permits design of an offline encrypted-source acquisition and
 static-inventory protocol only. It does not authorize acquisition, task play,
 target selection, model execution, or held-out/confirmatory claims.
+
+## AppWorld offline-wheel inventory preparation
+
+`appworld_offline_wheel_inventory_preparation/validation.json` records 12
+passing preparation checks and five passing synthetic reader tests. No official
+wheel was downloaded or read, and no package, task, model, or GPU was used.
+
+It authorizes one read-only inventory of the exact external wheel only. A
+returned result must be frozen before any installation or source decision;
+installation and all later scientific gates remain closed.

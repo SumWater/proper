@@ -537,3 +537,17 @@ not yet held-out or confirmatory, and foundation-model exposure is unknown. The
 next permitted work is an offline encrypted-source acquisition and static
 inventory protocol only; acquisition, decryption, task play, target selection,
 model loading, GPU use, and model comparison remain closed.
+
+## Current gate after AppWorld offline-wheel preparation
+
+The official `appworld==0.1.3.post1` wheel identity is frozen from PyPI
+metadata. A standard-library-only inspector and guarded remote entry point now
+validate the exact wheel and its ZIP members without import, installation,
+extraction, or protected-bundle decryption. Five synthetic wheel tests and 12
+preparation checks pass locally.
+
+Exactly one read-only inventory of that wheel is authorized by
+`appworld_offline_wheel_inventory_handoff.md`. The wheel must remain outside
+the tracked project. AppWorld installation, data download, task/API reading,
+target selection, model execution, GPU use, and held-out or confirmatory claims
+remain unauthorized.

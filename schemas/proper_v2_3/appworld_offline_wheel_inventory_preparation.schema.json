@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://proper.local/schemas/proper_v2_3/appworld_offline_wheel_inventory_preparation.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "run_kind", "checks", "passed", "config_sha256", "runner_sha256", "inventory_implementation_sha256", "official_wheel_sha256", "tests_run", "wheel_downloaded", "wheel_read", "wheel_extracted", "protected_bundle_opened", "task_or_api_data_read", "model_loaded", "gpu_used", "remote_wheel_inventory_authorized", "source_install_authorized", "next_gate"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "run_kind": {"const": "proper_v2_3_appworld_offline_wheel_inventory_preparation"},
+    "checks": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "boolean"}},
+    "passed": {"type": "boolean"},
+    "config_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "runner_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "inventory_implementation_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "official_wheel_sha256": {"const": "db77f8003982502383a50fa2974983894bd1c54f64e2fd3f7e1540d5edd037eb"},
+    "tests_run": {"const": 5},
+    "wheel_downloaded": {"const": false},
+    "wheel_read": {"const": false},
+    "wheel_extracted": {"const": false},
+    "protected_bundle_opened": {"const": false},
+    "task_or_api_data_read": {"const": false},
+    "model_loaded": {"const": false},
+    "gpu_used": {"const": false},
+    "remote_wheel_inventory_authorized": {"type": "boolean"},
+    "source_install_authorized": {"const": false},
+    "next_gate": {"enum": ["retrieve_one_pinned_wheel_and_run_read_only_inventory", "stop_wheel_inventory_preparation"]}
+  }
+}

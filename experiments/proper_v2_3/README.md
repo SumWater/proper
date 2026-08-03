@@ -81,6 +81,12 @@ command.
 - `validate_appworld_source_qualification_design_v2_3.py`: CPU-only validation
   of the prospective AppWorld source, license, exposure, action-interception,
   hidden-evaluator, and closed execution boundaries; it acquires no source.
+- `validate_appworld_offline_wheel_inventory_preparation_v2_3.py`: validates
+  the exact PyPI identity, safe wheel reader, synthetic tests, schemas, and
+  no-install boundary before one external-wheel inventory.
+- `run_appworld_offline_wheel_inventory_remote_v2_3.py`: guarded read-only
+  inventory of one user-supplied wheel outside the project; it performs no
+  download, import, installation, extraction, or decryption.
 
 Preparation schema/validation protocol v2 preserves the failed fixed-path v1
 manifest and writes every subsequent attempt to a unique run directory.
