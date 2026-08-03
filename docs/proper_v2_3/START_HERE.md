@@ -551,3 +551,18 @@ Exactly one read-only inventory of that wheel is authorized by
 the tracked project. AppWorld installation, data download, task/API reading,
 target selection, model execution, GPU use, and held-out or confirmatory claims
 remain unauthorized.
+
+## Current gate after frozen AppWorld wheel inventory
+
+The one read-only remote inventory passed at revision `cc297f055b...`. It
+recorded 44 wheel members and two encrypted protected-code bundles without
+installing, extracting, decrypting, or importing AppWorld. Local freeze checks
+recompute the exact result hash, member manifest, paths, counts, sizes, and both
+bundle records.
+
+This verifies package identity only. API effect coverage, task inventory,
+candidate capacity, held-out status, and scientific performance remain
+unmeasured. The inventory may not be rerun. The next permitted work is local
+design of a controlled installation and static API-inventory protocol; actual
+installation, decryption, data download, task/API reading, model use, and GPU
+execution remain unauthorized.

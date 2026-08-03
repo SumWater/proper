@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "status": "frozen_successful_read_only_appworld_wheel_inventory",
+  "run": {
+    "path": "outputs/proper_v2_3/appworld_wheel_inventory_remote/20260803T081514Z-amax-cc297f055b04/inventory.json",
+    "bytes": 11663,
+    "sha256": "2390843c1ede6839a3b9eae350d21c5ae6c0e7bbed09db068d7a87adf6454037",
+    "project_revision": "cc297f055b0439ed32c89cc18974a066eba10de5"
+  },
+  "frozen_inputs": [
+    {"path":"configs/proper_v2_3/appworld_offline_wheel_inventory_v2_3.json","sha256":"94451e1cd1f6bd55ddd954956280a72737fb32c3588d33d3d7fc72e0544f315e"},
+    {"path":"experiments/proper_v2_3/run_appworld_offline_wheel_inventory_remote_v2_3.py","sha256":"be6e9acfb146892b9320c823cc46bfc420e8b763459b9aead0e673824ccecc56"},
+    {"path":"src/failure_memory/proper_v2/v2_3/offline_wheel_inventory.py","sha256":"113efb53d69eafe7a01239eaaca1492725d523aeb0276a90f7306d90ed64d0b3"},
+    {"path":"schemas/proper_v2_3/appworld_offline_wheel_inventory.schema.json","sha256":"b7858c60647727bdce7406bb3384ea4ed1c8308fe24545a6aae3288af52fa02e"},
+    {"path":"outputs/proper_v2_3/appworld_offline_wheel_inventory_preparation/validation.json","sha256":"a42dd051ca35590c2b0839b049a6ffd2c6e10faeee041e05f0b7cfd93a763ce2"}
+  ],
+  "expected_inventory": {
+    "wheel_filename": "appworld-0.1.3.post1-py3-none-any.whl",
+    "wheel_size_bytes": 625317,
+    "wheel_sha256": "db77f8003982502383a50fa2974983894bd1c54f64e2fd3f7e1540d5edd037eb",
+    "distribution": "appworld",
+    "version": "0.1.3.post1",
+    "member_count": 44,
+    "total_uncompressed_bytes": 1272412,
+    "member_manifest_sha256": "65c1229057d82899d55f435e38b01ac62c037703f4b441dec44c6a2d5918aead",
+    "bundles": [
+      {"path":"appworld/.source/apps.bundle","uncompressed_bytes":177209,"sha256":"ba58bc5679c3573aa8f60ad6f5cda4377128a0ec569de5eef9543a77561796bb"},
+      {"path":"appworld/.source/tests.bundle","uncompressed_bytes":171334,"sha256":"93d53dea06f9d7c42cc03b66f4b08e4644c26b5ed41cdeaec0560c792bc16d8f"}
+    ]
+  },
+  "observed_boundary": {
+    "all_preflight_checks_passed": true,
+    "wheel_extracted": false,
+    "protected_bundle_opened": false,
+    "appworld_imported": false,
+    "task_or_api_data_read": false,
+    "model_loaded": false,
+    "gpu_used": false
+  },
+  "interpretation": {
+    "wheel_identity_verified": true,
+    "encrypted_protected_code_present": true,
+    "app_or_api_effect_coverage_measured": false,
+    "task_inventory_measured": false,
+    "candidate_capacity_measured": false,
+    "heldout_status_established": false,
+    "scientific_stage_passed": false
+  },
+  "disposition": {
+    "wheel_inventory_rerun_authorized": false,
+    "controlled_install_protocol_design_authorized": true,
+    "source_install_authorized": false,
+    "protected_material_decryption_authorized": false,
+    "data_download_authorized": false,
+    "task_or_api_inventory_authorized": false,
+    "model_run_authorized": false,
+    "confirmatory_claim_authorized": false,
+    "next_gate": "design_controlled_install_and_static_api_inventory_protocol"
+  }
+}

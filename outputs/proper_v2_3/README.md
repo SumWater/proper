@@ -318,3 +318,15 @@ wheel was downloaded or read, and no package, task, model, or GPU was used.
 It authorizes one read-only inventory of the exact external wheel only. A
 returned result must be frozen before any installation or source decision;
 installation and all later scientific gates remain closed.
+
+## Frozen AppWorld wheel inventory
+
+Remote run `20260803T081514Z-amax-cc297f055b04` records 44 wheel members,
+1,272,412 total uncompressed bytes, and two encrypted `.bundle` members. All
+preflight checks passed. No extraction, decryption, import, task/API read,
+model load, or GPU use occurred.
+
+`appworld_wheel_inventory_result_freeze/validation.json` independently checks
+the returned result hash, canonical member manifest, safe paths, counts, sizes,
+and both encrypted bundle records. It authorizes controlled-install protocol
+design only, not installation or scientific execution.

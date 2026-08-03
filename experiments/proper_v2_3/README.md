@@ -87,6 +87,9 @@ command.
 - `run_appworld_offline_wheel_inventory_remote_v2_3.py`: guarded read-only
   inventory of one user-supplied wheel outside the project; it performs no
   download, import, installation, extraction, or decryption.
+- `validate_appworld_wheel_inventory_result_v2_3.py`: freezes the unique
+  returned inventory and recomputes member paths, totals, canonical manifest,
+  protected bundle records, and closed execution gates.
 
 Preparation schema/validation protocol v2 preserves the failed fixed-path v1
 manifest and writes every subsequent attempt to a unique run directory.

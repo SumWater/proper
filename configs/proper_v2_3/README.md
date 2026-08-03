@@ -62,3 +62,6 @@ No GPU or confirmatory run is currently authorized.
 - `appworld_offline_wheel_inventory_v2_3.json`: pinned official wheel identity,
   ZIP safety bounds, encrypted-bundle checks, read-only persistence contract,
   and closed installation/task/model gates.
+- `appworld_wheel_inventory_result_freeze_v2_3.json`: exact returned result,
+  member manifest, encrypted bundle records, no-install boundary, and next
+  protocol-design gate.

@@ -1,0 +1,32 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://proper.local/schemas/proper_v2_3/appworld_wheel_inventory_result_freeze.schema.json",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["schema_version","run_kind","passed","checks","freeze_config_sha256","remote_result_sha256","remote_project_revision","member_count","bundle_count","member_manifest_sha256","wheel_extracted","protected_bundle_opened","appworld_imported","task_or_api_data_read","model_loaded","gpu_used","scientific_stage_passed","wheel_inventory_rerun_authorized","controlled_install_protocol_design_authorized","source_install_authorized","model_run_authorized","confirmatory_claim_authorized","next_gate"],
+  "properties": {
+    "schema_version":{"const":1},
+    "run_kind":{"const":"proper_v2_3_appworld_wheel_inventory_result_freeze"},
+    "passed":{"type":"boolean"},
+    "checks":{"type":"object","minProperties":1,"additionalProperties":{"type":"boolean"}},
+    "freeze_config_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "remote_result_sha256":{"const":"2390843c1ede6839a3b9eae350d21c5ae6c0e7bbed09db068d7a87adf6454037"},
+    "remote_project_revision":{"const":"cc297f055b0439ed32c89cc18974a066eba10de5"},
+    "member_count":{"const":44},
+    "bundle_count":{"const":2},
+    "member_manifest_sha256":{"const":"65c1229057d82899d55f435e38b01ac62c037703f4b441dec44c6a2d5918aead"},
+    "wheel_extracted":{"const":false},
+    "protected_bundle_opened":{"const":false},
+    "appworld_imported":{"const":false},
+    "task_or_api_data_read":{"const":false},
+    "model_loaded":{"const":false},
+    "gpu_used":{"const":false},
+    "scientific_stage_passed":{"const":false},
+    "wheel_inventory_rerun_authorized":{"const":false},
+    "controlled_install_protocol_design_authorized":{"type":"boolean"},
+    "source_install_authorized":{"const":false},
+    "model_run_authorized":{"const":false},
+    "confirmatory_claim_authorized":{"const":false},
+    "next_gate":{"const":"design_controlled_install_and_static_api_inventory_protocol"}
+  }
+}
