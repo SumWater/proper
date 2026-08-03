@@ -220,3 +220,13 @@ recording 15 files, 16,397,461,266 bytes, and manifest SHA-256
 `qwen_model_inventory_freeze/validation.json` checks all three exact result
 hashes and recomputes the successful manifest. These artifacts identify model
 directory contents only; no model was loaded and no task or GPU ran.
+
+## Acquisition runtime protocol
+
+`acquisition_runtime_protocol/validation.json` freezes the CPU-only protocol
+validation; `scripted_traces.json` contains six public-state traces and eight
+checks. The validation covers 30/30 public tools, 12/12 task-component hashes,
+complete-ledger duplicate safety, participant separation, zero invalid-output
+retry, independent budgets, and closed model/task/capture/GPU gates. It
+authorizes runtime implementation and synthetic CPU dry-run only, not model
+loading or real branch acquisition.

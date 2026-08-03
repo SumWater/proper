@@ -46,6 +46,7 @@ from .continuation import (
     progress_state_from_mapping,
     route_observable_progress,
 )
+from .acquisition_runtime_protocol import AcquisitionProtocolMachine
 
 __all__ = [
     "ActionEffectClass",
@@ -53,6 +54,7 @@ __all__ = [
     "ActionExecutionLedger",
     "ActionPurpose",
     "ActionSpec",
+    "AcquisitionProtocolMachine",
     "BudgetPolicy",
     "BudgetState",
     "ControllerDecision",

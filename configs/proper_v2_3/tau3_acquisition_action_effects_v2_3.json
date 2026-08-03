@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "status": "frozen_complete_public_tool_effect_registry_for_acquisition",
+  "source": {
+    "tau_revision": "fc0055dc4e0a316c3f83133267fbd6faaa770992",
+    "airline_tools_path": "external/tau2-bench/src/tau2/domains/airline/tools.py",
+    "retail_tools_path": "external/tau2-bench/src/tau2/domains/retail/tools.py",
+    "classification_basis": "public_is_tool_decorator_and_public_docstring_effect"
+  },
+  "contracts": {
+    "airline": [
+      {"action_name":"book_reservation","effect_class":"non_idempotent_side_effect","retry_safety":"unsafe"},
+      {"action_name":"calculate","effect_class":"read_only","retry_safety":"safe"},
+      {"action_name":"cancel_reservation","effect_class":"non_idempotent_side_effect","retry_safety":"unsafe"},
+      {"action_name":"get_flight_status","effect_class":"read_only","retry_safety":"safe"},
+      {"action_name":"get_reservation_details","effect_class":"read_only","retry_safety":"safe"},
+      {"action_name":"get_user_details","effect_class":"read_only","retry_safety":"safe"},
+      {"action_name":"list_all_airports","effect_class":"read_only","retry_safety":"safe"},
+      {"action_name":"search_direct_flight","effect_class":"read_only","retry_safety":"safe"},
+      {"action_name":"search_onestop_flight","effect_class":"read_only","retry_safety":"safe"},
+      {"action_name":"send_certificate","effect_class":"non_idempotent_side_effect","retry_safety":"unsafe"},
+      {"action_name":"transfer_to_human_agents","effect_class":"non_idempotent_side_effect","retry_safety":"unsafe"},
+      {"action_name":"update_reservation_baggages","effect_class":"non_idempotent_side_effect","retry_safety":"unsafe"},
+      {"action_name":"update_reservation_flights","effect_class":"non_idempotent_side_effect","retry_safety":"unsafe"},
+      {"action_name":"update_reservation_passengers","effect_class":"idempotent_state_setting","retry_safety":"safe_same_arguments"}
+    ],
+    "retail": [
+      {"action_name":"calculate","effect_class":"read_only","retry_safety":"safe"},
+      {"action_name":"cancel_pending_order","effect_class":"non_idempotent_side_effect","retry_safety":"unsafe"},
+      {"action_name":"exchange_delivered_order_items","effect_class":"non_idempotent_side_effect","retry_safety":"unsafe"},
+      {"action_name":"find_user_id_by_email","effect_class":"read_only","retry_safety":"safe"},
+      {"action_name":"find_user_id_by_name_zip","effect_class":"read_only","retry_safety":"safe"},
+      {"action_name":"get_item_details","effect_class":"read_only","retry_safety":"safe"},
+      {"action_name":"get_order_details","effect_class":"read_only","retry_safety":"safe"},
+      {"action_name":"get_product_details","effect_class":"read_only","retry_safety":"safe"},
+      {"action_name":"get_user_details","effect_class":"read_only","retry_safety":"safe"},
+      {"action_name":"list_all_product_types","effect_class":"read_only","retry_safety":"safe"},
+      {"action_name":"modify_pending_order_address","effect_class":"idempotent_state_setting","retry_safety":"safe_same_arguments"},
+      {"action_name":"modify_pending_order_items","effect_class":"non_idempotent_side_effect","retry_safety":"unsafe"},
+      {"action_name":"modify_pending_order_payment","effect_class":"non_idempotent_side_effect","retry_safety":"unsafe"},
+      {"action_name":"modify_user_address","effect_class":"idempotent_state_setting","retry_safety":"safe_same_arguments"},
+      {"action_name":"return_delivered_order_items","effect_class":"non_idempotent_side_effect","retry_safety":"unsafe"},
+      {"action_name":"transfer_to_human_agents","effect_class":"non_idempotent_side_effect","retry_safety":"unsafe"}
+    ]
+  },
+  "repeat_policy": {
+    "read_only": "allow_and_record",
+    "idempotent_state_setting": "block_same_signature_after_success_or_unknown",
+    "non_idempotent_side_effect": "block_same_signature_after_success_or_unknown",
+    "unknown_tool": "stop_before_native_execution"
+  },
+  "required_counts": {
+    "airline": 14,
+    "retail": 16,
+    "total": 30
+  }
+}

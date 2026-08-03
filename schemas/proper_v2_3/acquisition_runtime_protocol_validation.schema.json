@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://proper.local/schemas/proper_v2_3/acquisition_runtime_protocol_validation.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version","run_kind","protocol_sha256","action_registry_sha256","task_hash_manifest_sha256","scripted_trace_sha256","validation_input_sha256","checks","passed","scoped_tests_run","public_tool_count","task_count","model_loaded","model_outputs_read","task_executed","gpu_used","runtime_implementation_authorized","acquisition_runtime_freeze_authorized","real_branch_capture_authorized","model_runner_authorized","confirmatory_run_authorized","next_gate"],
+  "properties": {
+    "schema_version": {"const":1},
+    "run_kind": {"const":"proper_v2_3_acquisition_runtime_protocol_validation"},
+    "protocol_sha256": {"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "action_registry_sha256": {"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "task_hash_manifest_sha256": {"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "scripted_trace_sha256": {"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "validation_input_sha256": {"type":"object","minProperties":6,"additionalProperties":{"type":"string","pattern":"^[0-9a-f]{64}$"}},
+    "checks": {"type":"object","minProperties":1,"additionalProperties":{"type":"boolean"}},
+    "passed": {"type":"boolean"},
+    "scoped_tests_run": {"const":12},
+    "public_tool_count": {"const":30},
+    "task_count": {"const":12},
+    "model_loaded": {"const":false},
+    "model_outputs_read": {"const":false},
+    "task_executed": {"const":false},
+    "gpu_used": {"const":false},
+    "runtime_implementation_authorized": {"type":"boolean"},
+    "acquisition_runtime_freeze_authorized": {"const":false},
+    "real_branch_capture_authorized": {"const":false},
+    "model_runner_authorized": {"const":false},
+    "confirmatory_run_authorized": {"const":false},
+    "next_gate": {"enum":["implement_acquisition_runtime_and_cpu_dry_run","stop_runtime_protocol_design"]}
+  }
+}

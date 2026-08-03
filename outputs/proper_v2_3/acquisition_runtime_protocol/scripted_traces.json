@@ -1,0 +1,280 @@
+{
+  "checks": {
+    "duplicate_state_change_blocked": true,
+    "evaluator_routing_absent_from_public_snapshots": true,
+    "idempotent_target_suppressed": true,
+    "invalid_output_not_retried": true,
+    "native_result_hidden": true,
+    "non_idempotent_target_executed_once": true,
+    "pre_action_captured_before_agent": true,
+    "worker_error_preserved": true
+  },
+  "gpu_used": false,
+  "model_loaded": false,
+  "passed": true,
+  "run_kind": "proper_v2_3_scripted_acquisition_runtime_protocol",
+  "schema_version": 1,
+  "task_executed": false,
+  "traces": {
+    "duplicate_state_change": {
+      "agent_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 24,
+        "requests": 2
+      },
+      "checkpoint_sha256": null,
+      "failure_reason": "duplicate_unsafe_action_proposal",
+      "ledger": [
+        {
+          "arguments": {
+            "value": 1
+          },
+          "call_id": "call-1",
+          "effect_class": "idempotent_state_setting",
+          "executed": true,
+          "outcome": "succeeded",
+          "signature": "19ecd167ba71a87f6f3ad0ddc677d8dd1f176b9c042c83ed026082d970c2f45e",
+          "tool_name": "set"
+        }
+      ],
+      "native_tool_execution_count": 1,
+      "next_actor": "terminal",
+      "public_history": [
+        {
+          "content": "start",
+          "role": "user"
+        },
+        {
+          "role": "assistant",
+          "tool_calls": [
+            {
+              "arguments": {
+                "value": 1
+              },
+              "id": "call-1",
+              "name": "set"
+            }
+          ]
+        },
+        {
+          "content": {
+            "ok": true
+          },
+          "error": false,
+          "outcome": "succeeded",
+          "role": "tool",
+          "tool_call_id": "call-1"
+        }
+      ],
+      "status": "safety_failure",
+      "steps": 4,
+      "target_native_execution_count": 0,
+      "tool_errors": 0,
+      "user_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 12,
+        "requests": 1
+      }
+    },
+    "idempotent_target": {
+      "agent_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 12,
+        "requests": 1
+      },
+      "checkpoint_sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+      "failure_reason": null,
+      "ledger": [
+        {
+          "arguments": {
+            "value": 1
+          },
+          "call_id": "call-1",
+          "effect_class": "idempotent_state_setting",
+          "executed": false,
+          "outcome": "failed",
+          "signature": "19ecd167ba71a87f6f3ad0ddc677d8dd1f176b9c042c83ed026082d970c2f45e",
+          "tool_name": "set"
+        }
+      ],
+      "native_tool_execution_count": 0,
+      "next_actor": "terminal",
+      "public_history": [
+        {
+          "content": "start",
+          "role": "user"
+        },
+        {
+          "role": "assistant",
+          "tool_calls": [
+            {
+              "arguments": {
+                "value": 1
+              },
+              "id": "call-1",
+              "name": "set"
+            }
+          ]
+        },
+        {
+          "content": {
+            "code": "public_reference_epoch_changed",
+            "outcome": "failed",
+            "retry_safe": true,
+            "verification_required": true
+          },
+          "error": true,
+          "role": "tool",
+          "tool_call_id": "call-1"
+        }
+      ],
+      "status": "captured",
+      "steps": 2,
+      "target_native_execution_count": 0,
+      "tool_errors": 0,
+      "user_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 12,
+        "requests": 1
+      }
+    },
+    "invalid_output": {
+      "agent_usage": {
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "requests": 0
+      },
+      "checkpoint_sha256": null,
+      "failure_reason": "invalid_agent_output",
+      "ledger": [],
+      "native_tool_execution_count": 0,
+      "next_actor": "terminal",
+      "public_history": [
+        {
+          "content": "start",
+          "role": "user"
+        }
+      ],
+      "status": "capture_failure",
+      "steps": 2,
+      "target_native_execution_count": 0,
+      "tool_errors": 0,
+      "user_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 12,
+        "requests": 1
+      }
+    },
+    "non_idempotent_target": {
+      "agent_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 12,
+        "requests": 1
+      },
+      "checkpoint_sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+      "failure_reason": null,
+      "ledger": [
+        {
+          "arguments": {
+            "value": 1
+          },
+          "call_id": "call-1",
+          "effect_class": "non_idempotent_side_effect",
+          "executed": true,
+          "outcome": "unknown",
+          "signature": "53dc70ad1787a72d3036cbc888c7d6a4ebada46dbd1ed8b8b70b2576c47339d0",
+          "tool_name": "send"
+        }
+      ],
+      "native_tool_execution_count": 1,
+      "next_actor": "terminal",
+      "public_history": [
+        {
+          "content": "start",
+          "role": "user"
+        },
+        {
+          "role": "assistant",
+          "tool_calls": [
+            {
+              "arguments": {
+                "value": 1
+              },
+              "id": "call-1",
+              "name": "send"
+            }
+          ]
+        },
+        {
+          "content": {
+            "code": "result_unknown",
+            "outcome": "unknown",
+            "retry_safe": false,
+            "verification_required": true
+          },
+          "error": true,
+          "role": "tool",
+          "tool_call_id": "call-1"
+        }
+      ],
+      "status": "captured",
+      "steps": 3,
+      "target_native_execution_count": 1,
+      "tool_errors": 0,
+      "user_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 12,
+        "requests": 1
+      }
+    },
+    "pre_action": {
+      "agent_usage": {
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "requests": 0
+      },
+      "checkpoint_sha256": "084d433872ed777a4c779c58b9d2e5aa5c025032d9558ca327677acf4263b177",
+      "failure_reason": null,
+      "ledger": [],
+      "native_tool_execution_count": 0,
+      "next_actor": "terminal",
+      "public_history": [
+        {
+          "content": "start",
+          "role": "user"
+        }
+      ],
+      "status": "captured",
+      "steps": 1,
+      "target_native_execution_count": 0,
+      "tool_errors": 0,
+      "user_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 12,
+        "requests": 1
+      }
+    },
+    "worker_error": {
+      "agent_usage": {
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "requests": 0
+      },
+      "checkpoint_sha256": null,
+      "failure_reason": "user_worker_error",
+      "ledger": [],
+      "native_tool_execution_count": 0,
+      "next_actor": "terminal",
+      "public_history": [],
+      "status": "infrastructure_failure",
+      "steps": 1,
+      "target_native_execution_count": 0,
+      "tool_errors": 0,
+      "user_usage": {
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "requests": 0
+      }
+    }
+  }
+}

@@ -38,3 +38,7 @@ No GPU or confirmatory run is currently authorized.
   read-only per-file/manifest hashing contract; all execution gates are closed.
 - `qwen_model_inventory_freeze_v2_3.json`: exact hashes and interpretations of
   two preserved preflight failures and the returned successful inventory.
+- `tau3_acquisition_action_effects_v2_3.json`: complete 30-tool airline/retail
+  effect and retry-safety registry; unknown tools stop closed.
+- `acquisition_runtime_protocol_v2_3.json`: exact participant loop, 12 task
+  hashes, model identity, budgets, capture semantics, persistence, and gates.

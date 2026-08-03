@@ -415,3 +415,17 @@ The next permitted work is acquisition-runtime protocol design only. The
 inventory establishes exact content identity, not model compatibility or
 performance. Model loading, task execution, real capture, a comparison runner,
 external APIs, GPU use, and confirmatory claims remain unauthorized.
+
+## Current gate after acquisition runtime protocol design
+
+`acquisition_runtime_protocol.md` freezes the complete half-duplex turn loop,
+all 30 airline/retail public action-effect contracts, full-ledger duplicate
+safety, 12 task-component hashes, Qwen manifest and generation settings,
+independent acquisition budgets, cost endpoints, persistence, exclusions, and
+stage stops. Twelve state-machine tests and eight scripted checks pass without
+a model, task, model output, or GPU.
+
+The next permitted work is implementation of this exact runtime plus a
+synthetic CPU dry-run. Model loading, the 12 development attempts, real public
+branch capture, a comparison runner, external APIs, GPU use, and confirmatory
+claims remain unauthorized.

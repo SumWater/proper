@@ -55,6 +55,10 @@ command.
   file inventory; it imports no model/tau package and performs no generation.
 - `validate_qwen_model_inventory_result_v2_3.py`: locally freezes every
   returned inventory attempt and recomputes the successful manifest envelope.
+- `scripted_acquisition_runtime_protocol_v2_3.py`: no-model traces for
+  pre-action capture, both failure injections, duplicate safety, and stops.
+- `validate_acquisition_runtime_protocol_v2_3.py`: validates 30 public tools,
+  12 task hashes, frozen inputs, state-machine tests, traces, and closed gates.
 
 Preparation schema/validation protocol v2 preserves the failed fixed-path v1
 manifest and writes every subsequent attempt to a unique run directory.

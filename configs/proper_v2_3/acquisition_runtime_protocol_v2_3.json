@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "status": "frozen_protocol_design_before_runtime_implementation_or_model_loading",
+  "protocol_version": "proper_v2_3_local_qwen_branch_acquisition_runtime_v1",
+  "frozen_inputs": [
+    {"role":"capture_protocol","path":"configs/proper_v2_3/real_public_branch_capture_protocol_v2_3.json","sha256":"3d70a175142852b3d926fc4ad42b3478aaad7c194b48059648b5c75f3eb50013"},
+    {"role":"participant_prompts","path":"configs/proper_v2_3/local_tau_participant_prompts_v2_3.json","sha256":"ed3f83b6c5fd8ed65da779b40cd8933b3dd2b6ee7e0c7683b06199ca5d7082b7"},
+    {"role":"participant_adapter","path":"src/failure_memory/proper_v2/v2_3/acquisition_participants.py","sha256":"dc9ece5cb1cc2f8cf4a574a220e9095528ea957fdee268b7426b12c2bda35114"},
+    {"role":"action_effect_registry","path":"configs/proper_v2_3/tau3_acquisition_action_effects_v2_3.json","sha256":"4f458431a7382884583db6b06532b97db5c94cfa936224e10ea9e5ff6d82118b"},
+    {"role":"candidate_partition","path":"configs/proper_v2_3/tau3_branch_screen_v2_3.yaml","sha256":"4e45860515d8fdd20f139353067cdfff83c250c6d9bc43fe516e2042ba755997"},
+    {"role":"model_inventory_freeze","path":"outputs/proper_v2_3/qwen_model_inventory_freeze/validation.json","sha256":"b9fd166cc7d65a46e22d63263aa669e9c8fbbb48f9ffdc66db6ed4425d5d9dc8"},
+    {"role":"qwen_worker","path":"experiments/proper_v2/qwen_jsonl_worker_v2_2.py","sha256":"5f3c18aef4141a0751542c907b5595ec6bc3efadd9f6d9f7a1ddf7a402975753"},
+    {"role":"capture_manifest_schema","path":"schemas/proper_v2_3/real_public_branch_capture_manifest.schema.json","sha256":"46e33286e13c438243d393395101f9e134848fc7d26da44498ad161fdb7989fe"}
+  ],
+  "source_runtime": {
+    "tau_revision": "fc0055dc4e0a316c3f83133267fbd6faaa770992",
+    "mode": "half_duplex_text",
+    "domains": {
+      "airline": {
+        "tasks_file_sha256":"34dfcf0622792d0d0fa32aa491d21582e1b5d3ec1948e7743bae881885f878ea",
+        "policy_sha256":"7db375ddcce5061cf9f48a5aabe1fc3e52aa2936d6a65b7c5b62e3c7ca54cfe4",
+        "database_sha256":"7184914bd3720d93f1160a09bb2724c3a5601d8ca39d02d371cbbfa62626f7e2"
+      },
+      "retail": {
+        "tasks_file_sha256":"f44563d8f36362e2dc58282bb02cfb85010d22f27d9439808758d3e9b2bc16d2",
+        "policy_sha256":"4313d3fef8acf919f555fa17fbce929cc3ed1cef2dd8f0d35ff5c8c3364de176",
+        "database_sha256":"dbde692e380bb4ad17f9f7841172cf1e69bebad2daa405628ccdc52a42b3b9b0"
+      }
+    },
+    "user_simulation_guidelines_sha256": "e054adb606a4aa6f586f33f3aa61542954b6f699d029c9cd4c156e28b6300067"
+  },
+  "model": {
+    "agent_and_user_simulator_share_one_persistent_worker": true,
+    "path": "/home/amax/PycharmProjects/AINegoProject/src/Models/LLM/Qwen3-8B",
+    "content_manifest_sha256": "f981a4a7978fd128d6efb18d93b8810d98434a8e69c9bd517ad7aa4e5c1b6a07",
+    "inventory_file_count": 15,
+    "inventory_total_bytes": 16397461266,
+    "local_files_only": true,
+    "external_api_allowed": false,
+    "generation": {"seed":20260730,"max_new_tokens":256,"do_sample":false,"temperature":0.0,"enable_thinking":false},
+    "preload_gate": "rehash_all_inventory_files_and_require_exact_manifest_before_worker_start"
+  },
+  "turn_loop": {
+    "initial_actor": "user",
+    "agent_decision_kinds": ["message","single_tool_call"],
+    "user_decision_kinds": ["message"],
+    "agent_message_next_actor": "user",
+    "user_message_next_actor": "agent",
+    "agent_tool_call_next_actor": "environment_then_agent",
+    "parallel_tool_calls_allowed": false,
+    "public_history_is_append_only": true,
+    "termination_tokens": ["###STOP###","###TRANSFER###","###OUT-OF-SCOPE###"],
+    "invalid_json_retry_count": 0,
+    "worker_restart_count": 0
+  },
+  "budgets": {
+    "maximum_orchestrator_steps_per_pair": 100,
+    "maximum_tool_errors_per_pair": 10,
+    "maximum_agent_requests_per_pair": 50,
+    "maximum_user_requests_per_pair": 50,
+    "maximum_prompt_tokens_per_request_observed_stop": 32768,
+    "maximum_total_prompt_tokens_per_pair_observed_stop": 1000000,
+    "maximum_total_completion_tokens_per_pair": 25600,
+    "maximum_invalid_agent_decisions": 0,
+    "maximum_invalid_user_decisions": 0,
+    "maximum_worker_errors": 0,
+    "budgets_are_independent": true
+  },
+  "capture_order": ["tau3-dev-01","tau3-dev-02","tau3-dev-03","tau3-dev-04","tau3-dev-05","tau3-dev-06","tau3-dev-07","tau3-dev-08","tau3-dev-09","tau3-dev-10","tau3-dev-11","tau3-dev-12"],
+  "task_hashes": [
+    {"pair_id":"tau3-dev-01","domain":"airline","source_task_id":"33","full_task_sha256":"1d4d2cbf475cf9f7daef9fbaa9d3f54f5b201b912231257c5ab5f034daeb37e7","user_scenario_sha256":"e159157f3ad0601d07bc8dfe72b847634bcd3cbcf883c691782e5643591cb206","initial_state_sha256":"74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b","evaluator_only_sha256":"50fa6cd602f9db7a9c2cb8f44f47a0d9853ff9c4ba3b14b0220a654daa4d6a51"},
+    {"pair_id":"tau3-dev-02","domain":"airline","source_task_id":"12","full_task_sha256":"3b08fff117282db541608b0ca87950d1e0bceb6bc635b995ba26faa6f70905cd","user_scenario_sha256":"05a2ffd266c835b600c632fc1907b277b0dc9c65a88b3afbbf2c94f4ddffb48c","initial_state_sha256":"74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b","evaluator_only_sha256":"a04f96ef16bfc848138d56bbce416cce50160dbc7837f587431da358c487a3e5"},
+    {"pair_id":"tau3-dev-03","domain":"retail","source_task_id":"0","full_task_sha256":"b346afb863372ef9f28fa2062c575ae96b4df4d855cc535dec83a8e517e6d40d","user_scenario_sha256":"82f31a5d5652df3e235217b321388766c392b8c3cd58c167cd6a0104ad277588","initial_state_sha256":"74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b","evaluator_only_sha256":"00ff156603dc017b4eff7261a8e95777c3e0cd42c1b861297b51e89b8d21de25"},
+    {"pair_id":"tau3-dev-04","domain":"retail","source_task_id":"10","full_task_sha256":"4cc4ab32e5869264d6451855c3a0a3af9693965edb5f17a2c1d77c489681d2c9","user_scenario_sha256":"7362907bf8131b391868a208f44674bf1927ed9180540f64d9cd31b40aca989e","initial_state_sha256":"74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b","evaluator_only_sha256":"af7357560c65a6cf2e8a389d11326547019f83c445f8f88c492bc57676e644a9"},
+    {"pair_id":"tau3-dev-05","domain":"retail","source_task_id":"22","full_task_sha256":"968d73ce2d67f42ca10f1fd2b4368ac05db7bdf842bfcc26ca1afe1fec221b7f","user_scenario_sha256":"095b734a2305420bdbf1d6eb5ec3fd1274c03284ce22f83b6617bda357c127aa","initial_state_sha256":"74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b","evaluator_only_sha256":"f5fea7da191e70ae1226f34657e0be12d535a35410c707ad3b1dcc5be9024837"},
+    {"pair_id":"tau3-dev-06","domain":"retail","source_task_id":"78","full_task_sha256":"60d81c1582421ebca191d0e01d8ddc58ba382635bbfb3d1e4e66d212d74caa2e","user_scenario_sha256":"e363e1211a1dc13d1a85096954a09c30fc53ad013b476df1d3b39bfd2f6163f6","initial_state_sha256":"74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b","evaluator_only_sha256":"88465cb082d7fb83ff0832c5ec10d80633de61f057b940177ea66c5625720324"},
+    {"pair_id":"tau3-dev-07","domain":"retail","source_task_id":"87","full_task_sha256":"6c4dde45624a0efd40d93d2ce986a24380e640f4c09ee281fcbf0d275c270b62","user_scenario_sha256":"4958e1b946bee6ffbbecf19c03e4fa595d52ee138ae219f252d41c7ee196ea49","initial_state_sha256":"74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b","evaluator_only_sha256":"576b5925685f67820e70741e93b73f9386e9b870f3d3fadf5d616c7588612b5e"},
+    {"pair_id":"tau3-dev-08","domain":"retail","source_task_id":"109","full_task_sha256":"50b8c06e8f500c53595240b72920f229dbd2199425db846fa12ca0d614bb2f81","user_scenario_sha256":"17e165a186a958c7aa53289920034c02bfd2cfcb56d02fe7d26937ea47cffbee","initial_state_sha256":"74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b","evaluator_only_sha256":"690a62f0646a0d3954606a405e62139d3ec9e52dd64d9ca0ed2a46fbcf656e35"},
+    {"pair_id":"tau3-dev-09","domain":"airline","source_task_id":"23","full_task_sha256":"aef15892125b9d26bffc6d65e1d5baf42d8b6a941a9fd0492346582317605f37","user_scenario_sha256":"709664f3d8ed152780c7df12dfc0dd6afeaa90bf7ceab0ed402a6319691c9d43","initial_state_sha256":"74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b","evaluator_only_sha256":"7aa291aa23df77a929df36d3815e98c30972f8d5d54d78f22ac9671c4f7a1c1d"},
+    {"pair_id":"tau3-dev-10","domain":"retail","source_task_id":"16","full_task_sha256":"a46a7848d29777c7d6bb3beadea6d3cafa0da12158830a6a0c685f90fb08ca55","user_scenario_sha256":"6be5bb4a8d9ba02a4d845c58125eae62669042f1d752ab71e5b06ec63246960b","initial_state_sha256":"74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b","evaluator_only_sha256":"c7608db59bc8d6d1dbdc6d88d4fef92ee32613c35b21ed31a88e729d2e735f6d"},
+    {"pair_id":"tau3-dev-11","domain":"retail","source_task_id":"98","full_task_sha256":"8fd96aea7a6c4c07f5e5da62d7460b4e8e7520377188cace62b3fd6d1646daf2","user_scenario_sha256":"fcce657f5a662d836caa9614e3540940676435dae9d1656c15e6ad20999d46de","initial_state_sha256":"74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b","evaluator_only_sha256":"9ba7a47c38409a2f21ecf9cd757efe43314724b6db13979a2892f01df7569ddd"},
+    {"pair_id":"tau3-dev-12","domain":"retail","source_task_id":"103","full_task_sha256":"333e977f2b5f8595ce52a293e8c5bb56a4b928953d1aac88554bbdb89adde34d","user_scenario_sha256":"03da5146fb7ef755cc69d658ac7e40b60d86d996b222ca62eafd00801d3fbfbd","initial_state_sha256":"74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b","evaluator_only_sha256":"0be7288d6d4e026dedccae02997c9fc76205576750dfd74d3b2c6eebb5a38e48"}
+  ],
+  "capture_semantics": {
+    "pre_action": "capture_after_nonterminal_initial_user_message_before_agent_request",
+    "idempotent_state_setting": "checkpoint_before_target_call_suppress_native_execute_inject_public_reference_epoch_changed_capture",
+    "non_idempotent_side_effect": "execute_target_once_hide_native_result_checkpoint_after_effect_inject_result_unknown_capture",
+    "ordinary_non_target_tool": "execute_once_append_public_result_and_complete_ledger_record",
+    "ambiguous_non_target_tool_outcome": "checkpoint_stop_attempt_without_retry",
+    "duplicate_successful_or_unknown_state_changing_signature": "block_before_native_execution_and_stop_stage",
+    "unknown_public_tool": "stop_before_native_execution"
+  },
+  "failure_and_persistence": {
+    "one_attempt_per_pair": true,
+    "attempt_result_written_atomically_after_each_pair": true,
+    "complete_public_history_written": true,
+    "complete_action_execution_ledger_written": true,
+    "environment_checkpoint_written_separately_from_participant_state": true,
+    "raw_worker_text_written_for_invalid_outputs": true,
+    "worker_stderr_written_on_failure": true,
+    "stop_entire_stage_after_first_uncaptured_pair": true,
+    "resample_or_replace": false,
+    "overwrite_existing_run_directory": false
+  },
+  "cost_endpoints": [
+    "agent_request_count","agent_prompt_tokens","agent_completion_tokens",
+    "user_request_count","user_prompt_tokens","user_completion_tokens",
+    "native_tool_execution_count","tool_error_count","orchestrator_step_count","wall_clock_seconds"
+  ],
+  "separation": {
+    "evaluator_only": ["pair_id","source_task_id","target_action_index","target_tool_name","full_task_sha256","evaluator_only_sha256","environment_checkpoint","capture_routing"],
+    "agent_visible": ["public_domain_policy","public_tool_contracts","public_message_history"],
+    "user_visible": ["simulation_guidelines","private_user_scenario","public_message_history"],
+    "task_id_in_worker_messages": false,
+    "gold_action_in_worker_messages": false,
+    "recoverability_in_worker_messages": false,
+    "evaluator_outcome_in_worker_messages": false
+  },
+  "gates": {
+    "development_only": true,
+    "heldout": false,
+    "confirmatory": false,
+    "runtime_implementation_authorized_after_cpu_validation": true,
+    "model_loading_authorized": false,
+    "task_execution_authorized": false,
+    "real_branch_capture_authorized": false,
+    "model_runner_authorized": false,
+    "gpu_authorized": false
+  }
+}
