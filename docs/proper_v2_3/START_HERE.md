@@ -499,3 +499,22 @@ execution, and GPU use and is frozen in
 `tau3_acquisition_preflight_failure_result.md`. After those exact README files
 are committed and tracked status is empty, one identical-command retry is
 authorized. No scientific input changed.
+
+## Current gate after stopped tau3 acquisition
+
+The authorized clean-worktree run reached Qwen and tau3, captured four
+pre-action branches, and stopped on pair five because the user participant
+returned natural language instead of one strict JSON object. The zero-retry
+rule was followed. Acquisition is therefore 4/12 overall and 0/8
+post-failure. There was one failed read-only lookup, no target state-changing
+execution, and no non-idempotent side effect.
+
+`tau3_acquisition_result.md` preserves the negative result and separately
+reports capture, selector, lifecycle, continuation, completion, safety, and
+cost. Raw worker records reveal one omitted invalid-response request in the
+returned aggregate, so both reported and recomputed costs are retained.
+
+The tau3 acquisition line is stopped. Rerun, resume, same-cohort prompt or
+runner tuning, five-condition comparison, and confirmatory claims are not
+authorized. A passing freeze validator establishes artifact integrity only;
+the scientific stage remains failed.

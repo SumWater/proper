@@ -1,0 +1,107 @@
+{
+  "attempt_artifacts": [
+    {
+      "capture_status": "captured",
+      "effect_class": "read_only",
+      "native_tool_execution_count": 0,
+      "ordinal": 1,
+      "pair_id": "tau3-dev-01",
+      "path": "attempts/attempt-01.json",
+      "phase": "pre_action",
+      "sha256": "37979078094d7008a9b50bb5e6f766c204970316283bd2180e048c4f6c69c51e",
+      "target_native_execution_count": 0
+    },
+    {
+      "capture_status": "captured",
+      "effect_class": "read_only",
+      "native_tool_execution_count": 0,
+      "ordinal": 2,
+      "pair_id": "tau3-dev-02",
+      "path": "attempts/attempt-02.json",
+      "phase": "pre_action",
+      "sha256": "114d894be0e556f3c849a2fef456b22ad0b89190dcb215865cf2508037c4955d",
+      "target_native_execution_count": 0
+    },
+    {
+      "capture_status": "captured",
+      "effect_class": "read_only",
+      "native_tool_execution_count": 0,
+      "ordinal": 3,
+      "pair_id": "tau3-dev-03",
+      "path": "attempts/attempt-03.json",
+      "phase": "pre_action",
+      "sha256": "fadc4d6699e3f10a9ea6f29c12d00d75ff9b81c8656bf4874720bc4a34a6fd3b",
+      "target_native_execution_count": 0
+    },
+    {
+      "capture_status": "captured",
+      "effect_class": "read_only",
+      "native_tool_execution_count": 0,
+      "ordinal": 4,
+      "pair_id": "tau3-dev-04",
+      "path": "attempts/attempt-04.json",
+      "phase": "pre_action",
+      "sha256": "f79c58711fc18fa8f7dd5a9f81f7a8edd1d1dbf47839b4e582a0d63486246252",
+      "target_native_execution_count": 0
+    },
+    {
+      "capture_status": "capture_failure",
+      "effect_class": "idempotent_state_setting",
+      "native_tool_execution_count": 1,
+      "ordinal": 5,
+      "pair_id": "tau3-dev-05",
+      "path": "attempts/attempt-05.json",
+      "phase": "post_failure",
+      "sha256": "4fb71b528d07d62722f14c4f6869b2b22a0c982608532b260b8da49cd348377f",
+      "target_native_execution_count": 0
+    }
+  ],
+  "boundary": {
+    "confirmatory": false,
+    "development_only": true,
+    "external_api_called": false,
+    "gpu_used": true,
+    "heldout": false,
+    "model_loaded": true,
+    "model_outputs_read": true,
+    "protocol_tuned_after_output": false,
+    "resumed_or_rerun": false,
+    "task_executed": true
+  },
+  "capture_attempt_count": 5,
+  "captured_branch_count": 4,
+  "checks": {
+    "all_artifact_hashes_present": true,
+    "all_eight_post_failure_branches_captured": false,
+    "all_twelve_attempts_written": false,
+    "all_twelve_branches_captured": false,
+    "zero_duplicate_non_idempotent_execution": true
+  },
+  "cost": {
+    "agent_completion_tokens": 67,
+    "agent_prompt_tokens": 8582,
+    "agent_request_count": 2,
+    "model_startup_to_first_response_seconds": 13.224919836968184,
+    "native_tool_execution_count": 1,
+    "orchestrator_step_count": 9,
+    "preflight_wall_clock_seconds": 18.344849093817174,
+    "run_wall_clock_seconds": 46.84403468342498,
+    "tool_error_count": 1,
+    "user_completion_tokens": 377,
+    "user_prompt_tokens": 2784,
+    "user_request_count": 5
+  },
+  "duplicate_non_idempotent_execution_count": 0,
+  "implementation_config_sha256": "7b5dfab1fdc5abda07c74570ab94cbbb04573012467fc00549fc0d0f5c6cf3fa",
+  "model_manifest_sha256": "f981a4a7978fd128d6efb18d93b8810d98434a8e69c9bd517ad7aa4e5c1b6a07",
+  "next_gate": "stop_and_preserve_acquisition_result",
+  "post_failure_captured_count": 0,
+  "project_revision": "8fd7c469ec70d8c406828903d83a0999470d2a5a",
+  "run_kind": "proper_v2_3_tau3_qwen_public_branch_acquisition",
+  "schema_version": 2,
+  "smoke_pair_id": "tau3-dev-01",
+  "smoke_passed": true,
+  "status": "capture_stopped",
+  "stop_reason": "invalid_user_output",
+  "tau_revision": "fc0055dc4e0a316c3f83133267fbd6faaa770992"
+}

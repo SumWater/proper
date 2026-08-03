@@ -75,6 +75,9 @@ command.
   implementation/hash/test gate before the single remote command.
 - `validate_tau3_acquisition_preflight_failure_v2_3.py`: freezes the returned
   dirty-worktree-only preflight failure and its zero-execution boundary.
+- `validate_tau3_acquisition_result_v2_3.py`: hashes and audits the preserved
+  five-attempt stopped result, including raw-record cost reconciliation; it is
+  not a model runner and cannot authorize a rerun.
 
 Preparation schema/validation protocol v2 preserves the failed fixed-path v1
 manifest and writes every subsequent attempt to a unique run directory.

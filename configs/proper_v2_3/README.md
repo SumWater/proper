@@ -53,3 +53,6 @@ No GPU or confirmatory run is currently authorized.
   one-shot remote authority.
 - `tau3_acquisition_preflight_failure_freeze_v2_3.json`: exact returned hashes,
   zero-execution boundary, dirty-worktree cause, and one clean-worktree retry.
+- `tau3_acquisition_result_freeze_v2_3.json`: exact stopped-run artifacts,
+  frozen inputs, endpoint interpretation, reported-versus-audited cost, and
+  closed rerun/comparison/claim gates.

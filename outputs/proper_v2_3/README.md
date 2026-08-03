@@ -279,3 +279,21 @@ its SHA-256 is
 `f8616896b2efd4646718f09276f76333efc6261823035c3cda7469ef04d74fef`.
 It authorizes one identical-command retry only after the four reported README
 changes are committed and tracked status is empty.
+
+## Frozen stopped tau3 acquisition
+
+Remote run `20260803T071028Z-amax-8fd7c469ec70` passed all preflight checks,
+loaded the local Qwen model, used GPU 0, and executed tau3. It captured four
+pre-action branches and stopped on the fifth pair with
+`invalid_user_output`; no retry or sixth attempt occurred. Zero post-failure
+branches were captured. The fifth attempt contains one failed read-only lookup
+and no target or non-idempotent side-effect execution.
+
+The returned aggregate reports 7 requests, 11,366 prompt tokens, and 444
+completion tokens. Raw worker-record audit reports 8, 12,040, and 483 because
+the invalid response's 1 request, 674 prompt tokens, and 39 completion tokens
+were omitted. Original artifacts remain unchanged.
+
+`tau3_acquisition_result_freeze/validation.json` validates preservation and
+audit integrity. It does not make the scientific stage pass: rerun, resume,
+comparison protocol, and confirmatory claims remain closed.

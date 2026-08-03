@@ -67,3 +67,15 @@ changes and confirming that
 `git -c core.fileMode=false status --short --untracked-files=no` is empty, one
 invocation of the unchanged command in this document remains authorized. Do
 not invoke it if tracked status is nonempty.
+
+## Command authority exhausted
+
+The authorized clean-worktree invocation completed on 2026-08-03 and returned
+run `20260803T071028Z-amax-8fd7c469ec70`. It captured four pre-action branches
+and stopped on the fifth pair with `invalid_user_output`; zero post-failure
+branches were captured. The returned result is frozen in
+`tau3_acquisition_result.md`.
+
+The command in this handoff is no longer authorized. Do not rerun or resume it,
+and do not change the prompt, parser, retry policy, runner, pair order, or
+budget to replace the stopped result.

@@ -1,0 +1,14 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://proper.local/schemas/proper_v2_3/tau3_acquisition_result_freeze.schema.json",
+  "type":"object","additionalProperties":false,
+  "required":["schema_version","run_kind","passed","checks","freeze_config_sha256","result_sha256","preflight_sha256","worker_stderr_sha256","remote_project_revision","capture_attempt_count","captured_branch_count","post_failure_captured_count","stop_reason","reported_model_request_count","audited_model_request_count","reported_prompt_tokens","audited_prompt_tokens","reported_completion_tokens","audited_completion_tokens","cost_accounting_complete","duplicate_non_idempotent_execution_count","target_state_change_execution_count","model_loaded","model_outputs_read","task_executed","gpu_used","scientific_stage_passed","rerun_authorized","comparison_protocol_authorized","confirmatory_claim_authorized","next_gate"],
+  "properties": {
+    "schema_version":{"const":1},"run_kind":{"const":"proper_v2_3_tau3_acquisition_result_freeze"},"passed":{"type":"boolean"},"checks":{"type":"object","minProperties":1,"additionalProperties":{"type":"boolean"}},
+    "freeze_config_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},"result_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},"preflight_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},"worker_stderr_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},"remote_project_revision":{"type":"string","pattern":"^[0-9a-f]{40}$"},
+    "capture_attempt_count":{"const":5},"captured_branch_count":{"const":4},"post_failure_captured_count":{"const":0},"stop_reason":{"const":"invalid_user_output"},
+    "reported_model_request_count":{"const":7},"audited_model_request_count":{"const":8},"reported_prompt_tokens":{"const":11366},"audited_prompt_tokens":{"const":12040},"reported_completion_tokens":{"const":444},"audited_completion_tokens":{"const":483},"cost_accounting_complete":{"const":false},
+    "duplicate_non_idempotent_execution_count":{"const":0},"target_state_change_execution_count":{"const":0},"model_loaded":{"const":true},"model_outputs_read":{"const":true},"task_executed":{"const":true},"gpu_used":{"const":true},
+    "scientific_stage_passed":{"const":false},"rerun_authorized":{"const":false},"comparison_protocol_authorized":{"const":false},"confirmatory_claim_authorized":{"const":false},"next_gate":{"const":"stop_tau3_acquisition_line_and_report"}
+  }
+}

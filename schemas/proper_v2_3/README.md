@@ -48,6 +48,9 @@ decision, and version-specific result schemas. Frozen schemas under
   CPU implementation-validation and remote-authorization envelope.
 - `tau3_acquisition_preflight_failure_freeze.schema.json`: closed local freeze
   of a zero-attempt infrastructure preflight failure and retry disposition.
+- `tau3_acquisition_result_freeze.schema.json`: closed integrity and audit
+  envelope for the stopped five-attempt acquisition result, with the
+  scientific-stage and rerun gates fixed false.
 - `planbench_xl_capacity_audit_design.schema.json`: closed no-source/no-model
   design-validation result before any external inventory.
 - `planbench_xl_source_qualification.schema.json`: frozen source hashes,
