@@ -264,3 +264,18 @@ The validation itself loads no model, reads no model output, executes no task,
 and uses no GPU. It authorizes the single command in
 `docs/proper_v2_3/tau3_acquisition_remote_handoff.md`; any returned success,
 failure, or interruption must be frozen before further work.
+
+## Frozen tau3 acquisition preflight failure
+
+Remote run `20260803T064447Z-amax-8c2b38219291` is preserved under
+`tau3_acquisition_remote/`. Only the clean tracked-worktree check failed; all
+other 11 preflight checks passed. It contains no model/task/GPU execution. The
+preflight and result SHA-256 values are respectively
+`c2e4afae302bae7fecf035d1135de83bf344b5eb32c5b11291a0b74322ab078a`
+and `221131fd27a99c3119e13f80b95b79adae2b81990b39448da95f99733bd54194`.
+
+`tau3_acquisition_preflight_failure_freeze/validation.json` passes 13 checks;
+its SHA-256 is
+`f8616896b2efd4646718f09276f76333efc6261823035c3cda7469ef04d74fef`.
+It authorizes one identical-command retry only after the four reported README
+changes are committed and tracked status is empty.

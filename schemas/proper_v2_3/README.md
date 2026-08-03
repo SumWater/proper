@@ -46,6 +46,8 @@ decision, and version-specific result schemas. Frozen schemas under
   envelope separating complete-trajectory and target native-execution counts.
 - `acquisition_one_shot_runner_implementation_validation.schema.json`: closed
   CPU implementation-validation and remote-authorization envelope.
+- `tau3_acquisition_preflight_failure_freeze.schema.json`: closed local freeze
+  of a zero-attempt infrastructure preflight failure and retry disposition.
 - `planbench_xl_capacity_audit_design.schema.json`: closed no-source/no-model
   design-validation result before any external inventory.
 - `planbench_xl_source_qualification.schema.json`: frozen source hashes,

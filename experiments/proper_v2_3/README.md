@@ -73,6 +73,8 @@ command.
   Qwen/tau3 acquisition runner with full preflight and atomic partial results.
 - `validate_acquisition_one_shot_runner_implementation_v2_3.py`: CPU-only
   implementation/hash/test gate before the single remote command.
+- `validate_tau3_acquisition_preflight_failure_v2_3.py`: freezes the returned
+  dirty-worktree-only preflight failure and its zero-execution boundary.
 
 Preparation schema/validation protocol v2 preserves the failed fixed-path v1
 manifest and writes every subsequent attempt to a unique run directory.

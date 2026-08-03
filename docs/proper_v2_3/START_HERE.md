@@ -491,3 +491,11 @@ preflight, create an output, load a model, execute a task, or use a GPU. The
 handoff now includes that source folder. A single retry after folder sync,
 remote commit, and clean-worktree confirmation is an infrastructure correction
 and remains authorized; the scientific protocol is unchanged.
+
+That corrected invocation reached preflight and stopped because four synced
+v2.3 README files were still tracked modifications. All other 11 checks passed.
+The returned run has zero attempts, requests, tokens, tools, model load, task
+execution, and GPU use and is frozen in
+`tau3_acquisition_preflight_failure_result.md`. After those exact README files
+are committed and tracked status is empty, one identical-command retry is
+authorized. No scientific input changed.

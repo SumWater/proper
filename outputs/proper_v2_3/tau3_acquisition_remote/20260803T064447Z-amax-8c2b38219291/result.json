@@ -1,0 +1,51 @@
+{
+  "attempt_artifacts": [],
+  "boundary": {
+    "confirmatory": false,
+    "development_only": true,
+    "external_api_called": false,
+    "gpu_used": false,
+    "heldout": false,
+    "model_loaded": false,
+    "model_outputs_read": false,
+    "protocol_tuned_after_output": false,
+    "resumed_or_rerun": false,
+    "task_executed": false
+  },
+  "capture_attempt_count": 0,
+  "captured_branch_count": 0,
+  "checks": {
+    "all_artifact_hashes_present": true,
+    "all_eight_post_failure_branches_captured": false,
+    "all_twelve_attempts_written": false,
+    "all_twelve_branches_captured": false,
+    "zero_duplicate_non_idempotent_execution": true
+  },
+  "cost": {
+    "agent_completion_tokens": 0,
+    "agent_prompt_tokens": 0,
+    "agent_request_count": 0,
+    "model_startup_to_first_response_seconds": 0.0,
+    "native_tool_execution_count": 0,
+    "orchestrator_step_count": 0,
+    "preflight_wall_clock_seconds": 22.574795722961426,
+    "run_wall_clock_seconds": 22.57539741601795,
+    "tool_error_count": 0,
+    "user_completion_tokens": 0,
+    "user_prompt_tokens": 0,
+    "user_request_count": 0
+  },
+  "duplicate_non_idempotent_execution_count": 0,
+  "implementation_config_sha256": "7b5dfab1fdc5abda07c74570ab94cbbb04573012467fc00549fc0d0f5c6cf3fa",
+  "model_manifest_sha256": "f981a4a7978fd128d6efb18d93b8810d98434a8e69c9bd517ad7aa4e5c1b6a07",
+  "next_gate": "stop_and_preserve_acquisition_result",
+  "post_failure_captured_count": 0,
+  "project_revision": "8c2b38219291406506606678b58069052348c3db",
+  "run_kind": "proper_v2_3_tau3_qwen_public_branch_acquisition",
+  "schema_version": 2,
+  "smoke_pair_id": "tau3-dev-01",
+  "smoke_passed": false,
+  "status": "preflight_failed",
+  "stop_reason": "preflight_failed",
+  "tau_revision": "fc0055dc4e0a316c3f83133267fbd6faaa770992"
+}

@@ -51,3 +51,5 @@ No GPU or confirmatory run is currently authorized.
 - `acquisition_one_shot_runner_implementation_v2_3.json`: exact runner, v2
   run-envelope, tests, validation, pre-model corrections, and conditional
   one-shot remote authority.
+- `tau3_acquisition_preflight_failure_freeze_v2_3.json`: exact returned hashes,
+  zero-execution boundary, dirty-worktree cause, and one clean-worktree retry.

@@ -1,0 +1,31 @@
+{
+  "checks": {
+    "all_frozen_inputs_match": true,
+    "all_other_preflight_checks_passed": true,
+    "four_freeze_tests_pass": true,
+    "model_task_output_and_gpu_boundaries_closed": true,
+    "only_tracked_worktree_clean_failed": true,
+    "retry_changes_no_scientific_input": true,
+    "retry_requires_committed_clean_worktree_and_unique_output": true,
+    "returned_preflight_hash_matches": true,
+    "returned_result_hash_matches": true,
+    "returned_result_matches_closed_run_shape": true,
+    "validation_matches_closed_schema_fields": true,
+    "validation_schema_is_closed": true,
+    "zero_attempt_request_token_and_tool_counts": true
+  },
+  "failed_preflight_preserved": true,
+  "failed_project_revision": "8c2b38219291406506606678b58069052348c3db",
+  "freeze_config_sha256": "d65820d9e7233780d32bfa93f2e97c60710063d91ebeffc431b40bf23f624ea5",
+  "gpu_used": false,
+  "infrastructure_retry_authorized": true,
+  "model_loaded": false,
+  "model_outputs_read": false,
+  "next_gate": "one_clean_worktree_acquisition_retry",
+  "passed": true,
+  "preflight_sha256": "c2e4afae302bae7fecf035d1135de83bf344b5eb32c5b11291a0b74322ab078a",
+  "result_sha256": "221131fd27a99c3119e13f80b95b79adae2b81990b39448da95f99733bd54194",
+  "run_kind": "proper_v2_3_tau3_acquisition_preflight_failure_freeze",
+  "schema_version": 1,
+  "task_executed": false
+}

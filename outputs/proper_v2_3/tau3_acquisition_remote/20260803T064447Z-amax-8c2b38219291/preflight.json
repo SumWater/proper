@@ -1,0 +1,41 @@
+{
+  "checks": {
+    "cuda_device_zero_available": true,
+    "domain_inputs_match": true,
+    "frozen_input_hashes_match": true,
+    "model_inventory_matches": true,
+    "output_directory_absent": true,
+    "project_python_matches": true,
+    "project_revision_matches": true,
+    "task_components_match": true,
+    "tau_execution_manifest_matches": true,
+    "tau_revision_matches": true,
+    "tracked_worktree_clean": false,
+    "worker_dependencies_available": true
+  },
+  "model_loaded": false,
+  "observed": {
+    "cuda_device_zero_available": true,
+    "domain_inputs_match": true,
+    "frozen_input_hashes_match": true,
+    "model_inventory_manifest_sha256": "f981a4a7978fd128d6efb18d93b8810d98434a8e69c9bd517ad7aa4e5c1b6a07",
+    "model_inventory_matches": true,
+    "output_directory_absent": true,
+    "project_python_matches": true,
+    "project_revision": "8c2b38219291406506606678b58069052348c3db",
+    "project_revision_matches": true,
+    "task_components_match": true,
+    "tau_execution_manifest_matches": true,
+    "tau_manifest": {
+      "bytes": 10970191,
+      "file_count": 32,
+      "sha256": "00d2fb6ab1eba46443d780f107224c0ba6bbc9e71195fe3a068538fc64d3b4e4"
+    },
+    "tau_revision_matches": true,
+    "tracked_worktree_clean": false,
+    "worker_dependencies_available": true,
+    "worker_probe_returncode": 0
+  },
+  "passed": false,
+  "task_executed": false
+}

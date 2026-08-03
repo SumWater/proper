@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "status": "frozen_remote_preflight_failure_before_any_model_or_task_execution",
+  "failed_run": {
+    "directory": "outputs/proper_v2_3/tau3_acquisition_remote/20260803T064447Z-amax-8c2b38219291",
+    "project_revision": "8c2b38219291406506606678b58069052348c3db",
+    "preflight_path": "outputs/proper_v2_3/tau3_acquisition_remote/20260803T064447Z-amax-8c2b38219291/preflight.json",
+    "preflight_sha256": "c2e4afae302bae7fecf035d1135de83bf344b5eb32c5b11291a0b74322ab078a",
+    "result_path": "outputs/proper_v2_3/tau3_acquisition_remote/20260803T064447Z-amax-8c2b38219291/result.json",
+    "result_sha256": "221131fd27a99c3119e13f80b95b79adae2b81990b39448da95f99733bd54194"
+  },
+  "frozen_inputs": [
+    {"path":"configs/proper_v2_3/acquisition_one_shot_runner_protocol_v2_3.json","sha256":"ad5fb6a719969aa1dde6a9ba4d88d3d5683eb543f11ebee3fc81d7104e5d5668"},
+    {"path":"configs/proper_v2_3/acquisition_one_shot_runner_implementation_v2_3.json","sha256":"7b5dfab1fdc5abda07c74570ab94cbbb04573012467fc00549fc0d0f5c6cf3fa"},
+    {"path":"outputs/proper_v2_3/acquisition_one_shot_runner_implementation/validation.json","sha256":"025dc3aa1637cf8db0973b780732e2e1dac97155c5d90b1ea9909a870a343579"}
+  ],
+  "failure_classification": {
+    "kind": "infrastructure_preflight_failure",
+    "only_failed_check": "tracked_worktree_clean",
+    "reported_tracked_paths": [
+      "configs/proper_v2_3/README.md",
+      "experiments/proper_v2_3/README.md",
+      "outputs/proper_v2_3/README.md",
+      "schemas/proper_v2_3/README.md"
+    ],
+    "reported_path_provenance": "operator_supplied_git_status_after_failed_preflight",
+    "scientific_protocol_changed": false
+  },
+  "observed_boundary": {
+    "capture_attempt_count": 0,
+    "agent_request_count": 0,
+    "user_request_count": 0,
+    "native_tool_execution_count": 0,
+    "model_loaded": false,
+    "model_outputs_read": false,
+    "task_executed": false,
+    "gpu_used": false
+  },
+  "retry_gate": {
+    "same_command_only": true,
+    "require_reported_readmes_committed": true,
+    "require_clean_tracked_worktree": true,
+    "require_new_unique_output_directory": true,
+    "attempt_or_model_retry_count_consumed": 0,
+    "one_infrastructure_corrected_invocation_authorized_after_validation": true,
+    "method_prompt_budget_model_task_order_or_endpoint_change_allowed": false
+  },
+  "claims": {
+    "development_only": true,
+    "heldout": false,
+    "confirmatory": false,
+    "selector_result": false,
+    "lifecycle_result": false,
+    "continuation_result": false,
+    "completion_result": false,
+    "safety_result": false,
+    "cost_result": "preflight_wall_clock_only"
+  }
+}

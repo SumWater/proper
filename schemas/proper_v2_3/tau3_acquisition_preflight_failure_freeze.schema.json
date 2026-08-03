@@ -1,0 +1,13 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://proper.local/schemas/proper_v2_3/tau3_acquisition_preflight_failure_freeze.schema.json",
+  "type":"object","additionalProperties":false,
+  "required":["schema_version","run_kind","passed","checks","freeze_config_sha256","preflight_sha256","result_sha256","failed_project_revision","failed_preflight_preserved","model_loaded","model_outputs_read","task_executed","gpu_used","infrastructure_retry_authorized","next_gate"],
+  "properties": {
+    "schema_version":{"const":1},"run_kind":{"const":"proper_v2_3_tau3_acquisition_preflight_failure_freeze"},"passed":{"type":"boolean"},
+    "checks":{"type":"object","minProperties":1,"additionalProperties":{"type":"boolean"}},"freeze_config_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "preflight_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},"result_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},"failed_project_revision":{"type":"string","pattern":"^[0-9a-f]{40}$"},
+    "failed_preflight_preserved":{"const":true},"model_loaded":{"const":false},"model_outputs_read":{"const":false},"task_executed":{"const":false},"gpu_used":{"const":false},
+    "infrastructure_retry_authorized":{"type":"boolean"},"next_gate":{"enum":["one_clean_worktree_acquisition_retry","stop_and_preserve_preflight_failure"]}
+  }
+}

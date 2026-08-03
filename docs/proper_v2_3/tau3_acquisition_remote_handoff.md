@@ -53,3 +53,17 @@ or model result. After synchronizing the omitted source folder, committing the
 tracked changes, and confirming a clean worktree, one invocation of the same
 command remains authorized. No method, prompt, budget, task order, model
 setting, endpoint, exclusion, or scientific stop rule changed.
+
+## Preserved dirty-worktree preflight
+
+The next invocation reached preflight and wrote run
+`20260803T064447Z-amax-8c2b38219291`. Eleven checks passed; only
+`tracked_worktree_clean` failed because the four synchronized README index
+files were not committed remotely. It produced zero attempts, requests,
+tokens, tools, model load, task execution, or GPU use.
+
+That result is frozen locally. After committing exactly the reported README
+changes and confirming that
+`git -c core.fileMode=false status --short --untracked-files=no` is empty, one
+invocation of the unchanged command in this document remains authorized. Do
+not invoke it if tracked status is nonempty.
