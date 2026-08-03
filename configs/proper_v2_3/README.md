@@ -56,3 +56,6 @@ No GPU or confirmatory run is currently authorized.
 - `tau3_acquisition_result_freeze_v2_3.json`: exact stopped-run artifacts,
   frozen inputs, endpoint interpretation, reported-versus-audited cost, and
   closed rerun/comparison/claim gates.
+- `appworld_source_qualification_design_v2_3.json`: prospective primary-source
+  metadata, encrypted-material boundary, single-call ledger interface,
+  exposure language, capacity gates, and no-download/no-model stop.

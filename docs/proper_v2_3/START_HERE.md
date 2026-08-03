@@ -518,3 +518,22 @@ The tau3 acquisition line is stopped. Rerun, resume, same-cohort prompt or
 runner tuning, five-condition comparison, and confirmatory claims are not
 authorized. A passing freeze validator establishes artifact integrity only;
 the scientific stage remains failed.
+
+## Current gate after AppWorld source-design screening
+
+`appworld_source_qualification_design.md` registers AppWorld as the next
+prospective source because its reported database-backed apps and 457 APIs may
+cover state settings, non-idempotent effects, observable checkpoints, and
+collateral damage. This is source metadata, not an accepted target inventory.
+
+No repository or package was downloaded, no task instruction or ground truth
+was read, and no model or GPU ran. AppWorld's protected task/app/API material
+must remain encrypted during any future public or machine-to-machine handoff.
+Its normal arbitrary-code action interface must also be restricted to one
+intercepted named API call per ledger event before it can satisfy v2.3 safety.
+
+The design validation passes, but candidate count remains unknown. AppWorld is
+not yet held-out or confirmatory, and foundation-model exposure is unknown. The
+next permitted work is an offline encrypted-source acquisition and static
+inventory protocol only; acquisition, decryption, task play, target selection,
+model loading, GPU use, and model comparison remain closed.

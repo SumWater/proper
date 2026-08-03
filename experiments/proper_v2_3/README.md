@@ -78,6 +78,9 @@ command.
 - `validate_tau3_acquisition_result_v2_3.py`: hashes and audits the preserved
   five-attempt stopped result, including raw-record cost reconciliation; it is
   not a model runner and cannot authorize a rerun.
+- `validate_appworld_source_qualification_design_v2_3.py`: CPU-only validation
+  of the prospective AppWorld source, license, exposure, action-interception,
+  hidden-evaluator, and closed execution boundaries; it acquires no source.
 
 Preparation schema/validation protocol v2 preserves the failed fixed-path v1
 manifest and writes every subsequent attempt to a unique run directory.

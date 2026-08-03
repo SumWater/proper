@@ -297,3 +297,14 @@ were omitted. Original artifacts remain unchanged.
 `tau3_acquisition_result_freeze/validation.json` validates preservation and
 audit integrity. It does not make the scientific stage pass: rerun, resume,
 comparison protocol, and confirmatory claims remain closed.
+
+## AppWorld source-qualification design
+
+`appworld_source_qualification_design/validation.json` records 14 passing
+CPU-only design checks. It uses primary-source metadata only and performs no
+download, source inventory, decryption, task reading, ground-truth access,
+model loading, model output reading, or GPU use. Candidate count is null.
+
+The result permits design of an offline encrypted-source acquisition and
+static-inventory protocol only. It does not authorize acquisition, task play,
+target selection, model execution, or held-out/confirmatory claims.

@@ -1,0 +1,31 @@
+{
+  "candidate_count": null,
+  "checks": {
+    "all_execution_and_claim_boundaries_closed": true,
+    "effect_coverage_gate_is_complete": true,
+    "gold_and_evaluator_fields_are_audit_only": true,
+    "new_transport_does_not_reopen_tau3": true,
+    "paper_repository_and_project_are_explicit": true,
+    "partition_freeze_precedes_any_qwen_output": true,
+    "primary_source_metadata_only": true,
+    "project_unconsumed_is_not_model_unexposed_or_heldout": true,
+    "protected_redistribution_boundary_is_explicit": true,
+    "reported_scale_is_metadata_not_inventory": true,
+    "single_intercepted_action_is_required": true,
+    "source_not_falsely_frozen_or_acquired": true,
+    "state_evidence_and_unknown_stop_are_required": true,
+    "version_freeze_precedes_inventory": true
+  },
+  "confirmatory_run_authorized": false,
+  "gpu_used": false,
+  "ground_truth_read": false,
+  "inventory_performed": false,
+  "model_loaded": false,
+  "model_run_authorized": false,
+  "next_gate": "design_offline_encrypted_source_acquisition_and_static_inventory_protocol",
+  "passed": true,
+  "run_kind": "proper_v2_3_appworld_source_qualification_design_validation",
+  "schema_version": 1,
+  "source_acquired": false,
+  "task_instruction_read": false
+}

@@ -51,6 +51,9 @@ decision, and version-specific result schemas. Frozen schemas under
 - `tau3_acquisition_result_freeze.schema.json`: closed integrity and audit
   envelope for the stopped five-attempt acquisition result, with the
   scientific-stage and rerun gates fixed false.
+- `appworld_source_qualification_design.schema.json`: closed no-source,
+  no-inventory, no-task, no-model validation envelope for prospective
+  AppWorld qualification design.
 - `planbench_xl_capacity_audit_design.schema.json`: closed no-source/no-model
   design-validation result before any external inventory.
 - `planbench_xl_source_qualification.schema.json`: frozen source hashes,

@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "status": "prospective_source_design_before_download_inventory_or_task_exposure",
+  "audit_version": "proper_v2_3_appworld_source_qualification_design_v1",
+  "mode": "primary_source_metadata_only_no_download_no_task_play_no_model",
+  "source": {
+    "name": "AppWorld",
+    "paper_url": "https://aclanthology.org/2024.acl-long.850/",
+    "repository_url": "https://github.com/StonyBrookNLP/appworld",
+    "project_url": "https://appworld.dev/",
+    "reported_app_count": 9,
+    "reported_api_count": 457,
+    "reported_task_count": 750,
+    "reported_partitions": ["train", "dev", "test_normal", "test_challenge"],
+    "public_code_license": "Apache-2.0",
+    "protected_material_rule": "public_redistribution_only_in_encrypted_format",
+    "local_source_acquired": false,
+    "frozen_upstream_revision": null,
+    "frozen_code_version": null,
+    "frozen_data_version": null,
+    "frozen_source_manifest_sha256": null
+  },
+  "exposure_boundary": {
+    "proper_project_appworld_task_or_model_output_exposure_observed": false,
+    "foundation_model_pretraining_exposure_known": null,
+    "may_be_called_project_unconsumed_after_hash_audit": true,
+    "may_be_called_foundation_model_unexposed": false,
+    "may_be_called_heldout_now": false,
+    "may_be_called_confirmatory_now": false
+  },
+  "qualification_sequence": [
+    "freeze_exact_upstream_revision_code_version_data_version_and_manifest",
+    "verify_license_and_keep_protected_material_encrypted_during_transfer",
+    "inventory_ids_splits_and_public_api_schemas_without_ground_truth_or_task_play",
+    "derive_complete_api_action_effect_contracts_from_public_schema_and_isolated_fixture_checks",
+    "validate_one_api_call_per_intercepted_ledger_event_with_arbitrary_agent_code_disabled",
+    "freeze_development_heldout_and_preservation_ids_before_any_qwen_output",
+    "run_disjoint_base_capability_calibration_without_failure_memory",
+    "validate_scripted_recoverable_branches_without_gold_as_method_input",
+    "accept_capacity_only_if_all_effect_coverage_and_safety_gates_pass"
+  ],
+  "execution_interface": {
+    "agent_action_unit": "one_named_appworld_api_call",
+    "arbitrary_multi_api_code_block_allowed": false,
+    "every_api_proposal_recorded_before_execution": true,
+    "every_api_result_recorded_after_execution": true,
+    "database_checkpoint_before_state_changing_action": true,
+    "database_checkpoint_after_state_changing_action": true,
+    "unknown_effect_stops_closed": true,
+    "complete_trajectory_action_execution_ledger_required": true
+  },
+  "participant_transport": {
+    "user_message_requires_json_wrapper": false,
+    "user_message_is_plain_public_text": true,
+    "agent_action_requires_closed_schema": true,
+    "invalid_agent_decision_budget_is_independent": true,
+    "invalid_user_transport_budget_is_independent": true,
+    "invalid_outputs_count_toward_cost": true,
+    "same_tau3_cohort_rerun_or_replacement": false
+  },
+  "candidate_requirements": {
+    "public_api_schema_available": true,
+    "observable_pre_and_post_state_available": true,
+    "failure_trigger_observable_to_method": true,
+    "success_evidence_observable_without_evaluator": true,
+    "recovery_path_remains_available": true,
+    "minimum_required_steps_after_recovery": 2,
+    "method_does_not_require_gold_solution_or_evaluator": true,
+    "contains_idempotent_state_setting": true,
+    "contains_non_idempotent_side_effect": true,
+    "fresh_world_per_attempt": true
+  },
+  "audit_only_fields_never_passed_to_method": [
+    "ground_truth",
+    "required_apps",
+    "required_apis",
+    "answer",
+    "evaluation_code",
+    "api_calls",
+    "compiled_solution_module",
+    "difficulty",
+    "benchmark_completion_label",
+    "semantic_family"
+  ],
+  "capacity_gates": {
+    "minimum_behaviorally_distinct_pairs": 12,
+    "minimum_post_failure_pairs": 8,
+    "minimum_idempotent_state_setting_pairs": 3,
+    "minimum_non_idempotent_side_effect_pairs": 3,
+    "minimum_read_only_or_verification_pairs": 3,
+    "maximum_unknown_effect_pairs": 0,
+    "base_capability_floor_must_be_frozen_before_failure_intervention": true
+  },
+  "stop_rules": {
+    "source_or_versions_not_frozen": "stop_before_inventory",
+    "protected_material_would_be_transferred_unencrypted": "stop_source_transfer",
+    "complete_api_interception_unavailable": "stop_source_qualification",
+    "arbitrary_agent_code_required": "stop_source_qualification",
+    "gold_or_evaluator_required_by_method": "exclude_candidate",
+    "insufficient_effect_coverage": "stop_no_full_v2_3_capacity",
+    "base_capability_below_frozen_floor": "stop_model_experiment"
+  },
+  "boundary": {
+    "network_download_performed": false,
+    "source_inventory_performed": false,
+    "protected_material_decrypted": false,
+    "task_instruction_read": false,
+    "ground_truth_read": false,
+    "target_scenario_played": false,
+    "model_loaded": false,
+    "model_output_read": false,
+    "gpu_used": false,
+    "candidate_count_claimed": false,
+    "model_run_authorized": false,
+    "confirmatory_claim_authorized": false
+  },
+  "next_gate": "design_offline_encrypted_source_acquisition_and_static_inventory_protocol"
+}
