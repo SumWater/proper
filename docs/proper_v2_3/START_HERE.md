@@ -466,3 +466,20 @@ The next permitted work is local implementation and CPU-only validation of the
 one-shot runner. The frozen command template is not yet authorized. Model
 loading, task execution, real capture, remote execution, GPU use, and
 confirmatory claims remain closed.
+
+## Current gate after one-shot acquisition-runner implementation
+
+`acquisition_one_shot_runner_implementation.md` records the completed runner
+and CPU-only validation. Sixteen checks and 24 scoped tests pass, including a
+full synthetic 12-position run and an early-stop fixture. Run-envelope v2
+separates complete-trajectory executions from the target-action execution cap;
+the frozen v1 envelope and prior validation output remain unchanged.
+
+Exactly one guarded remote acquisition command is now authorized by
+`tau3_acquisition_remote_handoff.md`. It first hashes all frozen inputs and the
+16.4 GB Qwen directory. If preflight passes it starts one persistent local
+Qwen3-8B worker and runs the development-only acquisition in frozen order.
+Failure or interruption must be returned and preserved without rerun.
+
+This does not authorize a comparison runner, a second acquisition attempt,
+held-out or confirmatory claims, or protocol tuning after output.

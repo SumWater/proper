@@ -1,0 +1,13 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://proper.local/schemas/proper_v2_3/acquisition_one_shot_runner_implementation_validation.schema.json",
+  "type":"object","additionalProperties":false,
+  "required":["schema_version","run_kind","passed","checks","implementation_config_sha256","input_sha256","scoped_tests_run","runner_implemented","remote_command_authorized","model_loaded","model_outputs_read","task_executed","gpu_used","next_gate"],
+  "properties": {
+    "schema_version":{"const":1},"run_kind":{"const":"proper_v2_3_acquisition_one_shot_runner_implementation_validation"},"passed":{"type":"boolean"},
+    "checks":{"type":"object","minProperties":1,"additionalProperties":{"type":"boolean"}},"implementation_config_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "input_sha256":{"type":"object","minProperties":1,"additionalProperties":{"type":"string","pattern":"^[0-9a-f]{64}$"}},"scoped_tests_run":{"const":24},
+    "runner_implemented":{"const":true},"remote_command_authorized":{"type":"boolean"},"model_loaded":{"const":false},"model_outputs_read":{"const":false},"task_executed":{"const":false},"gpu_used":{"const":false},
+    "next_gate":{"enum":["run_one_shot_remote_tau3_acquisition","stop_runner_implementation"]}
+  }
+}

@@ -254,3 +254,13 @@ design checks and six passing scoped tests. Its SHA-256 is
 The result loads no model, reads no model output, executes no task, and uses no
 GPU. It authorizes local runner implementation and CPU validation only; the
 frozen remote command remains unauthorized.
+
+## One-shot acquisition-runner implementation
+
+`acquisition_one_shot_runner_implementation/validation.json` records 16
+passing implementation checks and 24 passing scoped tests. Its SHA-256 is
+`025dc3aa1637cf8db0973b780732e2e1dac97155c5d90b1ea9909a870a343579`.
+The validation itself loads no model, reads no model output, executes no task,
+and uses no GPU. It authorizes the single command in
+`docs/proper_v2_3/tau3_acquisition_remote_handoff.md`; any returned success,
+failure, or interruption must be frozen before further work.

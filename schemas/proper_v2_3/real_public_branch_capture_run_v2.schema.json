@@ -1,0 +1,23 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://proper.local/schemas/proper_v2_3/real_public_branch_capture_run_v2.schema.json",
+  "type":"object","additionalProperties":false,
+  "required":["schema_version","run_kind","implementation_config_sha256","project_revision","tau_revision","model_manifest_sha256","status","stop_reason","smoke_pair_id","smoke_passed","capture_attempt_count","captured_branch_count","post_failure_captured_count","duplicate_non_idempotent_execution_count","attempt_artifacts","cost","checks","boundary","next_gate"],
+  "properties": {
+    "schema_version":{"const":2},
+    "run_kind":{"const":"proper_v2_3_tau3_qwen_public_branch_acquisition"},
+    "implementation_config_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "project_revision":{"type":"string","pattern":"^[0-9a-f]{40}$"},
+    "tau_revision":{"const":"fc0055dc4e0a316c3f83133267fbd6faaa770992"},
+    "model_manifest_sha256":{"const":"f981a4a7978fd128d6efb18d93b8810d98434a8e69c9bd517ad7aa4e5c1b6a07"},
+    "status":{"enum":["preflight_failed","smoke_failed","capture_stopped","interrupted","completed"]},
+    "stop_reason":{"type":["string","null"]},"smoke_pair_id":{"const":"tau3-dev-01"},"smoke_passed":{"type":"boolean"},
+    "capture_attempt_count":{"type":"integer","minimum":0,"maximum":12},"captured_branch_count":{"type":"integer","minimum":0,"maximum":12},"post_failure_captured_count":{"type":"integer","minimum":0,"maximum":8},
+    "duplicate_non_idempotent_execution_count":{"type":"integer","minimum":0},
+    "attempt_artifacts":{"type":"array","minItems":0,"maxItems":12,"items":{"type":"object","additionalProperties":false,"required":["pair_id","ordinal","phase","effect_class","capture_status","path","sha256","native_tool_execution_count","target_native_execution_count"],"properties":{"pair_id":{"type":"string","pattern":"^tau3-dev-(0[1-9]|1[0-2])$"},"ordinal":{"type":"integer","minimum":1,"maximum":12},"phase":{"enum":["pre_action","post_failure"]},"effect_class":{"enum":["read_only","idempotent_state_setting","non_idempotent_side_effect"]},"capture_status":{"type":"string"},"path":{"type":"string"},"sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},"native_tool_execution_count":{"type":"integer","minimum":0},"target_native_execution_count":{"type":"integer","minimum":0,"maximum":1}}}},
+    "cost":{"type":"object","additionalProperties":false,"required":["agent_request_count","agent_prompt_tokens","agent_completion_tokens","user_request_count","user_prompt_tokens","user_completion_tokens","native_tool_execution_count","tool_error_count","orchestrator_step_count","preflight_wall_clock_seconds","model_startup_to_first_response_seconds","run_wall_clock_seconds"],"properties":{"agent_request_count":{"type":"integer","minimum":0},"agent_prompt_tokens":{"type":"integer","minimum":0},"agent_completion_tokens":{"type":"integer","minimum":0},"user_request_count":{"type":"integer","minimum":0},"user_prompt_tokens":{"type":"integer","minimum":0},"user_completion_tokens":{"type":"integer","minimum":0},"native_tool_execution_count":{"type":"integer","minimum":0},"tool_error_count":{"type":"integer","minimum":0},"orchestrator_step_count":{"type":"integer","minimum":0},"preflight_wall_clock_seconds":{"type":"number","minimum":0},"model_startup_to_first_response_seconds":{"type":"number","minimum":0},"run_wall_clock_seconds":{"type":"number","minimum":0}}},
+    "checks":{"type":"object","minProperties":1,"additionalProperties":{"type":"boolean"}},
+    "boundary":{"type":"object","additionalProperties":false,"required":["development_only","heldout","confirmatory","external_api_called","protocol_tuned_after_output","resumed_or_rerun","model_loaded","model_outputs_read","task_executed","gpu_used"],"properties":{"development_only":{"const":true},"heldout":{"const":false},"confirmatory":{"const":false},"external_api_called":{"const":false},"protocol_tuned_after_output":{"const":false},"resumed_or_rerun":{"const":false},"model_loaded":{"type":"boolean"},"model_outputs_read":{"type":"boolean"},"task_executed":{"type":"boolean"},"gpu_used":{"type":"boolean"}}},
+    "next_gate":{"enum":["freeze_tau3_five_condition_model_protocol","stop_and_preserve_acquisition_result"]}
+  }
+}

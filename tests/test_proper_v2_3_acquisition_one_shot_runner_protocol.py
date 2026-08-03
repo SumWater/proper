@@ -80,7 +80,18 @@ class AcquisitionOneShotRunnerProtocolTests(unittest.TestCase):
             self.assertFalse(gates[key], key)
         self.assertFalse(entry["runner_exists_at_protocol_freeze"])
         self.assertFalse(entry["command_execution_authorized_at_this_stage"])
-        self.assertFalse((ROOT / entry["runner_path"]).exists())
+        runner_path = ROOT / entry["runner_path"]
+        if runner_path.exists():
+            implementation = load(
+                ROOT / "configs/proper_v2_3/acquisition_one_shot_runner_implementation_v2_3.json"
+            )
+            hashes = {
+                item["path"]: item["sha256"]
+                for item in implementation["implementation_inputs"]
+            }
+            self.assertEqual(sha256(runner_path), hashes[entry["runner_path"]])
+        else:
+            self.assertFalse(runner_path.exists())
 
 
 if __name__ == "__main__":

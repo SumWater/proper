@@ -48,3 +48,6 @@ No GPU or confirmatory run is currently authorized.
 - `acquisition_one_shot_runner_protocol_v2_3.json`: future remote environments,
   preflight sequence, pair/smoke order, no-retry/no-resume policy, partial-run
   persistence, pass gate, and command contract before runner implementation.
+- `acquisition_one_shot_runner_implementation_v2_3.json`: exact runner, v2
+  run-envelope, tests, validation, pre-model corrections, and conditional
+  one-shot remote authority.

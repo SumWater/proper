@@ -42,6 +42,10 @@ decision, and version-specific result schemas. Frozen schemas under
   that preserves zero-attempt preflight failures and 1–12 actual attempts.
 - `acquisition_one_shot_runner_protocol_validation.schema.json`: closed
   CPU-only runner-protocol design validation envelope.
+- `real_public_branch_capture_run_v2.schema.json`: corrected remote result
+  envelope separating complete-trajectory and target native-execution counts.
+- `acquisition_one_shot_runner_implementation_validation.schema.json`: closed
+  CPU implementation-validation and remote-authorization envelope.
 - `planbench_xl_capacity_audit_design.schema.json`: closed no-source/no-model
   design-validation result before any external inventory.
 - `planbench_xl_source_qualification.schema.json`: frozen source hashes,

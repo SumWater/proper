@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "status": "implementation_under_cpu_validation_before_remote_authorization",
+  "protocol": {
+    "path": "configs/proper_v2_3/acquisition_one_shot_runner_protocol_v2_3.json",
+    "sha256": "ad5fb6a719969aa1dde6a9ba4d88d3d5683eb543f11ebee3fc81d7104e5d5668",
+    "validation_path": "outputs/proper_v2_3/acquisition_one_shot_runner_protocol/validation.json",
+    "validation_sha256": "52443099f6e6270e124e412bb841e45f3ed726f166f0076e8f2e6be1354353b4"
+  },
+  "implementation_inputs": [
+    {"path":"experiments/proper_v2_3/run_tau3_acquisition_remote_v2_3.py","sha256":"874ce3eda9eef89f976a118d7e4951605a66da89120e7eeee1d889304fef2400"},
+    {"path":"schemas/proper_v2_3/real_public_branch_capture_run_v2.schema.json","sha256":"d47068679487c1fbd1d9b89ae355277a510624dead5ff6edbd0c6658417f1ebc"},
+    {"path":"tests/test_proper_v2_3_acquisition_one_shot_runner.py","sha256":"1d8ae70f9ba52d9b375ae6f5b8c0f208fe5710308764e1a40fd33b4e8c9ff4c3"},
+    {"path":"tests/test_proper_v2_3_acquisition_one_shot_runner_protocol.py","sha256":"f7e30623e161d7daab84338632d92eb7368063332bde3a67a29ff1fbdd474b94"},
+    {"path":"experiments/proper_v2_3/validate_acquisition_one_shot_runner_implementation_v2_3.py","sha256":"323fc1866691e31f7d045ab12efc1007ca21077ea8a55c2b5f1245da941815a7"},
+    {"path":"schemas/proper_v2_3/acquisition_one_shot_runner_implementation_validation.schema.json","sha256":"0f2c168dea3dce139940e06e0e47856199d194a5520aef8524aaa45a4553feb6"}
+  ],
+  "pre_model_schema_correction": {
+    "frozen_v1_path": "schemas/proper_v2_3/real_public_branch_capture_run.schema.json",
+    "frozen_v1_sha256": "e0bd45eb800b5df627ede3d583e1e3cbd837c506ada4af984c1e490e45f3b9c0",
+    "issue": "v1_caps_complete_trajectory_native_execution_count_at_one",
+    "v2_resolution": "uncapped_native_tool_execution_count_plus_target_native_execution_count_capped_at_one",
+    "modify_v1": false
+  },
+  "pre_model_test_lifecycle_correction": {
+    "issue": "protocol_design_test_asserted_future_runner_absence_forever",
+    "resolution": "before_implementation_require_absence_after_implementation_require_hash_lock",
+    "frozen_protocol_validation_output_modified": false
+  },
+  "cpu_validation": {
+    "full_synthetic_pair_count": 12,
+    "early_stop_fixture_ordinal": 5,
+    "uses_real_task_content": false,
+    "imports_tau_runtime": false,
+    "imports_model_libraries": false,
+    "loads_model": false,
+    "executes_task": false,
+    "uses_gpu": false
+  },
+  "gates": {
+    "cpu_validation_required_before_remote_command": true,
+    "remote_handoff_authorized_after_validation": true,
+    "remote_command_authorized_after_validation": true,
+    "model_loading_authorized_only_inside_guarded_command_after_validation": true,
+    "task_execution_authorized_only_inside_guarded_command_after_validation": true,
+    "real_branch_capture_authorized_only_inside_guarded_command_after_validation": true,
+    "gpu_authorized_only_inside_guarded_command_after_validation": true,
+    "comparison_runner_authorized": false,
+    "confirmatory_claim_authorized": false
+  }
+}

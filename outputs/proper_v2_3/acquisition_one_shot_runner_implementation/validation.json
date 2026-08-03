@@ -1,0 +1,40 @@
+{
+  "checks": {
+    "all_declared_implementation_hashes_match": true,
+    "atomic_attempt_and_progress_persistence_present": true,
+    "comparison_and_confirmatory_gates_remain_closed": true,
+    "frozen_protocol_and_validation_hashes_match": true,
+    "frozen_v1_run_schema_unchanged": true,
+    "full_and_partial_synthetic_orchestration_are_tested": true,
+    "preflight_checks_model_inventory_tau_inputs_python_and_cuda": true,
+    "remote_authority_is_conditional_on_this_validation": true,
+    "retry_resume_and_replacement_remain_forbidden": true,
+    "runner_has_no_synthetic_cli_escape_hatch": true,
+    "runner_has_no_top_level_tau_or_model_import": true,
+    "runner_requires_exact_revision_argument": true,
+    "twenty_four_scoped_tests_pass": true,
+    "v2_schema_separates_trajectory_and_target_counts": true,
+    "validation_output_matches_closed_schema_fields": true,
+    "validation_output_schema_is_closed": true
+  },
+  "gpu_used": false,
+  "implementation_config_sha256": "7b5dfab1fdc5abda07c74570ab94cbbb04573012467fc00549fc0d0f5c6cf3fa",
+  "input_sha256": {
+    "configs/proper_v2_3/acquisition_one_shot_runner_implementation_v2_3.json": "7b5dfab1fdc5abda07c74570ab94cbbb04573012467fc00549fc0d0f5c6cf3fa",
+    "experiments/proper_v2_3/run_tau3_acquisition_remote_v2_3.py": "874ce3eda9eef89f976a118d7e4951605a66da89120e7eeee1d889304fef2400",
+    "schemas/proper_v2_3/acquisition_one_shot_runner_implementation_validation.schema.json": "0f2c168dea3dce139940e06e0e47856199d194a5520aef8524aaa45a4553feb6",
+    "schemas/proper_v2_3/real_public_branch_capture_run_v2.schema.json": "d47068679487c1fbd1d9b89ae355277a510624dead5ff6edbd0c6658417f1ebc",
+    "tests/test_proper_v2_3_acquisition_one_shot_runner.py": "1d8ae70f9ba52d9b375ae6f5b8c0f208fe5710308764e1a40fd33b4e8c9ff4c3",
+    "tests/test_proper_v2_3_acquisition_one_shot_runner_protocol.py": "f7e30623e161d7daab84338632d92eb7368063332bde3a67a29ff1fbdd474b94"
+  },
+  "model_loaded": false,
+  "model_outputs_read": false,
+  "next_gate": "run_one_shot_remote_tau3_acquisition",
+  "passed": true,
+  "remote_command_authorized": true,
+  "run_kind": "proper_v2_3_acquisition_one_shot_runner_implementation_validation",
+  "runner_implemented": true,
+  "schema_version": 1,
+  "scoped_tests_run": 24,
+  "task_executed": false
+}

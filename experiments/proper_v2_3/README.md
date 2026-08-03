@@ -69,6 +69,10 @@ command.
 - `validate_acquisition_one_shot_runner_protocol_v2_3.py`: CPU-only validator
   for the future remote environments, first-pair smoke, early-stop envelope,
   frozen hashes, and still-closed execution gates. It is not the real runner.
+- `run_tau3_acquisition_remote_v2_3.py`: revision-guarded, one-attempt remote
+  Qwen/tau3 acquisition runner with full preflight and atomic partial results.
+- `validate_acquisition_one_shot_runner_implementation_v2_3.py`: CPU-only
+  implementation/hash/test gate before the single remote command.
 
 Preparation schema/validation protocol v2 preserves the failed fixed-path v1
 manifest and writes every subsequent attempt to a unique run directory.
