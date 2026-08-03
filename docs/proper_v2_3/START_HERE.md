@@ -483,3 +483,11 @@ Failure or interruption must be returned and preserved without rerun.
 
 This does not authorize a comparison runner, a second acquisition attempt,
 held-out or confirmatory claims, or protocol tuning after output.
+
+The first remote command invocation stopped at Python import because the
+handoff sync list had accidentally omitted
+`src/failure_memory/proper_v2/v2_3/`. It did not reach runner `main` or
+preflight, create an output, load a model, execute a task, or use a GPU. The
+handoff now includes that source folder. A single retry after folder sync,
+remote commit, and clean-worktree confirmation is an infrastructure correction
+and remains authorized; the scientific protocol is unchanged.

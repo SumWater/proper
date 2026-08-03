@@ -64,3 +64,9 @@ This validation authorizes exactly one guarded remote acquisition command. The
 12/12 acquisition would authorize design of a separate tau3 five-condition
 model protocol; it would not itself establish selector, lifecycle,
 continuation, completion, safety, or cost improvement.
+
+The first remote invocation did not import the runner because the handoff list
+omitted its `src/failure_memory/proper_v2/v2_3/` dependency folder. No runner
+code, preflight, model, task, output, or GPU was reached. The corrected handoff
+adds the missing folder and permits one infrastructure-corrected invocation
+without changing the frozen scientific protocol.
