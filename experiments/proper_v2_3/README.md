@@ -59,6 +59,13 @@ command.
   pre-action capture, both failure injections, duplicate safety, and stops.
 - `validate_acquisition_runtime_protocol_v2_3.py`: validates 30 public tools,
   12 task hashes, frozen inputs, state-machine tests, traces, and closed gates.
+- `synthetic_acquisition_jsonl_worker_v2_3.py`: persistent deterministic JSONL
+  worker whose responses are explicitly synthetic and non-model.
+- `run_acquisition_runtime_synthetic_cpu_v2_3.py`: fake-environment end-to-end
+  runtime exercise for three effect classes and four deliberate failure paths.
+- `validate_acquisition_runtime_implementation_v2_3.py`: verifies frozen
+  implementation hashes, closed schemas, 11 scoped tests, 15 synthetic checks,
+  participant privacy, and no tau/model/task/GPU use.
 
 Preparation schema/validation protocol v2 preserves the failed fixed-path v1
 manifest and writes every subsequent attempt to a unique run directory.

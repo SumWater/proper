@@ -47,6 +47,13 @@ from .continuation import (
     route_observable_progress,
 )
 from .acquisition_runtime_protocol import AcquisitionProtocolMachine
+from .acquisition_runtime import (
+    AttemptSpec,
+    EnvironmentExecution,
+    JsonlSubprocessWorker,
+    run_attempt,
+    run_stage,
+)
 
 __all__ = [
     "ActionEffectClass",
@@ -55,6 +62,7 @@ __all__ = [
     "ActionPurpose",
     "ActionSpec",
     "AcquisitionProtocolMachine",
+    "AttemptSpec",
     "BudgetPolicy",
     "BudgetState",
     "ControllerDecision",
@@ -63,6 +71,8 @@ __all__ = [
     "EvidenceRecord",
     "EvidenceSource",
     "ExecutionStatus",
+    "EnvironmentExecution",
+    "JsonlSubprocessWorker",
     "LedgerEntry",
     "ContinuationDecision",
     "ContinuationDisposition",
@@ -85,4 +95,6 @@ __all__ = [
     "initial_progress_state",
     "progress_state_from_mapping",
     "route_observable_progress",
+    "run_attempt",
+    "run_stage",
 ]

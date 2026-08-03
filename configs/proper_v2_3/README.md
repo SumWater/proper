@@ -42,3 +42,6 @@ No GPU or confirmatory run is currently authorized.
   effect and retry-safety registry; unknown tools stop closed.
 - `acquisition_runtime_protocol_v2_3.json`: exact participant loop, 12 task
   hashes, model identity, budgets, capture semantics, persistence, and gates.
+- `acquisition_runtime_implementation_v2_3.json`: frozen implementation
+  hashes, two pre-model safety/integrity corrections, JSONL transport,
+  synthetic fixtures, persistence contract, and still-closed execution gates.

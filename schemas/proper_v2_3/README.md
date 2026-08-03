@@ -33,6 +33,11 @@ decision, and version-specific result schemas. Frozen schemas under
   envelope preserving failed preflights and the successful content identity.
 - `acquisition_runtime_protocol_validation.schema.json`: closed CPU protocol
   validation envelope before runtime implementation or any model execution.
+- `acquisition_runtime_synthetic_dry_run.schema.json`: closed synthetic
+  end-to-end result including fixtures, request counts, execution counts,
+  privacy checks, and explicit non-model boundaries.
+- `acquisition_runtime_implementation_validation.schema.json`: closed
+  implementation validation and next-gate envelope.
 - `planbench_xl_capacity_audit_design.schema.json`: closed no-source/no-model
   design-validation result before any external inventory.
 - `planbench_xl_source_qualification.schema.json`: frozen source hashes,

@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "status": "frozen_implementation_and_synthetic_dry_run_before_real_runner",
+  "protocol": {
+    "path": "configs/proper_v2_3/acquisition_runtime_protocol_v2_3.json",
+    "sha256": "23f3a1fe5f2f271c51e09e82b979dbc359e1e8e25a227b694ee337f455ecfc08",
+    "validation_path": "outputs/proper_v2_3/acquisition_runtime_protocol/validation.json",
+    "validation_sha256": "c05aa3da964e6dd2b076bae316e6a3cd110de764d596f95e1594d422169d8185"
+  },
+  "implementation_inputs": [
+    {"path":"src/failure_memory/proper_v2/v2_3/acquisition_runtime.py","sha256":"48dd52750e1f4364ba2754abb0ea97fe4983d7320e3b0ce65eb81b4a1b70835c"},
+    {"path":"src/failure_memory/proper_v2/v2_3/tau3_acquisition_runtime_adapter.py","sha256":"90140450b2db4050a7111d5f50604136278ff86ac779b9b340379b60bab53a0a"},
+    {"path":"experiments/proper_v2_3/synthetic_acquisition_jsonl_worker_v2_3.py","sha256":"f8eaea15b00c9a603b5f0289ea27b16dd12f65b5f8a592856cd83fd0514b7081"},
+    {"path":"experiments/proper_v2_3/run_acquisition_runtime_synthetic_cpu_v2_3.py","sha256":"56f4acf9c021fad8b1d2e2649cd7742864c9fa1622a9e5c053a284781960d174"},
+    {"path":"tests/test_proper_v2_3_acquisition_runtime.py","sha256":"02535e933a4d3ebc7a820dc8f0febcef389f36e575fe18008aa037b85378697d"}
+  ],
+  "pre_model_corrections_to_protocol_v1_simulator": [
+    {
+      "issue": "pre_action_state_machine_used_a_placeholder_fresh_environment_hash",
+      "implementation": "replace_with_hash_of_actual_initialized_environment_checkpoint_before_persistence",
+      "scientific_effect": "integrity_correction_before_any_model_or_task_output"
+    },
+    {
+      "issue": "ambiguous_non_target_state_change_was_recorded_but_simulator_could_continue",
+      "implementation": "replace_public_result_with_result_unknown_save_post_action_checkpoint_and_stop_attempt",
+      "scientific_effect": "safety_correction_before_any_model_or_task_output"
+    }
+  ],
+  "serialization": {
+    "private_user_scenario": "canonical_json_sorted_keys_utf8_between_existing_scenario_tags",
+    "public_tool_contract": "name_description_parameters_only_sorted_by_tool_name",
+    "worker_request": "one_canonical_json_object_per_line",
+    "worker_response": "matching_request_id_ok_raw_text_usage_synthetic_boundary",
+    "attempt_artifact": "utf8_sorted_pretty_json_atomic_temp_replace",
+    "stage_artifact": "written_after_each_attempt_set_and_never_overwrites_run_directory"
+  },
+  "worker_transport": {
+    "persistent_process": true,
+    "sequential_requests": true,
+    "response_timeout_seconds_for_future_real_worker": 180,
+    "shutdown_timeout_seconds": 5,
+    "stderr_is_separate_file": true,
+    "request_id_contains_task_or_pair_id": false,
+    "worker_restart_count": 0
+  },
+  "synthetic_validation": {
+    "successful_effect_class_attempts": 3,
+    "deliberate_failure_attempts": 4,
+    "fixtures": [
+      "pre_action_actual_checkpoint",
+      "idempotent_target_suppressed",
+      "non_idempotent_target_once_hidden_result",
+      "invalid_json_zero_retry",
+      "worker_error_zero_restart",
+      "ambiguous_non_target_write_checkpoint_stop",
+      "duplicate_successful_state_change_blocked"
+    ],
+    "real_task_data_used": false,
+    "tau_imported": false,
+    "model_library_imported": false,
+    "model_loaded": false,
+    "gpu_used": false
+  },
+  "future_real_runtime": {
+    "tau_import_is_lazy_and_pinned_source_only": true,
+    "selected_tasks_require_null_initial_state": true,
+    "model_directory_rehashed_before_worker_start": true,
+    "one_shared_agent_user_worker": true,
+    "one_attempt_per_pair": true,
+    "stop_after_first_uncaptured_pair": true,
+    "output_run_directory_must_not_exist": true
+  },
+  "gates": {
+    "one_shot_runner_protocol_design_authorized_after_validation": true,
+    "real_runner_implemented": false,
+    "model_loading_authorized": false,
+    "task_execution_authorized": false,
+    "real_branch_capture_authorized": false,
+    "comparison_runner_authorized": false,
+    "gpu_authorized": false,
+    "confirmatory_claim_authorized": false
+  }
+}

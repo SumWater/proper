@@ -230,3 +230,18 @@ complete-ledger duplicate safety, participant separation, zero invalid-output
 retry, independent budgets, and closed model/task/capture/GPU gates. It
 authorizes runtime implementation and synthetic CPU dry-run only, not model
 loading or real branch acquisition.
+
+## Acquisition runtime implementation
+
+`acquisition_runtime_implementation/synthetic_dry_run.json` contains seven
+synthetic attempts: three successful effect-class captures and four deliberate
+transport or safety failures. Its SHA-256 is
+`add4254f16d193f342ac3b5255b90537ee49a265a42f914c4d4bd278009d3caf`.
+`validation.json` records 11 passing scoped tests and 15 passing synthetic
+checks, with model, task, tau3, external endpoint, capture, and GPU boundaries
+closed. Its SHA-256 is
+`09b1e92e85a2103f25f7024a7ce7cd97717bec366a46ab3b3a4fff0e16634b72`.
+
+This is synthetic implementation evidence, not model completion or safety
+evidence. It authorizes one-shot real-runner protocol design only; it does not
+authorize model loading or real branch acquisition.

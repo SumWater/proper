@@ -429,3 +429,22 @@ The next permitted work is implementation of this exact runtime plus a
 synthetic CPU dry-run. Model loading, the 12 development attempts, real public
 branch capture, a comparison runner, external APIs, GPU use, and confirmatory
 claims remain unauthorized.
+
+## Current gate after acquisition runtime implementation
+
+`acquisition_runtime_implementation.md` records the completed executable
+runtime and synthetic CPU validation. Eleven scoped tests pass without
+resource warnings and all 15 synthetic checks pass. The dry run covers all
+three action-effect classes plus invalid JSON, worker failure, ambiguous
+non-target state change, and duplicate successful state-change stops. It uses
+no tau3 task, model, model output, external endpoint, or GPU.
+
+Two pre-model implementation corrections are explicit and versioned: actual
+initialized checkpoint evidence replaces the pre-action placeholder, and an
+ambiguous non-target write now saves its post-action checkpoint and stops. The
+frozen protocol-v1 simulator and its evidence were not overwritten.
+
+The next permitted work is design and freeze of a separate one-shot real
+acquisition-runner protocol. Model loading, real acquisition of the 12
+development branches, comparison-runner implementation, external APIs, GPU
+use, and confirmatory claims remain unauthorized.

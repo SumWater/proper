@@ -1,0 +1,30 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://proper.local/schemas/proper_v2_3/acquisition_runtime_implementation_validation.schema.json",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["schema_version","run_kind","implementation_config_sha256","protocol_validation_sha256","synthetic_dry_run_sha256","validation_input_sha256","checks","passed","scoped_tests_run","synthetic_checks_run","model_loaded","model_outputs_read","tau_imported","task_executed","gpu_used","one_shot_runner_protocol_design_authorized","real_runner_implemented","model_loading_authorized","real_branch_capture_authorized","confirmatory_run_authorized","next_gate"],
+  "properties":{
+    "schema_version":{"const":1},
+    "run_kind":{"const":"proper_v2_3_acquisition_runtime_implementation_validation"},
+    "implementation_config_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "protocol_validation_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "synthetic_dry_run_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "validation_input_sha256":{"type":"object","minProperties":8,"additionalProperties":{"type":"string","pattern":"^[0-9a-f]{64}$"}},
+    "checks":{"type":"object","minProperties":1,"additionalProperties":{"type":"boolean"}},
+    "passed":{"type":"boolean"},
+    "scoped_tests_run":{"const":11},
+    "synthetic_checks_run":{"const":15},
+    "model_loaded":{"const":false},
+    "model_outputs_read":{"const":false},
+    "tau_imported":{"const":false},
+    "task_executed":{"const":false},
+    "gpu_used":{"const":false},
+    "one_shot_runner_protocol_design_authorized":{"type":"boolean"},
+    "real_runner_implemented":{"const":false},
+    "model_loading_authorized":{"const":false},
+    "real_branch_capture_authorized":{"const":false},
+    "confirmatory_run_authorized":{"const":false},
+    "next_gate":{"enum":["freeze_one_shot_acquisition_runner_protocol","stop_runtime_implementation"]}
+  }
+}

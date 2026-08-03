@@ -1,0 +1,21 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://proper.local/schemas/proper_v2_3/acquisition_runtime_synthetic_dry_run.schema.json",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["schema_version","run_kind","checks","passed","successful_stage","deliberate_failures","worker_request_count","model_loaded","model_outputs_read","tau_imported","task_executed","gpu_used"],
+  "properties":{
+    "schema_version":{"const":1},
+    "run_kind":{"const":"proper_v2_3_acquisition_runtime_synthetic_cpu_dry_run"},
+    "checks":{"type":"object","minProperties":15,"additionalProperties":{"type":"boolean"}},
+    "passed":{"type":"boolean"},
+    "successful_stage":{"type":"object"},
+    "deliberate_failures":{"type":"object","required":["invalid_output","worker_error","ambiguous_non_target_write","duplicate_state_change"]},
+    "worker_request_count":{"type":"integer","minimum":1},
+    "model_loaded":{"const":false},
+    "model_outputs_read":{"const":false},
+    "tau_imported":{"const":false},
+    "task_executed":{"const":false},
+    "gpu_used":{"const":false}
+  }
+}
