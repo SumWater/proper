@@ -69,6 +69,8 @@ decision, and version-specific result schemas. Frozen schemas under
   closed synthetic implementation gate before one real in-memory inventory.
 - `appworld_apps_bundle_inventory_preflight_failure_freeze.schema.json`:
   closed freeze of the dependency preflight result before any decryption.
+- `appworld_offline_dependency_repair.schema.json`: closed provisioning and
+  delegated-inventory result with explicit stop outcomes.
 - `planbench_xl_capacity_audit_design.schema.json`: closed no-source/no-model
   design-validation result before any external inventory.
 - `planbench_xl_source_qualification.schema.json`: frozen source hashes,

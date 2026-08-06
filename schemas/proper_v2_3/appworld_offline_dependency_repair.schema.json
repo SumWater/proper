@@ -1,0 +1,16 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://proper.local/schemas/proper_v2_3/appworld_offline_dependency_repair.schema.json",
+  "type":"object","additionalProperties":false,
+  "required":["schema_version","run_kind","project_revision","expected_project_revision","checks","status","stop_reason","provision_attempted","provision_returncode","installed_versions","inventory_returncode","inventory_path","network_allowed","protected_plaintext_persisted","source_extracted","task_or_api_data_read","model_loaded","gpu_used","next_gate"],
+  "properties":{
+    "schema_version":{"const":1},"run_kind":{"const":"proper_v2_3_appworld_offline_dependency_repair"},
+    "project_revision":{"type":"string","pattern":"^[0-9a-f]{40}$"},"expected_project_revision":{"type":"string","pattern":"^[0-9a-f]{40}$"},
+    "checks":{"type":"object","minProperties":1,"additionalProperties":{"type":"boolean"}},
+    "status":{"enum":["preflight_failed","provision_failed","probe_failed","inventory_stopped","inventory_completed"]},
+    "stop_reason":{"type":["string","null"]},"provision_attempted":{"type":"boolean"},"provision_returncode":{"type":["integer","null"]},
+    "installed_versions":{"type":["object","null"]},"inventory_returncode":{"type":["integer","null"]},"inventory_path":{"type":["string","null"]},
+    "network_allowed":{"const":false},"protected_plaintext_persisted":{"const":false},"source_extracted":{"const":false},"task_or_api_data_read":{"const":false},"model_loaded":{"const":false},"gpu_used":{"const":false},
+    "next_gate":{"enum":["freeze_returned_apps_bundle_inventory","stop_and_preserve_dependency_repair_result"]}
+  }
+}

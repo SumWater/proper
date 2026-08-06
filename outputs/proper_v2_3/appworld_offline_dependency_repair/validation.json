@@ -1,0 +1,28 @@
+{
+  "apps_bundle_decrypted": false,
+  "checks": {
+    "all_frozen_inputs_match": true,
+    "complete_three_wheel_chain_exactly_pinned": true,
+    "failure_results_are_atomically_preserved": true,
+    "five_contract_tests_pass": true,
+    "install_is_no_index_no_deps_binary_only": true,
+    "one_remote_invocation_only": true,
+    "runner_has_no_network_client": true,
+    "scientific_inputs_and_model_gpu_boundaries_unchanged": true,
+    "target_is_external_absent_and_non_overwriting": true,
+    "version_probe_precedes_one_inventory_call": true,
+    "versions_are_exact_and_within_prior_major_gate": true,
+    "wheelhouse_requires_exact_files_sizes_and_hashes": true
+  },
+  "config_sha256": "a03da3c7ab5e54f719320c246ae5bcef754cac3a3738e2f429b04709dab7fb1c",
+  "dependency_installed": false,
+  "gpu_used": false,
+  "model_loaded": false,
+  "network_used": false,
+  "next_gate": "run_one_offline_dependency_repair_and_inventory",
+  "one_remote_repair_invocation_authorized": true,
+  "passed": true,
+  "run_kind": "proper_v2_3_appworld_offline_dependency_repair_validation",
+  "schema_version": 1,
+  "tests_run": 5
+}

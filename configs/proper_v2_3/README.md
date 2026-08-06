@@ -74,3 +74,5 @@ No GPU or confirmatory run is currently authorized.
 - `appworld_apps_bundle_inventory_preflight_failure_freeze_v2_3.json`: exact
   returned dependency failure, pre-decryption boundary, unchanged scientific
   inputs, and still-closed retry gate pending separate dependency provisioning.
+- `appworld_offline_dependency_repair_v2_3.json`: exact Linux wheels, hashes,
+  versions, offline installation flags, external target, and one repair call.

@@ -105,6 +105,11 @@ command.
 - `validate_appworld_apps_bundle_inventory_preflight_failure_v2_3.py`: freezes
   the missing-`cryptography` preflight result and keeps decryption and retry
   closed while authorizing dependency-provisioning design only.
+- `run_appworld_offline_dependency_repair_remote_v2_3.py`: verifies and installs
+  the three pinned wheels into a new external target, probes versions, and
+  invokes the unchanged inventory once without network access.
+- `validate_appworld_offline_dependency_repair_v2_3.py`: CPU-only hash,
+  no-network, non-overwrite, dependency-chain, and single-invocation gate.
 
 Preparation schema/validation protocol v2 preserves the failed fixed-path v1
 manifest and writes every subsequent attempt to a unique run directory.

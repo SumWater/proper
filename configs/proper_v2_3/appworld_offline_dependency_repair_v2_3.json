@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "status": "frozen_offline_dependency_repair_before_remote_execution",
+  "frozen_inputs": [
+    {"path":"outputs/proper_v2_3/appworld_apps_bundle_inventory_preflight_failure_freeze/validation.json","sha256":"61fb26919802868ec432ee6d318f032aecaba24e4f000d315707b7143d1c6957"},
+    {"path":"configs/proper_v2_3/appworld_apps_bundle_inventory_implementation_v2_3.json","sha256":"1c2fa17c9f671c60ed7a9c3a88fb2dd4913ef5c897b6b7b327367b688dff1957"},
+    {"path":"experiments/proper_v2_3/run_appworld_apps_bundle_inventory_remote_v2_3.py","sha256":"b20454ef43e13e759347d57b0476acc21b7a5d8e61da5a5f7d857a0a9891646d"},
+    {"path":"experiments/proper_v2_3/run_appworld_offline_dependency_repair_remote_v2_3.py","sha256":"8d37cfd340980165402cf770d6afa9fede3fe451e86ea733500200e0f2d74b7f"},
+    {"path":"schemas/proper_v2_3/appworld_offline_dependency_repair.schema.json","sha256":"63e19942097febb85c6e7d8d22a01755dd86775efc77c52f89dc2ed7cee0569b"},
+    {"path":"tests/test_proper_v2_3_appworld_offline_dependency_repair.py","sha256":"e6642113fae0483aa0fee76ee5ca63a02ffc7c95868993aea74c85a691b6de78"}
+  ],
+  "artifacts": [
+    {"filename":"pycparser-2.23-py3-none-any.whl","bytes":118140,"sha256":"e5c6e8d3fbad53479cab09ac03729e0a9faf2bee3db8208a550daf5af81a5934"},
+    {"filename":"cffi-2.0.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl","bytes":215574,"sha256":"8941aaadaf67246224cee8c3803777eed332a19d909b47e29c9842ef1e79ac26"},
+    {"filename":"cryptography-49.0.0-cp311-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl","bytes":4716422,"sha256":"0e959b578856a3924bc0cbb710fc12c387b9412a951389f3ca61704a9e25f325"}
+  ],
+  "expected_versions": {"cryptography":"49.0.0","cffi":"2.0.0","pycparser":"2.23"},
+  "runtime": {"python_minor":11,"platform":"linux","machine":"x86_64","target_must_be_external_and_absent":true},
+  "installation": {"network":false,"no_index":true,"no_dependencies":true,"binary_only":true,"environment_kind":"external_target_directory"},
+  "authority": {"one_remote_invocation":true,"same_inventory_inputs":true,"model":false,"gpu":false,"confirmatory_claim":false}
+}

@@ -364,3 +364,7 @@ The result is preserved as infrastructure evidence, not a method or candidate
 inventory result. Inventory retry remains closed. The next gate is design of
 offline or hash-pinned dependency provisioning without changing scientific
 inputs.
+
+`appworld_offline_dependency_repair/validation.json` authorizes one offline
+repair invocation using three exact wheels in a new external target. It does
+not itself install dependencies or decrypt the apps bundle.

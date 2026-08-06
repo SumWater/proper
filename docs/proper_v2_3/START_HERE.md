@@ -613,3 +613,10 @@ inventory rerun is not authorized. The next permitted work is design and
 synthetic validation of an offline or hash-pinned dependency-provisioning
 protocol that leaves the wheel, bundle, reader, schemas, limits, and scientific
 inputs unchanged.
+
+The offline repair implementation now pins the complete CPython 3.11/Linux
+dependency chain (`cryptography==49.0.0`, `cffi==2.0.0`, and
+`pycparser==2.23`). It installs only those exact hash-checked wheels into a new
+external target with network and dependency resolution disabled, probes exact
+versions, then invokes the unchanged inventory runner once. No model or GPU is
+authorized.
