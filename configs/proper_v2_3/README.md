@@ -71,3 +71,6 @@ No GPU or confirmatory run is currently authorized.
 - `appworld_apps_bundle_inventory_implementation_v2_3.json`: exact wheel and
   apps-bundle identities, public cryptographic binding, implementation hashes,
   archive limits, remote runtime, and one-shot authority.
+- `appworld_apps_bundle_inventory_preflight_failure_freeze_v2_3.json`: exact
+  returned dependency failure, pre-decryption boundary, unchanged scientific
+  inputs, and still-closed retry gate pending separate dependency provisioning.

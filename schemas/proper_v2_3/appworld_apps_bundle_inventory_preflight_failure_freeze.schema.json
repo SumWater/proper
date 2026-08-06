@@ -1,0 +1,25 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://proper.local/schemas/proper_v2_3/appworld_apps_bundle_inventory_preflight_failure_freeze.schema.json",
+  "type":"object","additionalProperties":false,
+  "required":["schema_version","run_kind","passed","checks","freeze_config_sha256","result_sha256","failed_project_revision","failed_result_preserved","apps_bundle_decrypted","source_extracted","protected_plaintext_persisted","task_or_api_data_read","model_loaded","gpu_used","dependency_repair_design_authorized","inventory_retry_authorized","next_gate"],
+  "properties":{
+    "schema_version":{"const":1},
+    "run_kind":{"const":"proper_v2_3_appworld_apps_bundle_inventory_preflight_failure_freeze"},
+    "passed":{"type":"boolean"},
+    "checks":{"type":"object","minProperties":1,"additionalProperties":{"type":"boolean"}},
+    "freeze_config_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "result_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "failed_project_revision":{"type":"string","pattern":"^[0-9a-f]{40}$"},
+    "failed_result_preserved":{"const":true},
+    "apps_bundle_decrypted":{"const":false},
+    "source_extracted":{"const":false},
+    "protected_plaintext_persisted":{"const":false},
+    "task_or_api_data_read":{"const":false},
+    "model_loaded":{"const":false},
+    "gpu_used":{"const":false},
+    "dependency_repair_design_authorized":{"type":"boolean"},
+    "inventory_retry_authorized":{"const":false},
+    "next_gate":{"enum":["design_offline_cryptography_dependency_provisioning","stop_and_preserve_preflight_failure"]}
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "apps_bundle_decrypted": false,
+  "checks": {
+    "all_frozen_inputs_match": true,
+    "decryption_extraction_task_model_and_gpu_boundaries_closed": true,
+    "dependency_checks_and_inventory_only_failed": true,
+    "five_freeze_tests_pass": true,
+    "missing_dependency_preceded_version_and_inventory": true,
+    "repair_requires_offline_or_hash_pinned_allowed_dependency": true,
+    "retry_remains_closed_pending_separate_dependency_protocol": true,
+    "returned_result_hash_matches": true,
+    "returned_result_matches_closed_run_shape": true,
+    "revision_worktree_wheel_hash_and_boundary_checks_passed": true,
+    "scientific_method_and_claims_unchanged": true,
+    "validation_matches_closed_schema_fields": true,
+    "validation_schema_is_closed": true
+  },
+  "dependency_repair_design_authorized": true,
+  "failed_project_revision": "dd1cd002674740c2ff08fcbaa590ed41e65c0c4a",
+  "failed_result_preserved": true,
+  "freeze_config_sha256": "b87f2fef47d0ff567d2a3ccc2380c4b65a3c76f575564fa3fb6154ce413808e6",
+  "gpu_used": false,
+  "inventory_retry_authorized": false,
+  "model_loaded": false,
+  "next_gate": "design_offline_cryptography_dependency_provisioning",
+  "passed": true,
+  "protected_plaintext_persisted": false,
+  "result_sha256": "4a57dfda39dd7db5fde99126a97439b8a21ae25095347b2a9a4dfbfdcec16bcd",
+  "run_kind": "proper_v2_3_appworld_apps_bundle_inventory_preflight_failure_freeze",
+  "schema_version": 1,
+  "source_extracted": false,
+  "task_or_api_data_read": false
+}

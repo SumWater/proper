@@ -598,3 +598,18 @@ The next permitted work is implementation and synthetic validation of that
 aggregate-only bundle inspector. Actual bundle decryption, source extraction,
 API inventory, data/task access, target selection, and model execution remain
 unauthorized.
+
+## Current gate after apps-bundle dependency preflight failure
+
+The single remote invocation at revision `dd1cd0026747...` stopped before
+decryption because `cryptography` was unavailable in the selected Python
+environment. Every revision, frozen-input, clean-tree, wheel-path, and safety
+boundary check passed. No bundle was decrypted; no protected source, task/API
+content, model, or GPU was accessed.
+
+This is an infrastructure preflight result and does not assess AppWorld
+capacity or the PROPER method. The result must remain preserved. A direct
+inventory rerun is not authorized. The next permitted work is design and
+synthetic validation of an offline or hash-pinned dependency-provisioning
+protocol that leaves the wheel, bundle, reader, schemas, limits, and scientific
+inputs unchanged.

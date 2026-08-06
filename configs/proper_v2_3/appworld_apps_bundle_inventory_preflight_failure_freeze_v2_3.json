@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "status": "frozen_remote_dependency_preflight_failure_before_decryption",
+  "failed_run": {
+    "directory": "outputs/proper_v2_3/appworld_apps_bundle_inventory_remote/20260806T015829Z-amax-dd1cd0026747",
+    "project_revision": "dd1cd002674740c2ff08fcbaa590ed41e65c0c4a",
+    "result_path": "outputs/proper_v2_3/appworld_apps_bundle_inventory_remote/20260806T015829Z-amax-dd1cd0026747/inventory.json",
+    "result_sha256": "4a57dfda39dd7db5fde99126a97439b8a21ae25095347b2a9a4dfbfdcec16bcd"
+  },
+  "frozen_inputs": [
+    {"path":"configs/proper_v2_3/appworld_apps_bundle_inventory_implementation_v2_3.json","sha256":"1c2fa17c9f671c60ed7a9c3a88fb2dd4913ef5c897b6b7b327367b688dff1957"},
+    {"path":"outputs/proper_v2_3/appworld_apps_bundle_inventory_implementation/validation.json","sha256":"31fd3241f35fbd39d45176666d6d50e4e44c919198758e62d6d550419996e624"},
+    {"path":"schemas/proper_v2_3/appworld_apps_bundle_inventory.schema.json","sha256":"4829b239307f773a1ea74c00ca2c9b88c628ae8c5f77415e260a910f290006d2"}
+  ],
+  "failure_classification": {
+    "kind": "infrastructure_dependency_preflight_failure",
+    "primary_cause": "cryptography_dependency_unavailable",
+    "failed_checks": ["cryptography_dependency_available", "cryptography_version_allowed", "inventory_completed"],
+    "version_check_is_downstream_of_missing_dependency": true,
+    "scientific_protocol_changed": false
+  },
+  "observed_boundary": {
+    "apps_bundle_decrypted": false,
+    "tests_bundle_read": false,
+    "tests_bundle_decrypted": false,
+    "data_downloaded": false,
+    "source_extracted": false,
+    "protected_plaintext_persisted": false,
+    "task_or_api_data_read": false,
+    "model_loaded": false,
+    "gpu_used": false
+  },
+  "repair_gate": {
+    "require_separate_dependency_provisioning_protocol": true,
+    "require_offline_or_hash_pinned_artifact": true,
+    "require_allowed_cryptography_major": true,
+    "require_clean_tracked_worktree": true,
+    "require_new_unique_output_directory": true,
+    "same_wheel_bundle_reader_schema_and_limits": true,
+    "inventory_retry_count_consumed": 0,
+    "retry_authorized_now": false,
+    "method_prompt_budget_model_task_or_endpoint_change_allowed": false
+  },
+  "claims": {
+    "development_only": true,
+    "heldout": false,
+    "confirmatory": false,
+    "candidate_inventory_result": false,
+    "selector_result": false,
+    "lifecycle_result": false,
+    "continuation_result": false,
+    "completion_result": false,
+    "safety_result": "pre_decryption_boundary_only",
+    "cost_result": "preflight_only"
+  }
+}

@@ -351,3 +351,16 @@ source, task, model, or GPU was accessed.
 It authorizes one remote aggregate-only inventory of the exact apps bundle.
 All installation, extraction, tests/data/API access, and scientific gates stay
 closed until the returned result is frozen.
+
+## AppWorld apps-bundle inventory preflight failure
+
+Remote run `20260806T015829Z-amax-dd1cd0026747` stopped before decryption
+because the selected Python environment did not provide `cryptography`.
+Revision, frozen hashes, clean-tree, external-wheel, and safety-boundary checks
+passed. No protected plaintext, source, task/API content, model, or GPU was
+accessed.
+
+The result is preserved as infrastructure evidence, not a method or candidate
+inventory result. Inventory retry remains closed. The next gate is design of
+offline or hash-pinned dependency provisioning without changing scientific
+inputs.

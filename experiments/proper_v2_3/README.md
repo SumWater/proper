@@ -102,6 +102,9 @@ command.
 - `validate_appworld_apps_bundle_inventory_implementation_v2_3.py`: validates
   implementation hashes, schemas, synthetic attacks, plaintext exclusion, and
   the single remote inventory gate.
+- `validate_appworld_apps_bundle_inventory_preflight_failure_v2_3.py`: freezes
+  the missing-`cryptography` preflight result and keeps decryption and retry
+  closed while authorizing dependency-provisioning design only.
 
 Preparation schema/validation protocol v2 preserves the failed fixed-path v1
 manifest and writes every subsequent attempt to a unique run directory.

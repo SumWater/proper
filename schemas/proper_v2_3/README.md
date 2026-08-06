@@ -67,6 +67,8 @@ decision, and version-specific result schemas. Frozen schemas under
   aggregate/hash-only protected bundle inventory without plaintext paths.
 - `appworld_apps_bundle_inventory_implementation_validation.schema.json`:
   closed synthetic implementation gate before one real in-memory inventory.
+- `appworld_apps_bundle_inventory_preflight_failure_freeze.schema.json`:
+  closed freeze of the dependency preflight result before any decryption.
 - `planbench_xl_capacity_audit_design.schema.json`: closed no-source/no-model
   design-validation result before any external inventory.
 - `planbench_xl_source_qualification.schema.json`: frozen source hashes,
