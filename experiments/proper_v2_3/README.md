@@ -112,6 +112,9 @@ command.
   no-network, non-overwrite, dependency-chain, and single-invocation gate.
 - `validate_appworld_apps_bundle_inventory_result_v2_3.py`: freezes both remote
   artifacts and recomputes aggregate counts, bytes, hashes, and claim gates.
+- `scripted_appworld_static_api_protocol_v2_3.py` and
+  `validate_appworld_static_api_protocol_v2_3.py`: eight synthetic decisions
+  and a CPU-only design gate before implementation.
 
 Preparation schema/validation protocol v2 preserves the failed fixed-path v1
 manifest and writes every subsequent attempt to a unique run directory.

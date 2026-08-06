@@ -1,0 +1,29 @@
+{
+  "api_inventory_performed": false,
+  "checks": {
+    "all_frozen_inputs_match": true,
+    "closed_validation_schema": true,
+    "complete_callable_superset_before_selection": true,
+    "eight_traces_cover_taxonomy_privacy_parse_and_access_stops": true,
+    "exact_apps_bundle_ast_only_boundary": true,
+    "five_protocol_tests_pass": true,
+    "four_effect_proofs_and_retry_contracts_complete": true,
+    "observable_evidence_excludes_hidden_gold_and_scenario_fields": true,
+    "plaintext_names_docs_arguments_and_source_forbidden": true,
+    "tests_data_tasks_import_network_model_closed": true,
+    "unknown_has_conservative_priority_and_blocks_full_claim": true,
+    "zero_parse_network_model_and_action_budgets": true
+  },
+  "config_sha256": "9b55a7d3559b4384021a5bff290ff08cb0db4b23c5e0aeccea5e40fad1e05fb3",
+  "gpu_used": false,
+  "implementation_authorized": true,
+  "model_loaded": false,
+  "next_gate": "implement_and_synthetically_validate_in_memory_static_api_inventory",
+  "passed": true,
+  "real_bundle_decrypted": false,
+  "run_kind": "proper_v2_3_appworld_in_memory_static_api_inventory_protocol_validation",
+  "schema_version": 1,
+  "source_persisted": false,
+  "task_read": false,
+  "trace_count": 8
+}

@@ -634,3 +634,9 @@ coverage, candidate count, held-out status, and PROPER performance remain
 unmeasured. The inventory cannot be rerun. The next permitted work is local
 design and synthetic validation of an in-memory static API inventory; tests,
 data, tasks, model execution, and GPU use remain closed.
+
+The static inventory protocol now requires a complete AST-derived public
+callable superset before selection, transitive observable evidence, conservative
+`unknown_effect` priority, and hash-only protected outputs. Static effect labels
+remain preliminary. The next gate is implementation and synthetic validation;
+another real decryption is not yet authorized.

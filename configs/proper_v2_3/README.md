@@ -78,3 +78,5 @@ No GPU or confirmatory run is currently authorized.
   versions, offline installation flags, external target, and one repair call.
 - `appworld_apps_bundle_inventory_result_freeze_v2_3.json`: exact successful
   aggregate result, recomputed manifest, privacy boundary, and next design gate.
+- `appworld_in_memory_static_api_inventory_protocol_v2_3.json`: complete AST
+  registry, conservative effect proofs, privacy output, budgets, and stop rules.

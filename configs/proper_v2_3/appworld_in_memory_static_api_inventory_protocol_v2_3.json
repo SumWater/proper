@@ -1,0 +1,46 @@
+{
+  "schema_version":1,
+  "status":"frozen_design_before_real_static_api_inventory",
+  "protocol_version":"proper_v2_3_appworld_in_memory_static_api_inventory_v1",
+  "frozen_inputs":[
+    {"path":"configs/proper_v2_3/appworld_apps_bundle_inventory_result_freeze_v2_3.json","sha256":"61245eef67787afa4d1d88baf02756cafe6a2dd05216749ef424faffcb7bb7bb"},
+    {"path":"outputs/proper_v2_3/appworld_apps_bundle_inventory_result_freeze/validation.json","sha256":"d153c710313c9e5a082aab058255d200dcd62e0176b2fa86151806ada4611f4f"},
+    {"path":"docs/proper_v2_3/action_execution_contract.md","sha256":"588357c9c51fd46a6f6ae72938f863072faa7de1811191c28fb9cd9d240bd230"},
+    {"path":"src/failure_memory/proper_v2/v2_3/contracts.py","sha256":"6387dad88350e832e603bd76b32e1b1c8638f08bd17af5a2380c07435c54a614"}
+  ],
+  "input_boundary":{
+    "exact_apps_bundle_only":true,"decrypt_in_memory_only":true,"python_and_stub_members_only":true,
+    "tests_bundle":false,"data_or_tasks":false,"ground_truth_or_evaluator":false,"module_import":false,"network":false
+  },
+  "candidate_registry":{
+    "scan_every_python_and_stub_member":true,"parse_with_standard_ast":true,"fail_on_any_parse_error":true,
+    "include_top_level_and_class_function_or_async_function":true,"exclude_private_and_dunder_names":true,
+    "record_decorator_presence_not_plaintext":true,"complete_superset_before_selection":true,"target_selection_in_this_stage":false
+  },
+  "observable_evidence":{
+    "allowed":["ast_node_kinds","call_graph_edges","argument_shape","annotation_presence","decorator_presence","control_flow","assignment_shape","mutation_primitive_class","return_shape"],
+    "forbidden":["scenario_name","semantic_family","benchmark_gold_label","hidden_recoverability","gold_action","evaluator_outcome"]
+  },
+  "effect_proof_rules":{
+    "read_only":"all transitively reachable in-bundle code has no persistent mutation and every external call is on a frozen pure-language allowlist",
+    "idempotent_state_setting":"the only persistent effect is deterministic replacement from arguments/constants with no additive deletion communication or unknown alias",
+    "non_idempotent_side_effect":"observable cardinality change append increment delete emission communication or irreversible external effect",
+    "unknown_effect":"any unresolved external call alias dynamic dispatch reflection parse ambiguity or conflicting proof",
+    "priority":["unknown_effect","non_idempotent_side_effect","idempotent_state_setting","read_only"]
+  },
+  "retry_contract":{
+    "read_only":"safe","idempotent_state_setting":"safe_same_arguments_after_verified_prior_outcome","non_idempotent_side_effect":"unsafe","unknown_effect":"unknown_stop"
+  },
+  "privacy_output":{
+    "persist_symbol_or_path_plaintext":false,"persist_docstrings_or_source":false,"persist_argument_names":false,
+    "persist_symbol_path_signature_and_content_hashes":true,"persist_standard_evidence_codes":true,"persist_effect_counts":true,"persist_candidate_records":true
+  },
+  "capacity_gate":{
+    "require_nonzero_candidates":true,"require_complete_registry":true,"require_all_four_effect_classes_for_full_coverage":true,
+    "any_unknown_blocks_full_capacity_claim":true,"static_labels_are_preliminary_until_runtime_evidence":true,"heldout_claim":false,"confirmatory_claim":false
+  },
+  "budgets":{"decryption_attempts":1,"parse_failures":0,"unknown_effects_for_full_claim":0,"network_requests":0,"model_requests":0,"native_actions":0},
+  "stop_rules":{"parse_error":"stop_and_preserve","plaintext_output":"stop_privacy_boundary","tests_data_task_or_evaluator_access":"stop_protocol_boundary","unknown_effect":"report_partial_inventory_and_block_full_capacity","incomplete_registry":"stop_without_target_selection"},
+  "boundary":{"real_bundle_decrypted":false,"api_inventory_performed":false,"source_persisted":false,"task_read":false,"model_loaded":false,"gpu_used":false,"target_selected":false},
+  "next_gate":"implement_and_synthetically_validate_in_memory_static_api_inventory"
+}
