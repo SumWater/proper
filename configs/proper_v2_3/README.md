@@ -65,3 +65,6 @@ No GPU or confirmatory run is currently authorized.
 - `appworld_wheel_inventory_result_freeze_v2_3.json`: exact returned result,
   member manifest, encrypted bundle records, no-install boundary, and next
   protocol-design gate.
+- `appworld_controlled_install_static_inventory_protocol_v2_3.json`: minimal
+  apps-bundle decryption contract, archive safety, protected-output privacy,
+  future static-API boundary, budgets, and stop rules.

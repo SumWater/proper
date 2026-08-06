@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "status": "frozen_protocol_before_protected_bundle_decryption_or_source_install",
+  "protocol_version": "proper_v2_3_appworld_controlled_install_static_inventory_v1",
+  "frozen_inputs": [
+    {"path":"configs/proper_v2_3/appworld_wheel_inventory_result_freeze_v2_3.json","sha256":"df6858cbedadf0f88c5b35d0b07e7dce138ea11f6d456d100e9e4f25ac93cfb1"},
+    {"path":"outputs/proper_v2_3/appworld_wheel_inventory_result_freeze/validation.json","sha256":"b56bccc8a8e1584b1b4503ae2fc2485e1b4b477b05c3ef8f89ec05bc7e78780f"},
+    {"path":"outputs/proper_v2_3/appworld_wheel_inventory_remote/20260803T081514Z-amax-cc297f055b04/inventory.json","sha256":"2390843c1ede6839a3b9eae350d21c5ae6c0e7bbed09db068d7a87adf6454037"}
+  ],
+  "official_public_install_observation": {
+    "package_install_decrypts_apps_bundle": true,
+    "package_install_also_decrypts_tests_bundle": true,
+    "official_unpack_uses_zip_extractall": true,
+    "data_download_removes_existing_data_directory": true,
+    "data_download_fetches_and_immediately_decrypts_bundle": true,
+    "official_install_command_allowed": false,
+    "official_data_download_command_allowed": false
+  },
+  "protected_apps_bundle": {
+    "wheel_member_path": "appworld/.source/apps.bundle",
+    "encrypted_bytes": 177209,
+    "encrypted_sha256": "ba58bc5679c3573aa8f60ad6f5cda4377128a0ec569de5eef9543a77561796bb",
+    "tests_bundle_member_path": "appworld/.source/tests.bundle",
+    "tests_bundle_must_not_be_decrypted": true,
+    "data_bundle_must_not_be_downloaded": true
+  },
+  "cryptographic_contract_from_public_source": {
+    "kdf": "PBKDF2HMAC-SHA256",
+    "iterations": 100000,
+    "derived_key_bytes": 32,
+    "cipher": "AES-256-CFB",
+    "iv_prefix_bytes": 16,
+    "decrypt_in_memory_only": true
+  },
+  "phase_sequence": [
+    "verify_project_revision_cleanliness_and_frozen_inputs",
+    "verify_external_wheel_identity_without_installation",
+    "read_only_exact_apps_bundle_member",
+    "decrypt_apps_bundle_in_memory",
+    "validate_all_decrypted_zip_members_before_any_extraction",
+    "emit_aggregate_and_hashed_inventory_without_protected_plaintext",
+    "stop_and_freeze_bundle_inventory",
+    "design_isolated_safe_extraction_and_static_api_inventory_after_freeze"
+  ],
+  "decrypted_zip_safety": {
+    "reject_absolute_parent_or_backslash_paths": true,
+    "reject_duplicate_members": true,
+    "reject_symbolic_links": true,
+    "maximum_member_count": 5000,
+    "maximum_member_uncompressed_bytes": 52428800,
+    "maximum_total_uncompressed_bytes": 536870912,
+    "maximum_compression_ratio": 500,
+    "extract_during_bundle_inventory": false
+  },
+  "privacy_and_license_output": {
+    "persist_plaintext_member_paths": false,
+    "persist_decrypted_member_bytes": false,
+    "persist_source_snippets": false,
+    "persist_api_or_app_names": false,
+    "persist_path_sha256": true,
+    "persist_content_sha256": true,
+    "persist_extension_counts": true,
+    "persist_total_counts_and_bytes": true,
+    "persist_decrypted_zip_sha256": true,
+    "raw_protected_inventory_stays_outside_git": true
+  },
+  "future_static_api_inventory_contract": {
+    "authorized_in_this_stage": false,
+    "isolated_root_outside_project_required": true,
+    "tests_bundle_forbidden": true,
+    "data_and_tasks_forbidden": true,
+    "ground_truth_and_evaluator_forbidden": true,
+    "arbitrary_module_import_for_inventory_forbidden": true,
+    "ast_or_openapi_static_read_only_inventory_required": true,
+    "complete_api_registry_required_before_target_selection": true,
+    "effect_classes_required": ["read_only", "idempotent_state_setting", "non_idempotent_side_effect", "unknown_outcome"],
+    "unknown_effect_stops_full_v2_3_capacity_claim": true,
+    "one_api_call_per_ledger_event_required": true
+  },
+  "budgets": {
+    "bundle_inventory_attempts": 1,
+    "decryption_attempts": 1,
+    "invalid_archive_budget": 0,
+    "extraction_budget": 0,
+    "network_request_budget": 0,
+    "model_request_budget": 0
+  },
+  "stop_rules": {
+    "wheel_or_bundle_identity_mismatch": "stop_before_decryption",
+    "cryptography_dependency_unavailable": "stop_before_decryption",
+    "decryption_or_zip_parse_failure": "stop_and_preserve_failure",
+    "unsafe_duplicate_symlink_or_limit_violation": "stop_without_extraction",
+    "protected_plaintext_would_enter_result_or_git": "stop_privacy_boundary",
+    "tests_or_data_access_required": "stop_protocol_boundary"
+  },
+  "boundary": {
+    "apps_bundle_decrypted": false,
+    "tests_bundle_decrypted": false,
+    "data_downloaded": false,
+    "source_extracted": false,
+    "api_inventory_performed": false,
+    "task_instruction_read": false,
+    "ground_truth_or_evaluator_read": false,
+    "model_loaded": false,
+    "gpu_used": false,
+    "target_capacity_claimed": false,
+    "heldout_claim_authorized": false,
+    "confirmatory_claim_authorized": false
+  },
+  "next_gate": "implement_and_synthetically_validate_aggregate_only_apps_bundle_inventory"
+}

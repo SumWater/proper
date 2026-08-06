@@ -90,6 +90,12 @@ command.
 - `validate_appworld_wheel_inventory_result_v2_3.py`: freezes the unique
   returned inventory and recomputes member paths, totals, canonical manifest,
   protected bundle records, and closed execution gates.
+- `scripted_appworld_controlled_install_protocol_v2_3.py`: six no-decryption
+  traces for exact apps-bundle handling, archive attacks, plaintext leakage,
+  tests-bundle access, and forbidden official commands.
+- `validate_appworld_controlled_install_protocol_v2_3.py`: validates the
+  controlled-install design and keeps decryption, extraction, API inventory,
+  model, and GPU gates closed.
 
 Preparation schema/validation protocol v2 preserves the failed fixed-path v1
 manifest and writes every subsequent attempt to a unique run directory.

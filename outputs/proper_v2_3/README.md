@@ -330,3 +330,13 @@ model load, or GPU use occurred.
 the returned result hash, canonical member manifest, safe paths, counts, sizes,
 and both encrypted bundle records. It authorizes controlled-install protocol
 design only, not installation or scientific execution.
+
+## AppWorld controlled-install protocol design
+
+`appworld_controlled_install_protocol/validation.json` records 14 passing
+checks and six scripted stop-closed traces. It decrypts and extracts nothing,
+reads no API/task/evaluator content, and uses no model or GPU.
+
+The result authorizes implementation and synthetic validation of an
+aggregate-only apps-bundle inspector. Protected decryption, official install,
+data download, static API inventory, and all scientific gates remain closed.

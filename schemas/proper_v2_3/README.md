@@ -60,6 +60,9 @@ decision, and version-specific result schemas. Frozen schemas under
   preparation result before the single read-only wheel inventory.
 - `appworld_wheel_inventory_result_freeze.schema.json`: closed local freeze of
   the successful 44-member wheel inventory and protocol-design-only authority.
+- `appworld_controlled_install_static_inventory_protocol_validation.schema.json`:
+  closed no-decryption design result before aggregate-only bundle-inspector
+  implementation.
 - `planbench_xl_capacity_audit_design.schema.json`: closed no-source/no-model
   design-validation result before any external inventory.
 - `planbench_xl_source_qualification.schema.json`: frozen source hashes,

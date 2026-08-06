@@ -566,3 +566,22 @@ unmeasured. The inventory may not be rerun. The next permitted work is local
 design of a controlled installation and static API-inventory protocol; actual
 installation, decryption, data download, task/API reading, model use, and GPU
 execution remain unauthorized.
+
+## Current gate after controlled-install protocol design
+
+Public package code confirms that the official install command decrypts both
+apps and tests bundles through ZIP `extractall`, while the data downloader
+deletes an existing data directory and immediately decrypts a network bundle.
+Neither command is allowed under the narrower v2.3 qualification boundary.
+
+`appworld_controlled_install_static_inventory_protocol.md` freezes an initial
+apps-bundle inventory that decrypts only the exact apps bundle in memory,
+validates every archive member, extracts nothing, and persists no protected
+plaintext identifiers or bytes. Six stop-closed scripted traces, five tests,
+and 14 protocol checks pass without decryption, installation, task/API access,
+model use, or GPU use.
+
+The next permitted work is implementation and synthetic validation of that
+aggregate-only bundle inspector. Actual bundle decryption, source extraction,
+API inventory, data/task access, target selection, and model execution remain
+unauthorized.
