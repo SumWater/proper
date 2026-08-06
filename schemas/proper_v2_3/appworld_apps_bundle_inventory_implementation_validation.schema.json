@@ -1,0 +1,32 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://proper.local/schemas/proper_v2_3/appworld_apps_bundle_inventory_implementation_validation.schema.json",
+  "type":"object","additionalProperties":false,
+  "required":["schema_version","run_kind","checks","passed","implementation_config_sha256","runner_sha256","inventory_implementation_sha256","tests_run","synthetic_bundle_decrypted","real_apps_bundle_decrypted","tests_bundle_read","tests_bundle_decrypted","data_downloaded","source_extracted","protected_plaintext_persisted","task_or_api_data_read","model_loaded","gpu_used","one_remote_bundle_inventory_authorized","source_install_authorized","static_api_inventory_authorized","model_run_authorized","confirmatory_claim_authorized","next_gate"],
+  "properties": {
+    "schema_version":{"const":1},
+    "run_kind":{"const":"proper_v2_3_appworld_apps_bundle_inventory_implementation_validation"},
+    "checks":{"type":"object","minProperties":1,"additionalProperties":{"type":"boolean"}},
+    "passed":{"type":"boolean"},
+    "implementation_config_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "runner_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "inventory_implementation_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "tests_run":{"const":7},
+    "synthetic_bundle_decrypted":{"const":true},
+    "real_apps_bundle_decrypted":{"const":false},
+    "tests_bundle_read":{"const":false},
+    "tests_bundle_decrypted":{"const":false},
+    "data_downloaded":{"const":false},
+    "source_extracted":{"const":false},
+    "protected_plaintext_persisted":{"const":false},
+    "task_or_api_data_read":{"const":false},
+    "model_loaded":{"const":false},
+    "gpu_used":{"const":false},
+    "one_remote_bundle_inventory_authorized":{"type":"boolean"},
+    "source_install_authorized":{"const":false},
+    "static_api_inventory_authorized":{"const":false},
+    "model_run_authorized":{"const":false},
+    "confirmatory_claim_authorized":{"const":false},
+    "next_gate":{"enum":["run_one_remote_aggregate_only_apps_bundle_inventory","stop_bundle_inventory_implementation"]}
+  }
+}

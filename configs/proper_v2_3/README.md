@@ -68,3 +68,6 @@ No GPU or confirmatory run is currently authorized.
 - `appworld_controlled_install_static_inventory_protocol_v2_3.json`: minimal
   apps-bundle decryption contract, archive safety, protected-output privacy,
   future static-API boundary, budgets, and stop rules.
+- `appworld_apps_bundle_inventory_implementation_v2_3.json`: exact wheel and
+  apps-bundle identities, public cryptographic binding, implementation hashes,
+  archive limits, remote runtime, and one-shot authority.

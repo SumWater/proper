@@ -340,3 +340,14 @@ reads no API/task/evaluator content, and uses no model or GPU.
 The result authorizes implementation and synthetic validation of an
 aggregate-only apps-bundle inspector. Protected decryption, official install,
 data download, static API inventory, and all scientific gates remain closed.
+
+## AppWorld apps-bundle inventory implementation
+
+`appworld_apps_bundle_inventory_implementation/validation.json` records 12
+passing implementation checks and seven passing synthetic encrypted-archive
+tests. Only synthetic bundles were decrypted; no real protected material,
+source, task, model, or GPU was accessed.
+
+It authorizes one remote aggregate-only inventory of the exact apps bundle.
+All installation, extraction, tests/data/API access, and scientific gates stay
+closed until the returned result is frozen.

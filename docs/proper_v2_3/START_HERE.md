@@ -374,6 +374,19 @@ inventory. Acquisition-runtime freezing, task execution, branch capture,
 external API calls, model loading, model runner work, and GPU use remain
 unauthorized.
 
+## Current gate after apps-bundle inventory implementation
+
+The aggregate-only encrypted-bundle inspector and guarded remote entry point
+are implemented. Seven synthetic decryption/archive tests and three remote
+boundary tests pass. The implementation never extracts protected source or
+persists plaintext paths, identifiers, snippets, or bytes.
+
+Exactly one remote in-memory inventory of the frozen apps bundle is authorized
+by `appworld_apps_bundle_inventory_handoff.md`. This narrowly opens protected
+apps-bundle decryption for that one aggregate inventory. Tests-bundle access,
+data download, source extraction, AppWorld import, API/task inventory, model
+execution, GPU use, and scientific claims remain closed.
+
 ## Current gate after local tau participant adapter validation
 
 `local_tau_participant_adapter.md` freezes the CPU-only boundary between tau

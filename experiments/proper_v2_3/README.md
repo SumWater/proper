@@ -96,6 +96,12 @@ command.
 - `validate_appworld_controlled_install_protocol_v2_3.py`: validates the
   controlled-install design and keeps decryption, extraction, API inventory,
   model, and GPU gates closed.
+- `run_appworld_apps_bundle_inventory_remote_v2_3.py`: guarded one-shot
+  in-memory decryption and aggregate/hash-only inventory of the exact apps
+  bundle; it never extracts protected source.
+- `validate_appworld_apps_bundle_inventory_implementation_v2_3.py`: validates
+  implementation hashes, schemas, synthetic attacks, plaintext exclusion, and
+  the single remote inventory gate.
 
 Preparation schema/validation protocol v2 preserves the failed fixed-path v1
 manifest and writes every subsequent attempt to a unique run directory.

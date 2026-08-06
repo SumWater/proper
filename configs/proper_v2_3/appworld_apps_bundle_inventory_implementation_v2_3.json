@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "status": "frozen_implementation_before_real_apps_bundle_decryption",
+  "implementation_version": "proper_v2_3_appworld_aggregate_bundle_inventory_v1",
+  "frozen_inputs": [
+    {"path":"configs/proper_v2_3/appworld_controlled_install_static_inventory_protocol_v2_3.json","sha256":"16ad21c162f3a17d7b6669bfa08aebe6e0972f3c80bb878b5828c0fd7f2e22ea"},
+    {"path":"outputs/proper_v2_3/appworld_controlled_install_protocol/validation.json","sha256":"73f459d13a23dd9ba6c140c4000b69c3ce9a119d134586b3dea5dd5795bd99e2"},
+    {"path":"src/failure_memory/proper_v2/v2_3/encrypted_bundle_inventory.py","sha256":"a25c0129519179483dcaf6020117976107ed00067dbb5c1a75b944df9676da9e"},
+    {"path":"experiments/proper_v2_3/run_appworld_apps_bundle_inventory_remote_v2_3.py","sha256":"b20454ef43e13e759347d57b0476acc21b7a5d8e61da5a5f7d857a0a9891646d"},
+    {"path":"schemas/proper_v2_3/appworld_apps_bundle_inventory.schema.json","sha256":"4829b239307f773a1ea74c00ca2c9b88c628ae8c5f77415e260a910f290006d2"},
+    {"path":"tests/test_proper_v2_3_appworld_encrypted_bundle_inventory.py","sha256":"23fff51740a97534c2227ff71682ae74859da552e5f2a820dde861310450e840"}
+  ],
+  "wheel": {
+    "filename": "appworld-0.1.3.post1-py3-none-any.whl",
+    "bytes": 625317,
+    "sha256": "db77f8003982502383a50fa2974983894bd1c54f64e2fd3f7e1540d5edd037eb"
+  },
+  "apps_bundle": {
+    "wheel_member_path": "appworld/.source/apps.bundle",
+    "encrypted_bytes": 177209,
+    "encrypted_sha256": "ba58bc5679c3573aa8f60ad6f5cda4377128a0ec569de5eef9543a77561796bb"
+  },
+  "public_crypto_material": {
+    "source": "appworld/common/constants.py@wheel_sha256:db77f8003982502383a50fa2974983894bd1c54f64e2fd3f7e1540d5edd037eb",
+    "password": "WEquKLy##9M@qu",
+    "salt_utf8": "Nvx#rYcYQ2%btf",
+    "iterations": 100000
+  },
+  "allowed_python_minor_versions": [11, 12],
+  "allowed_cryptography_major_versions": [39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49],
+  "zip_safety_limits": {
+    "maximum_member_count": 5000,
+    "maximum_member_uncompressed_bytes": 52428800,
+    "maximum_total_uncompressed_bytes": 536870912,
+    "maximum_compression_ratio": 500
+  },
+  "remote_runtime": {
+    "python": "work/proper_v2_3_tau3_replay_smoke_venv/bin/python",
+    "wheel_path": "/home/amax/proper-inputs/appworld/appworld-0.1.3.post1-py3-none-any.whl",
+    "attempts": 1,
+    "rerun_or_resume": false,
+    "unique_output_directory": true
+  },
+  "boundary": {
+    "network_access": false,
+    "source_extraction": false,
+    "tests_bundle_read": false,
+    "data_download": false,
+    "task_or_api_data_read": false,
+    "model_load": false,
+    "gpu_use": false,
+    "protected_plaintext_persisted": false
+  },
+  "gates": {
+    "one_remote_apps_bundle_inventory_authorized_after_validation": true,
+    "official_appworld_install_authorized": false,
+    "source_install_authorized": false,
+    "static_api_inventory_authorized": false,
+    "model_run_authorized": false,
+    "confirmatory_claim_authorized": false
+  }
+}

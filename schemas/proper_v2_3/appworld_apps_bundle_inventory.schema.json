@@ -1,0 +1,51 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://proper.local/schemas/proper_v2_3/appworld_apps_bundle_inventory.schema.json",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["schema_version","run_kind","project_revision","expected_project_revision","implementation_config_sha256","wheel_path","checks","passed","stop_reason","inventory","apps_bundle_decrypted","tests_bundle_read","tests_bundle_decrypted","data_downloaded","source_extracted","protected_plaintext_persisted","task_or_api_data_read","model_loaded","gpu_used","static_api_inventory_authorized","next_gate"],
+  "properties": {
+    "schema_version":{"const":1},
+    "run_kind":{"const":"proper_v2_3_appworld_aggregate_only_apps_bundle_inventory"},
+    "project_revision":{"type":"string","pattern":"^[0-9a-f]{40}$"},
+    "expected_project_revision":{"type":"string","pattern":"^[0-9a-f]{40}$"},
+    "implementation_config_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "wheel_path":{"type":"string","minLength":1},
+    "checks":{"type":"object","minProperties":1,"additionalProperties":{"type":"boolean"}},
+    "passed":{"type":"boolean"},
+    "stop_reason":{"type":["string","null"]},
+    "inventory": {
+      "oneOf":[
+        {"type":"null"},
+        {
+          "type":"object","additionalProperties":false,
+          "required":["encrypted_bytes","encrypted_sha256","decrypted_zip_sha256","member_count","total_uncompressed_bytes","extension_counts","hashed_members","hashed_member_manifest_sha256","decrypted_in_memory_only","source_extracted","protected_plaintext_persisted"],
+          "properties": {
+            "encrypted_bytes":{"const":177209},
+            "encrypted_sha256":{"const":"ba58bc5679c3573aa8f60ad6f5cda4377128a0ec569de5eef9543a77561796bb"},
+            "decrypted_zip_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+            "member_count":{"type":"integer","minimum":1,"maximum":5000},
+            "total_uncompressed_bytes":{"type":"integer","minimum":1,"maximum":536870912},
+            "extension_counts":{"type":"object","minProperties":1,"propertyNames":{"pattern":"^(<none>|\\.[a-z0-9]+)$"},"additionalProperties":{"type":"integer","minimum":1}},
+            "hashed_members":{"type":"array","minItems":1,"maxItems":5000,"items":{"type":"object","additionalProperties":false,"required":["path_sha256","content_sha256","uncompressed_bytes","compressed_bytes"],"properties":{"path_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},"content_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},"uncompressed_bytes":{"type":"integer","minimum":0},"compressed_bytes":{"type":"integer","minimum":0}}}},
+            "hashed_member_manifest_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+            "decrypted_in_memory_only":{"const":true},
+            "source_extracted":{"const":false},
+            "protected_plaintext_persisted":{"const":false}
+          }
+        }
+      ]
+    },
+    "apps_bundle_decrypted":{"type":"boolean"},
+    "tests_bundle_read":{"const":false},
+    "tests_bundle_decrypted":{"const":false},
+    "data_downloaded":{"const":false},
+    "source_extracted":{"const":false},
+    "protected_plaintext_persisted":{"const":false},
+    "task_or_api_data_read":{"const":false},
+    "model_loaded":{"const":false},
+    "gpu_used":{"const":false},
+    "static_api_inventory_authorized":{"const":false},
+    "next_gate":{"enum":["freeze_returned_apps_bundle_inventory","stop_apps_bundle_inventory"]}
+  }
+}
