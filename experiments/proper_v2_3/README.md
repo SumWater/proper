@@ -121,6 +121,8 @@ command.
   bundle-to-hash-only AST inventory without extraction or module import.
 - `validate_appworld_static_api_inventory_runner_v2_3.py`: freezes runner,
   schema, dependency versions, aggregate dimensions, tests, and budgets.
+- `validate_appworld_static_api_inventory_result_v2_3.py`: recomputes the
+  1,035-record manifest and freezes the negative effect-capacity decision.
 
 Preparation schema/validation protocol v2 preserves the failed fixed-path v1
 manifest and writes every subsequent attempt to a unique run directory.

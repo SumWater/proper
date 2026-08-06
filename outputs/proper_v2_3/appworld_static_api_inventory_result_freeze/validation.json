@@ -1,0 +1,42 @@
+{
+  "appworld_source_route_stopped": true,
+  "candidate_count": 1035,
+  "candidate_manifest_sha256": "eb193b8cf820106ff20691b3bcb787db5a4ebfcb6de3019b3ae6ac1ad51a447c",
+  "checks": {
+    "all_frozen_inputs_match": true,
+    "candidate_records_are_hash_only": true,
+    "capacity_failed_due_zero_known_side_effect_classes_and_unknowns": true,
+    "counts_and_manifest_recompute": true,
+    "expected_result_matches": true,
+    "failure_does_not_refute_source_or_proper": true,
+    "five_freeze_tests_pass": true,
+    "freeze_schema_is_closed": true,
+    "privacy_task_model_and_gpu_boundaries_closed": true,
+    "remote_bytes_and_hash_match": true,
+    "remote_execution_and_all_preflight_checks_passed": true,
+    "rerun_post_result_tuning_selection_model_and_claims_closed": true,
+    "revision_matches": true,
+    "validation_matches_closed_schema_fields": true
+  },
+  "confirmatory_claim_authorized": false,
+  "effect_counts": {
+    "idempotent_state_setting": 0,
+    "non_idempotent_side_effect": 0,
+    "read_only": 376,
+    "unknown_effect": 659
+  },
+  "freeze_config_sha256": "bf0ef33dfa93664969772ab273edb337b2bf6ed7f16dd05a0a80767fad78a001",
+  "inventory_rerun_authorized": false,
+  "model_run_authorized": false,
+  "next_gate": "stop_appworld_source_qualification_and_preserve_result",
+  "passed": true,
+  "post_result_rule_tuning_authorized": false,
+  "remote_project_revision": "ae0d3ec6b8e8f32ab9b451665230a97806943540",
+  "remote_result_sha256": "626087bf090c7eb9b279445888d0b248a0408cf0fe534843233e0281a9f0faf2",
+  "run_kind": "proper_v2_3_appworld_static_api_inventory_result_freeze",
+  "safe_inventory_execution_passed": true,
+  "schema_version": 1,
+  "scientific_stage_passed": false,
+  "target_selection_authorized": false,
+  "unknown_effect_count": 659
+}

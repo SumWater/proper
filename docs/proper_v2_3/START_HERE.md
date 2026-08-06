@@ -654,3 +654,17 @@ AST implementation, result schema, and zero network/extraction/import/model/GPU
 budgets. Exactly one real hash-only static inventory is authorized after the
 runner files are synchronized and committed; every outcome must be preserved
 and the run may not be repeated.
+
+## Current gate after stopped AppWorld source qualification
+
+The one-shot hash-only inventory passed its execution and safety checks but
+failed the frozen effect-capacity gate. Across 1,035 syntactic callables it
+proved 376 read-only, zero idempotent state-setting, zero non-idempotent side
+effect, and 659 unknown effects. Full coverage is false.
+
+This neither refutes AppWorld's actual task capacity nor assesses PROPER; the
+conservative static evidence is insufficient to qualify targets. The result is
+frozen. It may not be rerun or used to tune the same rules after observation.
+No target selection, task/data access, model execution, GPU use, held-out
+claim, or confirmatory claim is authorized. The AppWorld qualification route
+is stopped and the negative result must be preserved.

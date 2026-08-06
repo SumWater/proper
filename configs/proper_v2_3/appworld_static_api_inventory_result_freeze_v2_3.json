@@ -1,0 +1,12 @@
+{
+ "schema_version":1,"status":"frozen_safe_execution_but_failed_effect_capacity_gate",
+ "run":{"path":"outputs/proper_v2_3/appworld_static_api_inventory_remote/20260806T042856Z-amax-ae0d3ec6b8e8/inventory.json","bytes":558709,"sha256":"626087bf090c7eb9b279445888d0b248a0408cf0fe534843233e0281a9f0faf2","project_revision":"ae0d3ec6b8e8f32ab9b451665230a97806943540"},
+ "frozen_inputs":[
+  {"path":"configs/proper_v2_3/appworld_static_api_inventory_runner_v2_3.json","sha256":"459660f6c68890ac50a4d797df57a6331ccde995d09a56491a2513bfb1bf43c3"},
+  {"path":"outputs/proper_v2_3/appworld_static_api_inventory_runner/validation.json","sha256":"5b18510ced78dc57216f310602a7b0179961be6674c0d56caa033b70944ce04a"},
+  {"path":"schemas/proper_v2_3/appworld_static_api_inventory_run.schema.json","sha256":"e42d3766aacd901fc34464bcf3fe5bf6bc4970b3de354b64fd16cdff7e922072"}
+ ],
+ "expected_result":{"archive_member_count":96,"archive_total_uncompressed_bytes":1017074,"python_member_count":72,"candidate_count":1035,"effect_counts":{"read_only":376,"idempotent_state_setting":0,"non_idempotent_side_effect":0,"unknown_effect":659},"unknown_effect_count":659,"complete_registry":true,"full_effect_coverage":false,"candidate_manifest_sha256":"eb193b8cf820106ff20691b3bcb787db5a4ebfcb6de3019b3ae6ac1ad51a447c"},
+ "interpretation":{"safe_inventory_execution_passed":true,"syntactic_callable_superset_observed":true,"known_effect_capacity_gate_passed":false,"usable_target_count_established":false,"appworld_task_capacity_refuted":false,"proper_method_assessed":false,"scientific_stage_passed":false},
+ "disposition":{"inventory_rerun_authorized":false,"post_result_rule_tuning_authorized":false,"target_selection_authorized":false,"task_or_data_access_authorized":false,"model_run_authorized":false,"gpu_authorized":false,"heldout_claim_authorized":false,"confirmatory_claim_authorized":false,"appworld_source_route_stopped":true,"next_gate":"stop_appworld_source_qualification_and_preserve_result"}
+}

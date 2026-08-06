@@ -392,3 +392,14 @@ frozen guarded runner.
 `appworld_static_api_inventory_runner/validation.json` records the frozen
 guarded runner gate. Only synthetic bundles were decrypted during validation.
 It authorizes one real hash-only static inventory and no rerun.
+
+## Frozen AppWorld static API inventory
+
+The one-shot inventory safely produced 1,035 hash-only callable records: 376
+read-only, zero proven idempotent setters, zero proven non-idempotent effects,
+and 659 unknown. Full effect coverage therefore failed.
+
+This is a negative source-qualification result under the frozen conservative
+static proof rules, not a PROPER result and not evidence that AppWorld lacks
+state-changing APIs. Rerun, post-result rule tuning, target selection, task
+access, and model execution are closed; the AppWorld route stops here.

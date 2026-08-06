@@ -83,6 +83,8 @@ decision, and version-specific result schemas. Frozen schemas under
   inventory result, including passing and stopped outcomes.
 - `appworld_static_api_inventory_runner_validation.schema.json`: closed
   one-shot runner validation before real decryption.
+- `appworld_static_api_inventory_result_freeze.schema.json`: closed safe-run
+  freeze with failed scientific capacity and stopped AppWorld route.
 - `planbench_xl_capacity_audit_design.schema.json`: closed no-source/no-model
   design-validation result before any external inventory.
 - `planbench_xl_source_qualification.schema.json`: frozen source hashes,

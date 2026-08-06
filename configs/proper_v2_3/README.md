@@ -84,3 +84,5 @@ No GPU or confirmatory run is currently authorized.
   schema and tests, conservative ambiguity handling, and closed real-run gate.
 - `appworld_static_api_inventory_runner_v2_3.json`: exact wheel, bundle,
   dependency target contract, aggregate dimensions, budgets, and one-shot gate.
+- `appworld_static_api_inventory_result_freeze_v2_3.json`: exact safe result,
+  failed effect-capacity gate, no-retuning rule, and stopped source route.
