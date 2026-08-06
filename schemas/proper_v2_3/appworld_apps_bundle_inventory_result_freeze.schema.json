@@ -1,0 +1,10 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","additionalProperties":false,
+  "required":["schema_version","run_kind","passed","checks","freeze_config_sha256","provisioning_sha256","inventory_sha256","remote_project_revision","member_count","total_uncompressed_bytes","hashed_member_manifest_sha256","apps_bundle_decrypted","protected_plaintext_persisted","source_extracted","task_or_api_data_read","model_loaded","gpu_used","scientific_stage_passed","bundle_inventory_rerun_authorized","static_api_protocol_design_authorized","model_run_authorized","confirmatory_claim_authorized","next_gate"],
+  "properties":{
+    "schema_version":{"const":1},"run_kind":{"const":"proper_v2_3_appworld_apps_bundle_inventory_result_freeze"},"passed":{"type":"boolean"},"checks":{"type":"object","minProperties":1,"additionalProperties":{"type":"boolean"}},
+    "freeze_config_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},"provisioning_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},"inventory_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},"remote_project_revision":{"type":"string","pattern":"^[0-9a-f]{40}$"},
+    "member_count":{"const":96},"total_uncompressed_bytes":{"const":1017074},"hashed_member_manifest_sha256":{"const":"5638593200548a0936fb7f5ea1b801158616278476c55640933ff0678fa95a81"},
+    "apps_bundle_decrypted":{"const":true},"protected_plaintext_persisted":{"const":false},"source_extracted":{"const":false},"task_or_api_data_read":{"const":false},"model_loaded":{"const":false},"gpu_used":{"const":false},"scientific_stage_passed":{"const":false},"bundle_inventory_rerun_authorized":{"const":false},"static_api_protocol_design_authorized":{"type":"boolean"},"model_run_authorized":{"const":false},"confirmatory_claim_authorized":{"const":false},"next_gate":{"const":"design_in_memory_static_api_inventory_protocol"}
+  }
+}

@@ -110,6 +110,8 @@ command.
   invokes the unchanged inventory once without network access.
 - `validate_appworld_offline_dependency_repair_v2_3.py`: CPU-only hash,
   no-network, non-overwrite, dependency-chain, and single-invocation gate.
+- `validate_appworld_apps_bundle_inventory_result_v2_3.py`: freezes both remote
+  artifacts and recomputes aggregate counts, bytes, hashes, and claim gates.
 
 Preparation schema/validation protocol v2 preserves the failed fixed-path v1
 manifest and writes every subsequent attempt to a unique run directory.

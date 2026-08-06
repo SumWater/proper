@@ -620,3 +620,17 @@ dependency chain (`cryptography==49.0.0`, `cffi==2.0.0`, and
 external target with network and dependency resolution disabled, probes exact
 versions, then invokes the unchanged inventory runner once. No model or GPU is
 authorized.
+
+## Current gate after frozen aggregate apps-bundle inventory
+
+The offline repair and guarded inventory passed at revision
+`8260a8c00e97...`. The decrypted-in-memory archive contains 96 files and
+1,017,074 bytes. Its 60 Python files, 12 stubs, 12 Markdown files, and 12
+extensionless files are represented only by aggregate counts and hashes; no
+plaintext protected path or source was persisted.
+
+This establishes structural source capacity only. API effects, action-effect
+coverage, candidate count, held-out status, and PROPER performance remain
+unmeasured. The inventory cannot be rerun. The next permitted work is local
+design and synthetic validation of an in-memory static API inventory; tests,
+data, tasks, model execution, and GPU use remain closed.

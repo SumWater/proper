@@ -1,0 +1,35 @@
+{
+  "checks": {
+    "all_pinned_artifacts_match": true,
+    "appworld_wheel_is_absolute_external": true,
+    "frozen_inputs_match": true,
+    "linux_x86_64": true,
+    "project_revision_matches": true,
+    "python_311": true,
+    "target_is_absolute_external_and_absent": true,
+    "tracked_worktree_clean": true,
+    "wheelhouse_is_absolute_external": true
+  },
+  "expected_project_revision": "8260a8c00e97604a8489bdbedc4958b1fb6eeac1",
+  "gpu_used": false,
+  "installed_versions": {
+    "cffi": "2.0.0",
+    "cryptography": "49.0.0",
+    "pycparser": "2.23"
+  },
+  "inventory_path": "/home/amax/桌面/Dynamic-Prefix+LoRA-Joint-Training/proper-handoff-44e5b11/outputs/proper_v2_3/appworld_dependency_repair_remote/20260806T022652Z-amax-8260a8c00e97/inventory.json",
+  "inventory_returncode": 0,
+  "model_loaded": false,
+  "network_allowed": false,
+  "next_gate": "freeze_returned_apps_bundle_inventory",
+  "project_revision": "8260a8c00e97604a8489bdbedc4958b1fb6eeac1",
+  "protected_plaintext_persisted": false,
+  "provision_attempted": true,
+  "provision_returncode": 0,
+  "run_kind": "proper_v2_3_appworld_offline_dependency_repair",
+  "schema_version": 1,
+  "source_extracted": false,
+  "status": "inventory_completed",
+  "stop_reason": null,
+  "task_or_api_data_read": false
+}

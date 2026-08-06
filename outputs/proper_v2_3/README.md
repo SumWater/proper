@@ -368,3 +368,14 @@ inputs.
 `appworld_offline_dependency_repair/validation.json` authorizes one offline
 repair invocation using three exact wheels in a new external target. It does
 not itself install dependencies or decrypt the apps bundle.
+
+## Frozen AppWorld aggregate apps-bundle inventory
+
+Remote revision `8260a8c00e97...` passed offline provisioning and inventory.
+The archive contains 96 files and 1,017,074 uncompressed bytes. Only aggregate
+extension counts and path/content hashes were retained; protected plaintext
+was not persisted and source was not extracted.
+
+This is structural capacity evidence, not API-effect coverage, candidate
+qualification, held-out evidence, or a PROPER result. Inventory rerun is
+closed. In-memory static API-inventory protocol design is the next gate.
