@@ -1,0 +1,29 @@
+{
+  "checks": {
+    "all_frozen_inputs_match": true,
+    "decryption_is_recorded_before_inventory_call": true,
+    "exact_wheel_bundle_crypto_aggregate_and_dependencies": true,
+    "one_invocation_no_rerun_and_no_claims": true,
+    "result_schema_is_closed_and_hash_inventory_referenced": true,
+    "runner_has_no_network_appworld_import_or_subprocess_execution": true,
+    "runner_is_revision_clean_external_and_dependency_guarded": true,
+    "runner_reads_only_exact_apps_member": true,
+    "three_preparation_tests_pass": true,
+    "twelve_synthetic_and_runner_tests_pass_without_warning": true,
+    "validation_schema_is_closed": true,
+    "zero_network_extract_import_model_gpu_and_selection_budgets": true
+  },
+  "config_sha256": "459660f6c68890ac50a4d797df57a6331ccde995d09a56491a2513bfb1bf43c3",
+  "gpu_used": false,
+  "model_loaded": false,
+  "next_gate": "run_one_real_hash_only_static_api_inventory",
+  "one_remote_inventory_authorized": true,
+  "passed": true,
+  "real_bundle_decrypted": false,
+  "run_kind": "proper_v2_3_appworld_static_api_inventory_runner_validation",
+  "runner_sha256": "4874ef84f17a4a58dd889154c94c0ac8a08be8cae445a00b99734d9f7b0d778e",
+  "schema_version": 1,
+  "source_persisted": false,
+  "synthetic_bundle_decrypted": true,
+  "tests_run": 12
+}

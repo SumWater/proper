@@ -82,3 +82,5 @@ No GPU or confirmatory run is currently authorized.
   registry, conservative effect proofs, privacy output, budgets, and stop rules.
 - `appworld_static_api_inventory_implementation_v2_3.json`: exact analyzer,
   schema and tests, conservative ambiguity handling, and closed real-run gate.
+- `appworld_static_api_inventory_runner_v2_3.json`: exact wheel, bundle,
+  dependency target contract, aggregate dimensions, budgets, and one-shot gate.

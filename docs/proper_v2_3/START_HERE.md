@@ -647,3 +647,10 @@ helper effects, treats ambiguous calls or mutation receivers as unknown, and
 emits no protected plaintext. Full effect coverage means all three known
 classes are present and unknown count is zero. The next permitted work is a
 guarded real-bundle runner; real decryption and execution remain closed.
+
+The guarded runner is now implemented and synthetically validated. It binds
+the exact wheel, apps bundle, dependency versions, prior aggregate dimensions,
+AST implementation, result schema, and zero network/extraction/import/model/GPU
+budgets. Exactly one real hash-only static inventory is authorized after the
+runner files are synchronized and committed; every outcome must be preserved
+and the run may not be repeated.

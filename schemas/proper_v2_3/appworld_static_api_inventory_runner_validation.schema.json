@@ -1,0 +1,5 @@
+{
+ "$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","additionalProperties":false,
+ "required":["schema_version","run_kind","passed","checks","config_sha256","runner_sha256","tests_run","synthetic_bundle_decrypted","real_bundle_decrypted","source_persisted","model_loaded","gpu_used","one_remote_inventory_authorized","next_gate"],
+ "properties":{"schema_version":{"const":1},"run_kind":{"const":"proper_v2_3_appworld_static_api_inventory_runner_validation"},"passed":{"type":"boolean"},"checks":{"type":"object","additionalProperties":{"type":"boolean"}},"config_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},"runner_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},"tests_run":{"const":12},"synthetic_bundle_decrypted":{"const":true},"real_bundle_decrypted":{"const":false},"source_persisted":{"const":false},"model_loaded":{"const":false},"gpu_used":{"const":false},"one_remote_inventory_authorized":{"type":"boolean"},"next_gate":{"enum":["run_one_real_hash_only_static_api_inventory","stop_static_api_runner"]}}
+}

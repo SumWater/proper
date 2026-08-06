@@ -1,0 +1,22 @@
+{
+ "schema_version":1,"status":"frozen_guarded_runner_before_one_real_hash_only_static_inventory",
+ "frozen_inputs":[
+  {"path":"configs/proper_v2_3/appworld_static_api_inventory_implementation_v2_3.json","sha256":"0d35b57f372aafb9bf23e880864b464b0f7f7282e2109e355ebc9c49c2a0a56e"},
+  {"path":"outputs/proper_v2_3/appworld_static_api_inventory_implementation/validation.json","sha256":"9a406a6a4e19d6bdbae6725e238c0434038826f45bdf462d8a181e78e981264b"},
+  {"path":"src/failure_memory/proper_v2/v2_3/encrypted_static_api_inventory.py","sha256":"ca1e78e22ea609b9981f0999703dc35655027c294318879fe98f22b184e2efd9"},
+  {"path":"src/failure_memory/proper_v2/v2_3/static_api_inventory.py","sha256":"28beef4745ea862c4517ccca7a92c1929d534e4ff973f91748917cd5a367d7bb"},
+  {"path":"experiments/proper_v2_3/run_appworld_static_api_inventory_remote_v2_3.py","sha256":"4874ef84f17a4a58dd889154c94c0ac8a08be8cae445a00b99734d9f7b0d778e"},
+  {"path":"schemas/proper_v2_3/appworld_static_api_inventory_run.schema.json","sha256":"e42d3766aacd901fc34464bcf3fe5bf6bc4970b3de354b64fd16cdff7e922072"},
+  {"path":"tests/test_proper_v2_3_encrypted_static_api_inventory.py","sha256":"2b4ace10ce1f54a8a6eb069647f8286e56cf065b4980bd3eba3c3648b796d5f9"},
+  {"path":"tests/test_proper_v2_3_appworld_static_api_inventory_runner.py","sha256":"87100eb9b4db02c454f45c678bd0ffaa0b9b22e3cbde15903c6569628b535865"}
+ ],
+ "wheel":{"filename":"appworld-0.1.3.post1-py3-none-any.whl","bytes":625317,"sha256":"db77f8003982502383a50fa2974983894bd1c54f64e2fd3f7e1540d5edd037eb"},
+ "apps_bundle":{"wheel_member_path":"appworld/.source/apps.bundle","encrypted_bytes":177209,"encrypted_sha256":"ba58bc5679c3573aa8f60ad6f5cda4377128a0ec569de5eef9543a77561796bb"},
+ "public_crypto":{"password":"WEquKLy##9M@qu","salt_utf8":"Nvx#rYcYQ2%btf","iterations":100000},
+ "dependency_versions":{"cffi":"2.0.0","cryptography":"49.0.0","pycparser":"2.23"},
+ "zip_limits":{"maximum_member_count":5000,"maximum_member_uncompressed_bytes":52428800,"maximum_total_uncompressed_bytes":536870912,"maximum_compression_ratio":500},
+ "expected_aggregate":{"decrypted_zip_sha256":"a5e59a5c1c066a48d17cc6bdddb981f70f39b8a24fe8a70f58c8ad3ff1edbce1","archive_member_count":96,"archive_total_uncompressed_bytes":1017074,"python_member_count":72},
+ "budgets":{"remote_invocations":1,"decryption_attempts":1,"network_requests":0,"source_extractions":0,"module_imports":0,"model_requests":0,"gpu_operations":0,"target_selections":0},
+ "authority":{"one_real_hash_only_static_inventory":true,"rerun":false,"tests_data_or_tasks":false,"model":false,"gpu":false,"heldout_claim":false,"confirmatory_claim":false},
+ "next_gate":"run_one_real_hash_only_static_api_inventory"
+}

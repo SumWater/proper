@@ -79,6 +79,10 @@ decision, and version-specific result schemas. Frozen schemas under
   preliminary effect inventory.
 - `appworld_static_api_inventory_implementation_validation.schema.json`:
   closed synthetic implementation gate before guarded-runner work.
+- `appworld_static_api_inventory_run.schema.json`: closed real hash-only static
+  inventory result, including passing and stopped outcomes.
+- `appworld_static_api_inventory_runner_validation.schema.json`: closed
+  one-shot runner validation before real decryption.
 - `planbench_xl_capacity_audit_design.schema.json`: closed no-source/no-model
   design-validation result before any external inventory.
 - `planbench_xl_source_qualification.schema.json`: frozen source hashes,

@@ -388,3 +388,7 @@ archives; it does not authorize real bundle decryption or target selection.
 hash-only AST implementation gate. Ten synthetic source tests pass. No real
 bundle was decrypted, and real inventory remains closed pending a separately
 frozen guarded runner.
+
+`appworld_static_api_inventory_runner/validation.json` records the frozen
+guarded runner gate. Only synthetic bundles were decrypted during validation.
+It authorizes one real hash-only static inventory and no rerun.

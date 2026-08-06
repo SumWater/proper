@@ -117,6 +117,10 @@ command.
   and a CPU-only design gate before implementation.
 - `validate_appworld_static_api_inventory_implementation_v2_3.py`: validates
   the hash-only analyzer, closed schema, ten synthetic tests, and real-run gate.
+- `run_appworld_static_api_inventory_remote_v2_3.py`: guarded one-shot real
+  bundle-to-hash-only AST inventory without extraction or module import.
+- `validate_appworld_static_api_inventory_runner_v2_3.py`: freezes runner,
+  schema, dependency versions, aggregate dimensions, tests, and budgets.
 
 Preparation schema/validation protocol v2 preserves the failed fixed-path v1
 manifest and writes every subsequent attempt to a unique run directory.
