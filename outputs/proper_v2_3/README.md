@@ -383,3 +383,8 @@ closed. In-memory static API-inventory protocol design is the next gate.
 `appworld_static_api_protocol/validation.json` records the local design gate.
 It uses only scripted traces and authorizes implementation with synthetic
 archives; it does not authorize real bundle decryption or target selection.
+
+`appworld_static_api_inventory_implementation/validation.json` records the
+hash-only AST implementation gate. Ten synthetic source tests pass. No real
+bundle was decrypted, and real inventory remains closed pending a separately
+frozen guarded runner.

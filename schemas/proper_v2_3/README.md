@@ -75,6 +75,10 @@ decision, and version-specific result schemas. Frozen schemas under
   hash-only bundle inventory and static-protocol-design gate.
 - `appworld_in_memory_static_api_inventory_protocol_validation.schema.json`:
   closed no-real-decryption design-validation result.
+- `appworld_static_api_inventory.schema.json`: closed hash-only callable and
+  preliminary effect inventory.
+- `appworld_static_api_inventory_implementation_validation.schema.json`:
+  closed synthetic implementation gate before guarded-runner work.
 - `planbench_xl_capacity_audit_design.schema.json`: closed no-source/no-model
   design-validation result before any external inventory.
 - `planbench_xl_source_qualification.schema.json`: frozen source hashes,

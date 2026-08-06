@@ -10,7 +10,9 @@ control-flow evidence. Read-only and idempotent labels require positive proof.
 Cardinality changes, deletion, emission, communication, or irreversible calls
 are non-idempotent. Any unresolved call, alias, dispatch, reflection, parse
 ambiguity, or conflicting proof becomes `unknown_effect`, which blocks a full
-capacity claim.
+capacity claim. Full coverage requires nonzero evidence for the three known
+effect classes and zero unknown candidates; `unknown_effect` is reported as a
+stop class, not counted as a required coverage class.
 
 Outputs may contain only symbol/path/signature/content hashes, standardized
 evidence codes, aggregate counts, and preliminary effect/retry labels. They may

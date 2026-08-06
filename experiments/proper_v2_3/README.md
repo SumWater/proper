@@ -115,6 +115,8 @@ command.
 - `scripted_appworld_static_api_protocol_v2_3.py` and
   `validate_appworld_static_api_protocol_v2_3.py`: eight synthetic decisions
   and a CPU-only design gate before implementation.
+- `validate_appworld_static_api_inventory_implementation_v2_3.py`: validates
+  the hash-only analyzer, closed schema, ten synthetic tests, and real-run gate.
 
 Preparation schema/validation protocol v2 preserves the failed fixed-path v1
 manifest and writes every subsequent attempt to a unique run directory.

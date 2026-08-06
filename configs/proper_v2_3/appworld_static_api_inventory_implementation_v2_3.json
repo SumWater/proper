@@ -1,0 +1,15 @@
+{
+ "schema_version":1,"status":"frozen_hash_only_static_api_implementation_before_real_bundle_run",
+ "frozen_inputs":[
+  {"path":"configs/proper_v2_3/appworld_in_memory_static_api_inventory_protocol_v2_3.json","sha256":"1a680bcd65bfeef3c31f1e10379880cf83a110334ad812839fa7a50ff48d3bf0"},
+  {"path":"outputs/proper_v2_3/appworld_static_api_protocol/validation.json","sha256":"a1b7a99cf1b7a2de003f77fb87f4c5a2e7a7124171c626f2127464bf27def08f"},
+  {"path":"src/failure_memory/proper_v2/v2_3/static_api_inventory.py","sha256":"28beef4745ea862c4517ccca7a92c1929d534e4ff973f91748917cd5a367d7bb"},
+  {"path":"schemas/proper_v2_3/appworld_static_api_inventory.schema.json","sha256":"eed5e4d9fb067c27690a0fa2cc61db07dc9f0b1f81ccdec7bc5462df88ce868c"},
+  {"path":"tests/test_proper_v2_3_static_api_inventory.py","sha256":"99130216de219052f74a84278981adcdcdaf61f1169adfbdfb7d9f926215c8bb"}
+ ],
+ "implementation":{"standard_library_only":true,"ast_parse_only":true,"module_import":false,"dynamic_execution":false,"complete_python_and_stub_parse":true,"private_candidate_exclusion_after_parse":true,"transitive_internal_call_evidence":true,"ambiguous_calls_become_unknown":true},
+ "output":{"hash_only":true,"plaintext_paths_symbols_arguments_docstrings_or_source":false,"canonical_candidate_manifest":true,"closed_schema":true},
+ "classification":{"unknown_priority":true,"known_full_coverage_classes":["read_only","idempotent_state_setting","non_idempotent_side_effect"],"unknown_blocks_full_coverage":true,"static_labels_preliminary":true},
+ "authority":{"one_real_in_memory_static_inventory_after_runner_freeze":false,"runner_implementation_next":true,"target_selection":false,"model":false,"gpu":false,"heldout_claim":false,"confirmatory_claim":false},
+ "next_gate":"implement_guarded_real_bundle_static_inventory_runner"
+}

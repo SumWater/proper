@@ -640,3 +640,10 @@ callable superset before selection, transitive observable evidence, conservative
 `unknown_effect` priority, and hash-only protected outputs. Static effect labels
 remain preliminary. The next gate is implementation and synthetic validation;
 another real decryption is not yet authorized.
+
+The hash-only analyzer is now implemented and synthetically validated. It
+parses all Python/stub members before candidate filtering, propagates internal
+helper effects, treats ambiguous calls or mutation receivers as unknown, and
+emits no protected plaintext. Full effect coverage means all three known
+classes are present and unknown count is zero. The next permitted work is a
+guarded real-bundle runner; real decryption and execution remain closed.

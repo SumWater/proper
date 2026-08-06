@@ -1,0 +1,11 @@
+{
+ "$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","additionalProperties":false,
+ "required":["python_member_count","candidate_count","effect_counts","unknown_effect_count","complete_registry","full_effect_coverage","candidate_records","candidate_manifest_sha256","protected_plaintext_persisted","module_imported"],
+ "properties":{
+  "python_member_count":{"type":"integer","minimum":1},"candidate_count":{"type":"integer","minimum":0},
+  "effect_counts":{"type":"object","additionalProperties":false,"required":["read_only","idempotent_state_setting","non_idempotent_side_effect","unknown_effect"],"properties":{"read_only":{"type":"integer","minimum":0},"idempotent_state_setting":{"type":"integer","minimum":0},"non_idempotent_side_effect":{"type":"integer","minimum":0},"unknown_effect":{"type":"integer","minimum":0}}},
+  "unknown_effect_count":{"type":"integer","minimum":0},"complete_registry":{"const":true},"full_effect_coverage":{"type":"boolean"},
+  "candidate_records":{"type":"array","items":{"type":"object","additionalProperties":false,"required":["symbol_sha256","file_content_sha256","signature_shape_sha256","decorator_count","effect_class","retry_safety","evidence_codes"],"properties":{"symbol_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},"file_content_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},"signature_shape_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},"decorator_count":{"type":"integer","minimum":0},"effect_class":{"enum":["read_only","idempotent_state_setting","non_idempotent_side_effect","unknown_effect"]},"retry_safety":{"enum":["safe","safe_same_arguments_after_verified_prior_outcome","unsafe","unknown_stop"]},"evidence_codes":{"type":"array","minItems":1,"uniqueItems":true,"items":{"type":"string","pattern":"^[A-Z0-9_]+$"}}}}},
+  "candidate_manifest_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},"protected_plaintext_persisted":{"const":false},"module_imported":{"const":false}
+ }
+}

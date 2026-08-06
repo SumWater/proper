@@ -1,0 +1,29 @@
+{
+  "checks": {
+    "all_frozen_inputs_match": true,
+    "candidate_record_schema_has_no_plaintext_fields": true,
+    "complete_python_stub_parse_before_private_exclusion": true,
+    "output_is_hash_only_and_closed": true,
+    "real_bundle_runner_model_and_claim_gates_closed": true,
+    "standard_ast_without_dynamic_execution_or_import": true,
+    "ten_synthetic_tests_pass": true,
+    "three_known_classes_and_zero_unknown_define_full_coverage": true,
+    "three_preparation_tests_pass": true,
+    "transitive_and_ambiguous_calls_are_conservative": true,
+    "validation_schema_is_closed": true
+  },
+  "config_sha256": "0d35b57f372aafb9bf23e880864b464b0f7f7282e2109e355ebc9c49c2a0a56e",
+  "gpu_used": false,
+  "implementation_sha256": "28beef4745ea862c4517ccca7a92c1929d534e4ff973f91748917cd5a367d7bb",
+  "model_loaded": false,
+  "next_gate": "implement_guarded_real_bundle_static_inventory_runner",
+  "passed": true,
+  "real_bundle_decrypted": false,
+  "real_inventory_authorized": false,
+  "run_kind": "proper_v2_3_appworld_static_api_inventory_implementation_validation",
+  "runner_implementation_authorized": true,
+  "schema_version": 1,
+  "source_persisted": false,
+  "synthetic_sources_parsed": true,
+  "tests_run": 10
+}

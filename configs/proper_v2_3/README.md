@@ -80,3 +80,5 @@ No GPU or confirmatory run is currently authorized.
   aggregate result, recomputed manifest, privacy boundary, and next design gate.
 - `appworld_in_memory_static_api_inventory_protocol_v2_3.json`: complete AST
   registry, conservative effect proofs, privacy output, budgets, and stop rules.
+- `appworld_static_api_inventory_implementation_v2_3.json`: exact analyzer,
+  schema and tests, conservative ambiguity handling, and closed real-run gate.
