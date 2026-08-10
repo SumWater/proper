@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "status": "formal_e2_e3_analysis_complete",
+  "stage_id": "e2_e3_formal_analysis",
+  "config": {
+    "path": "configs/paper_2026/e2_e3_analysis_v1_0.yaml",
+    "sha256": "d1364a3bac68ecb53c0c4fec1ad560423de61f3abd6a1703eb38aba8441eb7b4"
+  },
+  "runner": {
+    "path": "experiments/paper_2026/analyze_e2_e3.py",
+    "sha256": "f5d91416f0fa6204d5e65dbf6a60266fabbd83c67f8dc0bcacc516470657398b"
+  },
+  "outputs": {
+    "analysis": {
+      "path": "outputs/paper_2026/e2_e3_formal_analysis/analysis.json",
+      "sha256": "ef1727f4a8208fafe18ec9cd4656a3671bb1145eae625d2d4b18b15b695ee9d9"
+    },
+    "tables": {
+      "path": "outputs/paper_2026/e2_e3_formal_analysis/tables.json",
+      "sha256": "b14119e7eee348c085cb6bcbefca9e8a2ab2db8c4e283265799680acc232bf35"
+    },
+    "audit": {
+      "path": "outputs/paper_2026/e2_e3_formal_analysis/audit.json",
+      "sha256": "b7c38c59e27d611ef3c093e72f9c9019529ba8e74a7d247790fe26f8800befac"
+    }
+  },
+  "primary_proper_vs_tfidf_changed_target_union": {
+    "qwen3_8b": {
+      "n": 403,
+      "paired_risk_difference": 0.03722084367245657,
+      "bootstrap_95_ci": [0.019851116625310174, 0.05707196029776675],
+      "holm_adjusted_p": 0.0001220703125,
+      "direction": "proper_better"
+    },
+    "mistral_7b_instruct_v0_3": {
+      "n": 403,
+      "paired_risk_difference": 0.05459057071960298,
+      "bootstrap_95_ci": [0.02481389578163772, 0.08436724565756824],
+      "holm_adjusted_p": 0.0004719867429230362,
+      "direction": "proper_better"
+    }
+  },
+  "key_secondary": {
+    "proper_better_than_dense_both_models_after_holm": true,
+    "proper_better_than_llm_judge_both_models_after_holm": true
+  },
+  "core_ablations": {
+    "no_gate": {
+      "qwen_proper_risk_difference": 0.0967741935483871,
+      "qwen_holm_adjusted_p": 3.461991582076162e-09,
+      "mistral_proper_risk_difference": 0.02481389578163772,
+      "mistral_holm_adjusted_p": 0.0926513671875,
+      "interpretation": "strong_Qwen_evidence_and_directionally_consistent_Mistral_evidence"
+    },
+    "no_contradiction": {
+      "qwen_proper_risk_difference": -0.01240694789081886,
+      "qwen_holm_adjusted_p": 0.125,
+      "mistral_proper_risk_difference": 0.009925558312655087,
+      "mistral_holm_adjusted_p": 0.21875,
+      "interpretation": "no_stable_positive_evidence_for_contradiction_component"
+    }
+  },
+  "limitations_locked": {
+    "mistral_no_memory_recovery_validity_union": 0.4838709677419355,
+    "mistral_proper_recovery_validity_union": 0.4466501240694789,
+    "mistral_memory_methods_do_not_beat_no_memory_overall": true,
+    "mistral_transient_authorization_all_memory_conditions_zero_recovery": true,
+    "mistral_transient_authorization_no_memory_successes": 34,
+    "timeout_primary_effect_is_zero_or_weak": true,
+    "contradiction_component_not_supported_as_independent_innovation": true
+  },
+  "checks": {
+    "deterministic_rerun_hashes_passed": true,
+    "exact_two_sided_mcnemar": true,
+    "paired_bootstrap_replicates": 10000,
+    "holm_within_prefrozen_families": true,
+    "invalid_model_outputs_retained_intention_to_treat": true,
+    "no_cross_model_pooling": true,
+    "no_result_driven_method_change": true
+  },
+  "next_stage": "e4_risk_negative_transfer_gate_diagnostics_and_e5_concentration"
+}

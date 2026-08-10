@@ -1,0 +1,53 @@
+schema_version: 1
+status: frozen_before_dense_selection_outputs
+stage_id: e1_dense_selection
+
+inputs:
+  e1_selection_config: configs/paper_2026/e1_selection_v1_0.yaml
+  e1_selection_config_sha256: b86cd1c624728e3385c2389b92656ce95d9a117128a7492c5bf786df557a1bcc
+  preparation_manifest: outputs/paper_2026/e1_selection/preparation_manifest.json
+  preparation_manifest_sha256: b297256018d386cced2e1212b704bf8303a63397d74f9bc9d109b6494ac68253
+  observable_inputs: outputs/paper_2026/e1_selection/observable_inputs.json
+  observable_inputs_sha256: a48cfb02cc3ec2aeb3f4edadd5793ed356991bc5adf7509d5b1360f5e6dbf544
+  target_count: 541
+  memory_count: 100
+
+model:
+  lock: configs/paper_2026/dense_retrieval_v0_1.result.lock.json
+  lock_sha256: 7207d85ccbe82120daf0f90d58f0a9e8a7f13976494877a92fbe13a691596d55
+  repository: BAAI/bge-large-en-v1.5
+  revision: d4aa6901d3a41ba39fb536a557fa166f842b0e09
+  remote_path: /home/amax/.cache/huggingface/hub/models--BAAI--bge-large-en-v1.5/snapshots/d4aa6901d3a41ba39fb536a557fa166f842b0e09
+  manifest: configs/paper_2026/bge_large_en_v1_5.sha256
+  manifest_sha256: 23cb024808b1f01270c1cfa9093996378206dbe06a50960d9917334d52b6bae4
+
+encoding:
+  dtype: float32
+  query_prefix: "Represent this sentence for searching relevant passages: "
+  pooling: first_token_cls
+  normalize_embeddings: true
+  similarity: normalized_dot_product
+  max_length: 512
+  batch_size: 32
+
+selection:
+  candidate_population: all_100_frozen_memories
+  return_count: 1
+  tie_breaker: lexical_memory_key_equivalent_to_lexical_experience_id
+  diagnostic_top_k: 10
+
+runtime:
+  environment: failure-memory-pilot
+  minimum_free_mib: 8000
+  one_visible_gpu: true
+
+runner:
+  path: experiments/paper_2026/run_e1_dense_selection.py
+  sha256: c9b6b95524f120e5c21a98978cb987a98dbc40bce04ac0457dcc409236525d04
+
+output: outputs/paper_2026/e1_selection/dense_selections.json
+
+boundary:
+  observable_inputs_only: true
+  evaluator_private_file_read: false
+  formal_agent_generation: false

@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "status": "dual_agent_runtime_smoke_passed_before_formal_outputs",
+  "environment": {
+    "name": "failure-memory-pilot",
+    "lock_path": "outputs/paper_2026/p0_environment_lock.json",
+    "lock_sha256": "fb943ddec5a962883c0e70cd1b863ad8c5547a0847107a76a175b53174a02443",
+    "python": "3.11.15",
+    "torch": "2.12.0",
+    "transformers": "5.8.1",
+    "cuda": "12.9",
+    "dtype": "bfloat16",
+    "quantization": "none",
+    "device_policy": "one_model_one_process_one_visible_gpu"
+  },
+  "common_smoke_runner": {
+    "path": "scripts/paper_2026/smoke_agent_model.py",
+    "sha256": "6475a3c700a7d1e8f433ecf90b7fc3e6396b9913ededdfb1a4604ab1a72ca7e8"
+  },
+  "models": {
+    "qwen3_8b": {
+      "family": "qwen3",
+      "remote_path": "/home/amax/PycharmProjects/AINegoProject/src/Models/LLM/Qwen3-8B",
+      "manifest_path": "configs/proper_v1/qwen3_8b_model.sha256",
+      "manifest_sha256": "aa3e07db476dac6f3af8ad14958cb6febee947243f4bc29d7f6c5eda5c92e4ba",
+      "manifest_file_count": 15,
+      "thinking": "disabled",
+      "smoke_path": "outputs/paper_2026/p0_smoke_qwen3_8b.json",
+      "smoke_sha256": "4f1091bb4acee0971d44826300e73f56b1090c736ce5431b046441d4e7eb247d",
+      "rendered_prompt_sha256": "e08dc366300ec158fc8bf449b45e354c7b9317027dc21aa3c16020cd01cff48c",
+      "peak_cuda_memory_mib": 15651.15,
+      "smoke_passed": true
+    },
+    "mistral_7b_instruct_v0_3": {
+      "family": "mistral",
+      "remote_path": "/home/amax/PycharmProjects/AINegoProject/src/Models/LLM/Mistral-7B-Instruct-v0.3",
+      "revision": "c170c708c41dac9275d15a8fff4eca08d52bab71",
+      "model_lock_path": "configs/paper_2026/model_b_manifest_v0_1.lock.json",
+      "model_lock_sha256": "548cf385789aaacedb2ac13618a1c21e4a8b7ce16836781c1e5e325382248da4",
+      "manifest_file_count": 11,
+      "smoke_path": "outputs/paper_2026/p0_smoke_mistral_7b_instruct_v0_3.json",
+      "smoke_sha256": "88f1e0d3c49c72ce420426eef23ea0a0283e438172397eee585f6162b1da7a6b",
+      "rendered_prompt_sha256": "1341c18e4090cb52a400bd2f02c4affdf568d1d754dc842a4f0365ed462c24d0",
+      "peak_cuda_memory_mib": 13851.5,
+      "smoke_passed": true
+    }
+  },
+  "generation_policy": {
+    "do_sample": false,
+    "formal_max_new_tokens": 256,
+    "record_rendered_prompt_hash": true,
+    "local_files_only": true,
+    "trust_remote_code": false
+  },
+  "boundary": {
+    "smoke_is_not_formal_experiment": true,
+    "new_formal_agent_generation_authorized": false,
+    "remaining_prerequisite": "freeze_dense_and_llm_judge_then_freeze_e1_union_protocol"
+  }
+}

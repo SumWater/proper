@@ -1,0 +1,49 @@
+schema_version: 1
+status: development_capacity_before_selector_freeze
+
+dataset:
+  public_test: work/toolmisusebench_test/test_public.jsonl
+  public_test_sha256: 12c5e1e93926f4089dfc8d0c60cea53b556057360562375510744858fc6f1161
+  expected_task_count: 1200
+  dev: work/toolmisusebench_sample/dev.jsonl
+  dev_sha256: a5a2b49b28c66f01bdbac37966c00cca9c6a1027a6d4b5b3a8c1d1d359db27e3
+
+memory_bank:
+  prepared_manifest: work/memory_bank_prepared.json
+  expected_windows_file_sha256: da06c6538fb8494a1ab50fee9d4a97d74f6a4e6f7ee161b014cec97d7c459011
+  expected_payload_sha256: b2841f434e2ffd89a11de73be3fe7c3d5dc0dbd42dd9d2990b6b49a0b4ff6c42
+  source_count: 100
+  top_k: 10
+
+cohorts:
+  argument_omission:
+    context: work/confirmatory_gate_v1_prepared.json
+    expected_count: 189
+    builder: observable_clean_task_argument_omission
+  transient_authorization:
+    context: outputs/proper_v1/transient_authz_capacity_v1/screening.json
+    expected_count: 175
+    builder: observable_native_authz_first_denial
+  timeout:
+    context: outputs/proper_v2/timeout_capacity_v2/screening.json
+    expected_count: 177
+    builder: observable_native_timeout
+
+selector:
+  variants: [proper, proper_no_gate, proper_no_contradiction]
+  minimum_extraction_confidence: 0.75
+  retry_safety_taxonomy:
+    nonpositive_public_retry_budget: unsafe_retry_unavailable
+    missing_required_arg_with_missing_fields: unsafe_identical_retry
+    timeout_with_positive_public_retry_budget: safe_bounded_retry
+    first_authz_denial_with_positive_public_retry_budget: safe_bounded_retry
+    otherwise: unknown
+  persistent_authorization_evidence: repeated_identical_authz_denial_count_at_least_2
+
+boundary:
+  model_loaded: false
+  model_outputs_read_or_generated: false
+  cohort_labels_evaluator_side_only: true
+  selector_inputs_observable_only: true
+
+output: outputs/paper_2026/e1_selector_capacity/selector_capacity_audit.json

@@ -1,0 +1,70 @@
+schema_version: 1
+status: frozen_before_e1_selection_outputs
+stage_id: e1_selection
+protocol_version: 1.0-frozen
+
+prerequisites:
+  p0_lock: configs/paper_2026/p0_protocol_v1_0.lock.json
+  p0_lock_sha256: fb8e112798ffa7aa2b9ae0c2337a04ae803560c7e6dc55f27ee50a324b4d2f28
+  p0_source_manifest: configs/paper_2026/p0_local_sources.sha256
+  p0_source_manifest_sha256: eb06464f552ffcd18f3c0a4c7b63733eb9d05e97d149e81fb009f8b820e30a97
+  selector_capacity_lock: configs/paper_2026/selector_capacity_audit_v0_1.result.lock.json
+  selector_capacity_result: outputs/paper_2026/e1_selector_capacity/selector_capacity_audit.json
+  selector_capacity_result_sha256: b75e6424d8903fa72117867758f598f01d75081a0f704b4c92cb8526a464f636
+
+population:
+  target_count: 541
+  strata:
+    argument_omission: 189
+    transient_authorization: 175
+    timeout: 177
+  memory_source_count: 100
+  source_target_isolation: required
+
+methods:
+  tfidf:
+    candidate_population: all_frozen_memories_except_same_source
+    return_count: 1
+    tie_breaker: lexical_experience_id
+  dense:
+    lock: configs/paper_2026/dense_retrieval_v0_1.result.lock.json
+    candidate_population: all_frozen_memories_except_same_source
+    return_count: 1
+  llm_judge:
+    lock: configs/paper_2026/llm_judge_v0_1.result.lock.json
+    candidate_population: tfidf_top10
+    return_count: 1
+  proper:
+    candidate_population: tfidf_top10
+    variants: [proper, proper_no_gate, proper_no_contradiction]
+  oracle:
+    candidate_population: full_tfidf_order
+    selection: first_evaluator_applicable_memory
+    no_applicable_memory: select_no_memory
+    role: descriptive_upper_bound_only
+
+changed_target_union:
+  reference: tfidf_rank1
+  members:
+    - dense
+    - llm_judge
+    - proper
+    - proper_no_gate
+    - proper_no_contradiction
+  excluded:
+    - no_memory
+    - oracle
+  freeze_before_formal_agent_generation: true
+
+preparation:
+  runner: experiments/paper_2026/prepare_e1_selection_inputs.py
+  observable_inputs: outputs/paper_2026/e1_selection/observable_inputs.json
+  deterministic_selections: outputs/paper_2026/e1_selection/deterministic_selections.json
+  oracle_private: outputs/paper_2026/e1_selection/oracle_private.json
+  preparation_manifest: outputs/paper_2026/e1_selection/preparation_manifest.json
+
+boundary:
+  observable_file_contains_evaluator_labels: false
+  oracle_file_must_not_be_read_by_dense_or_llm_judge_runners: true
+  model_loaded_during_preparation: false
+  formal_agent_generation_authorized: false

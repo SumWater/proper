@@ -1,0 +1,93 @@
+schema_version: 1
+status: frozen_before_formal_agent_generation
+stage_id: e2_e3_agent_generation
+
+inputs:
+  prompt_cache_result_lock:
+    path: configs/paper_2026/agent_prompt_cache_v1_0.result.lock.json
+    sha256: 01c1167e05fccf41e2a187a098974eab4c4affaa342dd6c3a15260fa5a4b87e1
+  prompt_manifest:
+    path: outputs/paper_2026/agent_prompt_cache/agent_prompt_manifest.json
+    sha256: ce47156636016a4cccb1b9cccce59ca3451d130673b0470efa8327e6cc526996
+  planned_calls:
+    path: outputs/paper_2026/agent_prompt_cache/planned_calls.json
+    sha256: f1e8d8cc0847b73ddd4b600081cc4b45f6702112a3a10335e2f00dfccbf54dea
+  historical_qwen_cache:
+    path: outputs/paper_2026/agent_prompt_cache/historical_qwen_cache.json
+    sha256: c8dacde54a3eeeeab1e6760348471c3e7d05d2d88a5751a3a1ec28dac9380aee
+  agent_runtime:
+    path: experiments/proper_v1/agent_runtime.py
+    sha256: 8f0b61bf5c96b6f7923a55e975128d7341a3ccb71cf279dfbdc8bdcb5a1a5570
+  dual_agent_runtime_lock:
+    path: configs/paper_2026/dual_agent_runtime_v0_1.lock.json
+    sha256: a7fcaa3bed94015efb790ad42fd0563036a22892a3285d8230860b2ea5c05805
+  environment_lock:
+    path: outputs/paper_2026/p0_environment_lock.json
+    sha256: fb943ddec5a962883c0e70cd1b863ad8c5547a0847107a76a175b53174a02443
+  qwen_model_manifest:
+    path: configs/proper_v1/qwen3_8b_model.sha256
+    sha256: aa3e07db476dac6f3af8ad14958cb6febee947243f4bc29d7f6c5eda5c92e4ba
+  mistral_model_manifest:
+    path: outputs/paper_2026/mistral_7b_instruct_v0_3_manifest.json
+    sha256: d2a310199e0a0516553c319e2a0c3f7564b07cfc8454febd8e49d83e5c73dace
+  mistral_model_lock:
+    path: configs/paper_2026/model_b_manifest_v0_1.lock.json
+    sha256: 548cf385789aaacedb2ac13618a1c21e4a8b7ce16836781c1e5e325382248da4
+
+models:
+  qwen3_8b:
+    family: qwen3
+    remote_path: /home/amax/PycharmProjects/AINegoProject/src/Models/LLM/Qwen3-8B
+    manifest_input: qwen_model_manifest
+    manifest_format: sha256sum
+    manifest_sha256: aa3e07db476dac6f3af8ad14958cb6febee947243f4bc29d7f6c5eda5c92e4ba
+    expected_cache_hits: 903
+    expected_new_calls: 708
+    checkpoint: outputs/paper_2026/e2_e3_agent_generation/qwen3_8b.checkpoint.jsonl
+    result: outputs/paper_2026/e2_e3_agent_generation/qwen3_8b.results.json
+  mistral_7b_instruct_v0_3:
+    family: mistral
+    remote_path: /home/amax/PycharmProjects/AINegoProject/src/Models/LLM/Mistral-7B-Instruct-v0.3
+    manifest_input: mistral_model_manifest
+    manifest_format: json_files
+    manifest_sha256: d2a310199e0a0516553c319e2a0c3f7564b07cfc8454febd8e49d83e5c73dace
+    expected_cache_hits: 0
+    expected_new_calls: 1611
+    checkpoint: outputs/paper_2026/e2_e3_agent_generation/mistral_7b_instruct_v0_3.checkpoint.jsonl
+    result: outputs/paper_2026/e2_e3_agent_generation/mistral_7b_instruct_v0_3.results.json
+
+generation:
+  backend: transformers
+  dtype: auto_bfloat16_on_remote_gpu
+  quantization: none
+  local_files_only: true
+  trust_remote_code: false
+  do_sample: false
+  temperature: 0.0
+  enable_thinking: false
+  max_new_tokens: 256
+  recovery_horizon: 1
+  seed: 20260810
+  strict_json_decision_parser: agent_runtime.parse_decision
+
+runner:
+  path: experiments/paper_2026/run_agent_generation.py
+  sha256: 7ad44aaf6679e70ac1d4271c7a94eff68915aabf1e83285804a3602da8874de6
+
+progress_every: 25
+
+execution:
+  one_model_per_process: true
+  one_visible_gpu_per_process: true
+  checkpoint_after_every_prompt: true
+  resume_requires_full_row_identity_validation: true
+  unique_raw_prompt_deduplication: true
+  model_output_cache_only: true
+  evaluate_every_target_condition_separately_after_generation: true
+
+boundary:
+  prompt_and_condition_selection_frozen: true
+  formal_agent_generation_authorized: true
+  synthetic_output_is_formal: false
+  historical_outcomes_reused_across_instances: false
+  next_step_after_generation: audit_outputs_then_run_frozen_per_target_evaluator

@@ -1,0 +1,85 @@
+schema_version: 1
+status: frozen_after_three_stratum_offline_capacity_audit_before_formal_model_outputs
+method_version: proper_paper_2026_v0_1_frozen
+scope: one_post_failure_memory_selection
+
+input_boundary:
+  observable_only: true
+  permitted:
+    - user_instruction
+    - public_tool_schemas
+    - failed_public_action
+    - public_error_or_return
+    - observable_history
+    - candidate_memory_text
+    - deterministic_features_from_permitted_inputs
+  forbidden:
+    - benchmark_or_scenario_name
+    - hidden_fault_plan_or_label
+    - recoverability_or_applicability_label
+    - gold_action_or_evaluator_outcome
+    - prior_model_outcome
+    - method_or_condition_name
+
+candidate_contract:
+  rank_requirement: contiguous_from_1
+  minimum_count: 1
+  unique_experience_id: true
+  minimum_extraction_confidence: 0.75
+  recovery_operations:
+    - repair_arguments
+    - retry_same_action
+    - invoke_prerequisite
+    - switch_tool
+    - use_fallback
+    - request_information
+    - stop_and_report
+    - unknown
+
+evidence_support:
+  repair_arguments: trigger_overlap_and_repair_target_overlap
+  stop_and_report: stop_condition_overlap_with_observed_evidence
+  all_other_known_operations: trigger_overlap
+  unknown: incompatible
+
+full_proper:
+  rank_order:
+    - fewer_active_contradictions
+    - stronger_evidence_support
+    - stronger_precondition_status
+    - stronger_repair_target_agreement
+    - stronger_trigger_evidence_agreement
+    - stronger_tool_compatibility
+    - higher_extraction_confidence
+    - lower_original_rank
+    - lexical_experience_id
+  replacement_gate:
+    require_no_active_contradictions: true
+    require_compatible_evidence_support: true
+    require_decisive_improvement: true
+
+ablations:
+  proper_no_gate:
+    removed_component: conservative_replacement_gate
+    retained_component: contradiction_check
+    replacement_rule: select_best_contradiction_free_candidate
+  proper_no_contradiction:
+    removed_component: contradiction_check
+    retained_component: conservative_replacement_gate
+    replacement_rule: select_decisively_supported_candidate
+
+abstention:
+  semantics: decline_to_change_retrieval_result
+  injected_memory: preserve_tfidf_rank1
+  applicability_claim: none
+
+observable_adapter:
+  retry_safety:
+    public_retry_budget_exhausted: unsafe
+    missing_required_argument_with_missing_fields: unsafe_identical_retry
+    timeout_with_positive_retry_budget: safe_bounded_retry
+    first_authorization_denial_with_positive_retry_budget: safe_bounded_retry
+    otherwise: unknown
+  repeated_authorization_stop_evidence:
+    minimum_identical_denials: 2
+    evidence_code: persistent_authorization_denial

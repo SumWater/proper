@@ -1,0 +1,45 @@
+schema_version: 1
+status: development_candidate_before_new_formal_outputs
+
+paired_binary_endpoint:
+  name: recovery_validity
+  effect: treatment_minus_baseline_paired_risk_difference
+  discordance:
+    positive: baseline_0_treatment_1
+    negative: baseline_1_treatment_0
+  test: exact_two_sided_mcnemar_binomial
+  alpha: 0.05
+
+confidence_interval:
+  method: paired_instance_bootstrap_percentile
+  confidence_level: 0.95
+  replicates: 10000
+  base_seed: 20260809
+  cell_seed: first_8_bytes_sha256_of_base_seed_colon_analysis_id
+  percentile_interpolation: linear_at_probability_times_replicates_minus_1
+
+multiplicity:
+  method: holm
+  primary_family:
+    comparisons: proper_vs_tfidf
+    cells: all_agent_model_by_failure_stratum_cells
+    expected_size_if_complete: 6
+  key_secondary_family:
+    comparisons:
+      - proper_vs_dense
+      - proper_vs_llm_judge
+    cells: all_agent_model_by_failure_stratum_cells
+    expected_size_if_complete: 12
+  ablation_family:
+    comparisons:
+      - proper_vs_proper_no_gate
+      - proper_vs_proper_no_contradiction
+    cells: all_agent_model_by_failure_stratum_cells
+    expected_size_if_complete: 12
+  oracle: descriptive_no_hypothesis_test
+
+reporting:
+  include_zero_and_negative_cells: true
+  report_raw_and_adjusted_p_values: true
+  report_positive_and_negative_discordant_counts: true
+  subgroup_effects_descriptive_unless_separately_declared: true

@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "status": "formal_agent_generation_complete_and_audited",
+  "stage_id": "e2_e3_agent_generation",
+  "execution_lock": {
+    "path": "configs/paper_2026/agent_generation_v1_0.execution.lock.json",
+    "sha256": "ee06b5e74c7770fdccdb73ef328631e5283399c32da858d49c1d99845d6cef25"
+  },
+  "config": {
+    "path": "configs/paper_2026/agent_generation_v1_0.yaml",
+    "sha256": "6a0b702313feb1d91bed3577fd33fc4897e3106b4c794e082779205a1710e66e"
+  },
+  "runner": {
+    "path": "experiments/paper_2026/run_agent_generation.py",
+    "sha256": "7ad44aaf6679e70ac1d4271c7a94eff68915aabf1e83285804a3602da8874de6"
+  },
+  "models": {
+    "qwen3_8b": {
+      "checkpoint": {
+        "path": "outputs/paper_2026/e2_e3_agent_generation/qwen3_8b.checkpoint.jsonl",
+        "sha256": "c78745ebdb709c4d4f26908e40e432ed655cc639bcc95b665d7aa54d7f9f9e08"
+      },
+      "result": {
+        "path": "outputs/paper_2026/e2_e3_agent_generation/qwen3_8b.results.json",
+        "sha256": "2dc86ccb09abd89cea02943b77cba1907f89bfcde8e2da0c6f825fa39a174eb9"
+      },
+      "new_record_count": 708,
+      "historical_exact_model_output_cache_count": 903,
+      "parse_failure_count": 0,
+      "generation_seconds_sum": 454.10,
+      "peak_cuda_memory_mib": 17996.6064453125,
+      "model_files_verified": 15
+    },
+    "mistral_7b_instruct_v0_3": {
+      "checkpoint": {
+        "path": "outputs/paper_2026/e2_e3_agent_generation/mistral_7b_instruct_v0_3.checkpoint.jsonl",
+        "sha256": "e2a70f08f965bc10a0d85118313186764f37153ece682d87ef10b52c7606d1ef"
+      },
+      "result": {
+        "path": "outputs/paper_2026/e2_e3_agent_generation/mistral_7b_instruct_v0_3.results.json",
+        "sha256": "247e68508ba8d6db4b2c555981ea7bd016b667872e614d074d2935cf4c1789d3"
+      },
+      "new_record_count": 1611,
+      "parse_failure_count": 38,
+      "parse_failure_policy": "frozen_parser_fallback_stop_invalid_model_output",
+      "selective_regeneration_permitted": false,
+      "max_completion_tokens_observed": 155,
+      "max_new_tokens": 256,
+      "generation_seconds_sum": 1143.73,
+      "peak_cuda_memory_mib": 14336.5087890625,
+      "model_files_verified": 11
+    }
+  },
+  "checks": {
+    "all_checkpoint_rows_match_frozen_prompt_plan": true,
+    "all_raw_model_output_hashes_verified": true,
+    "all_decisions_reparsed_with_frozen_parser": true,
+    "checkpoint_and_final_result_records_identical": true,
+    "runtime_and_input_identities_match": true,
+    "model_weight_files_verified_before_loading": true,
+    "synthetic_rows_present": false,
+    "mistral_failures_are_not_max_token_truncations": true
+  },
+  "boundary": {
+    "generation_complete": true,
+    "per_target_environment_evaluation_authorized": true,
+    "historical_environment_outcomes_reused_across_instances": false
+  }
+}

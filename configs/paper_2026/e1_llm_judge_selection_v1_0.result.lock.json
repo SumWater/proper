@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "status": "e1_llm_judge_selection_passed_and_frozen",
+  "method_name": "qwen3_8b_tfidf_top10_applicability_judge",
+  "execution_config": {
+    "path": "configs/paper_2026/e1_llm_judge_execution_v1_0.yaml",
+    "sha256": "4638d7db69b4fa703ed5794d1417cb78dbfc13bc66f9a6e199a8df3cbc6915c6"
+  },
+  "runner": {
+    "path": "experiments/paper_2026/run_e1_llm_judge_selection.py",
+    "sha256": "57438822226f9fb5bd80cf31f2dee21fc294212f33f20be3a985c6d08c77f8dc"
+  },
+  "result": {
+    "path": "outputs/paper_2026/e1_selection/llm_judge_selections.json",
+    "sha256": "86128f11f0d27cd0d163e344055b4214eae55c8ecbee8af10b1d046501aa80ff",
+    "checkpoint_path": "outputs/paper_2026/e1_selection/llm_judge_checkpoint.jsonl",
+    "checkpoint_sha256": "67b60e31512e1af2e8a37589db610d2dc74cbfeb31723c6d8da98c63e1ee22e7",
+    "target_count": 541,
+    "strict_parse_successes": 541,
+    "fallbacks": 0,
+    "selection_seconds": 213.012,
+    "sum_generation_seconds": 211.31,
+    "prompt_tokens": 652495,
+    "completion_tokens": 5410,
+    "maximum_prompt_tokens": 1459,
+    "peak_cuda_memory_mib": 15986.58
+  },
+  "selection_summary": {
+    "changed_from_tfidf": 244,
+    "changed_by_stratum": {
+      "argument_omission": 79,
+      "transient_authorization": 97,
+      "timeout": 68
+    },
+    "applicable_selections": 340,
+    "selection_corrections_vs_tfidf": 68,
+    "selection_new_errors_vs_tfidf": 76,
+    "unique_selected_memories": 85,
+    "maximum_single_memory_selection_count": 23,
+    "maximum_single_memory_selection_share": 0.04251386321626617
+  },
+  "checks": {
+    "all_fifteen_model_files_verified": true,
+    "all_records_match_checkpoint": true,
+    "all_selections_within_tfidf_top10": true,
+    "all_prompt_hashes_present": true,
+    "run_identity_uniform": true,
+    "unique_record_per_target": true,
+    "zero_parse_fallbacks": true,
+    "input_config_runner_and_checkpoint_hashes_recomputed": true
+  },
+  "boundary": {
+    "observable_inputs_only": true,
+    "evaluator_labels_read": false,
+    "formal_agent_generation": false,
+    "result_used_to_change_frozen_method": false,
+    "next_action": "freeze_complete_e1_selection_manifest_and_changed_target_union"
+  }
+}

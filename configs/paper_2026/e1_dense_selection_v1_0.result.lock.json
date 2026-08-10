@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "status": "e1_dense_selection_passed_and_frozen",
+  "method_name": "dense_bge_large_en_v1_5",
+  "execution_config": {
+    "path": "configs/paper_2026/e1_dense_execution_v1_0.yaml",
+    "sha256": "f742fb4d9f30e3fdfb57d8941c5e52eec1620417483b8f7773171800ed520914"
+  },
+  "runner": {
+    "path": "experiments/paper_2026/run_e1_dense_selection.py",
+    "sha256": "c9b6b95524f120e5c21a98978cb987a98dbc40bce04ac0457dcc409236525d04"
+  },
+  "result": {
+    "path": "outputs/paper_2026/e1_selection/dense_selections.json",
+    "sha256": "8d401a90f7e27ad95e9b40b9795c364fb50d697067693fd9e905aa5f97ae7de6",
+    "status": "passed",
+    "target_count": 541,
+    "memory_count": 100,
+    "model_load_seconds": 0.954,
+    "encoding_and_scoring_seconds": 2.136,
+    "peak_cuda_memory_mib": 1437.24
+  },
+  "selection_summary": {
+    "changed_from_tfidf": 250,
+    "changed_by_stratum": {
+      "argument_omission": {"changed": 98, "total": 189},
+      "transient_authorization": {"changed": 81, "total": 175},
+      "timeout": {"changed": 71, "total": 177}
+    },
+    "proper_changed_from_tfidf": 205,
+    "dense_proper_changed_overlap": 146,
+    "dense_proper_union": 309,
+    "unique_selected_memories": 85,
+    "maximum_single_memory_selection_count": 36,
+    "maximum_single_memory_selection_share": 0.066543438077634
+  },
+  "checks": {
+    "all_six_model_files_verified": true,
+    "memory_shape_100_by_1024": true,
+    "query_shape_541_by_1024": true,
+    "unit_normalized_embeddings": true,
+    "unique_record_per_target": true,
+    "rank_order_and_tie_break_recomputed": true,
+    "input_config_and_runner_hashes_recomputed": true
+  },
+  "boundary": {
+    "evaluator_labels_read": false,
+    "agent_model_loaded": false,
+    "formal_agent_generation": false,
+    "result_used_to_change_frozen_method": false,
+    "next_action": "run_frozen_e1_llm_judge_selection"
+  }
+}

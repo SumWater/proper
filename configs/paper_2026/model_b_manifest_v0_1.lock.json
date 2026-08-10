@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "status": "remote_manifest_and_bf16_smoke_passed_before_formal_outputs",
+  "model_role": "second_cross_family_agent_model",
+  "repository": "mistralai/Mistral-7B-Instruct-v0.3",
+  "revision": "c170c708c41dac9275d15a8fff4eca08d52bab71",
+  "architecture": "MistralForCausalLM",
+  "remote_path": "/home/amax/PycharmProjects/AINegoProject/src/Models/LLM/Mistral-7B-Instruct-v0.3",
+  "manifest": {
+    "path": "outputs/paper_2026/mistral_7b_instruct_v0_3_manifest.json",
+    "sha256": "d2a310199e0a0516553c319e2a0c3f7564b07cfc8454febd8e49d83e5c73dace",
+    "payload_sha256": "4176d5a7be94a1a4bd71885ae366e9574b4827657e8ae7a9313b973a38a11e34",
+    "file_count": 11,
+    "total_bytes": 14498803728,
+    "transformers_weight_shard_count": 3,
+    "transformers_weight_bytes": 14496080928
+  },
+  "checks": {
+    "repo_and_revision_match_protocol": true,
+    "manifest_payload_hash_recomputed": true,
+    "file_count_and_total_bytes_recomputed": true,
+    "required_config_tokenizer_index_files_present": true,
+    "three_weight_shards_present": true,
+    "duplicate_relative_paths_absent": true,
+    "all_file_sha256_values_well_formed": true,
+    "remote_files_independently_reverified": true,
+    "bf16_smoke_passed": true
+  },
+  "smoke": {
+    "path": "outputs/paper_2026/p0_smoke_mistral_7b_instruct_v0_3.json",
+    "sha256": "88f1e0d3c49c72ce420426eef23ea0a0283e438172397eee585f6162b1da7a6b",
+    "checked_manifest_files": 11,
+    "manifest_failures": 0,
+    "physical_gpu_index": 0,
+    "gpu_name": "NVIDIA RTX 5880 Ada Generation",
+    "free_memory_before_mib": 48496,
+    "dtype": "bfloat16",
+    "torch": "2.12.0",
+    "transformers": "5.8.1",
+    "cuda": "12.9",
+    "model_load_seconds": 5.254,
+    "generation_seconds": 0.842,
+    "peak_cuda_memory_mib": 13851.5,
+    "prompt_tokens": 79,
+    "completion_tokens": 15,
+    "strict_json": true,
+    "expected_smoke_decision": true
+  },
+  "boundary": {
+    "formal_agent_generation_authorized": false,
+    "next_action": "qwen_infrastructure_smoke_and_remaining_baseline_freeze"
+  }
+}

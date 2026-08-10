@@ -1,0 +1,82 @@
+schema_version: 1
+status: frozen_before_e1_finalization_outputs
+stage_id: e1_selection
+
+inputs:
+  p0_lock:
+    path: configs/paper_2026/p0_protocol_v1_0.lock.json
+    sha256: fb8e112798ffa7aa2b9ae0c2337a04ae803560c7e6dc55f27ee50a324b4d2f28
+  e1_selection_config:
+    path: configs/paper_2026/e1_selection_v1_0.yaml
+    sha256: b86cd1c624728e3385c2389b92656ce95d9a117128a7492c5bf786df557a1bcc
+  dense_execution_config:
+    path: configs/paper_2026/e1_dense_execution_v1_0.yaml
+    sha256: f742fb4d9f30e3fdfb57d8941c5e52eec1620417483b8f7773171800ed520914
+  judge_execution_config:
+    path: configs/paper_2026/e1_llm_judge_execution_v1_0.yaml
+    sha256: 4638d7db69b4fa703ed5794d1417cb78dbfc13bc66f9a6e199a8df3cbc6915c6
+  preparation_manifest:
+    path: outputs/paper_2026/e1_selection/preparation_manifest.json
+    sha256: b297256018d386cced2e1212b704bf8303a63397d74f9bc9d109b6494ac68253
+  observable_inputs:
+    path: outputs/paper_2026/e1_selection/observable_inputs.json
+    sha256: a48cfb02cc3ec2aeb3f4edadd5793ed356991bc5adf7509d5b1360f5e6dbf544
+  deterministic_selections:
+    path: outputs/paper_2026/e1_selection/deterministic_selections.json
+    sha256: 60c03e9ffd4da1f2dd8be592e4b6ffb87e12d113b9b3d0f55642af02e637b8a3
+  oracle_private:
+    path: outputs/paper_2026/e1_selection/oracle_private.json
+    sha256: d81bb442ef708f833f906acb0848ba31261f1fd8ad7e79f0b425b0ece2dcf618
+  dense_result:
+    path: outputs/paper_2026/e1_selection/dense_selections.json
+    sha256: 8d401a90f7e27ad95e9b40b9795c364fb50d697067693fd9e905aa5f97ae7de6
+  dense_result_lock:
+    path: configs/paper_2026/e1_dense_selection_v1_0.result.lock.json
+    sha256: 0e4032e1ebbc48c569d969fab364d0c3ff89143ed41cb1227a34f5fd20b575ea
+  judge_result:
+    path: outputs/paper_2026/e1_selection/llm_judge_selections.json
+    sha256: 86128f11f0d27cd0d163e344055b4214eae55c8ecbee8af10b1d046501aa80ff
+  judge_checkpoint:
+    path: outputs/paper_2026/e1_selection/llm_judge_checkpoint.jsonl
+    sha256: 67b60e31512e1af2e8a37589db610d2dc74cbfeb31723c6d8da98c63e1ee22e7
+  judge_result_lock:
+    path: configs/paper_2026/e1_llm_judge_selection_v1_0.result.lock.json
+    sha256: e1f549934dba8101fc1cb3e69807249b549b43e4306dace461f1e1434a3ee7eb
+  judge_prompt_source:
+    path: src/failure_memory/paper_2026/llm_judge.py
+    sha256: 472a773db92d61385f27f0ef5dc066be4127238eaf72afcb611eeef7bcf98303
+
+expected:
+  target_count: 541
+  changed_target_union_count: 403
+  judge_fallback_count: 0
+
+prompt_identity:
+  model_manifest_sha256: aa3e07db476dac6f3af8ad14958cb6febee947243f4bc29d7f6c5eda5c92e4ba
+  prompt_version: llm_applicability_judge_v0_1_frozen
+  prompt_source_sha256: 472a773db92d61385f27f0ef5dc066be4127238eaf72afcb611eeef7bcf98303
+  generation:
+    dtype: bfloat16
+    do_sample: false
+    thinking: disabled
+    max_new_tokens: 32
+    seed: 20260810
+
+runner:
+  path: experiments/paper_2026/finalize_e1_selection.py
+  sha256: aad5d7370c885ec07efa2f454ee3850af3ea8c8f9c910f6d5cebb3618b087b5f
+
+outputs:
+  protocol: outputs/paper_2026/e1_selection/protocol.md
+  selection_manifest: outputs/paper_2026/e1_selection/selection_manifest.json
+  prompt_manifest: outputs/paper_2026/e1_selection/prompt_manifest.json
+  results: outputs/paper_2026/e1_selection/results.json
+  analysis: outputs/paper_2026/e1_selection/analysis.json
+  exclusions: outputs/paper_2026/e1_selection/exclusions.json
+  source_manifest: outputs/paper_2026/e1_selection/source.sha256
+  reproduction: outputs/paper_2026/e1_selection/reproduction.md
+
+boundary:
+  evaluator_labels_read_only_after_non_oracle_selection_freeze: true
+  no_agent_action_generated: true
+  formal_agent_generation_authorized: false

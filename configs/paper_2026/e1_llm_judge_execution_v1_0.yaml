@@ -1,0 +1,62 @@
+schema_version: 1
+status: frozen_before_llm_judge_selection_outputs
+stage_id: e1_llm_judge_selection
+
+inputs:
+  e1_selection_config: configs/paper_2026/e1_selection_v1_0.yaml
+  e1_selection_config_sha256: b86cd1c624728e3385c2389b92656ce95d9a117128a7492c5bf786df557a1bcc
+  preparation_manifest: outputs/paper_2026/e1_selection/preparation_manifest.json
+  preparation_manifest_sha256: b297256018d386cced2e1212b704bf8303a63397d74f9bc9d109b6494ac68253
+  observable_inputs: outputs/paper_2026/e1_selection/observable_inputs.json
+  observable_inputs_sha256: a48cfb02cc3ec2aeb3f4edadd5793ed356991bc5adf7509d5b1360f5e6dbf544
+  target_count: 541
+  memory_count: 100
+
+judge:
+  lock: configs/paper_2026/llm_judge_v0_1.result.lock.json
+  lock_sha256: 6ffdbea36a2cf631f03f239383f153de3cde92394fbafaf3198b0bc983149d5d
+  prompt_source: src/failure_memory/paper_2026/llm_judge.py
+  prompt_source_sha256: 472a773db92d61385f27f0ef5dc066be4127238eaf72afcb611eeef7bcf98303
+  repository: Qwen/Qwen3-8B
+  remote_path: /home/amax/PycharmProjects/AINegoProject/src/Models/LLM/Qwen3-8B
+  manifest: configs/proper_v1/qwen3_8b_model.sha256
+  manifest_sha256: aa3e07db476dac6f3af8ad14958cb6febee947243f4bc29d7f6c5eda5c92e4ba
+
+candidate_policy:
+  population: frozen_tfidf_top10
+  anonymous_ids: C01_through_C10
+  source_identity_exposed: false
+  return_count: 1
+  invalid_output: fallback_to_C01_tfidf_rank1
+  format_repair_calls: 0
+
+generation:
+  dtype: bfloat16
+  do_sample: false
+  thinking: disabled
+  max_new_tokens: 32
+  maximum_input_tokens: 16000
+  seed: 20260810
+  batch_size: 1
+
+runtime:
+  environment: failure-memory-pilot
+  one_visible_gpu: true
+  minimum_free_mib: 20000
+  progress_interval: 10
+  resumable_checkpoint: true
+
+runner:
+  path: experiments/paper_2026/run_e1_llm_judge_selection.py
+  sha256: 57438822226f9fb5bd80cf31f2dee21fc294212f33f20be3a985c6d08c77f8dc
+
+outputs:
+  checkpoint_jsonl: outputs/paper_2026/e1_selection/llm_judge_checkpoint.jsonl
+  final: outputs/paper_2026/e1_selection/llm_judge_selections.json
+
+boundary:
+  observable_inputs_only: true
+  evaluator_private_file_read: false
+  benchmark_stratum_exposed_to_model: false
+  source_identity_or_provenance_exposed_to_model: false
+  formal_agent_generation: false

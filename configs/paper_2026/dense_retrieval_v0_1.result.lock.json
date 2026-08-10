@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "status": "dense_encoder_smoke_passed_and_frozen_before_e1_selection_outputs",
+  "method_name": "dense_bge_large_en_v1_5",
+  "config": {
+    "path": "configs/paper_2026/dense_retrieval_v0_1.yaml",
+    "sha256": "29216be2734ff1a6b93d3986ce542c96a1d0e4a284a074c76284d288596d229d"
+  },
+  "model": {
+    "repository": "BAAI/bge-large-en-v1.5",
+    "revision": "d4aa6901d3a41ba39fb536a557fa166f842b0e09",
+    "manifest_path": "configs/paper_2026/bge_large_en_v1_5.sha256",
+    "manifest_sha256": "23cb024808b1f01270c1cfa9093996378206dbe06a50960d9917334d52b6bae4",
+    "manifest_file_count": 6,
+    "hidden_size": 1024
+  },
+  "runner": {
+    "path": "scripts/paper_2026/smoke_dense_encoder.py",
+    "sha256": "61cafa5c2338197ee0d19ce552fcd4defc3d10df6bcafb096752dd7aa9887caa"
+  },
+  "smoke": {
+    "path": "outputs/paper_2026/p0_smoke_bge_large_en_v1_5.json",
+    "sha256": "10b0d4772d2e13e19ebfc5e67d35b4669f049b11e63a50d6a151f650653adece",
+    "physical_gpu_index": 0,
+    "gpu_name": "NVIDIA RTX 5880 Ada Generation",
+    "free_memory_before_mib": 48496,
+    "torch": "2.12.0",
+    "transformers": "5.8.1",
+    "cuda": "12.9",
+    "dtype": "float32",
+    "model_load_seconds": 0.834,
+    "encoding_seconds": 0.272,
+    "peak_cuda_memory_mib": 1291.43,
+    "embedding_shape": [3, 1024],
+    "relevant_score": 0.82397747,
+    "irrelevant_score": 0.62432754,
+    "smoke_passed": true
+  },
+  "checks": {
+    "all_six_manifest_files_verified": true,
+    "single_visible_gpu": true,
+    "first_token_embedding_shape_3_by_1024": true,
+    "unit_normalized_embeddings": true,
+    "relevant_above_irrelevant": true,
+    "float32": true
+  },
+  "audit_trail": {
+    "first_attempt_path": "outputs/paper_2026/p0_smoke_bge_large_en_v1_5_attempt1_runner_symlink_bug.json",
+    "first_attempt_sha256": "a2be64c319364fb329db16e3d0ae7006ed4f209931d2568890043c934a02aac1",
+    "first_attempt_disposition": "invalid_infrastructure_attempt_preserved_not_an_experimental_result",
+    "cause": "runner_rejected_standard_huggingface_snapshot_symlinks_into_repository_blobs",
+    "repair_scope": "manifest_verifier_only_no_model_or_selection_policy_change"
+  },
+  "boundary": {
+    "smoke_is_not_formal_experiment": true,
+    "model_outputs_are_synthetic_infrastructure_checks": true,
+    "new_formal_agent_generation_authorized": false,
+    "next_action": "freeze_llm_applicability_judge_then_finalize_p0"
+  }
+}

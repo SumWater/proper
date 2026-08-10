@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "status": "formal_per_target_environment_evaluation_complete",
+  "stage_id": "e2_e3_agent_evaluation",
+  "config": {
+    "path": "configs/paper_2026/agent_evaluation_v1_0.yaml",
+    "sha256": "ead5e7d86cb07fe4d5f6bff4d47bb0e8ec6f1c8db69c5fc7493f60860960784c"
+  },
+  "runner": {
+    "path": "experiments/paper_2026/evaluate_agent_outputs.py",
+    "sha256": "cd19e7af54afaeb10496aead669c7a3f8836fdc16b7a6e4606644dc42e1c6bda"
+  },
+  "outputs": {
+    "results": {
+      "path": "outputs/paper_2026/e2_e3_agent_evaluation/results.json",
+      "sha256": "e44a7743af57787c992039e46599df090ef1f4d24a983e6d03f3c0a4a82f6c86"
+    },
+    "analysis_preliminary": {
+      "path": "outputs/paper_2026/e2_e3_agent_evaluation/analysis_preliminary.json",
+      "sha256": "7d8f7b4ee37efc7090b7d01f157b2c93e2256c8aac3f46144560d46f4160b087"
+    },
+    "audit": {
+      "path": "outputs/paper_2026/e2_e3_agent_evaluation/audit.json",
+      "sha256": "4bacb893e9010379c62246dfc03d0b3e56bd2c1f3236048189067d5a11e8c4c6"
+    }
+  },
+  "counts": {
+    "targets": 541,
+    "models": 2,
+    "conditions": 8,
+    "logical_rows": 8656,
+    "changed_target_union": 403,
+    "preliminary_summary_rows": 96
+  },
+  "checks": {
+    "deterministic_rerun_hashes_passed": true,
+    "all_environment_prefixes_match_frozen_prompts": true,
+    "every_logical_row_has_independent_environment_reset": true,
+    "historical_environment_outcomes_reused": false,
+    "selective_model_output_regeneration_or_repair": false
+  },
+  "boundary": {
+    "formal_statistical_analysis_authorized": true,
+    "preliminary_counts_are_not_yet_multiplicity_corrected_conclusions": true
+  }
+}

@@ -1,0 +1,92 @@
+schema_version: 1
+status: frozen_before_formal_e2_e3_analysis
+stage_id: e2_e3_formal_analysis
+
+inputs:
+  evaluation_result_lock:
+    path: configs/paper_2026/agent_evaluation_v1_0.result.lock.json
+    sha256: 8d0fe413f0ec6f2757585dedfdb5ed8260d4cc7556b0c3cdff8adf3554cc9dcb
+  evaluation_results:
+    path: outputs/paper_2026/e2_e3_agent_evaluation/results.json
+    sha256: e44a7743af57787c992039e46599df090ef1f4d24a983e6d03f3c0a4a82f6c86
+  statistics_source:
+    path: src/failure_memory/paper_2026/statistics.py
+    sha256: 3723f723544c5142ba2f6f2f49e294e38452de14c6b77eb62c00a8dcccc22730
+
+models:
+  - qwen3_8b
+  - mistral_7b_instruct_v0_3
+
+conditions:
+  - no_memory
+  - tfidf
+  - dense
+  - llm_judge
+  - proper
+  - proper_no_gate
+  - proper_no_contradiction
+  - oracle
+
+strata:
+  - argument_omission
+  - transient_authorization
+  - timeout
+
+endpoint: recovery_validity
+alpha: 0.05
+
+confirmatory_comparisons:
+  - family: primary_proper_vs_tfidf
+    baseline: tfidf
+    treatment: proper
+  - family: key_secondary_selector_baselines
+    baseline: dense
+    treatment: proper
+  - family: key_secondary_selector_baselines
+    baseline: llm_judge
+    treatment: proper
+  - family: core_ablations
+    baseline: proper_no_gate
+    treatment: proper
+  - family: core_ablations
+    baseline: proper_no_contradiction
+    treatment: proper
+
+multiplicity:
+  method: holm
+  scope: within_each_prefrozen_family
+  primary_family_size: 2
+  key_secondary_family_size: 4
+  core_ablation_family_size: 4
+  all_valid_sensitivity_family_size: 2
+  stratified_primary_exploratory_family_size: 6
+
+bootstrap:
+  replicates: 10000
+  confidence_level: 0.95
+  base_seed: 20260810
+  pairing_unit: target
+
+expected:
+  logical_rows: 8656
+  target_count: 541
+  changed_target_union: 403
+  formal_comparison_count: 18
+
+analysis_boundary:
+  changed_target_union_is_primary_population: true
+  all_valid_targets_are_sensitivity_only: true
+  oracle_is_descriptive_only: true
+  invalid_model_outputs_retained_as_frozen_fallback_outcomes: true
+  no_complete_case_exclusion_for_parse_failures: true
+  no_cross_model_pooling: true
+  no_result_driven_threshold_or_method_changes: true
+
+runner:
+  path: experiments/paper_2026/analyze_e2_e3.py
+  sha256: f5d91416f0fa6204d5e65dbf6a60266fabbd83c67f8dc0bcacc516470657398b
+
+outputs:
+  analysis: outputs/paper_2026/e2_e3_formal_analysis/analysis.json
+  tables: outputs/paper_2026/e2_e3_formal_analysis/tables.json
+  audit: outputs/paper_2026/e2_e3_formal_analysis/audit.json

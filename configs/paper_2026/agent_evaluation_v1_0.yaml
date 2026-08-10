@@ -1,0 +1,88 @@
+schema_version: 1
+status: frozen_before_per_target_environment_evaluation
+stage_id: e2_e3_agent_evaluation
+
+inputs:
+  generation_result_lock:
+    path: configs/paper_2026/agent_generation_v1_0.result.lock.json
+    sha256: d18afcacf75a58f4625f5625fefe4c9a15beaf5019a5b2e470ea94b452edc93b
+  p0_source_manifest:
+    path: configs/paper_2026/p0_local_sources.sha256
+    sha256: eb06464f552ffcd18f3c0a4c7b63733eb9d05e97d149e81fb009f8b820e30a97
+  e1_selection_config:
+    path: configs/paper_2026/e1_selection_v1_0.yaml
+    sha256: b86cd1c624728e3385c2389b92656ce95d9a117128a7492c5bf786df557a1bcc
+  selector_capacity_config:
+    path: configs/paper_2026/selector_capacity_audit_v0_1.yaml
+    sha256: 90b3a7dbef2196ff68e19049307dce8d3a8d35fe716605240e904a97ee5383f6
+  selector_capacity_runner:
+    path: experiments/paper_2026/selector_capacity_audit.py
+    sha256: e401a84647b604c5f2908b030ee4087bd75b12179b29ee182648ec70ac279a45
+  agent_runtime:
+    path: experiments/proper_v1/agent_runtime.py
+    sha256: 8f0b61bf5c96b6f7923a55e975128d7341a3ccb71cf279dfbdc8bdcb5a1a5570
+  prompt_manifest:
+    path: outputs/paper_2026/agent_prompt_cache/agent_prompt_manifest.json
+    sha256: ce47156636016a4cccb1b9cccce59ca3451d130673b0470efa8327e6cc526996
+  historical_qwen_cache:
+    path: outputs/paper_2026/agent_prompt_cache/historical_qwen_cache.json
+    sha256: c8dacde54a3eeeeab1e6760348471c3e7d05d2d88a5751a3a1ec28dac9380aee
+  selection_manifest:
+    path: outputs/paper_2026/e1_selection/selection_manifest.json
+    sha256: 4cdec9ad2f4c5dc51029433a24bfca56c73d119b881e05fd3eac7f0047f011de
+  qwen_result:
+    path: outputs/paper_2026/e2_e3_agent_generation/qwen3_8b.results.json
+    sha256: 2dc86ccb09abd89cea02943b77cba1907f89bfcde8e2da0c6f825fa39a174eb9
+  mistral_result:
+    path: outputs/paper_2026/e2_e3_agent_generation/mistral_7b_instruct_v0_3.results.json
+    sha256: 247e68508ba8d6db4b2c555981ea7bd016b667872e614d074d2935cf4c1789d3
+
+models:
+  - qwen3_8b
+  - mistral_7b_instruct_v0_3
+
+conditions:
+  - no_memory
+  - tfidf
+  - dense
+  - llm_judge
+  - proper
+  - proper_no_gate
+  - proper_no_contradiction
+  - oracle
+
+expected:
+  p0_source_manifest_entries: 61
+  target_count: 541
+  unique_prompts_per_model: 1611
+  logical_rows_per_model: 4328
+  logical_rows_two_models: 8656
+  strata:
+    argument_omission: 189
+    transient_authorization: 175
+    timeout: 177
+
+evaluation:
+  recovery_horizon: 1
+  environment_reset_per_logical_row: true
+  strict_parser: agent_runtime.parse_decision
+  invalid_model_output_fallback: stop_invalid_model_output
+  primary_endpoint: recovery_validity
+  historical_model_output_cache_allowed: true
+  historical_environment_outcome_cache_allowed: false
+  selective_regeneration_or_parse_repair_allowed: false
+
+runner:
+  path: experiments/paper_2026/evaluate_agent_outputs.py
+  sha256: cd19e7af54afaeb10496aead669c7a3f8836fdc16b7a6e4606644dc42e1c6bda
+
+outputs:
+  results: outputs/paper_2026/e2_e3_agent_evaluation/results.json
+  analysis_preliminary: outputs/paper_2026/e2_e3_agent_evaluation/analysis_preliminary.json
+  audit: outputs/paper_2026/e2_e3_agent_evaluation/audit.json
+
+boundary:
+  generation_outputs_frozen_before_evaluation: true
+  evaluator_reads_no_condition_identity_during_environment_execution: false
+  condition_identity_used_only_for_row_mapping_and_reporting: true
+  formal_statistical_testing_deferred_until_evaluation_result_lock: true

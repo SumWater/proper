@@ -1,0 +1,70 @@
+schema_version: 1
+status: frozen_after_remote_smoke_before_selection_outputs
+method_name: qwen3_8b_tfidf_top10_applicability_judge
+role: strong_llm_reranker_baseline
+
+judge_model:
+  repository: Qwen/Qwen3-8B
+  family: qwen3
+  remote_path: /home/amax/PycharmProjects/AINegoProject/src/Models/LLM/Qwen3-8B
+  manifest: configs/proper_v1/qwen3_8b_model.sha256
+  manifest_file_count: 15
+  dtype: bfloat16
+  local_files_only: true
+  trust_remote_code: false
+  fixed_for_both_agent_model_families: true
+
+candidate_generation:
+  retriever: frozen_source_blind_tfidf
+  candidate_count: 10
+  candidate_order: descending_tfidf_then_lexical_experience_id
+  anonymous_candidate_ids: C01_through_C10
+  candidate_payload: natural_memory_text_only
+  source_identity_and_provenance_exposed_to_judge: false
+
+prompt:
+  implementation: src/failure_memory/paper_2026/llm_judge.py
+  version: llm_applicability_judge_v0_1_frozen
+  input_boundary:
+    - user_instruction
+    - failed_tool_name
+    - failed_arguments
+    - public_error_or_return
+    - remaining_retry_budget
+    - public_tool_schemas
+    - observable_history
+  forbidden:
+    - benchmark_or_scenario_name
+    - source_identity_or_provenance
+    - hidden_fault_plan_or_label
+    - gold_action_or_evaluator_outcome
+    - recoverability_or_applicability_label
+    - prior_model_outcome
+    - method_or_condition_name
+
+generation:
+  do_sample: false
+  max_new_tokens: 32
+  thinking: disabled
+  batch_size: 1
+  seed: 20260810
+
+selection:
+  return_count: 1
+  abstention: none
+  tie_breaker: lower_tfidf_candidate_position
+  strict_output_schema:
+    selected_candidate_id: supplied_anonymous_candidate_id
+  parser: exact_single_json_object_no_extra_keys
+  invalid_output_policy: deterministic_fallback_to_tfidf_rank1
+  format_repair_calls: 0
+
+smoke:
+  runner: scripts/paper_2026/smoke_llm_judge.py
+  minimum_free_gpu_mib: 20000
+  output: outputs/paper_2026/p0_smoke_llm_judge_qwen3_8b.json
+
+boundary:
+  design_chosen_without_formal_method_outcomes: true
+  smoke_is_development_only: true
+  formal_selection_outputs_authorized: false

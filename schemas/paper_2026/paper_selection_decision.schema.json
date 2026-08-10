@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paper_selection_decision.schema.json",
+  "title": "PROPER paper selection decision",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "method_version",
+    "variant",
+    "action",
+    "rank1_experience_id",
+    "selected_experience_id",
+    "selected_original_rank",
+    "selection_changed",
+    "abstained",
+    "reason_codes",
+    "minimum_extraction_confidence",
+    "candidate_evaluations"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "method_version": {"const": "proper_paper_2026_v0_1_frozen"},
+    "variant": {
+      "enum": ["proper", "proper_no_gate", "proper_no_contradiction"]
+    },
+    "action": {"enum": ["keep_rank1", "select", "abstain"]},
+    "rank1_experience_id": {"type": "string", "minLength": 1},
+    "selected_experience_id": {"type": "string", "minLength": 1},
+    "selected_original_rank": {"type": "integer", "minimum": 1},
+    "selection_changed": {"type": "boolean"},
+    "abstained": {"type": "boolean"},
+    "reason_codes": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "minimum_extraction_confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "candidate_evaluations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/candidate_evaluation"}
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"action": {"const": "select"}}},
+      "then": {
+        "properties": {
+          "selection_changed": {"const": true},
+          "abstained": {"const": false}
+        }
+      },
+      "else": {"properties": {"selection_changed": {"const": false}}}
+    },
+    {
+      "if": {"properties": {"action": {"const": "abstain"}}},
+      "then": {"properties": {"abstained": {"const": true}}},
+      "else": {"properties": {"abstained": {"const": false}}}
+    }
+  ],
+  "$defs": {
+    "candidate_evaluation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "experience_id",
+        "original_rank",
+        "observed_contradictions",
+        "active_contradictions",
+        "eligible",
+        "precondition_status",
+        "evidence_support",
+        "repair_target_agreement",
+        "trigger_evidence_agreement",
+        "tool_compatibility",
+        "extraction_confidence",
+        "sort_key"
+      ],
+      "properties": {
+        "experience_id": {"type": "string", "minLength": 1},
+        "original_rank": {"type": "integer", "minimum": 1},
+        "observed_contradictions": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "active_contradictions": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "eligible": {"type": "boolean"},
+        "precondition_status": {
+          "enum": ["satisfied", "unknown", "violated"]
+        },
+        "evidence_support": {
+          "enum": ["compatible", "uncertain", "incompatible"]
+        },
+        "repair_target_agreement": {"type": "integer", "minimum": 0},
+        "trigger_evidence_agreement": {"type": "integer", "minimum": 0},
+        "tool_compatibility": {"type": "integer", "minimum": 0},
+        "extraction_confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "sort_key": {
+          "type": "array",
+          "minItems": 9,
+          "maxItems": 9,
+          "items": {"type": ["number", "string"]}
+        }
+      }
+    }
+  }
+}

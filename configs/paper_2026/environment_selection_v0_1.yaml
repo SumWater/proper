@@ -1,0 +1,66 @@
+schema_version: 1
+status: current_environment_locked_waiting_model_b_manifest_and_gpu
+source_probe:
+  path: outputs/paper_2026/p0_conda_probe.json
+  sha256: a71f30a3b550b38eefd2fea3a5fde0646768a94898af83eefba4f5e3ac106f60
+
+current_lock:
+  path: outputs/paper_2026/p0_environment_lock.json
+  sha256: fb943ddec5a962883c0e70cd1b863ad8c5547a0847107a76a175b53174a02443
+  created_at_utc: 2026-08-09T09:14:09.602517+00:00
+  capture_passed: true
+  installed_distribution_count: 56
+  installed_distributions_sha256: 84e04908e2d4fda3fcd3fb6e66df477e8b1e4794567e5795589cf78b40e89230
+  pip_freeze_entry_count: 56
+  pip_freeze_normalized_sha256: fecf22e4297d1748af586a617e313f0e853bb56ce9903f92763e386ec51e2043
+  pip_package_set_matches_historical: true
+  conda_explicit_entry_count: 94
+  conda_explicit_sha256: ed07021e8c5584886c6a31c639811e0bfaf66143a10dc263ab27797dcfd72679
+  conda_explicit_matches_historical: true
+
+environment:
+  name: failure-memory-pilot
+  prefix: /home/amax/miniconda3/envs/failure-memory-pilot
+  python: 3.11.15
+  platform: linux-64
+  required_imports:
+    torch: 2.12.0
+    transformers: 5.8.1
+    accelerate: 1.13.0
+    scikit-learn: 1.5.1
+  optional_absent:
+    bitsandbytes: true
+    sentence-transformers: true
+  cuda:
+    torch_cuda: "12.9"
+    visible_device_count: 2
+    bf16_supported: true
+
+historical_identity:
+  environment_lock: configs/proper_v1/confirmatory_transient_authz_v1.environment.lock.json
+  environment_lock_sha256: b06394e92c8e84b7221d14d6fc5e4b45083102e9c73ba58b39d3bf544615c0e1
+  conda_explicit_lock: work/lab_conda_explicit.lock
+  conda_explicit_lock_sha256: ed07021e8c5584886c6a31c639811e0bfaf66143a10dc263ab27797dcfd72679
+  pip_freeze_lock: work/lab_pip_freeze.lock
+  pip_freeze_lock_sha256: e215575984b1f02914e781348564fa8426adb717154bc91a5d39d8af6ec8cc8b
+  core_versions_match_historical_lock: true
+
+execution_policy:
+  mutate_environment: false
+  quantization: none
+  model_dtype: bfloat16
+  one_agent_model_per_process: true
+  explicit_single_gpu_pin: true
+  minimum_free_gpu_memory_mib_before_smoke: 40000
+  foreign_gpu_process_action: wait_do_not_terminate
+  dense_backend: transformers_auto_model_mean_pooling
+  sentence_transformers_dependency_required: false
+
+formal_authorization:
+  smoke_run_authorized: false
+  formal_agent_run_authorized: false
+  remaining_gates:
+    - qwen_and_bge_load_smoke
+    - second_model_download_and_manifest
+    - second_model_load_and_json_decision_smoke
+    - generic_agent_adapter_validation

@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "status": "agent_prompt_cache_passed_before_new_agent_outputs",
+  "stage_id": "agent_prompt_cache",
+  "config": {
+    "path": "configs/paper_2026/agent_prompt_cache_v1_0.yaml",
+    "sha256": "c4626ad547a046209a3a07eeb3502859d9157f840253c540f6de8cafbcdc9cd7"
+  },
+  "runner": {
+    "path": "experiments/paper_2026/build_agent_prompt_cache.py",
+    "sha256": "78fa0e118797ef7b6705945e4e6be888f9cab3347031fba3f9469ad80939f8d2"
+  },
+  "outputs": {
+    "prompt_manifest": {
+      "path": "outputs/paper_2026/agent_prompt_cache/agent_prompt_manifest.json",
+      "sha256": "ce47156636016a4cccb1b9cccce59ca3451d130673b0470efa8327e6cc526996"
+    },
+    "historical_cache": {
+      "path": "outputs/paper_2026/agent_prompt_cache/historical_qwen_cache.json",
+      "sha256": "c8dacde54a3eeeeab1e6760348471c3e7d05d2d88a5751a3a1ec28dac9380aee"
+    },
+    "cache_join": {
+      "path": "outputs/paper_2026/agent_prompt_cache/cache_join.json",
+      "sha256": "24aafbd4bbff2cb642064db5fae82f338e66b297d4c2c46a8b16a908464a6a83"
+    },
+    "planned_calls": {
+      "path": "outputs/paper_2026/agent_prompt_cache/planned_calls.json",
+      "sha256": "f1e8d8cc0847b73ddd4b600081cc4b45f6702112a3a10335e2f00dfccbf54dea"
+    },
+    "audit": {
+      "path": "outputs/paper_2026/agent_prompt_cache/audit.json",
+      "sha256": "b74ee6d501100b8ed5e63ff837ad5168fb04edfc68ee36349d74f4c72e3793df"
+    },
+    "source_manifest": {
+      "path": "outputs/paper_2026/agent_prompt_cache/source.sha256",
+      "sha256": "4314980394778a777a458482c4c8faae7fdceb615ecea21753d0aa27acca371d"
+    }
+  },
+  "counts": {
+    "target_count": 541,
+    "conditions_per_target": 8,
+    "logical_prompt_rows_per_model": 4328,
+    "target_deduplicated_prompts_per_model": 1714,
+    "global_unique_prompts_per_model": 1611,
+    "qwen_exact_model_output_cache_hits": 903,
+    "qwen_new_calls": 708,
+    "mistral_new_calls": 1611,
+    "two_model_new_calls": 2319
+  },
+  "checks": {
+    "audit_passed": true,
+    "deterministic_rerun_hashes_passed": true,
+    "historical_model_output_cache_exact_identity_only": true,
+    "historical_outcomes_reused_across_instances": false,
+    "new_model_outputs_generated": false
+  },
+  "boundary": {
+    "formal_agent_generation_authorized": false,
+    "next_required_freeze": "e2_e3_agent_execution_config_and_runner"
+  }
+}

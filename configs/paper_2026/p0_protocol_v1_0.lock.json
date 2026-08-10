@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "status": "p0_complete_e1_offline_selection_authorized_agent_generation_blocked",
+  "frozen_date": "2026-08-10",
+  "protocol": {
+    "version": "1.0-frozen",
+    "path": "docs/paper_2026/protocol.md",
+    "sha256": "8e8f29fa03dcf82910aeaee751854ac8a45b4840bad74c0de26e498a661b6edd"
+  },
+  "source_manifest": {
+    "path": "configs/paper_2026/p0_local_sources.sha256",
+    "must_pass_before_e1": true
+  },
+  "historical_reuse": {
+    "audit_path": "docs/paper_2026/historical_reuse_audit.md",
+    "audit_sha256": "25fac695c8cc8acd962dba2ae6767cc1e3b6022a5c36a0e818cb35b6ab92b470",
+    "historical_outputs_observed_before_freeze": true
+  },
+  "runtime_and_models": {
+    "dual_agent_runtime_lock_path": "configs/paper_2026/dual_agent_runtime_v0_1.lock.json",
+    "dual_agent_runtime_lock_sha256": "a7fcaa3bed94015efb790ad42fd0563036a22892a3285d8230860b2ea5c05805",
+    "model_b_lock_path": "configs/paper_2026/model_b_manifest_v0_1.lock.json",
+    "model_b_lock_sha256": "548cf385789aaacedb2ac13618a1c21e4a8b7ce16836781c1e5e325382248da4",
+    "qwen_manifest_path": "configs/proper_v1/qwen3_8b_model.sha256",
+    "qwen_manifest_sha256": "aa3e07db476dac6f3af8ad14958cb6febee947243f4bc29d7f6c5eda5c92e4ba"
+  },
+  "selection_methods": {
+    "tfidf": "frozen_source_blind_rank1",
+    "dense_lock_path": "configs/paper_2026/dense_retrieval_v0_1.result.lock.json",
+    "dense_lock_sha256": "7207d85ccbe82120daf0f90d58f0a9e8a7f13976494877a92fbe13a691596d55",
+    "llm_judge_lock_path": "configs/paper_2026/llm_judge_v0_1.result.lock.json",
+    "llm_judge_lock_sha256": "6ffdbea36a2cf631f03f239383f153de3cde92394fbafaf3198b0bc983149d5d",
+    "selector_capacity_lock_path": "configs/paper_2026/selector_capacity_audit_v0_1.result.lock.json",
+    "selector_capacity_lock_sha256": "be2bf083d78854a56d98136977b75deb1d7e8c4bb0fd02bf3d572bc07843fe01",
+    "selector_policy_path": "configs/paper_2026/selector_policy_v0_1.yaml",
+    "selector_policy_sha256": "f2d3b0f085e02a8163ed6df3346908a842e2571371b0933923214442a7d276a2",
+    "oracle_role": "descriptive_selection_upper_bound_only"
+  },
+  "statistics": {
+    "path": "configs/paper_2026/statistics_v0_1.yaml",
+    "sha256": "95f414423db55748b86b67a6375162229e7a9a3cf1fe7484e0b2c4fc066254a3"
+  },
+  "frozen_inputs": {
+    "dev_path": "work/toolmisusebench_sample/dev.jsonl",
+    "dev_sha256": "a5a2b49b28c66f01bdbac37966c00cca9c6a1027a6d4b5b3a8c1d1d359db27e3",
+    "public_test_path": "work/toolmisusebench_test/test_public.jsonl",
+    "public_test_sha256": "12c5e1e93926f4089dfc8d0c60cea53b556057360562375510744858fc6f1161",
+    "memory_manifest_path": "work/memory_bank_prepared.json",
+    "memory_manifest_file_sha256": "7b1552099d28553eb9e6081df69bd52cc26e09082f40461de2687ac0feaa645d",
+    "memory_payload_sha256": "b2841f434e2ffd89a11de73be3fe7c3d5dc0dbd42dd9d2990b6b49a0b4ff6c42",
+    "target_count": 541,
+    "memory_source_count": 100
+  },
+  "authorization": {
+    "e1_offline_selection": true,
+    "e1_changed_target_union_freeze": true,
+    "formal_agent_generation": false,
+    "e2_or_e3_generation": false,
+    "reason_agent_generation_blocked": "e1_union_agent_call_count_and_stage_prompt_manifest_not_yet_frozen"
+  },
+  "post_p0_items_not_blocking_e1_selection": [
+    "exact_changed_target_union_size",
+    "exact_planned_agent_call_count",
+    "external_e6_capacity_decision",
+    "second_annotator_availability"
+  ]
+}

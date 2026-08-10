@@ -1,0 +1,31 @@
+schema_version: 1
+status: pinned_download_and_remote_bf16_smoke_passed
+role: second_cross_family_agent_model
+repository: mistralai/Mistral-7B-Instruct-v0.3
+revision: c170c708c41dac9275d15a8fff4eca08d52bab71
+license: apache-2.0
+architecture: MistralForCausalLM
+parameters: 7248023552
+planned_remote_path: /home/amax/PycharmProjects/AINegoProject/src/Models/LLM/Mistral-7B-Instruct-v0.3
+selection_reasons:
+  - non_qwen_model_family
+  - instruction_tuned
+  - transformers_compatible_text_only_architecture
+  - apache_2_0_weights
+  - bf16_fits_single_49140_mib_gpu
+  - ungated_repository
+download_policy:
+  download_authorized: true
+  authorized_date: 2026-08-09
+  prerequisite: remote_storage_check_passes
+  storage_gate_evidence:
+    path: outputs/paper_2026/p0_remote_storage.json
+    sha256: a4576f8a07ec028c6ac8e896296e4a4dc5e6398e565297a6c365fae97623aa3b
+    generated_at_utc: 2026-08-09T04:28:03.858880+00:00
+    target_free_gb_decimal: 986.69
+    decision: pass
+  use_pinned_revision: true
+  exclude_duplicate_consolidated_checkpoint: true
+  expected_transformers_weight_shards: 3
+  approximate_download_gb: 14.6
+  generate_local_file_manifest_after_download: true

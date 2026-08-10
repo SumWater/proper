@@ -1,0 +1,88 @@
+schema_version: 1
+status: frozen_before_agent_prompt_cache_outputs
+stage_id: agent_prompt_cache
+
+inputs:
+  e1_result_lock:
+    path: configs/paper_2026/e1_selection_v1_0.result.lock.json
+    sha256: f3d5faa915e986f326108af025920b5299d25049bb3a21a94dda945db05a0c21
+  selection_manifest:
+    path: outputs/paper_2026/e1_selection/selection_manifest.json
+    sha256: 4cdec9ad2f4c5dc51029433a24bfca56c73d119b881e05fd3eac7f0047f011de
+  observable_inputs:
+    path: outputs/paper_2026/e1_selection/observable_inputs.json
+    sha256: a48cfb02cc3ec2aeb3f4edadd5793ed356991bc5adf7509d5b1360f5e6dbf544
+  agent_runtime:
+    path: experiments/proper_v1/agent_runtime.py
+    sha256: 8f0b61bf5c96b6f7923a55e975128d7341a3ccb71cf279dfbdc8bdcb5a1a5570
+  dual_agent_runtime_lock:
+    path: configs/paper_2026/dual_agent_runtime_v0_1.lock.json
+    sha256: a7fcaa3bed94015efb790ad42fd0563036a22892a3285d8230860b2ea5c05805
+  conda_explicit_lock:
+    path: work/lab_conda_explicit.lock
+    sha256: ed07021e8c5584886c6a31c639811e0bfaf66143a10dc263ab27797dcfd72679
+  historical_argument_omission:
+    path: outputs/proper_v1/confirmatory_gate_v1/results.json
+    sha256: 6e44ef0eba2bf7efeed7163d61a621d2a1a5385b6aa507f7ce0417222d2fceb8
+  historical_transient_authz:
+    path: outputs/proper_v1/confirmatory_transient_authz_v1/results.json
+    sha256: 26fd9c062a3d462f7cefd164c3d9f7bc5460b06a2bd16cd66e5b177e1c0cd276
+  historical_timeout:
+    path: outputs/proper_v2/timeout_pair_v2/results.json
+    sha256: 7278518e12dbe6c2c9805464678e24d82478f9270875377aa80cafbcdd2c91f9
+
+historical_sources:
+  - historical_argument_omission
+  - historical_transient_authz
+  - historical_timeout
+
+conditions:
+  no_memory: no_memory
+  memory_conditions:
+    - tfidf
+    - dense
+    - llm_judge
+    - proper
+    - proper_no_gate
+    - proper_no_contradiction
+    - oracle
+
+expected:
+  target_count: 541
+  memory_count: 100
+  logical_prompt_rows_per_model: 4328
+  target_deduplicated_prompts_per_model: 1714
+  unique_prompts_per_model: 1611
+  union_unique_prompts_per_model: 1353
+
+identity:
+  prompt_builder: agent_runtime.build_prompt
+  prompt_builder_sha256: 8f0b61bf5c96b6f7923a55e975128d7341a3ccb71cf279dfbdc8bdcb5a1a5570
+  qwen_model_manifest_sha256: aa3e07db476dac6f3af8ad14958cb6febee947243f4bc29d7f6c5eda5c92e4ba
+  mistral_model_manifest_sha256: d2a310199e0a0516553c319e2a0c3f7564b07cfc8454febd8e49d83e5c73dace
+  conda_explicit_sha256: ed07021e8c5584886c6a31c639811e0bfaf66143a10dc263ab27797dcfd72679
+  generation:
+    backend: transformers
+    do_sample: false
+    temperature: 0.0
+    enable_thinking: false
+    max_new_tokens: 256
+    recovery_horizon: 1
+    strict_json_decision_parser: agent_runtime.parse_decision
+
+runner:
+  path: experiments/paper_2026/build_agent_prompt_cache.py
+  sha256: 78fa0e118797ef7b6705945e4e6be888f9cab3347031fba3f9469ad80939f8d2
+
+outputs:
+  prompt_manifest: outputs/paper_2026/agent_prompt_cache/agent_prompt_manifest.json
+  historical_cache: outputs/paper_2026/agent_prompt_cache/historical_qwen_cache.json
+  cache_join: outputs/paper_2026/agent_prompt_cache/cache_join.json
+  planned_calls: outputs/paper_2026/agent_prompt_cache/planned_calls.json
+  audit: outputs/paper_2026/agent_prompt_cache/audit.json
+  source_manifest: outputs/paper_2026/agent_prompt_cache/source.sha256
+
+boundary:
+  historical_cache_requires_exact_raw_prompt_and_identity: true
+  no_new_model_outputs_generated: true
+  formal_agent_generation_authorized: false

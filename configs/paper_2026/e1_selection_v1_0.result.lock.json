@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "status": "e1_offline_selection_complete_and_changed_target_union_frozen",
+  "stage_id": "e1_selection",
+  "finalization_config": {
+    "path": "configs/paper_2026/e1_finalize_v1_0.yaml",
+    "sha256": "c1bab96e86831e823b86ad8875e51a7c1b0c53787ce109170210e2e0df735525"
+  },
+  "finalizer": {
+    "path": "experiments/paper_2026/finalize_e1_selection.py",
+    "sha256": "aad5d7370c885ec07efa2f454ee3850af3ea8c8f9c910f6d5cebb3618b087b5f"
+  },
+  "artifacts": {
+    "selection_manifest": {
+      "path": "outputs/paper_2026/e1_selection/selection_manifest.json",
+      "sha256": "4cdec9ad2f4c5dc51029433a24bfca56c73d119b881e05fd3eac7f0047f011de"
+    },
+    "prompt_manifest": {
+      "path": "outputs/paper_2026/e1_selection/prompt_manifest.json",
+      "sha256": "034a794c5449d726a7e80f05ec0dfa4fe0ed58d55503ab7264ae00c41967c738"
+    },
+    "results": {
+      "path": "outputs/paper_2026/e1_selection/results.json",
+      "sha256": "3c156922115128d17c5bf2a46bdc9dff5b44f2fc51f6e623f89b330581e3bfd2"
+    },
+    "analysis": {
+      "path": "outputs/paper_2026/e1_selection/analysis.json",
+      "sha256": "5c84d3aeda8de387e840ec289c08ea7626e2e66c7d9a112fdd6fd4dcd57d6d8b"
+    },
+    "exclusions": {
+      "path": "outputs/paper_2026/e1_selection/exclusions.json",
+      "sha256": "9bbfb044a39441d809d2caa8c8bac9cc5f69933aa0c5a60080d87bb2192901f8"
+    },
+    "source_manifest": {
+      "path": "outputs/paper_2026/e1_selection/source.sha256",
+      "sha256": "736ab65afefdc81b3064c60c0573f487d06cc01c14c2fb534a03d64ceaf29594",
+      "entry_count": 16,
+      "verification_failures": 0
+    },
+    "protocol": {
+      "path": "outputs/paper_2026/e1_selection/protocol.md",
+      "sha256": "cd312e40be7930e88c9a24f53ece0b2007b932f89ba502a0827b70bab28acb41"
+    },
+    "reproduction": {
+      "path": "outputs/paper_2026/e1_selection/reproduction.md",
+      "sha256": "2be88eecbe2d224ff42d25c0d0e3d01281b4279a3058bfc1cc60e50855a44b0d"
+    }
+  },
+  "counts": {
+    "targets": 541,
+    "memories": 100,
+    "changed_target_union": 403,
+    "outside_union": 138,
+    "union_by_stratum": {
+      "argument_omission": 152,
+      "transient_authorization": 146,
+      "timeout": 105
+    },
+    "excluded_targets": 0
+  },
+  "changed_from_tfidf": {
+    "dense": 250,
+    "llm_judge": 244,
+    "proper": 205,
+    "proper_no_gate": 300,
+    "proper_no_contradiction": 241
+  },
+  "selection_applicability": {
+    "tfidf": 348,
+    "dense": 383,
+    "llm_judge": 340,
+    "proper": 513,
+    "proper_no_gate": 438,
+    "proper_no_contradiction": 531,
+    "oracle": 541
+  },
+  "paired_selection_errors_vs_tfidf": {
+    "dense": {"corrections": 79, "new_errors": 44},
+    "llm_judge": {"corrections": 68, "new_errors": 76},
+    "proper": {"corrections": 165, "new_errors": 0},
+    "proper_no_gate": {"corrections": 165, "new_errors": 75},
+    "proper_no_contradiction": {"corrections": 183, "new_errors": 0}
+  },
+  "planned_agent_workload_before_historical_cache_join": {
+    "logical_condition_rows_two_models": 8656,
+    "unique_prompts_per_model_all_targets": 1715,
+    "unique_prompts_two_models_all_targets": 3430,
+    "unique_prompts_per_model_union_only": 1439,
+    "unique_prompts_two_models_union_only": 2878
+  },
+  "boundary": {
+    "non_oracle_selections_frozen_before_evaluator_labels_read": true,
+    "agent_action_generated": false,
+    "formal_agent_generation_authorized": false,
+    "next_gate": "freeze_shared_agent_prompt_serializer_and_complete_historical_qwen_cache_join"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "status": "pass_and_selector_frozen_before_new_formal_model_outputs",
+  "method_version": "proper_paper_2026_v0_1_frozen",
+  "config": {
+    "path": "configs/paper_2026/selector_capacity_audit_v0_1.yaml",
+    "sha256": "90b3a7dbef2196ff68e19049307dce8d3a8d35fe716605240e904a97ee5383f6"
+  },
+  "selector_policy": {
+    "path": "configs/paper_2026/selector_policy_v0_1.yaml",
+    "sha256": "f2d3b0f085e02a8163ed6df3346908a842e2571371b0933923214442a7d276a2"
+  },
+  "runner": {
+    "path": "experiments/paper_2026/selector_capacity_audit.py",
+    "sha256": "e401a84647b604c5f2908b030ee4087bd75b12179b29ee182648ec70ac279a45"
+  },
+  "selector_sources": {
+    "boundary_sha256": "8b152a1fa5e7acbeb41c983e2f33c09486dcbd283eab98e92dd3c05afee951ee",
+    "contracts_sha256": "8590eeb42e3541ac96d1fd434b35c38e18618a3d3df24ade80f289a6c679f3fd",
+    "selector_sha256": "52ec0020ae2598f0d1473aad662b78cf83374856e30cab012b185247b26b4297",
+    "decision_schema_sha256": "2e42a4a8fc01344f56be8bd59a18f3ffd464d30888bf0251e137116da5713c03"
+  },
+  "result": {
+    "path": "outputs/paper_2026/e1_selector_capacity/selector_capacity_audit.json",
+    "sha256": "b75e6424d8903fa72117867758f598f01d75081a0f704b4c92cb8526a464f636"
+  },
+  "inputs": {
+    "dev_sha256": "a5a2b49b28c66f01bdbac37966c00cca9c6a1027a6d4b5b3a8c1d1d359db27e3",
+    "public_test_sha256": "12c5e1e93926f4089dfc8d0c60cea53b556057360562375510744858fc6f1161",
+    "memory_payload_sha256": "b2841f434e2ffd89a11de73be3fe7c3d5dc0dbd42dd9d2990b6b49a0b4ff6c42"
+  },
+  "counts": {
+    "target_count": 541,
+    "argument_omission_count": 189,
+    "transient_authorization_count": 175,
+    "timeout_count": 177,
+    "full_proper_changed_from_tfidf": 205,
+    "no_gate_different_from_full": 95,
+    "no_contradiction_different_from_full": 36,
+    "changed_target_union_across_variants": 320,
+    "full_proper_rank1_errors_corrected": 165,
+    "full_proper_new_policy_errors": 0,
+    "no_gate_new_policy_errors": 75,
+    "no_contradiction_active_contradicted_selections": 36
+  },
+  "boundary": {
+    "model_loaded": false,
+    "model_outputs_read_or_generated": false,
+    "selector_hidden_labels_used": false,
+    "formal_agent_generation_authorized": false
+  }
+}

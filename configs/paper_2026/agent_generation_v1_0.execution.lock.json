@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "status": "formal_agent_generation_authorized_before_outputs",
+  "stage_id": "e2_e3_agent_generation",
+  "config": {
+    "path": "configs/paper_2026/agent_generation_v1_0.yaml",
+    "sha256": "6a0b702313feb1d91bed3577fd33fc4897e3106b4c794e082779205a1710e66e"
+  },
+  "runner": {
+    "path": "experiments/paper_2026/run_agent_generation.py",
+    "sha256": "7ad44aaf6679e70ac1d4271c7a94eff68915aabf1e83285804a3602da8874de6"
+  },
+  "validated_plans": {
+    "qwen3_8b": {
+      "cache_hits": 903,
+      "new_calls": 708,
+      "checkpoint_completed_before_authorization": 0
+    },
+    "mistral_7b_instruct_v0_3": {
+      "cache_hits": 0,
+      "new_calls": 1611,
+      "checkpoint_completed_before_authorization": 0
+    }
+  },
+  "checks": {
+    "config_and_all_inputs_hash_verified": true,
+    "prompt_and_message_hashes_verified": true,
+    "both_validate_only_runs_passed": true,
+    "validate_only_loaded_model": false,
+    "validate_only_wrote_output": false,
+    "model_files_verified_before_each_formal_load": true,
+    "checkpoint_resume_requires_full_identity": true,
+    "scoped_unit_tests_passed": 26,
+    "full_test_suite_failures_are_missing_unsynchronized_legacy_artifacts": true
+  },
+  "boundary": {
+    "formal_agent_generation_authorized": true,
+    "historical_reuse_scope": "qwen_model_output_only",
+    "per_target_environment_evaluation_deferred_until_generation_audit": true
+  }
+}
