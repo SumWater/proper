@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "status": "capacity_not_yet_qualified_no_model_run_authorized",
+  "stage_id": "e6_external_capacity_gate",
+  "config": {
+    "path": "configs/paper_2026/e6_capacity_gate_v1_0.yaml",
+    "sha256": "ed29783acfc0a10a6a3fa64b99092db68d081bd93b23765ee50e4eb8a4c54f54"
+  },
+  "runner": {
+    "path": "experiments/paper_2026/audit_e6_capacity.py",
+    "sha256": "e687132b9df818f0cb88e372ce768c9e08f1135bbadf28b5e9d27b9a22d63d56"
+  },
+  "outputs": {
+    "capacity": {
+      "path": "outputs/paper_2026/e6_capacity_gate/capacity.json",
+      "sha256": "4b638471794952c9d914da6b447ca121ed5ccd06adc1836f92e8d98a1ea6a2ec"
+    },
+    "audit": {
+      "path": "outputs/paper_2026/e6_capacity_gate/audit.json",
+      "sha256": "65b5a0e53954e67affe59bc08afc189d75df065451165fba301b2ab650bdc9ef"
+    },
+    "report": {
+      "path": "outputs/paper_2026/e6_capacity_gate/report.md",
+      "sha256": "d71f8e7829e01f02ab6a346522819dbbad6b2df16fea51dd58c2fe3717e3aa51"
+    }
+  },
+  "capacity": {
+    "minimum_qualified_heldout_tasks": 30,
+    "minimum_failure_or_recovery_families": 3,
+    "toolsandbox_qualified_tasks": 0,
+    "tau3_prospective_heldout_tasks": 54,
+    "tau3_currently_qualified_heldout_tasks": 0,
+    "tau3_local_development_pairs": 12,
+    "formal_remote_tau3_branch_validations": 0
+  },
+  "decision": {
+    "current_capacity_gate_passed": false,
+    "e6_model_or_gpu_run_authorized": false,
+    "continue_cpu_only_tau3_qualification": true,
+    "qualification_stop_review_date": "2026-08-17",
+    "remote_branch_pass_alone_will_not_create_heldout_capacity": true
+  },
+  "checks": {
+    "deterministic_rerun_hashes_passed": true,
+    "prospective_tasks_not_relabelled_as_qualified": true,
+    "development_pairs_not_relabelled_as_heldout": true,
+    "no_model_or_environment_execution": true
+  },
+  "next_stage": "formal_remote_tau3_development_branch_validation"
+}

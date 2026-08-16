@@ -1,0 +1,72 @@
+schema_version: 1
+status: frozen_descriptive_e5_after_e4_lock
+stage_id: e5_effect_concentration
+
+inputs:
+  e4_result_lock:
+    path: configs/paper_2026/e4_diagnostics_v1_0.result.lock.json
+    sha256: 50635129faf45741a7640804aa2368e01471caa7d0e23eb0212df4cce6bda658
+  evaluation_results:
+    path: outputs/paper_2026/e2_e3_agent_evaluation/results.json
+    sha256: e44a7743af57787c992039e46599df090ef1f4d24a983e6d03f3c0a4a82f6c86
+  selection_manifest:
+    path: outputs/paper_2026/e1_selection/selection_manifest.json
+    sha256: 4cdec9ad2f4c5dc51029433a24bfca56c73d119b881e05fd3eac7f0047f011de
+  deterministic_selections:
+    path: outputs/paper_2026/e1_selection/deterministic_selections.json
+    sha256: 60c03e9ffd4da1f2dd8be592e4b6ffb87e12d113b9b3d0f55642af02e637b8a3
+  observable_inputs:
+    path: outputs/paper_2026/e1_selection/observable_inputs.json
+    sha256: a48cfb02cc3ec2aeb3f4edadd5793ed356991bc5adf7509d5b1360f5e6dbf544
+
+models:
+  - qwen3_8b
+  - mistral_7b_instruct_v0_3
+
+comparisons:
+  - name: primary_proper_vs_tfidf
+    population: changed_target_union
+    baseline: tfidf
+    treatment: proper
+    group_types:
+      - stratum
+      - failed_tool
+      - task_domain
+      - proper_selected_memory
+  - name: gate_proper_vs_no_gate
+    population: gate_interventions
+    baseline: proper_no_gate
+    treatment: proper
+    group_types:
+      - stratum
+      - failed_tool
+      - task_domain
+      - proper_selected_memory
+
+expected:
+  logical_rows: 8656
+  changed_target_union: 403
+  gate_interventions: 95
+
+definitions:
+  group_contribution: paired_outcome_counts_within_mutually_exclusive_group
+  positive_transfer_hhi: herfindahl_index_over_positive_discordant_counts
+  discordance_hhi: herfindahl_index_over_all_discordant_counts
+  leave_one_group_out: exclude_group_targets_without_retraining_or_reselection
+  sign_reversal: leave_one_out_effect_times_full_effect_is_nonpositive
+
+interpretation_boundary:
+  descriptive_not_new_confirmatory_family: true
+  leave_one_group_out_is_not_selector_retraining: true
+  selected_memory_grouping_uses_frozen_proper_selection: true
+  task_and_tool_groups_are_derived_without_model_outputs: true
+  no_new_model_inference_or_environment_execution: true
+  no_result_driven_group_merging_or_threshold: true
+
+runner:
+  path: experiments/paper_2026/analyze_e5_concentration.py
+  sha256: 46374c020a4ac41f25aa8eb98426540c193a01855ae7a65d3fbd77b0b3d7d7b3
+
+outputs:
+  concentration: outputs/paper_2026/e5_concentration/concentration.json
+  audit: outputs/paper_2026/e5_concentration/audit.json

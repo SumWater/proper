@@ -1,0 +1,103 @@
+schema_version: 1
+status: frozen_descriptive_e4_after_e2_e3_lock
+stage_id: e4_risk_and_mechanism_diagnostics
+
+inputs:
+  e2_e3_analysis_result_lock:
+    path: configs/paper_2026/e2_e3_analysis_v1_0.result.lock.json
+    sha256: 4eeb9d4fce5800e9d8ca3bd861e397fb117bed4cbf325c741f45e59637a49a98
+  evaluation_result_lock:
+    path: configs/paper_2026/agent_evaluation_v1_0.result.lock.json
+    sha256: 8d0fe413f0ec6f2757585dedfdb5ed8260d4cc7556b0c3cdff8adf3554cc9dcb
+  evaluation_results:
+    path: outputs/paper_2026/e2_e3_agent_evaluation/results.json
+    sha256: e44a7743af57787c992039e46599df090ef1f4d24a983e6d03f3c0a4a82f6c86
+  selection_manifest:
+    path: outputs/paper_2026/e1_selection/selection_manifest.json
+    sha256: 4cdec9ad2f4c5dc51029433a24bfca56c73d119b881e05fd3eac7f0047f011de
+  deterministic_selections:
+    path: outputs/paper_2026/e1_selection/deterministic_selections.json
+    sha256: 60c03e9ffd4da1f2dd8be592e4b6ffb87e12d113b9b3d0f55642af02e637b8a3
+  observable_inputs:
+    path: outputs/paper_2026/e1_selection/observable_inputs.json
+    sha256: a48cfb02cc3ec2aeb3f4edadd5793ed356991bc5adf7509d5b1360f5e6dbf544
+
+models:
+  - qwen3_8b
+  - mistral_7b_instruct_v0_3
+
+populations:
+  - changed_target_union
+  - all_valid_targets
+
+strata:
+  - argument_omission
+  - transient_authorization
+  - timeout
+
+memory_conditions:
+  - tfidf
+  - dense
+  - llm_judge
+  - proper
+  - proper_no_gate
+  - proper_no_contradiction
+  - oracle
+
+proper_variants:
+  - proper
+  - proper_no_gate
+  - proper_no_contradiction
+
+risk_comparisons:
+  - {baseline: no_memory, treatment: tfidf}
+  - {baseline: no_memory, treatment: dense}
+  - {baseline: no_memory, treatment: llm_judge}
+  - {baseline: no_memory, treatment: proper}
+  - {baseline: no_memory, treatment: proper_no_gate}
+  - {baseline: no_memory, treatment: proper_no_contradiction}
+  - {baseline: no_memory, treatment: oracle}
+  - {baseline: tfidf, treatment: proper}
+  - {baseline: dense, treatment: proper}
+  - {baseline: llm_judge, treatment: proper}
+
+interventions:
+  - name: gate_component
+    baseline: proper_no_gate
+    treatment: proper
+  - name: contradiction_component
+    baseline: proper_no_contradiction
+    treatment: proper
+  - name: proper_vs_tfidf_selector
+    baseline: tfidf
+    treatment: proper
+
+expected:
+  target_count: 541
+  changed_target_union: 403
+  logical_rows: 8656
+
+definitions:
+  positive_transfer: baseline_failure_and_treatment_success_on_same_target
+  negative_transfer: baseline_success_and_treatment_failure_on_same_target
+  decision_changed: canonical_agent_decision_differs
+  gate_intervention: proper_and_proper_no_gate_select_different_memory_identity
+  contradiction_intervention: proper_and_proper_no_contradiction_select_different_memory_identity
+
+interpretation_boundary:
+  descriptive_not_new_confirmatory_family: true
+  no_new_model_inference: true
+  no_new_environment_execution: true
+  no_selective_regeneration_or_parse_repair: true
+  no_method_threshold_prompt_or_population_change: true
+  invalid_outputs_retained_as_frozen_fallbacks: true
+  execution_failure_categories_use_only_frozen_result_fields: true
+
+runner:
+  path: experiments/paper_2026/diagnose_e4.py
+  sha256: 9b3c005ba3ddb3f997a538c09828cd32f51ff1a250d31174d588603c08fb196e
+
+outputs:
+  diagnostics: outputs/paper_2026/e4_diagnostics/diagnostics.json
+  audit: outputs/paper_2026/e4_diagnostics/audit.json
+  report: outputs/paper_2026/e4_diagnostics/report.md

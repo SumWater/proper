@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "status": "recorded_current_paper_e6_stopped",
+  "stage_id": "e6_remote_cpu_gate_record",
+  "config": {
+    "path": "configs/paper_2026/e6_remote_cpu_gate_20260812.yaml",
+    "sha256": "169e8c29ce9bd9bb134f74b79bcd2037f79ef76234f9d6d22a9dbd9642faa77f"
+  },
+  "runner": {
+    "path": "experiments/paper_2026/record_e6_remote_cpu_gate.py",
+    "sha256": "30c5b54fc6955d45546ba05f837473a4a76f99f808dd8f15225879c64abd577a"
+  },
+  "source_results": {
+    "remote_validation": {
+      "path": "outputs/paper_2026/20260812T040705Z-amax-ae0d3ec6b8e8/remote_validation.json",
+      "sha256": "fe2f53b844e5862144b12d66af9db65279721174af655662f795b5b498654693"
+    },
+    "branch_screen": {
+      "path": "outputs/paper_2026/20260812T040705Z-amax-ae0d3ec6b8e8/branch_screen.json",
+      "sha256": "24b9967ac3790d5056f716899791469ee017400fc7a34a32d8adecb14a579eae"
+    }
+  },
+  "outputs": {
+    "record": {
+      "path": "outputs/paper_2026/e6_remote_cpu_gate_record/record.json",
+      "sha256": "45e9a847a1d608ab269a35964636f4ef088b27c61737a98b32a36ce735149a27"
+    },
+    "audit": {
+      "path": "outputs/paper_2026/e6_remote_cpu_gate_record/audit.json",
+      "sha256": "bcad45c6916aff38c76ccb85d39673f21677f0c359b2a29ae3a29b086cc6968f"
+    },
+    "report": {
+      "path": "outputs/paper_2026/e6_remote_cpu_gate_record/report.md",
+      "sha256": "ca91431f97862e9e5ada29ad1ecee6103027624fb04640bc78a8bece56ca96bd"
+    },
+    "future_branch_handoff": {
+      "path": "docs/paper_2026/e6_separate_branch_handoff.md",
+      "sha256": "75062a900edde1a91479ba5f934007b9a5f513ba36b2499626754e44fcc81c8e"
+    }
+  },
+  "remote_identity": {
+    "run_id": "20260812T040705Z-amax-ae0d3ec6b8e8",
+    "project_revision": "ae0d3ec6b8e8f32ab9b451665230a97806943540",
+    "tau_revision": "fc0055dc4e0a316c3f83133267fbd6faaa770992",
+    "source_manifest_sha256": "5e8cb2958a5e2703a3e8a903ed2b7e37509e40c91b328655caf68d5f82a1c913",
+    "tracked_worktree_clean": true,
+    "required_ancestor_present": true,
+    "cpu_only": true
+  },
+  "headline": {
+    "development_branch_screen_passed": true,
+    "qualified_development_pairs": 12,
+    "effect_classes": 3,
+    "domains": 2,
+    "qualified_heldout_pairs": 0,
+    "remote_envelope_passed": false,
+    "schema_passed": true,
+    "execution_error_present": false,
+    "repository_tests_run": 284,
+    "repository_test_failures": 1,
+    "repository_test_errors": 8,
+    "missing_cryptography_errors": 8,
+    "lazy_import_state_pollution_failures": 1
+  },
+  "paper_claim_boundary": {
+    "current_paper_e6_status": "stopped",
+    "stop_reason": "insufficient_qualified_heldout_capacity",
+    "may_support_efficacy_claim": false,
+    "may_support_reproducibility_or_limitation_statement": true,
+    "negative_envelope_preserved": true,
+    "future_e6_work_requires_separate_branch": true,
+    "p0_to_e5_remain_frozen": true
+  },
+  "checks": {
+    "deterministic_rerun_hashes_passed": true,
+    "development_screen_and_envelope_reported_separately": true,
+    "zero_heldout_capacity_preserved": true,
+    "negative_envelope_not_relabelled": true,
+    "no_model_or_efficacy_claim_authorized": true
+  },
+  "next_stage": "v1_blind_review_and_f1_paper_artifacts"
+}

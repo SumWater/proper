@@ -1,0 +1,55 @@
+schema_version: 1
+status: frozen_imported_remote_result_before_future_e6_work
+stage_id: e6_remote_cpu_gate_record
+
+inputs:
+  remote_validation:
+    path: outputs/paper_2026/20260812T040705Z-amax-ae0d3ec6b8e8/remote_validation.json
+    sha256: fe2f53b844e5862144b12d66af9db65279721174af655662f795b5b498654693
+  branch_screen:
+    path: outputs/paper_2026/20260812T040705Z-amax-ae0d3ec6b8e8/branch_screen.json
+    sha256: 24b9967ac3790d5056f716899791469ee017400fc7a34a32d8adecb14a579eae
+
+expected_remote_identity:
+  run_id: 20260812T040705Z-amax-ae0d3ec6b8e8
+  project_revision: ae0d3ec6b8e8f32ab9b451665230a97806943540
+  tau_revision: fc0055dc4e0a316c3f83133267fbd6faaa770992
+  source_manifest_sha256: 5e8cb2958a5e2703a3e8a903ed2b7e37509e40c91b328655caf68d5f82a1c913
+
+expected_scientific_result:
+  branch_screen_passed: true
+  qualified_development_pairs: 12
+  effect_counts:
+    idempotent_state_setting: 4
+    non_idempotent_side_effect: 4
+    read_only: 4
+  domain_count: 2
+  qualified_heldout_pairs: 0
+  development_model_run_authorized: false
+  confirmatory_claim_authorized: false
+
+expected_envelope_result:
+  envelope_passed: false
+  schema_passed: true
+  execution_error_present: false
+  repository_tests_run: 284
+  repository_test_failures: 1
+  repository_test_errors: 8
+  repository_test_skips: 0
+  missing_cryptography_occurrences: 8
+  lazy_import_state_pollution_occurrences: 1
+
+paper_disposition:
+  current_paper_e6_status: stopped
+  stop_reason: insufficient_qualified_heldout_capacity
+  use_as_primary_or_secondary_efficacy_evidence: false
+  use_as_reproducibility_and_limitation_evidence: true
+  preserve_negative_envelope: true
+  future_e6_work_must_use_separate_branch: true
+  frozen_p0_to_e5_must_not_change: true
+
+outputs:
+  root: outputs/paper_2026/e6_remote_cpu_gate_record
+  record: record.json
+  audit: audit.json
+  report: report.md

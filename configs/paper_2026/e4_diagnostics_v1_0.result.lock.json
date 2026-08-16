@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "status": "e4_risk_and_mechanism_diagnostics_complete",
+  "stage_id": "e4_risk_and_mechanism_diagnostics",
+  "config": {
+    "path": "configs/paper_2026/e4_diagnostics_v1_0.yaml",
+    "sha256": "89947791a1575b7421ddc26acdb70a17ccdd1f3908b99cc1148cec0f9dcf9a65"
+  },
+  "runner": {
+    "path": "experiments/paper_2026/diagnose_e4.py",
+    "sha256": "9b3c005ba3ddb3f997a538c09828cd32f51ff1a250d31174d588603c08fb196e"
+  },
+  "outputs": {
+    "diagnostics": {
+      "path": "outputs/paper_2026/e4_diagnostics/diagnostics.json",
+      "sha256": "b74f355fff9cef82c257fe7ef2d887017526e3093122dc0d2de555a5734991d4"
+    },
+    "audit": {
+      "path": "outputs/paper_2026/e4_diagnostics/audit.json",
+      "sha256": "7255aa53dd72fed1b147755e8944337c439aa11e1fff9b486c9f67b46fa7aa8d"
+    },
+    "report": {
+      "path": "outputs/paper_2026/e4_diagnostics/report.md",
+      "sha256": "0af23567b2d5c85b7926f752099b309b0bd23a621b8b8db8dc8829854102d88c"
+    }
+  },
+  "headline": {
+    "gate_selection_changed_targets": 95,
+    "gate_qwen_intervention_risk_difference": 0.4105263157894737,
+    "gate_mistral_intervention_risk_difference": 0.10526315789473684,
+    "contradiction_selection_changed_targets": 36,
+    "contradiction_qwen_intervention_risk_difference": -0.1388888888888889,
+    "contradiction_mistral_intervention_risk_difference": 0.1111111111111111,
+    "qwen_proper_vs_no_memory_risk_difference": 0.24317617866004962,
+    "qwen_proper_negative_transfer": 7,
+    "mistral_proper_vs_no_memory_risk_difference": -0.03722084367245657,
+    "mistral_proper_negative_transfer": 49
+  },
+  "mechanism_findings": {
+    "gate_benefit_is_concentrated_on_true_selector_interventions": true,
+    "qwen_gate_transient_authorization_intervention_risk_difference": 0.6470588235294118,
+    "mistral_memory_authz_failures_are_dominated_by_different_tool_calls": true,
+    "mistral_proper_authz_different_tool_count": 150,
+    "mistral_proper_authz_total": 175,
+    "contradiction_component_has_cross_model_direction_conflict": true
+  },
+  "checks": {
+    "deterministic_rerun_hashes_passed": true,
+    "descriptive_only": true,
+    "no_new_model_or_environment_execution": true,
+    "no_method_or_threshold_change": true
+  },
+  "next_stage": "e5_effect_concentration_and_leave_one_group_out"
+}

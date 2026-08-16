@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "status": "review_packet_ready_no_human_labels",
+  "stage_id": "evaluator_blind_audit_preparation",
+  "config": {
+    "path": "configs/paper_2026/evaluator_blind_audit_v1_0.yaml",
+    "sha256": "ec1ce63663778af43240f88cc0271560dcbe63b7a78c339e0d3b88b5f66676bc"
+  },
+  "runner": {
+    "path": "experiments/paper_2026/prepare_evaluator_blind_audit.py",
+    "sha256": "f2daa3fc389329a8adfddf0823e43be960cf7284fa94baa499e0a25e344d3968"
+  },
+  "outputs": {
+    "manifest": {
+      "path": "outputs/paper_2026/evaluator_blind_audit/manifest.json",
+      "sha256": "8bbea707aa71a9f897ef7ee0fef1251e0c6f65344d253d89c0e21c3b2c38c3d9"
+    },
+    "review_items": {
+      "path": "outputs/paper_2026/evaluator_blind_audit/reviewer_packet/review_items.jsonl",
+      "sha256": "fea7f83a3d6a83a030e1864c754ff799248b26cdd594645682fbdabfde264bc8"
+    },
+    "reviewer_a_template": {
+      "path": "outputs/paper_2026/evaluator_blind_audit/reviewer_packet/reviewer_a.csv",
+      "sha256": "b2410c5a9ee66c2847b7643434f7ecddc91bc3b85288db42e540884485c8dff1"
+    },
+    "reviewer_b_template": {
+      "path": "outputs/paper_2026/evaluator_blind_audit/reviewer_packet/reviewer_b.csv",
+      "sha256": "b2410c5a9ee66c2847b7643434f7ecddc91bc3b85288db42e540884485c8dff1"
+    },
+    "reviewer_instructions": {
+      "path": "outputs/paper_2026/evaluator_blind_audit/reviewer_packet/README.md",
+      "sha256": "1f55b750314803130933f2dfbb489bec1e49851cc3e7ced7807f6d575c8062b0"
+    },
+    "sealed_key": {
+      "path": "outputs/paper_2026/evaluator_blind_audit/sealed_key/audit_key.json",
+      "sha256": "07dd29029cafa4dedd633e04cd16a33968fb80c6c842ea1aca16354a22ba3358"
+    }
+  },
+  "sampling": {
+    "formal_comparisons": 18,
+    "unique_formal_pairs": 4306,
+    "all_unique_discordant_pairs": 280,
+    "non_discordant_population": 4026,
+    "sampled_non_discordant_pairs": 819,
+    "review_pairs": 1099,
+    "unique_logical_decisions": 1743,
+    "treatment_on_a": 541,
+    "treatment_on_b": 558
+  },
+  "checks": {
+    "deterministic_rerun_hashes_passed": true,
+    "review_labels_are_empty": true,
+    "method_model_condition_and_target_metadata_are_blinded": true,
+    "computed_recovery_validity_is_only_in_sealed_key": true,
+    "human_review_is_not_yet_complete": true
+  },
+  "next_stage": "independent_human_review_then_agreement_analysis"
+}

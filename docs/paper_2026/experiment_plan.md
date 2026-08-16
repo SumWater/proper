@@ -204,8 +204,8 @@ Recovery Validity。
 **完成判据**：删除 `get_doc` 或最大贡献记忆后的结果已明确，论文结论按该结果收窄，
 不以总体均值掩盖集中性。
 
-统计实现候选已完成并通过历史表复算测试；本阶段仍为 `pending`，因为正式矩阵、分层与
-leave-one-out 数字尚未生成。
+本阶段已完成。正式矩阵、分层、工具/任务域/记忆集中性和 leave-one-group-out 数字均已
+生成并由 `configs/paper_2026/e5_concentration_v1_0.result.lock.json` 冻结。
 
 ## 6. 条件执行的外部端到端实验
 
@@ -277,13 +277,14 @@ development-only；当前 ToolSandbox no-play inventory 也没有未消费合格
 | 阶段 | 内容 | 优先级 | 当前状态 | 计划完成日期 |
 |---|---|---|---|---|
 | P0 | 协议冻结、模型选择、复用和哈希审计 | 必须 | completed | 2026-08-15 |
-| E1 | Dense/LLM Judge/Oracle 选择与 union 冻结 | 必须 | in_progress | 2026-08-23 |
-| E2 | 双模型、三失败层主效应 | 必须 | pending | 2026-09-06 |
-| E3 | no-gate 与 no-contradiction 消融 | 必须 | pending | 2026-09-06 |
-| E4 | 风险、负迁移和 gate diagnostics | 必须 | pending | 2026-09-10 |
-| E5 | 分层、集中性和正式统计 | 必须 | pending | 2026-09-13 |
-| E6 | 外部容量审计与条件式端到端验证 | 条件 | pending | 2026-09-13 |
-| F1 | 冻结结果、表格和图 | 必须 | pending | 2026-09-13 |
+| E1 | Dense/LLM Judge/Oracle 选择与 union 冻结 | 必须 | completed | 2026-08-23 |
+| E2 | 双模型、三失败层主效应 | 必须 | completed | 2026-09-06 |
+| E3 | no-gate 与 no-contradiction 消融 | 必须 | completed | 2026-09-06 |
+| E4 | 风险、负迁移和 gate diagnostics | 必须 | completed | 2026-09-10 |
+| E5 | 分层、集中性和正式统计 | 必须 | completed | 2026-09-13 |
+| V1 | 匿名评价盲审与一致性分析 | 必须 | in_progress | 2026-08-24 |
+| E6 | 外部容量审计与条件式端到端验证 | 条件 | stopped | 2026-08-16 |
+| F1 | 冻结结果、表格和图 | 必须 | in_progress | 2026-09-13 |
 | W1 | 完整英文初稿 | 必须 | pending | 2026-09-20 |
 | W2 | 内部修改和投稿包 | 必须 | pending | 2026-10-01 |
 | S1 | AAMAS 投稿或记录降档决定 | 必须 | pending | 2026-10-08 |
@@ -350,13 +351,14 @@ development-only；当前 ToolSandbox no-play inventory 也没有未消费合格
 
 ## 14. 下一步
 
-下一项工作是 P0，不是直接启动 GPU：
+P0--E5 已完成并由结果锁冻结。当前论文线并行推进 V1 和 F1；E6 已停止并移交独立分支：
 
-1. 创建 `docs/paper_2026/protocol.md` 初稿；
-2. 审计现有 Qwen 三类结果的 prompt/config/hash 可复用性；
-3. 盘点本机可运行的第二模型；
-4. 确定 Dense 模型与 LLM Judge 配置；
-5. 将 P0 状态改为 `in_progress`。
+1. 两位审查者分别填写冻结的 1,099-pair 匿名审查表；若只有一位，必须记录为限制；
+2. 从 E2--E5 结果锁生成预览表图和 claim--evidence matrix；V1 完成后冻结终稿；
+3. 当前论文仅把 Tau3 结果作为复现边界/限制记录，不作为效果证据；
+4. 独立 E6 分支按 `docs/paper_2026/e6_separate_branch_handoff.md` 先修复基础设施，再审计
+   54 个 prospective held-out 任务；
+5. 只有至少 30 个任务、至少 3 类恢复策略的资格门通过后，E6 分支才允许冻结模型协议。
 
 ## 15. 变更记录
 
@@ -364,3 +366,6 @@ development-only；当前 ToolSandbox no-play inventory 也没有未消费合格
 |---|---|---|---|
 | 2026-08-09 | 0.1 | 建立后续实验、完成判据、时间表和停止规则 | 将两个月论文目标转为可执行计划 |
 | 2026-08-09 | 0.2 | 增加统一 selector 要求、修正 changed-target union 定义并启动 P0 | 适配本机无模型、实验机统一运行的实际条件 |
+| 2026-08-10 | 0.3 | 将 P0--E5 标记完成，下一步切换为 F1 表图与主张冻结 | 双模型正式结果、风险诊断和集中性复跑均已锁定 |
+| 2026-08-10 | 0.4 | 增加 V1 盲审包并冻结 E6 当前容量门，启动 Tau3 CPU 资格审计 | 当前外部合格 held-out 容量为 0，禁止提前运行 GPU |
+| 2026-08-16 | 0.5 | 冻结 Tau3 远端负 envelope 与 development-screen 结果；当前论文停止 E6，后续移交独立分支 | 12 个 development pairs 通过，但 held-out 为 0，且 envelope 有 9 项基础设施测试问题 |

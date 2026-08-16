@@ -1,0 +1,53 @@
+schema_version: 1
+status: frozen_current_capacity_audit_no_model
+stage_id: e6_external_capacity_gate
+
+inputs:
+  target_capacity_design:
+    path: configs/proper_v2_3/target_capacity_audit_v2_3.yaml
+    sha256: 9cbf73e6b4e49f23a13295e2f0132bfec9e152465b0ea07cb4b963a8656f147c
+  first_stage_validation:
+    path: outputs/proper_v2_3/first_stage_validation/results.json
+    sha256: 7d17a69032e6f4fab8293b837ba8dd61484f2726ecf317a71d158c677d227056
+  tau3_source_qualification:
+    path: outputs/proper_v2_3/tau3_source_qualification/validation.json
+    sha256: 498a9eb3257145fdaad99a7506125aebad3a5cf4016bb4a62b7ffb5b9182d2a4
+  tau3_local_branch_validation:
+    path: outputs/proper_v2_3/tau3_branch_screen/validation.json
+    sha256: 2025890fc7ca82dcff983b4e9140eefb25020c7c78f83f9e2279412be7f66a8b
+  tau3_remote_handoff:
+    path: docs/proper_v2_3/tau3_remote_execution_handoff.md
+    sha256: 5eb6edc7ba8164dfaeddad57dc173358b745861e7cad962310f2c52cb6a0b31d
+
+capacity_requirement:
+  minimum_qualified_independent_heldout_tasks: 30
+  minimum_failure_or_recovery_families: 3
+  all_inputs_frozen_before_model_outputs: true
+
+source_policy:
+  toolsandbox:
+    independent_for_paper: true
+    current_eligible_candidates: 0
+    exhausted: true
+  toolmisusebench:
+    independent_for_paper: false
+    exclusion_reason: already_supplies_memory_sources_and_formal_targets
+  tau3:
+    independent_for_paper: true
+    prospective_heldout_tasks: 54
+    currently_qualified_heldout_tasks: 0
+    local_development_pairs: 12
+    local_results_are_formal_remote_evidence: false
+    remote_validation_glob: outputs/proper_v2_3/tau3_branch_screen_remote/*/remote_validation.json
+
+decision:
+  current_model_run_authorized: false
+  continue_cpu_only_qualification: true
+  qualification_stop_review_date: 2026-08-17
+  stop_if_minimum_capacity_cannot_be_qualified_within_one_week: true
+
+outputs:
+  root: outputs/paper_2026/e6_capacity_gate
+  result: capacity.json
+  audit: audit.json
+  report: report.md

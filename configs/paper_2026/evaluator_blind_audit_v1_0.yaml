@@ -1,0 +1,43 @@
+schema_version: 1
+status: frozen_before_human_labels
+stage_id: evaluator_blind_audit_preparation
+
+inputs:
+  evaluation_results:
+    path: outputs/paper_2026/e2_e3_agent_evaluation/results.json
+    sha256: e44a7743af57787c992039e46599df090ef1f4d24a983e6d03f3c0a4a82f6c86
+  formal_analysis:
+    path: outputs/paper_2026/e2_e3_formal_analysis/analysis.json
+    sha256: ef1727f4a8208fafe18ec9cd4656a3671bb1145eae625d2d4b18b15b695ee9d9
+  prompt_manifest:
+    path: outputs/paper_2026/agent_prompt_cache/agent_prompt_manifest.json
+    sha256: ce47156636016a4cccb1b9cccce59ca3451d130673b0470efa8327e6cc526996
+  formal_analysis_lock:
+    path: configs/paper_2026/e2_e3_analysis_v1_0.result.lock.json
+    sha256: 4eeb9d4fce5800e9d8ca3bd861e397fb117bed4cbf325c741f45e59637a49a98
+
+sampling:
+  seed: paper-2026-evaluator-blind-audit-v1.0
+  non_discordant_fraction: 0.20
+  include_every_unique_discordant_pair: true
+  deduplicate_overlapping_formal_populations: true
+  non_discordant_strata:
+    - model
+    - treatment
+    - baseline
+    - failure_stratum
+  rounding: ceiling_within_each_stratum
+
+blinding:
+  hide_model_identity: true
+  hide_condition_identity: true
+  hide_target_metadata_identity: true
+  preserve_agent_visible_observation_verbatim: true
+  randomize_treatment_baseline_side_per_pair: true
+  computed_recovery_validity_only_in_sealed_key: true
+
+outputs:
+  root: outputs/paper_2026/evaluator_blind_audit
+  reviewer_packet: reviewer_packet
+  sealed_key: sealed_key/audit_key.json
+  manifest: manifest.json

@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "status": "e5_effect_concentration_complete",
+  "stage_id": "e5_effect_concentration_and_leave_one_group_out",
+  "config": {
+    "path": "configs/paper_2026/e5_concentration_v1_0.yaml",
+    "sha256": "ed5127538150bba78e67d7fee72b17bea0214a46d912a137c193b8f224ade382"
+  },
+  "runner": {
+    "path": "experiments/paper_2026/analyze_e5_concentration.py",
+    "sha256": "46374c020a4ac41f25aa8eb98426540c193a01855ae7a65d3fbd77b0b3d7d7b3"
+  },
+  "outputs": {
+    "concentration": {
+      "path": "outputs/paper_2026/e5_concentration/concentration.json",
+      "sha256": "782b7d8f257d01efa93d5b70e59b3d87f662b474e227649c8409c31db964b5a2"
+    },
+    "audit": {
+      "path": "outputs/paper_2026/e5_concentration/audit.json",
+      "sha256": "2c3c8137eba2675545b29a679c54476640c5f27c85f9e631ac189735473f2f20"
+    }
+  },
+  "headline": {
+    "primary_population_n": 403,
+    "qwen_primary_risk_difference": 0.03722084367245657,
+    "qwen_failed_tool_largest_positive_transfer_share": 0.6666666666666666,
+    "qwen_failed_tool_leave_one_out_min_risk_difference": 0.014326647564469915,
+    "qwen_task_domain_largest_positive_transfer_share": 0.7333333333333333,
+    "qwen_task_domain_leave_one_out_min_risk_difference": 0.014184397163120567,
+    "mistral_primary_risk_difference": 0.05459057071960298,
+    "mistral_failed_tool_largest_positive_transfer_share": 0.36666666666666664,
+    "mistral_failed_tool_leave_one_out_min_risk_difference": 0.03142857142857143,
+    "mistral_task_domain_largest_positive_transfer_share": 0.36666666666666664,
+    "mistral_task_domain_leave_one_out_min_risk_difference": 0.032448377581120944
+  },
+  "findings": {
+    "primary_effect_survives_every_single_failed_tool_exclusion": true,
+    "primary_effect_survives_every_single_task_domain_exclusion": true,
+    "primary_effect_survives_every_single_selected_memory_exclusion": true,
+    "qwen_largest_positive_transfer_tool": "get_doc",
+    "qwen_largest_positive_transfer_domain": "retrieval",
+    "qwen_largest_positive_transfer_memory": "M058",
+    "mistral_largest_positive_transfer_tool": "validate_cron",
+    "mistral_largest_positive_transfer_domain": "scheduling",
+    "mistral_largest_positive_transfer_memory": "M089",
+    "qwen_effect_is_more_concentrated_than_mistral_effect": true,
+    "leave_one_group_out_is_exclusion_sensitivity_not_retraining": true
+  },
+  "checks": {
+    "deterministic_rerun_hashes_passed": true,
+    "paper_2026_scoped_tests_passed": 24,
+    "descriptive_only": true,
+    "no_new_model_or_environment_execution": true,
+    "no_method_or_threshold_change": true
+  },
+  "next_stage": "f1_paper_tables_figures_and_claim_matrix"
+}
