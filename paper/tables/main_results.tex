@@ -1,0 +1,28 @@
+\begin{center}
+\refstepcounter{table}\label{tab:main-results}
+\textbf{Table \thetable:} Recovery Validity on the frozen changed-target union ($n=403$ per model). Counts are successes; percentages are in parentheses. Oracle is descriptive.\par\smallskip
+\small
+\begin{tabular}{llrr}
+\toprule
+Model & Condition & Success & Rate (\%) \\
+\midrule
+Qwen3-8B & no\_memory & 268/403 & 66.5 \\
+Qwen3-8B & tfidf & 351/403 & 87.1 \\
+Qwen3-8B & dense & 335/403 & 83.1 \\
+Qwen3-8B & llm\_judge & 326/403 & 80.9 \\
+Qwen3-8B & proper & 366/403 & 90.8 \\
+Qwen3-8B & proper\_no\_gate & 327/403 & 81.1 \\
+Qwen3-8B & proper\_no\_contradiction & 371/403 & 92.1 \\
+Qwen3-8B & oracle & 376/403 & 93.3 \\
+\midrule
+Mistral-7B-Instruct-v0.3 & no\_memory & 195/403 & 48.4 \\
+Mistral-7B-Instruct-v0.3 & tfidf & 158/403 & 39.2 \\
+Mistral-7B-Instruct-v0.3 & dense & 166/403 & 41.2 \\
+Mistral-7B-Instruct-v0.3 & llm\_judge & 160/403 & 39.7 \\
+Mistral-7B-Instruct-v0.3 & proper & 180/403 & 44.7 \\
+Mistral-7B-Instruct-v0.3 & proper\_no\_gate & 170/403 & 42.2 \\
+Mistral-7B-Instruct-v0.3 & proper\_no\_contradiction & 176/403 & 43.7 \\
+Mistral-7B-Instruct-v0.3 & oracle & 173/403 & 42.9 \\
+\bottomrule
+\end{tabular}
+\end{center}

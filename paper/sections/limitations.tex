@@ -1,0 +1,8 @@
+\section{Limitations and Threats to Validity}
+
+The evidence covers one benchmark, one 100-memory bank, two instruction-tuned 7B/8B models, three constructed failure strata, and one recovery decision. The primary changed-target population measures selector capacity efficiently but is not a random deployment population; the all-valid analysis is a sensitivity check. Results do not establish multi-step or external-benchmark generalization.
+
+Automated Recovery Validity has not yet completed its human reliability audit. \todoVOne. Until then, evaluator reliability is an explicit submission blocker rather than an inferred property.
+
+The Mistral result shows that a selector can improve relative to other memory methods while memory remains worse than No Memory. The contradiction ablation is inconsistent across models. No observed safety events imply neither a tight risk bound nor deployment safety. Finally, subgroup, intervention, and concentration analyses are descriptive and cannot establish causal mechanisms.
+

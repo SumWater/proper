@@ -1,0 +1,19 @@
+\begin{center}
+\refstepcounter{table}\label{tab:primary-effects}
+\textbf{Table \thetable:} Paired PROPER--TF-IDF effects. The all-strata rows are the pre-frozen primary family; failure-stratum rows are exploratory. RD is the paired risk difference in percentage points.\par\smallskip
+\small
+\begin{tabular}{llrrrrrr}
+\toprule
+Model & Stratum & $n$ & TF-IDF & PROPER & $+/-$ & RD & 95\% CI \\
+\midrule
+Mistral-7B-Instruct-v0.3 & all\_strata & 403 & 158 & 180 & 30/8 & 5.5 & [2.5, 8.4] \\
+Mistral-7B-Instruct-v0.3 & argument\_omission & 152 & 95 & 114 & 25/6 & 12.5 & [5.9, 19.7] \\
+Mistral-7B-Instruct-v0.3 & transient\_authorization & 146 & 0 & 0 & 0/0 & 0.0 & [0.0, 0.0] \\
+Mistral-7B-Instruct-v0.3 & timeout & 105 & 63 & 66 & 5/2 & 2.9 & [-1.9, 7.6] \\
+Qwen3-8B & all\_strata & 403 & 351 & 366 & 15/0 & 3.7 & [2.0, 5.7] \\
+Qwen3-8B & argument\_omission & 152 & 136 & 146 & 10/0 & 6.6 & [3.3, 10.5] \\
+Qwen3-8B & transient\_authorization & 146 & 117 & 122 & 5/0 & 3.4 & [0.7, 6.8] \\
+Qwen3-8B & timeout & 105 & 98 & 98 & 0/0 & 0.0 & [0.0, 0.0] \\
+\bottomrule
+\end{tabular}
+\end{center}

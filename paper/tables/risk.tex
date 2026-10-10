@@ -1,0 +1,15 @@
+\begin{center}
+\refstepcounter{table}\label{tab:risk}
+\textbf{Table \thetable:} Descriptive transfer relative to No Memory on the changed-target union.\par\smallskip
+\small
+\begin{tabular}{llrrrr}
+\toprule
+Model & Method & $+/-$ & RD (pp) & Repeat regress. & Parse regress. \\
+\midrule
+Qwen3-8B & tfidf & 93/10 & 20.6 & 0 & 0 \\
+Qwen3-8B & proper & 105/7 & 24.3 & 0 & 0 \\
+Mistral-7B-Instruct-v0.3 & tfidf & 24/61 & -9.2 & 58 & 11 \\
+Mistral-7B-Instruct-v0.3 & proper & 34/49 & -3.7 & 53 & 23 \\
+\bottomrule
+\end{tabular}
+\end{center}

@@ -1,0 +1,13 @@
+\section{Method}
+
+\proper{} represents each retrieved memory as a policy card containing its trigger evidence, required preconditions, recovery operation, proposed tool/action, repair targets, continuation policy, stop conditions, source tool, and extraction confidence. Candidate evaluation uses only $o$ and this public card.
+
+\subsection{Evidence and compatibility}
+
+Operation-specific support prevents generic lexical overlap from being treated as applicability. Argument repair requires both trigger overlap and repair-target overlap; stopping requires matching observable stop evidence; other known recovery operations require trigger overlap. Preconditions, repair-target agreement, trigger agreement, and tool compatibility are evaluated separately.
+
+\subsection{Contradictions and conservative replacement}
+
+The selector records active contradictions such as an exhausted public retry budget or an unsafe identical retry. Candidates are ordered by fewer active contradictions, stronger evidence support, precondition status, repair-target agreement, trigger agreement, tool compatibility, extraction confidence, original rank, and a deterministic identity tie-break.
+
+Full \proper{} replaces Rank-1 only when the best alternative has no active contradiction, has positive operation-specific support, and is decisively superior to Rank-1 on a predeclared criterion. The no-gate ablation retains contradiction checking but chooses the best contradiction-free candidate. The no-contradiction ablation retains the conservative gate but removes contradictions from eligibility and ordering. No other component changes.

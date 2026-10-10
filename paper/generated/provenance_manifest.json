@@ -1,0 +1,35 @@
+{
+  "generator": {
+    "path": "paper/scripts/generate_f1_artifacts.py",
+    "sha256": "9367127184f5ebfafc4aca22894e13bfb8b0e5a502a54758b74bd2fca748e30b"
+  },
+  "schema_version": 1,
+  "scope": "P0-E5 plus V1-preparation only; E6 and Tau3 excluded",
+  "sources": [
+    {
+      "name": "e1_analysis",
+      "path": "outputs/paper_2026/e1_selection/analysis.json",
+      "sha256": "5c84d3aeda8de387e840ec289c08ea7626e2e66c7d9a112fdd6fd4dcd57d6d8b"
+    },
+    {
+      "name": "e2e3_tables",
+      "path": "outputs/paper_2026/e2_e3_formal_analysis/tables.json",
+      "sha256": "b14119e7eee348c085cb6bcbefca9e8a2ab2db8c4e283265799680acc232bf35"
+    },
+    {
+      "name": "e4_diagnostics",
+      "path": "outputs/paper_2026/e4_diagnostics/diagnostics.json",
+      "sha256": "b74f355fff9cef82c257fe7ef2d887017526e3093122dc0d2de555a5734991d4"
+    },
+    {
+      "name": "e5_concentration",
+      "path": "outputs/paper_2026/e5_concentration/concentration.json",
+      "sha256": "782b7d8f257d01efa93d5b70e59b3d87f662b474e227649c8409c31db964b5a2"
+    },
+    {
+      "name": "v1_manifest",
+      "path": "outputs/paper_2026/evaluator_blind_audit/manifest.json",
+      "sha256": "8bbea707aa71a9f897ef7ee0fef1251e0c6f65344d253d89c0e21c3b2c38c3d9"
+    }
+  ]
+}

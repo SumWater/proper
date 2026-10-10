@@ -1,0 +1,15 @@
+\begin{center}
+\refstepcounter{table}\label{tab:ablations}
+\textbf{Table \thetable:} Core ablations on the changed-target union. Positive RD favors full PROPER. Holm correction is within the pre-frozen ablation family.\par\smallskip
+\small
+\begin{tabular}{llrrr}
+\toprule
+Model & Removed component & $+/-$ & RD (pp) & Holm $p$ \\
+\midrule
+Mistral-7B-Instruct-v0.3 & contradiction & 5/1 & 1.0 & 0.219 \\
+Mistral-7B-Instruct-v0.3 & gate & 14/4 & 2.5 & 0.0927 \\
+Qwen3-8B & contradiction & 0/5 & -1.2 & 0.125 \\
+Qwen3-8B & gate & 42/3 & 9.7 & 3.46e-09 \\
+\bottomrule
+\end{tabular}
+\end{center}

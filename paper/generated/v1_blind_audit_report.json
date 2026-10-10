@@ -1,0 +1,159 @@
+{
+  "status": "complete_human_double_blind",
+  "scope": "Human Reviewer A/B agreement and comparison against the frozen automated endpoint only. Qwen previews are excluded.",
+  "inputs": {
+    "reviewer_a": "outputs/paper_2026/evaluator_blind_audit/reviewer_packet/reviewer_a_results.csv",
+    "reviewer_a_sha256": "4474bba27b9d4d4adc83239ab42b96f383e1789a2ec0b8d7865add91a4d59a9d",
+    "reviewer_b": "outputs/paper_2026/evaluator_blind_audit/reviewer_packet/reviewer_b_results.csv",
+    "reviewer_b_sha256": "e701abc165cc0aedd15fbd51f6146b53489e1ccb8c03031f951c9e95da1501ea"
+  },
+  "pair_alignment": {
+    "reviewer_a_rows": 1099,
+    "reviewer_b_rows": 1099,
+    "common_pair_ids": 1099,
+    "only_in_a": [],
+    "only_in_b": [],
+    "duplicate_ids_a": [],
+    "duplicate_ids_b": []
+  },
+  "coverage": {
+    "decision_a_endpoint_label": {
+      "reviewer_a_labeled": 1099,
+      "reviewer_b_labeled": 1099,
+      "jointly_labeled": 1099
+    },
+    "decision_b_endpoint_label": {
+      "reviewer_a_labeled": 1099,
+      "reviewer_b_labeled": 1099,
+      "jointly_labeled": 1099
+    },
+    "decision_a_visible_support": {
+      "reviewer_a_labeled": 1099,
+      "reviewer_b_labeled": 1099,
+      "jointly_labeled": 1099
+    },
+    "decision_b_visible_support": {
+      "reviewer_a_labeled": 1099,
+      "reviewer_b_labeled": 1099,
+      "jointly_labeled": 1099
+    },
+    "confidence": {
+      "reviewer_a_labeled": 1099,
+      "reviewer_b_labeled": 1099,
+      "jointly_labeled": 1099
+    }
+  },
+  "agreement": {
+    "decision_a_endpoint_label": {
+      "jointly_labeled": 1099,
+      "exact_agreement": 1.0,
+      "cohen_kappa": 1.0,
+      "reviewer_a_distribution": {
+        "false": 408,
+        "true": 691
+      },
+      "reviewer_b_distribution": {
+        "false": 408,
+        "true": 691
+      }
+    },
+    "decision_b_endpoint_label": {
+      "jointly_labeled": 1099,
+      "exact_agreement": 1.0,
+      "cohen_kappa": 1.0,
+      "reviewer_a_distribution": {
+        "false": 406,
+        "true": 693
+      },
+      "reviewer_b_distribution": {
+        "false": 406,
+        "true": 693
+      }
+    },
+    "decision_a_visible_support": {
+      "jointly_labeled": 1099,
+      "exact_agreement": 0.9672429481346679,
+      "cohen_kappa": 0.9447999899545025,
+      "reviewer_a_distribution": {
+        "supported": 603,
+        "unclear": 190,
+        "unsupported": 306
+      },
+      "reviewer_b_distribution": {
+        "supported": 600,
+        "unclear": 202,
+        "unsupported": 297
+      }
+    },
+    "decision_b_visible_support": {
+      "jointly_labeled": 1099,
+      "exact_agreement": 0.9708826205641492,
+      "cohen_kappa": 0.9509998439485475,
+      "reviewer_a_distribution": {
+        "supported": 603,
+        "unclear": 197,
+        "unsupported": 299
+      },
+      "reviewer_b_distribution": {
+        "supported": 601,
+        "unclear": 208,
+        "unsupported": 290
+      }
+    },
+    "confidence": {
+      "jointly_labeled": 1099,
+      "exact_agreement": 0.8762511373976342,
+      "cohen_kappa": 0.04490964394345879,
+      "reviewer_a_distribution": {
+        "high": 975,
+        "low": 49,
+        "medium": 75
+      },
+      "reviewer_b_distribution": {
+        "high": 1077,
+        "low": 16,
+        "medium": 6
+      }
+    }
+  },
+  "endpoint_vs_frozen_automatic_evaluator": {
+    "reviewer_a": {
+      "decision_a_endpoint_label": {
+        "labeled": 1099,
+        "agreement": 1.0,
+        "confusion": {
+          "human_false__auto_false": 408,
+          "human_true__auto_true": 691
+        }
+      },
+      "decision_b_endpoint_label": {
+        "labeled": 1099,
+        "agreement": 1.0,
+        "confusion": {
+          "human_false__auto_false": 406,
+          "human_true__auto_true": 693
+        }
+      }
+    },
+    "reviewer_b": {
+      "decision_a_endpoint_label": {
+        "labeled": 1099,
+        "agreement": 1.0,
+        "confusion": {
+          "human_false__auto_false": 408,
+          "human_true__auto_true": 691
+        }
+      },
+      "decision_b_endpoint_label": {
+        "labeled": 1099,
+        "agreement": 1.0,
+        "confusion": {
+          "human_false__auto_false": 406,
+          "human_true__auto_true": 693
+        }
+      }
+    }
+  },
+  "disagreement_count": 204,
+  "interpretation_guard": "Do not report a formal V1 reliability conclusion unless status is complete_human_double_blind and reviewer files have been finalized and hash-locked."
+}

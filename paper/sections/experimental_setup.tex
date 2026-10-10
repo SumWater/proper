@@ -1,0 +1,18 @@
+\section{Experimental Setup}
+
+\subsection{Data and conditions}
+
+The frozen evaluation contains 541 valid targets: 189 argument-omission, 175 transient-authorization, and 177 timeout cases, with a source-isolated bank of 100 memories. Conditions are No Memory, TF-IDF Rank-1, BGE-large-en-v1.5 Dense Rank-1, a fixed Qwen3-8B applicability judge over anonymous TF-IDF Top-10 candidates, \proper, two ablations, and a descriptive applicability Oracle. The non-oracle changed-target union contains 403 targets (152/146/105 by stratum) and is primary; all 541 targets form a sensitivity population.
+
+\subsection{Models and execution}
+
+We evaluate Qwen3-8B and Mistral-7B-Instruct-v0.3 with deterministic decoding, thinking disabled, a 256-token cap, a frozen strict parser, and one post-failure decision. Identical raw prompts are cached by full identity. Historical Qwen model outputs are reused only under exact prompt, prefix, model-manifest, runtime, and decoding identity; environment outcomes are recomputed independently for every logical row. Invalid outputs remain in the intention-to-treat evaluation under the frozen fallback.
+
+\subsection{Statistics}
+
+For each paired comparison, we report positive and negative discordant counts, the treatment-minus-baseline risk difference, a 10,000-replicate paired-instance percentile-bootstrap 95\% interval, and an exact two-sided McNemar test. Holm correction is applied within pre-frozen primary, strong-baseline, and ablation families. Oracle, risk diagnostics, failure-stratum breakdowns, and concentration analyses are descriptive unless explicitly identified otherwise.
+
+\subsection{Evaluator reliability}
+
+The automated environment evaluator is frozen. A method-blinded packet contains all 280 unique discordant formal pairs plus a stratified 20\% sample of 4,026 non-discordant pairs, totaling 1,099 review pairs. Both reviewer templates are currently unlabeled. \todoVOne.
+

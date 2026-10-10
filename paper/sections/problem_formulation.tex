@@ -1,0 +1,6 @@
+\section{Problem Formulation}
+
+Let $o$ denote the observable post-failure state: the user instruction, public tool schemas, failed action and arguments, public error or return, retry budget, and observable history. A source-isolated retriever returns ordered memory candidates $C=(c_1,\ldots,c_k)$. A selector returns one of three actions: keep $c_1$, select an alternative $c_j$, or abstain. Abstention preserves $c_1$ as the retrieval fallback; it does not claim that $c_1$ is applicable.
+
+The selector is forbidden from reading benchmark or scenario names, hidden failure plans, recoverability/applicability labels, gold actions, evaluator outcomes, method identities, or prior model outcomes. The primary endpoint is paired binary Recovery Validity after one recovery decision. The primary population is frozen before agent generation as the union of targets where at least one non-oracle selector differs from TF-IDF Rank-1.
+

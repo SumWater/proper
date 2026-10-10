@@ -1,0 +1,14 @@
+{
+  "status": "recheck_packets_prepared",
+  "round1_reviewer_a": "C:\\Users\\tanyang\\Desktop\\论文\\proper-paper\\outputs\\paper_2026\\evaluator_blind_audit\\reviewer_packet\\reviewer_a_results.csv",
+  "round1_reviewer_a_sha256": "0afcbe5a1ef64d232e74d9aa6b6e6a1f99ad909d573f3b17acf79027742b46e3",
+  "round1_reviewer_b": "C:\\Users\\tanyang\\Desktop\\论文\\proper-paper\\outputs\\paper_2026\\evaluator_blind_audit\\reviewer_packet\\reviewer_b_results.csv",
+  "round1_reviewer_b_sha256": "6ba0348d08fd933e70d109cd2f3923747b8adaa6ad01aab16ddc1fd8afd7111c",
+  "recheck_pair_count": 3,
+  "outputs": {
+    "reviewer_a": "C:\\Users\\tanyang\\Desktop\\论文\\proper-paper\\paper\\generated\\v1_recheck\\reviewer_a_recheck.csv",
+    "reviewer_b": "C:\\Users\\tanyang\\Desktop\\论文\\proper-paper\\paper\\generated\\v1_recheck\\reviewer_b_recheck.csv"
+  },
+  "round1_disagreement_archive": "C:\\Users\\tanyang\\Desktop\\论文\\proper-paper\\paper\\generated\\v1_recheck\\round1_disagreements.csv",
+  "rule": "Round-one files are immutable; reviewers fill separate blank recheck packets independently."
+}

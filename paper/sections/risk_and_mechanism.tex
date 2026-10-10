@@ -1,0 +1,10 @@
+\section{Risk and Mechanism Analysis}
+
+\input{tables/ablations}
+\input{tables/risk}
+
+The conservative gate is the clearest supported mechanism. Full \proper{} exceeds no-gate by 9.68 points for Qwen (42/3, Holm-adjusted $p=3.46\times10^{-9}$). Mistral has the same direction (+2.48 points, 14/4) but is inconclusive after family correction ($p=0.0927$). On the 95 targets where the gate changes memory identity, descriptive effects are +41.05 and +10.53 points for Qwen and Mistral, respectively.
+
+Contradiction checking does not show stable independent behavioral benefit: removing it yields five additional Qwen successes but four fewer Mistral successes relative to full \proper, and neither corrected comparison is significant. We retain contradiction checking as an explicit conservative rule and audit signal, not as a separately validated innovation.
+
+Negative transfer is model-dependent. Relative to No Memory, \proper{} produces 105 improvements and seven degradations for Qwen but 34 improvements and 49 degradations for Mistral. No safety violation is observed in the frozen logical rows; this absence does not establish deployment safety. Mistral also exhibits substantially more repeated-invalid and parse regressions under memory conditions.

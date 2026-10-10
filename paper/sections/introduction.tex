@@ -1,0 +1,9 @@
+\section{Introduction}
+
+Tool-using language-model agents often face recoverable execution failures: an argument is missing, authorization is temporarily denied, or a tool times out. A natural response is to retrieve a successful historical recovery and insert it into the agent context. Yet a memory that is lexically similar may encode the wrong operation, assume an unavailable precondition, target an incompatible tool, or recommend a retry that public evidence already contradicts. Historical memory can therefore help, do nothing, or induce negative transfer.
+
+This paper asks whether observable failure evidence can support a more conservative decision: treat similarity retrieval as a proposal, and replace its Rank-1 memory only when a candidate is applicable and decisively better supported. \proper{} implements this decision without benchmark names, hidden fault plans, gold actions, evaluator outcomes, or prior model outcomes.
+
+Our evidence supports a deliberately bounded conclusion. Relative to TF-IDF, Dense retrieval, and a fixed LLM applicability judge, \proper{} improves one-step Recovery Validity for both evaluated models on a pre-frozen changed-target population. Absolute memory utility, however, differs sharply by model and failure type. In particular, memory helps Qwen overall but remains worse than No Memory for Mistral, and some strata show no behavioral gain despite selection changes.
+
+We make three contributions: (1) an observable-only, fail-closed selector that separates candidate support, compatibility and preconditions, contradiction signals, and a conservative replacement gate; (2) a frozen two-model, three-stratum paired evaluation against retrieval, reranking, no-memory, oracle, and component-ablation controls; and (3) a risk-centered diagnosis of negative transfer, selection-to-behavior gaps, and effect concentration. We do not claim external or multi-step generalization.

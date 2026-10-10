@@ -1,0 +1,10 @@
+\section{Main Results}
+
+\input{tables/main_results}
+\input{tables/primary_effects}
+
+On the changed-target union, \proper{} improves paired Recovery Validity over TF-IDF for Qwen by 3.72 percentage points (15 positive and no negative discordances; 95\% CI [1.99, 5.71]) and for Mistral by 5.46 points (30/8; [2.48, 8.44]). Both are significant after correction in the pre-frozen primary family. \proper{} also exceeds Dense and the LLM Judge for each model after correction.
+
+Relative selector performance must be separated from absolute memory utility. Qwen improves from 268 No-Memory successes to 366 with \proper. Mistral instead declines from 195 to 180: \proper{} is the strongest non-oracle memory selector, but memory does not beat omitting memory for this model overall.
+
+Failure-stratum results are heterogeneous. Argument omission provides the largest gains for both models. Qwen timeout is an exact zero (0/0 discordance), Mistral transient authorization has zero recoveries under every memory condition, and Mistral timeout has a weak interval crossing zero. We therefore do not claim uniform cross-failure effectiveness.

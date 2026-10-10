@@ -1,0 +1,6 @@
+\section{Concentration and Robustness}
+
+\input{tables/concentration}
+
+Qwen's primary positive transfers are concentrated: `get\_doc` and selected memory M058 each account for 10 of 15 positive discordances. Removing either group leaves a smaller but positive paired effect (+1.43 and +1.32 points). Mistral's largest tool and memory groups account for 36.7\% and 26.7\% of positive transfers; their exclusions leave +3.14 and +3.59 points. Across both models, removing any single failed tool, task domain, or selected memory causes no sign reversal. These are exclusion sensitivities under frozen selections, not retraining or out-of-distribution tests.
+
